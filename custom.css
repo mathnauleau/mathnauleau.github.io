@@ -1,0 +1,25 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  color: #012970;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", sans-serif;
+  color: #012970;
+}
+
+h2{
+  font-weight: 300;
+}
+
+.portfolio .portfolio-wrap::before{
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.portfolio .portfolio-wrap .portfolio-info::after{
+  border: none;
+}
+
+.portfolio .portfolio-wrap .portfolio-info::after {
+  border: none;
+}
