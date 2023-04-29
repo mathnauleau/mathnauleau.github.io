@@ -1,3 +1,6 @@
+Version: 2.00.0
+  - Mathieu takes over and makes it his cool portfolio!
+
 Version: 1.12.0
   - Updated Bootstrap to version 5.2.3
   - Updated all outdated third party vendor libraries to their latest versions

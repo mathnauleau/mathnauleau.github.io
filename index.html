@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="UX Design Portfolio Mathieu Nauleau">
+  <meta name="keywords" content="UX, Design, Designer, Portfolio">
+  <meta name="author" content="Mathieu Nauleau"> 
 
-  <title>Mathieu Nauleau | Portfolio</title>
-  <meta content="" name="description">
+  <title>Oh, hello.</title>
 
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
+  <!-- Favicon -->
   <link href="assets/img/favicon.ico" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Template Main CSS Files -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="custom.css" rel="stylesheet">
 
   <!-- =======================================================
+  * Hello, I'm currently using a template for my website. Here are some info:
   * Template Name: FlexStart - v1.12.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
+  * Nice poem I like: https://www.poetica.fr/poeme-63/victor-hugo-demain-des-l-aube/ 
   ======================================================== -->
 </head>
 
@@ -43,12 +46,15 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
+        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
         <span>Mathieu Nauleau</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link">Follow me</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Design</a></li>
+          <li><a class="nav-link scrollto" href="#craft">Craft</a></li>
+          <li><a class="nav-link scrollto" href="about.html">About</a></li>
           <li><a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
           <li><a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i class="bi bi-dribbble"></i></a></li>
           <li><a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i class="bi bi-instagram"></i></a></li>
@@ -63,22 +69,189 @@
   <section id="hero" class="hero d-flex align-items-center">
 
     <div class="container">
-      <div class="row px-3">
+      <div class="row gx-5 gy-3">
         <div class="col-lg-5 hero-img" data-aos="zoom-out" data-aos-delay="200">
           <img src="assets/img/hero-img.png" class="img-fluid" alt="">
         </div>
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">Spicy things coming up</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">I'm currently rebuilding my website, stay tuned!</h2> <br>
-          <h5 data-aos="fade-up" data-aos-delay="400"><span class="italic">Best, Mathieu</span></h5>
+        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="zoom-out" data-aos-delay="200">
+          <h1>Hello, I’m Mathieu, an Amsterdam-based digital product designer.</h1>
+          <h2>With a genuine drive for technology, user needs, and business challenges, I strive to tackle complex problems and craft elegant user experiences.</h2>
         </div>
       </div>
     </div>
 
   </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>UI/UX Design</h2>
+          <p>A small selection of my work.</p>
+        </header>
+
+       <!--  <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-strategy">Strategy</li>
+            </ul>
+          </div>
+        </div> -->
+
+        <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+
+          <div class="col-lg-6 col-md-12 portfolio-item">
+            <a href="carl.html" class="portfolio-link" data-toggle="modal">
+              <div id="project3" class="portfolio-wrap">
+                <img src="assets/img/portfolio/portfolio-3.png" class="img-fluid" alt="Car Rental app cover">
+                <div class="portfolio-title">
+                  <h4>Car rental App</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-md-12 portfolio-item">
+            <a href="ahcompact.html" class="portfolio-link" data-toggle="modal">
+              <div id="project4" class="portfolio-wrap">
+                <img src="assets/img/portfolio/portfolio-4.png" class="img-fluid" alt="AH Compact app cover">
+                <div class="portfolio-title">
+                  <h4>AH Compact</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-md-12 portfolio-item">
+              <div id="project2" class="portfolio-wrap not-allowed">
+                <img src="assets/img/portfolio/portfolio-1.png" class="img-fluid" alt="Design System cover">
+                <div class="portfolio-title">
+                  <h4>Pantry Design System</h4>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 portfolio-item">
+              <div id="project2" class="portfolio-wrap not-allowed">
+                <img src="assets/img/portfolio/portfolio-2.png" class="img-fluid" alt="White Label App cover">
+                <div class="portfolio-title">
+                  <h4>White label eCommerce App</h4>
+                </div>
+              </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12 portfolio-item">
+            <a href="island.html" class="portfolio-link" data-toggle="modal">
+              <div id="project5" class="portfolio-wrap">
+                <img src="assets/img/portfolio/portfolio-5.png" class="img-fluid" alt="Slide Puzzle cover">
+                <div class="portfolio-title">
+                  <h4>Island slide puzzle</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-6 col-md-12 portfolio-item">
+            <a href="rise.html" class="portfolio-link" data-toggle="modal">
+              <div id="project6" class="portfolio-wrap">
+                <img src="assets/img/portfolio/portfolio-6.png" class="img-fluid" alt="Inflight service Ecosystem cover">
+                <div class="portfolio-title">
+                  <h4>Inflight Service Ecosystem</h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Portfolio Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="craft" class="portfolio">
+
+      <div class="container">
+
+        <header class="section-header">
+          <h2>Craft</h2>
+          <!-- <p>Some side projects</p> -->
+        </header>
+
+        <div class="row gy-4 portfolio-container">
+
+          <div class="col-lg-4 col-md-12 portfolio-item">
+            <a href="sketching.html" class="portfolio-link" data-toggle="modal">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="Digital sketching cover">
+                <div class="portfolio-title">
+                  <h4>Digital Sketching</h4>
+                  <!-- <p>Sketching</p> -->
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-12 portfolio-item">
+            <a href="dailyui.html" class="portfolio-link" data-toggle="modal">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="Daily UI cover">
+                <div class="portfolio-title">
+                  <h4>Daily UI</h4>
+                  <!-- <p>Visual challenges</p> -->
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-lg-4 col-md-12 portfolio-item">
+            <a href="kumiko.html" class="portfolio-link" data-toggle="modal">
+              <div class="portfolio-wrap">
+                <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="Handmade kumiko lamp cover">
+                <div class="portfolio-title">
+                  <h4>Handmade Kumiko lamp</h4>
+                  <!-- <p>DIY Japanese style-like lamp</p> -->
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Portfolio Section -->
+
+  </main><!-- End #main -->
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a></p>
+        <p>2023</p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
