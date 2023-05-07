@@ -268,12 +268,16 @@ align-items: center;
 .portfolio-details img{
   width: 100%;
   border-radius: 8px;
-  margin: 30px 0 50px 0;
+  margin: 10px 0 10px 0;
 }
 
 .portfolio-details .row{
   padding-right: 0px;
   padding-left: 0px;
+}
+
+.portfolio-details .sub-section{
+  padding-bottom: 50px;
 }
 
 .content{
@@ -291,7 +295,7 @@ align-items: center;
 
 .about p{
   font-size: 18px;
-  color: #012970;
+  color: #687076;
   font-weight: 400;
   margin-bottom: 24px;
 }
@@ -380,6 +384,46 @@ align-items: center;
 .portfolio-description h3{
   line-height: 1.4;
   font-weight: 400;
+}
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+  padding: 0px;
+}
+
+.counts .count-box {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  width: 100%;
+  background: #fff;
+  /* box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); */
+  box-shadow: none;
+}
+
+.counts .count-box i {
+  font-size: 42px;
+  line-height: 0;
+  margin-right: 20px;
+  color: #0b198f;
+}
+
+.counts .count-box span {
+  font-size: 36px;
+  display: block;
+  font-weight: 800;
+  color: #0b198f;
+  text-align: center;
+}
+
+.counts .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
