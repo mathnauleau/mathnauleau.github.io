@@ -1,9 +1,5 @@
 
 <!DOCTYPE html>
-
-<!-- Code Adapted and integrated from  -->
-<!-- https://github.com/matteobrusa/Password-protection-for-static-pages/blob/master/index.html -->
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title></title>
@@ -15,13 +11,12 @@
 <style>
 
 body {
-
 	background-attachment: fixed;
 	color: #333;
 }
 
 .box {
-	border-radius: 3px;
+	border-radius: 8px;
 	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px;
 }
 
@@ -75,24 +70,29 @@ div.vertical {
 			<div class="vertical">
 				<div class="box">
 					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
-					<button id="loginbutton" type="button">Enter</button>
+					<button id="loginbutton" type="button">Submit</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
+
 	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
-	
+
+
+	 <script type="text/javascript" src="https://rawcdn.githack.com/chrisveness/crypto/7067ee62f18c76dd4a9d372a00e647205460b62b/sha1.js"></script>
+
 	<script type="text/javascript">
 	"use strict";
+
 
 	function loadPage(pwd) {
 
 		var hash= pwd;
 		hash= Sha1.hash(pwd);
-		var url= hash + "/protected.html";
+		var url= hash + "/index.html";
 
 		$.ajax({
 			url : url,
