@@ -1,15 +1,80 @@
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title></title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta name="description" content="UX Design Portfolio Mathieu Nauleau">
+	<meta name="keywords" content="UX, Design, Designer, Portfolio">
+	<meta name="author" content="Mathieu Nauleau"> 
+  
+	<title>Oh, hello.</title>
+  
+	<!-- Favicon -->
+	<link href="assets/img/favicon.ico" rel="icon">
+  
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+	<!-- Vendor CSS Files -->
+	<link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  
+	<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+	<link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+	<link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+	<!-- Template Main CSS Files -->
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="../custom.css" rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Code Adapted and integrated from  -->
  	<!-- https://github.com/matteobrusa/Password-protection-for-static-pages/blob/master/index.html -->
+  
+	<!-- =======================================================
+	* Hello, I'm currently using a template for my website. Here are some info:
+	* Template Name: FlexStart - v1.12.0
+	* Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+	======================================================== -->
+  </head>
+  
+  
+				
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  
+	  <a href="index.html" class="logo d-flex align-items-center">
+		<!-- <img src="assets/img/logo.png" alt="logo"/> -->
+		<span>Mathieu Nauleau</span>
+	  </a>
+  
+	  <nav id="navbar" class="navbar">
+		<ul>
+		  <li><a class="nav-link scrollto" href="../index.html">Design</a></li>
+		  <li><a class="nav-link scrollto" href="../index.html#craft">Craft</a></li>
+		  <li><a class="nav-link scrollto" href="../index.html">About</a></li>
+		  <li><a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
+		  <li><a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i class="bi bi-dribbble"></i></a></li>
+		  <li><a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i class="bi bi-instagram"></i></a></li>
+		</ul>
+		<i class="bi bi-list mobile-nav-toggle"></i>
+	  </nav><!-- .navbar -->
+  
+	</div>
+  </header><!-- End Header -->
+  
 
-</head>
+
+
+
+
 
 <style>
 
@@ -20,7 +85,7 @@ body {
 
 .box {
 	border-radius: 8px;
-	background: rgba(101, 101, 101, 0.7); margin: auto; padding: 12px;
+	background: rgba(240, 240, 240, 0); margin: auto; padding: 12px;
 }
 
 .lightbox {
@@ -30,7 +95,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(10, 10, 10, 0.8);
+	background: rgba(239, 239, 239, 0.8);
 	text-align: center;
 	margin: auto;
 
@@ -50,17 +115,17 @@ div.vertical {
 }
 
 ::-webkit-input-placeholder {
-   color: #955;
+	color: rgb(0, 100, 223);
    text-align: center;
 }
 
 ::-moz-placeholder {
-   color: #955;
+	color: rgb(0, 100, 223);
    text-align: center;
 }
 
 :-ms-input-placeholder {
-   color: #955;
+   color: rgb(0, 100, 223);
    text-align: center;
 }
 
@@ -72,8 +137,8 @@ div.vertical {
 		<div class="horizontal">
 			<div class="vertical">
 				<div class="box">
-					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="password" /> <br />
-					<button id="loginbutton" type="button">Submit</button>
+					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="Enter password" /> <br />
+					<button id="loginbutton"  class="btn-primary" type="button">Submit</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>
 				</div>
 			</div>
