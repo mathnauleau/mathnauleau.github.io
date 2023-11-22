@@ -517,8 +517,9 @@ align-items: center;
   margin-bottom: 16px;
 }
 
-#inputt{
-  margin-top: 16px;
+#password{
+  margin-top: 12px;
+  margin-bottom: 12px;
   appearance: none;
   border-block-end-color: rgb(0, 0, 0);
   border-block-end-style: none;
@@ -545,23 +546,23 @@ align-items: center;
   border-top-width: 0px;
   box-shadow: rgba(6, 6, 23, 0.045) 10px 10px 30px 0px;
   box-sizing: border-box;
-  font-size: 22px;
+  font-size: 18px;
   letter-spacing: 3.99996px;
-  line-height: 59.9999px; 
+  line-height: 40px; 
   overflow-wrap: break-word;
-  padding-bottom: 5.00004px;
-  padding-left: 5.00004px;
-  padding-right: 5.00004px;
-  padding-top: 5.00004px;
+  padding-bottom: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
   text-align: left;
-  text-indent: 14.9999px;
+  text-indent: 10px;
   text-size-adjust: 100%;
   transition-duration: 0.2s;
   transition-timing-function: linear;
-  -webkit-font-smoothing: antialiased; width: 500px;
+  -webkit-font-smoothing: antialiased; width: 400px;
 }
 
-#inputt::placeholder{
+#password::placeholder{
   font-family: 'Montserrat', sans-serif;
   color: lightslategray;
 }
