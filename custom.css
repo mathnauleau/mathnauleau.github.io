@@ -565,3 +565,19 @@ align-items: center;
   font-family: 'Montserrat', sans-serif;
   color: lightslategray;
 }
+
+
+/* CALLOUT */
+
+.callout {
+  padding: 20px;
+  margin: 0 12px 50px 12px;
+  border: 1px solid #eee;
+  border-left-width: 8px;
+  border-radius: 8px;
+  border-left-color: #f0ad4e;
+}
+
+.callout p{
+  margin: 0;
+}
