@@ -225,7 +225,7 @@ section{
   background: linear-gradient(337deg, rgba(144,102,232,1) 0%, rgba(104,193,190,1) 100%);
 } */
 
-.portfolio-item h4, p{
+.portfolio-item h4{
   font-size: 18px;
   color: var(--color-gray-7);
   margin-bottom: 16px;
@@ -280,6 +280,7 @@ align-items: center;
 }
 
 .portfolio-details h2{
+  font-family: "Inter", sans-serif;
   font-size: 32px;
   font-weight: 500;
 }
@@ -330,6 +331,8 @@ align-items: center;
   font-weight: 400;
   margin-bottom: 24px;
 }
+
+
 
 .about img{
   border-radius: 24px;
@@ -425,6 +428,7 @@ padding: 20px;
 .portfolio-description h3{
   line-height: 1.4;
   font-weight: 400;
+  color: var(--color-gray-7);
 }
 
 /*--------------------------------------------------------------
