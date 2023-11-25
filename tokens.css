@@ -63,6 +63,9 @@
     --color-gray-9: #3C3C3C;
     --color-gray-10: #222222;
 
+    --color-critical: #ffa500;
+    --color-danger: #ff4500;
+
 /* Border
      ================================================================= */
     /* Border color */
