@@ -3,10 +3,24 @@ body {
   color: #012970;
 }
 
-h2, h3, h4, h5, h6 {
+/* TYPOGRAPHY
+     ================================================================= */
+h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
   color: #012970;
 }
+
+    /* Section heading-5 'CRAFT' */
+    h5{
+      font-family: 'Montserrat', sans-serif;
+      color: var(--color-secondary);
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+    }
 
 h2{
   font-weight: 600;
