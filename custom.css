@@ -226,9 +226,11 @@ section{
 } */
 
 .portfolio-item h4, p{
-  color: var(--color-primary);
-  margin-bottom: 0.5em;
+  font-size: 18px;
+  color: var(--color-gray-7);
+  margin-bottom: 16px;
 }
+
 
 /*--------------------------------------------------------------
 # Portfolio title
@@ -359,15 +361,27 @@ padding: 20px;
   border-radius: 24px;
   background-color: coral;
 }
-*/
 
 .skillset{
   background: linear-gradient( from 180deg at 50% 50%, #0aefff 290.63deg, #0f83ff 391.87deg );
 }
+*/
 
 .skillset h3{
   font-size: 24px;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
+}
+
+.skillset ul li {
+  font-size: 18px;
+  color: var(--color-gray-7);
+}
+
+.skillset h6 {
+  font-size: 18px;
+  color: var(--color-gray-6);
+  font-style: italic;
 }
 
 
