@@ -3,14 +3,14 @@
 
 body {
   font-family: "Noto Sans", sans-serif;
-  color: #012970;
+  color: var(--color-primary);
 }
 
 /* TYPOGRAPHY
      ================================================================= */
 h2, h3, h4 {
   font-family: 'Montserrat', sans-serif;
-  color: #012970;
+  color: var(--color-primary);
 }
 
     /* Section heading-5 'CRAFT' */
@@ -33,6 +33,7 @@ h2{
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 500;
+  color: var(--color-primary);
 }
 
 .hero {
@@ -56,7 +57,7 @@ h2{
   font-weight: 300;
   font-size: 24px;
   font-family: "Nunito", sans-serif;
-  color: #687076;
+  color: var(--color-gray-7);
 }
 
 @media (max-width: 768px) {
@@ -90,20 +91,27 @@ h2{
   }
 }
 
+  /* EXPERIMENT WITH GRADIENT
 .hero .hero-img{
-  /* background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
-  filter: blur(160px); */
+background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
+  filter: blur(160px);
 }
+*/
 
 .logo img{
   height: 20px;
 }
 
-.navbar a,
-.navbar a:focus {
+.navbar a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  color: #013289;
+  color: var(--color-primary);
+}
+
+.navbar a:focus{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--color-secondary);
 }
 
 .not-allowed {
@@ -218,7 +226,7 @@ section{
 } */
 
 .portfolio-item h4, p{
-  color: #012970;
+  color: var(--color-primary);
   margin-bottom: 0.5em;
 }
 
@@ -311,11 +319,12 @@ align-items: center;
 .about h2{
   font-size: 28px;
   line-height: 1.4;
+  color: var(--color-primary);
 }
 
 .about p{
   font-size: 18px;
-  color: #687076;
+  color: var(--color-gray-7);
   font-weight: 400;
   margin-bottom: 24px;
 }
@@ -328,27 +337,29 @@ align-items: center;
   padding: 15px 40px;
   border-radius: 8px;
   color: #fff;
-  background: #2524E2;
+  background: var(--color-secondary);
 }
 .experience{
   margin-top: 80px;
   margin-bottom: 80px;
 }
 
-/* .experience h2, .portfolio-description h2{
+/* DOESN'T SEEM TO BE USED
+.experience h2, .portfolio-description h2{
   font-size: 28px;
   font-weight: 700;
   color: #041c45;
-} */
+}
 
 .experience .row{
-/* padding: 20px; */
+padding: 20px;
 }
 
 .experience .info-box {
   border-radius: 24px;
-  background-color: #012970;
+  background-color: coral;
 }
+*/
 
 .skillset{
   background: linear-gradient( from 180deg at 50% 50%, #0aefff 290.63deg, #0f83ff 391.87deg );
@@ -430,7 +441,7 @@ align-items: center;
   font-size: 36px;
   display: block;
   font-weight: 800;
-  color: #0b198f;
+  color:crimson;
   text-align: center;
 }
 
@@ -450,11 +461,11 @@ align-items: center;
   border-radius: 100px;
   right: 20px;
   bottom: 20px;
-  background-color: #012970;
+  background-color: var(--color-primary);
 }
 
 .back-to-top:hover{
-  background-color: #8D3CF5;
+  background-color: var(--color-secondary);
 }
 
 .ifooter{
@@ -479,7 +490,7 @@ align-items: center;
 }
 
 .ifooter p{
-  color: #012970;
+  color: var(--color-primary);
 }
 
 
@@ -491,7 +502,7 @@ align-items: center;
 }
 
 .footer p{
-  color: #012970;
+  color: var(--color-primary);
   margin: 0px;
 }
 
