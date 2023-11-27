@@ -347,7 +347,10 @@ align-items: center;
 }
 .experience{
   margin-top: 80px;
-  margin-bottom: 80px;
+}
+
+.contact{
+  margin-top: 80px;
 }
 
 /* DOESN'T SEEM TO BE USED
@@ -395,6 +398,11 @@ padding: 20px;
 .info-box {
   text-align: center;
   height: 100%;
+  overflow: hidden;
+}
+
+.info-box h3, .info-box p {
+  text-align: left;
 }
 
 
