@@ -245,11 +245,15 @@ right: 0;
 bottom: 0;
 text-align: center;
 z-index: 3;
-transition: all ease-in-out 0.3s;
+transition: all ease-in-out 0.5s;
 display: flex;
 flex-direction: column;
 /* justify-content: center; */
 align-items: center;
+}
+
+.portfolio .portfolio-wrap img {
+  transition: 0.5s;
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-title {
