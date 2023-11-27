@@ -353,6 +353,12 @@ align-items: center;
   margin-top: 80px;
 }
 
+.contact .info-box h3 {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+}
+
 /* DOESN'T SEEM TO BE USED
 .experience h2, .portfolio-description h2{
   font-size: 28px;
@@ -399,10 +405,17 @@ padding: 20px;
   text-align: center;
   height: 100%;
   overflow: hidden;
+  border: 1px;
+  border-style: solid;
+  border-color: var(--color-gray-2);
 }
 
 .info-box h3, .info-box p {
   text-align: left;
+}
+
+.info-box img {
+  width: 120px;
 }
 
 
@@ -658,7 +671,9 @@ padding: 20px;
   margin-bottom: -58px;
   justify-content: center;
   align-items: center;
-  background-image: url(https://picsum.photos/640/360);
+  /* background-image: url(https://picsum.photos/640/360); */
+  background-image: url(assets/img/tokens.png);
+  background-size: contain;
 }
 
 .anim-video {
