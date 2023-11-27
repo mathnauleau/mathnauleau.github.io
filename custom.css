@@ -144,7 +144,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 .section-header p, .portfolio-description h1 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 38px;
+  font-size: 40px;
   color: var(--color-primary);
   line-height: 1.2;
 }
@@ -286,7 +286,7 @@ align-items: center;
 .portfolio-details h2{
   font-family: "Inter", sans-serif;
   font-size: 32px;
-  font-weight: 500; 
+  font-weight: 600; 
 }
 
 .portfolio-details p{
@@ -431,7 +431,9 @@ padding: 20px;
 
 .portfolio-description h3{
   line-height: 1.4;
-  font-weight: 400;
+  font-size: 26px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
   color: var(--color-gray-7);
 }
 
