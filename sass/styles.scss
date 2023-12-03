@@ -1,0 +1,19 @@
+// Import Bootstrap
+// @import 'bootstrap.min.css'; // Path may vary
+@import 'variables.scss';
+
+// Custom styles for light mode using Bootstrap variables
+body {
+    background-color: $body-bg;
+    color: $text-color;
+    /* Add other styles */
+}
+
+// Dark mode class and styles
+.dark-mode {
+    body {
+        background-color: $dark-body-bg;
+        color: $dark-text-color;
+        /* Additional dark mode styles */
+    }
+}
