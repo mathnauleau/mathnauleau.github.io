@@ -359,6 +359,11 @@ align-items: center;
   font-family: "Inter", sans-serif;
 }
 
+.contact .info-box p {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
 /* DOESN'T SEEM TO BE USED
 .experience h2, .portfolio-description h2{
   font-size: 28px;
@@ -412,10 +417,11 @@ padding: 20px;
 
 .info-box h3, .info-box p {
   text-align: left;
+  margin-bottom: 8px;
 }
 
 .info-box img {
-  width: 120px;
+  height: 80px;
 }
 
 
@@ -662,7 +668,7 @@ padding: 20px;
 
 
 /* VIDEO */
-.anim-video-wrap {
+.floating-image2 {
   margin-top: 30px;
   height: 100%;
   position: relative;
@@ -676,7 +682,20 @@ padding: 20px;
   background-size: contain;
 }
 
-.anim-video {
+.floating-image1 {
+  margin-top: 30px;
+  height: 50%;
+  position: relative;
+  display: flex;
+  margin-bottom: -58px;
+  justify-content: center;
+  align-items: right;
+  background-image: url(assets/img/strategy.png);
+  background-size: contain;
+}
+
+
+/* .anim-video {
   position: absolute;
   left: 0;
   top: 0;
@@ -701,4 +720,4 @@ padding: 20px;
   left: -100%;
   object-fit: cover;
   z-index: -100;
-}
+} */
