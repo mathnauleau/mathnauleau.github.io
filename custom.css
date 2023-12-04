@@ -357,12 +357,15 @@ align-items: center;
   color: var(--color-primary);
   font-size: 22px;
   font-family: "Inter", sans-serif;
+  margin: 0 0 8px 0;
 }
 
 .contact .info-box p {
   margin-bottom: 8px;
   font-size: 16px;
 }
+
+
 
 /* DOESN'T SEEM TO BE USED
 .experience h2, .portfolio-description h2{
@@ -422,6 +425,7 @@ padding: 20px;
 
 .info-box img {
   height: 90px;
+  margin: 0 0 16px 0;
 }
 
 
@@ -682,7 +686,7 @@ padding: 20px;
   background-size: contain;
 }
 
-.floating-image1 {
+/* .floating-image1 {
   margin-top: 30px;
   height: 50%;
   position: relative;
@@ -692,7 +696,15 @@ padding: 20px;
   align-items: right;
   background-image: url(assets/img/strategy.png);
   background-size: contain;
+} */
+
+.floating-image1 img {
+  width: 200px;
+  height: auto;
 }
+
+
+
 
 
 /* .anim-video {
