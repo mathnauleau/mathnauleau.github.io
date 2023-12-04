@@ -1,3 +1,5 @@
+![Image text](assets/img/portfolio-hero.png)
+
 Thanks to Bootstrapmade.com for this template.
 
 Template Name: FlexStart
