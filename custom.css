@@ -129,7 +129,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 .section-header{
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 .header.header-scrolled{
@@ -444,6 +444,12 @@ padding: 20px;
 .portfolio-info .row {
   margin: 9px 0 9px 0;
 }
+
+.portfolio-info strong{
+  color: var(--color-primary);
+  font-family: "Inter", sans-serif;
+}
+
 
 @media (max-width: 768px) {
   .portfolio-info {
