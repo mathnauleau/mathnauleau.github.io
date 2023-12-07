@@ -704,12 +704,16 @@ padding: 20px;
   background-size: contain;
 } */
 
-.floating-image1 img {
-  width: 500px;
-  height: auto;
+
+#intersection {
+  padding-bottom: 0;
 }
 
-
+.floating-image1 img {
+  position: relative;
+  width: 450px;
+  height: auto;
+}
 
 
 /* .anim-video {
