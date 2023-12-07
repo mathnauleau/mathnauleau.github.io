@@ -128,8 +128,8 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 }
 
 .section-header{
-  padding-top: 10px;
-  padding-bottom: 20px;
+  padding-top: 8px;
+  padding-bottom: 40px;
 }
 
 .header.header-scrolled{
@@ -147,10 +147,6 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   font-size: 40px;
   color: var(--color-primary);
   line-height: 1.2;
-}
-
-.row{
-  margin: 0px;
 }
 
 section{ 
@@ -177,6 +173,11 @@ section{
   background: rgba(5, 1, 37, 0.1);
   opacity: 0;
 }
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Background project covers 
@@ -245,15 +246,11 @@ right: 0;
 bottom: 0;
 text-align: center;
 z-index: 3;
-transition: all ease-in-out 0.5s;
+transition: all ease-in-out 0.3s;
 display: flex;
 flex-direction: column;
 /* justify-content: center; */
 align-items: center;
-}
-
-.portfolio .portfolio-wrap img {
-  transition: 0.5s;
 }
 
 .portfolio .portfolio-wrap:hover .portfolio-title {
@@ -286,7 +283,7 @@ align-items: center;
 .portfolio-details h2{
   font-family: "Inter", sans-serif;
   font-size: 32px;
-  font-weight: 600; 
+  font-weight: 500; 
 }
 
 .portfolio-details p{
@@ -350,8 +347,24 @@ align-items: center;
 }
 .experience{
   margin-top: 80px;
-  margin-bottom: 80px;
 }
+
+.contact{
+  margin-top: 80px;
+}
+
+.contact .info-box h3 {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+  margin: 0 0 8px 0;
+}
+
+.contact .info-box p {
+  font-size: 16px;
+}
+
+
 
 /* DOESN'T SEEM TO BE USED
 .experience h2, .portfolio-description h2{
@@ -391,6 +404,29 @@ padding: 20px;
   font-style: italic;
 }
 
+/*--------------------------------------------------------------
+# Info Box
+--------------------------------------------------------------*/
+
+.info-box {
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+  border: 1px;
+  border-style: solid;
+  border-color: var(--color-gray-2);
+}
+
+.info-box h3, .info-box p {
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.info-box img {
+  height: 90px;
+  margin: 0 0 16px 0;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -407,6 +443,12 @@ padding: 20px;
 .portfolio-info .row {
   margin: 9px 0 9px 0;
 }
+
+.portfolio-info strong{
+  color: var(--color-primary);
+  font-family: "Inter", sans-serif;
+}
+
 
 @media (max-width: 768px) {
   .portfolio-info {
@@ -431,9 +473,7 @@ padding: 20px;
 
 .portfolio-description h3{
   line-height: 1.4;
-  font-size: 26px;
-  font-family: "Nunito", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-gray-7);
 }
 
@@ -633,3 +673,72 @@ padding: 20px;
 .callout p{
   margin: 0;
 }
+
+
+
+/* VIDEO */
+.floating-image2 {
+  margin-top: 30px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  /*margin-right: -64px;*/
+  margin-bottom: -58px;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url(https://picsum.photos/640/360); */
+  background-image: url(assets/img/tokens.png);
+  background-size: contain;
+}
+
+/* .floating-image1 {
+  margin-top: 30px;
+  height: 50%;
+  position: relative;
+  display: flex;
+  margin-bottom: -58px;
+  justify-content: center;
+  align-items: right;
+  background-image: url(assets/img/strategy.png);
+  background-size: contain;
+} */
+
+
+#intersection {
+  padding-bottom: 0;
+}
+
+.floating-image1 img {
+  position: relative;
+  width: 450px;
+  height: auto;
+  top: 20px;
+}
+
+
+/* .anim-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.w-background-video>video {
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  right: -100%;
+  bottom: -100%;
+  top: -100%;
+  left: -100%;
+  object-fit: cover;
+  z-index: -100;
+} */
