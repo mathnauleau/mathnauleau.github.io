@@ -128,7 +128,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 }
 
 .section-header{
-  padding-top: 10px;
+  padding-top: 8px;
   padding-bottom: 40px;
 }
 
@@ -144,7 +144,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 .section-header p, .portfolio-description h1 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 38px;
+  font-size: 40px;
   color: var(--color-primary);
   line-height: 1.2;
 }
@@ -361,7 +361,6 @@ align-items: center;
 }
 
 .contact .info-box p {
-  margin-bottom: 8px;
   font-size: 16px;
 }
 
@@ -713,6 +712,7 @@ padding: 20px;
   position: relative;
   width: 450px;
   height: auto;
+  top: 20px;
 }
 
 
