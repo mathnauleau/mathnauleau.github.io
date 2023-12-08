@@ -434,14 +434,17 @@ padding: 20px;
 --------------------------------------------------------------*/
 
 .portfolio-info {
-  padding: 24px 24px 18px 24px;
-  border-radius: 12px;
+  padding: 0;
   margin-bottom: 60px;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  /* box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); */
+}
+
+.portfolio-info p {
+  margin: 0;
 }
 
 .portfolio-info .row {
-  margin: 9px 0 9px 0;
+  margin: 8px 0 8px 0;
 }
 
 .portfolio-info strong{
