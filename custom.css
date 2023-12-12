@@ -1,8 +1,7 @@
-.portfolio-description h1 
 
 
 body {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: var(--color-primary);
 }
 
@@ -13,17 +12,17 @@ h2, h3, h4 {
   color: var(--color-primary);
 }
 
-    /* Section heading-5 'CRAFT' */
-    h5{
-      font-family: 'Montserrat', sans-serif;
-      color: var(--color-secondary);
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 1px;
-      font-weight: 700;
-      margin-bottom: 0.5em;
-      text-transform: uppercase;
-    }
+/* Section heading-5 'CRAFT' */
+h5{
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  text-transform: uppercase;
+}
 
 h2{
   font-weight: 600;
@@ -144,7 +143,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 .section-header p, .portfolio-description h1 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 42px;
   color: var(--color-primary);
   line-height: 1.2;
 }
@@ -176,9 +175,6 @@ section{
 
 
 
-
-
-
 /*--------------------------------------------------------------
 # Background project covers 
 --------------------------------------------------------------*/
@@ -207,7 +203,6 @@ section{
   background: linear-gradient(45deg, #BFCEE8 0%, #788CA9 100%);
 }
 
-
 .portfolio .portfolio-wrap:hover img {
   transform: scale(1.05);
 }
@@ -221,11 +216,6 @@ section{
   margin-bottom: 80px;
 }
 
-/* #project-1{
-  background: rgb(144,102,232);
-  background: linear-gradient(337deg, rgba(144,102,232,1) 0%, rgba(104,193,190,1) 100%);
-} */
-
 .portfolio-item h4{
   font-size: 18px;
   color: var(--color-gray-7);
@@ -236,6 +226,7 @@ section{
 /*--------------------------------------------------------------
 # Portfolio title
 --------------------------------------------------------------*/
+
 .portfolio-title{
 padding: 8px 0 0 0;
 opacity: 0;
@@ -257,7 +248,6 @@ align-items: center;
   opacity: 1;
 }
 
-
 .portfolio-title h4{
   color: white;
   font-size: 24px;
@@ -271,6 +261,28 @@ align-items: center;
   margin-bottom: 8px;
 }
 
+/*--------------------------------------------------------------
+# Portfolio details
+--------------------------------------------------------------*/
+.portfolio-header {
+  margin: 0;
+}
+
+.portfolio-header img{
+  width: 100%;
+  border-radius: 16px;
+  margin: 100px 0 0 0;
+}
+
+
+/* .portfolio-description, .portfolio-details {
+  background-color: #abcbee;
+}
+
+.portfolio-info {
+  background-color: burlywood;
+} */
+
 
 /*--------------------------------------------------------------
 # Portfolio details
@@ -280,21 +292,16 @@ align-items: center;
   margin-bottom: 90px;
 }
 
-.portfolio-details h2{
+.portfolio-details h2, .portfolio-description h2 {
   font-family: "Inter", sans-serif;
   font-size: 32px;
-  font-weight: 500; 
+  font-weight: 600; 
 }
 
-.portfolio-details p{
-  font-size: 20px;
+.portfolio-details p, .portfolio-description p{
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
   font-weight: 300;
-}
-
-.portfolio-header img{
-  width: 100%;
-  border-radius: 16px;
-  margin: 100px 0 50px 0;
 }
 
 .portfolio-details img{
@@ -434,22 +441,25 @@ padding: 20px;
 --------------------------------------------------------------*/
 
 .portfolio-info {
-  padding: 0;
-  margin-bottom: 60px;
-  /* box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08); */
-}
-
-.portfolio-info p {
-  margin: 0;
-}
-
-.portfolio-info .row {
-  margin: 8px 0 8px 0;
+  margin-bottom: 40px;
 }
 
 .portfolio-info strong{
   color: var(--color-primary);
   font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.portfolio-info p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Inter", sans-serif;
+}
+
+.portfolio-info .row {
+  margin: 8px 0;
 }
 
 
@@ -464,20 +474,26 @@ padding: 20px;
 
 .portfolio-description{
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 60px;
   padding-top: 0px;
   overflow: visible;
 }
 
+.portfolio-description img {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
 .portfolio-description h1{
   text-align: center;
-  margin-bottom: 60px;
+  margin: 60px 0;
 }
 
 .portfolio-description h3{
   line-height: 1.4;
   font-weight: 400;
-  color: var(--color-gray-7);
+  color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
