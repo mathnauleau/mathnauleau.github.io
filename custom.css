@@ -5,6 +5,10 @@ body {
   color: var(--color-primary);
 }
 
+a {
+  color: var(--color-secondary);
+}
+
 /* TYPOGRAPHY
      ================================================================= */
 h2, h3, h4 {
@@ -699,8 +703,8 @@ padding: 20px;
 
 .callout {
   padding: 20px;
-  margin: 0 12px 50px 12px;
-  border: 1px solid #eee;
+  border: 1px solid #f0ad4e;
+  margin-bottom: 40px;
   border-left-width: 8px;
   border-radius: 8px;
   border-left-color: #f0ad4e;
