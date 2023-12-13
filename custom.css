@@ -323,6 +323,18 @@ align-items: center;
   margin-bottom: 40px;
 }
 
+.sub-section ul {
+  list-style-image: url('assets/icon/arrow-right.svg');
+}
+
+.sub-section ul li {
+  margin-bottom: 12px;
+  padding-left: 8px;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+}
+
 .content{
   border-radius: 16px;
 }
