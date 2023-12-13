@@ -315,8 +315,12 @@ align-items: center;
   padding-left: 0px;
 }
 
-.portfolio-details .sub-section{
-  padding-bottom: 50px;
+.portfolio-details {
+  padding-bottom: 40px;
+}
+
+.sub-section {
+  margin-bottom: 40px;
 }
 
 .content{
