@@ -296,6 +296,7 @@ align-items: center;
   font-family: "Inter", sans-serif;
   font-size: 32px;
   font-weight: 600; 
+  margin-bottom: 0.3em;
 }
 
 .portfolio-details p, .portfolio-description p{
