@@ -11,6 +11,11 @@ a {
 
 /* TYPOGRAPHY
      ================================================================= */
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+    
 h4 {
   font-family: 'Open Sans', sans-serif;
 }
@@ -29,11 +34,6 @@ h5{
   font-weight: 700;
   margin-bottom: 0.5em;
   text-transform: uppercase;
-}
-
-h2{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
 }
 
 .header .logo span{
@@ -168,7 +168,7 @@ section{
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# Portfolio hero
 --------------------------------------------------------------*/
 .portfolio .portfolio-wrap{
   border-radius: 16px;
@@ -276,7 +276,7 @@ align-items: center;
 }
 
 /*--------------------------------------------------------------
-# Portfolio details
+# Portfolio hero
 --------------------------------------------------------------*/
 .portfolio-header {
   margin: 0;
@@ -289,38 +289,38 @@ align-items: center;
 }
 
 /*--------------------------------------------------------------
-# Portfolio details
+# Portfolio hero
 --------------------------------------------------------------*/
 
-.portfolio-details{
+.portfolio-hero{
   margin-bottom: 90px;
 }
 
-.portfolio-details h2, .portfolio-description h2 {
+.portfolio-hero h2, .portfolio-description h2 {
   font-family: "Inter", sans-serif;
   font-size: 32px;
   font-weight: 600; 
   margin-bottom: 0.3em;
 }
 
-.portfolio-details p, .portfolio-description p{
+.portfolio-hero p, .portfolio-description p{
   font-size: 18px;
   font-family: "Inter", sans-serif;
   font-weight: 300;
 }
 
-.portfolio-details img{
+.portfolio-hero img{
   width: 100%;
   border-radius: 8px;
   margin: 10px 0 10px 0;
 }
 
-.portfolio-details .row{
+.portfolio-hero .row{
   padding-right: 0px;
   padding-left: 0px;
 }
 
-.portfolio-details {
+.portfolio-hero {
   padding-bottom: 40px;
 }
 
@@ -489,8 +489,9 @@ align-items: center;
 }
 
 .portfolio-description h3{
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--color-primary);
 }
 
