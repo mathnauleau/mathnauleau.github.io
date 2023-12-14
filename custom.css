@@ -11,9 +11,12 @@ a {
 
 /* TYPOGRAPHY
      ================================================================= */
-h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--color-primary);
+h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
 }
 
 /* Section heading-5 'CRAFT' */
@@ -29,6 +32,7 @@ h5{
 }
 
 h2{
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
 }
 
@@ -38,6 +42,10 @@ h2{
   font-weight: 500;
   color: var(--color-primary);
 }
+
+/*--------------------------------------------------------------
+# Hero Home page
+--------------------------------------------------------------*/
 
 .hero {
   width: 100%;
@@ -62,6 +70,33 @@ h2{
   font-family: "Open Sans", sans-serif;
   color: var(--color-gray-7);
 }
+
+.logo img{
+  height: 20px;
+}
+
+.navbar a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.navbar a:focus{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+/* EXPERIMENT WITH GRADIENT
+.hero .hero-img{
+background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
+  filter: blur(160px);
+}*/
+
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
 
 @media (max-width: 768px) {
   .hero {
@@ -94,33 +129,9 @@ h2{
   }
 }
 
-  /* EXPERIMENT WITH GRADIENT
-.hero .hero-img{
-background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
-  filter: blur(160px);
-}
-*/
-
-.logo img{
-  height: 20px;
-}
-
-.navbar a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  color: var(--color-primary);
-}
-
-.navbar a:focus{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  color: var(--color-secondary);
-}
-
 .not-allowed {
   cursor: not-allowed;
 }
-
 
 /*--------------------------------------------------------------
 # Layout
@@ -142,7 +153,6 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   border-bottom: 1px solid rgba(36, 49, 68, 0.1);
   box-shadow: none;
 }
-
 
 .section-header p, .portfolio-description h1 {
   font-family: "Inter", sans-serif;
