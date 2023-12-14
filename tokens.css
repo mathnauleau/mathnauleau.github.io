@@ -6,7 +6,7 @@
 /* Typography
     ================================================================= */
     /* Fonts */
-    --font-family-primary:      sans-serif;
+    --font-family-primary: "Open Sans", sans-serif;
     --font-family-secondary:    serif;
     --font-base-unit: var(--base-unit);
     /* Font sizes - 4x4 grid */

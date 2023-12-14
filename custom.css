@@ -11,9 +11,17 @@ a {
 
 /* TYPOGRAPHY
      ================================================================= */
-h2, h3, h4 {
+h2 {
   font-family: 'Montserrat', sans-serif;
-  color: var(--color-primary);
+  font-weight: 600;
+}
+    
+h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
 }
 
 /* Section heading-5 'CRAFT' */
@@ -28,16 +36,16 @@ h5{
   text-transform: uppercase;
 }
 
-h2{
-  font-weight: 600;
-}
-
 .header .logo span{
   font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 500;
   color: var(--color-primary);
 }
+
+/*--------------------------------------------------------------
+# Hero Home page
+--------------------------------------------------------------*/
 
 .hero {
   width: 100%;
@@ -59,9 +67,36 @@ h2{
   line-height: 1.3;
   font-weight: 300;
   font-size: 24px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: var(--color-gray-7);
 }
+
+.logo img{
+  height: 20px;
+}
+
+.navbar a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.navbar a:focus{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+/* EXPERIMENT WITH GRADIENT
+.hero .hero-img{
+background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
+  filter: blur(160px);
+}*/
+
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
 
 @media (max-width: 768px) {
   .hero {
@@ -94,33 +129,9 @@ h2{
   }
 }
 
-  /* EXPERIMENT WITH GRADIENT
-.hero .hero-img{
-background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
-  filter: blur(160px);
-}
-*/
-
-.logo img{
-  height: 20px;
-}
-
-.navbar a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  color: var(--color-primary);
-}
-
-.navbar a:focus{
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  color: var(--color-secondary);
-}
-
 .not-allowed {
   cursor: not-allowed;
 }
-
 
 /*--------------------------------------------------------------
 # Layout
@@ -143,7 +154,6 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   box-shadow: none;
 }
 
-
 .section-header p, .portfolio-description h1 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
@@ -158,7 +168,7 @@ section{
 }
 
 /*--------------------------------------------------------------
-# Portfolio Details
+# Portfolio hero
 --------------------------------------------------------------*/
 .portfolio .portfolio-wrap{
   border-radius: 16px;
@@ -266,7 +276,7 @@ align-items: center;
 }
 
 /*--------------------------------------------------------------
-# Portfolio details
+# Portfolio hero
 --------------------------------------------------------------*/
 .portfolio-header {
   margin: 0;
@@ -278,49 +288,39 @@ align-items: center;
   margin: 100px 0 0 0;
 }
 
-
-/* .portfolio-description, .portfolio-details {
-  background-color: #abcbee;
-}
-
-.portfolio-info {
-  background-color: burlywood;
-} */
-
-
 /*--------------------------------------------------------------
-# Portfolio details
+# Portfolio hero
 --------------------------------------------------------------*/
 
-.portfolio-details{
+.portfolio-hero{
   margin-bottom: 90px;
 }
 
-.portfolio-details h2, .portfolio-description h2 {
+.portfolio-hero h2, .portfolio-description h2 {
   font-family: "Inter", sans-serif;
   font-size: 32px;
   font-weight: 600; 
   margin-bottom: 0.3em;
 }
 
-.portfolio-details p, .portfolio-description p{
+.portfolio-hero p, .portfolio-description p{
   font-size: 18px;
   font-family: "Inter", sans-serif;
   font-weight: 300;
 }
 
-.portfolio-details img{
+.portfolio-hero img{
   width: 100%;
   border-radius: 8px;
   margin: 10px 0 10px 0;
 }
 
-.portfolio-details .row{
+.portfolio-hero .row{
   padding-right: 0px;
   padding-left: 0px;
 }
 
-.portfolio-details {
+.portfolio-hero {
   padding-bottom: 40px;
 }
 
@@ -370,7 +370,7 @@ align-items: center;
 .about .btn-read-more {
   padding: 15px 40px;
   border-radius: 8px;
-  color: #fff;
+  color: white;
   background: var(--color-secondary);
 }
 .experience{
@@ -391,29 +391,6 @@ align-items: center;
 .contact .info-box p {
   font-size: 16px;
 }
-
-
-
-/* DOESN'T SEEM TO BE USED
-.experience h2, .portfolio-description h2{
-  font-size: 28px;
-  font-weight: 700;
-  color: #041c45;
-}
-
-.experience .row{
-padding: 20px;
-}
-
-.experience .info-box {
-  border-radius: 24px;
-  background-color: coral;
-}
-
-.skillset{
-  background: linear-gradient( from 180deg at 50% 50%, #0aefff 290.63deg, #0f83ff 391.87deg );
-}
-*/
 
 .skillset h3{
   font-size: 24px;
@@ -512,8 +489,9 @@ padding: 20px;
 }
 
 .portfolio-description h3{
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.4;
-  font-weight: 400;
+  font-weight: 300;
   color: var(--color-primary);
 }
 
@@ -538,14 +516,14 @@ padding: 20px;
   font-size: 42px;
   line-height: 0;
   margin-right: 20px;
-  color: #0b198f;
+  color: var(--color-primary);
 }
 
 .counts .count-box span {
   font-size: 36px;
   display: block;
   font-weight: 800;
-  color: #0b198f;
+  color: var(--color-primary);
   text-align: center;
 }
 
@@ -579,7 +557,7 @@ padding: 20px;
   background: linear-gradient(75deg, #ecf0f7 0%, #f8fafc 50%, #f4eee0 100%);
   height: auto;
   border-radius: 24px;
-  border-color: #788CA9;
+  border-color: var(--color-gray-6);
   border-width: 1px;
 }
 
@@ -602,7 +580,7 @@ padding: 20px;
   margin-top: 40px;
   padding: 30px;
   height: auto;
-  background-color: #fff;
+  background-color: white;
 }
 
 .footer p{
@@ -703,11 +681,11 @@ padding: 20px;
 
 .callout {
   padding: 20px;
-  border: 1px solid #f0ad4e;
+  border: 1px solid var(--color-critical);
   margin-bottom: 40px;
   border-left-width: 8px;
   border-radius: 8px;
-  border-left-color: #f0ad4e;
+  border-left-color: var(--color-critical);
 }
 
 .callout p{
@@ -722,14 +700,13 @@ padding: 20px;
   height: 100%;
   position: relative;
   display: flex;
-  /*margin-right: -64px;*/
   margin-bottom: -58px;
   justify-content: center;
   align-items: center;
-  /* background-image: url(https://picsum.photos/640/360); */
   background-image: url(assets/img/tokens.png);
   background-size: contain;
 }
+
 
 /* .floating-image1 {
   margin-top: 30px;
@@ -782,3 +759,5 @@ padding: 20px;
   object-fit: cover;
   z-index: -100;
 } */
+
+/* background-image: url(https://picsum.photos/640/360); */
