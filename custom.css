@@ -344,14 +344,14 @@ align-items: center;
   border-radius: 16px;
 }
 
-.portfolio-prevnext {
+.portfolio-project-nav {
   border-radius: 16px;
-  background-color: #0085E5;
+  background-color: #f8fafd;
 
 }
 
-.portfolio-prevnext:hover {
-  background-color: #006adc;
+.portfolio-project-nav:hover {
+  background-color: #cddcf2;
 }
 
 .about{
@@ -425,53 +425,6 @@ align-items: center;
 # Info Box
 --------------------------------------------------------------*/
 
-
-.prevnext{
-  margin-top: 80px;
-}
-
-.prevnext .info-box{
-  padding: 20px;
-  background-color: var(--color-gray-2);
-}
-
-.prevnext .info-box:hover {
-  background-color: var(--color-gray-3);
-}
-
-.prevnext .info-box span {
-  display: inline;
-}
-
-
-.prevnext i {
-  float: right;
-}
-
-.prevnext .info-box h3 {
-  color: var(--color-primary);
-  font-size: 22px;
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
-}
-
-.prevnext .info-box p {
-  color: var(--color-primary);
-  font-size: 22px;
-  font-family: "Inter", sans-serif;
-}
-
-.prevnext .info-box i {
-  color: var(--color-secondary);
-  font-size: 50px;
-  font-family: "Inter", sans-serif;
-}
-
-
-/*--------------------------------------------------------------
-# Info Box
---------------------------------------------------------------*/
-
 .info-box {
   text-align: center;
   height: 100%;
@@ -491,12 +444,71 @@ align-items: center;
   margin: 0 0 16px 0;
 }
 
-.info-box p, .info-box span {
-  font-size: 16px;
-  text-align: center;
+/*--------------------------------------------------------------
+# Project nav
+--------------------------------------------------------------*/
+
+.project-nav{
+  margin-top: 80px;
 }
 
+.project-nav .prev-next{
+  padding: 20px;
+  background-color: #ecf2f6;
+}
 
+.project-nav .prev-next:hover {
+  background-color: #c2e7ff;
+}
+
+.project-nav .prev-next span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-nav i {
+  float: right;
+}
+
+.project-nav .prev-next h3 {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+.project-nav .prev-next p {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+}
+
+.direction {
+  display: inline-flex;
+  font-weight: 400;
+}
+
+.prev-next {
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.prev-next i {
+  size: 24px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.left, .right{
+  text-align: left;
+  color: var(--color-primary);
+  border-radius: 16px;
+}
 
 /*--------------------------------------------------------------
 # Portfolio info
