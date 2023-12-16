@@ -344,6 +344,16 @@ align-items: center;
   border-radius: 16px;
 }
 
+.portfolio-project-nav {
+  border-radius: 16px;
+  background-color: #f8fafd;
+
+}
+
+.portfolio-project-nav:hover {
+  background-color: #cddcf2;
+}
+
 .about{
   margin-top: 100px;
 }
@@ -392,6 +402,8 @@ align-items: center;
   font-size: 16px;
 }
 
+
+
 .skillset h3{
   font-size: 24px;
   font-family: "Inter", sans-serif;
@@ -432,7 +444,71 @@ align-items: center;
   margin: 0 0 16px 0;
 }
 
+/*--------------------------------------------------------------
+# Project nav
+--------------------------------------------------------------*/
 
+.project-nav{
+  margin-top: 80px;
+}
+
+.project-nav .prev-next{
+  padding: 20px;
+  background-color: #ecf2f6;
+}
+
+.project-nav .prev-next:hover {
+  background-color: #c2e7ff;
+}
+
+.project-nav .prev-next span {
+  display: inline-flex;
+  align-items: center;
+}
+
+.project-nav i {
+  float: right;
+}
+
+.project-nav .prev-next h3 {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+}
+
+.project-nav .prev-next p {
+  color: var(--color-primary);
+  font-size: 22px;
+  font-family: "Inter", sans-serif;
+}
+
+.direction {
+  display: inline-flex;
+  font-weight: 400;
+}
+
+.prev-next {
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.prev-next i {
+  size: 24px;
+}
+
+.title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.left, .right{
+  text-align: left;
+  color: var(--color-primary);
+  border-radius: 16px;
+}
 
 /*--------------------------------------------------------------
 # Portfolio info
