@@ -759,13 +759,19 @@ align-items: center;
   padding: 20px;
   border: 1px solid var(--color-critical);
   margin-bottom: 40px;
-  border-left-width: 8px;
+  /* border-left-width: 8px; */
   border-radius: 8px;
   border-left-color: var(--color-critical);
+  box-shadow: var(--color-critical) 8px 8px;
 }
 
 .callout p{
   margin: 0;
+}
+
+.callout strong {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
 }
 
 
