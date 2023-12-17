@@ -325,7 +325,7 @@ align-items: center;
 }
 
 .sub-section {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .sub-section ul {
@@ -528,7 +528,7 @@ align-items: center;
 --------------------------------------------------------------*/
 
 .portfolio-info {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .portfolio-info strong{
@@ -568,7 +568,7 @@ align-items: center;
 
 .portfolio-description img {
   width: 100%;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   border-radius: 8px;
 }
 
@@ -770,8 +770,7 @@ align-items: center;
 .callout {
   padding: 20px;
   border: 1px solid var(--color-critical);
-  margin-bottom: 40px;
-  /* border-left-width: 8px; */
+  margin-bottom: 60px;
   border-radius: 8px;
   border-left-color: var(--color-critical);
   box-shadow: var(--color-critical) 8px 8px;
