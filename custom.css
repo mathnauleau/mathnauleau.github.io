@@ -328,10 +328,6 @@ align-items: center;
   margin-bottom: 60px;
 }
 
-.sub-section img {
-  margin-bottom: 16px;
-}
-
 .sub-section ul {
   list-style-image: url('assets/icon/arrow-right.svg');
 }
