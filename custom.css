@@ -198,11 +198,11 @@ section{
 }
 
 #project2{
-  background: linear-gradient(45deg, #25272d 0%, #2c3e4e 100%);
+  background: linear-gradient(45deg, #3a3c47 0%, #6b7077 100%);
 }
 
 #project3 {
-  background: linear-gradient(45deg, #5195B4 0%, #0E446C 100%);
+  background: linear-gradient(45deg, #c29e88 0%, #afcadb 100%);
 }
 
 #project4{
@@ -218,6 +218,11 @@ section{
 }
 
 .portfolio .portfolio-wrap:hover img {
+  /* transform: scale(1.05); */
+  transform: translateY(20px);
+}
+
+.portfolio .craft:hover img {
   transform: scale(1.05);
 }
 
@@ -242,7 +247,7 @@ section{
 --------------------------------------------------------------*/
 
 .portfolio-title{
-padding: 8px 0 0 0;
+padding: 20px 0 0 0;
 opacity: 0;
 position: absolute;
 top: 0;
@@ -251,10 +256,9 @@ right: 0;
 bottom: 0;
 text-align: center;
 z-index: 3;
-transition: all ease-in-out 0.3s;
+transition:  0.3s;
 display: flex;
 flex-direction: column;
-/* justify-content: center; */
 align-items: center;
 }
 
