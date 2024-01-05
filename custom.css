@@ -87,6 +87,10 @@ h5{
   color: var(--color-secondary);
 }
 
+.navbar a i, .navbar a:focus i{
+  font-size: 14px;
+}
+
 /* EXPERIMENT WITH GRADIENT
 .hero .hero-img{
 background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
