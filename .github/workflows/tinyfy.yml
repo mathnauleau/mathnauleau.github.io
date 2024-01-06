@@ -1,0 +1,18 @@
+name: Tinify Image Action
+uses: namoscato/action-tinify@v1.4.0
+
+on:
+  pull_request:
+    paths:
+      - 'static/**'
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: namoscato/action-tinify@v1
+        with:
+          api_key: ${{ secrets.b0ZTrhb0g5M9QX4wf6TWKQGCq4XZsMkK}}
