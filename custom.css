@@ -865,6 +865,9 @@ align-items: center;
 /* background-image: url(https://picsum.photos/640/360); */
 
 
+
+
+
 .parent {
   position: relative;
   width: fit-content;
@@ -887,3 +890,97 @@ align-items: center;
   left: 56px;
   z-index: 2;
 }
+.image3 {
+  position: absolute;
+  width: 300%;
+  left: -300px;
+  z-index: 1;
+  top: 100px;
+  border-radius: 40px;
+}
+
+
+.gradient-bg{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, #9862f0 0%, #3dc5be 100%);
+  z-index: 1;
+}
+
+
+.grandparent{
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.552);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.parent2 {
+  width: 100%;
+  height: 1000px;
+  background: rgba(255, 255, 255, 0.552);
+  opacity: 1;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.gradient {
+  width: 400%;
+  height: 60%;
+  background: linear-gradient(rgb(36, 59, 85), rgb(25, 84, 123));
+  opacity: 1;
+  position: absolute;
+  top: 20%;
+  left: -200%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gradient2 {
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(rgb(36, 59, 85), rgb(25, 84, 123));
+  opacity: 1;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* .v1010_29788 {
+  width: 375px;
+  height: 812px;
+  background: url("assets/img/screen3.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 94px;
+  left: 773px;
+  overflow: hidden;
+}
+.v1010_29789 {
+  width: 600px;
+  height: 1000px;
+  background: url("assets/img/phone.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 660px;
+  overflow: hidden;
+} */
