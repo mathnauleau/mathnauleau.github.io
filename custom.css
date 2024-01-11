@@ -863,3 +863,90 @@ align-items: center;
 } */
 
 /* background-image: url(https://picsum.photos/640/360); */
+
+
+
+
+
+.parent {
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 0;
+}
+.image1 {
+  position: relative;
+  width: 400px;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+.image2 {
+  position: absolute;
+  width: 250px;
+  top: 61px;
+  left: 74px;
+  z-index: 2;
+}
+
+.background-hero{
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.552);
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.gradient {
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(rgb(36, 59, 85), rgb(25, 84, 123));
+  opacity: 1;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.background-hero-title {
+  font-family: 'Inter' sans-serif;
+  font-size: 60px;
+  font-weight: 800;
+  color: #6ab7e43e;
+  position: relative;
+  top: 18px;
+  left: 20px;
+}
+.gradient-highlight1 {
+  width: 24vw;
+  height: 24vw;
+  opacity: .5;
+  filter: blur(60px);
+  background-color: #8b6fcca4;
+  border-radius: 50%;
+  position: absolute;
+  top: auto;
+  bottom: 30%;
+  right: auto;
+  left: -3vw;
+}
+.gradient-highlight2 {
+  width: 24vw;
+  height: 24vw;
+  opacity: .5;
+  filter: blur(60px);
+  background-color: #6fbbcca2;
+  border-radius: 50%;
+  position: absolute;
+  top: auto;
+  bottom: -30%;
+  left: auto;
+  right: -3vw;
+}
+
