@@ -131,7 +131,17 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
     --bs-gutter-y: 1rem;
     --bs-gutter-x: 0.5rem;
   }
+
+  .portfolio-info {
+    padding: 12px 12px 8px 12px;
+  }
+
+  .prototype {
+    display: none;
+  }
+  
 }
+
 
 .not-allowed {
   cursor: not-allowed;
@@ -558,12 +568,6 @@ align-items: center;
   margin: 8px 0;
 }
 
-
-@media (max-width: 768px) {
-  .portfolio-info {
-    padding: 12px 12px 8px 12px;
-  }
-}
 /*--------------------------------------------------------------
 # Portfolio description
 --------------------------------------------------------------*/
