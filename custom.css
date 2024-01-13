@@ -175,7 +175,7 @@ section{
 # Portfolio hero
 --------------------------------------------------------------*/
 .portfolio .portfolio-wrap{
-  border-radius: 16px;
+  border-radius: var(--border-radius-large);
 }
 
 .portfolio .portfolio-wrap::before{
@@ -529,7 +529,7 @@ align-items: center;
 .left, .right{
   text-align: left;
   color: var(--color-primary);
-  border-radius: 16px;
+  border-radius: var(--border-radius-large);
 }
 
 /*--------------------------------------------------------------
@@ -578,7 +578,7 @@ align-items: center;
 .portfolio-description img {
   width: 100%;
   /* margin-bottom: 30px; */
-  border-radius: 8px;
+  border-radius: var(--border-radius-large);
 }
 
 .portfolio-description h1{
@@ -809,20 +809,6 @@ align-items: center;
   background-size: contain;
 }
 
-
-/* .floating-image1 {
-  margin-top: 30px;
-  height: 50%;
-  position: relative;
-  display: flex;
-  margin-bottom: -58px;
-  justify-content: center;
-  align-items: right;
-  background-image: url(assets/img/strategy.png);
-  background-size: contain;
-} */
-
-
 #intersection {
   padding-bottom: 0;
 }
@@ -835,7 +821,19 @@ align-items: center;
 }
 
 
-/* .anim-video {
+/* .floating-image1 {
+  margin-top: 30px;
+  height: 50%;
+  position: relative;
+  display: flex;
+  margin-bottom: -58px;
+  justify-content: center;
+  align-items: right;
+  background-image: url(assets/img/strategy.png);
+  background-size: contain;
+}
+
+.anim-video {
   position: absolute;
   left: 0;
   top: 0;
@@ -861,8 +859,6 @@ align-items: center;
   object-fit: cover;
   z-index: -100;
 } */
-
-/* background-image: url(https://picsum.photos/640/360); */
 
 
 
@@ -910,7 +906,7 @@ align-items: center;
   position: absolute;
   top: 15%;
   left: 0;
-  border-radius: 20px;
+  border-radius: var(--border-radius-large);
   overflow: hidden;
 }
 
@@ -949,4 +945,3 @@ align-items: center;
   left: auto;
   right: -3vw;
 }
-

@@ -50,7 +50,7 @@
     --color-primary:        #0C1527;
     --color-primary-dark:   #0A111F;
 
-    --color-secondary:          #4154f1;
+    --color-secondary:      #4154f1;
 
     --color-gray-1: #FFFFFF;
     --color-gray-2: #EEEEEE;
@@ -78,7 +78,7 @@
     /* Border radius */
     --border-radius-small:  calc(var(--base-unit) * 1);
     --border-radius-medium: calc(var(--base-unit) * 2);
-    --border-radius-large:  calc(var(--base-unit) * 2);
+    --border-radius-large:  calc(var(--base-unit) * 4);
 /* Transition
      ================================================================= */
     --transition-faster:    0.1s;
