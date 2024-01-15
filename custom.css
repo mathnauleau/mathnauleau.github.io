@@ -366,9 +366,11 @@ align-items: center;
 
 .about p{
   font-size: 18px;
-  color: var(--color-gray-7);
+  font-family: "Inter", sans-serif;
+  color: var(--color-gray-8);
   font-weight: 400;
   margin-bottom: 24px;
+  line-height: 150%;
 }
 
 .about img{
