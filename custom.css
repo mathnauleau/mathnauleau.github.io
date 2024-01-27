@@ -395,12 +395,44 @@ align-items: center;
   border-radius: 24px;
 }
 
-.about .btn-read-more {
+/*--------------------------------------------------------------
+# Button
+--------------------------------------------------------------*/
+
+.btn-custom {
+  line-height: 0;
   padding: 15px 40px;
   border-radius: 8px;
+  transition: 0.5s;
   color: white;
   background: var(--color-secondary);
+  box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
 }
+
+.btn-custom span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.btn-custom i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn-custom:hover i {
+  transform: translateX(5px);
+}
+
+.btn-custom:hover {
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Experience / Contact
+--------------------------------------------------------------*/
 
 .experience{
   margin-top: 80px;
@@ -658,7 +690,6 @@ align-items: center;
 
 .bottom .custom-footer {
   padding: 30px;
-  margin-bottom: 20px;
   background: linear-gradient(75deg, #ecf0f7 0%, #f8fafc 50%, #f4eee0 100%);
   height: auto;
   border-radius: var(--border-radius-large);
@@ -683,8 +714,13 @@ align-items: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px 0px 24px 0px;
+  padding: 40px 0px 40px 0px;
 }
+
+.footer .copyright p {
+  margin-bottom: 0;
+}
+
 
 .bottom img {
   width: 180px;
