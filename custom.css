@@ -12,7 +12,7 @@ a {
 /* TYPOGRAPHY
      ================================================================= */
 h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
     
@@ -67,8 +67,8 @@ h5{
   line-height: 1.4;
   font-weight: 300;
   font-size: 24px;
-  font-family: "Open Sans", sans-serif;
-  color: var(--color-gray-7);
+  font-family: "Inter", sans-serif;
+  color: var(--color-gray-8);
 }
 
 .logo img{
@@ -401,8 +401,8 @@ align-items: center;
 
 .btn-custom {
   line-height: 0;
-  padding: 15px 40px;
-  border-radius: 8px;
+  padding: 16px 24px;
+  border-radius: var(--border-radius-medium);
   transition: 0.5s;
   color: white;
   background: var(--color-secondary);
@@ -690,7 +690,7 @@ align-items: center;
 
 .bottom .custom-footer {
   padding: 30px;
-  background: linear-gradient(75deg, #ecf0f7 0%, #f8fafc 50%, #f4eee0 100%);
+  background: linear-gradient(55deg, #F1F1F1 0%, #f8fafc 50%, #daecff 100%);
   height: auto;
   border-radius: var(--border-radius-large);
 }
@@ -723,7 +723,7 @@ align-items: center;
 
 
 .bottom img {
-  width: 180px;
+  width: 220px;
   height: auto;
 }
 
