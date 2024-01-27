@@ -678,21 +678,6 @@ align-items: center;
   background-color: white;
 }
 
-.footer p{
-  color: var(--color-primary);
-  margin: 0px;
-}
-
-.footer .copyright{
-  position: relative;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 24px 0px 24px 0px;
-}
-
 .custom-footer {
   margin-top: 100px;
 }
