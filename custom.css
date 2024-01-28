@@ -684,18 +684,18 @@ align-items: center;
   background-color: var(--color-secondary);
 }
 
-.bottom {
+.collaboration {
   margin-top: 0px;
 }
 
-.bottom .custom-footer {
+.collaboration .custom-footer {
   padding: 30px;
   background: linear-gradient(55deg, #F1F1F1 0%, #f8fafc 50%, #daecff 100%);
   height: auto;
   border-radius: var(--border-radius-large);
 }
 
-.bottom p, .bottom h2 {
+.collaboration p, .collaboration h2 {
   color: var(--color-primary);
   text-align: left;
 }
@@ -722,7 +722,7 @@ align-items: center;
 }
 
 
-.bottom img {
+.collaboration img {
   width: 220px;
   height: auto;
 }
