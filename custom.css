@@ -3,6 +3,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--color-primary);
+  background-color: var(--color-gray-1);
 }
 
 a {
@@ -12,12 +13,12 @@ a {
 /* TYPOGRAPHY
      ================================================================= */
 h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
     
 h4 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 h3 {
@@ -76,8 +77,8 @@ h5{
 }
 
 .navbar a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
   color: var(--color-primary);
 }
 
@@ -208,7 +209,7 @@ section{
 --------------------------------------------------------------*/
 
 #project1 {
-  background: linear-gradient(45deg, #9862f0 0%, #3dc5be 100%);
+  background: linear-gradient(45deg, #CCDFF6 0%, #6B98FF 100%);
 }
 
 #project2{
@@ -216,7 +217,7 @@ section{
 }
 
 #project3 {
-  background: linear-gradient(45deg, #B79891 0%, #94716B 100%);
+  background: linear-gradient(75deg, #ffc96f 0%, #f2a868 100%);
 }
 
 #project4{
@@ -682,7 +683,7 @@ align-items: center;
   margin-top: 40px;
   padding: 30px;
   height: auto;
-  background-color: white;
+  background: none;
 }
 
 .footer p{
