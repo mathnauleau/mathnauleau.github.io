@@ -12,7 +12,7 @@ a {
 /* TYPOGRAPHY
      ================================================================= */
 h2 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
 }
     
@@ -67,8 +67,8 @@ h5{
   line-height: 1.4;
   font-weight: 300;
   font-size: 24px;
-  font-family: "Open Sans", sans-serif;
-  color: var(--color-gray-7);
+  font-family: "Inter", sans-serif;
+  color: var(--color-gray-8);
 }
 
 .logo img{
@@ -395,12 +395,44 @@ align-items: center;
   border-radius: 24px;
 }
 
-.about .btn-read-more {
-  padding: 15px 40px;
-  border-radius: 8px;
+/*--------------------------------------------------------------
+# Button
+--------------------------------------------------------------*/
+
+.btn-custom {
+  line-height: 0;
+  padding: 16px 24px;
+  border-radius: var(--border-radius-medium);
+  transition: 0.5s;
   color: white;
   background: var(--color-secondary);
+  box-shadow: 0px 5px 25px rgba(65, 84, 241, 0.3);
 }
+
+.btn-custom span {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.btn-custom i {
+  margin-left: 5px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.btn-custom:hover i {
+  transform: translateX(5px);
+}
+
+.btn-custom:hover {
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Experience / Contact
+--------------------------------------------------------------*/
 
 .experience{
   margin-top: 80px;
@@ -652,76 +684,48 @@ align-items: center;
   background-color: var(--color-secondary);
 }
 
-.ifooter{
-  margin-top: 40px;
-  margin-bottom: 40px;
-  padding: 0;
-  background: linear-gradient(75deg, #ecf0f7 0%, #f8fafc 50%, #f4eee0 100%);
-  height: auto;
-  border-radius: 24px;
-  border-color: var(--color-gray-6);
-  border-width: 1px;
+.collaboration {
+  margin-top: 0px;
 }
 
-.ifooter .copyright{
-    position: relative;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 24px 0px 24px 0px;
-}
-
-.ifooter p{
-  color: var(--color-primary);
-}
-
-
-.footer{
-  margin-top: 40px;
+.collaboration .custom-footer {
   padding: 30px;
+  background: linear-gradient(55deg, #F1F1F1 0%, #f8fafc 50%, #daecff 100%);
+  height: auto;
+  border-radius: var(--border-radius-large);
+}
+
+.collaboration p, .collaboration h2 {
+  color: var(--color-primary);
+  text-align: left;
+}
+
+.footer {
+  margin-top: 0px;
+  padding: 0px;
   height: auto;
   background-color: white;
 }
 
-.footer p{
-  color: var(--color-primary);
-  margin: 0px;
-}
-
-.footer .copyright{
+.footer .copyright {
   position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px 0px 24px 0px;
+  padding: 40px 0px 40px 0px;
 }
 
-/* .footer{
-  margin-bottom: 40px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
+.footer .copyright p {
+  margin-bottom: 0;
 }
 
-.footer img{
-  width: 130%;
+
+.collaboration img {
+  width: 220px;
   height: auto;
-  object-fit: cover;
-  transform-origin: center center;
-  -webkit-transform: rotate(-10deg) scale(1.3);
-  -moz-transform: rotate(-10deg) scale(1.3);
-  -ms-transform: rotate(-10deg) scale(1.3);
-  transform: rotate(-10deg) scale(1.3);
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-} */
+}
 
 .protected-img{
   width: 100px;
