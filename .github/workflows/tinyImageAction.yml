@@ -27,4 +27,4 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
       with:
-        github_token: ${{ secrets.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 }}  # Replace by Github token
+        github_token: ${{ secrets.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 }}  # Replace by Github token
