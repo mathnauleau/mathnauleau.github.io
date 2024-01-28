@@ -3,6 +3,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--color-primary);
+  background-color: var(--color-gray-1);
 }
 
 a {
@@ -17,7 +18,7 @@ h2 {
 }
     
 h4 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 h3 {
@@ -76,13 +77,17 @@ h5{
 }
 
 .navbar a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
   color: var(--color-primary);
 }
 
+.navbar a, .navbar a:focus{
+  padding: 12px 0 12px 32px;
+}
+
 .navbar a:focus{
-  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   color: var(--color-secondary);
 }
@@ -208,15 +213,15 @@ section{
 --------------------------------------------------------------*/
 
 #project1 {
-  background: linear-gradient(45deg, #9862f0 0%, #3dc5be 100%);
+  background: linear-gradient(45deg, #CCDFF6 0%, #6B98FF 100%);
 }
 
 #project2{
-  background: linear-gradient(45deg, #3a3c47 0%, #6b7077 100%);
+  background: linear-gradient(45deg, #536976 0%, #292E49 100%);
 }
 
 #project3 {
-  background: linear-gradient(45deg, #c29e88 0%, #afcadb 100%);
+  background: linear-gradient(75deg, #ffc96f 0%, #f2a868 100%);
 }
 
 #project4{
@@ -704,7 +709,7 @@ align-items: center;
   margin-top: 0px;
   padding: 0px;
   height: auto;
-  background-color: white;
+  background: none;
 }
 
 .footer .copyright {
