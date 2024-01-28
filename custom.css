@@ -472,9 +472,6 @@ align-items: center;
   text-align: center;
   height: 100%;
   overflow: hidden;
-  border: 1px;
-  border-style: solid;
-  border-color: var(--color-gray-2);
   padding: 28px;
 }
 
