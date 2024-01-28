@@ -79,7 +79,12 @@ h5{
 .navbar a {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+  letter-spacing: 1px;
   color: var(--color-primary);
+}
+
+.navbar a, .navbar a:focus{
+  padding: 12px 0 12px 32px;
 }
 
 .navbar a:focus{
