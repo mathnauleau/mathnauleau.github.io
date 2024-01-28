@@ -4,7 +4,7 @@ uses: namoscato/action-tinify@v1.4.0
 on:
   pull_request:
     paths:
-      - 'static/**'
+      - '../assets/img/**'
 
 jobs:
   compress:
