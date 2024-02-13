@@ -375,7 +375,7 @@ align-items: center;
 }
 
 .portfolio-project-nav:hover {
-  background-color: #cddcf2;
+  background-color: var(--color-information);
 }
 
 .about{
@@ -788,12 +788,12 @@ align-items: center;
 /* CALLOUT */
 
 .callout {
-  padding: 20px;
-  border: 1px solid var(--color-critical);
+  padding: 24px;
+  background-color: var(--color-information);
   margin-bottom: 60px;
-  border-radius: 8px;
-  border-left-color: var(--color-critical);
-  box-shadow: var(--color-critical) 8px 8px;
+  border-radius: 16px;
+  /* border-left-color: var(--color-critical);
+  box-shadow: var(--color-critical) 8px 8px; */
 }
 
 .callout p{
