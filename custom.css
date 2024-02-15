@@ -490,6 +490,16 @@ align-items: center;
   font-weight: 800;
 }
 
+.img-box {
+  height: 100%;
+  background-color: var(--color-information);
+  background-image:url(assets/img/portfolio/project2/whitelabelexample.png);
+  background-size: cover;
+  padding: 0;
+}
+
+
+
 /*--------------------------------------------------------------
 # Skillset 
 --------------------------------------------------------------*/
