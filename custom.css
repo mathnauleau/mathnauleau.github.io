@@ -421,18 +421,26 @@ align-items: center;
   letter-spacing: 1px;
 }
 
-.btn-custom i {
+.btn-custom i, .btn-custom2 i {
   margin-left: 5px;
   font-size: 18px;
   transition: 0.3s;
 }
 
-.btn-custom:hover i {
+.btn-custom:hover i, .btn-custom2:hover i {
   transform: translateX(5px);
 }
 
 .btn-custom:hover {
   color: white;
+}
+
+.btn-custom2 {
+  line-height: 0;
+  padding: 16px 24px;
+  transition: 0.5s;
+  color: var(--color-secondary);
+  background-color: transparent;
 }
 
 /*--------------------------------------------------------------
