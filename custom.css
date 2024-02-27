@@ -653,14 +653,16 @@ align-items: center;
 .portfolio-section-highlight{
   margin-top: 0px;
   margin-bottom: 60px;
-  padding-top: 5em;
-  padding-bottom: 5em;
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-64);
   overflow: visible;
-  background-color: var(--color-gray-2);
-  h2{
-    margin-bottom: 60px;
-  }
+  background-color: var(--color-gray-3);
 }
+
+.portfolio-section-highlight h2{
+  margin-bottom: var(--space-64);
+}
+
 
 
 /*--------------------------------------------------------------
