@@ -500,8 +500,8 @@ align-items: center;
 
 .img-box {
   height: 100%;
-  background-color: var(--color-information);
-  background-image:url(assets/img/portfolio/project2/whitelabelexample.png);
+  /* background-color: var(--color-information); */
+  background-image:url(assets/img/window.png);
   background-size: cover;
   padding: 0;
 }
@@ -649,6 +649,21 @@ align-items: center;
   font-weight: 300;
   color: var(--color-primary);
 }
+
+.portfolio-section-highlight{
+  margin-top: 0px;
+  margin-bottom: 60px;
+  padding-top: var(--space-72);
+  padding-bottom: var(--space-72);
+  overflow: visible;
+  background-color: var(--color-gray-3);
+}
+
+.portfolio-section-highlight h2{
+  margin-bottom: var(--space-64);
+}
+
+
 
 /*--------------------------------------------------------------
 # Counts
@@ -815,7 +830,7 @@ align-items: center;
 }
 
 .callout p{
-  margin: 0;
+  margin: 8px 0 0 0;
 }
 
 .callout strong {
