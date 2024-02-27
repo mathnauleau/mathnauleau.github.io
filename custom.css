@@ -500,8 +500,8 @@ align-items: center;
 
 .img-box {
   height: 100%;
-  background-color: var(--color-information);
-  background-image:url(assets/img/portfolio/project2/whitelabelexample.png);
+  /* background-color: var(--color-information); */
+  background-image:url(assets/img/window.png);
   background-size: cover;
   padding: 0;
 }
@@ -649,6 +649,19 @@ align-items: center;
   font-weight: 300;
   color: var(--color-primary);
 }
+
+.portfolio-section-highlight{
+  margin-top: 0px;
+  margin-bottom: 60px;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  overflow: visible;
+  background-color: var(--color-gray-2);
+  h2{
+    margin-bottom: 60px;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Counts
