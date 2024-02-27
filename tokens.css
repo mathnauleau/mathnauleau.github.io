@@ -39,7 +39,9 @@
     --space-40: calc(var(--space-base-unit) * 10);
     --space-48: calc(var(--space-base-unit) * 12);
     --space-64: calc(var(--space-base-unit) * 16);
-/* Breakpoints
+    --space-72: calc(var(--space-base-unit) * 18);
+
+    /* Breakpoints
      ================================================================= */
     --breakpoint-small:     544px;
     --breakpoint-medium:    768px;
