@@ -19,7 +19,7 @@
 /* Typography
     ================================================================= */
     /* Fonts */
-    --font-family-primary:      sans-serif;
+    --font-family-primary: "Open Sans", sans-serif;
     --font-family-secondary:    serif;
     --font-base-unit: var(--base-unit);
     /* Font sizes - 4x4 grid */
@@ -52,7 +52,9 @@
     --space-40: calc(var(--space-base-unit) * 10);
     --space-48: calc(var(--space-base-unit) * 12);
     --space-64: calc(var(--space-base-unit) * 16);
-/* Breakpoints
+    --space-72: calc(var(--space-base-unit) * 18);
+
+    /* Breakpoints
      ================================================================= */
     --breakpoint-small:     544px;
     --breakpoint-medium:    768px;
@@ -67,11 +69,11 @@
     --text-color: #000000; /* Default text color */
     --bg-image: 100%;
 
-    --color-secondary:          #4154f1;
+    --color-secondary:      #4154f1;
 
     --color-gray-1: #FFFFFF;
     --color-gray-2: #EEEEEE;
-    --color-gray-3: #D5D5D5;
+    --color-gray-3: #F8F9FA;
     --color-gray-4: #BBBBBB;
     --color-gray-5: #A1A1A1;
     --color-gray-6: #888888;
@@ -81,6 +83,7 @@
     --color-gray-10: #222222;
 
     --color-critical: #ffa500;
+    --color-information: #ecf2f6;
     --color-danger: #ff4500;
 
 /* Border ================================================================= */
@@ -94,9 +97,10 @@
     /* Border radius */
     --border-radius-small:  calc(var(--base-unit) * 1);
     --border-radius-medium: calc(var(--base-unit) * 2);
-    --border-radius-large:  calc(var(--base-unit) * 2);
 
 /* Transition ================================================================= */
+    --border-radius-large:  calc(var(--base-unit) * 4);
+/* Transition
     --transition-faster:    0.1s;
     --transition-fast:      0.2s;
     --transition-normal:    0.3s;

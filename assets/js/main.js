@@ -228,9 +228,9 @@
   });
 
   /**
-   * Portfolio details slider
+   * Portfolio hero slider
    */
-  new Swiper('.portfolio-details-slider', {
+  new Swiper('.portfolio-hero-slider', {
     speed: 400,
     autoplay: {
       delay: 5000,

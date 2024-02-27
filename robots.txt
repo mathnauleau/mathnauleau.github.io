@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /private/
+Disallow: /designsystem.html
+Allow: /index.html
+Allow: /about.html
+
+Sitemap: https://mathieunauleau.com/sitemap.xml

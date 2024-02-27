@@ -1,0 +1,30 @@
+name: Compress Images Before Merge
+
+on:
+  pull_request:
+    branches:
+      - 'main'  # Only to pull requests targeting the main branch
+
+jobs:
+  compress_images:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Compress Images
+      uses: namoscato/action-tinify@v1
+      with:
+        api-key: ${{ secrets.b0ZTrhb0g5M9QX4wf6TWKQGCq4XZsMkK }}  #Tinify API key
+        input: '../assets/img/compress'  # The actual path of my images
+
+    - name: Commit changes
+      run: |
+        git add .
+        git commit -m "Compress images before merge"
+    
+    - name: Push changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.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 }}  # Replace by Github token
