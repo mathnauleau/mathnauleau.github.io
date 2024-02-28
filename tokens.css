@@ -1,23 +1,37 @@
 :root {
-    --bg-color: #ffffff; /* Default background color */
-    --text-color: #000000; /* Default text color */
-  }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
 
-:root {
-    /* Core units
-     ================================================================= */
+/* Core units================================================================= */
     --base-unit:        0.25rem;
     --base-half-unit:   calc(var(--base-unit) / 2);
-}
 
-.light { 
-/* Typography
-    ================================================================= */
+/* Color ================================================================= */
+
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --bg-image: 100%;
+
+    --color-primary-light:  #1B2E55;
+    --color-primary:        #0C1527;
+    --color-primary-dark:   #0A111F;
+
+    --color-secondary:      #4154f1;
+
+    --color-gray-1: #FFFFFF;
+    --color-gray-2: #EEEEEE;
+    --color-gray-3: #F8F9FA;
+    --color-gray-4: #BBBBBB;
+    --color-gray-5: #A1A1A1;
+    --color-gray-6: #888888;
+    --color-gray-7: #6F6F6F;
+    --color-gray-8: #555555;
+    --color-gray-9: #3C3C3C;
+    --color-gray-10: #222222;
+
+    --color-critical: #ffa500;
+    --color-information: #ecf2f6;
+    --color-danger: #ff4500;
+
+/* Typography ================================================================= */
     /* Fonts */
     --font-family-primary: "Open Sans", sans-serif;
     --font-family-secondary:    serif;
@@ -41,8 +55,7 @@
     --font-weight-normal:   400;
     --font-weight-bold:     700;
     --font-weight-bolder:   900;
-/* Space
-     ================================================================= */
+/* Space ================================================================= */
     --space-base-unit: var(--base-unit);
     /* Margin, Padding - 8x8 grid */
     --space-8:  calc(var(--space-base-unit) * 2);
@@ -54,37 +67,10 @@
     --space-64: calc(var(--space-base-unit) * 16);
     --space-72: calc(var(--space-base-unit) * 18);
 
-    /* Breakpoints
-     ================================================================= */
+/* Breakpoints ================================================================= */
     --breakpoint-small:     544px;
     --breakpoint-medium:    768px;
     --breakpoint-large:     1012px;
-/* Color
-     ================================================================= */
-    --color-primary-light:  #1B2E55;
-    --color-primary:        #0C1527;
-    --color-primary-dark:   #0A111F;
-
-    --bg-color: #ffffff; /* Default background color */
-    --text-color: #000000; /* Default text color */
-    --bg-image: 100%;
-
-    --color-secondary:      #4154f1;
-
-    --color-gray-1: #FFFFFF;
-    --color-gray-2: #EEEEEE;
-    --color-gray-3: #F8F9FA;
-    --color-gray-4: #BBBBBB;
-    --color-gray-5: #A1A1A1;
-    --color-gray-6: #888888;
-    --color-gray-7: #6F6F6F;
-    --color-gray-8: #555555;
-    --color-gray-9: #3C3C3C;
-    --color-gray-10: #222222;
-
-    --color-critical: #ffa500;
-    --color-information: #ecf2f6;
-    --color-danger: #ff4500;
 
 /* Border ================================================================= */
     /* Border color */
@@ -100,7 +86,7 @@
 
 /* Transition ================================================================= */
     --border-radius-large:  calc(var(--base-unit) * 4);
-/* Transition
+/* Transition */
     --transition-faster:    0.1s;
     --transition-fast:      0.2s;
     --transition-normal:    0.3s;
@@ -108,9 +94,13 @@
     --transition-slower:    0.5s;
 }
 
-  
-  /* Define styles for dark theme */
-  .dark {
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+.dark {
     --color-primary-light: #e1e8f6;
     --color-primary: #d4def1;
     --color-primary-dark: #80a4ec;
