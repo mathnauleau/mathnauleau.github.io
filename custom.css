@@ -730,7 +730,7 @@ align-items: center;
 
 .collaboration .custom-footer {
   padding: 30px;
-  background: linear-gradient(55deg, var(--gradient-col1) 0%, var(--gradient-col2) 50%, var(--gradient-col3) 100%);
+  background: linear-gradient(55deg, var(--gradient-collab-start) 0%, var(--gradient-collab-end) 100%);
   height: auto;
   border-radius: var(--border-radius-large);
 }
