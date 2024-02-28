@@ -59,7 +59,7 @@ h5{
   font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 700;
-  background: -webkit-linear-gradient(290deg, #006adc 0%, #11181c 50%, #11181c 100%);
+  background: -webkit-linear-gradient(290deg, #006adc 0%, var(--end-gradient-1) 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.3;
@@ -168,7 +168,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 .header.header-scrolled{
   padding: 16px 0;
-  background-color: var(--bg-color);
+  background-color: var(--bg-nav-color);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(36, 49, 68, 0.1);
   box-shadow: none;
@@ -720,13 +720,17 @@ align-items: center;
   background-color: var(--color-secondary);
 }
 
+.back-to-top i{
+  color: var(--color-gray-1);
+}
+
 .collaboration {
   margin-top: 0px;
 }
 
 .collaboration .custom-footer {
   padding: 30px;
-  background: linear-gradient(55deg, #F1F1F1 0%, #f8fafc 50%, #daecff 100%);
+  background: linear-gradient(55deg, var(--gradient-col1) 0%, var(--gradient-col2) 50%, var(--gradient-col3) 100%);
   height: auto;
   border-radius: var(--border-radius-large);
 }
