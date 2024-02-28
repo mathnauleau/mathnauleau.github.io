@@ -34,8 +34,8 @@
     --color-information: #ecf2f6;
     --color-danger: #ff4500;
 
-    --gradient-collab-start: #ebf5ff;
-    --gradient-collab-end: #dfe2ff;
+    --gradient-collab-start: #F5F5F5;
+    --gradient-collab-end: #E1EEFF;
 
 /* Typography ================================================================= */
     /* Fonts */
@@ -111,7 +111,7 @@ body {
     --bg-nav-color: #151515cc;
 
     --text-color: #ffffff;
-    --bg-image: 100%;
+    --bg-image: 0%;
     --end-gradient-1: #aeace1;
 
     --color-primary-light:  #ffffff;
