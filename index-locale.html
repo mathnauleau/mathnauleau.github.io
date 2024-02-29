@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localization</title>
+
+    <link rel="stylesheet" href="custom.css">
+
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index-locale.html" onclick="changeLanguage('en')">English</a></li>
+            <li><a href="index-locale.html" onclick="changeLanguage('fr')">Français</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1 data-i18n="welcome_message"></h1>
+        <p data-i18n="about_us"></p>
+    </main>
+
+    <script src="js/localization.js"></script>
+
+</body>
+</html>
