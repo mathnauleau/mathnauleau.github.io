@@ -5,20 +5,31 @@
     <title>Localization</title>
 
     <link rel="stylesheet" href="custom.css">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 <body>
 
     <!--
         https://medium.com/@nohanabil/building-a-multilingual-static-website-a-step-by-step-guide-7af238cc8505
+
+        <button onclick="changeLanguage('en')">🇬🇧</button>
+        <button onclick="changeLanguage('fr')">🇫🇷</button>
     -->
 
     <nav>
         <ul>
-            <li><a href="index-locale.html" onclick="changeLanguage('en')">English</a></li>
-            <li><a href="index-locale.html" onclick="changeLanguage('fr')">Français</a></li>
+            <li id="english">
+                <a href="index-locale.html#en" onclick="changeLanguage('en')">English 🇬🇧</a>
+            </li>
+            <li id="francais">
+                <a href="index-locale.html#fr" onclick="changeLanguage('fr')">Français 🇫🇷</a>
+            </li>
         </ul>
     </nav>
+
+
 
     <main>
         <h1 data-i18n="welcome_message"></h1>
