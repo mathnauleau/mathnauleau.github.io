@@ -17,7 +17,6 @@
 
         <button onclick="changeLanguage('en')">🇬🇧</button>
         <button onclick="changeLanguage('fr')">🇫🇷</button>
-    -->
 
     <nav>
         <ul>
@@ -30,17 +29,38 @@
         </ul>
     </nav>
 
-    <div class="switch">
+     <div class="switch">
 	    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-	    <label for="language-toggle"></label>
-	    <span class="on"><a href="index-locale.html#fr" onclick="changeLanguage('fr')">FR</a></span>
-	    <span class="off"><a href="index-locale.html#en" onclick="changeLanguage('en')">EN</a></span>
-  	</div>
+	    <label for="language-toggle" onclick="changeLanguage('en')"></label>
+	    <span class="on"><a href="index-locale.html#fr">FR</a></span>
+        <label class="toggle-container" onclick="changeLanguage('fr')"></label>
+	    <span class="off"><a href="index-locale.html#en">EN</a></span>
+  	</div> 
+
+      <div class="switch">
+        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" onchange="toggleLanguage()">
+        <label for="language-toggle"></label>
+        <span class="on"><a href="#fr">FR</a></span>
+        <span class="off"><a href="#en">EN</a></span>
+    </div>
+    
+    <div class="language-toggle">
+        <button class="button" onclick="changeLanguage('en')">EN</button>
+        <button class="button" onclick="changeLanguage('fr')">FR</button>
+    </div>    -->
+
 
     <main>
+
+        <div class="language-toggle">
+            <label class="btn btn-check" for="option-en" onclick="changeLanguage('en')" checked>EN</label>
+            <input type="radio" class="btn-check" id="option-fr" autocomplete="off">
+            <label class="btn" for="option-fr" onclick="changeLanguage('fr')">FR</label>
+        </div>
+    
         <h1 data-i18n="welcome_message"></h1>
         <p data-i18n="about_us"></p>
-        <a href="about-locale.html">link</a>
+
     </main>
 
     <script src="js/localization.js"></script>

@@ -1,4 +1,4 @@
-h1 {
+/* h1 {
     color: black;
   }
   
@@ -14,15 +14,17 @@ h1 {
     pointer-events: none;
     font-family: 'Helvetica', Arial, sans-serif;
     font-weight: bold;
-    font-size: 12px;
-    text-transform: uppercase;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+    font-size: 16px;
     width: 50%;
     text-align: center;
   }
+
+  .switch > span a{
+    color: black;
+  }
   
   input.check-toggle-round-flat:checked ~ .off {
-    color: #F36F25;
+    color: #f325ab;
   }
   
   input.check-toggle-round-flat:checked ~ .on {
@@ -32,13 +34,13 @@ h1 {
   .switch > span.on {
     left: 0;
     padding-left: 2px;
-    color: #F36F25;
+    color: blue;
   }
   
   .switch > span.off {
     right: 0;
     padding-right: 4px;
-    color: #fff;
+    color: red;
   }
   
   .check-toggle {
@@ -59,9 +61,9 @@ h1 {
   
   input.check-toggle-round-flat + label {
     padding: 2px;
-    width: 97px;
-    height: 35px;
-    background-color: #F36F25;
+    width: 80px;
+    height: 40px;
+    background-color: lightgrey;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
@@ -79,7 +81,6 @@ h1 {
     left: 2px;
     bottom: 2px;
     right: 2px;
-    background-color: #F36F25;    
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
     -o-border-radius: 60px;
@@ -89,8 +90,8 @@ h1 {
     top: 4px;
     left: 4px;
     bottom: 4px;
-    width: 48px;
-    background-color: #fff;
+    width: 38px;
+    background-color: white;
     -webkit-border-radius: 52px;
     -moz-border-radius: 52px;
     -ms-border-radius: 52px;
@@ -103,5 +104,49 @@ h1 {
   }
   
   input.check-toggle-round-flat:checked + label:after {
-    margin-left: 44px;
+    margin-left: 38px;
   }
+
+  button{
+    border-radius: 99;
+  }
+
+  .button {
+    background-color: lightgrey;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 99px;
+  }
+
+.button:visited{
+  background-color: #f325ab;
+}
+ */
+
+/* Hide the radio buttons */
+.btn-check {
+  display: none;
+  pointer-events: none;
+}
+
+/* Style the labels to look like buttons */
+.btn {
+  display: inline-block;
+  padding: 8px 10px;
+  background-color: #ccc; /* Default background color */
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+/* Change the background color of the label when checked */
+.btn-check:checked + .btn {
+  background-color: #007bff; /* Change to desired color */
+  color: #fff; /* Change to desired text color */
+}
