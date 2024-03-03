@@ -1,0 +1,33 @@
+/* styles.css */
+
+.language-switcher {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-switcher li {
+    display: inline-block;
+}
+
+.language-switcher li a {
+    display: block;
+    width: 30px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    border: 1px solid #FFF;
+    margin-right: 5px;
+    border-radius: 99px;
+    background-color: #c5c5c5;
+}
+
+.language-switcher li a:hover {
+    background-color: #007bff;
+}
+
+.language-switcher li.active a {
+    background-color: #007bff; /* Change to the color you want for the active flag */
+    color: #fff; /* Change to the color you want for the active flag */
+}
