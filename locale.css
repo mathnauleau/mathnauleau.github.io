@@ -150,3 +150,52 @@
   background-color: #007bff; /* Change to desired color */
   color: #fff; /* Change to desired text color */
 }
+
+
+/* styles.css */
+
+.language-switcher{
+  background-color: aquamarine;
+  padding: 4px;
+}
+
+.language-toggle {
+  list-style: none;
+  padding: 8px;
+  margin: 4px;
+  display: inline-block;
+}
+
+.language-toggle {
+  display: block;
+  width: 90px; /* Adjust as needed */
+  height: 30px; /* Adjust as needed */
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  border: 1px solid #FFF;
+  margin-right: 5px;
+  border-radius: 99px;
+  background-color: #c5c5c5;
+}
+
+.language-toggle:hover {
+  background-color: #007bff;
+}
+
+.language-toggle {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 99px;
+  background-color: green;
+  margin-right: 10px;
+}
+
+/* Style for the checked label */
+.language-switcher label input[type="radio"]:checked{
+  background-color: #007bff; /* Change to the color you desire */
+  color: #fff; /* Change to the color you desire */
+}
+
+

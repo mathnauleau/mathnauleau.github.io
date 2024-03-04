@@ -12,52 +12,18 @@
 </head>
 <body>
 
-    <!--
-        https://medium.com/@nohanabil/building-a-multilingual-static-website-a-step-by-step-guide-7af238cc8505
-
-        <button onclick="changeLanguage('en')">🇬🇧</button>
-        <button onclick="changeLanguage('fr')">🇫🇷</button>
-
-    <nav>
-        <ul>
-            <li id="english">
-                <a href="index-locale.html#en" onclick="changeLanguage('en')">English 🇬🇧</a>
-            </li>
-            <li id="francais">
-                <a href="index-locale.html#fr" onclick="changeLanguage('fr')">Français 🇫🇷</a>
-            </li>
-        </ul>
-    </nav>
-
-     <div class="switch">
-	    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-	    <label for="language-toggle" onclick="changeLanguage('en')"></label>
-	    <span class="on"><a href="index-locale.html#fr">FR</a></span>
-        <label class="toggle-container" onclick="changeLanguage('fr')"></label>
-	    <span class="off"><a href="index-locale.html#en">EN</a></span>
-  	</div> 
-
-      <div class="switch">
-        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" onchange="toggleLanguage()">
-        <label for="language-toggle"></label>
-        <span class="on"><a href="#fr">FR</a></span>
-        <span class="off"><a href="#en">EN</a></span>
-    </div>
-    
-    <div class="language-toggle">
-        <button class="button" onclick="changeLanguage('en')">EN</button>
-        <button class="button" onclick="changeLanguage('fr')">FR</button>
-    </div>    -->
-
-
     <main>
 
-        <div class="language-toggle">
-            <label class="btn btn-check" for="option-en" onclick="changeLanguage('en')" checked>EN</label>
-            <input type="radio" class="btn-check" id="option-fr" autocomplete="off">
-            <label class="btn" for="option-fr" onclick="changeLanguage('fr')">FR</label>
+        <div class="btn-group btn-group-toggle">
+            <label class="btn btn-secondary active" for="option1">
+                <input type="radio" name="options" id="option1" autocomplete="off" onclick="changeLanguage('fr')" checked> French
+            </label>
+            <label class="btn btn-secondary" for="option2">
+                <input type="radio" name="options" id="option2" autocomplete="off" onclick="changeLanguage('en')"> English
+            </label>
         </div>
-    
+        
+
         <h1 data-i18n="welcome_message"></h1>
         <p data-i18n="about_us"></p>
 
@@ -67,3 +33,17 @@
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<!-- <div class="language-toggle">
+    <input type="radio" class="btn-check" id="option-fr" autocomplete="off">
+    <label class="btn btn-check" for="option-en" onclick="changeLanguage('en')" checked>EN</label>
+    <label class="btn" for="option-fr" onclick="changeLanguage('fr')">FR</label>
+</div> -->

@@ -9,7 +9,6 @@ function updateContent(langData) {
 // Function to set the language preference
 function setLanguagePreference(lang) {
     localStorage.setItem('language', lang);
-    location.reload();
 }
 
 // Function to fetch language data
@@ -20,16 +19,26 @@ async function fetchLanguageData(lang) {
 
 // Function to change language
 async function changeLanguage(lang) {
-    await setLanguagePreference(lang);
-    
+    setLanguagePreference(lang);
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
+
+    // Check the associated radio button
+    document.getElementById('option1').checked = (lang === 'fr');
+    document.getElementById('option2').checked = (lang === 'en');
 }
+
+// Call changeLanguage() based on radio button selection
+document.getElementById('option1').addEventListener('click', function() {
+    changeLanguage('fr');
+});
+
+document.getElementById('option2').addEventListener('click', function() {
+    changeLanguage('en');
+});
 
 // Call updateContent() on page load
 window.addEventListener('DOMContentLoaded', async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'en';
-    const langData = await fetchLanguageData(userPreferredLanguage);
-    updateContent(langData);
-    toggleArabicStylesheet(userPreferredLanguage);
+    await changeLanguage(userPreferredLanguage);
 });
