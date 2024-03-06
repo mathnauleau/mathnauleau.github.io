@@ -1,49 +1,37 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Localization</title>
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Localization</title>
 
-    <link rel="stylesheet" href="custom.css">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link href="locale.css" rel="stylesheet">
+     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+     <link rel="stylesheet" href="custom.css">
+     <link rel="stylesheet" href="locale.css">
+     <!-- https://medium.com/@nohanabil/building-a-multilingual-static-website-a-step-by-step-guide-7af238cc8505 -->
 
-</head>
-<body>
+ </head>
+ <body>
 
-    <!--
-        https://medium.com/@nohanabil/building-a-multilingual-static-website-a-step-by-step-guide-7af238cc8505
+     <nav>
+         <ul>
+             <li><a href="index-locale.html" onclick="changeLanguage('en')">English</a></li>
+             <li><a href="index-locale.html" onclick="changeLanguage('fr')">Français</a></li>
+         </ul>
+     </nav>
 
-        <button onclick="changeLanguage('en')">🇬🇧</button>
-        <button onclick="changeLanguage('fr')">🇫🇷</button>
-    -->
+     <div class="dropdown">
+        <button class="dropbtn"><i class="bi bi-globe"></i></button>
+        <div class="dropdown-content">
+          <a href="#" onclick="changeLanguage('en')">EN</a>
+          <a href="#" onclick="changeLanguage('fr')">FR</a>
+        </div>
+      </div>
 
-    <nav>
-        <ul>
-            <li id="english">
-                <a href="index-locale.html#en" onclick="changeLanguage('en')">English 🇬🇧</a>
-            </li>
-            <li id="francais">
-                <a href="index-locale.html#fr" onclick="changeLanguage('fr')">Français 🇫🇷</a>
-            </li>
-        </ul>
-    </nav>
+     <main>
+         <h1 data-i18n="welcome_message">This text is only displayed if the localization.js fails</h1> 
+         <p data-i18n="about_us"></p>
+     </main>
 
-    <div class="switch">
-	    <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
-	    <label for="language-toggle"></label>
-	    <span class="on"><a href="index-locale.html#fr" onclick="changeLanguage('fr')">FR</a></span>
-	    <span class="off"><a href="index-locale.html#en" onclick="changeLanguage('en')">EN</a></span>
-  	</div>
+     <script src="js/localization.js"></script> 
 
-    <main>
-        <h1 data-i18n="welcome_message"></h1>
-        <p data-i18n="about_us"></p>
-        <a href="about-locale.html">link</a>
-    </main>
-
-    <script src="js/localization.js"></script>
-
-</body>
-</html>
+ </body>
