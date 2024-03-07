@@ -109,7 +109,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 /* Dropdown Button */
 .dropbtn {
-  /* background-color: var(--color-gray-3); */
+  background-color: transparent;
   color: black;
   padding: auto;
   font-size: 16px;
@@ -163,7 +163,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-  background-color: var(--color-gray-4);
+  background-color: var(--color-gray-3);
 }
 
 /*--------------------------------------------------------------

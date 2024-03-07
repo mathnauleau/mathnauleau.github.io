@@ -83,6 +83,13 @@
           <li><a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
           <li><a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i class="bi bi-dribbble"></i></a></li>
           <li><a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i class="bi bi-instagram"></i></a></li>
+          <li class="dropdown">
+              <button class="dropbtn"><i class="bi bi-globe"></i></button>
+              <div class="dropdown-content">
+                <a href="#" onclick="changeLanguage('en')">EN</a>
+                <a href="#" onclick="changeLanguage('fr')">FR</a>
+              </div>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -105,8 +112,8 @@
         <div class="col-lg-6 d-flex flex-column rounded-4 justify-content-center" data-aos="fade-up">
           <div class="content bg-light">
             <h5>Oh, hello</h5>
-            <h2>I’m Mathieu, 32 years old, and product designer living in Amsterdam</h2>
-            <p>
+            <h2 data-i18n="contact-introduction-living">I’m Mathieu, 32 years old, and product designer living in Amsterdam</h2>
+            <p data-i18n="contact-introduction-work">
               Currently working at <a href="https://www.aholddelhaize.com" target="_blank">Ahold Delhaize</a>, I like to solve complex problems at the product and system level and craft engaging user experiences through my process and imagination. <br><br> Overall, I aim for simplicity beyond complexity through elegant solutions and I get continuous inspiration from craftsmanship, stories I read, and digital medias. <br><br> In my spare time, I’m often sketching, woodworking, or bikepacking.
             </p>
 
@@ -229,6 +236,8 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="js/localization.js"></script> 
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
