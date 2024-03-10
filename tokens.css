@@ -7,7 +7,8 @@
     ================================================================= */
     /* Fonts */
     --font-family-primary: "Open Sans", sans-serif;
-    --font-family-secondary:    serif;
+    --font-family-secondary: "Inter", sans-serif;
+    --font-family-tertiary: "Montserrat", sans-serif;
     --font-base-unit: var(--base-unit);
     /* Font sizes - 4x4 grid */
     --font-size-12: calc(var(--font-base-unit) * 3);
