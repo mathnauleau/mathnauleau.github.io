@@ -90,10 +90,6 @@ h5{
   font-family: var(--font-family-primary);
 }
 
-.navbar:active{
-  color: var(--color-secondary);
-}
-
 .navbar a i, .navbar a:focus i{
   font-size: 14px;
 }
