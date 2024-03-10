@@ -27,7 +27,7 @@ h3 {
 
 /* Section heading-5 'CRAFT' */
 h5{
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-tertiary);
   color: var(--color-secondary);
   font-weight: 600;
   font-size: 14px;
@@ -77,18 +77,20 @@ h5{
 }
 
 .navbar a {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  letter-spacing: 1px;
+  padding: 12px 0 12px 32px;
+  font-weight: 500;
+  font-family: var(--font-family-primary);
   color: var(--color-primary);
 }
 
-.navbar a, .navbar a:focus{
+.navbar a:focus{
   padding: 12px 0 12px 32px;
+  font-weight: 500;
+  color: var(--color-secondary);
+  font-family: var(--font-family-primary);
 }
 
-.navbar a:focus{
-  font-weight: 500;
+.navbar:active{
   color: var(--color-secondary);
 }
 
