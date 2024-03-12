@@ -52,12 +52,14 @@ h5{
   width: 100%;
   height: 100vh;
   background-size: cover;
+  background-image: none;
+  background: linear-gradient(100deg, #F5F1EA 0%, #f8f9fc 100%);
 }
 
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
+  font-family: var(--font-family-secondary);
+  font-size: 44px;
+  font-weight: 600;
   background: -webkit-linear-gradient(290deg, #006adc 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -67,7 +69,7 @@ h5{
 .hero h2{
   line-height: 1.4;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Inter", sans-serif;
   color: var(--color-gray-8);
 }
@@ -119,7 +121,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .hero .hero-img img {
-    width: 100%;
+    width: 80%;
   }
 
   .g-5, .gx-5{
@@ -142,7 +144,12 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   .prototype {
     display: none;
   }
-  
+}
+
+@media (max-width: 1012px) {
+  .hero .hero-img img {
+    width: 60%;
+  }
 }
 
 
