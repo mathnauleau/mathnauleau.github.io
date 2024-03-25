@@ -30,10 +30,9 @@ h5{
   font-family: var(--font-family-tertiary);
   color: var(--color-secondary);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   font-weight: 700;
-  margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
@@ -80,16 +79,16 @@ h5{
 
 .navbar a {
   padding: 12px 0 12px 32px;
-  font-weight: 500;
-  font-family: var(--font-family-primary);
+  font-weight: 400;
+  font-family: var(--font-family-secondary);
   color: var(--color-primary);
 }
 
 .navbar a:focus{
   padding: 12px 0 12px 32px;
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--font-family-secondary);
   color: var(--color-secondary);
-  font-family: var(--font-family-primary);
 }
 
 .navbar a i, .navbar a:focus i{
@@ -388,7 +387,7 @@ align-items: center;
 }
 
 .about h2{
-  font-size: 28px;
+  font-size: 32px;
   line-height: 1.4;
   color: var(--color-primary);
 }
@@ -420,7 +419,7 @@ align-items: center;
 }
 
 .btn-custom span {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-family-tertiary);
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
