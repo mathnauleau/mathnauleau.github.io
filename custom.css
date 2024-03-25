@@ -444,6 +444,8 @@ align-items: center;
   padding: 16px 24px;
   transition: 0.5s;
   color: var(--color-secondary);
+  font-family: var(--font-family-tertiary);
+  font-weight: 600;
   background-color: transparent;
 }
 
