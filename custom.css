@@ -30,10 +30,9 @@ h5{
   font-family: var(--font-family-tertiary);
   color: var(--color-secondary);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   font-weight: 700;
-  margin-bottom: 0.5em;
   text-transform: uppercase;
 }
 
@@ -52,13 +51,15 @@ h5{
   width: 100%;
   height: 100vh;
   background-size: cover;
+  background-image: none;
+  background: linear-gradient(100deg, #F5F1EA 0%, #f8f9fc 100%);
 }
 
 .hero h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-family-tertiary);
   font-size: 48px;
   font-weight: 700;
-  background: -webkit-linear-gradient(290deg, #006adc 0%, #11181c 50%, #11181c 100%);
+  background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.3;
@@ -68,7 +69,7 @@ h5{
   line-height: 1.4;
   font-weight: 300;
   font-size: 24px;
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-family-secondary);
   color: var(--color-gray-8);
 }
 
@@ -78,16 +79,16 @@ h5{
 
 .navbar a {
   padding: 12px 0 12px 32px;
-  font-weight: 500;
-  font-family: var(--font-family-primary);
+  font-weight: 400;
+  font-family: var(--font-family-secondary);
   color: var(--color-primary);
 }
 
 .navbar a:focus{
   padding: 12px 0 12px 32px;
-  font-weight: 500;
+  font-weight: 400;
+  font-family: var(--font-family-secondary);
   color: var(--color-secondary);
-  font-family: var(--font-family-primary);
 }
 
 .navbar a i, .navbar a:focus i{
@@ -119,7 +120,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .hero .hero-img img {
-    width: 100%;
+    width: 80%;
   }
 
   .g-5, .gx-5{
@@ -142,7 +143,12 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   .prototype {
     display: none;
   }
-  
+}
+
+@media (max-width: 1012px) {
+  .hero .hero-img img {
+    width: 60%;
+  }
 }
 
 
@@ -381,7 +387,7 @@ align-items: center;
 }
 
 .about h2{
-  font-size: 28px;
+  font-size: 32px;
   line-height: 1.4;
   color: var(--color-primary);
 }
@@ -413,7 +419,7 @@ align-items: center;
 }
 
 .btn-custom span {
-  font-family: "Nunito", sans-serif;
+  font-family: var(--font-family-tertiary);
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -438,6 +444,8 @@ align-items: center;
   padding: 16px 24px;
   transition: 0.5s;
   color: var(--color-secondary);
+  font-family: var(--font-family-tertiary);
+  font-weight: 600;
   background-color: transparent;
 }
 
