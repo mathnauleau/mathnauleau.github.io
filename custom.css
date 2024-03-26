@@ -28,12 +28,12 @@ h3 {
 /* Section heading-5 'CRAFT' */
 h5{
   font-family: var(--font-family-tertiary);
-  color: var(--color-secondary);
   font-weight: 600;
   font-size: 16px;
-  letter-spacing: 1px;
   font-weight: 700;
   text-transform: uppercase;
+  color: var(--color-secondary);
+  letter-spacing: 1px;
 }
 
 .header .logo span{
@@ -174,12 +174,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   box-shadow: none;
 }
 
-.section-header p, .portfolio-description h1 {
-  font-family: "Inter", sans-serif;
-  font-weight: 700;
-  font-size: 42px;
+.section-header h2, .portfolio-description h1 {
+  font: var(--typography-heading-2);
   color: var(--color-primary);
-  line-height: 1.2;
+  text-transform: none;
 }
 
 section{ 
@@ -664,7 +662,12 @@ align-items: center;
 }
 
 .portfolio-section-highlight h2{
+  font: var(--typography-subtitle);
   margin-bottom: var(--space-64);
+}
+
+.portfolio-section-highlight {
+  font: var(--typography-body);
 }
 
 
