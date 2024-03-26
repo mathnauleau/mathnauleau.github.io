@@ -56,10 +56,7 @@ h5{
 }
 
 .hero h1 {
-  font-family: var(--font-family-tertiary);
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.3;
+  font: var(--typography-display);
   background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
