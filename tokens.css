@@ -5,7 +5,7 @@
     --base-half-unit:   calc(var(--base-unit) / 2);
 /* Typography
     ================================================================= */
-    /* Fonts */
+    /* Fonts family*/
     --font-family-primary: "Open Sans", sans-serif;
     --font-family-secondary: "Inter", sans-serif;
     --font-family-tertiary: "Montserrat", sans-serif;
@@ -29,6 +29,12 @@
     --font-weight-normal:   400;
     --font-weight-bold:     700;
     --font-weight-bolder:   900;
+     /* Global typography styles*/
+     --typography-display: 700 48px/62px "Montserrat", sans-serif; 
+     --typography-heading-2: 800 32px/38px "Poppins", sans-serif;
+     --typography-heading-3: 700 24px/32px "Poppins", sans-serif;
+     --typography-heading-4: 600 20px/30px "Poppins", sans-serif;
+     --typography-body: 400 16px/24px "Poppins", sans-serif;
 /* Space
      ================================================================= */
     --space-base-unit: var(--base-unit);
