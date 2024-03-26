@@ -76,15 +76,13 @@ h5{
 
 .navbar a {
   padding: 12px 0 12px 32px;
-  font-weight: 400;
-  font-family: var(--font-family-secondary);
+  font: var(--typography-link);
   color: var(--color-primary);
 }
 
 .navbar a:focus{
   padding: 12px 0 12px 32px;
-  font-weight: 400;
-  font-family: var(--font-family-secondary);
+  font: var(--typography-link);
   color: var(--color-secondary);
 }
 
@@ -175,7 +173,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 }
 
 .section-header h2, .portfolio-description h1 {
-  font: var(--typography-heading-2);
+  font: var(--typography-heading-1);
   color: var(--color-primary);
   text-transform: none;
 }
@@ -319,7 +317,7 @@ align-items: center;
 }
 
 .portfolio-hero h2, .portfolio-description h2 {
-  font: var(--typography-subtitle);
+  font: var(--typography-heading-2);
   margin-bottom: 32px;
 }
 
@@ -379,7 +377,7 @@ align-items: center;
 }
 
 .about h2{
-  font: var(--typography-subtitle);
+  font: var(--typography-heading-2);
   color: var(--color-primary);
 }
 
@@ -467,8 +465,7 @@ align-items: center;
 
 .contact .info-box h3 {
   color: var(--color-primary);
-  font-size: 22px;
-  font-family: var(--font-family-secondary);
+  font: var(--typography-heading-3);
   margin: 0 0 8px 0;
 }
 
@@ -584,9 +581,7 @@ align-items: center;
 }
 
 .title {
-  font-family: var(--font-family-secondary);
-  font-size: 32px;
-  font-weight: 700;
+  font: var(--typography-heading-2);
 }
 
 .left, .right{
@@ -611,10 +606,8 @@ align-items: center;
 }
 
 .portfolio-info p {
+  font: var(--typography-body);
   margin: 0;
-  font-size: 18px;
-  font-weight: 300;
-  font-family: "Inter", sans-serif;
 }
 
 .portfolio-info .row {
@@ -660,7 +653,7 @@ align-items: center;
 }
 
 .portfolio-section-highlight h2{
-  font: var(--typography-subtitle);
+  font: var(--typography-heading-2);
   margin-bottom: var(--space-64);
 }
 
