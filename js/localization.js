@@ -21,27 +21,26 @@ async function fetchLanguageData(lang) {
 // Function to change language
 async function changeLanguage(lang) {
     await setLanguagePreference(lang);
-    
+
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
-    toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
+    // toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
 }
 
 // Function to toggle Arabic stylesheet based on language selection
-function toggleArabicStylesheet(lang) {
-    const head = document.querySelector('head');
-    const link = document.querySelector('#styles-link');
+// function toggleArabicStylesheet(lang) {
+//     const head = document.querySelector('head');
+//     const link = document.querySelector('#styles-link');
 
-    if (link) {
-        head.removeChild(link); // Remove the old stylesheet link
-    } else if (lang === 'ar') {
-        const newLink = document.createElement('link');
-        newLink.id = 'styles-link';
-        newLink.rel = 'stylesheet';
-        newLink.href = './assets/css/style-ar.css'; // Path to Arabic stylesheet
-        head.appendChild(newLink);
-    }
-}
+//     if (link) {
+//         head.removeChild(link); // Remove the old stylesheet link
+//     } else if (lang === 'ar') {
+//         const newLink = document.createElement('link');
+//         newLink.id = 'styles-link';
+//         newLink.rel = 'stylesheet';
+//         head.appendChild(newLink);
+//     }
+// }
 
 // Call updateContent() on page load
 window.addEventListener('DOMContentLoaded', async () => {
@@ -49,4 +48,4 @@ window.addEventListener('DOMContentLoaded', async () => {
     const langData = await fetchLanguageData(userPreferredLanguage);
     updateContent(langData);
     toggleArabicStylesheet(userPreferredLanguage);
-});
+}); 
