@@ -379,8 +379,7 @@ align-items: center;
 }
 
 .about h2{
-  font-size: 32px;
-  line-height: 1.4;
+  font: var(--typography-subtitle);
   color: var(--color-primary);
 }
 
