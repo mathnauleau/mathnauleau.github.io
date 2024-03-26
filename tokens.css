@@ -34,7 +34,8 @@
      --typography-heading-2: 800 32px/38px "Poppins", sans-serif;
      --typography-heading-3: 700 24px/32px "Poppins", sans-serif;
      --typography-heading-4: 600 20px/30px "Poppins", sans-serif;
-     --typography-body: 400 16px/24px "Poppins", sans-serif;
+     --typography-subtitle: 700 32px/32px "Inter", sans-serif;
+     --typography-body: 300 18px/27px "Inter", sans-serif;
 /* Space
      ================================================================= */
     --space-base-unit: var(--base-unit);
