@@ -3,7 +3,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--color-primary);
-  background-color: var(--color-gray-1);
+  background-color: var(--bg-color);
 }
 
 a {
@@ -171,7 +171,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 .header.header-scrolled{
   padding: 16px 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--bg-nav-color);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(36, 49, 68, 0.1);
   box-shadow: none;
@@ -725,13 +725,17 @@ align-items: center;
   background-color: var(--color-secondary);
 }
 
+.back-to-top i{
+  color: var(--color-gray-1);
+}
+
 .collaboration {
   margin-top: 0px;
 }
 
 .collaboration .custom-footer {
   padding: 30px;
-  background: linear-gradient(55deg, #F1F1F1 0%, #f8fafc 50%, #daecff 100%);
+  background: linear-gradient(55deg, var(--gradient-collab-start) 0%, var(--gradient-collab-end) 100%);
   height: auto;
   border-radius: var(--border-radius-large);
 }
@@ -745,6 +749,12 @@ align-items: center;
   margin-top: 0px;
   padding: 0px;
   height: auto;
+  background-color: var(--bg-color);
+}
+
+.footer p{
+  color: var(--color-primary);
+  margin: 0px;
   background: none;
 }
 
