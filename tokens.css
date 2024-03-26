@@ -30,7 +30,7 @@
     --font-weight-bold:     700;
     --font-weight-bolder:   900;
      /* Global typography styles*/
-     --typography-display: 700 48px/62px "Montserrat", sans-serif; 
+     --typography-headline: 700 48px/62px "Montserrat", sans-serif; 
      --typography-heading-1: 700 40px/56px "Inter", sans-serif;
      --typography-heading-2: 700 32px/48px "Inter", sans-serif;
      --typography-heading-3: 700 24px/32px "Inter", sans-serif;
