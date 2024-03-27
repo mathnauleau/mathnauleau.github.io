@@ -10,11 +10,14 @@ a {
   color: var(--color-secondary);
 }
 
+a:hover {
+  color: var(--color-secondary-dark);
+}
+
 /* TYPOGRAPHY
      ================================================================= */
 h2 {
   font-family: var(--font-family-secondary);
-  font-weight: 600;
 }
     
 h4 {
@@ -28,9 +31,9 @@ h3 {
 /* Section heading-5 'CRAFT' */
 h5{
   font: var(--typography-overline);
-  color: var(--color-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
+  color: var(--color-secondary);
 }
 
 .header .logo span{
@@ -60,10 +63,7 @@ h5{
 }
 
 .hero h2{
-  line-height: 1.4;
-  font-weight: 300;
-  font-size: 24px;
-  font-family: var(--font-family-secondary);
+  font: var(--typography-heading-4);
   color: var(--color-gray-8);
 }
 
@@ -315,7 +315,7 @@ align-items: center;
 
 .portfolio-hero h2, .portfolio-description h2 {
   font: var(--typography-heading-2);
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .portfolio-hero p, .portfolio-description p{
@@ -629,7 +629,7 @@ align-items: center;
 }
 
 .portfolio-description h3{
-  font: var(--typography-subtitle);
+  font: var(--typography-intro);
   color: var(--color-primary);
 }
 
