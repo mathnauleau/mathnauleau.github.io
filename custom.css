@@ -290,7 +290,7 @@ align-items: center;
 
 .portfolio-title p{
   color: white;
-  font-size:20px;
+  font-size:20px; 
   font-weight: 300;
   margin-bottom: 8px;
 }
@@ -470,9 +470,7 @@ align-items: center;
 }
 
 .info-box h4 {
-  font-size: 18px;
-  font-family: var(--font-family-secondary);
-  font-weight: 600;
+  font: var(--typography-heading-4);
 }
 
 .contact .info-box p {
