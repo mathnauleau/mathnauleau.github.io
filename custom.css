@@ -504,13 +504,10 @@ align-items: center;
 
 
 /*--------------------------------------------------------------
-# Skillset 
---------------------------------------------------------------*/
+# Skillset not used
 
 .skillset h3{
-  font-size: 24px;
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
+  font: var(--typography-heading-3);
 }
 
 .skillset ul li {
@@ -523,6 +520,8 @@ align-items: center;
   color: var(--color-gray-6);
   font-style: italic;
 }
+--------------------------------------------------------------*/
+
 
 /*--------------------------------------------------------------
 # Project nav
