@@ -322,7 +322,7 @@ align-items: center;
 }
 
 .portfolio-hero p, .portfolio-description p{
-  font: var(--typography-body);
+  font: var(--typography-bodyReg);
   margin-bottom: 32px;
 }
 
@@ -382,7 +382,7 @@ align-items: center;
 }
 
 .about p{
-  font: var(--typography-body);
+  font: var(--typography-bodyReg);
   color: var(--color-gray-8);
   margin-bottom: 24px;
 }
@@ -474,7 +474,7 @@ align-items: center;
 }
 
 .contact .info-box p {
-  font: var(--typography-body);
+  font: var(--typography-bodyReg);
   color: var(--color-gray-8);
 }
 
@@ -596,14 +596,12 @@ align-items: center;
 }
 
 .portfolio-info strong{
+  font: var(--typography-bodyBold);
   color: var(--color-primary);
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
 }
 
 .portfolio-info p {
-  font: var(--typography-body);
+  font: var(--typography-bodyReg);
   margin: 0;
 }
 
@@ -634,9 +632,7 @@ align-items: center;
 }
 
 .portfolio-description h3{
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.4;
-  font-weight: 300;
+  font: var(--typography-description);
   color: var(--color-primary);
 }
 
@@ -655,7 +651,7 @@ align-items: center;
 }
 
 .portfolio-section-highlight {
-  font: var(--typography-body);
+  font: var(--typography-bodyReg);
 }
 
 
