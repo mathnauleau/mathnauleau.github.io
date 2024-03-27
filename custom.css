@@ -448,7 +448,7 @@ align-items: center;
   height: 100%;
   overflow: hidden;
   padding: 28px;
-  background-color: var(--color-gray-5);
+  background-color: var(--color-gray-3);
 }
 
 .contact .info-box {
@@ -462,7 +462,7 @@ align-items: center;
 }
 
 .info-box h4 {
-  font: var(--typography-heading-4);
+  font: var(--typography-subtitle);
 }
 
 .contact .info-box p {
