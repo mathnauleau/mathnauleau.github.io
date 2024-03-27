@@ -403,10 +403,7 @@ align-items: center;
 }
 
 .btn-custom span {
-  font-family: var(--font-family-tertiary);
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font: var(--typography-button);
 }
 
 .btn-custom i, .btn-custom2 i {
@@ -424,12 +421,10 @@ align-items: center;
 }
 
 .btn-custom2 {
-  line-height: 0;
+  font: var(--typography-button);
   padding: 16px 24px;
   transition: 0.5s;
   color: var(--color-secondary);
-  font-family: var(--font-family-tertiary);
-  font-weight: 600;
   background-color: transparent;
 }
 
@@ -717,9 +712,13 @@ align-items: center;
   height: auto;
   border-radius: var(--border-radius-large);
 }
+.collaboration h2 {
+  font: var(--typography-heading-2);
+  text-align: left;
+}
 
-.collaboration p, .collaboration h2 {
-  color: var(--color-primary);
+.collaboration p {
+  font: var(--typography-bodyReg);
   text-align: left;
 }
 
@@ -741,6 +740,7 @@ align-items: center;
 }
 
 .footer .copyright p {
+  font: var(--typography-caption);
   margin-bottom: 0;
 }
 

@@ -37,6 +37,8 @@
     --typography-bodyBold:      700 18px/28px "Inter", sans-serif;
     --typography-link:          400 16px/24px "Inter", sans-serif;
     --typography-overline:      700 16px/16px "Montserrat", sans-serif;
+    --typography-button:        600 16px/16px "Montserrat", sans-serif;
+    --typography-caption:       300 14px/14px "Inter", sans-serif;
 
     /* Space
      ================================================================= */
