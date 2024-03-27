@@ -30,10 +30,12 @@
     --typography-heading-2:     700 32px/48px "Inter", sans-serif;
     --typography-heading-3:     700 24px/32px "Inter", sans-serif;
     --typography-heading-4:     700 20px/28px "Inter", sans-serif;
+    --typography-subtitle:      300 24px/32px "Inter", sans-serif;
+    --typography-title:         700 18px/26px "Inter", sans-serif;
     --typography-bodyReg:       300 18px/26px "Inter", sans-serif;
     --typography-bodyBold:      700 18px/26px "Inter", sans-serif;
     --typography-link:          400 16px/24px "Inter", sans-serif;
-    --typography-description:   300 24px/32px "Inter", sans-serif;
+    --typography-overline:      700 16px/16px "Montserrat", sans-serif;
 
     /* Space
      ================================================================= */

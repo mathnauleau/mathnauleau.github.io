@@ -27,12 +27,9 @@ h3 {
 
 /* Section heading-5 'CRAFT' */
 h5{
-  font-family: var(--font-family-tertiary);
-  font-weight: 600;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font: var(--typography-overline);
   color: var(--color-secondary);
+  text-transform: uppercase;
   letter-spacing: 1px;
 }
 
@@ -596,7 +593,7 @@ align-items: center;
 }
 
 .portfolio-info strong{
-  font: var(--typography-bodyBold);
+  font: var(--typography-title);
   color: var(--color-primary);
 }
 
@@ -632,7 +629,7 @@ align-items: center;
 }
 
 .portfolio-description h3{
-  font: var(--typography-description);
+  font: var(--typography-subtitle);
   color: var(--color-primary);
 }
 
