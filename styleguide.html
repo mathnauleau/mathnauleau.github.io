@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content="UX Design Portfolio Mathieu Nauleau">
+  <meta name="keywords" content="UX, Design, Designer, Portfolio, System, Strategy, Product">
+  <meta name="author" content="Mathieu Nauleau"> 
+  <meta name="robots" content="index">
+
+  <title>Styleguide</title>
+
+  <!-- Favicon -->
+  <link href="assets/img/favicon.ico" rel="shortcut icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="custom.css" rel="stylesheet">
+  <link href="tokens.css" rel="stylesheet">
+
+</head>
+
+<style>
+    
+    body{
+        margin-top: 50px;;
+        padding: 50px;
+    }
+    
+    .color-grid{
+        display: flex;
+        gap: 16px;
+        margin-bottom: 50px;
+    }
+    
+    .color{
+        width: 200px;
+        height: 80px;
+        border-radius: 16px;
+        display: flex;
+        /* box-shadow: 3px 3px 8px #c5c5c5; */
+    }
+    
+    .color p{        
+        /* mix-blend-mode: difference; */
+        position: relative;
+        margin-top: 86px;
+        color: black;
+    }
+</style>
+
+<body>
+
+<!-- TYPOGRAPHY -->
+<h4 style="font: var(--typography-heading-3)">Textstyles</h4>
+<hr style="margin: 16px 0 40px 0;">
+
+<h1 style="font: var(--typography-headline)">Ipsum Dolor Sit Amet</h1>
+<h2 style="font: var(--typography-heading-1)">Ipsum Dolor Sit Amet</h2>
+<h3 style="font: var(--typography-heading-2)">Ipsum Dolor Sit Amet</h3>
+<h4 style="font: var(--typography-heading-3)">Ipsum Dolor Sit Amet</h4>
+<p style="font: var(--typography-intro)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-subtitle)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-title)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-bodyReg)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-bodyBold)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-link)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-overline)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-button)">Ipsum Dolor Sit Amet</p>
+<p style="font: var(--typography-caption)">Ipsum Dolor Sit Amet</p>
+
+<div style="height: 60px;"></div>
+
+<!-- COLORS -->
+<h4 style="font: var(--typography-heading-3)">Primary colors</h4>
+<hr style="margin: 16px 0 40px 0;">
+
+<h4 style="font: var(--typography-heading-3)">Primary colors</h4>
+<div class="color-grid">
+    <div class="color" style="background-color: var(--color-primary-light);"><p>primary-light</p></div>
+    <div class="color" style="background-color: var(--color-primary);"><p>primary</p></div>
+    <div class="color" style="background-color: var(--color-primary-dark);"><p>primary-dark</p></div>
+</div>
+
+<h4 style="font: var(--typography-heading-3)">Secondary colors</h4>
+<div class="color-grid">
+    <div class="color" style="background-color: var(--color-secondary-light);"><p>secondary-light</p></div>
+    <div class="color" style="background-color: var(--color-secondary);"><p>secondary</p></div>
+    <div class="color" style="background-color: var(--color-secondary-dark);"><p>secondary-dark</p></div>
+</div>
+
+<h4 style="font: var(--typography-heading-3)">Feedback colors</h4>
+<div class="color-grid">
+    <div class="color" style="background-color: var(--color-critical);"><p>critical</p></div>
+    <div class="color" style="background-color: var(--color-information);"><p>information</p></div>
+    <div class="color" style="background-color: var(--color-danger);"><p>danger</p></div>
+</div>
+
+<h4 style="font: var(--typography-heading-3)">Greyscale colors</h4>
+<div class="color-grid">
+    <div class="color" style="background-color: var(--color-gray-1); border-style: solid; border-width: 1px; border-color: #A1A1A1;"><p>gray-1</p></div>
+    <div class="color" style="background-color: var(--color-gray-2);"><p>gray-2</p></div>
+    <div class="color" style="background-color: var(--color-gray-3);"><p>gray-3</p></div>
+    <div class="color" style="background-color: var(--color-gray-4);"><p>gray-4</p></div>
+    <div class="color" style="background-color: var(--color-gray-5);"><p>gray-5</p></div>
+    <div class="color" style="background-color: var(--color-gray-6);"><p>gray-6</p></div>
+    <div class="color" style="background-color: var(--color-gray-7);"><p>gray-7</p></div>
+    <div class="color" style="background-color: var(--color-gray-8);"><p>gray-8</p></div>
+    <div class="color" style="background-color: var(--color-gray-9);"><p>gray-9</p></div>
+    <div class="color" style="background-color: var(--color-gray-10);"><p>gray-10</p></div>
+</div>
+
+</body>
+
+</html>
