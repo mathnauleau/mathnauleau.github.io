@@ -57,60 +57,150 @@
     
     .color p{        
         /* mix-blend-mode: difference; */
+        font-size: 14px;
         position: relative;
         margin-top: 86px;
         color: black;
+    }
+
+    .table_component {
+    overflow: auto;
+    width: 100%;
+    }
+
+    .table_component table {
+        border-bottom: 1px solid #dededf;
+        height: 100%;
+        width: 100%;
+        table-layout: auto;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        text-align: left;
+    }
+
+    .table_component th {
+        border-bottom: 1px solid #dededf;
+        background-color: #eceff1;
+        color: #000000;
+        padding: 5px;
+    }
+
+    .table_component td {
+        border-bottom: 1px solid #dededf;
+        background-color: #ffffff;
+        color: #000000;
+        padding: 12px 0 8px 0;
+    }
+
+    td {
+        font-size: 14px;
     }
 </style>
 
 <body>
 
-<!-- TYPOGRAPHY -->
-<h4 style="font: var(--typography-heading-3)">Textstyles</h4>
-<hr style="margin: 16px 0 40px 0;">
+    <!-- TYPOGRAPHY -->
+    <h4 style="font: var(--typography-heading-3)">Textstyles</h4>
+    <hr style="margin: 16px 0 40px 0;">
 
-<h1 style="font: var(--typography-headline)">Ipsum Dolor Sit Amet</h1>
-<h2 style="font: var(--typography-heading-1)">Ipsum Dolor Sit Amet</h2>
-<h3 style="font: var(--typography-heading-2)">Ipsum Dolor Sit Amet</h3>
-<h4 style="font: var(--typography-heading-3)">Ipsum Dolor Sit Amet</h4>
-<p style="font: var(--typography-intro)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-subtitle)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-title)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-bodyReg)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-bodyBold)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-link)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-overline)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-button)">Ipsum Dolor Sit Amet</p>
-<p style="font: var(--typography-caption)">Ipsum Dolor Sit Amet</p>
+    <div class="table_component" role="region" tabindex="0">
+    <table>
+        <!-- <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+            </tr>
+        </thead> -->
+        <tbody>
+            <tr>
+                <td>Headline <br> 700 48px/62px "Montserrat"</td>
+                <td><h1 style="font: var(--typography-headline)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Heading-1 <br> 700 40px/56px "Inter"</td>
+                <td><h1 style="font: var(--typography-heading-1)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Heading-2 <br> 700 32px/48px "Inter"</td>
+                <td><h1 style="font: var(--typography-heading-2)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Heading-3 <br> 700 24px/32px "Inter"</td>
+                <td><h1 style="font: var(--typography-heading-3)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Heading-4 <br> 300 24px/32px "Inter"</td>
+                <td><h1 style="font: var(--typography-heading-4)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Intro <br> 300 28px/40px "Inter"</td>
+                <td><h1 style="font: var(--typography-intro)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Subtitle <br> 700 20px/28px "Inter"</td>
+                <td><h1 style="font: var(--typography-subtitle)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Title <br> 700 18px/26px "Inter"</td>
+                <td><h1 style="font: var(--typography-title)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>BodyRegular <br> 300 18px/28px "Inter"</td>
+                <td><h1 style="font: var(--typography-bodyReg)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>BodyBold <br> 700 18px/28px "Inter"</td>
+                <td><h1 style="font: var(--typography-bodyBold)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Link <br> 400 16px/24px "Inter"</td>
+                <td><h1 style="font: var(--typography-link)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Overline <br> 700 16px/16px "Montserrat"0</td>
+                <td><h1 style="font: var(--typography-overline)">IPSUM DOLOR SIT AMET</h1></td>
+            </tr>
+            <tr>
+                <td>Button <br> 600 16px/16px "Montserrat"</td>
+                <td><h1 style="font: var(--typography-button)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+            <tr>
+                <td>Caption <br> 300 14px/14px "Inter"</td>
+                <td><h1 style="font: var(--typography-caption)">Ipsum Dolor Sit Amet</h1></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
 
+<!-- BLOCK -->
 <div style="height: 60px;"></div>
 
 <!-- COLORS -->
-<h4 style="font: var(--typography-heading-3)">Primary colors</h4>
+<h4 style="font: var(--typography-heading-3)">Colors</h4>
 <hr style="margin: 16px 0 40px 0;">
 
-<h4 style="font: var(--typography-heading-3)">Primary colors</h4>
+<h4 style="font: var(--typography-subtitle)">Primary colors</h4>
 <div class="color-grid">
     <div class="color" style="background-color: var(--color-primary-light);"><p>primary-light</p></div>
     <div class="color" style="background-color: var(--color-primary);"><p>primary</p></div>
     <div class="color" style="background-color: var(--color-primary-dark);"><p>primary-dark</p></div>
 </div>
 
-<h4 style="font: var(--typography-heading-3)">Secondary colors</h4>
+<h4 style="font: var(--typography-subtitle)">Secondary colors</h4>
 <div class="color-grid">
     <div class="color" style="background-color: var(--color-secondary-light);"><p>secondary-light</p></div>
     <div class="color" style="background-color: var(--color-secondary);"><p>secondary</p></div>
     <div class="color" style="background-color: var(--color-secondary-dark);"><p>secondary-dark</p></div>
 </div>
 
-<h4 style="font: var(--typography-heading-3)">Feedback colors</h4>
+<h4 style="font: var(--typography-subtitle)">Feedback colors</h4>
 <div class="color-grid">
     <div class="color" style="background-color: var(--color-critical);"><p>critical</p></div>
     <div class="color" style="background-color: var(--color-information);"><p>information</p></div>
     <div class="color" style="background-color: var(--color-danger);"><p>danger</p></div>
 </div>
 
-<h4 style="font: var(--typography-heading-3)">Greyscale colors</h4>
+<h4 style="font: var(--typography-subtitle)">Greyscale colors</h4>
 <div class="color-grid">
     <div class="color" style="background-color: var(--color-gray-1); border-style: solid; border-width: 1px; border-color: #A1A1A1;"><p>gray-1</p></div>
     <div class="color" style="background-color: var(--color-gray-2);"><p>gray-2</p></div>
