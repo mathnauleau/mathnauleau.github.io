@@ -69,9 +69,9 @@
     --color-secondary-dark: #2753c1;
 
     --color-gray-1:         #FFFFFF;
-    --color-gray-2:         #EEEEEE;
-    --color-gray-3:         #F8F9FA;
-    --color-gray-4:         #BBBBBB;
+    --color-gray-2:         #F8F9FA;
+    --color-gray-3:         #F3F3F3;
+    --color-gray-4:         #CFCFCF;
     --color-gray-5:         #A1A1A1;
     --color-gray-6:         #888888;
     --color-gray-7:         #6F6F6F;
@@ -80,7 +80,7 @@
     --color-gray-10:        #222222;
 
     --color-critical:       #ffa500;
-    --color-information:    #ecf2f6;
+    --color-information:    #dae8f1;
     --color-danger:         #ff4500;
 
     /* Border

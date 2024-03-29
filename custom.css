@@ -448,11 +448,11 @@ align-items: center;
   height: 100%;
   overflow: hidden;
   padding: 28px;
-  background-color: var(--color-gray-3);
+  background-color: var(--color-gray-2);
 }
 
 .contact .info-box {
-  background-color: var(--color-gray-3);
+  background-color: var(--color-gray-2);
 }
 
 .contact .info-box h3 {
@@ -634,7 +634,7 @@ align-items: center;
   padding-top: var(--space-72);
   padding-bottom: var(--space-72);
   overflow: visible;
-  background-color: var(--color-gray-3);
+  background-color: var(--color-gray-4);
 }
 
 .portfolio-section-highlight h2{
