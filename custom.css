@@ -356,7 +356,7 @@ align-items: center;
 
 .about .content{
   border-radius: 16px;
-  background-color: var(--color-gray-3);
+  background-color: var(--color-gray-2);
 }
 
 .portfolio-project-nav {
@@ -385,7 +385,7 @@ align-items: center;
 }
 
 .about img{
-  border-radius: 24px;
+  border-radius: var(--border-radius-xlarge);
 }
 
 /*--------------------------------------------------------------

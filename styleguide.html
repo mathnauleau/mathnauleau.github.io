@@ -57,11 +57,29 @@
         flex: 0 1 180px;
         margin-bottom: 30px;
     }
+
+    .space {
+        width: 200px;
+        background-color: var(--color-information);
+        border-style: solid;
+        border-width: 1px 0px;
+        border-color: var(--color-gray-10);
+        display: flex;
+        flex: 0 1 180px;
+        margin-bottom: 30px;
+    }
     
     .color p{        
         font-size: 14px;
         position: relative;
         margin-top: 86px;
+        color: black;
+    }
+
+    .space p{        
+        font-size: 14px;
+        position: relative;
+        margin-top: 8px;
         color: black;
     }
 
@@ -107,12 +125,6 @@
 
     <div class="table_component" role="region" tabindex="0">
     <table>
-        <!-- <thead>
-            <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-            </tr>
-        </thead> -->
         <tbody>
             <tr>
                 <td>Headline <br> 700 48px/62px "Montserrat"</td>
@@ -215,6 +227,39 @@
     <div class="color" style="background-color: var(--color-gray-9);"><p>gray-9</p></div>
     <div class="color" style="background-color: var(--color-gray-10);"><p>gray-10</p></div>
 </div>
+
+<!-- BLOCK -->
+<div style="height: 60px;"></div>
+
+<!-- BORDER RADIUS -->
+<h4 style="font: var(--typography-heading-3)">Border Radius</h4>
+<hr style="margin: 16px 0 40px 0;">
+
+<div class="color-grid">
+    <div class="color" style="border-radius: var(--border-radius-small); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>small</p></div>
+    <div class="color" style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>medium</p></div>
+    <div class="color" style="border-radius: var(--border-radius-large); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>large</p></div>
+    <div class="color" style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>xlarge</p></div>
+</div>
+
+<!-- BLOCK -->
+<div style="height: 60px;"></div>
+
+<!-- BORDER RADIUS -->
+<h4 style="font: var(--typography-heading-3)">Spacing</h4>
+<hr style="margin: 16px 0 40px 0;">
+
+<div class="color-grid">
+    <div class="space" style="height: var(--space-8);"><p>space-8</p></div>
+    <div class="space" style="height: var(--space-16);"><p>space-16</p></div>
+    <div class="space" style="height: var(--space-24);"><p>space-24</p></div>
+    <div class="space" style="height: var(--space-32);"><p>space-32</p></div>
+    <div class="space" style="height: var(--space-40);"><p>space-40</p></div>
+    <div class="space" style="height: var(--space-48);"><p>space-48</p></div>
+    <div class="space" style="height: var(--space-64);"><p>space-64</p></div>
+    <div class="space" style="height: var(--space-72);"><p>space-72</p></div>
+</div>
+
 
 </body>
 
