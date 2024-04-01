@@ -1,6 +1,15 @@
 {
     "welcome_message": "Hello, I'm Mathieu, product designer",
     "introduction": "Currently based in Amsterdam, I like to tackle complex problems to have a positive impact on people and businesses by crafting elegant user experiences.",
-    "contact-introduction-living": "I'm Mathieu, 32 years old, and product designer living in Amsterdam",
-    "contact-introduction-work": "Currently working at Ahold Delhaize, I like to solve complex problems at the product and system level and craft engaging user experiences through my process and imagination. Overall, I aim for simplicity beyond complexity through elegant solutions and I get continuous inspiration from craftsmanship, stories I read, and digital medias. In my spare time, I'm often sketching, woodworking, or bikepacking."
+    "about-introduction-title": "I'm Mathieu, 32 years old, and product designer living in Amsterdam",
+    "about-introduction-description": "Currently working at Ahold Delhaize, I like to solve complex problems at the product and system level and craft engaging user experiences through my process and imagination. Overall, I aim for simplicity beyond complexity through elegant solutions and I get continuous inspiration from craftsmanship, stories I read, and digital medias. In my spare time, I'm often sketching, woodworking, or bikepacking.",
+    "about-introduction-contact-btn": "Get in touch",
+    "about-toolbox-title": "My design toolbox",
+    "about-toolbox-ux-design": "Building the right things: creating elegant (digital) solutions that answer user needs and business objectives.",
+    "about-toolbox-strategy": "Considering a project from an integral perspective (market, business goals, stakeholders...) and outlining a project roadmap.",
+    "about-toolbox-system-thinking": "Endlessly curious about what revolves around a project, and managing a design system to improve the product.",
+    "about-toolbox-project-management-title": "Project management",
+    "about-toolbox-project-management-desc": "Natural interest for organizing the project's activities and facilitating the communication between teams.",
+    "about-toolbox-code-design-title": "Working at the intersection of code and design.",
+    "about-toolbox-code-design-desc": "Building the things right, together. As design and development become increasingly intertwined, having a basic understanding of the code, PRs and Github made me more agile in my process, reducing friction by speaking the same language."
 }
