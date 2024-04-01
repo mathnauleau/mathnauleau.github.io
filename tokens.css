@@ -1,16 +1,17 @@
 :root {
     /* Core units
-     ================================================================= */
+    ================================================================= */
     --base-unit:        0.25rem;
     --base-half-unit:   calc(var(--base-unit) / 2);
-/* Typography
+
+    /* Typography
     ================================================================= */
-    /* Fonts */
-    --font-family-primary: "Open Sans", sans-serif;
+    /* Fonts family*/
+    --font-family-primary:   "Open Sans", sans-serif;
     --font-family-secondary: "Inter", sans-serif;
-    --font-family-tertiary: "Montserrat", sans-serif;
-    --font-base-unit: var(--base-unit);
+    --font-family-tertiary:  "Montserrat", sans-serif;
     /* Font sizes - 4x4 grid */
+    --font-base-unit: var(--base-unit);
     --font-size-12: calc(var(--font-base-unit) * 3);
     --font-size-16: calc(var(--font-base-unit) * 4);
     --font-size-20: calc(var(--font-base-unit) * 5);
@@ -23,13 +24,23 @@
     --line-height-small:   calc(var(--line-height-base-unit) * 1.1);
     --line-height-medium:  calc(var(--line-height-base-unit) * 1.3);
     --line-height-large:   calc(var(--line-height-base-unit) * 1.5);
-    /* Font weights */
-    --font-weight-lighter:  100;
-    --font-weight-light:    200;
-    --font-weight-normal:   400;
-    --font-weight-bold:     700;
-    --font-weight-bolder:   900;
-/* Space
+    /* Global typography styles*/
+    --typography-headline:      700 48px/62px "Montserrat", sans-serif; 
+    --typography-heading-1:     700 40px/56px "Inter", sans-serif;
+    --typography-heading-2:     700 32px/48px "Inter", sans-serif;
+    --typography-heading-3:     700 24px/32px "Inter", sans-serif;
+    --typography-heading-4:     300 24px/32px "Inter", sans-serif;
+    --typography-intro:         300 28px/40px "Inter", sans-serif;
+    --typography-subtitle:      700 20px/28px "Inter", sans-serif;
+    --typography-title:         700 18px/26px "Inter", sans-serif;
+    --typography-bodyReg:       300 18px/28px "Inter", sans-serif;
+    --typography-bodyBold:      700 18px/28px "Inter", sans-serif;
+    --typography-link:          400 16px/24px "Inter", sans-serif;
+    --typography-overline:      700 16px/16px "Montserrat", sans-serif;
+    --typography-button:        600 16px/16px "Montserrat", sans-serif;
+    --typography-caption:       300 14px/14px "Inter", sans-serif;
+
+    /* Space
      ================================================================= */
     --space-base-unit: var(--base-unit);
     /* Margin, Padding - 8x8 grid */
@@ -43,35 +54,37 @@
     --space-72: calc(var(--space-base-unit) * 18);
 
     /* Breakpoints
-     ================================================================= */
+    ================================================================= */
     --breakpoint-small:     544px;
     --breakpoint-medium:    768px;
     --breakpoint-large:     1012px;
-/* Color
-     ================================================================= */
+    /* Color
+    ================================================================= */
     --color-primary-light:  #1B2E55;
     --color-primary:        #0C1527;
     --color-primary-dark:   #0A111F;
 
+    --color-secondary-light:#799fff;
     --color-secondary:      #3F75FF;
+    --color-secondary-dark: #2753c1;
 
-    --color-gray-1: #FFFFFF;
-    --color-gray-2: #EEEEEE;
-    --color-gray-3: #F8F9FA;
-    --color-gray-4: #BBBBBB;
-    --color-gray-5: #A1A1A1;
-    --color-gray-6: #888888;
-    --color-gray-7: #6F6F6F;
-    --color-gray-8: #555555;
-    --color-gray-9: #3C3C3C;
-    --color-gray-10: #222222;
+    --color-gray-1:         #FFFFFF;
+    --color-gray-2:         #F8F9FA;
+    --color-gray-3:         #F3F3F3;
+    --color-gray-4:         #CFCFCF;
+    --color-gray-5:         #A1A1A1;
+    --color-gray-6:         #888888;
+    --color-gray-7:         #6F6F6F;
+    --color-gray-8:         #555555;
+    --color-gray-9:         #3C3C3C;
+    --color-gray-10:        #222222;
 
-    --color-critical: #ffa500;
-    --color-information: #ecf2f6;
-    --color-danger: #ff4500;
+    --color-critical:       #ffa500;
+    --color-information:    #dae8f1;
+    --color-danger:         #ff4500;
 
-/* Border
-     ================================================================= */
+    /* Border
+    ================================================================= */
     /* Border color */
     --border-color-lighter: var(--gray-2);
     --border-color-light:   var(--gray-3);
@@ -83,8 +96,9 @@
     --border-radius-small:  calc(var(--base-unit) * 1);
     --border-radius-medium: calc(var(--base-unit) * 2);
     --border-radius-large:  calc(var(--base-unit) * 4);
-/* Transition
-     ================================================================= */
+
+    /* Transition
+    ================================================================= */
     --transition-faster:    0.1s;
     --transition-fast:      0.2s;
     --transition-normal:    0.3s;
