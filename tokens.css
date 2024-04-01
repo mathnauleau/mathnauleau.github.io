@@ -96,6 +96,7 @@
     --border-radius-small:  calc(var(--base-unit) * 1);
     --border-radius-medium: calc(var(--base-unit) * 2);
     --border-radius-large:  calc(var(--base-unit) * 4);
+    --border-radius-xlarge:  calc(var(--base-unit) * 6);
 
     /* Transition
     ================================================================= */
