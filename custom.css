@@ -160,8 +160,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 }
 
 .section-header{
-  padding-top: 8px;
-  padding-bottom: 40px;
+  padding-bottom: var(--space-section);
 }
 
 .header.header-scrolled{
@@ -234,7 +233,6 @@ section{
 }
 
 .portfolio .portfolio-wrap:hover img {
-  /* transform: scale(1.05); */
   transform: translateY(20px);
 }
 
@@ -318,17 +316,17 @@ align-items: center;
 
 .portfolio-hero h2, .portfolio-description h2 {
   font: var(--typography-heading-2);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-small);
 }
 
 .portfolio-hero p, .portfolio-description p{
   font: var(--typography-bodyReg);
-  margin-bottom: 32px;
+  margin-bottom: var(--space-medium);
 }
 
 .portfolio-hero img{
   width: 100%;
-  border-radius: 8px;
+  border-radius: var(--border-radius-medium);
   margin: 8px 0 8px 0;
 }
 
@@ -342,7 +340,7 @@ align-items: center;
 }
 
 .sub-section {
-  margin-bottom: 60px;
+  margin-bottom: var(--space-section);
 }
 
 .sub-section ul {
@@ -356,7 +354,7 @@ align-items: center;
 }
 
 .about .content{
-  border-radius: var(--border-radius-medium);
+  border-radius: var(--border-radius-large);
   background-color: var(--color-gray-2);
 }
 
@@ -377,12 +375,13 @@ align-items: center;
 .about h2{
   font: var(--typography-heading-2);
   color: var(--color-primary);
+  margin-bottom: var(--space-medium);
 }
 
 .about p{
   font: var(--typography-bodyReg);
   color: var(--color-gray-8);
-  margin-bottom: 24px;
+  margin: 0 0 var(--space-large) 0;
 }
 
 .about img{
@@ -608,20 +607,19 @@ align-items: center;
 
 .portfolio-description{
   margin-top: 0;
-  margin-bottom: 60px;
+  margin-bottom: var(--space-section);
   padding-top: 0;
   overflow: visible;
 }
 
 .portfolio-description img {
   width: 100%;
-  /* margin-bottom: 30px; */
   border-radius: var(--border-radius-large);
-}
+} 
 
 .portfolio-description h1{
   text-align: center;
-  margin: 60px 0;
+  margin: var(--space-section) 0;
 }
 
 .portfolio-description h3{
@@ -812,8 +810,8 @@ align-items: center;
 .callout {
   padding: 24px;
   background-color: var(--color-information);
-  margin-bottom: 60px;
-  border-radius: 16px;
+  margin-bottom: var(--space-section);
+  border-radius: var(--border-radius-large);
   /* border-left-color: var(--color-critical);
   box-shadow: var(--color-critical) 8px 8px; */
 }

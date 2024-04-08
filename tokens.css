@@ -19,8 +19,8 @@
     --font-size-40: calc(var(--font-base-unit) * 10);
     --font-size-48: calc(var(--font-base-unit) * 12);
     --font-size-64: calc(var(--font-base-unit) * 16);
-    --line-height-base-unit: 1;
     /* Line heights */
+    --line-height-base-unit: 1;
     --line-height-small:   calc(var(--line-height-base-unit) * 1.1);
     --line-height-medium:  calc(var(--line-height-base-unit) * 1.3);
     --line-height-large:   calc(var(--line-height-base-unit) * 1.5);
@@ -60,7 +60,8 @@
     --space-xlarge:     calc(var(--space-unit) * 5);
     --space-xxlarge:    calc(var(--space-unit) * 8);
     --space-xxxlarge:    calc(var(--space-unit) * 10);
-
+    
+    --space-section:    calc(var(--space-unit) * 9);
 
     /* Breakpoints
     ================================================================= */
@@ -106,7 +107,7 @@
     --border-radius-small:  calc(var(--base-unit) * 1);
     --border-radius-medium: calc(var(--base-unit) * 2);
     --border-radius-large:  calc(var(--base-unit) * 4);
-    --border-radius-xlarge:  calc(var(--base-unit) * 6);
+    --border-radius-xlarge: calc(var(--base-unit) * 6);
 
     /* Transition
     ================================================================= */
