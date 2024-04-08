@@ -57,14 +57,17 @@ h5{
 
 .hero h1 {
   font: var(--typography-headline);
-  background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
+  color: var(--color-primary-light);
+  letter-spacing: 1px;
+  /* background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .hero h2{
   font: var(--typography-heading-4);
   color: var(--color-gray-8);
+  margin-block-start: var(--space-small);
 }
 
 .logo img{
@@ -157,8 +160,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 }
 
 .section-header{
-  padding-top: 8px;
-  padding-bottom: 40px;
+  padding-bottom: var(--space-section);
 }
 
 .header.header-scrolled{
@@ -231,7 +233,6 @@ section{
 }
 
 .portfolio .portfolio-wrap:hover img {
-  /* transform: scale(1.05); */
   transform: translateY(20px);
 }
 
@@ -244,14 +245,14 @@ section{
 --------------------------------------------------------------*/
 
 .portfolio{
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: var(--space-xxlarge);
+  margin-bottom: var(--space-xxxlarge);
 }
 
 .portfolio-item h4{
   font-size: 18px;
   color: var(--color-gray-7);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-small);
 }
 
 
@@ -315,18 +316,18 @@ align-items: center;
 
 .portfolio-hero h2, .portfolio-description h2 {
   font: var(--typography-heading-2);
-  margin-bottom: 24px;
+  margin-bottom: var(--space-small);
 }
 
 .portfolio-hero p, .portfolio-description p{
   font: var(--typography-bodyReg);
-  margin-bottom: 32px;
+  margin-bottom: var(--space-medium);
 }
 
 .portfolio-hero img{
   width: 100%;
-  border-radius: 8px;
-  margin: 10px 0 10px 0;
+  border-radius: var(--border-radius-medium);
+  margin: 8px 0 8px 0;
 }
 
 .portfolio-hero .row{
@@ -339,7 +340,7 @@ align-items: center;
 }
 
 .sub-section {
-  margin-bottom: 60px;
+  margin-bottom: var(--space-section);
 }
 
 .sub-section ul {
@@ -349,13 +350,11 @@ align-items: center;
 .sub-section ul li {
   margin-bottom: 12px;
   padding-left: 8px;
-  font-size: 18px;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
+  font: var(--typography-bodyReg);
 }
 
 .about .content{
-  border-radius: 16px;
+  border-radius: var(--border-radius-large);
   background-color: var(--color-gray-2);
 }
 
@@ -376,12 +375,13 @@ align-items: center;
 .about h2{
   font: var(--typography-heading-2);
   color: var(--color-primary);
+  margin-bottom: var(--space-medium);
 }
 
 .about p{
   font: var(--typography-bodyReg);
   color: var(--color-gray-8);
-  margin-bottom: 24px;
+  margin: 0 0 var(--space-large) 0;
 }
 
 .about img{
@@ -607,20 +607,19 @@ align-items: center;
 
 .portfolio-description{
   margin-top: 0;
-  margin-bottom: 60px;
+  margin-bottom: var(--space-section);
   padding-top: 0;
   overflow: visible;
 }
 
 .portfolio-description img {
   width: 100%;
-  /* margin-bottom: 30px; */
   border-radius: var(--border-radius-large);
-}
+} 
 
 .portfolio-description h1{
   text-align: center;
-  margin: 60px 0;
+  margin: var(--space-section) 0;
 }
 
 .portfolio-description h3{
@@ -630,16 +629,16 @@ align-items: center;
 
 .portfolio-section-highlight{
   margin-top: 0;
-  margin-bottom: 60px;
-  padding-top: var(--space-72);
-  padding-bottom: var(--space-72);
+  margin-bottom: var(--space-xxlarge);
+  padding-top: var(--space-xxlarge);
+  padding-bottom: var(--space-xxlarge);
   overflow: visible;
-  background-color: var(--color-gray-4);
+  background-color: var(--color-gray-3);
 }
 
 .portfolio-section-highlight h2{
   font: var(--typography-heading-2);
-  margin-bottom: var(--space-64);
+  margin-bottom: var(--space-xxlarge);
 }
 
 .portfolio-section-highlight {
@@ -682,7 +681,7 @@ align-items: center;
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 14px;
   text-align: center;
 }
@@ -801,7 +800,7 @@ align-items: center;
 }
 
 #password::placeholder{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: lightslategray;
 }
 
@@ -811,8 +810,8 @@ align-items: center;
 .callout {
   padding: 24px;
   background-color: var(--color-information);
-  margin-bottom: 60px;
-  border-radius: 16px;
+  margin-bottom: var(--space-section);
+  border-radius: var(--border-radius-large);
   /* border-left-color: var(--color-critical);
   box-shadow: var(--color-critical) 8px 8px; */
 }
