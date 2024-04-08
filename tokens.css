@@ -59,7 +59,7 @@
     --space-large:      calc(var(--space-unit) * 4);
     --space-xlarge:     calc(var(--space-unit) * 5);
     --space-xxlarge:    calc(var(--space-unit) * 8);
-    --space-xxxlarge:    calc(var(--space-unit) * 10);
+    --space-xxxlarge:    calc(var(--space-unit) * 12);
     
     --space-section:    calc(var(--space-unit) * 9);
 
