@@ -18,7 +18,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -40,8 +40,16 @@
         margin-top: 50px;;
         padding: 50px;
     }
+
+    h4{
+        font: var(--typography-heading-2);
+    }
+
+    hr{
+        margin: 8px 0 40px 0;
+    }
     
-    .color-grid{
+    .swatch-grid{
         display: flex;
         margin-bottom: 30px;
         flex-direction: row;
@@ -60,10 +68,10 @@
 
     .space {
         width: 200px;
-        background-color: var(--color-information);
+        background-color: rgb(250, 230, 230);
         border-style: solid;
         border-width: 1px 0px;
-        border-color: var(--color-gray-10);
+        border-color: lightcoral;
         display: flex;
         flex: 0 1 180px;
         margin-bottom: 30px;
@@ -120,14 +128,14 @@
 <body>
 
     <!-- TYPOGRAPHY -->
-    <h4 style="font: var(--typography-heading-3)">Textstyles</h4>
-    <hr style="margin: 16px 0 40px 0;">
+    <h4>Textstyles</h4>
+    <hr>
 
     <div class="table_component" role="region" tabindex="0">
     <table>
         <tbody>
             <tr>
-                <td>Headline <br> 700 48px/62px "Montserrat"</td>
+                <td>Headline <br> 700 52px/64px "Raleway"</td>
                 <td><h1 style="font: var(--typography-headline)">Ipsum Dolor Sit Amet</h1></td>
             </tr>
             <tr>
@@ -171,11 +179,11 @@
                 <td><h1 style="font: var(--typography-link)">Ipsum Dolor Sit Amet</h1></td>
             </tr>
             <tr>
-                <td>Overline <br> 700 16px/16px "Montserrat"0</td>
+                <td>Overline <br> 700 16px/16px "Raleway"0</td>
                 <td><h1 style="font: var(--typography-overline)">IPSUM DOLOR SIT AMET</h1></td>
             </tr>
             <tr>
-                <td>Button <br> 600 16px/16px "Montserrat"</td>
+                <td>Button <br> 600 16px/16px "Raleway"</td>
                 <td><h1 style="font: var(--typography-button)">Ipsum Dolor Sit Amet</h1></td>
             </tr>
             <tr>
@@ -190,32 +198,32 @@
 <div style="height: 60px;"></div>
 
 <!-- COLORS -->
-<h4 style="font: var(--typography-heading-3)">Colors</h4>
-<hr style="margin: 16px 0 40px 0;">
+<h4>Colors</h4>
+<hr>
 
 <h4 style="font: var(--typography-subtitle)">Primary colors</h4>
-<div class="color-grid">
+<div class="swatch-grid">
     <div class="color" style="background-color: var(--color-primary-light);"><p>primary-light</p></div>
     <div class="color" style="background-color: var(--color-primary);"><p>primary</p></div>
     <div class="color" style="background-color: var(--color-primary-dark);"><p>primary-dark</p></div>
 </div>
 
 <h4 style="font: var(--typography-subtitle)">Secondary colors</h4>
-<div class="color-grid">
+<div class="swatch-grid">
     <div class="color" style="background-color: var(--color-secondary-light);"><p>secondary-light</p></div>
     <div class="color" style="background-color: var(--color-secondary);"><p>secondary</p></div>
     <div class="color" style="background-color: var(--color-secondary-dark);"><p>secondary-dark</p></div>
 </div>
 
 <h4 style="font: var(--typography-subtitle)">Feedback colors</h4>
-<div class="color-grid">
+<div class="swatch-grid">
     <div class="color" style="background-color: var(--color-information);"><p>information</p></div>
     <div class="color" style="background-color: var(--color-critical);"><p>critical</p></div>
     <div class="color" style="background-color: var(--color-danger);"><p>danger</p></div>
 </div>
 
 <h4 style="font: var(--typography-subtitle)">Greyscale colors</h4>
-<div class="color-grid">
+<div class="swatch-grid">
     <div class="color" style="background-color: var(--color-gray-1); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>gray-1</p></div>
     <div class="color" style="background-color: var(--color-gray-2);"><p>gray-2</p></div>
     <div class="color" style="background-color: var(--color-gray-3);"><p>gray-3</p></div>
@@ -232,32 +240,30 @@
 <div style="height: 60px;"></div>
 
 <!-- BORDER RADIUS -->
-<h4 style="font: var(--typography-heading-3)">Border Radius</h4>
-<hr style="margin: 16px 0 40px 0;">
+<h4>Border Radius</h4>
+<hr>
 
-<div class="color-grid">
-    <div class="color" style="border-radius: var(--border-radius-small); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>small</p></div>
-    <div class="color" style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>medium</p></div>
-    <div class="color" style="border-radius: var(--border-radius-large); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>large</p></div>
-    <div class="color" style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 2px; border-color: #c7c7c7;"><p>xlarge</p></div>
+<div class="swatch-grid">
+    <div class="color" style="border-radius: var(--border-radius-small); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>small</p></div>
+    <div class="color" style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>medium</p></div>
+    <div class="color" style="border-radius: var(--border-radius-large); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>large</p></div>
+    <div class="color" style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>xlarge</p></div>
 </div>
 
 <!-- BLOCK -->
 <div style="height: 60px;"></div>
 
 <!-- BORDER RADIUS -->
-<h4 style="font: var(--typography-heading-3)">Spacing</h4>
-<hr style="margin: 16px 0 40px 0;">
+<h4>Spacing</h4>
+<hr>
 
-<div class="color-grid">
-    <div class="space" style="height: var(--space-8);"><p>space-8</p></div>
-    <div class="space" style="height: var(--space-16);"><p>space-16</p></div>
-    <div class="space" style="height: var(--space-24);"><p>space-24</p></div>
-    <div class="space" style="height: var(--space-32);"><p>space-32</p></div>
-    <div class="space" style="height: var(--space-40);"><p>space-40</p></div>
-    <div class="space" style="height: var(--space-48);"><p>space-48</p></div>
-    <div class="space" style="height: var(--space-64);"><p>space-64</p></div>
-    <div class="space" style="height: var(--space-72);"><p>space-72</p></div>
+<div class="swatch-grid">
+    <div class="space" style="height: var(--space-xs);"><p>space-xs</p></div>
+    <div class="space" style="height: var(--space-s);"><p>space-s</p></div>
+    <div class="space" style="height: var(--space-m);"><p>space-m</p></div>
+    <div class="space" style="height: var(--space-l);"><p>space-l</p></div>
+    <div class="space" style="height: var(--space-xl);"><p>space-xl</p></div>
+    <div class="space" style="height: var(--space-xxl);"><p>space-xxl</p></div>
 </div>
 
 

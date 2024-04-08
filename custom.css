@@ -57,14 +57,17 @@ h5{
 
 .hero h1 {
   font: var(--typography-headline);
-  background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
+  color: var(--color-primary-light);
+  letter-spacing: 1px;
+  /* background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .hero h2{
   font: var(--typography-heading-4);
   color: var(--color-gray-8);
+  margin-block-start: var(--space-16);
 }
 
 .logo img{
@@ -682,7 +685,7 @@ align-items: center;
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 14px;
   text-align: center;
 }
@@ -801,7 +804,7 @@ align-items: center;
 }
 
 #password::placeholder{
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: lightslategray;
 }
 
