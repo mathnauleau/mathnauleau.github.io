@@ -25,20 +25,20 @@
     --line-height-medium:  calc(var(--line-height-base-unit) * 1.3);
     --line-height-large:   calc(var(--line-height-base-unit) * 1.5);
     /* Global typography styles*/
-    --typography-headline:      700 52px/64px "Raleway", sans-serif; 
-    --typography-heading-1:     700 40px/56px "Inter", sans-serif;
-    --typography-heading-2:     700 32px/48px "Inter", sans-serif;
-    --typography-heading-3:     700 24px/32px "Inter", sans-serif;
-    --typography-heading-4:     300 24px/32px "Inter", sans-serif;
-    --typography-intro:         300 28px/40px "Inter", sans-serif;
-    --typography-subtitle:      700 20px/28px "Inter", sans-serif;
-    --typography-title:         700 18px/26px "Inter", sans-serif;
-    --typography-bodyReg:       300 18px/28px "Inter", sans-serif;
-    --typography-bodyBold:      700 18px/28px "Inter", sans-serif;
-    --typography-link:          400 16px/24px "Inter", sans-serif;
-    --typography-overline:      700 16px/16px "Raleway", sans-serif;
-    --typography-button:        600 16px/16px "Raleway", sans-serif;
-    --typography-caption:       300 14px/14px "Inter", sans-serif;
+    --typography-headline:      700 3.5em "Raleway", sans-serif; 
+    --typography-heading-1:     700 2.8em "Inter", sans-serif;
+    --typography-heading-2:     700 2em "Inter", sans-serif;
+    --typography-heading-3:     700 1.5em "Inter", sans-serif;
+    --typography-heading-4:     300 1.5em "Inter", sans-serif;
+    --typography-intro:         300 1.4em "Inter", sans-serif;
+    --typography-subtitle:      700 1.3em "Inter", sans-serif;
+    --typography-title:         700 1.1em "Inter", sans-serif;
+    --typography-bodyReg:       300 1em "Inter", sans-serif;
+    --typography-bodyBold:      700 1em "Inter", sans-serif;
+    --typography-link:          400 1em "Inter", sans-serif;
+    --typography-overline:      700 1em "Raleway", sans-serif;
+    --typography-button:        600 1em "Raleway", sans-serif;
+    --typography-caption:       300 0.8em "Inter", sans-serif;
 
     /* Space
      ================================================================= */
