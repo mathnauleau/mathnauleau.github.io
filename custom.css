@@ -67,7 +67,7 @@ h5{
 .hero h2{
   font: var(--typography-heading-4);
   color: var(--color-gray-8);
-  margin-block-start: var(--space-16);
+  margin-block-start: var(--space-small);
 }
 
 .logo img{
@@ -247,14 +247,14 @@ section{
 --------------------------------------------------------------*/
 
 .portfolio{
-  margin-top: 50px;
-  margin-bottom: 80px;
+  margin-top: var(--space-xxlarge);
+  margin-bottom: var(--space-xxxlarge);
 }
 
 .portfolio-item h4{
   font-size: 18px;
   color: var(--color-gray-7);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-small);
 }
 
 
@@ -329,7 +329,7 @@ align-items: center;
 .portfolio-hero img{
   width: 100%;
   border-radius: 8px;
-  margin: 10px 0 10px 0;
+  margin: 8px 0 8px 0;
 }
 
 .portfolio-hero .row{
@@ -352,13 +352,11 @@ align-items: center;
 .sub-section ul li {
   margin-bottom: 12px;
   padding-left: 8px;
-  font-size: 18px;
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
+  font: var(--typography-bodyReg);
 }
 
 .about .content{
-  border-radius: 16px;
+  border-radius: var(--border-radius-medium);
   background-color: var(--color-gray-2);
 }
 
@@ -633,16 +631,16 @@ align-items: center;
 
 .portfolio-section-highlight{
   margin-top: 0;
-  margin-bottom: 60px;
-  padding-top: var(--space-72);
-  padding-bottom: var(--space-72);
+  margin-bottom: var(--space-xxlarge);
+  padding-top: var(--space-xxlarge);
+  padding-bottom: var(--space-xxlarge);
   overflow: visible;
-  background-color: var(--color-gray-4);
+  background-color: var(--color-gray-3);
 }
 
 .portfolio-section-highlight h2{
   font: var(--typography-heading-2);
-  margin-bottom: var(--space-64);
+  margin-bottom: var(--space-xxlarge);
 }
 
 .portfolio-section-highlight {
