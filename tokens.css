@@ -26,7 +26,7 @@
     --line-height-large:   calc(var(--line-height-base-unit) * 1.5);
     /* Global typography styles*/
     --typography-headline:      700 3.5em/1.2em "Raleway", sans-serif; 
-    --typography-heading-1:     700 2.8em/1.5em "Inter", sans-serif;
+    --typography-heading-1:     700 2.7em/1.5em "Inter", sans-serif;
     --typography-heading-2:     700 2em/1.5em "Inter", sans-serif;
     --typography-heading-3:     700 1.5em/1.5em "Inter", sans-serif;
     --typography-subhead:       300 1.5em/1.5em "Inter", sans-serif;
@@ -34,7 +34,7 @@
     --typography-overline:      700 1em/1em "Raleway", sans-serif;
     --typography-button:        600 1em/1em "Inter", sans-serif;
     --typography-bodyBold:      700 1em/1.5em "Inter", sans-serif;
-    --typography-bodyReg:       400 1em/1.5em "Inter", sans-serif;
+    --typography-bodyReg:       300 1em/1.5em "Inter", sans-serif;
     --typography-caption:       300 0.9em "Inter", sans-serif;
     /* --typography-link:          400 1em/1.5em "Inter", sans-serif; */
 
@@ -91,6 +91,9 @@
     --color-critical:       #ffa500;
     --color-information:    #dae8f1;
     --color-danger:         #ff4500;
+
+    --color-nav-default:    #ECF2F6;
+    --color-nav-hover:      #C2E7FF;
 
     /* Border
     ================================================================= */

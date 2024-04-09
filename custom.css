@@ -36,6 +36,11 @@ h5{
   color: var(--color-secondary);
 }
 
+hr{
+  color: var(--color-gray-4);
+  opacity: 70%;
+}
+
 .header .logo span{
   font-family: var(--font-family-tertiary);
   font-size: 24px;
@@ -316,7 +321,7 @@ align-items: center;
 
 .portfolio-hero h2, .portfolio-description h2 {
   font: var(--typography-heading-2);
-  margin-bottom: var(--space-small);
+  margin-bottom: var(--space-xsmall);
 }
 
 .portfolio-hero p, .portfolio-description p{
@@ -525,11 +530,11 @@ align-items: center;
 
 .project-nav .prev-next{
   padding: 20px;
-  background-color: #ecf2f6;
+  background-color: var(--color-nav-default);
 }
 
 .project-nav .prev-next:hover {
-  background-color: #c2e7ff;
+  background-color: var(--color-nav-hover);
 }
 
 .project-nav .prev-next span {
@@ -624,7 +629,7 @@ align-items: center;
 
 .portfolio-description h3{
   font: var(--typography-subhead);
-  color: var(--color-primary);
+  color: var(--color-gray-8);
 }
 
 .portfolio-section-highlight{
