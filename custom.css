@@ -65,7 +65,7 @@ h5{
 }
 
 .hero h2{
-  font: var(--typography-heading-4);
+  font: var(--typography-subhead);
   color: var(--color-gray-8);
   margin-block-start: var(--space-small);
 }
@@ -76,13 +76,13 @@ h5{
 
 .navbar a {
   padding: 12px 0 12px 32px;
-  font: var(--typography-link);
+  font: var(--typography-bodyReg);
   color: var(--color-primary);
 }
 
 .navbar a:focus{
   padding: 12px 0 12px 32px;
-  font: var(--typography-link);
+  font: var(--typography-bodyReg);
   color: var(--color-secondary);
 }
 
@@ -588,7 +588,7 @@ align-items: center;
 }
 
 .portfolio-info strong{
-  font: var(--typography-title);
+  font: var(--typography-bodyBold);
   color: var(--color-primary);
 }
 
@@ -623,7 +623,7 @@ align-items: center;
 }
 
 .portfolio-description h3{
-  font: var(--typography-intro);
+  font: var(--typography-subhead);
   color: var(--color-primary);
 }
 
