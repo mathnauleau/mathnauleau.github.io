@@ -36,6 +36,11 @@ h5{
   color: var(--color-secondary);
 }
 
+hr{
+  color: var(--color-gray-4);
+  opacity: 70%;
+}
+
 .header .logo span{
   font-family: var(--font-family-tertiary);
   font-size: 24px;
@@ -65,7 +70,7 @@ h5{
 }
 
 .hero h2{
-  font: var(--typography-heading-4);
+  font: var(--typography-subhead);
   color: var(--color-gray-8);
   margin-block-start: var(--space-small);
 }
@@ -76,13 +81,13 @@ h5{
 
 .navbar a {
   padding: 12px 0 12px 32px;
-  font: var(--typography-link);
+  font: var(--typography-bodyReg);
   color: var(--color-primary);
 }
 
 .navbar a:focus{
   padding: 12px 0 12px 32px;
-  font: var(--typography-link);
+  font: var(--typography-bodyReg);
   color: var(--color-secondary);
 }
 
@@ -316,7 +321,7 @@ align-items: center;
 
 .portfolio-hero h2, .portfolio-description h2 {
   font: var(--typography-heading-2);
-  margin-bottom: var(--space-small);
+  margin-bottom: var(--space-xsmall);
 }
 
 .portfolio-hero p, .portfolio-description p{
@@ -525,11 +530,11 @@ align-items: center;
 
 .project-nav .prev-next{
   padding: 20px;
-  background-color: #ecf2f6;
+  background-color: var(--color-nav-default);
 }
 
 .project-nav .prev-next:hover {
-  background-color: #c2e7ff;
+  background-color: var(--color-nav-hover);
 }
 
 .project-nav .prev-next span {
@@ -541,7 +546,7 @@ align-items: center;
   float: right;
 }
 
-.project-nav .prev-next h3 {
+/* .project-nav .prev-next h3 {
   color: var(--color-primary);
   font-size: 22px;
   font-weight: 700;
@@ -552,11 +557,11 @@ align-items: center;
   color: var(--color-primary);
   font-size: 22px;
   font-family: "Inter", sans-serif;
-}
+} */
 
 .direction {
   display: inline-flex;
-  font-weight: 400;
+  font: var(--typography-bodyReg);
 }
 
 .prev-next {
@@ -588,7 +593,7 @@ align-items: center;
 }
 
 .portfolio-info strong{
-  font: var(--typography-title);
+  font: var(--typography-bodyBold);
   color: var(--color-primary);
 }
 
@@ -623,8 +628,8 @@ align-items: center;
 }
 
 .portfolio-description h3{
-  font: var(--typography-intro);
-  color: var(--color-primary);
+  font: var(--typography-subhead);
+  color: var(--color-gray-8);
 }
 
 .portfolio-section-highlight{
