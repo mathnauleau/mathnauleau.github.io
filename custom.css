@@ -546,7 +546,7 @@ align-items: center;
   float: right;
 }
 
-.project-nav .prev-next h3 {
+/* .project-nav .prev-next h3 {
   color: var(--color-primary);
   font-size: 22px;
   font-weight: 700;
@@ -557,11 +557,11 @@ align-items: center;
   color: var(--color-primary);
   font-size: 22px;
   font-family: "Inter", sans-serif;
-}
+} */
 
 .direction {
   display: inline-flex;
-  font-weight: 400;
+  font: var(--typography-bodyReg);
 }
 
 .prev-next {
