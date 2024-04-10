@@ -18,6 +18,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   
 	<!-- Vendor CSS Files -->
@@ -31,6 +32,7 @@
 	<!-- Template Main CSS Files -->
 	<link href="../assets/css/style.css" rel="stylesheet">
 	<link href="../custom.css" rel="stylesheet">
+	<link href="../tokens.css" rel="stylesheet">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -127,12 +129,11 @@ div.vertical {
 
 <body>
 
-	<div id="loginbox" class="lightbox" >
+	<div class="lightbox" >
 		<div class="horizontal">
 			<div class="vertical">
 				<div class="box">
 					<h4>This content is protected.</h4>              
-<!--					<input style="margin: 16px; text-align: center;" id="password" type="password" placeholder="Enter password" /> <br /> -->
 					<input id="password" type="password" size="20" maxlength="20" placeholder="Enter password" class="post-password-input css-u51q0g"/> <br/>
 					<button id="loginbutton"  class="btn btn-primary" type="button">Submit</button>
 					<p id="wrongPassword" style="display: none">wrong password</p>

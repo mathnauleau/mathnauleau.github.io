@@ -127,7 +127,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
     --bs-gutter-x: 1rem;
   }
 
-  #hero{
+  .hero{
     padding-top: 30px;
   }
   
