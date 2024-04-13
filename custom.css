@@ -454,6 +454,7 @@ align-items: center;
   overflow: hidden;
   padding: 28px;
   background-color: var(--color-gray-2);
+  border-radius: var(--border-radius-large);
 }
 
 .contact .info-box {
