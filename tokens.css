@@ -118,3 +118,37 @@
     --transition-slow:      0.4s;
     --transition-slower:    0.5s;
 }
+
+
+.dark {
+    --bg-color: #151515;
+    --bg-nav-color: #151515cc;
+
+    --text-color: #ffffff;
+    --bg-image: 0%;
+    --end-gradient-1: #aeace1;
+
+    --color-primary-light:  #ffffff;
+    --color-primary:        #d4def1;
+    --color-primary-dark:   #80a4ec;
+
+    --color-secondary:      #5a6bff;
+
+    --color-gray-1: #222222;
+    --color-gray-2: #3C3C3C;
+    --color-gray-3: #555555;
+    --color-gray-4: #6F6F6F;
+    --color-gray-5: #888888;
+    --color-gray-6: #A1A1A1;
+    --color-gray-7: #BBBBBB;
+    --color-gray-8: #F8F9FA;
+    --color-gray-9: #EEEEEE;
+    --color-gray-10: #FFFFFF;
+
+    --color-critical: #ffa500;
+    --color-information: #124669;
+    --color-danger: #ff4500;
+
+    --gradient-collab-start: #b8d8ff1a;
+    --gradient-collab-end: #d1c6ff1a;
+  }
