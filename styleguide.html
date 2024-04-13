@@ -68,7 +68,7 @@
 
     .space {
         width: 200px;
-        background-color: rgb(250, 230, 230);
+        background-color: rgba(240, 128, 128, 0.259);
         border-style: solid;
         border-width: 1px 0px;
         border-color: lightcoral;
@@ -81,14 +81,14 @@
         font-size: 14px;
         position: relative;
         margin-top: 86px;
-        color: black;
+        color: var(--color-primary);
     }
 
     .space p{        
         font-size: 14px;
         position: relative;
         margin-top: 8px;
-        color: black;
+        color: var(--color-primary);
     }
 
     .table_component {
@@ -97,7 +97,7 @@
     }
 
     .table_component table {
-        border-bottom: 1px solid #dededf;
+        border-bottom: 1px solid var(--color-gray-5);
         height: 100%;
         width: 100%;
         table-layout: auto;
@@ -107,16 +107,15 @@
     }
 
     .table_component th {
-        border-bottom: 1px solid #dededf;
-        background-color: #eceff1;
-        color: #000000;
+        border-bottom: 1px solid var(--color-gray-5);
+        color: var(--color-primary);
         padding: 5px;
     }
 
     .table_component td {
-        border-bottom: 1px solid #dededf;
-        background-color: #ffffff;
-        color: #000000;
+        border-bottom: 1px solid var(--color-gray-5);
+        background-color: var(--color-gray-1);
+        color: var(--color-primary);
         padding: 12px 0 8px 0;
     }
 
@@ -245,10 +244,10 @@
 <hr>
 
 <div class="swatch-grid">
-    <div class="color" style="border-radius: var(--border-radius-small); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>small</p></div>
-    <div class="color" style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>medium</p></div>
-    <div class="color" style="border-radius: var(--border-radius-large); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>large</p></div>
-    <div class="color" style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 1px; border-color: #c7c7c7;"><p>xlarge</p></div>
+    <div class="color" style="border-radius: var(--border-radius-small); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);"><p>small</p></div>
+    <div class="color" style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);"><p>medium</p></div>
+    <div class="color" style="border-radius: var(--border-radius-large); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);"><p>large</p></div>
+    <div class="color" style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);"><p>xlarge</p></div>
 </div>
 
 <!-- BLOCK -->
