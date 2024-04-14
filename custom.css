@@ -441,7 +441,7 @@ align-items: center;
   margin-top: 80px;
 }
 
-.contact{
+.toolbox{
   margin-top: 80px;
 }
 
@@ -454,13 +454,14 @@ align-items: center;
   overflow: hidden;
   padding: 28px;
   background-color: var(--color-gray-2);
+  border-radius: var(--border-radius-large);
 }
 
-.contact .info-box {
+.toolbox .info-box {
   background-color: var(--color-gray-2);
 }
 
-.contact .info-box h3 {
+.toolbox .info-box h3 {
   color: var(--color-primary);
   font: var(--typography-heading-3);
   margin: 0 0 8px 0;
@@ -470,7 +471,7 @@ align-items: center;
   font: var(--typography-subtitle);
 }
 
-.contact .info-box p {
+.toolbox .info-box p {
   font: var(--typography-bodyReg);
   color: var(--color-gray-8);
 }
