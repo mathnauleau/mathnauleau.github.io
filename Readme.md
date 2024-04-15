@@ -13,10 +13,5 @@ https://mathieunauleau.com/styleguide.html
 
 
 ### License
-Template Name: FlexStart
-
-Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-
-Author: BootstrapMade.com
-
+Based on the template: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
 License: https://bootstrapmade.com/license/
