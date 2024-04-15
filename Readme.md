@@ -14,4 +14,3 @@ https://mathieunauleau.com/styleguide.html
 
 ### License
 Based on the template: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-License: https://bootstrapmade.com/license/
