@@ -95,6 +95,27 @@ hr{
   font-size: 14px;
 }
 
+.navbar-mobile ul{
+  display: block;
+  position: absolute;
+  top: var(--space-xlarge);
+  right: var(--space-xlarge);
+  bottom: var(--space-xlarge);
+  left: var(--space-xlarge);
+  padding: 16px 0;
+  border-radius: 16px;
+  background-color: var(--color-gray-1);
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 56px;
+  right: 56px;
+  color: var(--color-gray-8);
+}
+
 /* EXPERIMENT WITH GRADIENT
 .hero .hero-img{
 background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
@@ -142,6 +163,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
   .prototype {
     display: none;
+  }
+
+  .navbar a, .navbar a i, .navbar a:focus i {
+    font-size: 24px;
   }
 }
 
