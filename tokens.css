@@ -34,7 +34,7 @@
     --typography-button:        600 1em/1em "Inter", sans-serif;        /* 16px*/
     --typography-bodyBold:      700 1em/1.5em "Inter", sans-serif;      /* 16px*/
     --typography-bodyReg:       300 1em/1.5em "Inter", sans-serif;      /* 16px*/
-    --typography-caption:       300 0.875em "Inter", sans-serif;        /* 14px*/
+    --typography-caption:       300 0.875em/1.25em "Inter", sans-serif;        /* 14px*/
 
     /* Space
      ================================================================= */

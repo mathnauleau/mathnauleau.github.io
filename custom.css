@@ -752,7 +752,7 @@ align-items: center;
 }
 
 #password::placeholder{
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-family-primary);
   color: lightslategray;
 }
 
@@ -773,8 +773,7 @@ align-items: center;
 }
 
 .callout strong {
-  font-size: 18px;
-  font-family: "Inter", sans-serif;
+  font: var(--typography-subtitle);
 }
 
 
@@ -895,7 +894,7 @@ align-items: center;
 
 .background-hero-title {
   font-family: var(--font-family-primary);
-  font-size: 60px;
+  font-size: 60px; /* Custom */
   font-weight: 800;
   color: #6ab7e43e;
   position: relative;
