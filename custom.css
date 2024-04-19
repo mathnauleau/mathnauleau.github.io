@@ -291,12 +291,6 @@ section{
   margin-bottom: var(--space-xxxlarge);
 }
 
-.portfolio-item h4{
-  font-size: 18px;
-  color: var(--color-gray-7);
-  margin-bottom: var(--space-small);
-}
-
 
 /*--------------------------------------------------------------
 # Portfolio title
@@ -324,15 +318,7 @@ align-items: center;
 
 .portfolio-title h4{
   color: white;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.portfolio-title p{
-  color: white;
-  font-size:20px; 
-  font-weight: 300;
-  margin-bottom: 8px;
+  font: var(--typography-heading-3);
 }
 
 /*--------------------------------------------------------------
