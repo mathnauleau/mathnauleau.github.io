@@ -17,15 +17,15 @@ a:hover {
 /* TYPOGRAPHY
      ================================================================= */
 h2 {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
 }
     
 h4 {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
 }
 
 h3 {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
 }
 
 /* Section heading-5 'CRAFT' */
@@ -42,7 +42,7 @@ hr{
 }
 
 .header .logo span{
-  font-family: var(--font-family-tertiary);
+  font-family: var(--font-family-secondary);
   font-size: 24px;
   font-weight: 500;
   color: var(--color-primary);
@@ -118,6 +118,10 @@ hr{
 
 .navbar-mobile{
   background-color: #030404ed;
+}
+
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover>a{
+  color: var(--color-secondary);
 }
 
 .mobile-nav-toggle{
@@ -981,7 +985,7 @@ align-items: center;
 }
 
 .background-hero-title {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
   font-size: 60px;
   font-weight: 800;
   color: #6ab7e43e;
