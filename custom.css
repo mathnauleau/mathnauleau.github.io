@@ -14,8 +14,10 @@ a:hover {
   color: var(--color-secondary-dark);
 }
 
-/* TYPOGRAPHY
-     ================================================================= */
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
 h2 {
   font-family: var(--font-family-primary);
 }
@@ -48,6 +50,10 @@ hr{
   color: var(--color-primary);
 }
 
+.logo img{
+  height: 20px;
+}
+
 /*--------------------------------------------------------------
 # Hero Home page
 --------------------------------------------------------------*/
@@ -75,9 +81,9 @@ hr{
   margin-block-start: var(--space-small);
 }
 
-.logo img{
-  height: 20px;
-}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
 
 .navbar a {
   padding: 12px 0 12px 32px;
@@ -456,20 +462,14 @@ align-items: center;
 }
 
 /*--------------------------------------------------------------
-# Experience / Contact
+# Toolbox / InfoBox
 --------------------------------------------------------------*/
-
-.experience{
-  margin-top: 80px;
-}
 
 .toolbox{
-  margin-top: 80px;
+  margin-top: var(--space-xxxlarge);
+  margin-bottom: var(--space-xlarge);
 }
 
-/*--------------------------------------------------------------
-# Info Box
---------------------------------------------------------------*/
 .info-box {
   text-align: center;
   height: 100%;
@@ -489,14 +489,18 @@ align-items: center;
   margin: 0 0 8px 0;
 }
 
-.info-box h4 {
-  font: var(--typography-subtitle);
-}
-
 .toolbox .info-box p {
   font: var(--typography-bodyReg);
   color: var(--color-gray-8);
 }
+
+.info-box h4 {
+  font: var(--typography-subtitle);
+}
+
+/*--------------------------------------------------------------
+# Info Box
+--------------------------------------------------------------*/
 
 .info-box h3, .info-box p {
   text-align: left;
