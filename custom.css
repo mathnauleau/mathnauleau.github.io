@@ -757,15 +757,15 @@ align-items: center;
 }
 
 
-/* CALLOUT */
+/*--------------------------------------------------------------
+# Callout
+--------------------------------------------------------------*/
 
 .callout {
   padding: 24px;
   background-color: var(--color-information);
   margin-bottom: var(--space-section);
   border-radius: var(--border-radius-large);
-  /* border-left-color: var(--color-critical);
-  box-shadow: var(--color-critical) 8px 8px; */
 }
 
 .callout p{
@@ -778,7 +778,10 @@ align-items: center;
 
 
 
-/* VIDEO */
+/*--------------------------------------------------------------
+# Video
+--------------------------------------------------------------*/
+
 .floating-image2 {
   margin-top: 30px;
   height: 100%;
@@ -801,50 +804,6 @@ align-items: center;
   height: auto;
   top: 20px;
 }
-
-
-/* .floating-image1 {
-  margin-top: 30px;
-  height: 50%;
-  position: relative;
-  display: flex;
-  margin-bottom: -58px;
-  justify-content: center;
-  align-items: right;
-  background-image: url(assets/img/strategy.png);
-  background-size: contain;
-}
-
-.anim-video {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  flex: 1;
-}
-
-.w-background-video>video {
-  background-size: cover;
-  background-position: 50% 50%;
-  position: absolute;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  right: -100%;
-  bottom: -100%;
-  top: -100%;
-  left: -100%;
-  object-fit: cover;
-  z-index: -100;
-} */
-
-
-
-
 
 .parent {
   position: relative;
