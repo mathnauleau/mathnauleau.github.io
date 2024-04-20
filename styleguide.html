@@ -34,11 +34,11 @@
 
 </head>
 
-<style>
+  <!-- Combine with custom CSS -->
+  <style>
     
-    body{
-        margin-top: 50px;;
-        padding: 50px;
+    main{
+        padding-top: 50px;
     }
 
     h4{
@@ -113,25 +113,18 @@
     }
 
     .table_component td {
+        font: var(--typography-caption);
         border-bottom: 1px solid var(--color-gray-4);
-        background-color: var(--color-gray-1);
         color: var(--color-primary);
         padding: 12px 0;
     }
 
-    td {
-        font: var(--typography-caption);
-    }
-
     @media (max-width: 768px) {
         body{
-        margin-top: 50px;;
         padding: 16px;
         }  
 
         td:first-child{
-            color: red;
-            width: 100%;
             display: none;
         }
     }
@@ -158,7 +151,7 @@
         </div>
     </header><!-- End Header -->
 
-    <main class="container-xl-12">
+    <main class="container-xl" style="margin-top: 50px;">
 
         
         <!-- TYPOGRAPHY -->
@@ -169,15 +162,15 @@
             <table>
                 <tbody>
                     <tr>
-                        <td>headline <br> 700 3em/1.2em "Raleway"</td>
+                        <td>headline <br> 700 3.5em/1.3em</td>
                         <td><h1 style="font: var(--typography-headline)">Ipsum Dolor Sit Amet</h1></td>
                     </tr>
                     <tr>
-                        <td>heading-1 <br> 700 2.5em/1.5em "Inter"</td>
+                        <td>heading-1 <br> 700 2.5em/1.3em</td>
                         <td><h1 style="font: var(--typography-heading-1)">Ipsum Dolor Sit Amet</h1></td>
                     </tr>
                     <tr>
-                        <td>heading-2 <br> 700 2em/1.5em "Inter"</td>
+                        <td>heading-2 <br> 700 2em/1.3em "Inter"</td>
                         <td><h1 style="font: var(--typography-heading-2)">Ipsum Dolor Sit Amet</h1></td>
                     </tr>
                     <tr>
