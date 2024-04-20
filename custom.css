@@ -512,6 +512,14 @@ align-items: center;
   padding: 0;
 }
 
+.img-box2 {
+  height: 100%;
+  /* background-color: var(--color-information); */
+  background-image:url(assets/img/window2.png);
+  background-size: cover;
+  padding: 0;
+}
+
 
 
 /*--------------------------------------------------------------

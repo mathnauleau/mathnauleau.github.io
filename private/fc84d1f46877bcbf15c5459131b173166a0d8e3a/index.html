@@ -1,102 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2XH0GY2B5X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XH0GY2B5X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      gtag("config", "G-2XH0GY2B5X");
+    </script>
 
-    gtag('config', 'G-2XH0GY2B5X');
-  </script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Project description here" />
+    <meta name="keywords" content="UX, Design, Designer, Portfolio" />
+    <meta name="author" content="Mathieu Nauleau" />
+    <meta name="robots" content="noindex, nofollow" />
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Project description here">
-  <meta name="keywords" content="UX, Design, Designer, Portfolio">
-  <meta name="author" content="Mathieu Nauleau"> 
-  <meta name="robots" content="noindex, nofollow">
+    <title>Design System</title>
 
-  <title>Design System</title>
+    <!-- Favicon -->
+    <link href="../../assets/img/favicon.ico" rel="icon" />
 
-  <!-- Favicon -->
-  <link href="../../assets/img/favicon.ico" rel="icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/aos/aos.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="../../assets/vendor/aos/aos.css" rel="stylesheet">
+    <link
+      href="../../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
 
-  <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS Files -->
+    <link href="../../assets/css/style.css" rel="stylesheet" />
+    <link href="../../custom.css" rel="stylesheet" />
+    <link href="../../tokens.css" rel="stylesheet" />
 
-  <!-- Template Main CSS Files -->
-  <link href="../../assets/css/style.css" rel="stylesheet">
-  <link href="../../custom.css" rel="stylesheet">
-  <link href="../../tokens.css" rel="stylesheet">
-
-  <!-- =======================================================
+    <!-- =======================================================
   * Hello, I'm currently using a template for my website. Here are some info:
   * Template Name: FlexStart - v1.12.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
   ======================================================== -->
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="../../index.html" class="logo d-flex align-items-center">
+          <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+          <span>Mathieu Nauleau</span>
+        </a>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="../../index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
-        <span>Mathieu Nauleau</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="../../index.html">Design</a></li>
-          <li><a class="nav-link scrollto" href="../../index.html#craft">Craft</a></li>
-          <li><a class="nav-link scrollto" href="../../about.html">About</a></li>
-          <li><a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-          <li><a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i class="bi bi-dribbble"></i></a></li>
-          <li><a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i class="bi bi-instagram"></i></a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-<!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
-      <div class="container-fluid container-xl d-flex align-items-center">
-        <div class="col-lg-12">
-          <img src="../../assets/img/portfolio/project1/project-hero.png" alt="Design System hero image">
-        </div>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto" href="../../index.html">Design</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="../../index.html#craft"
+                >Craft</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="../../about.html">About</a>
+            </li>
+            <li>
+              <a
+                class="nav-link social-links linkedin"
+                href="https://www.linkedin.com/in/mathieunauleau/"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                class="nav-link social-links dribbble"
+                href="https://dribbble.com/mathieunauleau"
+                target="_blank"
+                ><i class="bi bi-dribbble"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                class="nav-link social-links instagram"
+                href="http://instagram.com/mathieunauleau"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
       </div>
-    </section>
-<!-- ======= END Portfolio Header ======= -->
+    </header>
+    <!-- End Header -->
 
+    <main id="main">
+      <!-- ======= START Portfolio Header ======= -->
+      <section class="portfolio-header">
+        <div class="container-fluid container-xl d-flex align-items-center">
+          <div class="col-lg-12">
+            <img
+              src="../../assets/img/portfolio/project1/project-hero.png"
+              alt="Design System hero image"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- ======= END Portfolio Header ======= -->
 
-<!-- ======= START Portfolio hero Section ======= -->
-    <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
-
+      <!-- ======= START Portfolio hero Section ======= -->
+      <section class="portfolio-description container-fluid col-lg-6 col-sm-12">
         <h1>Pantry Design System</h1>
 
         <div class="row">
-
           <div class="portfolio-info col-lg-4 col-sm-12">
             <div class="row">
               <div class="col-4">
@@ -106,7 +159,7 @@
                 <p>June 2022 - Now</p>
               </div>
             </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Company</strong>
@@ -115,7 +168,7 @@
                 <p>Albert Heijn</p>
               </div>
             </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Result</strong>
@@ -124,7 +177,7 @@
                 <p><a href="https://ah.nl" target="_blank">design.ah.nl</a></p>
               </div>
             </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Skills</strong>
@@ -136,170 +189,289 @@
           </div>
 
           <div class="col-lg-8 col-sm-12 px-lg-5">
-            <h3>Ahold Delhaize started its Design System with an ambitious goal: unite existing initiatives to standardise its design and development efforts to deliver a consistent and high-quality user experiences across all touchpoints.</h3>
+            <h3>
+              Ahold Delhaize started its Design System with an ambitious goal:
+              unite existing initiatives to standardise its design and
+              development efforts to deliver a consistent and high-quality user
+              experiences across all touchpoints.
+            </h3>
           </div>
+        </div>
+      </section>
+      <!-- ======= END Portfolio Header ======= -->
 
+      <section class="portfolio-description container-fluid col-lg-6 col-sm-12">
+        <div class="sub-section">
+          <img
+            src="../../assets/img/portfolio/project1/view-01.png"
+            alt="Project image"
+          />
         </div>
 
-    </section>
-<!-- ======= END Portfolio Header ======= -->
+        <div class="sub-section">
+          <h2>Key results</h2>
 
-    <section class="portfolio-description container-fluid col-lg-9 col-sm-12">    
+          <div class="row g-3">
+            <div class="col-xl-3 col-md-6">
+              <div class="info-box bg-light rounded-4">
+                <strong>4X3</strong>
+                <h4>platforms X brands</h4>
+                <p>The same codebase for iOS, Android, Flutter &amp; web.</p>
+              </div>
+            </div>
 
-      <div class="sub-section">
-        <img src="../../assets/img/portfolio/project1/view-01.png" alt="Project image">
-      </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="info-box bg-light rounded-4">
+                <strong>400+</strong>
+                <h4>tokens created</h4>
+                <p>
+                  Ensures a perfect alignment between UX, Tech &amp; brands.
+                </p>
+              </div>
+            </div>
 
-      <div class="sub-section">
-        <h2>Key results</h2>
+            <div class="col-xl-3 col-md-6">
+              <div class="info-box bg-light rounded-4">
+                <strong>30</strong>
+                <h4>components created</h4>
+                <p>
+                  in 3 months, fully documented &amp; aligned with development.
+                </p>
+              </div>
+            </div>
 
-        <div class="row g-3">
-          <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
-              <strong>4X3</strong>
-              <h4>platforms X brands</h4>
-              <p>The same codebase for iOS, Android, Flutter &amp; web.</p>
+            <div class="col-xl-3 col-md-6">
+              <div class="info-box bg-light rounded-4">
+                <strong>-40%</strong>
+                <h4>future time saved</h4>
+                <p>Thanks to the collaboration between UX and devs.</p>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
-              <strong>400+</strong>
-              <h4>tokens created</h4>
-              <p>Ensures a perfect alignment between UX, Tech &amp; brands.</p>
+        <header class="section-header">
+          <h5>Problem statement</h5>
+          <!-- <p>Inconsistency, inefficiency, low quality</p> -->
+        </header>
+
+        <div class="sub-section">
+          <h2>Inconsistency, inefficiency, low quality</h2>
+          <p>
+            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque
+            inventore commodi labore quia quia. Exercitationem repudiandae
+            officiis neque suscipit non officia eaque itaque enim. Voluptatem
+            officia accusantium nesciunt est omnis tempora consectetur
+            dignissimos. Sequi nulla at esse enim cum deserunt eius.
+          </p>
+          <img
+            src="../../assets/img/portfolio/project1/view-02.png"
+            alt="Project image"
+          />
+        </div>
+      </section>
+
+      <!-- ======= START Portfolio Section Highlight ======= -->
+      <section
+        class="portfolio-section-highlight container-fluid col-12"
+        style="height: fit-content"
+      >
+        <div class="col-lg-6 container-fluid">
+          <h2>The need for a Design System</h2>
+          <div class="row gx-5">
+            <div class="col-lg-4 col-md-0">
+              <div class="img-box2"></div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+              <p>
+                A design system is a standardized approach to managing design
+                that promotes consistency and eliminates redundancy across
+                various pages and channels. <br />
+              </p>
+              <p>
+                It includes items such as colors, typography, spacing, and UI
+                elements (e.g., buttons, forms, navigation controls) that are
+                clearly defined to ensure product coherence.
+              </p>
+              <p></p>
             </div>
           </div>
+        </div>
+      </section>
+      <!-- ======= END Portfolio Section Highlight ======= -->
 
-          <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
-              <strong>30</strong>
-              <h4>components created</h4>
-              <p>in 3 months, fully documented &amp; aligned with development.</p>
+      <section class="portfolio-description container-fluid col-lg-6 col-sm-12">
+        <div class="sub-section">
+          <h2>Challenges</h2>
+          <div class="row">
+            <div class="portfolio-info">
+              <div class="row">
+                <h4 class="col-4">No dedicated design system team</h4>
+                <div class="col-8">
+                  <p>
+                    The project first started as a design initiative, without
+                    full focus and structure. It quickly became paramount to
+                    convince management of the benefit. <br />
+                    <strong>Our approach: </strong> Present the benefits of a
+                    design system to management with achievable goals on the
+                    short and long term in order to get focus, budget and
+                    support
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <h4 class="col-4">
+                  Efficiently launch and maintain the system across 4 platforms
+                </h4>
+                <div class="col-8">
+                  <p>
+                    The project first started as a design initiative, without
+                    full focus and structure. It quickly became paramount to
+                    convince management of the benefit. <br />
+                    <strong>Our approach: </strong> Present the benefits of a
+                    design system to management with achievable goals on the
+                    short and long term in order to get focus, budget and
+                    support
+                  </p>
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <h4 class="col-4">
+                  Start from scratch while speeding things up
+                </h4>
+                <div class="col-8">
+                  <p>
+                    ABC. <br />
+                    <strong>Our approach: </strong>DEF
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
-              <strong>-40%</strong>
-              <h4>future time saved</h4>
-              <p>Thanks to the collaboration between UX and devs.</p>
+      <!-- ======= Before the journey begins... ======= -->
+      <section
+        class="portfolio-section-highlight container-fluid col-12"
+        style="height: fit-content"
+      >
+        <div class="col-lg-6 container-fluid">
+          <h2>Before the journey begins...</h2>
+          <div class="row gx-5">
+            <div class="col-lg-4 col-md-0">
+              <div class="img-box2"></div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+              <p>
+                A design system is a standardized approach to managing design
+                that promotes consistency and eliminates redundancy across
+                various pages and channels. <br />
+              </p>
+              <p></p>
+              <p>
+                It includes items such as colors, typography, spacing, and UI
+                elements (e.g., buttons, forms, navigation controls) that are
+                clearly defined to ensure product coherence.
+              </p>
+              <p></p>
             </div>
           </div>
+        </div>
+        <div class="col-lg-6 container-fluid" style="margin-top: 80px;">
+          <h4>
+            Efficiently launch and maintain the system across 4 platforms
+          </h4>
+          <p>
+            The project first started as a design initiative, without
+            full focus and structure. It quickly became paramount to
+            convince management of the benefit. <br />
+            <strong>Our approach: </strong> Present the benefits of a
+            design system to management with achievable goals on the
+            short and long term in order to get focus, budget and
+            support
+          </p>
+        </div>
+      </section>
 
+      <!-- Before the journey begins -->
+      <section class="portfolio-description container-fluid col-lg-6 col-sm-12">
+        <div class="sub-section">
+          <h2>A design system</h2>
+          <p>
+            Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque
+            inventore commodi labore quia quia. Exercitationem repudiandae
+            officiis neque suscipit non officia eaque itaque enim. Voluptatem
+            officia accusantium nesciunt est omnis tempora consectetur
+            dignissimos. Sequi nulla at esse enim cum deserunt eius.
+          </p>
+          <img
+            src="../../assets/img/portfolio/project1/view-03.png"
+            alt="final result of the finished puzzle"
+          />
+        </div>
+
+        <div class="sub-section">
+          <h2>Rest of the development</h2>
+          <h4>The 2 streams</h4>
+          <li>Stream 1 - System and governance</li>
+          <li>Stream 2 - Audit and foundation</li>
+          <br /><br />
+
+          <h4>Foster the community</h4>
+          <li>Stakeholders, ...</li>
+          <br /><br />
+
+          <h4>Setting up the foundations</h4>
+          <li>text, ...</li>
+          <br /><br />
+
+          <h4>Building components</h4>
+          <li>text, ...</li>
+          <br /><br />
+
+          <h4>Current Way of working</h4>
+          <li>Teams channels to organise our work</li>
+          <li>Jira and Github</li>
+          <li>Newsletter sent every month to keep the community posted</li>
+          <li>Monthly Demos of activities</li>
+          <br /><br />
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="copyright">
+          <p>
+            Created with
+            <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a>
+          </p>
+          <p>2023</p>
         </div>
       </div>
+    </footer>
+    <!-- End Footer -->
 
-      <header class="section-header">
-        <h5>Problem statement</h5>
-        <!-- <p>Inconsistency, inefficiency, low quality</p> -->
-      </header>  
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-      <div class="sub-section">
-        <h2>Inconsistency, inefficiency, low quality</h2>
-        <p>
-          Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-        </p>
-        <img src="../../assets/img/portfolio/project1/view-02.png" alt="Project image">
-      </div>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-</section>
-     
-
-
-
-<!-- ======= START Portfolio Section Highlight ======= -->
-<section class="portfolio-section-highlight container-fluid col-12" style="height: fit-content;">
-
-  <header class="section-header">
-    <h5>The opportunity</h5>
-    <!-- <p>Inconsistency, inefficiency, low quality</p> -->
-  </header>  
-
-  <div class="col-9 container-fluid">
-    <h2>Building a Design System</h2>
-    <div class="row gx-5">
-      <div class="col-lg-4 col-md-0">
-        <div class="img-box rounded-4">
-        </div>
-      </div>
-      <div class="col-lg-8 col-md-12">
-        <p>text<p>
-        <p>text<p>
-        <p>text<p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ======= END Portfolio Section Highlight ======= -->
-
-      <section class="portfolio-description container-fluid col-lg-9 col-sm-12">      
-
-      <div class="sub-section">
-        <h2>A design system</h2>
-        <p>
-          Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-        </p>
-        <img src="../../assets/img/portfolio/project1/view-03.png" alt="final result of the finished puzzle">
-      </div>
-
-      <div class="sub-section">
-        <h2>Rest of the development</h2>
-        <h3>The 2 streams</h3>
-        <li>Stream 1 - System and governance</li>
-        <li>Stream 2 - Audit and foundation</li>
-        <br><br>
-
-        <h3>Foster the community</h3>
-        <li>Stakeholders, ...</li>
-        <br><br>
-
-        <h3>Setting up the foundations</h3>
-        <li>text, ...</li>
-        <br><br>
-
-        <h3>Building components</h3>
-        <li>text, ...</li>
-        <br><br>
-
-        <h3>Current Way of working</h3>
-        <li>Teams channels to organise our work</li>
-        <li>Jira and Github</li>
-        <li>Newsletter sent every month to keep the community posted</li>
-        <li>Monthly Demos of activities</li>
-        <br><br>
-
-      </div>
-
-    </section>
-
-<!-- ======= End Portfolio Development Section ======= -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright">
-        <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a></p>
-        <p>2023</p>
-      </div>
-    </div>
-  </footer>
-  <!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="../../assets/js/main.js"></script>
-
-</body>
-
+    <!-- Template Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+  </body>
 </html>
