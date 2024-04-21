@@ -1,16 +1,17 @@
 :root {
     /* Core units
-     ================================================================= */
+    ================================================================= */
     --base-unit:        0.25rem;
     --base-half-unit:   calc(var(--base-unit) / 2);
-/* Typography
+
+    /* Typography
     ================================================================= */
-    /* Fonts */
-    --font-family-primary: "Open Sans", sans-serif;
+    /* Fonts family*/
+    --font-family-primary:   "Open Sans", sans-serif;
     --font-family-secondary: "Inter", sans-serif;
-    --font-family-tertiary: "Montserrat", sans-serif;
-    --font-base-unit: var(--base-unit);
+    --font-family-tertiary:  "Raleway", sans-serif;
     /* Font sizes - 4x4 grid */
+    --font-base-unit: var(--base-unit);
     --font-size-12: calc(var(--font-base-unit) * 3);
     --font-size-16: calc(var(--font-base-unit) * 4);
     --font-size-20: calc(var(--font-base-unit) * 5);
@@ -18,21 +19,28 @@
     --font-size-40: calc(var(--font-base-unit) * 10);
     --font-size-48: calc(var(--font-base-unit) * 12);
     --font-size-64: calc(var(--font-base-unit) * 16);
-    --line-height-base-unit: 1;
     /* Line heights */
+    --line-height-base-unit: 1;
     --line-height-small:   calc(var(--line-height-base-unit) * 1.1);
     --line-height-medium:  calc(var(--line-height-base-unit) * 1.3);
     --line-height-large:   calc(var(--line-height-base-unit) * 1.5);
-    /* Font weights */
-    --font-weight-lighter:  100;
-    --font-weight-light:    200;
-    --font-weight-normal:   400;
-    --font-weight-bold:     700;
-    --font-weight-bolder:   900;
-/* Space
+    /* Global typography styles*/
+    --typography-headline:      700 3.5em/1.2em "Raleway", sans-serif; 
+    --typography-heading-1:     700 2.7em/1.5em "Inter", sans-serif;
+    --typography-heading-2:     700 2em/1.5em "Inter", sans-serif;
+    --typography-heading-3:     700 1.5em/1.5em "Inter", sans-serif;
+    --typography-subhead:       300 1.5em/1.5em "Inter", sans-serif;
+    --typography-subtitle:      700 1.3em/1.5em "Inter", sans-serif;
+    --typography-overline:      700 1em/1em "Raleway", sans-serif;
+    --typography-button:        600 1em/1em "Inter", sans-serif;
+    --typography-bodyBold:      700 1em/1.5em "Inter", sans-serif;
+    --typography-bodyReg:       300 1em/1.5em "Inter", sans-serif;
+    --typography-caption:       300 0.9em "Inter", sans-serif;
+    /* --typography-link:          400 1em/1.5em "Inter", sans-serif; */
+
+    /* Space
      ================================================================= */
-    --space-base-unit: var(--base-unit);
-    /* Margin, Padding - 8x8 grid */
+    --space-base-unit: 0.25rem;
     --space-8:  calc(var(--space-base-unit) * 2);
     --space-16: calc(var(--space-base-unit) * 4);
     --space-24: calc(var(--space-base-unit) * 6);
@@ -42,36 +50,53 @@
     --space-64: calc(var(--space-base-unit) * 16);
     --space-72: calc(var(--space-base-unit) * 18);
 
+    --space-unit:       0.5rem;
+    --space-xsmall:     calc(var(--space-unit) * 1);
+    --space-small:      calc(var(--space-unit) * 2);
+    --space-medium:     calc(var(--space-unit) * 3);
+    --space-large:      calc(var(--space-unit) * 4);
+    --space-xlarge:     calc(var(--space-unit) * 5);
+    --space-xxlarge:    calc(var(--space-unit) * 8);
+    --space-xxxlarge:    calc(var(--space-unit) * 12);
+    
+    --space-section:    calc(var(--space-unit) * 9);
+
     /* Breakpoints
-     ================================================================= */
+    ================================================================= */
     --breakpoint-small:     544px;
     --breakpoint-medium:    768px;
     --breakpoint-large:     1012px;
-/* Color
-     ================================================================= */
+
+    /* Color
+    ================================================================= */
     --color-primary-light:  #1B2E55;
     --color-primary:        #0C1527;
     --color-primary-dark:   #0A111F;
 
+    --color-secondary-light:#799fff;
     --color-secondary:      #3F75FF;
+    --color-secondary-dark: #2753c1;
 
-    --color-gray-1: #FFFFFF;
-    --color-gray-2: #EEEEEE;
-    --color-gray-3: #F8F9FA;
-    --color-gray-4: #BBBBBB;
-    --color-gray-5: #A1A1A1;
-    --color-gray-6: #888888;
-    --color-gray-7: #6F6F6F;
-    --color-gray-8: #555555;
-    --color-gray-9: #3C3C3C;
-    --color-gray-10: #222222;
+    --color-gray-1:         #FFFFFF;
+    --color-gray-2:         #F8F9FA;
+    --color-gray-3:         #F3F3F3;
+    --color-gray-4:         #CFCFCF;
+    --color-gray-5:         #A1A1A1;
+    --color-gray-6:         #888888;
+    --color-gray-7:         #6F6F6F;
+    --color-gray-8:         #555555;
+    --color-gray-9:         #3C3C3C;
+    --color-gray-10:        #222222;
 
-    --color-critical: #ffa500;
-    --color-information: #ecf2f6;
-    --color-danger: #ff4500;
+    --color-critical:       #ffa500;
+    --color-information:    #dae8f1;
+    --color-danger:         #ff4500;
 
-/* Border
-     ================================================================= */
+    --color-nav-default:    #ECF2F6;
+    --color-nav-hover:      #C2E7FF;
+
+    /* Border
+    ================================================================= */
     /* Border color */
     --border-color-lighter: var(--gray-2);
     --border-color-light:   var(--gray-3);
@@ -83,11 +108,41 @@
     --border-radius-small:  calc(var(--base-unit) * 1);
     --border-radius-medium: calc(var(--base-unit) * 2);
     --border-radius-large:  calc(var(--base-unit) * 4);
-/* Transition
-     ================================================================= */
+    --border-radius-xlarge: calc(var(--base-unit) * 6);
+
+    /* Transition
+    ================================================================= */
     --transition-faster:    0.1s;
     --transition-fast:      0.2s;
     --transition-normal:    0.3s;
     --transition-slow:      0.4s;
     --transition-slower:    0.5s;
+}
+
+.dark {
+    --color-primary-light:  #ffffff;
+    --color-primary:        #FFFFFF;
+    --color-primary-dark:   #80a4ec;
+
+    --color-secondary-light:#2753c1;
+    --color-secondary:      #3F75FF;
+    --color-secondary-dark: #799fff;
+
+    --color-gray-1:         #222222;
+    --color-gray-2:         #3C3C3C;
+    --color-gray-3:         #555555;
+    --color-gray-4:         #6F6F6F;
+    --color-gray-5:         #888888;
+    --color-gray-6:         #A1A1A1;
+    --color-gray-7:         #CFCFCF;
+    --color-gray-8:         #F3F3F3;
+    --color-gray-9:         #F8F9FA;
+    --color-gray-10:        #FFFFFF;
+
+    --color-critical:       #ffa500;
+    --color-information:    #124669;
+    --color-danger:         #b13508;
+
+    --color-nav-default:    #124669;
+    --color-nav-hover:      #1a557c;
 }
