@@ -1,101 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2XH0GY2B5X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2XH0GY2B5X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      gtag("config", "G-2XH0GY2B5X");
+    </script>
 
-    gtag('config', 'G-2XH0GY2B5X');
-  </script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Project description here" />
+    <meta name="keywords" content="UX, Design, Designer, Portfolio" />
+    <meta name="author" content="Mathieu Nauleau" />
 
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Project description here">
-  <meta name="keywords" content="UX, Design, Designer, Portfolio">
-  <meta name="author" content="Mathieu Nauleau"> 
+    <title>Building a White-Label App - UX Case study</title>
 
-  <title>Building a White-Label App - UX Case study</title>
+    <!-- Favicon -->
+    <link href="assets/img/favicon.ico" rel="icon" />
 
-  <!-- Favicon -->
-  <link href="assets/img/favicon.ico" rel="icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Template Main CSS Files -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+    <link href="tokens.css" rel="stylesheet" />
 
-  <!-- Template Main CSS Files -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="custom.css" rel="stylesheet">
-  <link href="tokens.css" rel="stylesheet">
-
-  <!-- =======================================================
+    <!-- =======================================================
   * Hello, I'm currently using a template for my website. Here are some info:
   * Template Name: FlexStart - v1.12.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
   ======================================================== -->
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+          <span>Mathieu Nauleau</span>
+        </a>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
-        <span>Mathieu Nauleau</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html">Design</a></li>
-          <li><a class="nav-link scrollto" href="index.html#craft">Craft</a></li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
-          <li><a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-          <li><a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i class="bi bi-dribbble"></i></a></li>
-          <li><a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i class="bi bi-instagram"></i></a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-    </div>
-  </header><!-- End Header -->
-
-  <main>
-
-<!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
-      <div class="container-fluid container-xl d-flex align-items-center">
-        <div class="col-lg-12">
-          <img src="assets/img/portfolio/project2/project-hero.png" alt="White label app hero image">
-        </div>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="index.html">Design</a></li>
+            <li>
+              <a class="nav-link scrollto" href="index.html#craft">Craft</a>
+            </li>
+            <li><a class="nav-link scrollto" href="about.html">About</a></li>
+            <li>
+              <a
+                class="nav-link social-links linkedin"
+                href="https://www.linkedin.com/in/mathieunauleau/"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                class="nav-link social-links dribbble"
+                href="https://dribbble.com/mathieunauleau"
+                target="_blank"
+                ><i class="bi bi-dribbble"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                class="nav-link social-links instagram"
+                href="http://instagram.com/mathieunauleau"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
       </div>
-    </section>
-<!-- ======= END Portfolio Header ======= -->
+    </header>
+    <!-- End Header -->
 
+    <main>
+      <!-- ======= START Portfolio Header ======= -->
+      <section class="portfolio-header">
+        <div class="container-fluid container-xl d-flex align-items-center">
+          <div class="col-lg-12">
+            <img
+              src="assets/img/portfolio/project2/project-hero.png"
+              alt="White label app hero image"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- ======= END Portfolio Header ======= -->
 
-<!-- ======= START Portfolio hero Section ======= -->
-    <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
-
-        <h1>Building a white label app for a <br> multinational retail company.</h1>
+      <!-- ======= START Portfolio hero Section ======= -->
+      <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
+        <h1>
+          Building a white label app for a <br />
+          multinational retail company.
+        </h1>
 
         <div class="row">
-
           <div class="portfolio-info col-lg-4 col-sm-12">
             <div class="row">
               <div class="col-4">
@@ -105,7 +152,7 @@
                 <p>July 2022 - Now</p>
               </div>
             </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Brands</strong>
@@ -114,17 +161,29 @@
                 <p>AH, Gall & Gall, Etos</p>
               </div>
             </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Result</strong>
               </div>
               <div class="col-8">
-                <p><a href="https://apps.apple.com/nl/app/etos/id1041923819" target="_blank"><i class="bi bi-apple"></i> Mijn Etos App</a></p>
-                <p><a href="https://apps.apple.com/us/app/gall-gall-jouw-slijterij/id1666566237" target="_blank"><i class="bi bi-apple"></i> Gall&amp;Gall App</a></p>
+                <p>
+                  <a
+                    href="https://apps.apple.com/nl/app/etos/id1041923819"
+                    target="_blank"
+                    ><i class="bi bi-apple"></i> Mijn Etos App</a
+                  >
+                </p>
+                <p>
+                  <a
+                    href="https://apps.apple.com/us/app/gall-gall-jouw-slijterij/id1666566237"
+                    target="_blank"
+                    ><i class="bi bi-apple"></i> Gall&amp;Gall App</a
+                  >
+                </p>
               </div>
             </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Tools</strong>
@@ -136,29 +195,52 @@
           </div>
 
           <div class="col-lg-8 col-sm-12 px-lg-5">
-            <h3>In 2022, the multinational retail company Ahold Delhaize increased the collaboration between its dutch brands to take a leap in its omnichannel strategy. By building a strong White Label eCom platform, brands can reach more customers while reducing their cost &AMP; development efforts.</h3>
+            <h3>
+              In 2022, the multinational retail company Ahold Delhaize increased
+              the collaboration between its dutch brands to take a leap in its
+              omnichannel strategy. By building a strong White Label eCom
+              platform, brands can reach more customers while reducing their
+              cost &AMP; development efforts.
+            </h3>
           </div>
-
         </div>
+      </section>
+      <!-- ======= END Portfolio Header ======= -->
 
-    </section>
-<!-- ======= END Portfolio Header ======= -->
-
-
-<!-- ======= Start Portfolio Development Section ======= -->
-    <section class="portfolio-description container-fluid col-lg-9 col-sm-12">      
-
+      <!-- ======= Start Portfolio Development Section ======= -->
+      <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
         <div class="callout container-fluid col-lg-9 col-sm-12">
           <strong>🛠 Ongoing project</strong>
-          <p>Our team is busy with the development of new features, usability testings, and system maintenance. Stay tuned for more details in the coming months.</p> 
+          <p>
+            Our team is busy with the development of new features, usability
+            testings, and system maintenance. Stay tuned for more details in the
+            coming months.
+          </p>
         </div>
 
         <div class="sub-section">
           <h2>Overview</h2>
           <p>
-            In the retail industry, competition is fierce due to the thin margins. By offering a personalized experience, companies can send more relevant content to customers, while improving their loyalty. On the other side, eCommerce Apps already share 80% of the same functionalities. The opportunity to reuse features is therefore huge.<p>
-          <p>In a year, our team launched two apps and introduced multiple features. As the principal designer working with a team of 12 developers, I was responsible for overseeing the operational implementation of the features and the system to ensure a consistent and unified User Experience across all the apps.</p>  
-          <img loading="lazy" src="assets/img/portfolio/project2/view-01.png" alt="Project image">
+            In the retail industry, competition is fierce due to the thin
+            margins. By offering a personalized experience, companies can send
+            more relevant content to customers, while improving their loyalty.
+            On the other side, eCommerce Apps already share 80% of the same
+            functionalities. The opportunity to reuse features is therefore
+            huge.
+          </p>
+          <p></p>
+          <p>
+            In a year, our team launched two apps and introduced multiple
+            features. As the principal designer working with a team of 12
+            developers, I was responsible for overseeing the operational
+            implementation of the features and the system to ensure a consistent
+            and unified User Experience across all the apps.
+          </p>
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/view-01.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
@@ -196,41 +278,70 @@
                 <p>For the 2 brands, 6 months after release.</p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
-        
 
-<!-- ======= START Portfolio Section Highlight ======= -->
-<section class="portfolio-section-highlight container-fluid col-12" style="height: fit-content;">
-  <div class="col-9 container-fluid">
-    <h2>Context — What is a White Label product?</h2>
-    <div class="row gx-5">
-      <div class="col-lg-4 col-md-0">
-        <div class="img-box rounded-4">
+      <!-- ======= START Portfolio Section Highlight ======= -->
+      <section
+        class="portfolio-section-highlight container-fluid col-12"
+        style="height: fit-content"
+      >
+        <div class="col-9 container-fluid">
+          <h2>Context — What is a White Label product?</h2>
+          <div class="row gx-5">
+            <div class="col-lg-4 col-md-0">
+              <div class="img-box rounded-4"></div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+              <p>
+                White labeling is the process of rebranding a single product (or
+                service) for multiple companies to sell as their own. This way,
+                each company can focus on its business and marketing efforts
+                without being concerned by the technical aspect.
+              </p>
+              <p>
+                To make it work efficiently, a White Label product needs a
+                design system to ensure consistency and avoid redundancy across
+                various pages and channels in a standardized approach.
+              </p>
+              <p style="margin-bottom: 0">
+                Instead of manually changing the same element in multiple files
+                a design system allows for automatic updates throughout the
+                application by just changing a single instance. To have a
+                white-label design system makes it flexible, brandable,
+                accessible, and scalable.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-8 col-md-12">
-        <p>
-          White labeling is the process of rebranding a single product (or service) for multiple companies to sell as their own. This way, each company can focus on its business and marketing efforts without being concerned by the technical aspect.</p>
-        <p>
-          To make it work efficiently, a White Label product needs a design system to ensure consistency and avoid redundancy across various pages and channels in a standardized approach.</p>
-        <p style="margin-bottom: 0;">
-          Instead of manually changing the same element in multiple files a design system allows for automatic updates throughout the application by just changing a single instance. To have a white-label design system makes it flexible, brandable, accessible, and scalable.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- ======= END Portfolio Section Highlight ======= -->
+      </section>
+      <!-- ======= END Portfolio Section Highlight ======= -->
 
-      <section class="portfolio-description container-fluid col-lg-9 col-sm-12">      
+      <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
         <div class="sub-section">
           <h2>Discovery — Setting up the project's playground</h2>
-          <p>Although we had limited time, a basic benchmarking of other eCommerce Apps, assessing user needs, and collecting business requirements &amp; priorities proved to be essential to set the project off right. We also scrolled through numerous design articles, <a href="https://m3.material.io/foundations/design-tokens/overview" target="_blank">Material 3</a> documentation, and other blogs and resources to gain additional insights into various aspects of a white-label system. This ultimately helped document our activities and learnings throughout the project.
+          <p>
+            Although we had limited time, a basic benchmarking of other
+            eCommerce Apps, assessing user needs, and collecting business
+            requirements &amp; priorities proved to be essential to set the
+            project off right. We also scrolled through numerous design
+            articles,
+            <a
+              href="https://m3.material.io/foundations/design-tokens/overview"
+              target="_blank"
+              >Material 3</a
+            >
+            documentation, and other blogs and resources to gain additional
+            insights into various aspects of a white-label system. This
+            ultimately helped document our activities and learnings throughout
+            the project.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/benchmark.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/benchmark.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
@@ -238,17 +349,34 @@
             <div class="col-lg-6 col-sm-12">
               <h2>Challenges</h2>
               <ul>
-                <li>Natural silos between designers from other brands and departments</li>
-                <li>Maintain the development pace and the quality of the codebase  </li>
-                <li>Make time for user research while making quick design decisions</li>
+                <li>
+                  Natural silos between designers from other brands and
+                  departments
+                </li>
+                <li>
+                  Maintain the development pace and the quality of the codebase
+                </li>
+                <li>
+                  Make time for user research while making quick design
+                  decisions
+                </li>
               </ul>
             </div>
             <div class="col-lg-6 col-sm-12">
               <h2>Our approach</h2>
               <ul>
-                <li>Introduce a systemic way of working, assign roles, meet every week</li>
-                <li>Try to document as many decisions as possible to keep track of the improvements</li>
-                <li>Set up a research roadmap, and plan activities for every new feature</li>
+                <li>
+                  Introduce a systemic way of working, assign roles, meet every
+                  week
+                </li>
+                <li>
+                  Try to document as many decisions as possible to keep track of
+                  the improvements
+                </li>
+                <li>
+                  Set up a research roadmap, and plan activities for every new
+                  feature
+                </li>
               </ul>
             </div>
           </div>
@@ -256,62 +384,132 @@
 
         <div class="sub-section">
           <h2>Early sketches — The backbones of the Apps</h2>
-          <p>Simple wireframes helped us investigate and decide on which direction to take. With a rough roadmap of the project in mind, we were then ready to start with the first user stories while development was busy setting up the platform.
+          <p>
+            Simple wireframes helped us investigate and decide on which
+            direction to take. With a rough roadmap of the project in mind, we
+            were then ready to start with the first user stories while
+            development was busy setting up the platform.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/wireframe.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/wireframe.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
           <h2>Theming framework — Build to scale up</h2>
-          <p>🤓 Let's start with the definition of a (design) token. <br> "Design tokens" represent the small, repeated design decisions that make up a design system's visual style. Tokens replace static values, such as hex codes for color, with self-explanatory names.
-          </p>            
-            <p>Tokenising the UI allowed us to standardize our components and speak the same language between designers and developers. Defining and documenting these tokens/rules together was key to ensure efficiency and consistency.
+          <p>
+            🤓 Let's start with the definition of a (design) token. <br />
+            "Design tokens" represent the small, repeated design decisions that
+            make up a design system's visual style. Tokens replace static
+            values, such as hex codes for color, with self-explanatory names.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/view-02.png" alt="Project image">
+          <p>
+            Tokenising the UI allowed us to standardize our components and speak
+            the same language between designers and developers. Defining and
+            documenting these tokens/rules together was key to ensure efficiency
+            and consistency.
+          </p>
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/view-02.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
           <h2>➊ Foundations</h2>
-          <p>To make our system scalable, we had to design and code strong foundations. These would serve as a framework to build more complex components.
+          <p>
+            To make our system scalable, we had to design and code strong
+            foundations. These would serve as a framework to build more complex
+            components.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/documentation.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/documentation.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
           <h2>➋ Components</h2>
-          <p>We started with the smallest components (buttons, labels, lists, ...) and combined them to form progressively more complex components (product cards, banners, menus, ...). <br>
-            By pricisely defining how each components should look like and behave, we coule eventually define the core parameters of it, while allowing some very exceptional overrides (thoroughly documented for future improvement).
+          <p>
+            We started with the smallest components (buttons, labels, lists,
+            ...) and combined them to form progressively more complex components
+            (product cards, banners, menus, ...). <br />
+            By pricisely defining how each components should look like and
+            behave, we coule eventually define the core parameters of it, while
+            allowing some very exceptional overrides (thoroughly documented for
+            future improvement).
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/theming-components.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/theming-components.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
           <h2>➌ Workflows / Features</h2>
-          <p>By thinking about features and workflows from a White Label perspective, we could focus on the core functionalities without being 'distracted' by each brand particularities. This helped us to gain speed, be consistent, and communicate clearly the stories to the development team.
+          <p>
+            By thinking about features and workflows from a White Label
+            perspective, we could focus on the core functionalities without
+            being 'distracted' by each brand particularities. This helped us to
+            gain speed, be consistent, and communicate clearly the stories to
+            the development team.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/userflow.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/userflow.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
           <h2>Documentation — The anchor that holds it together.</h2>
-          <p>We can't say enough how important documentation is for a design system. From the name of the component to its version, parameters, tokens, and behaviors, every decision was documented in the Figma files and the storybook for future reference. This is also where conversations between UX and Tech often began on building &amp; evolving the system.
+          <p>
+            We can't say enough how important documentation is for a design
+            system. From the name of the component to its version, parameters,
+            tokens, and behaviors, every decision was documented in the Figma
+            files and the storybook for future reference. This is also where
+            conversations between UX and Tech often began on building &amp;
+            evolving the system.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/gallery.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/gallery.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
           <h2>The storybook — Where designers and engineers meet</h2>
-          <p>How to ensure that all team members would speak the same language? By using a UI gallery that showcases each foundation and component in a dynamic way. Their (design &amp; code) names are documented, as well as their parameters and behaviours. 
+          <p>
+            How to ensure that all team members would speak the same language?
+            By using a UI gallery that showcases each foundation and component
+            in a dynamic way. Their (design &amp; code) names are documented, as
+            well as their parameters and behaviours.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/storybook.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/storybook.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
           <h2>Multi platform, multi device</h2>
           <p>
-            Thanks to the Flutter framework, solid foundations and reusable components, the apps are available for both iOS and Android, and for mobile as well as for tablet.
+            Thanks to the Flutter framework, solid foundations and reusable
+            components, the apps are available for both iOS and Android, and for
+            mobile as well as for tablet.
           </p>
-          <img loading="lazy" src="assets/img/portfolio/project2/view-08.png" alt="Project image">
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project2/view-08.png"
+            alt="Project image"
+          />
         </div>
 
         <div class="sub-section">
@@ -320,7 +518,9 @@
               <h2>Impact</h2>
               <ul>
                 <li>Defining a (design/white label) system from scratch</li>
-                <li>Created 8 apps (2 platforms/2 brands/2 devices) in 8 months</li>
+                <li>
+                  Created 8 apps (2 platforms/2 brands/2 devices) in 8 months
+                </li>
                 <li>10 major features launched and tracked</li>
               </ul>
             </div>
@@ -328,7 +528,10 @@
               <h2>Learnings</h2>
               <ul>
                 <li>Full documentaion and versioning of components</li>
-                <li>To take the role of 'system guardian' to ensure consistency and maintainability</li>
+                <li>
+                  To take the role of 'system guardian' to ensure consistency
+                  and maintainability
+                </li>
                 <li>To manage a roadmap of research and features</li>
               </ul>
             </div>
@@ -338,78 +541,81 @@
 
         <div class="sub-section">
           <h2>What's next now?</h2>
-          <p>The Apps will continue to evolve, keeping as many common features as possible, but differentiating where impact is big, through CRO, business demand, and other usability test</p>
+          <p>
+            The Apps will continue to evolve, keeping as many common features as
+            possible, but differentiating where impact is big, through CRO,
+            business demand, and other usability test
+          </p>
         </div>
-
       </section>
 
-      <!-- <section class="container-fluid col-12">
-        <div class="portfolio-description container-fluid col-9 sub-section">
-          <h2>What's next now?</h2>
-          <p>The Apps will continue to evolve, keeping as many common features as possible, but differentiating where impact is big, through CRO, business demand, and other usability test</p>
-          <img loading="lazy" src="assets/img/portfolio/project2/view-08.png" alt="Project image">
+      <!-- ======= End Portfolio Development Section ======= -->
 
-        </div>
-      </section> -->
+      <!-- ======= End Project navigation ======= -->
+      <section class="project-nav container-fluid col-lg-9 col-sm-12">
+        <div class="row">
+          <div class="col-6">
+            <a href="kumiko.html" class="portfolio-link">
+              <div class="prev-next left">
+                <div class="col-12">
+                  <span class="direction"
+                    ><i class="bi bi-arrow-left"></i>Previous project</span
+                  >
+                  <br />
+                  <span class="title">Handmade Kumiko Lamp</span>
+                </div>
+              </div>
+            </a>
+          </div>
 
-<!-- ======= End Portfolio Development Section ======= -->
-
-<!-- ======= End Project navigation ======= -->
-<section class="project-nav container-fluid col-lg-9 col-sm-12">
-  <div class="row">
-
-    <div class="col-6">
-      <a href="kumiko.html" class="portfolio-link">
-        <div class="prev-next left">
-          <div class="col-12">
-            <span class="direction"><i class="bi bi-arrow-left"></i>Previous project</span> <br>
-            <span class="title">Handmade Kumiko Lamp</span>
+          <div class="col-6">
+            <a href="designsystem.html" class="portfolio-link">
+              <div class="prev-next right">
+                <div class="col-12 gx-2">
+                  <span class="direction"
+                    >Up next<i class="bi bi-arrow-right"></i
+                  ></span>
+                  <br />
+                  <span class="title">Pantry Design System</span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
-      </a>
-    </div>  
+      </section>
+      <!-- ======= Start Project navigation ======= -->
+    </main>
+    <!-- End #main -->
 
-    <div class="col-6">
-      <a href="designsystem.html" class="portfolio-link">
-        <div class="prev-next right">
-          <div class="col-12 gx-2">
-            <span class="direction">Up next<i class="bi bi-arrow-right"></i></span> <br>
-            <span class="title">Pantry Design System</span>
-          </div>
+    <!-- ======= Footer ======= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="copyright">
+          <p>
+            Created with
+            <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> |
+            2024
+          </p>
         </div>
-      </a>
-    </div>  
-
-  </div>
-</section>
-<!-- ======= Start Project navigation ======= -->
-
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="copyright">
-        <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> | 2024</p>
       </div>
-    </div>
-  </footer>
-  <!-- End Footer -->
+    </footer>
+    <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
