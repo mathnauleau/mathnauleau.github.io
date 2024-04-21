@@ -60,6 +60,7 @@ h5{
   font-size: 48px;
   font-weight: 700;
   background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
+  background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.3;
