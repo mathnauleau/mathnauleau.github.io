@@ -330,7 +330,7 @@ section {
 
 .portfolio-title h4 {
   color: white;
-  font: var(--typography-heading-3);
+  font: var(--typography-subhead);
 }
 
 /*--------------------------------------------------------------
@@ -523,7 +523,7 @@ section {
 }
 
 .info-box strong {
-  font-size: 54px; /* Custom */
+  font-size: 54px; /* Custom - Numbers look strange with Raleway */
   font-weight: 800;
 }
 
