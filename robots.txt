@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /private/
+Disallow: /designsystem.html
 Allow: /index.html
 Allow: /about.html
 

@@ -1,91 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-2XH0GY2B5X"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="description" content="Project description here">
-  <meta name="keywords" content="UX, Design, Designer, Portfolio">
-  <meta name="author" content="Mathieu Nauleau"> 
+      gtag("config", "G-2XH0GY2B5X");
+    </script>
 
-  <title>Digital sketching</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Project description here" />
+    <meta name="keywords" content="UX, Design, Designer, Portfolio" />
+    <meta name="author" content="Mathieu Nauleau" />
 
-  <!-- Favicon -->
-  <link href="assets/img/favicon.ico" rel="icon">
+    <title>Digital sketching</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="assets/img/favicon.ico" rel="icon" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 
-  <!-- Template Main CSS Files -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link href="custom.css" rel="stylesheet">
-  <link href="tokens.css" rel="stylesheet">
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
-  <!-- =======================================================
+    <!-- Template Main CSS Files -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+    <link href="tokens.css" rel="stylesheet" />
+
+    <!-- =======================================================
   * Hello, I'm currently using a template for my website. Here are some info:
   * Template Name: FlexStart - v1.12.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
   ======================================================== -->
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+      <div
+        class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+          <span>Mathieu Nauleau</span>
+        </a>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
-        <span>Mathieu Nauleau</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html">Design</a></li>
-          <li><a class="nav-link scrollto" href="index.html#craft">Craft</a></li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
-          <li><a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"><i class="bi bi-linkedin"></i></a></li>
-          <li><a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i class="bi bi-dribbble"></i></a></li>
-          <li><a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i class="bi bi-instagram"></i></a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-
-    </div>
-  </header><!-- End Header -->
-
-  <main id="main">
-
-<!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
-      <div class="container-fluid container-xl d-flex align-items-center">
-        <div class="col-lg-12">
-          <img src="assets/img/portfolio/project7/project-hero.png" alt="Sketching hero image">
-        </div>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto" href="index.html">Design</a></li>
+            <li>
+              <a class="nav-link scrollto" href="index.html#craft">Craft</a>
+            </li>
+            <li><a class="nav-link scrollto" href="about.html">About</a></li>
+            <li>
+              <a
+                class="nav-link social-links linkedin"
+                href="https://www.linkedin.com/in/mathieunauleau/"
+                target="_blank"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                class="nav-link social-links dribbble"
+                href="https://dribbble.com/mathieunauleau"
+                target="_blank"
+                ><i class="bi bi-dribbble"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                class="nav-link social-links instagram"
+                href="http://instagram.com/mathieunauleau"
+                target="_blank"
+                ><i class="bi bi-instagram"></i
+              ></a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
       </div>
-    </section>
-<!-- ======= END Portfolio Header ======= -->
+    </header>
+    <!-- End Header -->
 
+    <main>
+      <!-- ======= START Portfolio Header ======= -->
+      <section class="portfolio-header">
+        <div class="container-fluid container-xl d-flex align-items-center">
+          <div class="col-lg-12">
+            <img
+              src="assets/img/portfolio/project7/project-hero.png"
+              alt="Sketching hero image"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- ======= END Portfolio Header ======= -->
 
-<!-- ======= START Portfolio hero Section ======= --> 
-    <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
-
+      <!-- ======= START Portfolio hero Section ======= -->
+      <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
         <h1>Digital sketching</h1>
 
         <div class="row">
-
           <div class="portfolio-info col-lg-4 col-sm-12">
             <div class="row">
               <div class="col-4">
@@ -95,137 +149,199 @@
                 <p>2019 till now</p>
               </div>
             </div>
-              <hr>
-            <div class="row">
-              <div class="col-4">
-                <strong>Fun level</strong>
-              </div>
-              <div class="col-8">
-                <p>9/10</p>
-              </div>
-            </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Instagram</strong>
               </div>
               <div class="col-8">
-                <p><a href="https://www.instagram.com/sktchday/" target="_blank">@sktchday</a></p>
+                <p>
+                  <a href="https://www.instagram.com/sktchday/" target="_blank"
+                    >@sktchday</a
+                  >
+                </p>
               </div>
             </div>
-              <hr>
+            <hr />
             <div class="row">
               <div class="col-4">
                 <strong>Softwares</strong>
               </div>
               <div class="col-8">
-                <p>Affinity Designer, Procreate</p>
+                <p>Affinity Designer, Procreate, After Effects, Blender 3D</p>
               </div>
             </div>
           </div>
 
           <div class="col-lg-8 col-sm-12 px-lg-5">
-            <h3>There are many ways to tell stories. In my spare time, I like to use watercolor, animations, UIs, or illustrations. After many years of hand-sketching, I found in my iPad a new way to visualize my thoughts.</h3>
-          </div>
-
-        </div>
-
-    </section>
-<!-- ======= END Portfolio Header ======= -->
-
-
-<!-- ======= Start Portfolio Development Section ======= -->
-    <section class="portfolio-description container-fluid col-lg-9 col-sm-12">  
-
-      <div class="sub-section">
-        <h2>Coffee trip</h2>
-        <p>
-          Series of illustration created during my previous trips to Montréal, Qc.
-        </p>
-        <img src="assets/img/portfolio/project7/view-07.jpg" alt="Photo of an illustration in a frame">
-        <img src="assets/img/portfolio/project7/view-08.png" alt="Illustrations">
-      </div>
-      
-      <div class="sub-section">
-        <h2>Product design</h2>
-        <div class="row g-3">
-          <div class="col-lg-6 col-sm-12">
-            <img src="assets/img/portfolio/project7/view-04.jpg" alt="Project image">
-          </div>
-          <div class="col-lg-6 col-sm-12">
-            <img src="assets/img/portfolio/project7/view-10.jpg" alt="Project image">
+            <h3>
+              There are many ways to tell stories... <br />
+              From watercolor to illustration and animation, I'm experimenting
+              with different ways to visualize my thoughts.
+            </h3>
           </div>
         </div>
-      </div>
+      </section>
+      <!-- ======= END Portfolio Header ======= -->
 
-      <div class="sub-section">
-        <h2>Ratatouille 2020</h2>
-        <p>
-          A story about the 2020 pandemic and cooking...
-        </p>
-        <img src="assets/img/portfolio/project7/view-03.jpg" alt="Ratatouille">
-      </div>
-  
-    </section>
-<!-- ======= End Portfolio Development Section ======= -->
-
-<!-- ======= End Project navigation ======= -->
-<section class="project-nav container-fluid col-lg-9 col-sm-12">
-  <div class="row">
-
-    <div class="col-6">
-      <a href="rise.html" class="portfolio-link">
-        <div class="prev-next left">
-          <div class="col-12">
-            <span class="direction"><i class="bi bi-arrow-left"></i>Previous project</span> <br>
-            <span class="title">Inflight Service Ecosystem</i></span>
+      <!-- ======= Start Portfolio Development Section ======= -->
+      <section class="portfolio-description container-fluid col-lg-9 col-sm-12">
+        <div class="sub-section">
+          <h2>Coffee trip</h2>
+          <p>
+            Series of illustration created during my different trips to
+            Montréal, Qc.
+          </p>
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project7/view-07.jpg"
+            alt="Photo of an illustration in a frame"
+          />
+          <br /><br />
+          <!-- <img src="assets/img/portfolio/project7/view-08.png" alt="Illustrations"> -->
+          <div class="row g-3">
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/cafe-01.jpg"
+                alt="Illustration of a coffee shop"
+              />
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/cafe-02.jpg"
+                alt="Illustration of a coffee shop"
+              />
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/cafe-03.jpg"
+                alt="Illustration of a coffee shop"
+              />
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/cafe-04.jpg"
+                alt="Illustration of a coffee shop"
+              />
+            </div>
           </div>
         </div>
-      </a>
-    </div>  
 
-    <div class="col-6">
-      <a href="dailyui.html" class="portfolio-link">
-        <div class="prev-next right">
-          <div class="col-12 gx-2">
-            <span class="direction">Up next<i class="bi bi-arrow-right"></i></span> <br>
-            <span class="title">Daily UI</i></span>
+        <div class="sub-section">
+          <h2>Product design</h2>
+          <div class="row g-3">
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/view-04.jpg"
+                alt="Sketch of a coffee machine"
+              />
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/view-10.jpg"
+                alt="Sketch of a gameboy"
+              />
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/vending-machine.gif"
+                loading="lazy"
+                alt="Animated gif of a soda vending machine"
+              />
+            </div>
+            <div class="col-lg-6 col-sm-12">
+              <img
+                loading="lazy"
+                src="assets/img/portfolio/project7/cremecycle.gif"
+                loading="lazy"
+                alt="Animated gif of a red bike"
+              />
+            </div>
           </div>
         </div>
-      </a>
-    </div>  
 
-  </div>
-</section>
-<!-- ======= Start Project navigation ======= -->
+        <div class="sub-section">
+          <h2>Ratatouille 2020</h2>
+          <p>A story about the 2020 pandemic and cooking...</p>
+          <img
+            loading="lazy"
+            src="assets/img/portfolio/project7/view-03.jpg"
+            alt="Ratatouille"
+          />
+        </div>
+      </section>
+      <!-- ======= End Portfolio Development Section ======= -->
 
+      <!-- ======= End Project navigation ======= -->
+      <section class="project-nav container-fluid col-lg-9 col-sm-12">
+        <div class="row">
+          <div class="col-6">
+            <a href="rise.html" class="portfolio-link">
+              <div class="prev-next left">
+                <div class="col-12">
+                  <span class="direction"
+                    ><i class="bi bi-arrow-left"></i>Previous project</span
+                  >
+                  <br />
+                  <span class="title">Inflight Service Ecosystem</span>
+                </div>
+              </div>
+            </a>
+          </div>
 
-  </main><!-- End #main -->
+          <div class="col-6">
+            <a href="dailyui.html" class="portfolio-link">
+              <div class="prev-next right">
+                <div class="col-12 gx-2">
+                  <span class="direction"
+                    >Up next<i class="bi bi-arrow-right"></i
+                  ></span>
+                  <br />
+                  <span class="title">Daily UI</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="copyright">
-        <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a></p>
-        <p>2023</p>
+    <!-- ======= Footer ======= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="copyright">
+          <p>
+            Created with
+            <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> |
+            2024
+          </p>
+        </div>
       </div>
-    </div>
-  </footer>
-  <!-- End Footer -->
+    </footer>
+    <!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
