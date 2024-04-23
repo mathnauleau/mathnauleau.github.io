@@ -12,18 +12,20 @@ a:hover {
   color: var(--color-secondary-dark);
 }
 
-/* TYPOGRAPHY
-     ================================================================= */
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
 h2 {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
 }
 
 h4 {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
 }
 
 h3 {
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-primary);
 }
 
 /* Section heading-5 'CRAFT' */
@@ -39,11 +41,15 @@ hr {
   opacity: 70%;
 }
 
-.header .logo span {
-  font-family: var(--font-family-tertiary);
+.header .logo span{ /* Fix needed */
+  font-family: var(--font-family-secondary);
   font-size: 24px;
   font-weight: 500;
   color: var(--color-primary);
+}
+
+.logo img{
+  height: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -73,9 +79,9 @@ hr {
   margin-block-start: var(--space-small);
 }
 
-.logo img {
-  height: 20px;
-}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
 
 .navbar a {
   padding: 12px 0 12px 32px;
@@ -89,9 +95,8 @@ hr {
   color: var(--color-secondary);
 }
 
-.navbar a i,
-.navbar a:focus i {
-  font-size: 14px;
+.navbar a i, .navbar a:focus i{
+  font: var(--typography-bodyReg);
 }
 
 .navbar-mobile ul {
@@ -119,7 +124,11 @@ hr {
   background-color: #030404ed;
 }
 
-.mobile-nav-toggle {
+.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover>a{
+  color: var(--color-secondary);
+}
+
+.mobile-nav-toggle{
   color: var(--color-primary);
 }
 
@@ -321,15 +330,7 @@ section {
 
 .portfolio-title h4 {
   color: white;
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.portfolio-title p {
-  color: white;
-  font-size: 20px;
-  font-weight: 300;
-  margin-bottom: 8px;
+  font: var(--typography-subhead);
 }
 
 /*--------------------------------------------------------------
@@ -471,20 +472,14 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Experience / Contact
+# Toolbox / InfoBox
 --------------------------------------------------------------*/
 
-.experience {
-  margin-top: 80px;
+.toolbox{
+  margin-top: var(--space-xxxlarge);
+  margin-bottom: var(--space-xlarge);
 }
 
-.toolbox {
-  margin-top: 80px;
-}
-
-/*--------------------------------------------------------------
-# Info Box
---------------------------------------------------------------*/
 .info-box {
   text-align: center;
   height: 100%;
@@ -504,17 +499,20 @@ section {
   margin: 0 0 8px 0;
 }
 
-.info-box h4 {
-  font: var(--typography-subtitle);
-}
-
 .toolbox .info-box p {
   font: var(--typography-bodyReg);
   color: var(--color-gray-8);
 }
 
-.info-box h3,
-.info-box p {
+.info-box h4 {
+  font: var(--typography-subtitle);
+}
+
+/*--------------------------------------------------------------
+# Info Box
+--------------------------------------------------------------*/
+
+.info-box h3, .info-box p {
   text-align: left;
   margin-bottom: 8px;
 }
@@ -525,7 +523,7 @@ section {
 }
 
 .info-box strong {
-  font-size: 54px;
+  font-size: 54px; /* Custom - Numbers look strange with Raleway */
   font-weight: 800;
 }
 
@@ -544,25 +542,6 @@ section {
   background-size: cover;
   padding: 0;
 }
-
-/*--------------------------------------------------------------
-# Skillset not used
-
-.skillset h3{
-  font: var(--typography-heading-3);
-}
-
-.skillset ul li {
-  font-size: 18px;
-  color: var(--color-gray-7);
-}
-
-.skillset h6 {
-  font-size: 18px;
-  color: var(--color-gray-6);
-  font-style: italic;
-}
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Project nav
@@ -589,19 +568,6 @@ section {
 .project-nav i {
   float: right;
 }
-
-/* .project-nav .prev-next h3 {
-  color: var(--color-primary);
-  font-size: 22px;
-  font-weight: 700;
-  font-family: "Inter", sans-serif;
-}
-
-.project-nav .prev-next p {
-  color: var(--color-primary);
-  font-size: 22px;
-  font-family: "Inter", sans-serif;
-} */
 
 .direction {
   display: inline-flex;
@@ -693,45 +659,6 @@ section {
 
 .portfolio-section-highlight {
   font: var(--typography-bodyReg);
-}
-
-/*--------------------------------------------------------------
-# Counts
---------------------------------------------------------------*/
-.counts {
-  padding: 0;
-}
-
-.counts .count-box {
-  display: flex;
-  align-items: center;
-  padding: 30px;
-  width: 100%;
-  background: #fff;
-  box-shadow: none;
-}
-
-.counts .count-box i {
-  font-size: 42px;
-  line-height: 0;
-  margin-right: 20px;
-  color: var(--color-primary);
-}
-
-.counts .count-box span {
-  font-size: 36px;
-  display: block;
-  font-weight: 800;
-  color: var(--color-primary);
-  text-align: center;
-}
-
-.counts .count-box p {
-  padding: 0;
-  margin: 0;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -849,20 +776,20 @@ section {
   width: 400px;
 }
 
-#password::placeholder {
-  font-family: "Raleway", sans-serif;
+#password::placeholder{
+  font-family: var(--font-family-primary);
   color: lightslategray;
 }
 
-/* CALLOUT */
+/*--------------------------------------------------------------
+# Callout
+--------------------------------------------------------------*/
 
 .callout {
   padding: 24px;
   background-color: var(--color-information);
   margin-bottom: var(--space-section);
   border-radius: var(--border-radius-large);
-  /* border-left-color: var(--color-critical);
-  box-shadow: var(--color-critical) 8px 8px; */
 }
 
 .callout p {
@@ -870,11 +797,13 @@ section {
 }
 
 .callout strong {
-  font-size: 18px;
-  font-family: "Inter", sans-serif;
+  font: var(--typography-subtitle);
 }
 
-/* VIDEO */
+/*--------------------------------------------------------------
+# Video
+--------------------------------------------------------------*/
+
 .floating-image2 {
   margin-top: 30px;
   height: 100%;
@@ -945,8 +874,8 @@ section {
 }
 
 .background-hero-title {
-  font-family: var(--font-family-secondary);
-  font-size: 60px;
+  font-family: var(--font-family-primary);
+  font-size: 60px; /* Custom */
   font-weight: 800;
   color: #6ab7e43e;
   position: relative;
