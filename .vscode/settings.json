@@ -2,11 +2,5 @@
   "liveServer.settings.multiRootWorkspaceName": "mathnauleau.github.io",
 
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "semi": false,
-  "tabWidth": 2,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.formatOnSave": true,
-  "json.format.enable": false
+  "editor.formatOnSave": true
 }
