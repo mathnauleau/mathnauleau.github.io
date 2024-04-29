@@ -1,4 +1,19 @@
 {
-    "welcome_message": "Welcome to our Website!",
-    "about_us": "Learn more about us..."
+    "home.hero": "Hello, I'm Mathieu, product designer",
+    "home.introduction": "Currently based in Amsterdam, I like to tackle complex problems to have a positive impact on people and businesses by crafting elegant user experiences.",
+    "about.introduction_title": "I'm Mathieu, 32 years old, and product designer living in Amsterdam",
+    "about.introduction_description": "Currently working at Ahold Delhaize, I like to solve complex problems at the product and system level and craft engaging user experiences through my process and imagination. Overall, I aim for the simplicity beyond the complexity through elegant solutions and I get continuous inspiration from craftsmanship, stories I read, and digital medias. In my spare time, I'm often sketching, woodworking, or bikepacking.",
+    "about.introduction_button": "Get in touch",
+    "about.toolbox_title": "My design toolbox",
+    "about.toolbox_ux": "Creating elegant digital solutions that answer user needs & business goals. From building the right things to building the things right.",
+    "about.toolbox_strategy_title": "Strategy",
+    "about.toolbox_strategy_desc": "Considering a project from an integral perspective (market, stakeholders, business goals ...) and outlining a project roadmap.",
+    "about.toolbox_system_title": "System thinking",
+    "about.toolbox_system_desc": "Endlessly curious about what revolves around a project in general, I'm currently working full-time on the company design system.",
+    "about.toolbox_management_title": "Project management",
+    "about.toolbox_management_desc": "Natural interest in organizing the project's activities and facilitating cross-discipline communication. I also obtained a PM certificate.",
+    "about.toolbox_accessibility_title": "Accessibility",
+    "about.toolbox_accessibility_desc": "Considering users’ special needs to provide an equitable experience, and experimenting with different ways to make software more usable.",
+    "about.toolbox_code_title": "Code and design",
+    "about.toolbox_code_desc": "I have a basic understanding of the code, PRs, and Github, which makes me more agile in my handover process."
 }

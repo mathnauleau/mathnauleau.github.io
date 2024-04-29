@@ -138,6 +138,81 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   filter: blur(160px);
 }*/
 
+.badge {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  font-size: 10px;
+}
+
+
+/*--------------------------------------------------------------
+# Language switcher
+--------------------------------------------------------------*/
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: black;
+  padding: auto;
+  font-size: 16px;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 99px;
+}
+
+.dropbtn:hover{
+  background-color: var(--color-gray-3);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-left: 16px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /* background-color: var(--color-gray-3); */
+  width: 48px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  background-color: var(--color-gray-3);
+  border-radius: 99px;
+  padding: 12px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 24px;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: var(--color-secondary);
+  color: white;
+  border-radius: 99px;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: var(--color-gray-3);
+}
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
