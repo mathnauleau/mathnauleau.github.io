@@ -280,7 +280,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 # Layout
 --------------------------------------------------------------*/
 .header {
-  padding: 16px 0;
+  padding: 16px;
   border-bottom: 1px solid rgba(36, 49, 68, 0);
 }
 
@@ -289,7 +289,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 }
 
 .header.header-scrolled {
-  padding: 16px 0;
+  padding: 16px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(36, 49, 68, 0.1);
