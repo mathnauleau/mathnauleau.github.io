@@ -57,7 +57,7 @@
     --space-xxlarge:    calc(var(--space-unit) * 8);
     --space-xxxlarge:    calc(var(--space-unit) * 12);
     
-    --space-section:    calc(var(--space-unit) * 9);
+    --space-section:    calc(var(--space-unit) * 10);
 
     /* Breakpoints
     ================================================================= */
