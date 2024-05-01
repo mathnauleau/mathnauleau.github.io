@@ -623,11 +623,11 @@ section {
 --------------------------------------------------------------*/
 
 .project-nav {
-  margin-top: 80px;
+  margin-bottom: var(--space-xlarge);
 }
 
 .project-nav .prev-next {
-  padding: 20px;
+  padding: var(--space-medium);
   background-color: var(--color-nav-default);
 }
 
@@ -861,9 +861,8 @@ section {
 --------------------------------------------------------------*/
 
 .callout {
-  padding: 24px;
+  padding: var(--space-medium);
   background-color: var(--color-information);
-  margin-bottom: var(--space-section);
   border-radius: var(--border-radius-large);
 }
 
