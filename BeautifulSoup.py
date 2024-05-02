@@ -34,3 +34,4 @@ directory_path = '/Users/mathieunauleau/Documents/GitHub/mathnauleau.github.io/p
 process_html_files_in_directory(directory_path)
 
 
+# https://beautiful-soup-4.readthedocs.io/en/latest/
