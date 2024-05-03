@@ -84,13 +84,13 @@ hr {
 --------------------------------------------------------------*/
 
 .navbar a {
-  padding: 12px 0 12px 32px;
+  padding: 16px;
   font: var(--typography-bodyReg);
   color: var(--color-primary);
 }
 
 .navbar a:focus {
-  padding: 12px 0 12px 32px;
+  padding: 16px;
   font: var(--typography-bodyReg);
   color: var(--color-secondary);
 }
@@ -170,16 +170,14 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-left: 16px;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  /* background-color: var(--color-gray-3); */
-  width: 48px;
   z-index: 1;
+  /* background-color: var(--color-gray-3); */
 }
 
 /* Links inside the dropdown */
@@ -187,19 +185,22 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   color: black;
   background-color: var(--color-gray-3);
   border-radius: 99px;
-  padding: 12px 12px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 24px;
+  padding: 12px;
+  text-align: justify;
+  font: var(--typography-bodyReg);
   display: block;
   margin-top: 4px;
+  width: 48px;
+  height: 48px;
 }
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
+  padding: 12px;
   background-color: var(--color-secondary);
+  font: var(--typography-bodyReg);
   color: white;
+  text-align: justify;
   border-radius: 99px;
 }
 
@@ -289,7 +290,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 }
 
 .header.header-scrolled {
-  padding: 16px;
+  padding: 16px 16px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(36, 49, 68, 0.1);
