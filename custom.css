@@ -458,11 +458,12 @@ section {
   margin-bottom: var(--space-section);
 }
 
-.sub-section ul {
+.sub-section ul, section ul {
   list-style-image: url("assets/icon/arrow-right.svg");
+  margin-bottom: var(--space-large);
 }
 
-.sub-section ul li {
+.sub-section ul li, section ul li  {
   margin-bottom: 12px;
   padding-left: 8px;
   font: var(--typography-bodyReg);
@@ -611,8 +612,18 @@ section {
 .img-box2 {
   height: 100%;
   /* background-color: var(--color-information); */
+  background-image: url(assets/img/portfolio/project1/what-is-design-system.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.img-box3 {
+  height: 100%;
+  /* background-color: var(--color-information); */
   background-image: url(assets/img/window2.png);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   padding: 0;
 }
 
