@@ -458,11 +458,12 @@ section {
   margin-bottom: var(--space-section);
 }
 
-.sub-section ul, ul {
+.sub-section ul, section ul {
   list-style-image: url("assets/icon/arrow-right.svg");
+  margin-bottom: var(--space-large);
 }
 
-.sub-section ul li, ul li {
+.sub-section ul li, section ul li  {
   margin-bottom: 12px;
   padding-left: 8px;
   font: var(--typography-bodyReg);
