@@ -471,7 +471,7 @@ section {
 
 .about .content {
   border-radius: var(--border-radius-large);
-  background-color: var(--color-gray-2);
+  background-color: var(--color-white);
 }
 
 .portfolio-project-nav {
