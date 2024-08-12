@@ -61,7 +61,7 @@ hr {
   height: 100vh;
   background-size: cover;
   background-image: none;
-  background: linear-gradient(100deg, #f5f1ea 0%, #f8f9fc 100%);
+  /* background: linear-gradient(100deg, #f5f1ea 0%, #f8f9fc 100%); */
 }
 
 .hero h1 {
@@ -77,6 +77,10 @@ hr {
   font: var(--typography-subhead);
   color: var(--color-gray-8);
   margin-block-start: var(--space-small);
+}
+
+.img-fluid {
+  border-radius: var(--border-radius-xlarge);
 }
 
 /*--------------------------------------------------------------
