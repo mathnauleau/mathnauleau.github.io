@@ -236,7 +236,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .hero .hero-img img {
-    width: 80%;
+    width: 100%;
   }
 
   .g-5,
@@ -273,7 +273,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 @media (max-width: 1012px) {
   .hero .hero-img img {
-    width: 60%;
+    width: 100%;
   }
 }
 
