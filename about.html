@@ -67,12 +67,12 @@
   <link href="custom.css" rel="stylesheet" />
   <link href="tokens.css" rel="stylesheet" />
 
-  <!-- =======================================================
-  * Hello, I'm currently using a template for my website. Here are some info:
-  * Template Name: FlexStart - v1.12.0
-  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
-  * Nice poem I like: https://www.poetica.fr/poeme-63/victor-hugo-demain-des-l-aube/ 
-  ======================================================== -->
+  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+  <script>
+    Weglot.initialize({
+      api_key: 'wg_87d2bb1feeba350259e81a48103457753'
+    });
+  </script>
 </head>
 
 <body>
@@ -90,20 +90,6 @@
           <li><a class="nav-link scrollto" href="index.html">Design</a></li>
           <li><a class="nav-link scrollto" href="index.html#craft">Craft</a></li>
           <li><a class="nav-link scrollto active" href="about.html">About</a></li>
-          <li><a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/"
-              target="_blank"><i class="bi bi-linkedin"></i></a></li>
-          <li><a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i
-                class="bi bi-dribbble"></i></a></li>
-          <li><a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i
-                class="bi bi-instagram"></i></a></li>
-          <li class="dropdown">
-            <span class="badge rounded-pill bg-primary">Beta</span>
-            <button class="dropbtn"><i class="bi bi-globe"></i></button>
-            <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')">EN</a>
-              <a href="#" onclick="changeLanguage('fr')">FR</a>
-            </div>
-          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -198,7 +184,7 @@
 
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="info-box">
-                <h3 data-i18n="about.toolbox_code_title">Code and design</h3>
+                <h3 data-i18n="about.toolbox_code_title">Code &amp; design</h3>
                 <p data-i18n="about.toolbox_code_desc">I have a basic understanding of the code, PRs, and Github, which
                   makes me more agile in my handover process.</p>
               </div>
@@ -215,15 +201,27 @@
 
   <!-- ======= Footer ======= -->
   <footer class="footer">
-    <div class="container">
-      <div class="copyright">
-        <p>
-          Created with
-          <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> |
-          2024
-        </p>
+    <div class="copyright">
+      <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> | 2024</p>
+      <div class="navbar">
+        <ul>
+          <li>
+            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" target="_blank">
+              <i class="bi bi-dribbble"></i>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau" target="_blank">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
     </div>
   </footer>
   <!-- End Footer -->
@@ -232,7 +230,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="js/localization.js"></script>
+  <!-- <script src="js/localization.js"></script> -->
 
   <script src="js/localization.js"></script>
 

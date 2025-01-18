@@ -56,6 +56,12 @@
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
   * Nice poem I like: https://www.poetica.fr/poeme-63/victor-hugo-demain-des-l-aube/ 
   ======================================================== -->
+  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+  <script>
+    Weglot.initialize({
+      api_key: 'wg_87d2bb1feeba350259e81a48103457753'
+    });
+  </script>
 </head>
 
 <body>
@@ -72,18 +78,6 @@
           <li><a class="nav-link scrollto" href="#portfolio">Design</a></li>
           <li><a class="nav-link scrollto" href="#craft">Craft</a></li>
           <li><a class="nav-link scrollto" href="about.html">About</a></li>
-          <li>
-            <a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/"
-              target="_blank"><i class="bi bi-linkedin"></i></a>
-          </li>
-          <li>
-            <a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i
-                class="bi bi-dribbble"></i></a>
-          </li>
-          <li>
-            <a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i
-                class="bi bi-instagram"></i></a>
-          </li>
           <li class="dropdown">
             <span class="badge rounded-pill bg-primary">Beta</span>
             <button class="dropbtn"><i class="bi bi-globe"></i></button>
@@ -105,11 +99,11 @@
     <div class="container">
       <div class="row gx-5 gy-3">
         <div class="col-lg-5 hero-img">
-          <img src="assets/img/hero-img.png" class="img-fluid" alt="Profile illustration" />
+          <img src="assets/img/hero-img.jpg" class="img-fluid" alt="Profile illustration" />
         </div>
         <div class="col-lg-6 d-flex flex-column justify-content-center">
           <h1>
-            Hello, I’m Mathieu, <br />
+            Hello, I’m Mathieu,
             product designer
           </h1>
           <h2>
@@ -157,18 +151,6 @@
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
-          <a href="carl.html" class="portfolio-link">
-            <div id="project3" class="portfolio-wrap">
-              <img loading="lazy" src="assets/img/portfolio/portfolio-3.png" class="img-fluid"
-                alt="Car Rental app cover" />
-              <div class="portfolio-title">
-                <h4>Car rental App — 2021</h4>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="ahcompact.html" class="portfolio-link">
             <div id="project4" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-4.png" class="img-fluid"
@@ -181,18 +163,18 @@
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
-          <a href="island.html" class="portfolio-link">
-            <div id="project5" class="portfolio-wrap">
-              <img loading="lazy" src="assets/img/portfolio/portfolio-5.png" class="img-fluid"
-                alt="Slide Puzzle cover" />
+          <a href="carl.html" class="portfolio-link">
+            <div id="project3" class="portfolio-wrap">
+              <img loading="lazy" src="assets/img/portfolio/portfolio-3.png" class="img-fluid"
+                alt="Car Rental app cover" />
               <div class="portfolio-title">
-                <h4>Island slide puzzle — 2022</h4>
+                <h4>Car rental App — 2021</h4>
               </div>
             </div>
           </a>
         </div>
 
-        <div class="col-lg-6 col-md-12 portfolio-item">
+        <!-- <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="rise.html" class="portfolio-link">
             <div id="project6" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-6.png" class="img-fluid"
@@ -202,7 +184,7 @@
               </div>
             </div>
           </a>
-        </div>
+        </div> -->
       </div>
     </section>
     <!-- End Portfolio Section -->
@@ -215,7 +197,8 @@
       </header>
 
       <div class="row gy-4 portfolio-container">
-        <div class="col-lg-4 col-md-12 portfolio-item">
+
+        <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="sketching.html" class="portfolio-link" data-toggle="modal">
             <div class="portfolio-wrap craft">
               <img loading="lazy" src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid"
@@ -227,7 +210,19 @@
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-12 portfolio-item">
+        <div class="col-lg-6 col-md-12 portfolio-item">
+          <a href="island.html" class="portfolio-link">
+            <div id="project5" class="portfolio-wrap">
+              <img loading="lazy" src="assets/img/portfolio/portfolio-5.png" class="img-fluid"
+                alt="Slide Puzzle cover" />
+              <div class="portfolio-title">
+                <h4>Island Slide Puzzle — 2022</h4>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="dailyui.html" class="portfolio-link" data-toggle="modal">
             <div class="portfolio-wrap craft">
               <img loading="lazy" src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="Daily UI cover" />
@@ -238,7 +233,7 @@
           </a>
         </div>
 
-        <div class="col-lg-4 col-md-12 portfolio-item">
+        <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="kumiko.html" class="portfolio-link" data-toggle="modal">
             <div class="portfolio-wrap craft">
               <img loading="lazy" src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid"
@@ -249,6 +244,7 @@
             </div>
           </a>
         </div>
+
       </div>
     </section>
     <!-- End Portfolio Section -->
@@ -287,13 +283,26 @@
 
   <!-- ======= Footer ======= -->
   <footer class="footer">
-    <div class="container">
-      <div class="copyright">
-        <p>
-          Created with
-          <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> |
-          2024
-        </p>
+    <div class="copyright">
+      <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> | 2024</p>
+      <div class="navbar">
+        <ul>
+          <li>
+            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" target="_blank">
+              <i class="bi bi-dribbble"></i>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau" target="_blank">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>

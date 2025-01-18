@@ -61,7 +61,7 @@ hr {
   height: 100vh;
   background-size: cover;
   background-image: none;
-  background: linear-gradient(100deg, #f5f1ea 0%, #f8f9fc 100%);
+  /* background: linear-gradient(100deg, #f5f1ea 0%, #f8f9fc 100%); */
 }
 
 .hero h1 {
@@ -77,6 +77,10 @@ hr {
   font: var(--typography-subhead);
   color: var(--color-gray-8);
   margin-block-start: var(--space-small);
+}
+
+.img-fluid {
+  border-radius: var(--border-radius-xlarge);
 }
 
 /*--------------------------------------------------------------
@@ -232,7 +236,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .hero .hero-img img {
-    width: 80%;
+    width: 100%;
   }
 
   .g-5,
@@ -269,7 +273,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 @media (max-width: 1012px) {
   .hero .hero-img img {
-    width: 60%;
+    width: 100%;
   }
 }
 
@@ -458,11 +462,12 @@ section {
   margin-bottom: var(--space-section);
 }
 
-.sub-section ul {
+.sub-section ul, section ul {
   list-style-image: url("assets/icon/arrow-right.svg");
+  margin-bottom: var(--space-large);
 }
 
-.sub-section ul li {
+.sub-section ul li, section ul li  {
   margin-bottom: 12px;
   padding-left: 8px;
   font: var(--typography-bodyReg);
@@ -470,7 +475,7 @@ section {
 
 .about .content {
   border-radius: var(--border-radius-large);
-  background-color: var(--color-gray-2);
+  background-color: var(--color-white);
 }
 
 .portfolio-project-nav {
@@ -611,8 +616,18 @@ section {
 .img-box2 {
   height: 100%;
   /* background-color: var(--color-information); */
+  background-image: url(assets/img/portfolio/project1/what-is-design-system.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+.img-box3 {
+  height: 100%;
+  /* background-color: var(--color-information); */
   background-image: url(assets/img/window2.png);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   padding: 0;
 }
 
