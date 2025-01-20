@@ -25,7 +25,13 @@ Function in google sheet to generate the json (concatenate key + language)
 |whitelabel.html|whitelabel.|
 |404.html|404.|
 
+| localization | key |
+|---|---|
+|Button|btn.|
+|Navigation|nav.|
+
+
 ## Naming convention of the data-i18n
 ```
-data-i18n="home.arg-arg-arg"
+data-i18n="home.arg_arg_arg"
 ```
