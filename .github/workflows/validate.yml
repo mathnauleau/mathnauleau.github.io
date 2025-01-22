@@ -10,5 +10,4 @@ jobs:
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_JSONS: languages/en.json
-          INPUT_JSONS: languages/fr.json
+          INPUT_JSONS: /languages/
