@@ -1,3 +1,5 @@
+name: JSON Lint
+
 on: pull_request
 
 jobs:
