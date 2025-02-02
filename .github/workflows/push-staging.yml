@@ -1,4 +1,4 @@
-name: Push to staging repo
+name: Push to Staging Repo
 
 on:
     push:
@@ -14,5 +14,5 @@ jobs:
 
             - name: Push to Staging Repo
               run: |
-                  git remote add staging https://github.com/mathnauleau/staging-repo.git
+                  git remote add staging https://mathnauleau:${{ secrets.GH_PAT }}@github.com/mathnauleau/staging-repo.git
                   git push --force staging staging:gh-pages
