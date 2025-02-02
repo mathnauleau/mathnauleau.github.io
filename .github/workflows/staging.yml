@@ -1,0 +1,22 @@
+name: CI + CD
+
+on:
+    push:
+        branches: [staging]
+    pull_request:
+        branches: [staging]
+    workflow_dispatch:
+
+jobs:
+    DeployStaging:
+        name: Deploy to Staging
+        runs-on: ubuntu-latest
+        environment:
+            name: Staging
+            url: 'https://tst.mathnauleau.github.io'
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Deploy to Staging
+              run: echo "Deploying to staging..."
