@@ -1,0 +1,23 @@
+name: Push to staging repo
+
+on:
+    push:
+        branches: [staging]
+    workflow_dispatch:
+
+jobs:
+    DeployToStaging:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Configure Git
+              run: |
+                  git config --global user.name "github-actions"
+                  git config --global user.email "github-actions@github.com"
+
+            - name: Push to Staging Repo
+              run: |
+                  git remote add staging https://github.com/mathnauleau/staging-repo.git
+                  git push --force staging staging:gh-pages
