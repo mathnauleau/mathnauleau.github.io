@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta name="description" content="UX Design Portfolio Mathieu Nauleau" />
+  <meta name="keywords" content="UX, Design, Designer, Portfolio, System, Strategy, Product" />
+  <meta name="author" content="Mathieu Nauleau" />
+  <meta name="robots" content="index" />
+
+  <title>Styleguide</title>
+
+  <!-- Favicon -->
+  <link href="assets/img/favicon.ico" rel="shortcut icon" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Template Main CSS Files -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="custom.css" rel="stylesheet">
+  <link href="tokens.css" rel="stylesheet">
+
+</head>
+
+<!-- Combine with custom CSS -->
+<style>
+  main {
+    padding-top: 50px;
+  }
+
+  h4 {
+    font: var(--typography-heading-2);
+  }
+
+  hr {
+    margin: 8px 0 40px 0;
+  }
+
+  .swatch-grid {
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .color {
+    width: 200px;
+    height: 80px;
+    border-radius: 16px;
+    display: flex;
+    flex: 0 1 180px;
+    margin-bottom: 30px;
+  }
+
+  .space {
+    width: 200px;
+    background-color: rgba(240, 128, 128, 0.259);
+    border-style: solid;
+    border-width: 1px 0px;
+    border-color: lightcoral;
+    display: flex;
+    flex: 0 1 180px;
+    margin-bottom: 30px;
+  }
+
+  .color p {
+    font: var(--typography-caption);
+    position: relative;
+    margin-top: 86px;
+    color: var(--color-primary);
+  }
+
+  .space p {
+    font: var(--typography-caption);
+    position: relative;
+    margin-top: 8px;
+    color: var(--color-primary);
+  }
+
+  .table_component {
+    overflow: auto;
+    width: 100%;
+  }
+
+  .table_component table {
+    border-bottom: 1px solid var(--color-gray-4);
+    height: 100%;
+    width: 100%;
+    table-layout: auto;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: left;
+  }
+
+  .table_component th {
+    border-bottom: 1px solid var(--color-gray-4);
+    color: var(--color-primary);
+    padding: 5px;
+  }
+
+  .table_component td {
+    font: var(--typography-caption);
+    border-bottom: 1px solid var(--color-gray-4);
+    color: var(--color-primary);
+    padding: 12px 0;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 16px;
+    }
+
+    td:first-child {
+      display: none;
+    }
+  }
+</style>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" style="background-color: var(--color-gray-1)">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="../index.html" class="logo d-flex align-items-center">
+        <!-- <img src="assets/img/logo.png" alt="logo"> -->
+        <span>Styleguide</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li>
+            <a class="nav-link" id="theme-toggle"><i class="bi bi-circle-half"></i>
+            </a>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+
+  <main class="container-xl" style="margin-top: 50px;">
+
+
+    <!-- TYPOGRAPHY -->
+    <h4>Textstyles</h4>
+    <hr>
+
+    <div class="table_component" role="region" tabindex="0">
+      <table>
+        <tbody>
+          <tr>
+            <td>headline <br> 700 3.5em/1.3em</td>
+            <td>
+              <h1 style="font: var(--typography-headline)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>heading-1 <br> 700 2.5em/1.3em</td>
+            <td>
+              <h1 style="font: var(--typography-heading-1)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>heading-2 <br> 700 2em/1.3em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-heading-2)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>heading-3 <br> 700 1.5em/1.5em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-heading-3)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>subhead <br> 300 1.5em/1.5em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-subhead)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>subtitle <br> 700 1.25em/1.5em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-subtitle)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>overline <br> 700 1em/1em "Raleway"</td>
+            <td>
+              <h1 style="font: var(--typography-overline)">IPSUM DOLOR SIT AMET</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>button <br> 500 1em/1em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-button)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>bodyBold <br> 700 1em/1.5em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-bodyBold)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>bodyReg <br> 300 1em/1.5em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-bodyReg)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+          <tr>
+            <td>caption <br> 300 0.875em/1.25em "Inter"</td>
+            <td>
+              <h1 style="font: var(--typography-caption)">Ipsum Dolor Sit Amet</h1>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BLOCK -->
+    <div style="height: 60px;"></div>
+
+    <!-- COLORS -->
+    <h4 style="font: var(--typography-heading-2)">Colors</h4>
+    <hr>
+
+    <h6 style="font: var(--typography-subtitle)">Primary colors</h6>
+    <div class="swatch-grid">
+      <div class="color" style="background-color: var(--color-primary-light);">
+        <p>primary-light</p>
+      </div>
+      <div class="color" style="background-color: var(--color-primary);">
+        <p>primary</p>
+      </div>
+      <div class="color" style="background-color: var(--color-primary-dark);">
+        <p>primary-dark</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--typography-subtitle)">Secondary colors</h6>
+    <div class="swatch-grid">
+      <div class="color" style="background-color: var(--color-secondary-light);">
+        <p>secondary-light</p>
+      </div>
+      <div class="color" style="background-color: var(--color-secondary);">
+        <p>secondary</p>
+      </div>
+      <div class="color" style="background-color: var(--color-secondary-dark);">
+        <p>secondary-dark</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--typography-subtitle)">Feedback colors</h6>
+    <div class="swatch-grid">
+      <div class="color" style="background-color: var(--color-information);">
+        <p>information</p>
+      </div>
+      <div class="color" style="background-color: var(--color-critical);">
+        <p>critical</p>
+      </div>
+      <div class="color" style="background-color: var(--color-danger);">
+        <p>danger</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--typography-subtitle)">Greyscale colors</h6>
+    <div class="swatch-grid">
+      <div class="color"
+        style="background-color: var(--color-gray-1); border-style: solid; border-width: 1px; border-color: #c7c7c7;">
+        <p>gray-1</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-2);">
+        <p>gray-2</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-3);">
+        <p>gray-3</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-4);">
+        <p>gray-4</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-5);">
+        <p>gray-5</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-6);">
+        <p>gray-6</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-7);">
+        <p>gray-7</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-8);">
+        <p>gray-8</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-9);">
+        <p>gray-9</p>
+      </div>
+      <div class="color" style="background-color: var(--color-gray-10);">
+        <p>gray-10</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--typography-subtitle)">Navigation colors</h6>
+    <div class="swatch-grid">
+      <div class="color" style="background-color: var(--color-nav-default);">
+        <p>nav-default</p>
+      </div>
+      <div class="color" style="background-color: var(--color-nav-hover);">
+        <p>nav-hover</p>
+      </div>
+    </div>
+
+    <!-- BLOCK -->
+    <div style="height: 60px;"></div>
+
+    <!-- BORDER RADIUS -->
+    <h4>Border Radius</h4>
+    <hr>
+
+    <div class="swatch-grid">
+      <div class="color"
+        style="border-radius: var(--border-radius-small); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        <p>small</p>
+      </div>
+      <div class="color"
+        style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        <p>medium</p>
+      </div>
+      <div class="color"
+        style="border-radius: var(--border-radius-large); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        <p>large</p>
+      </div>
+      <div class="color"
+        style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        <p>xlarge</p>
+      </div>
+    </div>
+
+    <!-- BLOCK -->
+    <div style="height: 60px;"></div>
+
+    <!-- BORDER RADIUS -->
+    <h4>Spacing</h4>
+    <hr>
+
+    <h6 style="font: var(--typography-subtitle)">Core spacing</h6>
+    <div class="swatch-grid">
+      <div class="space" style="height: var(--space-xsmall);">
+        <p>space-xs</p>
+      </div>
+      <div class="space" style="height: var(--space-small);">
+        <p>space-s</p>
+      </div>
+      <div class="space" style="height: var(--space-medium);">
+        <p>space-m</p>
+      </div>
+      <div class="space" style="height: var(--space-large);">
+        <p>space-l</p>
+      </div>
+      <div class="space" style="height: var(--space-xlarge);">
+        <p>space-xl</p>
+      </div>
+      <div class="space" style="height: var(--space-xxlarge);">
+        <p>space-xxl</p>
+      </div>
+      <div class="space" style="height: var(--space-xxxlarge);">
+        <p>space-xxxl</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--typography-subtitle)">Semantic spacing</h6>
+    <div class="swatch-grid">
+      <div class="space" style="height: var(--space-section);">
+        <p>space-section</p>
+      </div>
+    </div>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+  <script src="js/theme-toggle.js"></script>
+</body>
+
+</html>
