@@ -7,7 +7,6 @@ https://mathieunauleau.com/styleguide.html
 ### Localization
 - [🔗 Google doc with en/fr and json script](https://docs.google.com/spreadsheets/d/1DXCQv8tG4r3myD3zPm-TXPQ0g9M5Fl6IZgSfNKU26AY/edit?usp=sharing)
 - [🔗 POEditor](https://poeditor.com/)
-- [🔗 Weglot](https://www.weglot.com)
 
 
 ### Favorite resources
