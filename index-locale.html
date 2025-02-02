@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Localization</title>
+
+    <link rel="stylesheet" href="custom.css">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="locale.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main>
+
+        <div class="btn-group btn-group-toggle">
+            <label class="btn btn-secondary active" for="option1">
+                <input type="radio" name="options" id="option1" autocomplete="off" onclick="changeLanguage('fr')"
+                    checked> French
+            </label>
+            <label class="btn btn-secondary" for="option2">
+                <input type="radio" name="options" id="option2" autocomplete="off" onclick="changeLanguage('en')">
+                English
+            </label>
+        </div>
+
+
+        <h1 data-i18n="home.hero"></h1>
+        <p data-i18n="home.introduction"></p>
+
+    </main>
+
+    <script src="js/localization.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+<!-- <div class="language-toggle">
+    <input type="radio" class="btn-check" id="option-fr" autocomplete="off">
+    <label class="btn btn-check" for="option-en" onclick="changeLanguage('en')" checked>EN</label>
+    <label class="btn" for="option-fr" onclick="changeLanguage('fr')">FR</label>
+</div> -->
