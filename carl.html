@@ -65,7 +65,15 @@
           <li>
             <a class="nav-link scrollto" href="index.html#craft">Craft</a>
           </li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
+          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
+          <li class="dropdown">
+            <span class="badge rounded-pill bg-primary">Beta</span>
+            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
+              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+            </div>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -95,7 +103,7 @@
               <strong>Date</strong>
             </div>
             <div class="col-8">
-              <p>Feb. 2021 - Aug. 2021</p>
+              <p data-i18n="carl.info_date_range">Feb. 2021 - Aug. 2021</p>
             </div>
           </div>
           <hr />
@@ -104,31 +112,31 @@
               <strong>Client</strong>
             </div>
             <div class="col-8">
-              <p>Fictive Car company</p>
+              <p data-i18n="carl.info_client_desc">Fictive Car company</p>
             </div>
           </div>
           <hr />
           <div class="row">
             <div class="col-4">
-              <strong>Result</strong>
+              <strong data-i18n="general.result">Result</strong>
             </div>
             <div class="col-8">
-              <p>High Fidelity prototype</p>
+              <p data-i18n="carl.info_result_desc">High Fidelity prototype</p>
             </div>
           </div>
           <hr />
           <div class="row">
             <div class="col-4">
-              <strong>Tools</strong>
+              <strong data-i18n="general.tool">Tools</strong>
             </div>
             <div class="col-8">
-              <p>Interviews, wireframes, prototypes, interaction.</p>
+              <p data-i18n="carl.info_tool_desc">Interviews, wireframes, prototypes, interaction.</p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3>
+          <h3 data-i18n="carl.description_hero">
             CARL is a mobile app that helps casual travelers rent vehicles
             with maximum clarity. From start to finish, the user has full
             control over their choice and the extras and can ask for service
@@ -142,8 +150,8 @@
     <!-- ======= Start Portfolio Development Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
       <div class="sub-section">
-        <h2>Competitive Benchmark</h2>
-        <p>
+        <h2 data-i18n="carl.section_benchmark">Competitive Benchmark</h2>
+        <p data-i18n="carl.section_benchmark_desc">
           As a first step, I browsed various car rental apps to identify common patterns, best practices, typical user
           flows, and potential frictions to understand how these services function.
         </p>
@@ -151,8 +159,8 @@
       </div>
 
       <div class="sub-section">
-        <h2>Usability test</h2>
-        <p>
+        <h2 data-i18n="carl.section_usability">Usability test</h2>
+        <p data-i18n="carl.section_usability_desc">
           I then interviewed a potential user with a test script to gain insights into their mindset while renting a
           car.
         </p>
@@ -160,8 +168,8 @@
       </div>
 
       <div class="sub-section">
-        <h2>Affinity diagram</h2>
-        <p>
+        <h2 data-i18n="carl.section_affinity">Affinity diagram</h2>
+        <p data-i18n="carl.section_affinity_desc">
           Organizing insights into key categories proved essential for creating the journey map. As I arranged sticky
           notes during a digital workshop on Miro, potential solutions and opportunities emerged.
         </p>
@@ -169,8 +177,8 @@
       </div>
 
       <div class="sub-section">
-        <h2>Customer journey map</h2>
-        <p>
+        <h2 data-i18n="carl.section_journey_map">Customer journey map</h2>
+        <p data-i18n="carl.section_journey_map_desc">
           Mapping a persona's user journey highlighted the need for a car rental app that better explains the booking
           process and guides users in selecting extras and protections.
         </p>
@@ -178,13 +186,13 @@
       </div>
 
       <div class="sub-section">
-        <h2>Flow diagram</h2>
+        <h2 data-i18n="carl.section_diagram">Flow diagram</h2>
         <img loading="lazy" src="assets/img/portfolio/project3/view-08.jpg" alt="">
       </div>
 
       <div class="sub-section">
-        <h2>Interaction design</h2>
-        <p>
+        <h2 data-i18n="carl.section_interaction">Interaction design</h2>
+        <p data-i18n="carl.section_interaction_desc">
           Sketching rough iterations of each screen on paper ensured that the elements translated to digital wireframes
           would effectively address the user pain points.
         </p>
@@ -192,13 +200,13 @@
       </div>
 
       <div class="sub-section">
-        <h2>UI Foundations &amp; Components</h2>
+        <h2 data-i18n="carl.section_styleguide">UI Foundations &amp; Components</h2>
         <img loading="lazy" src="assets/img/portfolio/project3/components.png" alt="UI components">
       </div>
 
       <div class="sub-section">
-        <h2>Hi-Fi Prototype</h2>
-        <p>
+        <h2 data-i18n="carl.section_hifi_prototype">Hi-Fi Prototype</h2>
+        <p data-i18n="carl.section_hifi_prototype_desc">
           I built the prototype by focusing on the primary flow (booking a car) and experimenting with secondary flows
           (onboarding, profile, booking tab, and filters). Figma let me create the necessary interactions to test
           the app myself before involving real users for further testing.
@@ -207,12 +215,12 @@
       </div>
 
       <div class="sub-section">
-        <h2>Sneak peak</h2>
+        <h2 data-i18n="carl.section_sneak_peak">Sneak peak</h2>
         <img loading="lazy" src="assets/img/portfolio/project3/view-12.png" alt="">
       </div>
 
       <div class="sub-section">
-        <h2>Result</h2>
+        <h2 data-i18n="general.result">Result</h2>
         <img loading="lazy" src="assets/img/portfolio/project3/view-11.png" alt="">
       </div>
     </section>
@@ -239,7 +247,7 @@
           <a href="ahcompact.html" class="portfolio-link">
             <div class="prev-next left">
               <div class="col-12">
-                <span class="direction"><i class="bi bi-arrow-left"></i>Previous project</span>
+                <span class="direction" data-i18n="nav.prev"><i class="bi bi-arrow-left"></i>Previous project</span>
                 <br />
                 <span class="title">AH Compact</span>
               </div>
@@ -251,7 +259,7 @@
           <a href="sketching.html" class="portfolio-link">
             <div class="prev-next right">
               <div class="col-12 gx-2">
-                <span class="direction">Up next<i class="bi bi-arrow-right"></i></span>
+                <span class="direction" data-i18n="nav.next">Up next<i class="bi bi-arrow-right"></i></span>
                 <br />
                 <span class="title">Digital Sketching</span>
               </div>
@@ -295,6 +303,8 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="js/localization.js"></script>
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -47,44 +47,29 @@
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
-    <div class="container-fluid d-flex align-items-center justify-content-between">
+    <div class="container-xxl d-flex justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+        <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="index.html">Design</a></li>
-          <li>
-            <a class="nav-link scrollto" href="index.html#craft">Craft</a>
-          </li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
-
-          <!-- <li>
-            <a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/"
-              target="_blank"><i class="bi bi-linkedin"></i></a>
-          </li>
-          <li>
-            <a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i
-                class="bi bi-dribbble"></i></a>
-          </li>
-          <li>
-            <a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i
-                class="bi bi-instagram"></i></a>
-          </li> -->
-
-          <!-- <li class="dropdown">
+          <li><a class="nav-link scrollto" href="#portfolio">Design</a></li>
+          <li><a class="nav-link scrollto" href="#craft">Craft</a></li>
+          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
+          <li class="dropdown">
             <span class="badge rounded-pill bg-primary">Beta</span>
-            <button class="dropbtn"><i class="bi bi-globe"></i></button>
+            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
             <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')">EN</a>
-              <a href="#" onclick="changeLanguage('fr')">FR</a>
+              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
+              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
             </div>
-          </li> -->
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
+      <!-- .navbar -->
     </div>
   </header>
   <!-- End Header -->
@@ -304,7 +289,7 @@
           <a href="ahcompact.html" class="portfolio-link">
             <div class="prev-next left">
               <div class="col-12">
-                <span class="direction"><i class="bi bi-arrow-left"></i>Previous project</span>
+                <span class="direction" data-i18n="nav.prev"><i class="bi bi-arrow-left"></i>Previous project</span>
                 <br />
                 <span class="title">AH Compact</span>
               </div>
@@ -316,7 +301,7 @@
           <a href="island.html" class="portfolio-link">
             <div class="prev-next right">
               <div class="col-12 gx-2">
-                <span class="direction">Up next<i class="bi bi-arrow-right"></i></span>
+                <span class="direction" data-i18n="nav.next">Up next<i class="bi bi-arrow-right"></i></span>
                 <br />
                 <span class="title">Island Slide Puzzle</span>
               </div>
@@ -360,9 +345,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-
-  <!-- <script src="js/localization.js"></script> -->
-
+  <script src="js/localization.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
