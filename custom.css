@@ -80,7 +80,7 @@ hr {
 }
 
 .img-fluid {
-  border-radius: var(--border-radius-xlarge);
+  border-radius: var(--border-radius-large);
 }
 
 /*--------------------------------------------------------------
@@ -366,6 +366,10 @@ section {
 
 #project6 {
   background: linear-gradient(45deg, #bfcee8 0%, #788ca9 100%);
+}
+
+#project7 {
+  background: linear-gradient(45deg, #f367a9 0%, #7b91ff 100%);
 }
 
 .portfolio .portfolio-wrap:hover img {
