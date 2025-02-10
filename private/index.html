@@ -11,7 +11,7 @@
   <title>Oh, hello.</title>
 
   <!-- Favicon -->
-  <link href="assets/img/favicon.ico" rel="icon" />
+  <link href="../assets/img/favicon.ico" rel="icon" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,20 +41,13 @@
 
   <!-- Code Adapted and integrated from  -->
   <!-- https://github.com/matteobrusa/Password-protection-for-static-pages/blob/master/index.html -->
-
-  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script>
-    Weglot.initialize({
-      api_key: 'wg_87d2bb1feeba350259e81a48103457753'
-    });
-  </script>
 </head>
 
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top">
   <div class="container-xxl d-flex justify-content-between">
     <a href="../index.html" class="logo d-flex align-items-center">
-      <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+      <!-- <img src="assets/img/logo.png" alt="logo"> -->
       <span>Mathieu Nauleau</span>
     </a>
 
@@ -64,18 +57,14 @@
         <li>
           <a class="nav-link scrollto" href="../index.html#craft">Craft</a>
         </li>
-        <li><a class="nav-link scrollto" href="../index.html">About</a></li>
-        <li>
-          <a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/"
-            target="_blank"><i class="bi bi-linkedin"></i></a>
-        </li>
-        <li>
-          <a class="nav-link social-links dribbble" href="https://dribbble.com/mathieunauleau" target="_blank"><i
-              class="bi bi-dribbble"></i></a>
-        </li>
-        <li>
-          <a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i
-              class="bi bi-instagram"></i></a>
+        <li><a class="nav-link scrollto" href="../about.html">About</a></li>
+        <li class="dropdown">
+          <span class="badge rounded-pill bg-primary">Beta</span>
+          <button class="dropbtn"><img src="../assets/icon/language.svg"></button>
+          <div class="dropdown-content">
+            <a href="#" onclick="changeLanguage('en')"><img src="../assets/icon/en.svg"></a>
+            <a href="#" onclick="changeLanguage('fr')"><img src="../assets/icon/fr.svg"></a>
+          </div>
         </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
@@ -94,8 +83,11 @@
   }
 
   .lightbox {
-    zoom: 1.5;
     position: fixed;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    vertical-align: middle;
     top: 0;
     left: 0;
     width: 100%;
@@ -103,12 +95,6 @@
     background: rgba(239, 239, 239, 0.8);
     text-align: center;
     margin: auto;
-  }
-
-  div.horizontal {
-    display: flex;
-    justify-content: center;
-    height: 100%;
   }
 
   div.vertical {
@@ -136,18 +122,21 @@
 
 <body>
   <div class="lightbox">
-    <div class="horizontal">
-      <div class="vertical">
-        <div class="box">
-          <h4>This content is protected.</h4>
-          <input id="password" type="password" size="20" maxlength="20" placeholder="Enter password"
-            class="post-password-input css-u51q0g" />
-          <br />
-          <button id="loginbutton" class="btn btn-primary" type="button">
-            Submit
-          </button>
-          <p id="wrongPassword" style="display: none">wrong password</p>
-        </div>
+    <div class="vertical">
+      <div class="box">
+        <h4>This content is protected.</h4>
+        <input id="password" type="password" size="20" maxlength="20" placeholder="Enter password"
+          class="post-password-input css-u51q0g" />
+        <br />
+
+        <button id="loginbutton"
+          class="btn-custom d-inline-flex align-items-center justify-content-center align-self-center"
+          style="border: none;" type="button">
+          <span data-i18n="btn.contact">Submit</span>
+          <i class="bi bi-arrow-right"></i>
+        </button>
+
+        <p id="wrongPassword" style="display: none">wrong password</p>
       </div>
     </div>
   </div>

@@ -49,7 +49,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-xxl d-flex justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+        <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
       </a>
 
@@ -57,7 +57,7 @@
         <ul>
           <li><a class="nav-link scrollto" href="index.html">Design</a></li>
           <li><a class="nav-link scrollto" href="index.html">Craft</a></li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
+          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
           <li>
             <a class="nav-link social-links linkedin" href="https://www.linkedin.com/in/mathieunauleau/"
               target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -69,6 +69,14 @@
           <li>
             <a class="nav-link social-links instagram" href="http://instagram.com/mathieunauleau" target="_blank"><i
                 class="bi bi-instagram"></i></a>
+          </li>
+          <li class="dropdown">
+            <span class="badge rounded-pill bg-primary">Beta</span>
+            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
+              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+            </div>
           </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -83,7 +91,7 @@
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-6 hero-img">
-          <img src="assets/img/404.png" class="img-fluid" alt="3D glass image" />
+          <img src="assets/img/404.png" class="img-fluid" alt="3D glass image">
           <!-- Credit: https://icons8.com/illustrations/style--3d-glassy -->
         </div>
         <div class="col-lg-6 gap-1 d-flex flex-column justify-content-center">
@@ -100,7 +108,10 @@
     </div>
   </section>
   <!-- End Hero -->
+
   <!-- Vendor JS Files -->
+  <script src="js/localization.js"></script>
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

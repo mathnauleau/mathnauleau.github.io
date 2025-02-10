@@ -48,13 +48,6 @@
   <link href="assets/css/style.css" rel="stylesheet" />
   <link href="custom.css" rel="stylesheet" />
   <link href="tokens.css" rel="stylesheet" />
-
-  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script>
-    Weglot.initialize({
-      api_key: 'wg_87d2bb1feeba350259e81a48103457753'
-    });
-  </script>
 </head>
 
 <body>
@@ -62,7 +55,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-xxl d-flex justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+        <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
       </a>
 
@@ -72,7 +65,15 @@
           <li>
             <a class="nav-link scrollto" href="index.html#craft">Craft</a>
           </li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
+          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
+          <li class="dropdown">
+            <span class="badge rounded-pill bg-primary">Beta</span>
+            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
+              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+            </div>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -85,7 +86,7 @@
     <section class="portfolio-header">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
-          <img src="assets/img/portfolio/project4/project-hero.png" alt="AH Compact App hero image" />
+          <img src="assets/img/portfolio/project4/project-hero.png" alt="AH Compact App hero image">
         </div>
       </div>
     </section>
@@ -117,7 +118,7 @@
           <hr />
           <div class="row">
             <div class="col-4">
-              <strong>Result</strong>
+              <strong data-i18n="general.result">Result</strong>
             </div>
             <div class="col-8">
               <p>
@@ -128,16 +129,16 @@
           <hr />
           <div class="row">
             <div class="col-4">
-              <strong>Softwares</strong>
+              <strong data-i18n="general.tool">Softwares</strong>
             </div>
             <div class="col-8">
-              <p>User interview, UI/UX design, Figma</p>
+              <p data-i18n="ahcompact.info_tool_desc">User interview, UI/UX design, Figma</p>
             </div>
           </div>
         </div>
 
         <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3>
+          <h3 data-i18n="ahcompact.description_hero">
             In 2020, home delivery was disrupted by new competitors. This pushed Albert Heijn to invest in its delivery
             service with a new proposition: AH Compact. This free service aimed to deliver a selection of people's
             favorite products. In 2 years, the service rapidly grew and drew attention.
@@ -151,43 +152,45 @@
     <section class="portfolio-description container-xl col-lg-9">
 
       <div class="sub-section">
-        <h2>Context</h2>
+        <h2 data-i18n="general.context">Context</h2>
         <img src="assets/img/portfolio/project4/view-03.png" alt="">
       </div>
 
       <div class="sub-section">
-        <h2>Key results</h2>
+        <h2 data-i18n="ahcompact.section_key_results">Key results</h2>
 
         <div class="row g-3">
           <div class="col-xl-3 col-md-6">
             <div class="info-box bg-light rounded-4">
               <strong>+23%</strong>
-              <h4>increased revenue</h4>
-              <p>After 1 year, between the MVP and the last version.</p>
+              <h4 data-i18n="ahcompact.section_key_results_subtitle_01">increased revenue</h4>
+              <p data-i18n="ahcompact.section_key_results_desc_01">After 1 year, between the MVP and the last version.
+              </p>
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6">
             <div class="info-box bg-light rounded-4">
               <strong>+30K</strong>
-              <h4>extra active users</h4>
-              <p>In the last year, we multiplied our user base by 2.</p>
+              <h4 data-i18n="ahcompact.section_key_results_subtitle_02">extra active users</h4>
+              <p data-i18n="ahcompact.section_key_results_desc_02">In the last year, we multiplied our user base by 2.
+              </p>
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6">
             <div class="info-box bg-light rounded-4">
               <strong>+15%</strong>
-              <h4>increased conversion</h4>
-              <p>through user research and various AB tests.</p>
+              <h4 data-i18n="ahcompact.section_key_results_subtitle_03">increased conversion</h4>
+              <p data-i18n="ahcompact.section_key_results_desc_03">through user research and various AB tests.</p>
             </div>
           </div>
 
           <div class="col-xl-3 col-md-6">
             <div class="info-box bg-light rounded-4">
               <strong>+16</strong>
-              <h4>Successful launches</h4>
-              <p>We expanded our service from 3 to 16 cities.</p>
+              <h4 data-i18n="ahcompact.section_key_results_subtitle_04">Successful launches</h4>
+              <p data-i18n="ahcompact.section_key_results_desc_04">We expanded our service from 3 to 16 cities.</p>
             </div>
           </div>
 
@@ -195,17 +198,17 @@
       </div>
 
       <div class="sub-section">
-        <h2>UX Ambition</h2>
-        <img loading="lazy" src="assets/img/portfolio/project4/view-06.png" alt="" />
+        <h2 data-i18n="ahcompact.section_ambition">UX Ambition</h2>
+        <img loading="lazy" src="assets/img/portfolio/project4/view-06.png" alt="">
       </div>
 
       <div class="sub-section">
-        <h2>Research &amp; Analytics</h2>
-        <p>
+        <h2 data-i18n="ahcompact.section_research">Research &amp; Analytics</h2>
+        <p data-i18n="ahcompact.section_research_desc">
           User research, user interviews, App stores screening and analytics
           study was an integral part of the process.
         </p>
-        <img loading="lazy" src="assets/img/portfolio/project4/view-02.png" alt="" />
+        <img loading="lazy" src="assets/img/portfolio/project4/view-02.png" alt="">
       </div>
 
       <hr class="hr" />
@@ -213,42 +216,42 @@
       <div class="sub-section">
         <div class="row gx-5">
           <div class="col-lg-6 col-sm-12">
-            <h2>Usability tests feedback</h2>
+            <h2 data-i18n="ahcompact.section_feedback">Usability tests feedback</h2>
             <ul>
-              <li>
+              <li data-i18n="ahcompact.section_feedback_01">
                 Users first look at discounts before to browse through the
                 rest of the assortment.
               </li>
-              <li>
+              <li data-i18n="ahcompact.section_feedback_02">
                 Campaigns/Banners are overlooked. Users are generally not
                 interested in our content
               </li>
-              <li>
+              <li data-i18n="ahcompact.section_feedback_03">
                 Some users are willing to try new products, but the app
                 doesn't highlight any.
               </li>
-              <li>
+              <li data-i18n="ahcompact.section_feedback_04">
                 Both the conversion and the amount of users are stagnating.
               </li>
             </ul>
           </div>
 
           <div class="col-lg-6 col-sm-12">
-            <h2>Improvements</h2>
+            <h2 data-i18n="ahcompact.section_improvements">Improvements</h2>
             <ul>
-              <li>
+              <li data-i18n="ahcompact.section_improvement_01">
                 Highlight the discounts of the week with larger banners, more
                 engaging
               </li>
-              <li>
+              <li data-i18n="ahcompact.section_improvement_02">
                 Together with the content team, we've adapted the visuals to
                 make them more appealing (MVP)
               </li>
-              <li>
+              <li data-i18n="ahcompact.section_improvement_03">
                 A 'new product' section has been added to the assortiment
                 page. Conversion increased
               </li>
-              <li>
+              <li data-i18n="ahcompact.section_improvement_04">
                 Introduced the 'Invite a friend' feature, including a special
                 discount
               </li>
@@ -258,61 +261,62 @@
       </div>
 
       <div class="sub-section">
-        <h2>From sketches to prototypes</h2>
+        <h2 data-i18n="ahcompact.section_sketch_to_proto">From sketches to prototypes</h2>
         <img loading="lazy" src="assets/img/portfolio/project4/view-01.png" alt="">
       </div>
 
       <div class="sub-section">
-        <h2>Transition 2020-2022</h2>
-        <p>
+        <h2 data-i18n="ahcompact.section_transition">Transition 2020-2022</h2>
+        <p data-i18n="ahcompact.section_transition_desc">
           The App transitioned from a large to a small palette of color to
           align with the main brand and support the "simple to use" feeling.
           Our team also implemented some large features such as 'Invite a
           friend', a 'Free Product' campaign, new search and filters
           mechanism, and finally a new homepage to support the App vision.
         </p>
-        <img loading="lazy" src="assets/img/portfolio/project4/view-05.png" alt="" />
+        <img loading="lazy" src="assets/img/portfolio/project4/view-05.png" alt="">
       </div>
 
       <div class="sub-section">
-        <h2>Key features</h2>
-        <p>Through continuous research, analytics, and AB testings, we developed and improved the following
-          functionalities.</p>
+        <h2 data-i18n="ahcompact.section_key_feature">Key features</h2>
+        <p data-i18n="ahcompact.section_key_feature_desc">Through continuous research, analytics, and AB testings, we
+          developed and improved the
+          following functionalities.</p>
         <ul>
-          <li>Invite a friend to attract new customers</li>
-          <li>Free product to reward our fans</li>
-          <li>New dynamic &amp; welcoming home </li>
-          <li>In-app messages to increase engagement</li>
-          <li>Improvement of search &amp; filters</li>
-          <li>Optimization of the product taxonomy</li>
+          <li data-i18n="ahcompact.section_key_feature_01">Invite a friend to attract new customers</li>
+          <li data-i18n="ahcompact.section_key_feature_02">Free product to reward our fans</li>
+          <li data-i18n="ahcompact.section_key_feature_03">New dynamic &amp; welcoming home </li>
+          <li data-i18n="ahcompact.section_key_feature_04">In-app messages to increase engagement</li>
+          <li data-i18n="ahcompact.section_key_feature_05">Improvement of search &amp; filters</li>
+          <li data-i18n="ahcompact.section_key_feature_06">Optimization of the product taxonomy</li>
 
         </ul>
         <img src="assets/img/portfolio/project4/features.png" alt="">
       </div>
 
       <div class="sub-section">
-        <h2>Styleguide</h2>
-        <img loading="lazy" src="assets/img/portfolio/project4/view-04.png" alt="" />
+        <h2 data-i18n="ahcompact.section_styleguide">Styleguide</h2>
+        <img loading="lazy" src="assets/img/portfolio/project4/view-04.png" alt="">
       </div>
 
       <div class="sub-section">
         <div class="row gx-5">
           <div class="col-lg-6 col-sm-12">
-            <h2>Impact</h2>
+            <h2 data-i18n="ahcompact.section_impact">Impact</h2>
             <ul>
-              <li>Increased revenue in 2 years</li>
-              <li>Increased conversion</li>
-              <li>Successful expansion in other cities</li>
-              <li>5 major features launched and tracked</li>
+              <li data-i18n="ahcompact.section_impact_01">Increased revenue in 2 years</li>
+              <li data-i18n="ahcompact.section_impact_02">Increased conversion</li>
+              <li data-i18n="ahcompact.section_impact_03">Successful expansion in other cities</li>
+              <li data-i18n="ahcompact.section_impact_04">5 major features launched and tracked</li>
             </ul>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <h2>Learnings</h2>
+            <h2 data-i18n="ahcompact.section.learnings">Learnings</h2>
             <ul>
-              <li>Use of analytics and A/B testing</li>
-              <li>Taking full ownership of an App design</li>
-              <li>Manage a roadmap of features</li>
-              <li>Advocate decisions to stakeholders</li>
+              <li data-i18n="ahcompact.section_learning_01">Use of analytics and A/B testing</li>
+              <li data-i18n="ahcompact.section_learning_02">Taking full ownership of an App design</li>
+              <li data-i18n="ahcompact.section_learning_03">Manage a roadmap of features</li>
+              <li data-i18n="ahcompact.section_learning_04">Advocate decisions to stakeholders</li>
             </ul>
           </div>
         </div>
@@ -327,7 +331,7 @@
           <a href="designsystem.html" class="portfolio-link">
             <div class="prev-next left">
               <div class="col-12">
-                <span class="direction"><i class="bi bi-arrow-left"></i>Previous project</span>
+                <span class="direction" data-i18n="nav.prev"><i class="bi bi-arrow-left"></i>Previous project</span>
                 <br />
                 <span class="title">Pantry Design System</span>
               </div>
@@ -339,7 +343,7 @@
           <a href="carl.html" class="portfolio-link">
             <div class="prev-next right">
               <div class="col-12 gx-2">
-                <span class="direction">Up next<i class="bi bi-arrow-right"></i></span>
+                <span class="direction" data-i18n="nav.next">Up next<i class="bi bi-arrow-right"></i></span>
                 <br />
                 <span class="title">Car Rental App</span>
               </div>
@@ -383,6 +387,8 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="js/localization.js"></script>
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

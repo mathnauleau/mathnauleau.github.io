@@ -56,12 +56,6 @@
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
   * Nice poem I like: https://www.poetica.fr/poeme-63/victor-hugo-demain-des-l-aube/ 
   ======================================================== -->
-  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script>
-    Weglot.initialize({
-      api_key: 'wg_87d2bb1feeba350259e81a48103457753'
-    });
-  </script>
 </head>
 
 <body>
@@ -69,7 +63,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-xxl d-flex justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+        <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
       </a>
 
@@ -77,7 +71,15 @@
         <ul>
           <li><a class="nav-link scrollto" href="#portfolio">Design</a></li>
           <li><a class="nav-link scrollto" href="#craft">Craft</a></li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
+          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
+          <li class="dropdown">
+            <span class="badge rounded-pill bg-primary">Beta</span>
+            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
+              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+            </div>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -91,14 +93,14 @@
     <div class="container">
       <div class="row gx-5 gy-3">
         <div class="col-lg-5 hero-img">
-          <img src="assets/img/hero-img.jpg" class="img-fluid" alt="Profile illustration" />
+          <img src="assets/img/hero-img.jpg" class="img-fluid" alt="Profile illustration">
         </div>
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1>
+          <h1 data-i18n="home.hero">
             Hello, I’m Mathieu,
             product designer
           </h1>
-          <h2>
+          <h2 data-i18n="home.introduction">
             Currently based in Amsterdam, I like to tackle complex problems to
             have a positive impact on people and businesses by crafting
             elegant user experiences and cohesive design systems.
@@ -113,8 +115,8 @@
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio container-xl">
       <header class="section-header">
-        <h5>UX &amp; Strategy</h5>
-        <h2>Selected works.</h2>
+        <h5>Design</h5>
+        <h2 data-i18n="home.section_work">Selected works.</h2>
       </header>
 
       <div class="row gy-4 portfolio-container">
@@ -122,7 +124,7 @@
           <a href="whitelabel.html" class="portfolio-link">
             <div id="project2" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-2.png" class="img-fluid"
-                alt="White Label App cover" />
+                alt="White Label App cover">
               <div class="portfolio-title">
                 <h4>White label eCommerce App — 2024</h4>
               </div>
@@ -134,7 +136,7 @@
           <a href="designsystem.html" class="portfolio-link">
             <div id="project1" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-1.png" class="img-fluid"
-                alt="Design System cover" />
+                alt="Design System cover">
               <div class="portfolio-title">
                 <h4>Pantry Design System — 2024</h4>
               </div>
@@ -146,7 +148,7 @@
           <a href="ahcompact.html" class="portfolio-link">
             <div id="project4" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-4.png" class="img-fluid"
-                alt="AH Compact app cover" />
+                alt="AH Compact app cover">
               <div class="portfolio-title">
                 <h4>AH Compact — 2021</h4>
               </div>
@@ -158,7 +160,7 @@
           <a href="carl.html" class="portfolio-link">
             <div id="project3" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-3.png" class="img-fluid"
-                alt="Car Rental app cover" />
+                alt="Car Rental app cover">
               <div class="portfolio-title">
                 <h4>Car rental App — 2021</h4>
               </div>
@@ -170,7 +172,7 @@
           <a href="rise.html" class="portfolio-link">
             <div id="project6" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-6.png" class="img-fluid"
-                alt="Inflight service Ecosystem cover" />
+                alt="Inflight service Ecosystem cover">
               <div class="portfolio-title">
                 <h4>Inflight Service Ecosystem — 2020</h4>
               </div>
@@ -185,7 +187,7 @@
     <section id="craft" class="portfolio container-xl">
       <header class="section-header">
         <h5>Craft</h5>
-        <h2>Side projects.</h2>
+        <h2 data-i18n="home.section_craft">Side projects.</h2>
       </header>
 
       <div class="row gy-4 portfolio-container">
@@ -194,7 +196,7 @@
           <a href="sketching.html" class="portfolio-link" data-toggle="modal">
             <div class="portfolio-wrap craft">
               <img loading="lazy" src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid"
-                alt="Digital sketching cover" />
+                alt="Digital sketching cover">
               <div class="portfolio-title">
                 <h4>Digital Sketching</h4>
               </div>
@@ -205,8 +207,7 @@
         <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="island.html" class="portfolio-link">
             <div id="project5" class="portfolio-wrap">
-              <img loading="lazy" src="assets/img/portfolio/portfolio-5.png" class="img-fluid"
-                alt="Slide Puzzle cover" />
+              <img loading="lazy" src="assets/img/portfolio/portfolio-5.png" class="img-fluid" alt="Slide Puzzle cover">
               <div class="portfolio-title">
                 <h4>Island Slide Puzzle — 2022</h4>
               </div>
@@ -216,8 +217,8 @@
 
         <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="dailyui.html" class="portfolio-link" data-toggle="modal">
-            <div class="portfolio-wrap craft">
-              <img loading="lazy" src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="Daily UI cover" />
+            <div id="project7" class="portfolio-wrap">
+              <img loading="lazy" src="assets/img/portfolio/portfolio-8.png" class="img-fluid" alt="Daily UI cover" />
               <div class="portfolio-title">
                 <h4>Daily UI</h4>
               </div>
@@ -229,7 +230,7 @@
           <a href="kumiko.html" class="portfolio-link" data-toggle="modal">
             <div class="portfolio-wrap craft">
               <img loading="lazy" src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid"
-                alt="Handmade kumiko lamp cover" />
+                alt="Handmade kumiko lamp cover">
               <div class="portfolio-title">
                 <h4>Handmade Kumiko lamp</h4>
               </div>
@@ -246,22 +247,21 @@
       <div class="custom-footer">
         <div class="row">
           <div class="container-fluid col-md-3 col-sm-0">
-            <img loading="lazy" src="assets/img/contact.png" alt="img" style="display: block; margin: auto" />
+            <img loading="lazy" src="assets/img/contact.png" alt="img" style="display: block; margin: auto">
           </div>
           <div class="container-fluid col-md-9 col-sm-12">
-            <h2>Want to start a project together?</h2>
-            <p>
-              Feel free to reach out for collaborations, feedback, or simply
-              say hi!
+            <h2 data-i18n="home.contact_title">Want to start a project together?</h2>
+            <p data-i18n="home.contact_subtitle">
+              Feel free to reach out for collaborations, feedback, or simply say hi!
             </p>
             <br />
             <div class="text-lg-start">
               <a href="https://www.linkedin.com/in/mathieunauleau/" target="_blank" class="btn-custom d-inline-flex">
-                <span>Get in touch</span>
+                <span data-i18n="btn.contact">Get in touch</span>
                 <i class="bi bi-linkedin"></i>
               </a>
               <a href="about.html" class="btn-custom2 d-inline-flex">
-                <span>Learn more about me</span>
+                <span data-i18n="btn.more_me">Learn more about me</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
             </div>
@@ -304,6 +304,8 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="js/localization.js"></script>
+
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
