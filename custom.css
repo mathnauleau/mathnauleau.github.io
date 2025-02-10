@@ -531,6 +531,7 @@ section {
   color: white;
   background: var(--color-secondary);
   box-shadow: 0 5px 25px rgba(65, 84, 241, 0.3);
+  height: 48px;
 }
 
 .btn-custom span {
