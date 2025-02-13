@@ -80,7 +80,7 @@ hr {
 }
 
 .img-fluid {
-  border-radius: var(--border-radius-xlarge);
+  border-radius: var(--border-radius-large);
 }
 
 /*--------------------------------------------------------------
@@ -198,6 +198,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   height: 48px;
 }
 
+.dropdown-content a img {
+  margin-bottom: 4px;
+}
+
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   padding: 12px;
@@ -268,6 +272,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   .navbar a i,
   .navbar a:focus i {
     font-size: 24px;
+  }
+  
+  .dropdown {
+    display: none;
   }
 }
 
@@ -358,6 +366,10 @@ section {
 
 #project6 {
   background: linear-gradient(45deg, #bfcee8 0%, #788ca9 100%);
+}
+
+#project7 {
+  background: linear-gradient(45deg, #f367a9 0%, #7b91ff 100%);
 }
 
 .portfolio .portfolio-wrap:hover img {

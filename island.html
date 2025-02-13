@@ -48,13 +48,6 @@
   <link href="assets/css/style.css" rel="stylesheet" />
   <link href="custom.css" rel="stylesheet" />
   <link href="tokens.css" rel="stylesheet" />
-
-  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script>
-    Weglot.initialize({
-      api_key: 'wg_87d2bb1feeba350259e81a48103457753'
-    });
-  </script>
 </head>
 
 <body>
@@ -62,7 +55,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-xxl d-flex justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+        <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
       </a>
 
@@ -72,7 +65,15 @@
           <li>
             <a class="nav-link scrollto" href="index.html#craft">Craft</a>
           </li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
+          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
+          <li class="dropdown">
+            <span class="badge rounded-pill bg-primary">Beta</span>
+            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
+              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+            </div>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -85,7 +86,7 @@
     <section class="portfolio-header">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
-          <img src="assets/img/portfolio/project5/project-hero.png" alt="Island Slide Puzzle hero image" />
+          <img src="assets/img/portfolio/project5/project-hero.png" alt="Island Slide Puzzle hero image">
         </div>
       </div>
     </section>
@@ -108,7 +109,7 @@
           <hr />
           <div class="row">
             <div class="col-4">
-              <strong>Contest</strong>
+              <strong data-i18n="island.info_contest">Contest</strong>
             </div>
             <div class="col-8">
               <p>Flutter hackathon</p>
@@ -117,7 +118,7 @@
           <hr />
           <div class="row">
             <div class="col-4">
-              <strong>Result</strong>
+              <strong data-i18n="general.result">Result</strong>
             </div>
             <div class="col-8">
               <p>
@@ -133,7 +134,7 @@
           <hr />
           <div class="row">
             <div class="col-4">
-              <strong>Softwares</strong>
+              <strong data-i18n="general.tool">Softwares</strong>
             </div>
             <div class="col-8">
               <p>Figma, RIVE, Blender 3D</p>
@@ -142,7 +143,7 @@
         </div>
 
         <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3>
+          <h3 data-i18n="island.description_hero">
             The Flutter Puzzle Hack 2022 pushed our creativity's limits by
             letting us reimagine this classic puzzle. Inspired by the Dutch
             islands and Minecraft, this game lets you rebuild the island if
@@ -156,52 +157,52 @@
     <!-- ======= Start Portfolio Development Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
       <div class="sub-section">
-        <h2>Gameplay</h2>
-        <p>
+        <h2 data-i18n="island.section_gameplay">Gameplay</h2>
+        <p data-i18n="island.section_gameplay_desc">
           Inspired by a mix of minecraft blocks and the dutch islands, we gave
           to this puzzle a friendly-geeky look and feel. <br />
           After shuffling the game, the numbered tiles change into illustrated
           ones to complete the island. A few flying and floating elements move
           around to complete the picture.
         </p>
-        <img loading="lazy" src="assets/img/portfolio/project5/view-01.png" alt="image puzzle" />
+        <img loading="lazy" src="assets/img/portfolio/project5/view-01.png" alt="image puzzle">
       </div>
 
       <div class="sub-section">
-        <h2>Tech &amp; UX teamwork</h2>
-        <p>
+        <h2 data-i18n="island.section_teamwork">Tech &amp; UX teamwork</h2>
+        <p data-i18n="island.section_teamwork_desc">
           We challenged ourselves with visual effects and transitions (including a few RIVE animations) to improve the
           game experience, while my teammate Rene was implementing the puzzle for all platforms.
         </p>
-        <img loading="lazy" src="assets/img/portfolio/project5/view-02.png" alt="image puzzle" />
+        <img loading="lazy" src="assets/img/portfolio/project5/view-02.png" alt="image puzzle">
       </div>
 
       <div class="sub-section">
         <div class="row">
           <div class="col-4">
-            <img loading="lazy" src="assets/img/portfolio/project5/view-04.png" alt="image puzzle" />
+            <img loading="lazy" src="assets/img/portfolio/project5/view-04.png" alt="image puzzle">
           </div>
           <div class="col-4">
-            <img loading="lazy" src="assets/img/portfolio/project5/view-05.png" alt="image puzzle" />
+            <img loading="lazy" src="assets/img/portfolio/project5/view-05.png" alt="image puzzle">
           </div>
           <div class="col-4">
-            <img loading="lazy" src="assets/img/portfolio/project5/view-06.png" alt="image puzzle" />
+            <img loading="lazy" src="assets/img/portfolio/project5/view-06.png" alt="image puzzle">
           </div>
         </div>
       </div>
 
       <div class="sub-section">
-        <img loading="lazy" src="assets/img/portfolio/project5/island-animation.gif" alt="animated puzzle" />
+        <img loading="lazy" src="assets/img/portfolio/project5/island-animation.gif" alt="animated puzzle">
       </div>
 
       <div class="sub-section">
-        <h2>End of the game</h2>
-        <p>
+        <h2 data-i18n="island.section_end_game">End of the game</h2>
+        <p data-i18n="island.section_end_game_desc">
           The full island is revealed once all the blocks are in the right
           position.
         </p>
-        <img loading="lazy" src="assets/img/portfolio/project5/view-07.png" alt="finished puzzle" />
-        <p>
+        <img loading="lazy" src="assets/img/portfolio/project5/view-07.png" alt="finished puzzle">
+        <p data-i18n="island.credits">
           Project created in collaboration with Rene Floor, Flutter tech lead.
         </p>
       </div>
@@ -215,7 +216,7 @@
           <a href="sketching.html" class="portfolio-link">
             <div class="prev-next left">
               <div class="col-12">
-                <span class="direction"><i class="bi bi-arrow-left"></i>Previous project</span>
+                <span class="direction" data-i18n="nav.prev"><i class="bi bi-arrow-left"></i>Previous project</span>
                 <br />
                 <span class="title">Digital Sketching</span>
               </div>
@@ -227,7 +228,7 @@
           <a href="dailyui.html" class="portfolio-link">
             <div class="prev-next right">
               <div class="col-12 gx-2">
-                <span class="direction">Up next<i class="bi bi-arrow-right"></i></span>
+                <span class="direction" data-i18n="nav.next">Up next<i class="bi bi-arrow-right"></i></span>
                 <br />
                 <span class="title">Daily UI</span>
               </div>
@@ -270,6 +271,8 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="js/localization.js"></script>
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

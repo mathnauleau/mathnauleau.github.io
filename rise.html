@@ -48,13 +48,6 @@
   <link href="assets/css/style.css" rel="stylesheet" />
   <link href="custom.css" rel="stylesheet" />
   <link href="tokens.css" rel="stylesheet" />
-
-  <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
-  <script>
-    Weglot.initialize({
-      api_key: 'wg_87d2bb1feeba350259e81a48103457753'
-    });
-  </script>
 </head>
 
 <body>
@@ -62,7 +55,7 @@
   <header id="header" class="header fixed-top">
     <div class="container-xxl d-flex justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- <img src="assets/img/logo.png" alt="logo"/> -->
+        <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
       </a>
 
@@ -72,7 +65,16 @@
           <li>
             <a class="nav-link scrollto" href="index.html#craft">Craft</a>
           </li>
-          <li><a class="nav-link scrollto" href="about.html">About</a></li>
+          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
+          <li class="dropdown">
+            <span class="badge rounded-pill bg-primary">Beta</span>
+            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+            <div class="dropdown-content">
+              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
+              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+            </div>
+          </li>
+
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -85,7 +87,7 @@
     <section class="portfolio-header">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
-          <img src="assets/img/portfolio/project6/project-hero.png" alt="Strategic project hero image" />
+          <img src="assets/img/portfolio/project6/project-hero.png" alt="Strategic project hero image">
         </div>
       </div>
     </section>
@@ -176,13 +178,13 @@
 
       <div class="sub-section">
         <div class="col-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-02.jpg" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-02.jpg" alt="">
         </div>
       </div>
 
       <div class="sub-section row">
         <div class="col-lg-4 col-sm-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-10.png" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-10.png" alt="">
         </div>
         <div class="col-lg-8 col-sm-12">
           <h2>➀ Products and processes study</h2>
@@ -199,7 +201,7 @@
 
       <div class="sub-section row">
         <div class="col-lg-4 col-sm-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-01.png" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-01.png" alt="">
         </div>
         <div class="col-lg-8 col-sm-12">
           <h2>➁ Stakeholder &amp; ecosystem analysis</h2>
@@ -215,7 +217,7 @@
 
       <div class="sub-section row">
         <div class="col-lg-4 col-sm-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-03.png" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-03.png" alt="">
         </div>
         <div class="col-lg-8 col-sm-12">
           <h2>➂ Macro &amp; Micro trend research</h2>
@@ -234,7 +236,7 @@
 
       <div class="sub-section row gx-4">
         <div class="col-lg-4 col-sm-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-04.png" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-04.png" alt="">
         </div>
         <div class="col-lg-8 col-sm-12">
           <h2>➃ Scenario planning</h2>
@@ -251,7 +253,7 @@
 
       <div class="sub-section row gx-4">
         <div class="col-lg-4 col-sm-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-05.png" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-05.png" alt="">
         </div>
         <div class="col-lg-8 col-sm-12">
           <h2>➄ Company Vision and Project Mission</h2>
@@ -268,7 +270,7 @@
 
       <div class="sub-section row gx-4">
         <div class="col-lg-4 col-sm-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-06.png" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-06.png" alt="">
         </div>
         <div class="col-lg-8 col-sm-12">
           <h2>➅ Ecosystem innovation and value proposition design</h2>
@@ -285,7 +287,7 @@
 
       <div class="sub-section row gx-4">
         <div class="col-lg-4 col-sm-12">
-          <img loading="lazy" src="assets/img/portfolio/project6/view-07.png" alt="" />
+          <img loading="lazy" src="assets/img/portfolio/project6/view-07.png" alt="">
         </div>
         <div class="col-lg-8 col-sm-12">
           <h2>➆ Innovation roadmap</h2>
@@ -302,7 +304,7 @@
       </div>
 
       <div class="sub-section">
-        <img loading="lazy" src="assets/img/portfolio/project6/view-11.jpg" alt="" />
+        <img loading="lazy" src="assets/img/portfolio/project6/view-11.jpg" alt="">
         <br /><br />
         <p>
           Project managed by Tom Schreuder and performed by the Safran Cabin
@@ -319,7 +321,7 @@
           <a href="island.html" class="portfolio-link">
             <div class="prev-next left">
               <div class="col-12">
-                <span class="direction"><i class="bi bi-arrow-left"></i>Previous project</span>
+                <span class="direction" data-i18n="nav.prev"><i class="bi bi-arrow-left"></i>Previous project</span>
                 <br />
                 <span class="title">Island Slide Puzzle</span>
               </div>
@@ -331,7 +333,7 @@
           <a href="sketching.html" class="portfolio-link">
             <div class="prev-next right">
               <div class="col-12 gx-2">
-                <span class="direction">Up next<i class="bi bi-arrow-right"></i></span>
+                <span class="direction" data-i18n="nav.next">Up next<i class="bi bi-arrow-right"></i></span>
                 <br />
                 <span class="title">Digital Sketching</span>
               </div>
@@ -375,6 +377,8 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script src="js/localization.js"></script>
+
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
