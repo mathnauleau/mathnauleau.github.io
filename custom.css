@@ -661,6 +661,7 @@ section {
 .project-nav .prev-next {
   padding: var(--space-medium);
   background-color: var(--color-nav-default);
+  transition: all 0.4s;
 }
 
 .project-nav .prev-next:hover {
@@ -679,6 +680,7 @@ section {
 .direction {
   display: inline-flex;
   font: var(--typography-bodyReg);
+  gap: 8px;
 }
 
 .prev-next {
