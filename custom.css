@@ -299,6 +299,8 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 .section-header {
   padding-bottom: var(--space-section);
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .header.header-scrolled {
@@ -596,6 +598,11 @@ section {
 
 .info-box h4 {
   font: var(--typography-subtitle);
+}
+
+.sub-section h3 {
+  font: var(--typography-subtitle);
+  color: var(--color-primary);
 }
 
 /*--------------------------------------------------------------
