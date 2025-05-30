@@ -185,7 +185,7 @@
     "system.section_phase2_desc": "Design tokens are the small, repeatable design decisions that define a system's visual style. They replace static values, like hex codes, with descriptive names. While initially tedious, this approach proves invaluable once the first set of foundations is implemented, offering long-term benefits. Our tokens range from color to line-height, font-family, spacing, sizing, breakpoint and even motion.",
     "system.section_foundations": "Foundations — The backbones of the system",
     "system.section_foundations_desc": "The tokens let us systemize all of our foundations, from core to semantic values. They all rely on similar naming conventions, and ranged from colors, textstyles, spacing, borderRadius, and more...",
-    "system.section_components": "Components — Creating value for end-users",
+    "system.section_components": "Components — Creating value for the end-users",
     "system.section_components_official": "🧬 The Official components",
     "system.section_components_official_desc": "All components that go through the Design System process, from the request to the design, refinement, building, testing and accessibility checks. They are consisdered as official only once available on all platforms.",
     "system.section_components_beta": "🧪 The Beta components",
