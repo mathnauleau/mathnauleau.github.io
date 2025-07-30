@@ -93,15 +93,6 @@ hr {
   color: var(--color-primary);
 }
 
-.navbar img {
-  width: 14px;
-  color: var(--color-primary);
-}
-
-.navbar img:hover {
-  color: var(--color-secondary);
-}
-
 .navbar a:focus {
   padding: 16px;
   font: var(--typography-bodyReg);
