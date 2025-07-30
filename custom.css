@@ -100,7 +100,7 @@ hr {
 }
 
 .navbar a i, .navbar a:focus i{
-  font: var(--typography-bodyReg);
+  font: var(--typography-heading-3);
 }
 
 .navbar-mobile ul {
