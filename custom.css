@@ -877,7 +877,7 @@ section {
   font-size: 18px;
 }
 
-/* Safari-specific fixes */
+/* Safari-specific fixes 
 @supports (-webkit-appearance: none) {
   .footer {
     -webkit-transform: translateZ(0);
@@ -889,7 +889,7 @@ section {
     -webkit-flex-shrink: 0;
     flex-shrink: 0;
   }
-}
+} */
 
 .collaboration img {
   width: 220px;
