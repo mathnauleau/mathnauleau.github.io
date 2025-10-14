@@ -809,23 +809,86 @@ section {
   margin-top: 0;
   padding: 0;
   height: auto;
-  background: none;
+  background: transparent;
+  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 .footer .copyright {
   position: relative;
   text-align: center;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   padding: 40px 0 40px 0;
+  min-height: 60px;
 }
 
 .footer .copyright p {
   font: var(--typography-caption);
   margin-bottom: 0;
 }
+
+/* Footer Social Navigation */
+.footer-social {
+  margin-top: 16px;
+}
+
+.footer-social ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xsmall);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-social li {
+  display: inline-block;
+}
+
+.footer-social .social-links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-gray-2);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-links:hover {
+  color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+.footer-social .social-links i {
+  font-size: 18px;
+}
+
+/* Safari-specific fixes 
+@supports (-webkit-appearance: none) {
+  .footer {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: auto;
+  }
+  
+  .footer .copyright {
+    -webkit-flex-shrink: 0;
+    flex-shrink: 0;
+  }
+} */
 
 .collaboration img {
   width: 220px;
