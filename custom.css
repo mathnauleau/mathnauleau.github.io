@@ -835,6 +835,48 @@ section {
   margin-bottom: 0;
 }
 
+/* Footer Social Navigation */
+.footer-social {
+  margin-top: 16px;
+}
+
+.footer-social ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xsmall);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-social li {
+  display: inline-block;
+}
+
+.footer-social .social-links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-gray-2);
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-links:hover {
+  background-color: var(--color-secondary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.footer-social .social-links i {
+  font-size: 18px;
+}
+
 /* Safari-specific fixes */
 @supports (-webkit-appearance: none) {
   .footer {
