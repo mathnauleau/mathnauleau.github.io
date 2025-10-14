@@ -809,7 +809,7 @@ section {
   margin-top: 0;
   padding: 0;
   height: auto;
-  background: #f6f9ff;
+  background: transparent;
   display: block;
   visibility: visible;
   opacity: 1;
@@ -868,8 +868,7 @@ section {
 }
 
 .footer-social .social-links:hover {
-  background-color: var(--color-secondary);
-  color: white;
+  color: var(--color-secondary);
   transform: translateY(-2px);
 }
 
