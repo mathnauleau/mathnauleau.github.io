@@ -421,6 +421,10 @@ section {
   opacity: 1;
 }
 
+.portfolio .portfolio-wrap:focus {
+  border-radius: 1000px;
+}
+
 .portfolio-title h4 {
   color: white;
   font: var(--typography-subhead);
