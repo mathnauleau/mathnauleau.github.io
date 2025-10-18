@@ -6,6 +6,15 @@ function updateContent(langData) {
     });
 }
 
+// Function to update the current flag based on language
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        currentFlag.src = `assets/icon/${lang}.svg`;
+        currentFlag.alt = `${lang === 'en' ? 'english' : 'french'} flag`;
+    }
+}
+
 // Function to set the language preference
 function setLanguagePreference(lang) {
     localStorage.setItem('language', lang);
@@ -24,6 +33,7 @@ async function changeLanguage(lang) {
 
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
+    updateCurrentFlag(lang);
     // toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
 }
 
@@ -47,5 +57,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'en';
     const langData = await fetchLanguageData(userPreferredLanguage);
     updateContent(langData);
+    updateCurrentFlag(userPreferredLanguage);
     toggleArabicStylesheet(userPreferredLanguage);
 }); 
