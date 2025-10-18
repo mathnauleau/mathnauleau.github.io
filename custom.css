@@ -164,6 +164,15 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   width: 48px;
   height: 48px;
   border-radius: 99px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropbtn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 .dropbtn:hover{
@@ -190,7 +199,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   background-color: var(--color-gray-3);
   border-radius: 99px;
   padding: 12px;
-  text-align: justify;
+  text-align: center;
   font: var(--typography-bodyReg);
   display: block;
   margin-top: 4px;
@@ -198,13 +207,22 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   height: 48px;
 }
 
+<<<<<<< Updated upstream
+=======
+.dropdown-content a img {
+  margin-bottom: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+>>>>>>> Stashed changes
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   padding: 12px;
   background-color: var(--color-secondary);
   font: var(--typography-bodyReg);
   color: white;
-  text-align: justify;
+  text-align: center;
   border-radius: 99px;
 }
 
