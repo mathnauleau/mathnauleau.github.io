@@ -32,11 +32,14 @@ async function changeLanguage(lang) {
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     // Check the associated radio button
     document.getElementById('option1').checked = (lang === 'fr');
     document.getElementById('option2').checked = (lang === 'en');
 =======
+=======
+>>>>>>> Stashed changes
     updateCurrentFlag(lang);
     // toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
 >>>>>>> Stashed changes
