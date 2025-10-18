@@ -33,11 +33,14 @@ async function changeLanguage(lang) {
     updateContent(langData);
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
     // Check the associated radio button
     document.getElementById('option1').checked = (lang === 'fr');
     document.getElementById('option2').checked = (lang === 'en');
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
     updateCurrentFlag(lang);
