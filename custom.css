@@ -288,6 +288,35 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 }
 
+/* Always show the title on touch / small screens while preserving desktop hover behaviour */
+@media (max-width: 768px) {
+  .portfolio-title {
+    /* force visible on mobile/touch */
+    opacity: 1 !important;
+    transition: none !important;
+
+    /* overlay at the bottom of the image */
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    /* subtle dark gradient so white text stays readable over images */
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 100%);
+    z-index: 3;
+  }
+
+.portfolio .portfolio-wrap:hover img {
+  transform: translateY(0px);
+  }
+}
+
+
 @media (max-width: 1012px) {
   .hero .hero-img img {
     width: 100%;
@@ -336,6 +365,8 @@ section {
 --------------------------------------------------------------*/
 .portfolio .portfolio-wrap {
   border-radius: var(--border-radius-large);
+  position: relative;
+  overflow: hidden;
 }
 
 .portfolio .portfolio-wrap::before {
@@ -433,6 +464,7 @@ section {
 .portfolio-title h4 {
   color: white;
   font: var(--typography-subhead);
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
