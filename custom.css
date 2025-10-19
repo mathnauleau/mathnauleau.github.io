@@ -284,7 +284,25 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
   
   .dropdown {
-    display: none;
+    display: inline-block;
+  }
+
+  /* Make dropdown content always visible on mobile for touch interaction */
+  .dropdown-content {
+    display: block !important;
+    position: static;
+    margin-top: 8px;
+    background-color: var(--color-gray-2);
+    border-radius: var(--border-radius-medium);
+    padding: 8px;
+  }
+
+  /* Stack language options horizontally on mobile */
+  .dropdown-content a {
+    display: inline-block;
+    margin: 4px;
+    width: 40px;
+    height: 40px;
   }
 }
 
