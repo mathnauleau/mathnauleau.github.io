@@ -231,6 +231,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   background-color: var(--color-gray-3);
 }
 
+.lang-mobile {
+  display: none;
+}
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -282,27 +286,13 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   .navbar a:focus i {
     font-size: 24px;
   }
-  
+
   .dropdown {
-    display: inline-block;
+    display: none;
   }
 
-  /* Make dropdown content always visible on mobile for touch interaction */
-  .dropdown-content {
-    display: block !important;
-    position: static;
-    margin-top: 8px;
-    background-color: var(--color-gray-2);
-    border-radius: var(--border-radius-medium);
-    padding: 8px;
-  }
-
-  /* Stack language options horizontally on mobile */
-  .dropdown-content a {
-    display: inline-block;
-    margin: 4px;
-    width: 40px;
-    height: 40px;
+  .lang-mobile {
+    display: inline;
   }
 }
 
