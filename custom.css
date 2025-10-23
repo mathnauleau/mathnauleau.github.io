@@ -240,6 +240,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 @media (max-width: 768px) {
   .hero {
     text-align: center;
+    padding-top: 30px;
   }
 
   .hero h1 {
@@ -258,10 +259,6 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   .g-5,
   .gx-5 {
     --bs-gutter-x: 1rem;
-  }
-
-  .hero {
-    padding-top: 30px;
   }
 
   #portfolio .g-4,
@@ -290,10 +287,60 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
     display: none;
   }
 
-  .lang-mobile {
-    display: inline;
+  /* Deactivate all hover states on mobile to prevent touch interaction issues */
+  .dropbtn:hover,
+  .dropdown-content a:hover,
+  .dropdown:hover .dropdown-content,
+  .dropdown:hover .dropbtn,
+  .portfolio .portfolio-wrap:hover img,
+  .portfolio .craft:hover img,
+  .portfolio .portfolio-wrap:hover .portfolio-title,
+  .portfolio-project-nav:hover,
+  .btn-custom:hover i,
+  .btn-custom2:hover i,
+  .btn-custom:hover,
+  .project-nav .prev-next:hover,
+  .back-to-top:hover,
+  .footer-social .social-links:hover {
+    /* Reset hover effects on mobile */
+    transform: none !important;
+    background-color: inherit !important;
+    color: inherit !important;
+    opacity: inherit !important;
+  }
+
+  /* Improve touch targets for mobile */
+  .btn-custom, .btn-custom2 {
+    min-height: 44px; /* iOS recommended touch target */
+  }
+
+  .collaboration img {
+  padding: 0 0 24px 0;
+  }
+
+/* Always show the title on touch / small screens while preserving desktop hover behaviour */
+  .portfolio-title {
+    /* force visible on mobile/touch */
+    opacity: 1 !important;
+    transition: none !important;
+
+    /* overlay at the bottom of the image */
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    /* subtle dark gradient so white text stays readable over images */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(3, 1, 12, 0.623) 100%);
+    z-index: 3;
   }
 }
+
 
 @media (max-width: 1012px) {
   .hero .hero-img img {
@@ -342,6 +389,9 @@ section {
 --------------------------------------------------------------*/
 .portfolio .portfolio-wrap {
   border-radius: var(--border-radius-large);
+  position: relative;
+  overflow: hidden;
+  background: none;
 }
 
 .portfolio .portfolio-wrap::before {
@@ -355,6 +405,10 @@ section {
 .portfolio .portfolio-wrap::after {
   background: rgba(5, 1, 37, 0.1);
   opacity: 0;
+}
+
+.portfolio .portfolio-wrap img {
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -439,6 +493,7 @@ section {
 .portfolio-title h4 {
   color: white;
   font: var(--typography-subhead);
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -460,6 +515,7 @@ section {
 
 .portfolio-hero {
   margin-bottom: 90px;
+  padding-bottom: 40px;
 }
 
 .portfolio-hero h2, .portfolio-description h2 {
@@ -481,10 +537,6 @@ section {
 .portfolio-hero .row {
   padding-right: 0;
   padding-left: 0;
-}
-
-.portfolio-hero {
-  padding-bottom: 40px;
 }
 
 .sub-section {
