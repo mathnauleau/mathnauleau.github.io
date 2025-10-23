@@ -103,37 +103,35 @@ hr {
   font: var(--typography-heading-3);
 }
 
-.navbar-mobile ul {
+.overlay ul {
   display: block;
   position: absolute;
-  top: var(--space-xlarge);
-  right: var(--space-xlarge);
-  bottom: var(--space-xlarge);
-  left: var(--space-xlarge);
-  padding: 16px 0;
-  border-radius: 16px;
+  top: var(--space-medium);
+  right: var(--space-medium);
+  bottom: var(--space-medium);
+  left: var(--space-medium);
+  padding: 16px;
+  border-radius: 24px;
   background-color: var(--color-gray-1);
   overflow-y: auto;
   transition: 0.3s;
 }
 
-.navbar-mobile .mobile-nav-toggle {
+.overlay .mobile-nav-toggle {
   position: absolute;
-  top: 56px;
-  right: 56px;
+  top: 48px;
+  right: 48px;
   color: var(--color-gray-8);
+  font-size: 2.5em;
+  transition: none;
 }
 
-.navbar-mobile {
+.overlay {
   background-color: #030404ed;
 }
 
-.navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover>a{
+.overlay a:hover, .overlay .active, .overlay li:hover>a{
   color: var(--color-secondary);
-}
-
-.mobile-nav-toggle{
-  color: var(--color-primary);
 }
 
 /* EXPERIMENT WITH GRADIENT
@@ -231,6 +229,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   background-color: var(--color-gray-3);
 }
 
+.lang-mobile {
+  display: none;
+}
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -251,6 +253,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
   .hero .hero-img img {
     width: 100%;
+    margin-top: var(--space-large);
   }
 
   .g-5,
@@ -279,7 +282,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   .navbar a:focus i {
     font-size: 24px;
   }
-  
+
   .dropdown {
     display: none;
   }
@@ -363,11 +366,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   padding-right: 10%;
 }
 
-.header.header-scrolled {
+.header .header-scrolled {
   padding: 16px 16px;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(36, 49, 68, 0.1);
   box-shadow: none;
 }
 

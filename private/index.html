@@ -24,7 +24,7 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
 
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -61,15 +61,9 @@
             href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
             data-i18n="nav.resource">Resource</a>
         </li>
-        <li class="dropdown">
-          <button class="dropbtn">
-            <img id="current-flag" src="assets/icon/en.svg" alt="current language flag">
-          </button>
-          <div class="dropdown-content">
-            <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg" alt="english flag"></a>
-            <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg" alt="french flag"></a>
-          </div>
-        </li>
+
+        <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
+        <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
