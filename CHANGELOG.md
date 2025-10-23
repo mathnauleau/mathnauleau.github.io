@@ -1,4 +1,13 @@
-Version: 2.00.0
+# Portfolio Changelog
+A list of all major changes. To update for each release.
+
+## 23.09.2025 - Version 3.00
+### Changed
+- Custom stylesheet to ensure that project's titles are directly readable on mobile, without hovering.
+- Renamed the CHANGELOG
+- Updated the pull_request_template.md
+
+## Version: 2.00.0
   - Mathieu takes over and makes it his cool portfolio!
 
 Version: 1.12.0
@@ -62,5 +71,5 @@ Version: 1.1.0
   - Added custom navbar links active on scroll functionality
   - Small fixes and imrovements in assets/js/main.js
 
-Version: 1.0.0
+## Version: 1.0.0
   - Initial Release
