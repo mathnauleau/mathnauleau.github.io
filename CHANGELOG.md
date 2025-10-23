@@ -6,6 +6,7 @@ A list of all major changes. To update for each release.
 - Custom stylesheet to ensure that project's titles are directly readable on mobile, without hovering.
 - Renamed the CHANGELOG
 - Updated the pull_request_template.md
+- Enabled language switcher on mobile
 
 ## Version: 2.00.0
   - Mathieu takes over and makes it his cool portfolio!

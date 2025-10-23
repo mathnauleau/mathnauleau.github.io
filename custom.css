@@ -261,6 +261,10 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
     --bs-gutter-x: 1rem;
   }
 
+  .lang-mobile {
+    display: inline;
+  }
+
   #portfolio .g-4,
   #portfolio .gy-4,
   #craft .g-4,
