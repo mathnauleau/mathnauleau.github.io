@@ -1,7 +1,12 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
-## 23.09.2025 - Version 3.00
+## 23.09.2025 - Version 2.02.0
+### Changed
+- Link to my current job
+- Copy on my about section (en/fr)
+
+## 23.09.2025 - Version 2.01.0
 ### Changed
 - Custom stylesheet to ensure that project's titles are directly readable on mobile, without hovering.
 - Renamed the CHANGELOG
@@ -74,3 +79,4 @@ Version: 1.1.0
 
 ## Version: 1.0.0
   - Initial Release
+
