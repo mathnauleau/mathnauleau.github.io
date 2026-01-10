@@ -1,21 +1,32 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
-## 23.09.2025 - Version 2.02.0
-### Changed
+
+### Not released yet
+Changed:
+- Removed password from Pantry Design System project
+- Added new password-protected Eneco project
+- links to previous/next projects
+- 
+------
+
+### 23.09.2025 - Version 2.02.0
+Changed
 - Link to my current job
 - Copy on my about section (en/fr)
 
-## 23.09.2025 - Version 2.01.0
-### Changed
+### 23.09.2025 - Version 2.01.0
+Changed
 - Custom stylesheet to ensure that project's titles are directly readable on mobile, without hovering.
 - Renamed the CHANGELOG
 - Updated the pull_request_template.md
 - Enabled language switcher on mobile
 
-## Version: 2.00.0
-  - Mathieu takes over and makes it his cool portfolio!
+### 2024 - Version 2.0
+Changed:
+- Major overwrite with custom html/css
 
+## Version 1 (Bootstrap base)
 Version: 1.12.0
   - Updated Bootstrap to version 5.2.3
   - Updated all outdated third party vendor libraries to their latest versions
@@ -79,4 +90,5 @@ Version: 1.1.0
 
 ## Version: 1.0.0
   - Initial Release
+
 
