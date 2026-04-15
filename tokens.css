@@ -96,11 +96,11 @@
     /* Border
     ================================================================= */
     /* Border color */
-    --border-color-lighter: var(--gray-2);
-    --border-color-light:   var(--gray-3);
-    --border-color:         var(--gray-5);
-    --border-color-dark:    var(--gray-7);
-    --border-color-darker:  var(--gray-9);
+    --border-color-lighter: var(--color-gray-2);
+    --border-color-light:   var(--color-gray-3);
+    --border-color:         var(--color-gray-5);
+    --border-color-dark:    var(--color-gray-7);
+    --border-color-darker:  var(--color-gray-9);
     
     /* Border radius */
     --border-radius-small:  calc(var(--base-unit) * 1);
