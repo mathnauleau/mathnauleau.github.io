@@ -95,7 +95,12 @@
     <section class="portfolio-header">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
-          <img src="assets/img/portfolio/project1/project-hero-wip.png" alt="Design System hero image">
+          
+          <picture>
+            <source media="(min-width:650px)" srcset="assets/img/portfolio/project1/project-hero-wip.png">
+            <source media="(min-width:465px)" srcset="assets/img/portfolio/project1/project-hero-wip-mobile.png"> <!-- TO CREATE! -->
+            <img src="assets/img/portfolio/project1/project-hero-wip.png" alt="Design System hero image">  <!-- Fallback img -->
+          </picture>
         </div>
       </div>
     </section>
