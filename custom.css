@@ -370,11 +370,9 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   padding-right: 10%;
 }
 
-.header .header-scrolled {
-  padding: 16px 16px;
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  box-shadow: none;
+.header.header-scrolled {
+  padding: 16px 6px;
+  box-shadow: 0px 1px 0px var(--color-gray-4);
 }
 
 .section-header h2, .portfolio-description h1 {
