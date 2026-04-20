@@ -58,7 +58,7 @@ hr {
 
 .hero {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   background-size: cover;
   background-image: none;
   /* background: linear-gradient(100deg, #f5f1ea 0%, #f8f9fc 100%); */
@@ -458,7 +458,7 @@ section {
 --------------------------------------------------------------*/
 
 .portfolio {
-  margin-top: var(--space-xxlarge);
+  /* margin-top: var(--space-xxlarge); */
   margin-bottom: var(--space-xxxlarge);
 }
 
