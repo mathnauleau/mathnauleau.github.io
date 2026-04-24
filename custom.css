@@ -65,6 +65,7 @@ hr {
 .hero h1 {
   font: var(--typography-headline);
   color: var(--color-primary-light);
+  text-align: left;
   /* background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -241,7 +242,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 44px;
   }
 
   .hero h2 {
