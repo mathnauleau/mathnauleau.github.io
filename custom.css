@@ -857,7 +857,7 @@ section {
 
 .collaboration .custom-footer {
   padding: 30px;
-  background: linear-gradient(55deg, #f1f1f1 0%, #f8fafc 50%, #daecff 100%);
+  background: linear-gradient(55deg, #f1f1f1 0%, #daecff 100%);
   height: auto;
   border-radius: var(--border-radius-large);
 }
