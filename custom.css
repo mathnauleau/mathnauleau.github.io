@@ -132,6 +132,19 @@ hr {
   color: var(--color-secondary);
 }
 
+/* Header content styles */
+.header-content {
+  background-color: var(--color-gray-1);
+  padding: 8px 16px 8px 24px;
+  border-radius: var(--border-radius-large);
+  max-width: none;
+}
+
+.header-scrolled .header-content {
+  background-color: rgba(240, 242, 245, 0.77);
+  backdrop-filter: blur(10px);
+}
+
 /* EXPERIMENT WITH GRADIENT
 .hero .hero-img{
 background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
@@ -359,18 +372,20 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 --------------------------------------------------------------*/
 .header {
   padding: 16px;
-  border-bottom: 1px solid rgba(36, 49, 68, 0);
+  background: transparent;
+  border-bottom: none;
 }
 
 .section-header {
   padding-bottom: var(--space-section);
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .header.header-scrolled {
-  padding: 16px 6px;
-  box-shadow: 0px 1px 0px var(--color-gray-4);
+  padding: 16px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .section-header h2, .portfolio-description h1 {
