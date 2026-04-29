@@ -75,6 +75,9 @@
     --color-secondary:      #3F75FF;
     --color-secondary-dark: #2753C1;
 
+    --color-background:     #F8F9FC;
+
+
     --color-gray-1:         #F8F9FC;
     --color-gray-2:         #F8F9FA;
     --color-gray-3:         #F3F3F3;
@@ -126,6 +129,8 @@
     --color-secondary-light:#2753C1;
     --color-secondary:      #3F75FF;
     --color-secondary-dark: #799FFF;
+
+    --color-background:     #222222;
 
     --color-gray-1:         #222222;
     --color-gray-2:         #3C3C3C;
