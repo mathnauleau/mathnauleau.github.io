@@ -69,7 +69,6 @@
     ================================================================= */
     --color-primary-light:  #253C6E;
     --color-primary:        #0C1527;
-    --color-primary-dark:   #0A111F;
     --color-primary-dark:   #060C18;
 
     --color-secondary-light:#799FFF;
@@ -79,6 +78,8 @@
     --color-background:     #F5F7FC;
 
     --color-gray-1:         #F5F7FC;
+    --color-gray-2:         #E8ECF5;
+    --color-gray-3:         #D4DAE8;
     --color-gray-4:         #B0BBCE;
     --color-gray-5:         #8C9AB2;
     --color-gray-6:         #6E7D96;
