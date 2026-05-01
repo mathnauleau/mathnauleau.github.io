@@ -41,6 +41,10 @@ hr {
   opacity: 0.7;
 }
 
+.header .logo {
+  padding: 16px 0;
+}
+
 .header .logo span{ /* Fix needed */
   font: var(--typography-bodyReg);
   color: var(--color-primary);
@@ -132,11 +136,17 @@ hr {
   color: var(--color-secondary);
 }
 
-/* EXPERIMENT WITH GRADIENT
-.hero .hero-img{
-background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
-  filter: blur(160px);
-}*/
+/* Header content styles */
+.header-content {
+  background-color: var(--color-gray-1);
+  padding: 8px 16px 8px 16px;
+  border-radius: var(--border-radius-large);
+}
+
+.header-scrolled .header-content {
+  background-color: rgba(240, 242, 245, 0.77);
+  backdrop-filter: blur(10px);
+}
 
 .badge {
   position: absolute;
@@ -186,29 +196,29 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   display: none;
   position: absolute;
   z-index: 1;
-  /* background-color: var(--color-gray-3); */
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content button {
   color: black;
   background-color: var(--color-gray-3);
   border-radius: 99px;
   padding: 12px;
-  text-align: justify;
+  text-align: center;
   font: var(--typography-bodyReg);
   display: block;
   margin-top: 4px;
   width: 48px;
   height: 48px;
+  border: none;
 }
 
-.dropdown-content a img {
+.dropdown-content button img {
   margin-bottom: 4px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content button:hover {
   padding: 12px;
   background-color: var(--color-secondary);
   font: var(--typography-bodyReg);
@@ -229,6 +239,15 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 
 .lang-mobile {
   display: none;
+}
+
+.lang-mobile button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
 }
 
 /*--------------------------------------------------------------
@@ -260,7 +279,11 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .lang-mobile {
-    display: inline;
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 16px;
+    color: var(--color-primary);
   }
 
   #portfolio .g-4,
@@ -359,18 +382,20 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 --------------------------------------------------------------*/
 .header {
   padding: 16px;
-  border-bottom: 1px solid rgba(36, 49, 68, 0);
+  background: transparent;
+  border-bottom: none;
 }
 
 .section-header {
   padding-bottom: var(--space-section);
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .header.header-scrolled {
-  padding: 16px 6px;
-  box-shadow: 0px 1px 0px var(--color-gray-4);
+  padding: 16px;
+  background: transparent;
+  box-shadow: none;
 }
 
 .section-header h2, .portfolio-description h1 {

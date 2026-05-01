@@ -1,6 +1,13 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
+## 01.05.2026 - Version 2.04
+### Changed
+- Top navigation style
+- noopener noreferrer to all links
+- Fixed lang-mobile style
+- Minor fixes of token definitions (color values in Uppercase)
+
 ## 24.04.2026 - Version 2.03
 ### Changed
 - Deleted the main picture on home
