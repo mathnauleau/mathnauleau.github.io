@@ -276,7 +276,7 @@
     "kumiko.section_process_desc": "Du choix du design de la lampe à la sélection du bois et à la fabrication de chaque détail de la lampe, j'ai passé environ 2 mois pour terminer ce projet, entre patience et minutie. Les photos suivantes vous montrent quelques unes des étapes clés.",
     "designops_title_hero": "Piloter une transformation App-First grâce au designOps",
     "designops_description_hero": "Lorsque j'ai pris en charge le design system d'Oxxio et d'Eneco, l'objectif n'était pas seulement de corriger les incohérences d'interface — il s'agissait de restaurer la confiance. Confiance dans le système, entre design et engineering, et de la part des utilisateurs envers un produit qui manquait encore de fiabilité. Le design system est devenu le levier d'une transformation App-first.",
-    "designops_section_overview": "Vue d'ensemble",
+    "designops_section_overview": "Situation",
     "designops_section_overview_desc": "L'écosystème que j'ai hérité était fragmenté et difficile à naviguer : plus de 10 bibliothèques Figma, 4 bibliothèques d'icônes distinctes, 2 anciens design systems coexistant avec un nouveau, un mode sombre défaillant, des patterns d'interface incohérents selon les plateformes, et un décalage important entre design et code. Les équipes avançaient vite — mais livraient des expériences de faible qualité et incohérentes, engendrant refonte et frustration. Le design system avait perdu toute crédibilité. Les designers ne lui faisaient pas confiance. Les développeurs ne s'y fiaient pas. Et les tentatives précédentes pour le corriger avaient échoué. Pendant ce temps, seulement ~30% des utilisateurs utilisaient l'application.",
     "designops_section_role": "Mon rôle",
     "designops_section_role_desc": "J'ai dirigé la définition et l'exécution d'un design system multi-marques pour Oxxio et Eneco, utilisé par ~40 contributeurs entre design et engineering. Mon rôle se situait à l'intersection de la stratégie, du design et des opérations : définir la vision et la roadmap, construire un système partagé entre deux marques (90% de composants communs), aligner design et engineering (React + Compose), et mettre en place des modèles de contribution et de gouvernance. Tout en restant opérationnel, mon objectif était de permettre aux équipes de faire évoluer le système — sans dépendre de moi pour le maintenir.",
@@ -297,6 +297,7 @@
     "designops_section_learning_1": "Les développeurs ont d'abord résisté, nécessitant alignement et négociation",
     "designops_section_learning_2": "De nombreuses décisions ont impliqué des discussions politiques à un niveau senior",
     "designops_section_learning_3": "Un design system n'est pas qu'une bibliothèque UI — c'est un outil de conduite du changement",
+    "designops_section_learning_4": "Un design system est un outil de changement de management",
     "designops_section_next": "La suite",
     "designops_section_next_desc": "Le système est maintenant fiable — la prochaine étape est de le faire évoluer : introduire des métriques d'adoption et de qualité, renforcer les workflows de contribution, améliorer l'automatisation design–code, et continuer à aligner les expériences web et application. L'objectif est de passer d'une base solide à un système entièrement scalable et cross-plateforme."
 }

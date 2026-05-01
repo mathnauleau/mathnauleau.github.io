@@ -276,7 +276,7 @@
     "kumiko.section_process_desc": "From choosing the design of the lamp to selecting the wood and crafting each detail of the lamp, I roughly spent 2 months at slow pace to finish this project.",
     "designops_title_hero": "Driving an App-First Transformation through designOps",
     "designops_description_hero": "When I took ownership of the design system for Oxxio and Eneco, the goal wasn't just to fix UI inconsistencies — it was to rebuild trust. Trust in the system, between design and engineering, and from users in a product that didn't yet feel reliable. The design system became the lever for an App-first transformation.",
-    "designops_section_overview": "Overview",
+    "designops_section_overview": "The situation",
     "designops_section_overview_desc": "The ecosystem I inherited was fragmented and difficult to navigate: 10+ Figma libraries, 4 separate icon libraries, 2 legacy design systems coexisting with a new one, broken dark mode, inconsistent UI patterns across platforms, and a significant mismatch between design and code. Teams were moving fast — but shipping low-quality, inconsistent experiences, leading to rework and frustration. The design system had lost all credibility. Designers didn't trust it. Developers didn't rely on it. And previous attempts to fix it had failed. Meanwhile, only ~30% of users relied on the app.",
     "designops_section_role": "My Role",
     "designops_section_role_desc": "I led the definition and execution of a multi-brand design system supporting both Oxxio and Eneco, used by ~40 contributors across design and engineering. My role sat at the intersection of strategy, design, and operations: defining the vision and roadmap, building a shared system across two brands (90% shared components), aligning design and engineering (React + Compose), and establishing contribution and governance models. While remaining hands-on, my focus was to enable teams to scale the system — not depend on me to maintain it.",
@@ -297,6 +297,7 @@
     "designops_section_learning_1": "Developers were initially resistant, requiring alignment and negotiation",
     "designops_section_learning_2": "Many decisions involved political discussions at senior levels",
     "designops_section_learning_3": "A design system is not just a UI library — it's a tool for change management",
+    "designops_section_learning_4": "A design system is not a UI library. It's a change management tool — and it only works if people believe in it",
     "designops_section_next": "What's Next",
     "designops_section_next_desc": "The system is now trusted — the next step is to scale it further: introducing adoption and quality metrics, strengthening contribution workflows, improving design–code automation, and continuing to align web and app experiences. The goal is to evolve from a strong foundation to a fully scalable, cross-platform system."
 }
