@@ -67,33 +67,32 @@
 
     /* Color
     ================================================================= */
-    --color-primary-light:  #1B2E55;
+    --color-primary-light:  #253C6E;
     --color-primary:        #0C1527;
     --color-primary-dark:   #0A111F;
+    --color-primary-dark:   #060C18;
 
     --color-secondary-light:#799FFF;
     --color-secondary:      #3F75FF;
     --color-secondary-dark: #2753C1;
 
-    --color-background:     #F8F9FC;
+    --color-background:     #F5F7FC;
 
-    --color-gray-1:         #F8F9FC;
-    --color-gray-2:         #F8F9FA;
-    --color-gray-3:         #EFF0F3;
-    --color-gray-4:         #CFCFCF;
-    --color-gray-5:         #A1A1A1;
-    --color-gray-6:         #888888;
-    --color-gray-7:         #6F6F6F;
-    --color-gray-8:         #555555;
-    --color-gray-9:         #3C3C3C;
-    --color-gray-10:        #222222;
+    --color-gray-1:         #F5F7FC;
+    --color-gray-4:         #B0BBCE;
+    --color-gray-5:         #8C9AB2;
+    --color-gray-6:         #6E7D96;
+    --color-gray-7:         #55637A;
+    --color-gray-8:         #3E4E65;
+    --color-gray-9:         #28384F;
+    --color-gray-10:        #141E2E;
 
     --color-critical:       #FFA500;
     --color-information:    #DAE8F1;
     --color-danger:         #FF4500;
 
-    --color-nav-default:    #ECF2F6;
-    --color-nav-hover:      #C2E7FF;
+    --color-nav-default:    #E8ECF5;
+    --color-nav-hover:      #C2D4FF;
 
     /* Border
     ================================================================= */
@@ -129,23 +128,23 @@
     --color-secondary:      #3F75FF;
     --color-secondary-dark: #799FFF;
 
-    --color-background:     #222222;
+    --color-background:     #141E2E;
 
-    --color-gray-1:         #222222;
-    --color-gray-2:         #3C3C3C;
-    --color-gray-3:         #555555;
-    --color-gray-4:         #6F6F6F;
-    --color-gray-5:         #888888;
-    --color-gray-6:         #A1A1A1;
-    --color-gray-7:         #CFCFCF;
-    --color-gray-8:         #F3F3F3;
-    --color-gray-9:         #F8F9FA;
-    --color-gray-10:        #FFFFFF;
+    --color-gray-1:         #141E2E;
+    --color-gray-2:         #28384F;
+    --color-gray-3:         #3E4E65;
+    --color-gray-4:         #55637A;
+    --color-gray-5:         #6E7D96;
+    --color-gray-6:         #8C9AB2;
+    --color-gray-7:         #B0BBCE;
+    --color-gray-8:         #D4DAE8;
+    --color-gray-9:         #E8ECF5;
+    --color-gray-10:        #F5F7FC;
 
     --color-critical:       #FFA500;
-    --color-information:    #124669;
+    --color-information:    #0E3352;
     --color-danger:         #B13508;
 
-    --color-nav-default:    #124669;
-    --color-nav-hover:      #1A557C;
+    --color-nav-default:    #0E3352;
+    --color-nav-hover:      #164A6E;
 }
