@@ -41,6 +41,10 @@ hr {
   opacity: 0.7;
 }
 
+.header .logo {
+  padding: 16px 0;
+}
+
 .header .logo span{ /* Fix needed */
   font: var(--typography-bodyReg);
   color: var(--color-primary);
