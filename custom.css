@@ -139,7 +139,7 @@ hr {
 /* Header content styles */
 .header-content {
   background-color: var(--color-gray-1);
-  padding: 8px 16px 8px 24px;
+  padding: 8px 16px 8px 16px;
   border-radius: var(--border-radius-large);
 }
 
@@ -279,7 +279,11 @@ hr {
   }
 
   .lang-mobile {
-    display: inline;
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 16px;
+    color: var(--color-primary);
   }
 
   #portfolio .g-4,
