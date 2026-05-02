@@ -1,7 +1,7 @@
 body {
   font-family: var(--font-family-primary);
   color: var(--color-primary);
-  background-color: var(--color-gray-1);
+  background-color: var(--color-background);
 }
 
 a {
@@ -38,13 +38,15 @@ h5 {
 
 hr {
   color: var(--color-gray-4);
-  opacity: 70%;
+  opacity: 0.7;
+}
+
+.header .logo {
+  padding: 16px 0;
 }
 
 .header .logo span{ /* Fix needed */
-  font-family: var(--font-family-secondary);
-  font-size: 24px;
-  font-weight: 500;
+  font: var(--typography-bodyReg);
   color: var(--color-primary);
 }
 
@@ -58,16 +60,16 @@ hr {
 
 .hero {
   width: 100%;
-  height: 100vh;
+  height: 70vh;
+  margin-top: 56px;
   background-size: cover;
   background-image: none;
-  /* background: linear-gradient(100deg, #f5f1ea 0%, #f8f9fc 100%); */
 }
 
 .hero h1 {
   font: var(--typography-headline);
   color: var(--color-primary-light);
-  letter-spacing: 1px;
+  text-align: left;
   /* background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -112,7 +114,7 @@ hr {
   left: var(--space-medium);
   padding: 16px;
   border-radius: 24px;
-  background-color: var(--color-gray-1);
+  background-color: var(--color-background);
   overflow-y: auto;
   transition: 0.3s;
 }
@@ -134,11 +136,17 @@ hr {
   color: var(--color-secondary);
 }
 
-/* EXPERIMENT WITH GRADIENT
-.hero .hero-img{
-background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 31.88deg, #b056e7 120deg, #ff9966 204.37deg, #0aefff 290.63deg, #0f83ff 391.87deg );
-  filter: blur(160px);
-}*/
+/* Header content styles */
+.header-content {
+  background-color: var(--color-gray-1);
+  padding: 8px 16px 8px 16px;
+  border-radius: var(--border-radius-large);
+}
+
+.header-scrolled .header-content {
+  background-color: rgba(240, 242, 245, 0.77);
+  backdrop-filter: blur(10px);
+}
 
 .badge {
   position: absolute;
@@ -156,7 +164,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 .dropbtn {
   background-color: transparent;
   color: black;
-  padding: auto;
+  justify-content: center;
   font-size: 16px;
   border: none;
   width: 48px;
@@ -188,29 +196,29 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   display: none;
   position: absolute;
   z-index: 1;
-  /* background-color: var(--color-gray-3); */
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.dropdown-content button {
   color: black;
   background-color: var(--color-gray-3);
   border-radius: 99px;
   padding: 12px;
-  text-align: justify;
+  text-align: center;
   font: var(--typography-bodyReg);
   display: block;
   margin-top: 4px;
   width: 48px;
   height: 48px;
+  border: none;
 }
 
-.dropdown-content a img {
+.dropdown-content button img {
   margin-bottom: 4px;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content button:hover {
   padding: 12px;
   background-color: var(--color-secondary);
   font: var(--typography-bodyReg);
@@ -233,6 +241,15 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   display: none;
 }
 
+.lang-mobile button {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -244,7 +261,7 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 44px;
   }
 
   .hero h2 {
@@ -262,7 +279,11 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
   }
 
   .lang-mobile {
-    display: inline;
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 16px;
+    color: var(--color-primary);
   }
 
   #portfolio .g-4,
@@ -361,19 +382,19 @@ background: conic-gradient( from 180deg at 50% 50%, #0aefff -69.37deg, #0f83ff 3
 --------------------------------------------------------------*/
 .header {
   padding: 16px;
-  border-bottom: 1px solid rgba(36, 49, 68, 0);
+  background: transparent;
+  border-bottom: none;
 }
 
 .section-header {
   padding-bottom: var(--space-section);
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
-.header .header-scrolled {
-  padding: 16px 16px;
-  background-color: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
+.header.header-scrolled {
+  padding: 16px;
+  background: transparent;
   box-shadow: none;
 }
 
@@ -460,7 +481,7 @@ section {
 --------------------------------------------------------------*/
 
 .portfolio {
-  margin-top: var(--space-xxlarge);
+  /* margin-top: var(--space-xxlarge); */
   margin-bottom: var(--space-xxxlarge);
 }
 
@@ -560,7 +581,6 @@ section {
 
 .about .content {
   border-radius: var(--border-radius-large);
-  background-color: var(--color-white);
 }
 
 .portfolio-project-nav {
@@ -648,12 +668,12 @@ section {
   height: 100%;
   overflow: hidden;
   padding: 28px;
-  background-color: var(--color-gray-2);
+  background-color: var(--color-gray-3);
   border-radius: var(--border-radius-large);
 }
 
 .toolbox .info-box {
-  background-color: var(--color-gray-2);
+  background-color: var(--color-gray-3);
 }
 
 .toolbox .info-box h3 {
@@ -761,7 +781,7 @@ section {
 }
 
 .prev-next i {
-  size: 24px;
+  font-size: 24px;
 }
 
 .title {
@@ -837,7 +857,7 @@ section {
   margin-bottom: var(--space-xxlarge);
 }
 
-.portfolio-section-highlight {
+.portfolio-section-highlight p {
   font: var(--typography-bodyReg);
 }
 
@@ -862,7 +882,7 @@ section {
 
 .collaboration .custom-footer {
   padding: 30px;
-  background: linear-gradient(55deg, #f1f1f1 0%, #f8fafc 50%, #daecff 100%);
+  background: linear-gradient(55deg, #f1f1f1 0%, #daecff 100%);
   height: auto;
   border-radius: var(--border-radius-large);
 }
@@ -889,13 +909,9 @@ section {
 .footer .copyright {
   position: relative;
   text-align: center;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
   align-items: center;
   padding: 40px 0 40px 0;
   min-height: 60px;
@@ -932,7 +948,7 @@ section {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: var(--color-gray-2);
+  background-color: var(--color-gray-3);
   color: var(--color-primary);
   text-decoration: none;
   transition: all 0.3s ease;
@@ -975,46 +991,17 @@ section {
   margin-top: 12px;
   margin-bottom: 12px;
   appearance: none;
-  border-block-end-color: rgb(0, 0, 0);
-  border-block-end-style: none;
-  border-block-end-width: 0;
-  border-block-start-color: rgb(0, 0, 0);
-  border-block-start-style: none;
-  border-block-start-width: 0;
-  border-bottom-color: rgb(0, 0, 0);
+  border: none;
   border-radius: 8px;
-  border-bottom-style: none;
-  border-bottom-width: 0;
-  border-inline-end-color: rgb(0, 0, 0);
-  border-inline-end-style: none;
-  border-inline-end-width: 0;
-  border-inline-start-color: rgb(0, 0, 0);
-  border-inline-start-style: none;
-  border-inline-start-width: 0;
-  border-left-color: rgb(0, 0, 0);
-  border-left-style: none;
-  border-left-width: 0;
-  border-right-color: rgb(0, 0, 0);
-  border-right-style: none;
-  border-right-width: 0;
-  border-top-color: rgb(0, 0, 0);
-  border-top-style: none;
-  border-top-width: 0;
   box-shadow: rgba(6, 6, 23, 0.045) 10px 10px 30px 0;
   box-sizing: border-box;
   font-size: 18px;
-  letter-spacing: 3.99996px;
+  letter-spacing: 4px;
   line-height: 40px;
-  overflow-wrap: break-word;
-  padding-bottom: 2px;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-top: 2px;
+  padding: 2px 4px;
   text-align: left;
   text-indent: 10px;
-  text-size-adjust: 100%;
-  transition-duration: 0.2s;
-  transition-timing-function: linear;
+  transition: 0.2s linear;
   -webkit-font-smoothing: antialiased;
   width: 400px;
 }

@@ -60,32 +60,35 @@
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
-    <div class="container-xxl d-flex justify-content-between">
+    <div class="container-xxl d-flex justify-content-between header-content">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="logo"> -->
-        <span>Mathieu Nauleau</span>
+        <span>Mathieu Nauleau – Product designer</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="#portfolio">Design</a></li>
           <li><a class="nav-link scrollto" href="#craft">Craft</a></li>
-          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
-          <li><a class="nav-link scrollto"
-              href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
-              data-i18n="nav.resource">Resource</a>
+          <li><a class="nav-link" href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a class="nav-link" href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3"
+              target="_blank" rel="noopener noreferrer" data-i18n="nav.resource">Resource</a>
           </li>
 
-          <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
-          <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
+          <li class="lang-mobile"><button type="button" class="lang-button"
+              onclick="changeLanguage('en')">English</button></li>
+          <li class="lang-mobile"><button type="button" class="lang-button"
+              onclick="changeLanguage('fr')">Français</button></li>
 
           <li class="dropdown">
-            <button class="dropbtn">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
               <img id="current-flag" src="assets/icon/en.svg" alt="current language flag">
             </button>
             <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg" alt="english flag"></a>
-              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg" alt="french flag"></a>
+              <button type="button" onclick="changeLanguage('en')" aria-label="English"><img src="assets/icon/en.svg"
+                  alt="english flag"></button>
+              <button type="button" onclick="changeLanguage('fr')" aria-label="Français"><img src="assets/icon/fr.svg"
+                  alt="french flag"></button>
             </div>
           </li>
         </ul>
@@ -100,18 +103,15 @@
   <section class="hero d-flex align-items-center">
     <div class="container">
       <div class="row gx-5 gy-3">
-        <div class="col-lg-5 hero-img">
-          <img src="assets/img/hero-img.jpg" class="img-fluid" alt="Profile illustration">
-        </div>
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
+        <div class="col-lg-9 d-flex flex-column justify-content-center">
           <h1 data-i18n="home.hero">
-            Hello, I’m Mathieu, Senior product designer
+            I turn ambiguity into products & systems that scale, bridging teams, tools, and ideas.
           </h1>
-          <h2 data-i18n="home.introduction">
+          <!-- <h2 data-i18n="home.introduction">
             Currently based in Amsterdam, I like to tackle complex problems to
             have a positive impact on people and businesses by crafting
             elegant user experiences and cohesive design systems.
-          </h2>
+          </h2> -->
         </div>
       </div>
     </div>
@@ -121,10 +121,10 @@
   <main>
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio container-xl">
-      <header class="section-header">
+      <!-- <header class="section-header">
         <h5>Design</h5>
         <h2 data-i18n="home.section_work">Selected work</h2>
-      </header>
+      </header> -->
 
       <div class="row gy-4 portfolio-container">
         <div class="col-lg-6 col-md-12 portfolio-item">
@@ -263,7 +263,8 @@
             </p>
             <br>
             <div class="text-lg-start">
-              <a href="https://www.linkedin.com/in/mathieunauleau/" target="_blank" class="btn-custom d-inline-flex">
+              <a href="https://www.linkedin.com/in/mathieunauleau/" target="_blank" rel="noopener noreferrer"
+                class="btn-custom d-inline-flex">
                 <span data-i18n="btn.contact">Get in touch</span>
                 <i class="bi bi-linkedin"></i>
               </a>
@@ -283,31 +284,37 @@
   <!-- ======= Footer ======= -->
   <footer class="footer">
     <div class="copyright">
-      <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> | 2025</p>
+      <p>Created with <a href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a> |
+        2025</p>
       <div class="footer-social">
         <ul>
           <li>
-            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau" target="_blank">
+            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-instagram"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank">
+            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-linkedin"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.github.com/mathnauleau" target="_blank">
+            <a class="nav-link social-links" href="https://www.github.com/mathnauleau" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-github"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" target="_blank">
+            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-explicit-fill"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" target="_blank">
+            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-dribbble"></i>
             </a>
           </li>

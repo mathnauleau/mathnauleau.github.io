@@ -10,8 +10,22 @@ Changed:
 - 
 ------
 
-### 23.09.2025 - Version 2.02.0
-Changed
+## 01.05.2026 - Version 2.04
+### Changed
+- Top navigation style
+- noopener noreferrer to all links
+- Fixed lang-mobile style
+- Minor fixes of token definitions (color values in Uppercase)
+
+## 24.04.2026 - Version 2.03
+### Changed
+- Deleted the main picture on home
+- Changed the main copy of the home banner and updated the title with Name+Position
+- Height of hero to be 70% to move the rest of the content up
+- Various finetuning of the CSS style
+
+## 23.09.2025 - Version 2.02.0
+### Changed
 - Link to my current job
 - Copy on my about section (en/fr)
 
