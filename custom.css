@@ -70,9 +70,9 @@ hr {
 .hero h1 {
   font: var(--typography-headline);
   color: var(--color-primary-light);
-  /* background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
+  background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
+  -webkit-text-fill-color: transparent;
 }
 
 .hero h2 {
