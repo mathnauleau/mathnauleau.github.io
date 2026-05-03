@@ -64,12 +64,12 @@ hr {
   margin-top: 56px;
   background-size: cover;
   background-image: none;
+  text-align: center;
 }
 
 .hero h1 {
   font: var(--typography-headline);
   color: var(--color-primary-light);
-  text-align: left;
   /* background: -webkit-linear-gradient(290deg, var(--color-secondary) 0%, #11181c 50%, #11181c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
@@ -400,7 +400,7 @@ hr {
 
 .section-header h2, .portfolio-description h1 {
   font: var(--typography-heading-1);
-  color: var(--color-primary);
+  color: var(--color-primary-light);
   text-transform: none;
 }
 
