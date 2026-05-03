@@ -26,15 +26,15 @@
     /* Global typography styles*/
     --typography-headline:      700 3.5em/1.2em var(--font-family-secondary);   /* 56px Bricolage*/
     --typography-heading-1:     700 2.5em/1.3em var(--font-family-secondary);   /* 40px Bricolage*/
-    --typography-heading-2:     700 2em/1.3em var(--font-family-primary);      /* 32px*/
-    --typography-heading-3:     700 1.5em/1.5em var(--font-family-primary);    /* 24px*/
-    --typography-subhead:       300 1.5em/1.5em var(--font-family-primary);    /* 24px*/
-    --typography-subtitle:      700 1.25em/1.5em var(--font-family-primary);   /* 20px*/
+    --typography-heading-2:     700 2em/1.3em var(--font-family-secondary);     /* 32px*/
+    --typography-heading-3:     700 1.5em/1.5em var(--font-family-secondary);   /* 24px*/
+    --typography-subhead:       300 1.5em/1.5em var(--font-family-primary);     /* 24px*/
+    --typography-subtitle:      700 1.25em/1.5em var(--font-family-primary);    /* 20px*/
     --typography-overline:      700 1em/1em var(--font-family-secondary);       /* 16px Bricolage*/
-    --typography-button:        500 1em/1em var(--font-family-primary);        /* 16px*/
-    --typography-bodyBold:      700 1em/1.5em var(--font-family-primary);      /* 16px*/
-    --typography-bodyReg:       300 1em/1.5em var(--font-family-primary);      /* 16px*/
-    --typography-caption:       300 0.875em/1.25em var(--font-family-primary); /* 14px*/
+    --typography-button:        500 1em/1em var(--font-family-primary);         /* 16px*/
+    --typography-bodyBold:      700 1em/1.5em var(--font-family-primary);       /* 16px*/
+    --typography-bodyReg:       300 1em/1.5em var(--font-family-primary);       /* 16px*/
+    --typography-caption:       300 0.875em/1.25em var(--font-family-primary);  /* 14px*/
 
     /* Space
      ================================================================= */
