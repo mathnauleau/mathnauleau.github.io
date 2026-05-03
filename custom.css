@@ -400,7 +400,7 @@ hr {
 
 .section-header h2, .portfolio-description h1 {
   font: var(--typography-heading-1);
-  color: var(--color-primary-light);
+  color: var(--color-primary);
   text-transform: none;
 }
 
