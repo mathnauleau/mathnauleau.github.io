@@ -1,6 +1,24 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
+
+## 03.05.2026 - Version 2.05
+### Added
+- Bricolage Grotesque font to pages
+
+### Changed
+- Updated color and typography tokens in `tokens.css`
+- Changed Secondary font
+- Changed en/fr icons
+- Updated copy across various pages
+- Updated Logo copy
+- Applied correct buttons for language switcher on all pages
+- Updated custom.css styles
+- Improved Aria labels for accessibility
+
+### Fixed
+- Small accessibility improvement with better Aria label descriptions
+
 ## 01.05.2026 - Version 2.04
 ### Changed
 - Top navigation style
