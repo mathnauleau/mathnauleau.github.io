@@ -581,6 +581,7 @@ section {
 
 .about .content {
   border-radius: var(--border-radius-large);
+  background-color: transparent;
 }
 
 .portfolio-project-nav {
