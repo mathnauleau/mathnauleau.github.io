@@ -645,6 +645,7 @@ section {
 
 .btn-custom:hover {
   color: white;
+  background-color: var(--color-interactive-active);
 }
 
 .btn-custom2 {
@@ -752,12 +753,12 @@ section {
 
 .project-nav .prev-next {
   padding: var(--space-medium);
-  background-color: var(--color-neutral-100);
+  background-color: var(--color-nav-default);
   transition: all 0.4s;
 }
 
 .project-nav .prev-next:hover {
-  background-color: var(--color-interactive-hover);
+  background-color: var(--color-nav-hover);
 }
 
 .project-nav .prev-next span {

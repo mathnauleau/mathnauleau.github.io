@@ -126,8 +126,9 @@
 
     /* Interactive State Colors */
     --color-interactive-default:  #3F75FF;
-    --color-interactive-hover:    #C2D4FF;
     --color-interactive-active:   #2753C1;
+    --color-nav-default:    #E8ECF5;
+    --color-nav-hover:    #C2D4FF;
 
     /* Status/Semantic Colors */
     --color-status-warning:       #FFA500;
@@ -159,9 +160,6 @@
     --color-critical:             var(--color-status-warning);
     --color-information:          var(--color-status-info);
     --color-danger:               var(--color-status-critical);
-
-    --color-nav-default:          var(--color-interactive-default);
-    --color-nav-hover:            var(--color-interactive-hover);
 
     /* Border
     ================================================================= */
@@ -217,8 +215,9 @@
     --color-neutral-900:          #F5F7FC;
 
     --color-interactive-default:  #0E3352;
-    --color-interactive-hover:    #164A6E;
     --color-interactive-active:   #3F75FF;
+    --color-nav-default:    #28384F;
+    --color-nav-hover:    #164A6E;
 
     --color-status-warning:       #FFA500;
     --color-status-info:          #0E3352;
@@ -249,7 +248,4 @@
     --color-critical:             var(--color-status-warning);
     --color-information:          var(--color-status-info);
     --color-danger:               var(--color-status-critical);
-
-    --color-nav-default:          var(--color-interactive-default);
-    --color-nav-hover:            var(--color-interactive-hover);
 }
