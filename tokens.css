@@ -7,8 +7,8 @@
     /* Typography
     ================================================================= */
     /* Fonts family*/
-    --font-family-primary: "Inter", sans-serif;
-    --font-family-secondary: "Bricolage Grotesque", sans-serif;
+    --font-family-body:     "Inter", sans-serif;
+    --font-family-display:  "Bricolage Grotesque", sans-serif;
     /* Font sizes - 4x4 grid */
     --font-base-unit:   var(--base-unit);
     --font-size-12:     calc(var(--font-base-unit) * 3);
@@ -23,18 +23,44 @@
     --line-height-small:   calc(var(--line-height-base-unit) * 1.1);
     --line-height-medium:  calc(var(--line-height-base-unit) * 1.3);
     --line-height-large:   calc(var(--line-height-base-unit) * 1.5);
-    /* Global typography styles*/
-    --typography-headline:      700 3.5em/1.2em var(--font-family-secondary);   /* 56px Bricolage*/
-    --typography-heading-1:     700 2.5em/1.3em var(--font-family-secondary);   /* 40px Bricolage*/
-    --typography-heading-2:     700 2em/1.3em var(--font-family-secondary);     /* 32px*/
-    --typography-heading-3:     700 1.5em/1.5em var(--font-family-secondary);   /* 24px*/
-    --typography-subhead:       300 1.5em/1.5em var(--font-family-primary);     /* 24px*/
-    --typography-subtitle:      700 1.25em/1.5em var(--font-family-primary);    /* 20px*/
-    --typography-overline:      700 1em/1em var(--font-family-secondary);       /* 16px Bricolage*/
-    --typography-button:        500 1em/1em var(--font-family-primary);         /* 16px*/
-    --typography-bodyBold:      700 1em/1.5em var(--font-family-primary);       /* 16px*/
-    --typography-bodyReg:       300 1em/1.5em var(--font-family-primary);       /* 16px*/
-    --typography-caption:       300 0.875em/1.25em var(--font-family-primary);  /* 14px*/
+    
+    /* Typography Scales - Display */
+    --font-display-1:       700 3.5em/1.2em var(--font-family-display);   /* 56px Bricolage - hero headlines */
+    --font-display-2:       700 2.5em/1.3em var(--font-family-display);   /* 40px Bricolage - page titles */
+    
+    /* Typography Scales - Headings */
+    --font-heading-1:       700 2em/1.3em var(--font-family-display);     /* 32px */
+    --font-heading-2:       700 1.5em/1.5em var(--font-family-display);   /* 24px */
+    --font-heading-3:       700 1.25em/1.5em var(--font-family-display);     /* 20px - section headings */
+    
+    /* Typography Scales - Body */
+    --font-body-regular-large:         300 1.5em/1.5em var(--font-family-body);      /* 24px regular - subhead */
+    --font-body-bold:           700 1em/1.5em var(--font-family-body);        /* 16px bold */
+    --font-body-regular:        300 1em/1.5em var(--font-family-body);        /* 16px regular */
+    
+    /* Typography Scales - Label */
+    --font-label:           700 1em/1em var(--font-family-display);       /* 16px label/overline */
+    --font-label-button:    500 1em/1em var(--font-family-body);          /* 16px medium - buttons */
+    
+    /* Typography Scales - Caption */
+    --font-caption:         300 0.875em/1.25em var(--font-family-body);  /* 14px small text */
+    
+    /* Legacy typography aliases for backward compatibility */
+    --typography-headline:      var(--font-display-1);
+    --typography-heading-1:     var(--font-display-2);
+    --typography-heading-2:     var(--font-heading-1);
+    --typography-heading-3:     var(--font-heading-2);
+    --typography-subhead:       var(--font-body-regular-large);
+    --typography-subtitle:      var(--font-heading-3);
+    --typography-overline:      var(--font-label);
+    --typography-button:        var(--font-label-button);
+    --typography-bodyBold:      var(--font-body-bold);
+    --typography-bodyReg:       var(--font-body-regular);
+    --typography-caption:       var(--font-caption);
+    
+    /* Legacy font family aliases */
+    --font-family-primary:      var(--font-family-body);
+    --font-family-secondary:    var(--font-family-display);
 
     /* Space
      ================================================================= */
@@ -67,33 +93,73 @@
 
     /* Color
     ================================================================= */
-    --color-primary-light:  #253C6E;
-    --color-primary:        #0C1527;
-    --color-primary-dark:   #060C18;
+    /* Brand Colors */
+    --color-brand-primary-light:  #253C6E;
+    --color-brand-primary:        #0C1527;
+    --color-brand-primary-dark:   #060C18;
 
-    --color-secondary-light:#799FFF;
-    --color-secondary:      #3F75FF;
-    --color-secondary-dark: #2753C1;
+    --color-brand-accent-light:   #799FFF;
+    --color-brand-accent:         #3F75FF;
+    --color-brand-accent-dark:    #2753C1;
 
-    --color-background:     #F5F7FC;
+    /* Text Colors */
+    --color-text-primary:         #0C1527;
+    --color-text-secondary:       #3E4E65;
+    --color-text-inverted:        #FFFFFF;
 
-    --color-gray-1:         #F5F7FC;
-    --color-gray-2:         #E8ECF5;
-    --color-gray-3:         #D4DAE8;
-    --color-gray-4:         #B0BBCE;
-    --color-gray-5:         #8C9AB2;
-    --color-gray-6:         #6E7D96;
-    --color-gray-7:         #55637A;
-    --color-gray-8:         #3E4E65;
-    --color-gray-9:         #28384F;
-    --color-gray-10:        #141E2E;
+    /* Background Colors */
+    --color-background-light:     #F5F7FC;
+    --color-background-dark:      #141E2E;
 
-    --color-critical:       #FFA500;
-    --color-information:    #DAE8F1;
-    --color-danger:         #FF4500;
+    /* Neutral Scale (Gray) */
+    --color-neutral-0:            #FFFFFF;
+    --color-neutral-50:           #F5F7FC;
+    --color-neutral-100:          #E8ECF5;
+    --color-neutral-200:          #D4DAE8;
+    --color-neutral-300:          #B0BBCE;
+    --color-neutral-400:          #8C9AB2;
+    --color-neutral-500:          #6E7D96;
+    --color-neutral-600:          #55637A;
+    --color-neutral-700:          #3E4E65;
+    --color-neutral-800:          #28384F;
+    --color-neutral-900:          #141E2E;
 
+    /* Interactive State Colors */
+    --color-interactive-default:  #3F75FF;
+    --color-interactive-active:   #2753C1;
     --color-nav-default:    #E8ECF5;
-    --color-nav-hover:      #C2D4FF;
+    --color-nav-hover:    #C2D4FF;
+
+    /* Status/Semantic Colors */
+    --color-status-warning:       #FFA500;
+    --color-status-info:          #DAE8F1;
+    --color-status-critical:      #FF4500;
+
+    /* Legacy color aliases for backward compatibility */
+    --color-primary-light:        var(--color-brand-primary-light);
+    --color-primary:              var(--color-brand-primary);
+    --color-primary-dark:         var(--color-brand-primary-dark);
+
+    --color-secondary-light:      var(--color-brand-accent-light);
+    --color-secondary:            var(--color-brand-accent);
+    --color-secondary-dark:       var(--color-brand-accent-dark);
+
+    --color-background:           var(--color-background-light);
+
+    --color-gray-1:               var(--color-neutral-50);
+    --color-gray-2:               var(--color-neutral-100);
+    --color-gray-3:               var(--color-neutral-200);
+    --color-gray-4:               var(--color-neutral-300);
+    --color-gray-5:               var(--color-neutral-400);
+    --color-gray-6:               var(--color-neutral-500);
+    --color-gray-7:               var(--color-neutral-600);
+    --color-gray-8:               var(--color-neutral-700);
+    --color-gray-9:               var(--color-neutral-800);
+    --color-gray-10:              var(--color-neutral-900);
+
+    --color-critical:             var(--color-status-warning);
+    --color-information:          var(--color-status-info);
+    --color-danger:               var(--color-status-critical);
 
     /* Border
     ================================================================= */
@@ -121,31 +187,65 @@
 }
 
 .dark {
-    --color-primary-light:  #FFFFFF;
-    --color-primary:        #FFFFFF;
-    --color-primary-dark:   #80A4EC;
+    --color-brand-primary-light:  #FFFFFF;
+    --color-brand-primary:        #FFFFFF;
+    --color-brand-primary-dark:   #80A4EC;
 
-    --color-secondary-light:#2753C1;
-    --color-secondary:      #3F75FF;
-    --color-secondary-dark: #799FFF;
+    --color-brand-accent-light:   #2753C1;
+    --color-brand-accent:         #3F75FF;
+    --color-brand-accent-dark:    #799FFF;
 
-    --color-background:     #141E2E;
+    --color-text-primary:         #FFFFFF;
+    --color-text-secondary:       #D4DAE8;
+    --color-text-inverted:        #0C1527;
 
-    --color-gray-1:         #141E2E;
-    --color-gray-2:         #28384F;
-    --color-gray-3:         #3E4E65;
-    --color-gray-4:         #55637A;
-    --color-gray-5:         #6E7D96;
-    --color-gray-6:         #8C9AB2;
-    --color-gray-7:         #B0BBCE;
-    --color-gray-8:         #D4DAE8;
-    --color-gray-9:         #E8ECF5;
-    --color-gray-10:        #F5F7FC;
+    --color-background-light:     #141E2E;
+    --color-background-dark:      #141E2E;
 
-    --color-critical:       #FFA500;
-    --color-information:    #0E3352;
-    --color-danger:         #B13508;
+    --color-neutral-0:            #141E2E;
+    --color-neutral-50:           #141E2E;
+    --color-neutral-100:          #28384F;
+    --color-neutral-200:          #3E4E65;
+    --color-neutral-300:          #55637A;
+    --color-neutral-400:          #6E7D96;
+    --color-neutral-500:          #8C9AB2;
+    --color-neutral-600:          #B0BBCE;
+    --color-neutral-700:          #D4DAE8;
+    --color-neutral-800:          #E8ECF5;
+    --color-neutral-900:          #F5F7FC;
 
-    --color-nav-default:    #0E3352;
-    --color-nav-hover:      #164A6E;
+    --color-interactive-default:  #0E3352;
+    --color-interactive-active:   #3F75FF;
+    --color-nav-default:    #28384F;
+    --color-nav-hover:    #164A6E;
+
+    --color-status-warning:       #FFA500;
+    --color-status-info:          #0E3352;
+    --color-status-critical:      #B13508;
+
+    /* Legacy color aliases */
+    --color-primary-light:        var(--color-brand-primary-light);
+    --color-primary:              var(--color-brand-primary);
+    --color-primary-dark:         var(--color-brand-primary-dark);
+
+    --color-secondary-light:      var(--color-brand-accent-light);
+    --color-secondary:            var(--color-brand-accent);
+    --color-secondary-dark:       var(--color-brand-accent-dark);
+
+    --color-background:           var(--color-background-light);
+
+    --color-gray-1:               var(--color-neutral-50);
+    --color-gray-2:               var(--color-neutral-100);
+    --color-gray-3:               var(--color-neutral-200);
+    --color-gray-4:               var(--color-neutral-300);
+    --color-gray-5:               var(--color-neutral-400);
+    --color-gray-6:               var(--color-neutral-500);
+    --color-gray-7:               var(--color-neutral-600);
+    --color-gray-8:               var(--color-neutral-700);
+    --color-gray-9:               var(--color-neutral-800);
+    --color-gray-10:              var(--color-neutral-900);
+
+    --color-critical:             var(--color-status-warning);
+    --color-information:          var(--color-status-info);
+    --color-danger:               var(--color-status-critical);
 }

@@ -19,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage Grotesque+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -42,7 +43,7 @@
   }
 
   h4 {
-    font: var(--typography-heading-2);
+    font: var(--font-heading-1);
   }
 
   hr {
@@ -78,17 +79,17 @@
   }
 
   .color p {
-    font: var(--typography-caption);
+    font: var(--font-caption);
     position: relative;
     margin-top: 86px;
-    color: var(--color-primary);
+    color: var(--color-brand-primary);
   }
 
   .space p {
-    font: var(--typography-caption);
+    font: var(--font-caption);
     position: relative;
     margin-top: 8px;
-    color: var(--color-primary);
+    color: var(--color-brand-primary);
   }
 
   .table_component {
@@ -97,7 +98,7 @@
   }
 
   .table_component table {
-    border-bottom: 1px solid var(--color-gray-4);
+    border-bottom: 1px solid var(--color-neutral-300);
     height: 100%;
     width: 100%;
     table-layout: auto;
@@ -107,15 +108,15 @@
   }
 
   .table_component th {
-    border-bottom: 1px solid var(--color-gray-4);
-    color: var(--color-primary);
+    border-bottom: 1px solid var(--color-neutral-300);
+    color: var(--color-brand-primary);
     padding: 5px;
   }
 
   .table_component td {
-    font: var(--typography-caption);
-    border-bottom: 1px solid var(--color-gray-4);
-    color: var(--color-primary);
+    font: var(--font-caption);
+    border-bottom: 1px solid var(--color-neutral-300);
+    color: var(--color-brand-primary);
     padding: 12px 0;
   }
 
@@ -132,7 +133,7 @@
 
 <body>
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top" style="background-color: var(--color-background)">
+  <header id="header" class="header fixed-top" style="background-color: var(--color-background-light)">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="../index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="logo"> -->
@@ -156,7 +157,6 @@
   <main class="container-xl" style="margin-top: 50px;">
 
 
-    <!-- TYPOGRAPHY -->
     <h4>Textstyles</h4>
     <hr>
 
@@ -164,69 +164,69 @@
       <table>
         <tbody>
           <tr>
-            <td>headline <br> 700 3.5em/1.2em</td>
+            <td>display-1 <br> 700 3.5em/1.2em "Bricolage Grotesque"</td>
             <td>
-              <h1 style="font: var(--typography-headline)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-display-1)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>heading-1 <br> 700 2.5em/1.3em</td>
+            <td>display-2 <br> 700 2.5em/1.3em "Bricolage Grotesque"</td>
             <td>
-              <h1 style="font: var(--typography-heading-1)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-display-2)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>heading-2 <br> 700 2em/1.3em "Inter"</td>
+            <td>heading-1 <br> 700 2em/1.3em "Bricolage Grotesque"</td>
             <td>
-              <h1 style="font: var(--typography-heading-2)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-heading-1)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>heading-3 <br> 700 1.5em/1.5em "Inter"</td>
+            <td>heading-2 <br> 700 1.5em/1.5em "Bricolage Grotesque"</td>
             <td>
-              <h1 style="font: var(--typography-heading-3)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-heading-2)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>subhead <br> 300 1.5em/1.5em "Inter"</td>
+            <td>heading-3 <br> 700 1.25em/1.5em Bricolage Grotesque</td>
             <td>
-              <h1 style="font: var(--typography-subhead)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-heading-3)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>subtitle <br> 700 1.25em/1.5em "Inter"</td>
+            <td>body-regular-large <br> 300 1.5em/1.5em "Inter"</td>
             <td>
-              <h1 style="font: var(--typography-subtitle)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-body-regular-large)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>overline <br> 700 1em/1em "Raleway"</td>
+            <td>body-bold <br> 700 1em/1.5em "Inter"</td>
             <td>
-              <h1 style="font: var(--typography-overline)">IPSUM DOLOR SIT AMET</h1>
+              <h1 style="font: var(--font-body-bold)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>button <br> 500 1em/1em "Inter"</td>
+            <td>body-regular <br> 300 1em/1.5em "Inter"</td>
             <td>
-              <h1 style="font: var(--typography-button)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-body-regular)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>bodyBold <br> 700 1em/1.5em "Inter"</td>
+            <td>label-button <br> 500 1em/1em "Inter"</td>
             <td>
-              <h1 style="font: var(--typography-bodyBold)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-label-button)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>bodyReg <br> 300 1em/1.5em "Inter"</td>
+            <td>label <br> 700 1em/1em "Bricolage Grotesque"</td>
             <td>
-              <h1 style="font: var(--typography-bodyReg)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-label)">IPSUM DOLOR SIT AMET</h1>
             </td>
           </tr>
           <tr>
             <td>caption <br> 300 0.875em/1.25em "Inter"</td>
             <td>
-              <h1 style="font: var(--typography-caption)">Ipsum Dolor Sit Amet</h1>
+              <h1 style="font: var(--font-caption)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
         </tbody>
@@ -237,92 +237,117 @@
     <div style="height: 60px;"></div>
 
     <!-- COLORS -->
-    <h4 style="font: var(--typography-heading-2)">Colors</h4>
+    <h4 style="font: var(--font-heading-1)">Colors</h4>
     <hr>
 
-    <h6 style="font: var(--typography-subtitle)">Primary colors</h6>
+    <h6 style="font: var(--font-heading-3)">Brand Primary colors</h6>
     <div class="swatch-grid">
-      <div class="color" style="background-color: var(--color-primary-light);">
-        <p>primary-light</p>
+      <div class="color" style="background-color: var(--color-brand-primary-light);">
+        <p>brand-primary-light</p>
       </div>
-      <div class="color" style="background-color: var(--color-primary);">
-        <p>primary</p>
+      <div class="color" style="background-color: var(--color-brand-primary);">
+        <p>brand-primary</p>
       </div>
-      <div class="color" style="background-color: var(--color-primary-dark);">
-        <p>primary-dark</p>
+      <div class="color" style="background-color: var(--color-brand-primary-dark);">
+        <p>brand-primary-dark</p>
       </div>
     </div>
 
-    <h6 style="font: var(--typography-subtitle)">Secondary colors</h6>
+    <h6 style="font: var(--font-heading-3)">Brand Accent colors</h6>
     <div class="swatch-grid">
-      <div class="color" style="background-color: var(--color-secondary-light);">
-        <p>secondary-light</p>
+      <div class="color" style="background-color: var(--color-brand-accent-light);">
+        <p>brand-accent-light</p>
       </div>
-      <div class="color" style="background-color: var(--color-secondary);">
-        <p>secondary</p>
+      <div class="color" style="background-color: var(--color-brand-accent);">
+        <p>brand-accent</p>
       </div>
-      <div class="color" style="background-color: var(--color-secondary-dark);">
-        <p>secondary-dark</p>
+      <div class="color" style="background-color: var(--color-brand-accent-dark);">
+        <p>brand-accent-dark</p>
       </div>
     </div>
 
-    <h6 style="font: var(--typography-subtitle)">Feedback colors</h6>
+    <h6 style="font: var(--font-heading-3)">Status/Semantic colors</h6>
     <div class="swatch-grid">
-      <div class="color" style="background-color: var(--color-information);">
-        <p>information</p>
+      <div class="color" style="background-color: var(--color-status-info);">
+        <p>status-info</p>
       </div>
-      <div class="color" style="background-color: var(--color-critical);">
-        <p>critical</p>
+      <div class="color" style="background-color: var(--color-status-warning);">
+        <p>status-warning</p>
       </div>
-      <div class="color" style="background-color: var(--color-danger);">
-        <p>danger</p>
+      <div class="color" style="background-color: var(--color-status-critical);">
+        <p>status-critical</p>
       </div>
     </div>
 
-    <h6 style="font: var(--typography-subtitle)">Background colors</h6>
-    <div class="swatch-grid">
-      <div class="color"
-        style="background-color: var(--color-background); border-style: solid; border-width: 1px; border-color: #c7c7c7;">
-        <p>background</p>
-      </div>
-    </div>
-
-    <h6 style="font: var(--typography-subtitle)">Greyscale colors</h6>
+    <h6 style="font: var(--font-heading-3)">Background colors</h6>
     <div class="swatch-grid">
       <div class="color"
-        style="background-color: var(--color-gray-1); border-style: solid; border-width: 1px; border-color: #c7c7c7;">
-        <p>gray-1</p>
+        style="background-color: var(--color-background-light); border-style: solid; border-width: 1px; border-color: #c7c7c7;">
+        <p>background-light</p>
       </div>
-      <div class="color" style="background-color: var(--color-gray-2);">
-        <p>gray-2</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-3);">
-        <p>gray-3</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-4);">
-        <p>gray-4</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-5);">
-        <p>gray-5</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-6);">
-        <p>gray-6</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-7);">
-        <p>gray-7</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-8);">
-        <p>gray-8</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-9);">
-        <p>gray-9</p>
-      </div>
-      <div class="color" style="background-color: var(--color-gray-10);">
-        <p>gray-10</p>
+      <div class="color" style="background-color: var(--color-background-dark);">
+        <p>background-dark</p>
       </div>
     </div>
 
-    <h6 style="font: var(--typography-subtitle)">Navigation colors</h6>
+    <h6 style="font: var(--font-heading-3)">Text colors</h6>
+    <div style="background-color: var(--color-neutral-0); padding: 16px; border-radius: 8px; margin-bottom: 30px;">
+      <p style="color: var(--color-text-primary); font: var(--font-body-regular)">This is text-primary on neutral-0
+        background</p>
+      <p style="color: var(--color-text-secondary); font: var(--font-body-regular)">This is text-secondary on neutral-0
+        background</p>
+    </div>
+    <div style="background-color: var(--color-neutral-900); padding: 16px; border-radius: 8px; margin-bottom: 30px;">
+      <p style="color: var(--color-text-inverted); font: var(--font-body-regular)">This is text-inverted on neutral-900
+        background</p>
+    </div>
+
+    <h6 style="font: var(--font-heading-3)">Neutral Scale</h6>
+    <div class="swatch-grid">
+      <div class="color"
+        style="background-color: var(--color-neutral-50); border-style: solid; border-width: 1px; border-color: #c7c7c7;">
+        <p>neutral-50</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-100);">
+        <p>neutral-100</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-200);">
+        <p>neutral-200</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-300);">
+        <p>neutral-300</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-400);">
+        <p>neutral-400</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-500);">
+        <p>neutral-500</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-600);">
+        <p>neutral-600</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-700);">
+        <p>neutral-700</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-800);">
+        <p>neutral-800</p>
+      </div>
+      <div class="color" style="background-color: var(--color-neutral-900);">
+        <p>neutral-900</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--font-heading-3)">Interactive colors</h6>
+    <div class="swatch-grid">
+      <div class="color" style="background-color: var(--color-interactive-default);">
+        <p>interactive-default</p>
+      </div>
+      <div class="color" style="background-color: var(--color-interactive-active);">
+        <p>interactive-hover</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--font-heading-3)">Navigation colors</h6>
     <div class="swatch-grid">
       <div class="color" style="background-color: var(--color-nav-default);">
         <p>nav-default</p>
@@ -341,24 +366,45 @@
 
     <div class="swatch-grid">
       <div class="color"
-        style="border-radius: var(--border-radius-small); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        style="border-radius: var(--border-radius-small); border-style: solid; border-width: 1px; border-color: var(--color-neutral-400);">
         <p>small</p>
       </div>
       <div class="color"
-        style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        style="border-radius: var(--border-radius-medium); border-style: solid; border-width: 1px; border-color: var(--color-neutral-400);">
         <p>medium</p>
       </div>
       <div class="color"
-        style="border-radius: var(--border-radius-large); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        style="border-radius: var(--border-radius-large); border-style: solid; border-width: 1px; border-color: var(--color-neutral-400);">
         <p>large</p>
       </div>
       <div class="color"
-        style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        style="border-radius: var(--border-radius-xlarge); border-style: solid; border-width: 1px; border-color: var(--color-neutral-400);">
         <p>xlarge</p>
       </div>
       <div class="color"
-        style="border-radius: var(--border-radius-circle); border-style: solid; border-width: 1px; border-color: var(--color-gray-5);">
+        style="border-radius: var(--border-radius-circle); border-style: solid; border-width: 1px; border-color: var(--color-neutral-400);">
         <p>circle</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--font-heading-3)">Border colors</h6>
+    <div class="swatch-grid">
+      <div class="color"
+        style="border: 4px solid var(--border-color-lighter); background-color: var(--color-neutral-0);">
+        <p>border-lighter</p>
+      </div>
+      <div class="color" style="border: 4px solid var(--border-color-light); background-color: var(--color-neutral-0);">
+        <p>border-light</p>
+      </div>
+      <div class="color" style="border: 4px solid var(--border-color); background-color: var(--color-neutral-0);">
+        <p>border</p>
+      </div>
+      <div class="color" style="border: 4px solid var(--border-color-dark); background-color: var(--color-neutral-0);">
+        <p>border-dark</p>
+      </div>
+      <div class="color"
+        style="border: 4px solid var(--border-color-darker); background-color: var(--color-neutral-0);">
+        <p>border-darker</p>
       </div>
     </div>
 
@@ -369,7 +415,7 @@
     <h4>Spacing</h4>
     <hr>
 
-    <h6 style="font: var(--typography-subtitle)">Core spacing</h6>
+    <h6 style="font: var(--font-heading-3)">Core spacing</h6>
     <div class="swatch-grid">
       <div class="space" style="height: var(--space-xsmall);">
         <p>space-xs</p>
@@ -389,12 +435,18 @@
       <div class="space" style="height: var(--space-xxlarge);">
         <p>space-xxl</p>
       </div>
+      <div class="space" style="height: var(--space-48);">
+        <p>space-48</p>
+      </div>
+      <div class="space" style="height: var(--space-72);">
+        <p>space-72</p>
+      </div>
       <div class="space" style="height: var(--space-xxxlarge);">
         <p>space-xxxl</p>
       </div>
     </div>
 
-    <h6 style="font: var(--typography-subtitle)">Semantic spacing</h6>
+    <h6 style="font: var(--font-heading-3)">Semantic spacing</h6>
     <div class="swatch-grid">
       <div class="space" style="height: var(--space-section);">
         <p>space-section</p>
