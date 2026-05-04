@@ -220,7 +220,7 @@ hr {
 /* Change color of dropdown links on hover */
 .dropdown-content button:hover {
   padding: 12px;
-  background-color: var(--color-brand-accent);
+  background-color: var(--color-neutral-300);
   font: var(--font-body-regular);
   color: white;
   text-align: justify;
@@ -947,8 +947,8 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: var(--color-neutral-100);
   color: var(--color-brand-primary);
@@ -962,7 +962,7 @@ section {
 }
 
 .footer-social .social-links i {
-  font-size: 18px;
+  font-size: 24px;
 }
 
 /* Safari-specific fixes 
