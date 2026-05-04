@@ -169,7 +169,7 @@ hr {
   border: none;
   width: 48px;
   height: 48px;
-  border-radius: 99px;
+  border-radius: var(--border-radius-circle);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,7 +202,7 @@ hr {
 .dropdown-content button {
   color: black;
   background-color: var(--color-neutral-100);
-  border-radius: 99px;
+  border-radius: var(--border-radius-circle);
   padding: 12px;
   text-align: center;
   font: var(--font-body-regular);
@@ -224,7 +224,7 @@ hr {
   font: var(--font-body-regular);
   color: white;
   text-align: justify;
-  border-radius: 99px;
+  border-radius: var(--border-radius-circle);
 }
 
 /* Show the dropdown menu on hover */
