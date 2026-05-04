@@ -468,6 +468,10 @@ section {
   background: linear-gradient(45deg, #f367a9 0%, #7b91ff 100%);
 }
 
+#project10 {
+  background: linear-gradient(45deg, #F591AC 0%, #F86E66 100%);
+}
+
 .portfolio .portfolio-wrap:hover img {
   transform: translateY(20px);
 }
