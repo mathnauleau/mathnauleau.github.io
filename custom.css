@@ -1019,12 +1019,12 @@ section {
 
 .callout {
   padding: var(--space-medium);
-  background-color: var(--color-status-info);
+  background-color: var(--color-nav-default);
   border-radius: var(--border-radius-large);
 }
 
 .callout p {
-  margin: 8px 0 0 0;
+  margin: 8px 0 16px 0;
 }
 
 .callout strong {

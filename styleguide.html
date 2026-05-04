@@ -19,7 +19,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage Grotesque+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
@@ -163,67 +164,61 @@
       <table>
         <tbody>
           <tr>
-            <td>display-1 <br> 700 3.5em/1.2em</td>
+            <td>display-1 <br> 700 3.5em/1.2em "Bricolage Grotesque"</td>
             <td>
               <h1 style="font: var(--font-display-1)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>display-2 <br> 700 2.5em/1.3em</td>
+            <td>display-2 <br> 700 2.5em/1.3em "Bricolage Grotesque"</td>
             <td>
               <h1 style="font: var(--font-display-2)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>heading-1 <br> 700 2em/1.3em "Bricolage"</td>
+            <td>heading-1 <br> 700 2em/1.3em "Bricolage Grotesque"</td>
             <td>
               <h1 style="font: var(--font-heading-1)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>heading-2 <br> 700 1.5em/1.5em "Bricolage"</td>
+            <td>heading-2 <br> 700 1.5em/1.5em "Bricolage Grotesque"</td>
             <td>
               <h1 style="font: var(--font-heading-2)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>heading-3 <br> 700 1.25em/1.5em "Inter"</td>
+            <td>heading-3 <br> 700 1.25em/1.5em Bricolage Grotesque</td>
             <td>
               <h1 style="font: var(--font-heading-3)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>body-xlarge <br> 300 1.5em/1.5em "Inter"</td>
+            <td>body-regular-large <br> 300 1.5em/1.5em "Inter"</td>
             <td>
               <h1 style="font: var(--font-body-regular-large)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>body-large-strong <br> 700 1em/1.5em "Inter"</td>
+            <td>body-bold <br> 700 1em/1.5em "Inter"</td>
             <td>
               <h1 style="font: var(--font-body-bold)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>body-large <br> 300 1em/1.5em "Inter"</td>
+            <td>body-regular <br> 300 1em/1.5em "Inter"</td>
             <td>
               <h1 style="font: var(--font-body-regular)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>body-default-strong <br> 500 1em/1em "Inter"</td>
+            <td>label-button <br> 500 1em/1em "Inter"</td>
             <td>
               <h1 style="font: var(--font-label-button)">Ipsum Dolor Sit Amet</h1>
             </td>
           </tr>
           <tr>
-            <td>body-default <br> 300 1em/1.5em "Inter"</td>
-            <td>
-              <h1 style="font: var(--font-body-regular)">Ipsum Dolor Sit Amet</h1>
-            </td>
-          </tr>
-          <tr>
-            <td>label <br> 700 1em/1em "Bricolage"</td>
+            <td>label <br> 700 1em/1em "Bricolage Grotesque"</td>
             <td>
               <h1 style="font: var(--font-label)">IPSUM DOLOR SIT AMET</h1>
             </td>
@@ -295,6 +290,18 @@
       </div>
     </div>
 
+    <h6 style="font: var(--font-heading-3)">Text colors</h6>
+    <div style="background-color: var(--color-neutral-0); padding: 16px; border-radius: 8px; margin-bottom: 30px;">
+      <p style="color: var(--color-text-primary); font: var(--font-body-regular)">This is text-primary on neutral-0
+        background</p>
+      <p style="color: var(--color-text-secondary); font: var(--font-body-regular)">This is text-secondary on neutral-0
+        background</p>
+    </div>
+    <div style="background-color: var(--color-neutral-900); padding: 16px; border-radius: 8px; margin-bottom: 30px;">
+      <p style="color: var(--color-text-inverted); font: var(--font-body-regular)">This is text-inverted on neutral-900
+        background</p>
+    </div>
+
     <h6 style="font: var(--font-heading-3)">Neutral Scale</h6>
     <div class="swatch-grid">
       <div class="color"
@@ -335,8 +342,18 @@
       <div class="color" style="background-color: var(--color-interactive-default);">
         <p>interactive-default</p>
       </div>
-      <div class="color" style="background-color: var(--color-nav-hover);">
+      <div class="color" style="background-color: var(--color-interactive-active);">
         <p>interactive-hover</p>
+      </div>
+    </div>
+
+    <h6 style="font: var(--font-heading-3)">Navigation colors</h6>
+    <div class="swatch-grid">
+      <div class="color" style="background-color: var(--color-nav-default);">
+        <p>nav-default</p>
+      </div>
+      <div class="color" style="background-color: var(--color-nav-hover);">
+        <p>nav-hover</p>
       </div>
     </div>
 
@@ -370,6 +387,27 @@
       </div>
     </div>
 
+    <h6 style="font: var(--font-heading-3)">Border colors</h6>
+    <div class="swatch-grid">
+      <div class="color"
+        style="border: 4px solid var(--border-color-lighter); background-color: var(--color-neutral-0);">
+        <p>border-lighter</p>
+      </div>
+      <div class="color" style="border: 4px solid var(--border-color-light); background-color: var(--color-neutral-0);">
+        <p>border-light</p>
+      </div>
+      <div class="color" style="border: 4px solid var(--border-color); background-color: var(--color-neutral-0);">
+        <p>border</p>
+      </div>
+      <div class="color" style="border: 4px solid var(--border-color-dark); background-color: var(--color-neutral-0);">
+        <p>border-dark</p>
+      </div>
+      <div class="color"
+        style="border: 4px solid var(--border-color-darker); background-color: var(--color-neutral-0);">
+        <p>border-darker</p>
+      </div>
+    </div>
+
     <!-- BLOCK -->
     <div style="height: 60px;"></div>
 
@@ -396,6 +434,12 @@
       </div>
       <div class="space" style="height: var(--space-xxlarge);">
         <p>space-xxl</p>
+      </div>
+      <div class="space" style="height: var(--space-48);">
+        <p>space-48</p>
+      </div>
+      <div class="space" style="height: var(--space-72);">
+        <p>space-72</p>
       </div>
       <div class="space" style="height: var(--space-xxxlarge);">
         <p>space-xxxl</p>
