@@ -7,6 +7,9 @@ A list of all major changes. To update for each release.
 - Bricolage Grotesque font to pages
 
 ### Changed
+- Standardize design tokens and update styles
+- Made social icons bigger
+- Updated bootstrap year and styleguid
 - Updated color and typography tokens in `tokens.css`
 - Changed Secondary font
 - Changed en/fr icons
@@ -18,6 +21,9 @@ A list of all major changes. To update for each release.
 
 ### Fixed
 - Small accessibility improvement with better Aria label descriptions
+
+### Removed
+- Deleted emojicom
 
 ## 01.05.2026 - Version 2.04
 ### Changed
