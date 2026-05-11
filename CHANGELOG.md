@@ -1,6 +1,9 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
+## 03.05.2026 - Version 2.06
+### Changed
+- Placed titles outside the project image and adjusted style on both mobile and desktop
 
 ## 03.05.2026 - Version 2.05
 ### Added
