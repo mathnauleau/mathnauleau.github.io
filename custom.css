@@ -446,11 +446,19 @@ section {
 }
 
 #project10 {
-  background: linear-gradient(45deg, #F591AC 0%, #F86E66 100%);
+  background-image: url(assets/img/portfolio/ops-bottom.png);
+  background-size: cover;
+  /* background: linear-gradient(45deg, #F591AC 0%, #F86E66 100%); */
 }
 
 .portfolio .portfolio-wrap:hover img {
   transform: translateY(20px);
+}
+
+#project10:hover img {
+  transform: translateX(38px);
+  transition-duration: 400ms;
+  animation: ease-out;
 }
 
 .portfolio .craft:hover img {
