@@ -455,10 +455,13 @@ section {
   transform: translateY(20px);
 }
 
+#project10 img {
+  transition-duration: 400ms;
+  transition-timing-function: ease-out;
+}
+
 #project10:hover img {
   transform: translateX(38px);
-  transition-duration: 400ms;
-  animation: ease-out;
 }
 
 .portfolio .craft:hover img {
