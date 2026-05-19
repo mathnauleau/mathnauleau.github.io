@@ -1,6 +1,54 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
+## 19.05.2026 - Version 2.07
+### Added
+- New DesignOps project page showcasing multi-brand design system work (Oxxio & Eneco)
+- Project images and hero assets for DesignOps case study
+
+### Changed
+- Updated portfolio grid to include new DesignOps project
+- Updated design system page project navigation (next project changed from AH Compact to Carl Rental App)
+- Added "Role" localization key (en/fr)
+- Minor CSS refinements (callout margins, content padding)
+
+### Fixed
+- HTML meta tag formatting
+
+## 03.05.2026 - Version 2.06
+### Changed
+- Placed titles outside the project image and adjusted style on both mobile and desktop
+
+## 03.05.2026 - Version 2.05
+### Added
+- Bricolage Grotesque font to pages
+
+### Changed
+- Standardize design tokens and update styles
+- Made social icons bigger
+- Updated bootstrap year and styleguid
+- Updated color and typography tokens in `tokens.css`
+- Changed Secondary font
+- Changed en/fr icons
+- Updated copy across various pages
+- Updated Logo copy
+- Applied correct buttons for language switcher on all pages
+- Updated custom.css styles
+- Improved Aria labels for accessibility
+
+### Fixed
+- Small accessibility improvement with better Aria label descriptions
+
+### Removed
+- Deleted emojicom
+
+## 01.05.2026 - Version 2.04
+### Changed
+- Top navigation style
+- noopener noreferrer to all links
+- Fixed lang-mobile style
+- Minor fixes of token definitions (color values in Uppercase)
+
 ## 24.04.2026 - Version 2.03
 ### Changed
 - Deleted the main picture on home

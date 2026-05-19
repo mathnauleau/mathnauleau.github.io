@@ -21,7 +21,7 @@
   <meta name="author" content="Mathieu Nauleau">
   <meta name="robots" content="index">
 
-  <title>Mathieu Nauleau &#8211; Product designer</title>
+  <title>Mathieu Nauleau</title>
 
   <!-- Favicon -->
   <link href="assets/img/favicon.ico" rel="shortcut icon">
@@ -29,8 +29,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
@@ -60,32 +61,35 @@
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
-    <div class="container-xxl d-flex justify-content-between">
+    <div class="container-xxl d-flex justify-content-between header-content">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="logo"> -->
-        <span>Mathieu Nauleau – Product designer</span>
+        <span>Mathieu Nauleau</span>
       </a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="#portfolio">Design</a></li>
           <li><a class="nav-link scrollto" href="#craft">Craft</a></li>
-          <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
-          <li><a class="nav-link scrollto"
-              href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
-              data-i18n="nav.resource">Resource</a>
+          <li><a class="nav-link" href="about.html" data-i18n="nav.about">About</a></li>
+          <li><a class="nav-link" href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3"
+              target="_blank" rel="noopener noreferrer" data-i18n="nav.resource">Resource</a>
           </li>
 
-          <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
-          <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
+          <li class="lang-mobile"><button type="button" class="lang-button"
+              onclick="changeLanguage('en')">English</button></li>
+          <li class="lang-mobile"><button type="button" class="lang-button"
+              onclick="changeLanguage('fr')">Français</button></li>
 
           <li class="dropdown">
-            <button class="dropbtn">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
               <img id="current-flag" src="assets/icon/en.svg" alt="current language flag">
             </button>
             <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg" alt="english flag"></a>
-              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg" alt="french flag"></a>
+              <button type="button" onclick="changeLanguage('en')" aria-label="Switch language to english"><img
+                  src="assets/icon/en.svg" alt="english flag"></button>
+              <button type="button" onclick="changeLanguage('fr')" aria-label="Traduire en Français"><img
+                  src="assets/icon/fr.svg" alt="french flag"></button>
             </div>
           </li>
         </ul>
@@ -100,18 +104,21 @@
   <section class="hero d-flex align-items-center">
     <div class="container">
       <div class="row gx-5 gy-3">
-        <!-- <div class="col-lg-5 hero-img">
-          <img src="assets/img/hero-img.jpg" class="img-fluid" alt="Profile illustration">
-        </div> -->
-        <div class="col-lg-8 d-flex flex-column justify-content-center">
-          <h1 data-i18n="home.hero">
-            I turn ambiguity into products & systems that scale, bridging teams, tools, and ideas.
+        <div class="col-lg-12 d-flex flex-column justify-content-center">
+          <h5>
+            Product Designer &#8211; Amsterdam
+          </h5>
+          <h1>
+            <span data-i18n="home.hero01">I design elegant products</span>
+            <br>
+            <span data-i18n="home.hero02">& scalable systems.</span>
+
           </h1>
-          <!-- <h2 data-i18n="home.introduction">
-            Currently based in Amsterdam, I like to tackle complex problems to
-            have a positive impact on people and businesses by crafting
-            elegant user experiences and cohesive design systems.
-          </h2> -->
+          <h2>
+            <span data-i18n="home.introduction01">From ambiguity to structure.</span>
+            <br>
+            <span data-i18n="home.introduction02">Connecting teams, processes, and craft.</span>
+          </h2>
         </div>
       </div>
     </div>
@@ -132,11 +139,25 @@
             <div id="project2" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-2.png" class="img-fluid"
                 alt="White Label App cover">
-              <div class="portfolio-title">
-                <h4>White label eCommerce App — 2024</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>White label eCommerce App</h4>
+            <p>eCommerce — 2024</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 portfolio-item">
+          <a href="designops.html" class="portfolio-link">
+            <div id="project10" class="portfolio-wrap">
+              <img loading="lazy" src="assets/img/portfolio/portfolio-10.png" class="img-fluid"
+                alt="Design System cover">
+            </div>
+          </a>
+          <div class="portfolio-title">
+            <h4>DesignOps</h4>
+            <p>Energy — 2026</p>
+          </div>
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
@@ -144,11 +165,12 @@
             <div id="project1" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-1.png" class="img-fluid"
                 alt="Design System cover">
-              <div class="portfolio-title">
-                <h4>Pantry Design System — 2024</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>Pantry Design System</h4>
+            <p>eCommerce — 2024</p>
+          </div>
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
@@ -156,11 +178,12 @@
             <div id="project4" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-4.png" class="img-fluid"
                 alt="AH Compact app cover">
-              <div class="portfolio-title">
-                <h4>AH Compact — 2021</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>AH Compact</h4>
+            <p>eCommerce — 2021</p>
+          </div>
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
@@ -168,11 +191,12 @@
             <div id="project3" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-3.png" class="img-fluid"
                 alt="Car Rental app cover">
-              <div class="portfolio-title">
-                <h4>Car rental App — 2021</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>Car rental App</h4>
+            <p>Service — 2021</p>
+          </div>
         </div>
 
         <!-- <div class="col-lg-6 col-md-12 portfolio-item">
@@ -204,33 +228,36 @@
             <div class="portfolio-wrap craft">
               <img loading="lazy" src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid"
                 alt="Digital sketching cover">
-              <div class="portfolio-title">
-                <h4>Digital Sketching</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>Digital Sketching</h4>
+            <p>Visual design — 2020/2026</p>
+          </div>
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="island.html" class="portfolio-link">
             <div id="project5" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-5.png" class="img-fluid" alt="Slide Puzzle cover">
-              <div class="portfolio-title">
-                <h4>Island Slide Puzzle — 2022</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>Island Slide Puzzle</h4>
+            <p>Game design — 2022</p>
+          </div>
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="dailyui.html" class="portfolio-link" data-toggle="modal">
             <div id="project7" class="portfolio-wrap">
               <img loading="lazy" src="assets/img/portfolio/portfolio-8.png" class="img-fluid" alt="Daily UI cover">
-              <div class="portfolio-title">
-                <h4>Daily UI</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>Daily UI</h4>
+            <p>Visual design — 2022</p>
+          </div>
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">
@@ -238,11 +265,12 @@
             <div class="portfolio-wrap craft">
               <img loading="lazy" src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid"
                 alt="Handmade kumiko lamp cover">
-              <div class="portfolio-title">
-                <h4>Handmade Kumiko lamp</h4>
-              </div>
             </div>
           </a>
+          <div class="portfolio-title">
+            <h4>Handmade Kumiko lamp</h4>
+            <p>Craft — 2022</p>
+          </div>
         </div>
 
       </div>
@@ -263,7 +291,8 @@
             </p>
             <br>
             <div class="text-lg-start">
-              <a href="https://www.linkedin.com/in/mathieunauleau/" target="_blank" class="btn-custom d-inline-flex">
+              <a href="https://www.linkedin.com/in/mathieunauleau/" target="_blank" rel="noopener noreferrer"
+                class="btn-custom d-inline-flex">
                 <span data-i18n="btn.contact">Get in touch</span>
                 <i class="bi bi-linkedin"></i>
               </a>
@@ -283,31 +312,37 @@
   <!-- ======= Footer ======= -->
   <footer class="footer">
     <div class="copyright">
-      <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> | 2025</p>
+      <p>Created with <a href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a> |
+        2026</p>
       <div class="footer-social">
         <ul>
           <li>
-            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau" target="_blank">
+            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-instagram"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank">
+            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-linkedin"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.github.com/mathnauleau" target="_blank">
+            <a class="nav-link social-links" href="https://www.github.com/mathnauleau" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-github"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" target="_blank">
+            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-explicit-fill"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" target="_blank">
+            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" target="_blank"
+              rel="noopener noreferrer">
               <i class="bi bi-dribbble"></i>
             </a>
           </li>
