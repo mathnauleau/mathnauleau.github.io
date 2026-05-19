@@ -565,6 +565,7 @@ section {
 .about .content {
   border-radius: var(--border-radius-large);
   background-color: transparent;
+  padding: var(--space-small);
 }
 
 .portfolio-project-nav {
@@ -1007,7 +1008,7 @@ section {
 }
 
 .callout p {
-  margin: 8px 0 16px 0;
+  margin: 16px 0 16px 0;
 }
 
 .callout strong {
