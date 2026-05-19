@@ -1,6 +1,20 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
+## 19.05.2026 - Version 2.07
+### Added
+- New DesignOps project page showcasing multi-brand design system work (Oxxio & Eneco)
+- Project images and hero assets for DesignOps case study
+
+### Changed
+- Updated portfolio grid to include new DesignOps project
+- Updated design system page project navigation (next project changed from AH Compact to Carl Rental App)
+- Added "Role" localization key (en/fr)
+- Minor CSS refinements (callout margins, content padding)
+
+### Fixed
+- HTML meta tag formatting
+
 ## 03.05.2026 - Version 2.06
 ### Changed
 - Placed titles outside the project image and adjusted style on both mobile and desktop

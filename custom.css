@@ -445,8 +445,23 @@ section {
   background: linear-gradient(45deg, #f367a9 0%, #7b91ff 100%);
 }
 
+#project10 {
+  background-image: url(assets/img/portfolio/ops-bottom.png);
+  background-size: cover;
+  /* background: linear-gradient(45deg, #F591AC 0%, #F86E66 100%); */
+}
+
 .portfolio .portfolio-wrap:hover img {
   transform: translateY(20px);
+}
+
+#project10 img {
+  transition-duration: 400ms;
+  transition-timing-function: ease-out;
+}
+
+#project10:hover img {
+  transform: translateX(38px);
 }
 
 .portfolio .craft:hover img {
@@ -550,6 +565,7 @@ section {
 .about .content {
   border-radius: var(--border-radius-large);
   background-color: transparent;
+  padding: var(--space-small);
 }
 
 .portfolio-project-nav {
@@ -992,7 +1008,7 @@ section {
 }
 
 .callout p {
-  margin: 8px 0 16px 0;
+  margin: 16px 0 16px 0;
 }
 
 .callout strong {
