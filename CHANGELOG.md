@@ -1,6 +1,16 @@
 # Portfolio Changelog
 A list of all major changes. To update for each release.
 
+## 20.05.2026 - Version 2.08
+
+### Changed
+- Replaced gradient backgrounds with cover images and hover animations on projects 2, 4, and 5
+- Swapped Carl (project 3) for Rise (project 6) in the grid
+- Updated project subtitles with descriptive taglines
+
+### Fixed
+- Hover glitch on project 5 where the moving image lost its hover state
+
 ## 19.05.2026 - Version 2.07
 ### Added
 - New DesignOps project page showcasing multi-brand design system work (Oxxio & Eneco)
