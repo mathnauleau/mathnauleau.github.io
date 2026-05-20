@@ -422,7 +422,8 @@ section {
 }
 
 #project2 {
-  background: linear-gradient(45deg, #536976 0%, #292e49 100%);
+  background-image: url(assets/img/portfolio/portfolio-2.png);
+  background-size: cover;
 }
 
 #project3 {
@@ -430,12 +431,24 @@ section {
 }
 
 #project4 {
-  background: linear-gradient(45deg, #7bd5f2 0%, #0085e5 100%);
+  background-image: url(assets/img/portfolio/portfolio-4.png);
+  background-size: cover;
 }
 
 #project5 {
-  background: linear-gradient(45deg, #7b91ff 0%, #1589c0 100%);
+  background-image: url(assets/img/portfolio/portfolio-5.png);
+  background-size: cover;
 }
+
+#project5 img{
+  transition-duration: 400ms;
+  position:relative;
+}
+
+#project5:hover img{
+  transform: translate(-107px, -58px);
+}
+
 
 #project6 {
   background: linear-gradient(45deg, #bfcee8 0%, #788ca9 100%);
@@ -453,6 +466,27 @@ section {
 
 .portfolio .portfolio-wrap:hover img {
   transform: translateY(20px);
+}
+
+#project2 img {
+  opacity: 0;
+  transition-duration: 0ms;
+}
+
+#project2:hover img {
+  opacity: 1;
+    transform: translateY(0px);
+}
+
+#project4 img {
+  transition-duration: 400ms;
+  position:relative;
+  top: 30px;
+}
+
+#project4:hover img {
+  opacity: 1;
+  transform: translateY(-30px);
 }
 
 #project10 img {
