@@ -369,6 +369,24 @@ hr {
   padding-right: 24px;
 }
 
+#philosophy {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-xxlarge);
+}
+
+@media (min-width: 1200px) {
+  #philosophy {
+    width: 80%;
+  }
+}
+
+.philosophy-body {
+  font: var(--font-body-regular-large);
+  color: var(--color-neutral-700);
+  max-width: 680px;
+}
+
 .header.header-scrolled {
   padding: 16px;
   background: transparent;
