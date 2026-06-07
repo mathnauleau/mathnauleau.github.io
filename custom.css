@@ -986,41 +986,7 @@ section {
       var(--color-brand-accent)       32%,
       var(--color-brand-accent-dark)  118%);
   padding: var(--space-section) 0;
-}
-
-.philosophy__head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: var(--space-24);
-  padding-bottom: var(--space-48);
-  border-bottom: 1.5px solid var(--phi-hairline-soft);
-  margin-bottom: 0;
-}
-
-.philosophy__overline {
-  font: var(--font-label);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--color-text-inverted);
-  opacity: 0.9;
-  margin: 0;
-}
-
-.philosophy__title {
-  font-family: var(--font-family-display);
-  font-weight: 700;
-  font-size: var(--phi-title-size);
-  line-height: var(--line-height-small);
-  letter-spacing: -0.03em;
-  color: var(--color-text-inverted);
-  margin: 0;
-}
-
-.philosophy__title-outline {
-  color: transparent;
-  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.92);
+  margin-bottom: var(--space-section);
 }
 
 .philosophy__block {
@@ -1039,13 +1005,10 @@ section {
   border-bottom: none;
 }
 
-.philosophy__block:hover {
-  background: rgba(255, 255, 255, 0.06);
-}
 
 .philosophy__numeral {
   position: absolute;
-  top: -0.35em;
+  top: -0.25em;
   right: -0.04em;
   font-family: var(--font-family-display);
   font-weight: 800;
@@ -1087,10 +1050,6 @@ section {
 .philosophy__body strong {
   color: var(--color-text-inverted);
   font-weight: 500;
-}
-
-.philosophy__block:hover .philosophy__phrase {
-  color: var(--color-brand-primary);
 }
 
 @media (prefers-reduced-motion: no-preference) {
