@@ -968,6 +968,161 @@ section {
   height: auto;
 }
 
+/*--------------------------------------------------------------
+# Philosophy Section
+--------------------------------------------------------------*/
+.philosophy {
+  /* --- local, non-tokenized exceptions (no matching token exists) --- */
+  --phi-title-size:    clamp(3.25rem, 6vw, 5.5rem); /* hero title exceeds --font-size-64 scale ceiling */
+  --phi-numeral-size:  13.75rem;                    /* 220px ghost numeral, well beyond scale */
+  --phi-hairline:      rgba(255, 255, 255, 0.22);   /* translucent-white divider; no token for white-with-alpha */
+  --phi-hairline-soft: rgba(255, 255, 255, 0.28);   /* stronger variant for the header rule */
+
+  color: var(--color-text-inverted);
+  background:
+    radial-gradient(120% 90% at 88% -10%, rgba(255, 255, 255, 0.18), transparent 55%),
+    linear-gradient(150deg,
+      var(--color-brand-accent-light) -20%,
+      var(--color-brand-accent)       32%,
+      var(--color-brand-accent-dark)  118%);
+  padding: var(--space-section) 0;
+}
+
+.philosophy__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-24);
+  padding-bottom: var(--space-48);
+  border-bottom: 1.5px solid var(--phi-hairline-soft);
+  margin-bottom: 0;
+}
+
+.philosophy__overline {
+  font: var(--font-label);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-text-inverted);
+  opacity: 0.9;
+  margin: 0;
+}
+
+.philosophy__title {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--phi-title-size);
+  line-height: var(--line-height-small);
+  letter-spacing: -0.03em;
+  color: var(--color-text-inverted);
+  margin: 0;
+}
+
+.philosophy__title-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.92);
+}
+
+.philosophy__block {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-48);
+  border-bottom: 1.5px solid var(--phi-hairline);
+  transition: background var(--transition-normal) ease;
+}
+
+.philosophy__block:nth-child(odd) {
+  border-right: 1.5px solid var(--phi-hairline);
+}
+
+.philosophy__block:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.philosophy__block:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.philosophy__numeral {
+  position: absolute;
+  top: -0.35em;
+  right: -0.04em;
+  font-family: var(--font-family-display);
+  font-weight: 800;
+  font-size: var(--phi-numeral-size);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.10);
+  pointer-events: none;
+  user-select: none;
+  transition:
+    color var(--transition-normal) ease,
+    transform var(--transition-slow) cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.philosophy__phrase {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--font-size-48);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  max-width: 12ch;
+  text-wrap: balance;
+  color: var(--color-text-inverted);
+  margin: 0 0 var(--space-24);
+  transition: color var(--transition-fast) ease;
+}
+
+.philosophy__body {
+  font-family: var(--font-family-body);
+  font-weight: 300;
+  font-size: var(--font-size-20);
+  line-height: var(--line-height-large);
+  color: rgba(255, 255, 255, 0.80);
+  max-width: 42ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.philosophy__body strong {
+  color: var(--color-text-inverted);
+  font-weight: 500;
+}
+
+.philosophy__block:hover .philosophy__phrase {
+  color: var(--color-brand-primary);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .philosophy__block:hover .philosophy__numeral {
+    color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy {
+    padding: var(--space-64) 0;
+  }
+
+  .philosophy__block {
+    padding: var(--space-40) 0;
+    border-right: none !important;
+  }
+
+  .philosophy__block:nth-last-child(-n+2) {
+    border-bottom: 1.5px solid var(--phi-hairline);
+  }
+
+  .philosophy__block:last-child {
+    border-bottom: none;
+  }
+
+  .philosophy__phrase {
+    font-size: var(--font-size-40);
+  }
+}
+
 .protected-img {
   width: 100px;
   margin-bottom: 16px;

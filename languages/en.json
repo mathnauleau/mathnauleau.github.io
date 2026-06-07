@@ -1,5 +1,6 @@
 {
     "nav.about": "About",
+    "nav.philosophy": "Philosophy",
     "nav.resource": "Resource ↗",
     "nav.next": "Up next",
     "nav.prev": "Previous project",
@@ -22,6 +23,11 @@
     "home.contact_subtitle": "Reach out for a collaboration, share feedback, or just say hi!",
     "home.section_craft": "Side projects",
     "home.section_work": "Selected work",
+    "home.philosophy_overline": "Philosophy",
+    "home.philosophy_phrase_01": "The space between things",
+    "home.philosophy_phrase_02": "Knock on doors",
+    "home.philosophy_phrase_03": "The tree and the forest",
+    "home.philosophy_phrase_04": "Process shapes culture",
     "about.introduction_title": "I'm Mathieu — Senior Product Designer living in Amsterdam since 2015",
     "about.introduction_desc01": "I love solving puzzles at both product and system level, bringing clarity out of complexity through elegant, simple solutions that make sense to people. My process blends collaboration, strategy, and constant learning.",
     "about.introduction_desc02_a": "Right now, I am working at",

@@ -1,5 +1,6 @@
 {
     "nav.about": "À propos",
+    "nav.philosophy": "Philosophie",
     "nav.resource": "Ressource ↗",
     "nav.next": "Suivant",
     "nav.prev": "Précédent",
@@ -22,6 +23,11 @@
     "home.contact_subtitle": "Contactez-moi pour une collaboration ou simplement pour échanger !",
     "home.section_craft": "Projets personnels.",
     "home.section_work": "Étude de cas.",
+    "home.philosophy_overline": "Philosophie",
+    "home.philosophy_phrase_01": "L'espace entre les choses",
+    "home.philosophy_phrase_02": "Frapper aux portes",
+    "home.philosophy_phrase_03": "L'arbre et la forêt",
+    "home.philosophy_phrase_04": "Les processus forgent la culture",
     "about.introduction_title": "Je suis Senior Product Designer et vis à Amsterdam depuis 2015.",
     "about.introduction_desc01": "J'aime résoudre des problèmes complexes au niveau du produit et du système et créer des expériences utilisateur engageantes grâce à mon processus et à mon imagination. Je vise la simplicité au-delà de la complexité grâce à des solutions élégantes. Enfin, je ne me lasse pas d'apprendre.",
     "about.introduction_desc02_a": "Je travaille actuellement chez",
