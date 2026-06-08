@@ -32,7 +32,7 @@ h3 {
 h5 {
   font: var(--font-label);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: var(--color-brand-accent);
 }
 
@@ -376,7 +376,7 @@ hr {
 }
 
 .section-header h2, .portfolio-description h1 {
-  font: var(--font-display-2);
+  font: var(--font-display-1);
   color: var(--color-brand-primary);
   text-transform: none;
 }
@@ -975,17 +975,14 @@ section {
   /* --- local, non-tokenized exceptions (no matching token exists) --- */
   --phi-title-size:    clamp(3.25rem, 6vw, 5.5rem); /* hero title exceeds --font-size-64 scale ceiling */
   --phi-numeral-size:  13.75rem;                    /* 220px ghost numeral, well beyond scale */
-  --phi-hairline:      rgba(255, 255, 255, 0.22);   /* translucent-white divider; no token for white-with-alpha */
-  --phi-hairline-soft: rgba(255, 255, 255, 0.28);   /* stronger variant for the header rule */
 
-  color: var(--color-text-inverted);
-  background:
+  color: var(--color-text-primary);
+  /* background:
     radial-gradient(120% 90% at 88% -10%, rgba(255, 255, 255, 0.18), transparent 55%),
     linear-gradient(150deg,
       var(--color-brand-accent-light) -20%,
       var(--color-brand-accent)       32%,
-      var(--color-brand-accent-dark)  118%);
-  padding: var(--space-section) 0;
+      var(--color-brand-accent-dark)  118%); */
   margin-bottom: var(--space-section);
 }
 
@@ -993,12 +990,12 @@ section {
   position: relative;
   overflow: hidden;
   padding: var(--space-48);
-  border-bottom: 1.5px solid var(--phi-hairline);
-  transition: background var(--transition-normal) ease;
+  border-bottom: 1.5px solid var(--color-neutral-100);
+  transition: var(--transition-normal) ease;
 }
 
 .philosophy__block:nth-child(odd) {
-  border-right: 1.5px solid var(--phi-hairline);
+  border-right: 1.5px solid var(--color-neutral-100);
 }
 
 .philosophy__block:nth-last-child(-n+2) {
@@ -1015,7 +1012,8 @@ section {
   font-size: var(--phi-numeral-size);
   line-height: 1;
   letter-spacing: -0.05em;
-  color: rgba(255, 255, 255, 0.10);
+  color: var(--color-text-primary);
+  opacity: 0.05;
   pointer-events: none;
   user-select: none;
   transition:
@@ -1031,7 +1029,7 @@ section {
   letter-spacing: -0.025em;
   max-width: 12ch;
   text-wrap: balance;
-  color: var(--color-text-inverted);
+  color: var(--color-text-primary);
   margin: 0 0 var(--space-24);
   transition: color var(--transition-fast) ease;
 }
@@ -1041,20 +1039,22 @@ section {
   font-weight: 300;
   font-size: var(--font-size-20);
   line-height: var(--line-height-large);
-  color: rgba(255, 255, 255, 0.80);
+  color: var(--color-text-primary);
+  opacity: 0.80;
   max-width: 42ch;
   margin: 0;
   text-wrap: pretty;
 }
 
 .philosophy__body strong {
-  color: var(--color-text-inverted);
+  color: var(--color-text-primary);
   font-weight: 500;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .philosophy__block:hover .philosophy__numeral {
-    color: rgba(255, 255, 255, 0.16);
+    color: var(--color-text-primary);
+    opacity: 0.08;
     transform: translateY(-6px);
   }
 }
