@@ -45,12 +45,13 @@ hr {
   padding: 16px 0;
 }
 
-.header .logo span{ /* Fix needed */
+.header .logo span {
+  /* Fix needed */
   font: var(--font-body-regular);
   color: var(--color-brand-primary);
 }
 
-.logo img{
+.logo img {
   height: 20px;
 }
 
@@ -70,7 +71,12 @@ hr {
 .hero h1 {
   font: var(--font-display-1);
   color: var(--color-brand-primary-light);
-  background: -webkit-linear-gradient(290deg, var(--color-brand-accent) 0%, #11181c 50%, #11181c 100%);
+  background: -webkit-linear-gradient(
+    290deg,
+    var(--color-brand-accent) 0%,
+    #11181c 50%,
+    #11181c 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -101,7 +107,8 @@ hr {
   color: var(--color-brand-accent);
 }
 
-.navbar a i, .navbar a:focus i{
+.navbar a i,
+.navbar a:focus i {
   font: var(--font-heading-2);
 }
 
@@ -132,7 +139,9 @@ hr {
   background-color: #030404ed;
 }
 
-.overlay a:hover, .overlay .active, .overlay li:hover>a{
+.overlay a:hover,
+.overlay .active,
+.overlay li:hover > a {
   color: var(--color-brand-accent);
 }
 
@@ -154,7 +163,6 @@ hr {
   left: 30px;
   font-size: 10px;
 }
-
 
 /*--------------------------------------------------------------
 # Language switcher
@@ -181,7 +189,7 @@ hr {
   object-fit: contain;
 }
 
-.dropbtn:hover{
+.dropbtn:hover {
   background-color: var(--color-neutral-100);
 }
 
@@ -334,15 +342,15 @@ hr {
   }
 
   /* Improve touch targets for mobile */
-  .btn-custom, .btn-custom2 {
+  .btn-custom,
+  .btn-custom2 {
     min-height: 44px; /* iOS recommended touch target */
   }
 
   .collaboration img {
-  padding: 0 0 24px 0;
+    padding: 0 0 24px 0;
   }
 }
-
 
 @media (max-width: 1012px) {
   .hero .hero-img img {
@@ -375,7 +383,8 @@ hr {
   box-shadow: none;
 }
 
-.section-header h2, .portfolio-description h1 {
+.section-header h2,
+.portfolio-description h1 {
   font: var(--font-display-2);
   color: var(--color-brand-primary);
   text-transform: none;
@@ -440,15 +449,14 @@ section {
   background-size: cover;
 }
 
-#project5 img{
+#project5 img {
   transition-duration: 400ms;
-  position:relative;
+  position: relative;
 }
 
-#project5:hover img{
+#project5:hover img {
   transform: translate(-107px, -58px);
 }
-
 
 #project6 {
   background: linear-gradient(45deg, #bfcee8 0%, #788ca9 100%);
@@ -469,18 +477,26 @@ section {
 }
 
 #project2 img {
-  opacity: 0;
-  transition-duration: 0ms;
+  background-image: url(assets/img/portfolio/portfolio-2-dot.png);
+  background-size: cover;
+  transform: translateX(0px);
+  transition-duration: 400ms;
 }
 
-#project2:hover img {
-  opacity: 1;
-    transform: translateY(0px);
+#project2:hover {
+  background-image: url(assets/img/portfolio/portfolio-2-end.png);
+  background-size: cover;
+  transition-duration: 400ms;
+}
+
+#project2 img:hover {
+  background-size: cover;
+  transform: translateX(400px);
 }
 
 #project4 img {
   transition-duration: 400ms;
-  position:relative;
+  position: relative;
   top: 30px;
 }
 
@@ -560,12 +576,14 @@ section {
   padding-bottom: 40px;
 }
 
-.portfolio-hero h2, .portfolio-description h2 {
+.portfolio-hero h2,
+.portfolio-description h2 {
   font: var(--font-heading-1);
   margin-bottom: var(--space-medium);
 }
 
-.portfolio-hero p, .portfolio-description p {
+.portfolio-hero p,
+.portfolio-description p {
   font: var(--font-body-regular);
   margin-bottom: var(--space-large);
 }
@@ -585,12 +603,14 @@ section {
   margin-bottom: var(--space-section);
 }
 
-.sub-section ul, section ul {
+.sub-section ul,
+section ul {
   list-style-image: url("assets/icon/arrow-right.svg");
   margin-bottom: var(--space-large);
 }
 
-.sub-section ul li, section ul li  {
+.sub-section ul li,
+section ul li {
   margin-bottom: 12px;
   padding-left: 8px;
   font: var(--font-body-regular);
@@ -678,7 +698,7 @@ section {
 # Toolbox / InfoBox
 --------------------------------------------------------------*/
 
-.toolbox{
+.toolbox {
   margin-top: var(--space-xxxlarge);
   margin-bottom: var(--space-xlarge);
 }
@@ -720,7 +740,8 @@ section {
 # Info Box
 --------------------------------------------------------------*/
 
-.info-box h3, .info-box p {
+.info-box h3,
+.info-box p {
   text-align: left;
   margin-bottom: 8px;
 }
@@ -1026,7 +1047,7 @@ section {
   width: 400px;
 }
 
-#password::placeholder{
+#password::placeholder {
   font-family: var(--font-family-body);
   color: lightslategray;
 }
