@@ -47,7 +47,7 @@ hr {
 
 .header .logo span {
   /* Fix needed */
-  font: var(--font-body-regular);
+  font: var(--font-heading-3);
   color: var(--color-brand-primary);
 }
 
@@ -148,13 +148,13 @@ hr {
 /* Header content styles */
 .header-content {
   background-color: var(--color-neutral-50);
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px 8px 32px;
   border-radius: var(--border-radius-large);
 }
 
 .header-scrolled .header-content {
   background-color: rgba(240, 242, 245, 0.77);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .badge {
@@ -480,13 +480,12 @@ section {
   background-image: url(assets/img/portfolio/portfolio-2-dot.png);
   background-size: cover;
   transform: translateX(0px);
-  transition-duration: 400ms;
+  transition-duration: 600ms;
 }
 
 #project2:hover {
   background-image: url(assets/img/portfolio/portfolio-2-end.png);
   background-size: cover;
-  transition-duration: 400ms;
 }
 
 #project2 img:hover {
