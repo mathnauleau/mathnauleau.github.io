@@ -182,13 +182,35 @@
       </div>
 
       <div class="sub-section">
-        <h2>Blender 3D</h2>
+        <h2>Unblending Blender 3D</h2>
         <p>
-          I've been using Blender 3D on and off for the last 10 years, but the user interface has always been a
-          challenge. With this case, I tried to analyse, understand, and imagine a renewed interface for Blender 3D, to
-          help new users get a better grasp on how the software works.
+          Blender's complexity is a feature, not a bug—it's what makes it so powerful. But that density shouldn't be the
+          barrier to entry. As a regular user and open-source contributor, I set out to declutter this world-class tool:
+          removing the noise, surfacing the essential, and building an interface that gets out of your way so you can
+          focus on the 3D model, not the software itself.
         </p>
-        <img loading="lazy" src="assets/img/portfolio/project-notthebrief/blender3d.png" alt="image puzzle">
+        <p>The result strips away the noise and guides users toward what matters. See the before and after below.</p>
+
+        <img loading="lazy" src="assets/img/portfolio/project-notthebrief/blender3d-key-features.png"
+          alt="image puzzle">
+        <br><br>
+
+        <div class="overflow-hidden before-after-wrapper rounded-3xl">
+          <!-- before image: width starts at 50% but will change depending on where the slider is -->
+          <div class="before-image-wrapper" style="width: 50%;">
+            <div class="before-image"
+              style="background-image: url(assets/img/portfolio/project-notthebrief/blender3d-before.png);">
+            </div>
+          </div>
+
+          <!-- after image: takes up entire width -->
+          <div class="after-image"
+            style="background-image: url(assets/img/portfolio/project-notthebrief/blender3d-after.png);">
+          </div>
+
+          <!-- draggable slider with handle -->
+          <span class="handle draggable"></span>
+        </div>
       </div>
     </section>
     <!-- ======= End Portfolio Development Section ======= -->
@@ -274,6 +296,7 @@
 
   <!-- Vendor JS Files -->
   <script src="js/localization.js"></script>
+  <script src="js/before-and-after.js"></script>
 
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
