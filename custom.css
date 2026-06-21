@@ -450,7 +450,7 @@ section {
 }
 
 #project5 img {
-  transition-duration: 400ms;
+  transition-duration: 800ms;
   position: relative;
 }
 
@@ -470,6 +470,19 @@ section {
   background-image: url(assets/img/portfolio/ops-bottom.png);
   background-size: cover;
   /* background: linear-gradient(45deg, #F591AC 0%, #F86E66 100%); */
+}
+
+#project13 {
+  background-image: url(assets/img/portfolio/portfolio-13.png);
+  background-size: cover;
+}
+
+#project13:hover {
+  background-image: url(assets/img/portfolio/portfolio-13-end.png);
+}
+
+#project13 img:hover {
+  transform: rotate(30deg);
 }
 
 .portfolio .portfolio-wrap:hover img {
