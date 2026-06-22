@@ -289,11 +289,6 @@
   });
 
   /**
-   * Before/after image sliders
-   */
-  // Before/after slider logic moved to js/before-and-after.js
-
-  /**
    * Animation on scroll
    */
   function aos_init() {
