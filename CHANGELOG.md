@@ -1,39 +1,57 @@
 # Portfolio Changelog
+
 A list of all major changes. To update for each release.
+
+## 21.06.2026 - Version 2.09
+
+### Added
+
+- Blender 3D before/after image slider on the Not the brief project page, following the pattern from https://zachpatrick.com/blog/building-a-before-and-after-image-slider
 
 ## 20.05.2026 - Version 2.08
 
 ### Changed
+
 - Replaced gradient backgrounds with cover images and hover animations on projects 2, 4, and 5
 - Swapped Carl (project 3) for Rise (project 6) in the grid
 - Updated project subtitles with descriptive taglines
 
 ### Fixed
+
 - Hover glitch on project 5 where the moving image lost its hover state
 
 ## 19.05.2026 - Version 2.07
+
 ### Added
+
 - New DesignOps project page showcasing multi-brand design system work (Oxxio & Eneco)
 - Project images and hero assets for DesignOps case study
 
 ### Changed
+
 - Updated portfolio grid to include new DesignOps project
 - Updated design system page project navigation (next project changed from AH Compact to Carl Rental App)
 - Added "Role" localization key (en/fr)
 - Minor CSS refinements (callout margins, content padding)
 
 ### Fixed
+
 - HTML meta tag formatting
 
 ## 03.05.2026 - Version 2.06
+
 ### Changed
+
 - Placed titles outside the project image and adjusted style on both mobile and desktop
 
 ## 03.05.2026 - Version 2.05
+
 ### Added
+
 - Bricolage Grotesque font to pages
 
 ### Changed
+
 - Standardize design tokens and update styles
 - Made social icons bigger
 - Updated bootstrap year and styleguid
@@ -47,101 +65,127 @@ A list of all major changes. To update for each release.
 - Improved Aria labels for accessibility
 
 ### Fixed
+
 - Small accessibility improvement with better Aria label descriptions
 
 ### Removed
+
 - Deleted emojicom
 
 ## 01.05.2026 - Version 2.04
+
 ### Changed
+
 - Top navigation style
 - noopener noreferrer to all links
 - Fixed lang-mobile style
 - Minor fixes of token definitions (color values in Uppercase)
 
 ## 24.04.2026 - Version 2.03
+
 ### Changed
+
 - Deleted the main picture on home
 - Changed the main copy of the home banner and updated the title with Name+Position
 - Height of hero to be 70% to move the rest of the content up
 - Various finetuning of the CSS style
 
 ## 23.09.2025 - Version 2.02.0
+
 ### Changed
+
 - Link to my current job
 - Copy on my about section (en/fr)
 
 ## 23.09.2025 - Version 2.01.0
+
 ### Changed
+
 - Custom stylesheet to ensure that project's titles are directly readable on mobile, without hovering.
 - Renamed the CHANGELOG
 - Updated the pull_request_template.md
 - Enabled language switcher on mobile
 
 ## Version: 2.00.0
-  - Mathieu takes over and makes it his cool portfolio!
+
+- Mathieu takes over and makes it his cool portfolio!
 
 Version: 1.12.0
-  - Updated Bootstrap to version 5.2.3
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated Bootstrap to version 5.2.3
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.11.1
-  - Updated Bootstrap to version 5.2.2
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated Bootstrap to version 5.2.2
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.11.0
-  - Updated Bootstrap to version 5.2.1
-  - Updated all outdated third party vendor libraries to their latest versions
-  - Improved PHP Email From library to ignore server header responses like 409
+
+- Updated Bootstrap to version 5.2.1
+- Updated all outdated third party vendor libraries to their latest versions
+- Improved PHP Email From library to ignore server header responses like 409
 
 Version: 1.10.1
-  - Fixed the counters issue
+
+- Fixed the counters issue
 
 Version: 1.10.0
-  - Updated Bootstrap to version 5.2.0
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated Bootstrap to version 5.2.0
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.9.0
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.8.0
-  - Updated Bootstrap to version 5.1.3
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated Bootstrap to version 5.1.3
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.7.0
-  - Updated Bootstrap to version 5.1.2
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated Bootstrap to version 5.1.2
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.6.0
-  - Fixed slider issue in testimonials and portfolio details sections
+
+- Fixed slider issue in testimonials and portfolio details sections
 
 Version: 1.5.0
-  - Updated Bootstrap to version 5.1.1
-  - Updated all outdated third party vendor libraries to their latest versions
-  - Improved and updated dev version gulp scripts
+
+- Updated Bootstrap to version 5.1.1
+- Updated all outdated third party vendor libraries to their latest versions
+- Improved and updated dev version gulp scripts
 
 Version: 1.4.0
-  - Updated Bootstrap to version 5.0.1
-  - Updated all outdated third party vendor libraries to their latest versions
-  - Fixed navigation links focus color
+
+- Updated Bootstrap to version 5.0.1
+- Updated all outdated third party vendor libraries to their latest versions
+- Fixed navigation links focus color
 
 Version: 1.3.0
-  - Updated Bootstrap to version 5.0.0 Final
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated Bootstrap to version 5.0.0 Final
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.2.0
-  - Updated Bootstrap to version 5.0.0-beta3
-  - Updated all outdated third party vendor libraries to their latest versions
-  - Updated the PHP Email Form to V3.1
+
+- Updated Bootstrap to version 5.0.0-beta3
+- Updated all outdated third party vendor libraries to their latest versions
+- Updated the PHP Email Form to V3.1
 
 Version: 1.1.1
-  - Updated Bootstrap to version 5.0.0-beta2
-  - Updated all outdated third party vendor libraries to their latest versions
+
+- Updated Bootstrap to version 5.0.0-beta2
+- Updated all outdated third party vendor libraries to their latest versions
 
 Version: 1.1.0
-  - Added custom navbar links active on scroll functionality
-  - Small fixes and imrovements in assets/js/main.js
+
+- Added custom navbar links active on scroll functionality
+- Small fixes and imrovements in assets/js/main.js
 
 ## Version: 1.0.0
-  - Initial Release
 
+- Initial Release

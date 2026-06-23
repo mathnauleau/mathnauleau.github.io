@@ -145,11 +145,11 @@
     "label.section_theming_desc_1": "The system is based on design tokens to function. Let me explain.",
     "label.section_theming_desc_2": "Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens replace static values, such as hex codes for color, with self-explanatory names.",
     "label.section_theming_desc_3": "Tokenizing the UI helped us speak the same language between designers and developers. Defining and documenting these rules together made our work faster, clearer, and more consistent.",
-    "label.section_1foundations": "➀ Solid foundations",
+    "label.section_1foundations": "01 — Solid foundations",
     "label.section_1foundations_desc": "To make our system scalable, we had to design and code strong foundations. These would serve as a framework to build more complex components.",
-    "label.section_2components": "➁ 'Headless' components",
+    "label.section_2components": "02 — 'Headless' components",
     "label.section_2components_desc": "We've designed unstyled components, ready to be themed through tokens, starting with the smallest (buttons, labels, lists, ...) up to the more complex ones (product cards, banners, menus, ...). All components were documented, from anatomy, usage, variants, states, motion, properties and accessibility.",
-    "label.section_3workflows": "➂ Workflows / Features",
+    "label.section_3workflows": "03 — Workflows / Features",
     "label.section_3workflows_desc": "Focusing on core functionalities from a White Label perspective, we avoided brand-specific distractions. This increased our speed, consistency, and clarity in communicating stories to the development team.",
     "label.section_documentation": "Documentation — The anchor that holds it together.",
     "label.section_documentation_desc": "Good documentation is crucial for a design system. Every decision, component names, versions, parameters, tokens, and behaviors were recorded in Figma and Storybook to keep UX and Tech perfectly in sync.",
@@ -289,5 +289,11 @@
     "kumiko.section_principle": "Principle",
     "kumiko.section_principle_desc": "The whole idea turned around fitting all pieces together, without using any glue or pin. For this, all piece have to be precisely cut, by hand.",
     "kumiko.section_process": "Process",
-    "kumiko.section_process_desc": "From choosing the design of the lamp to selecting the wood and crafting each detail of the lamp, I roughly spent 2 months at slow pace to finish this project."
+    "kumiko.section_process_desc": "From choosing the design of the lamp to selecting the wood and crafting each detail of the lamp, I roughly spent 2 months at slow pace to finish this project.",
+    "notthebrief.h3_1": "No client, no constraints, just ideas that won't stop spinning until you build them. From vague ideas to vibe-coded prototypes, this is my 'What if' section turned into approximate code that actually work. Exploring and learning altogether.",
+    "notthebrief.p5": "I wanted my recipes in one place — but not another Notion database. So I built Commeat: every recipe is a plain Markdown file synced to a GitHub repo I own. Each edit is a commit, each adaptation a fork — the same model developers use, applied to a family recipe. It also gave me a real reason to learn React properly: building the import flow, commit history, and GitHub sync from scratch instead of following a tutorial.",
+    "notthebrief.p6": "Tools: React/TypeScript, Tailwind CSS, GitHub API, Claude Code",
+    "notthebrief.p7": "Blender’s depth is a strength, not a flaw. But it shouldn’t discourage newcomers. As an occasional user and open-source enthusiast, I explored ways to make the tool more approachable: simplifying panels, highlighting essential actions, and giving more space to the 3D model. The result naturally guides users toward what matters most.",
+    "notthebrief.p8": "The result strips away the noise and guides users toward what matters. See the before and after below.",
+    "notthebrief.p9": "A website that generates a fictional city based on your browser history? A browser extension that turns boring error messages into tiny illustrated quests? A collaborative music player where every listener can mutate the soundtrack in real time by adding strange rules instead of songs? ..."
 }
