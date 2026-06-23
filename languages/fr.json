@@ -139,11 +139,11 @@
     "label.section_theming_desc_1": "Le système est basé sur des jetons de conception pour fonctionner. Laissez-moi vous expliquer.",
     "label.section_theming_desc_2": "Les design tokens représentent des décisions visuelles récurrentes (comme les couleurs, la typographie et l’espacement) en remplaçant les valeurs statiques par des variables explicites.",
     "label.section_theming_desc_3": "La tokenisation de l'interface utilisateur nous a permis de standardiser nos composants et de parler le même langage entre concepteurs et développeurs. Définir et documenter ensemble ces jetons/règles était essentiel pour garantir l'efficacité et la cohérence.",
-    "label.section_1foundations": "➀ Des fondations solides",
+    "label.section_1foundations": "01 — Des fondations solides",
     "label.section_1foundations_desc": "Pour rendre notre système évolutif, nous avons dû concevoir et coder des bases solides qui servent de cadre pour construire des composants plus complexes.",
-    "label.section_2components": "➁ Composants 'Headless'",
+    "label.section_2components": "02 — Composants 'Headless'",
     "label.section_2components_desc": "Nous avons conçu des composants non stylisés, prêts à être thématisés au travers de tokens, des plus petits (boutons, étiquettes, listes, ...) jusqu'aux plus complexes (fiches produits, bannières, menus, ...). Tous les composants ont été documentés, de l'anatomie, l'utilisation, les variantes, les états, le mouvement, les propriétés jusqu'à l'accessibilité.",
-    "label.section_3workflows": "➂ Workflow et fonctionnalités",
+    "label.section_3workflows": "03 — Workflow et fonctionnalités",
     "label.section_3workflows_desc": "En nous concentrant sur les fonctionnalités de base du point de vue de la marque blanche, nous avons évité les distractions spécifiques à chaque marque pour nous concentrer sur les opportunités communes. Cela a augmenté notre rapidité, notre cohérence et notre clarté dans la communication des user stories vers le Product Owner et les développeurs.",
     "label.section_documentation": "Documentation — L'ancre qui maintient le tout.",
     "label.section_documentation_desc": "Une documentation complète est cruciale pour un design system. Chaque décision, noms de composants, versions, paramètres, variables et comportements ont été enregistrés dans nos fichiers Figma et Storybook, favorisant une synchronisation (quasi) parfaite entre UX et Tech.",
@@ -283,5 +283,11 @@
     "kumiko.section_principle": "Principe",
     "kumiko.section_principle_desc": "L'idée générale consistait à assembler toutes les pièces ensemble, sans utiliser de colle ni de vis. Pour cela, toutes les pièces devaient être découpées avec précision, à la main. Le dessin ci-dessous illustre l'assemblage de l'ensemble.",
     "kumiko.section_process": "Processus",
-    "kumiko.section_process_desc": "Du choix du design de la lampe à la sélection du bois et à la fabrication de chaque détail de la lampe, j'ai passé environ 2 mois pour terminer ce projet, entre patience et minutie. Les photos suivantes vous montrent quelques unes des étapes clés."
+    "kumiko.section_process_desc": "Du choix du design de la lampe à la sélection du bois et à la fabrication de chaque détail de la lampe, j'ai passé environ 2 mois pour terminer ce projet, entre patience et minutie. Les photos suivantes vous montrent quelques unes des étapes clés.",
+    "notthebrief.h3_1": "Pas de client, pas de contraintes, juste des idées qui vous empêchent de dormir tant qu'elles ne sont pas construites. Des idées floues aux prototypes vibe-codés, voici ma section « What if » transformée en code approximatif qui fonctionne réellement. Explorer et apprendre en même temps.",
+    "notthebrief.p5": "Je voulais centraliser mes recettes — mais pas dans une autre base Notion. J’ai donc créé Commeat : chaque recette est un fichier Markdown simple synchronisé avec un dépôt GitHub que je possède. Chaque modification est un commit, chaque adaptation un fork — le même modèle que les développeurs utilisent, appliqué à une recette de famille. Cela m’a aussi donné une réelle raison d’apprendre React correctement : construire le flux d’import, l’historique des commits et la synchronisation GitHub depuis zéro plutôt que suivre un tutoriel.",
+    "notthebrief.p6": "Outils : React/TypeScript, Tailwind CSS, API GitHub, Claude Code",
+    "notthebrief.p7": "La richesse de Blender est une force, pas un défaut. Pourtant, elle ne devrait pas freiner les nouveaux utilisateurs. En tant qu’utilisateur sporadique et intéressé par l’open source, j’ai exploré différentes pistes pour rendre l’outil plus accessible : simplifier l’organisation des panneaux, mettre en avant les actions essentielles et laisser davantage de place au modèle 3D. Le résultat recentre l’expérience sur l’essentiel et guide naturellement l’utilisateur.",
+    "notthebrief.p8": "Le résultat guide l'utilisateur vers l’essentiel. Avant/après ci-dessous.",
+    "notthebrief.p9": "Un site web qui génère une ville fictive à partir de votre historique de navigation ? Une extension de navigateur qui transforme les messages d’erreur en mini-quêtes illustrées ? Un lecteur musical collaboratif où chaque utilisateur peut modifier la bande-son en temps réel en ajoutant des règles étranges plutôt que des morceaux ? …"
 }
