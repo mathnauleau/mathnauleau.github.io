@@ -435,6 +435,24 @@ section {
   background-size: cover;
 }
 
+#project2 img {
+  background-image: url(assets/img/portfolio/portfolio-2-dot.png);
+  background-size: cover;
+  transform: translateX(0px);
+  transition-duration: 400ms;
+}
+
+#project2:hover {
+  background-image: url(assets/img/portfolio/portfolio-2-end.png);
+  background-size: cover;
+  transition-duration: 400ms;
+}
+
+#project2:hover img {
+  background-size: cover;
+  transform: translateX(400px);
+}
+
 #project3 {
   background: linear-gradient(75deg, #ffc96f 0%, #f2a868 100%);
 }
@@ -450,7 +468,7 @@ section {
 }
 
 #project5 img {
-  transition-duration: 400ms;
+  transition-duration: 800ms;
   position: relative;
 }
 
@@ -472,26 +490,22 @@ section {
   /* background: linear-gradient(45deg, #F591AC 0%, #F86E66 100%); */
 }
 
+#project13 {
+  background-image: url(assets/img/portfolio/portfolio-13.png);
+  background-size: cover;
+}
+
+#project13:hover {
+  background-image: url(assets/img/portfolio/portfolio-13-end.png);
+  -moz-animation: infinite;
+}
+
+#project13:hover img {
+  transform: rotate(45deg);
+}
+
 .portfolio .portfolio-wrap:hover img {
   transform: translateY(20px);
-}
-
-#project2 img {
-  background-image: url(assets/img/portfolio/portfolio-2-dot.png);
-  background-size: cover;
-  transform: translateX(0px);
-  transition-duration: 400ms;
-}
-
-#project2:hover {
-  background-image: url(assets/img/portfolio/portfolio-2-end.png);
-  background-size: cover;
-  transition-duration: 400ms;
-}
-
-#project2 img:hover {
-  background-size: cover;
-  transform: translateX(400px);
 }
 
 #project4 img {
@@ -1177,4 +1191,113 @@ section ul li {
   bottom: -30%;
   left: auto;
   right: -3vw;
+}
+
+/*--------------------------------------------------------------
+# Slider
+--------------------------------------------------------------*/
+
+.before-after-wrapper {
+  position: relative;
+  aspect-ratio: 1.6;
+  border-radius: var(--border-radius-large);
+}
+
+.before-after-wrapper::before {
+  background-color: hsla(172, 61%, 82%, 75%);
+  border-radius: 40px;
+  top: 10px;
+  color: var(--color-interactive-default);
+  content: "before";
+  left: 10px;
+  opacity: 0;
+  padding: 5px 10px;
+  position: absolute;
+  transition: opacity 200ms ease-in-out;
+  z-index: 15;
+}
+
+:global(.before-after-wrapper.show-before::before) {
+  opacity: 1;
+}
+
+.before-after-wrapper::after {
+  background-color: hsla(172, 61%, 82%, 75%);
+  border-radius: 40px;
+  top: 10px;
+  color: var(--color-interactive-default);
+  opacity: 0;
+  padding: 5px 10px;
+  position: absolute;
+  right: 10px;
+  transition: opacity 200ms ease-in-out;
+  z-index: 15;
+  content: "after";
+}
+
+:global(.before-after-wrapper.show-after::after) {
+  opacity: 1;
+}
+
+.before-image-wrapper {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.before-image {
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.after-image {
+  background-size: cover;
+  inset: 0;
+  position: absolute;
+}
+
+.handle {
+  align-items: center;
+  background: white;
+  color: white;
+  bottom: 0;
+  cursor: col-resize;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 4px;
+  z-index: 20;
+}
+
+.handle::before {
+  content: "";
+  position: absolute;
+  inset: 0 -20px;
+}
+
+.handle::after {
+  align-items: center;
+  background: var(--color-interactive-default);
+  background-image: url("assets/icon/move-horizontal.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 4px solid white;
+
+  color: var(--color-interactive-default);
+  content: "";
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  justify-content: center;
+  max-height: 48px;
+  max-width: 48px;
+  min-height: 48px;
+  min-width: 48px;
 }
