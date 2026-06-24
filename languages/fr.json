@@ -1,5 +1,6 @@
 {
     "nav.about": "À propos",
+    "nav.philosophy": "Philosophie",
     "nav.resource": "Ressource ↗",
     "nav.next": "Suivant",
     "nav.prev": "Précédent",
@@ -22,6 +23,11 @@
     "home.contact_subtitle": "Contactez-moi pour une collaboration ou simplement pour échanger !",
     "home.section_craft": "Projets personnels.",
     "home.section_work": "Étude de cas.",
+    "home.philosophy_overline": "Philosophie",
+    "home.philosophy_phrase_01": "L'espace entre les choses",
+    "home.philosophy_phrase_02": "Frapper aux portes",
+    "home.philosophy_phrase_03": "L'arbre et la forêt",
+    "home.philosophy_phrase_04": "Les processus forgent la culture",
     "home.portfolio_white_label_description": "La base invisible d'applications multi-marques · eCommerce · 2024",
     "home.portfolio_designops_description": "Faire évoluer le design et la culture UX · Énergie · 2026",
     "home.portfolio_pantry_system_description": "Un seul système pour unifier 30 applications · Design system · 2024",

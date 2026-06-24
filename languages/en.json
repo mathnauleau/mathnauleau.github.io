@@ -1,5 +1,6 @@
 {
     "nav.about": "About",
+    "nav.philosophy": "Philosophy",
     "nav.resource": "Resource ↗",
     "nav.next": "Up next",
     "nav.prev": "Previous project",
@@ -22,6 +23,11 @@
     "home.contact_subtitle": "Reach out for a collaboration, share feedback, or just say hi!",
     "home.section_craft": "Side projects",
     "home.section_work": "Selected work",
+    "home.philosophy_overline": "Philosophy",
+    "home.philosophy_phrase_01": "The space between things",
+    "home.philosophy_phrase_02": "Prototypes over decks",
+    "home.philosophy_phrase_03": "Zooming in and out",
+    "home.philosophy_phrase_04": "Process shapes culture",
     "home.portfolio_white_label_description": "The invisible foundation of multi-brand apps · eCommerce · 2024",
     "home.portfolio_designops_description": "Scaling design & culture · Energy · 2026",
     "home.portfolio_pantry_system_description": "One system to unify 30 apps · System thinking · 2024",

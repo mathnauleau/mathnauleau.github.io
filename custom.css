@@ -32,7 +32,7 @@ h3 {
 h5 {
   font: var(--font-label);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: var(--color-brand-accent);
 }
 
@@ -47,7 +47,7 @@ hr {
 
 .header .logo span {
   /* Fix needed */
-  font: var(--font-body-regular);
+  font: var(--font-heading-3);
   color: var(--color-brand-primary);
 }
 
@@ -148,13 +148,13 @@ hr {
 /* Header content styles */
 .header-content {
   background-color: var(--color-neutral-50);
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px 8px 32px;
   border-radius: var(--border-radius-large);
 }
 
 .header-scrolled .header-content {
   background-color: rgba(240, 242, 245, 0.77);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .badge {
@@ -385,7 +385,7 @@ hr {
 
 .section-header h2,
 .portfolio-description h1 {
-  font: var(--font-display-2);
+  font: var(--font-display-1);
   color: var(--color-brand-primary);
   text-transform: none;
 }
@@ -1057,6 +1057,123 @@ section ul li {
 .collaboration img {
   width: 220px;
   height: auto;
+}
+
+/*--------------------------------------------------------------
+# Philosophy Section
+--------------------------------------------------------------*/
+.philosophy {
+  /* --- local, non-tokenized exceptions (no matching token exists) --- */
+  --phi-title-size: clamp(
+    3.25rem,
+    6vw,
+    5.5rem
+  ); /* hero title exceeds --font-size-64 scale ceiling */
+  --phi-numeral-size: 13.75rem; /* 220px ghost numeral, well beyond scale */
+
+  color: var(--color-text-primary);
+  /* background:
+    radial-gradient(120% 90% at 88% -10%, rgba(255, 255, 255, 0.18), transparent 55%),
+    linear-gradient(150deg,
+      var(--color-brand-accent-light) -20%,
+      var(--color-brand-accent)       32%,
+      var(--color-brand-accent-dark)  118%); */
+  margin-bottom: var(--space-section);
+}
+
+.philosophy__block {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-48);
+  border-bottom: 1.5px solid var(--color-neutral-100);
+  transition: var(--transition-normal) ease;
+}
+
+.philosophy__block:nth-child(odd) {
+  border-right: 1.5px solid var(--color-neutral-100);
+}
+
+.philosophy__block:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.philosophy__numeral {
+  position: absolute;
+  top: -0.25em;
+  right: -0.04em;
+  font-family: var(--font-family-display);
+  font-weight: 800;
+  font-size: var(--phi-numeral-size);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: var(--color-text-primary);
+  opacity: 0.05;
+  pointer-events: none;
+  user-select: none;
+  transition:
+    color var(--transition-normal) ease,
+    transform var(--transition-slow) cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.philosophy__phrase {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  font-size: var(--font-size-48);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  max-width: 12ch;
+  text-wrap: balance;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-24);
+  transition: color var(--transition-fast) ease;
+}
+
+.philosophy__body {
+  font-family: var(--font-family-body);
+  font-weight: 300;
+  font-size: var(--font-size-20);
+  line-height: var(--line-height-large);
+  color: var(--color-text-primary);
+  opacity: 0.8;
+  max-width: 42ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.philosophy__body strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .philosophy__block:hover .philosophy__numeral {
+    color: var(--color-text-primary);
+    opacity: 0.08;
+    transform: translateY(-6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy {
+    padding: var(--space-64) 0;
+  }
+
+  .philosophy__block {
+    padding: var(--space-40) 0;
+    border-right: none !important;
+  }
+
+  .philosophy__block:nth-last-child(-n + 2) {
+    border-bottom: 1.5px solid var(--phi-hairline);
+  }
+
+  .philosophy__block:last-child {
+    border-bottom: none;
+  }
+
+  .philosophy__phrase {
+    font-size: var(--font-size-40);
+  }
 }
 
 .protected-img {
