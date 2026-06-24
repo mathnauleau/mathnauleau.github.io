@@ -430,6 +430,15 @@ section {
   background: linear-gradient(45deg, #ccdff6 0%, #6b98ff 100%);
 }
 
+#project1 img {
+  transition-duration: 500ms;
+  transform: translateY(0px);
+}
+
+#project1:hover img {
+  transform: translateY(20px);
+}
+
 #project2 {
   background-image: url(assets/img/portfolio/portfolio-2.png);
   background-size: cover;
@@ -439,13 +448,12 @@ section {
   background-image: url(assets/img/portfolio/portfolio-2-dot.png);
   background-size: cover;
   transform: translateX(0px);
-  transition-duration: 400ms;
+  transition-duration: 500ms;
 }
 
 #project2:hover {
   background-image: url(assets/img/portfolio/portfolio-2-end.png);
   background-size: cover;
-  transition-duration: 400ms;
 }
 
 #project2:hover img {
@@ -500,7 +508,21 @@ section {
   -moz-animation: infinite;
 }
 
+#project9 {
+  background-image: url(assets/img/portfolio/portfolio-9-day.jpg);
+  background-size: cover;
+}
+
+#project9:hover {
+  background-image: url(assets/img/portfolio/portfolio-9-night.jpg);
+  -moz-animation: infinite;
+}
+
 #project13:hover img {
+  transform: rotate(45deg);
+}
+
+#project9:hover img {
   transform: rotate(45deg);
 }
 
