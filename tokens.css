@@ -118,32 +118,6 @@
   --color-status-info: #dae8f1;
   --color-status-critical: #ff4500;
 
-  /* Legacy color aliases for backward compatibility */
-  --color-primary-light: var(--color-brand-primary-light);
-  --color-primary: var(--color-brand-primary);
-  --color-primary-dark: var(--color-brand-primary-dark);
-
-  --color-secondary-light: var(--color-brand-accent-light);
-  --color-secondary: var(--color-brand-accent);
-  --color-secondary-dark: var(--color-brand-accent-dark);
-
-  --color-background: var(--color-background-light);
-
-  --color-gray-1: var(--color-neutral-50);
-  --color-gray-2: var(--color-neutral-100);
-  --color-gray-3: var(--color-neutral-200);
-  --color-gray-4: var(--color-neutral-300);
-  --color-gray-5: var(--color-neutral-400);
-  --color-gray-6: var(--color-neutral-500);
-  --color-gray-7: var(--color-neutral-600);
-  --color-gray-8: var(--color-neutral-700);
-  --color-gray-9: var(--color-neutral-800);
-  --color-gray-10: var(--color-neutral-900);
-
-  --color-critical: var(--color-status-warning);
-  --color-information: var(--color-status-info);
-  --color-danger: var(--color-status-critical);
-
   /* Border
     ================================================================= */
   /* Border color */
@@ -205,30 +179,4 @@
   --color-status-warning: #ffa500;
   --color-status-info: #0e3352;
   --color-status-critical: #b13508;
-
-  /* Legacy color aliases */
-  --color-primary-light: var(--color-brand-primary-light);
-  --color-primary: var(--color-brand-primary);
-  --color-primary-dark: var(--color-brand-primary-dark);
-
-  --color-secondary-light: var(--color-brand-accent-light);
-  --color-secondary: var(--color-brand-accent);
-  --color-secondary-dark: var(--color-brand-accent-dark);
-
-  --color-background: var(--color-background-light);
-
-  --color-gray-1: var(--color-neutral-50);
-  --color-gray-2: var(--color-neutral-100);
-  --color-gray-3: var(--color-neutral-200);
-  --color-gray-4: var(--color-neutral-300);
-  --color-gray-5: var(--color-neutral-400);
-  --color-gray-6: var(--color-neutral-500);
-  --color-gray-7: var(--color-neutral-600);
-  --color-gray-8: var(--color-neutral-700);
-  --color-gray-9: var(--color-neutral-800);
-  --color-gray-10: var(--color-neutral-900);
-
-  --color-critical: var(--color-status-warning);
-  --color-information: var(--color-status-info);
-  --color-danger: var(--color-status-critical);
 }
