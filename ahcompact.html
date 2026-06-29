@@ -28,8 +28,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
@@ -52,7 +53,7 @@
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
-    <div class="container-xxl d-flex justify-content-between">
+    <div class="container-xxl d-flex justify-content-between header-content">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
@@ -67,14 +68,21 @@
           <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
           <li><a class="nav-link scrollto"
               href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
-              data-i18n="nav.resource">Resource</a>
+              rel="noopener noreferrer" data-i18n="nav.resource">Resource</a>
           </li>
+
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
+
           <li class="dropdown">
-            <span class="badge rounded-pill bg-primary">Beta</span>
-            <button class="dropbtn"><img src="assets/icon/language.svg" alt="choose language"></button>
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+              <img id="current-flag" src="assets/icon/en.svg" alt="current language flag">
+            </button>
             <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg" alt="english flag"></a>
-              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/en.svg" alt="french flag"></a>
+              <button type="button" onclick="changeLanguage('en')" aria-label="Switch language to english"><img
+                  src="assets/icon/en.svg" alt="english flag"></button>
+              <button type="button" onclick="changeLanguage('fr')" aria-label="Traduire en Français"><img
+                  src="assets/icon/fr.svg" alt="french flag"></button>
             </div>
           </li>
         </ul>
@@ -125,7 +133,7 @@
             </div>
             <div class="col-8">
               <p>
-                <a href="https://www.ah.nl/technology/ah-compact" target="_blank">ah.nl</a>
+                <a href="https://www.ah.nl/technology/ah-compact" target="_blank" rel="noopener noreferrer">ah.nl</a>
               </p>
             </div>
           </div>
@@ -181,7 +189,7 @@
 
         <div class="row g-3">
           <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
+            <div class="info-box rounded-4">
               <strong>+23%</strong>
               <h4 data-i18n="ahcompact.section_key_results_subtitle_01">increased revenue</h4>
               <p data-i18n="ahcompact.section_key_results_desc_01">After 1 year, between the MVP and the last version.
@@ -190,7 +198,7 @@
           </div>
 
           <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
+            <div class="info-box rounded-4">
               <strong>+30K</strong>
               <h4 data-i18n="ahcompact.section_key_results_subtitle_02">extra active users</h4>
               <p data-i18n="ahcompact.section_key_results_desc_02">In the last year, we multiplied our user base by 2.
@@ -199,7 +207,7 @@
           </div>
 
           <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
+            <div class="info-box rounded-4">
               <strong>+15%</strong>
               <h4 data-i18n="ahcompact.section_key_results_subtitle_03">increased conversion</h4>
               <p data-i18n="ahcompact.section_key_results_desc_03">through user research and various AB tests.</p>
@@ -207,7 +215,7 @@
           </div>
 
           <div class="col-xl-3 col-md-6">
-            <div class="info-box bg-light rounded-4">
+            <div class="info-box rounded-4">
               <strong>+16</strong>
               <h4 data-i18n="ahcompact.section_key_results_subtitle_04">Successful launches</h4>
               <p data-i18n="ahcompact.section_key_results_desc_04">We expanded our service from 3 to 16 cities.</p>
@@ -365,12 +373,12 @@
         </div>
 
         <div class="col-6">
-          <a href="carl.html" class="portfolio-link">
+          <a href="dailyui.html" class="portfolio-link">
             <div class="prev-next right">
               <div class="col-12 gx-2">
                 <p class="direction"><span data-i18n="nav.next">Up next</span><i class="bi bi-arrow-right"></i></p>
                 <br>
-                <span class="title">Car Rental App</span>
+                <span class="title">Not the brief.</span>
               </div>
             </div>
           </a>
@@ -384,36 +392,32 @@
   <!-- ======= Footer ======= -->
   <footer class="footer">
     <div class="copyright">
-      <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> | 2025</p>
+      <p>Created with <a href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a> |
+        2026</p>
       <div class="footer-social">
         <ul>
           <li>
-            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau"
-              aria-label="Visit my Instaram profile" target="_blank">
+aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-instagram"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/"
-              aria-label="Visit my LinkedIn profile" target="_blank">
+aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-linkedin"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.github.com/mathnauleau"
-              aria-label="Visit my Github profile" target="_blank">
+aria-label="Visit my Github profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday"
-              aria-label="Visit my Etsy profile" target="_blank">
+aria-label="Visit my Etsy profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-explicit-fill"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau"
-              aria-label="Visit my Dribbble profile" target="_blank">
+aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-dribbble"></i>
             </a>
           </li>

@@ -1,5 +1,5 @@
-## Pull request checklist
+## Issue description
 
+## Pull request checklist
 - [ ] I've updated the localization
-- [ ] I've 'tinyfied' all new images
-- [ ] I checked spelling
+- [ ] I've updated the [CHANGELOG](https://github.com/mathnauleau/mathnauleau.github.io/blob/main/CHANGELOG.md)

@@ -16,15 +16,16 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
 
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -44,7 +45,7 @@
 
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top">
-  <div class="container-xxl d-flex justify-content-between">
+  <div class="container-xxl d-flex justify-content-between header-content">
     <a href="../index.html" class="logo d-flex align-items-center">
       <!-- <img src="assets/img/logo.png" alt="logo"> -->
       <span>Mathieu Nauleau</span>
@@ -59,16 +60,11 @@
         <li><a class="nav-link scrollto" href="../about.html">About</a></li>
         <li><a class="nav-link scrollto"
             href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
-            data-i18n="nav.resource">Resource</a>
+            rel="noopener noreferrer" data-i18n="nav.resource">Resource</a>
         </li>
-        <li class="dropdown">
-          <span class="badge rounded-pill bg-primary">Beta</span>
-          <button class="dropbtn"><img src="../assets/icon/language.svg"></button>
-          <div class="dropdown-content">
-            <a href="#" onclick="changeLanguage('en')"><img src="../assets/icon/en.svg"></a>
-            <a href="#" onclick="changeLanguage('fr')"><img src="../assets/icon/fr.svg"></a>
-          </div>
-        </li>
+
+        <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
+        <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>

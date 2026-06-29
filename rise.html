@@ -28,8 +28,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
@@ -52,7 +53,7 @@
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
-    <div class="container-xxl d-flex justify-content-between">
+    <div class="container-xxl d-flex justify-content-between header-content">
       <a href="index.html" class="logo d-flex align-items-center">
         <!-- <img src="assets/img/logo.png" alt="logo"> -->
         <span>Mathieu Nauleau</span>
@@ -67,17 +68,23 @@
           <li><a class="nav-link scrollto" href="about.html" data-i18n="nav.about">About</a></li>
           <li><a class="nav-link scrollto"
               href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
-              data-i18n="nav.resource">Resource</a>
-          </li>
-          <li class="dropdown">
-            <span class="badge rounded-pill bg-primary">Beta</span>
-            <button class="dropbtn"><img src="assets/icon/language.svg" alt="choose language"></button>
-            <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg" alt="english flag"></a>
-              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/en.svg" alt="french flag"></a>
-            </div>
+              rel="noopener noreferrer" data-i18n="nav.resource">Resource</a>
           </li>
 
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
+
+          <li class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+              <img id="current-flag" src="assets/icon/en.svg" alt="current language flag">
+            </button>
+            <div class="dropdown-content">
+              <button type="button" onclick="changeLanguage('en')" aria-label="Switch language to english"><img
+                  src="assets/icon/en.svg" alt="english flag"></button>
+              <button type="button" onclick="changeLanguage('fr')" aria-label="Traduire en Français"><img
+                  src="assets/icon/fr.svg" alt="french flag"></button>
+            </div>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -126,7 +133,8 @@
             </div>
             <div class="col-8">
               <p>
-                <a href="https://www.safran-group.com/companies/safran-cabin" target="_blank">Safran Cabin</a>
+                <a href="https://www.safran-group.com/companies/safran-cabin" target="_blank"
+                  rel="noopener noreferrer">Safran Cabin</a>
               </p>
             </div>
           </div>
@@ -190,7 +198,7 @@
           <img loading="lazy" src="assets/img/portfolio/project6/view-10.png" alt="illustration of process">
         </div>
         <div class="col-lg-8 col-sm-12">
-          <h2>➀ Products and processes study</h2>
+          <h2>01 — Products and processes study</h2>
           <p>
             We first conducted a detailed study of all related processes, from
             the backend processes (at the catering company, ...) to the
@@ -207,7 +215,7 @@
           <img loading="lazy" src="assets/img/portfolio/project6/view-01.png" alt="illustratio of business plan">
         </div>
         <div class="col-lg-8 col-sm-12">
-          <h2>➁ Stakeholder &amp; ecosystem analysis</h2>
+          <h2>02 — Stakeholder &amp; ecosystem analysis</h2>
           <p>
             By interviewing experts and several stakeholders, we were able to
             map and highlight their needs, powers, and interests to one
@@ -223,7 +231,7 @@
           <img loading="lazy" src="assets/img/portfolio/project6/view-03.png" alt="illustration of connected themes">
         </div>
         <div class="col-lg-8 col-sm-12">
-          <h2>➂ Macro &amp; Micro trend research</h2>
+          <h2>03 — Macro &amp; Micro trend research</h2>
           <p>
             Using the scenario planning method and interviewing experts to get
             valuable insights, we analyzed the mega-trends of the world, the
@@ -354,36 +362,32 @@
   <!-- ======= Footer ======= -->
   <footer class="footer">
     <div class="copyright">
-      <p>Created with <a href="https://bootstrapmade.com/" target="_blank">Bootstrap</a> | 2025</p>
+      <p>Created with <a href="https://bootstrapmade.com/" target="_blank" rel="noopener noreferrer">Bootstrap</a> |
+        2026</p>
       <div class="footer-social">
         <ul>
           <li>
-            <a class="nav-link social-links" href="http://instagram.com/mathieunauleau"
-              aria-label="Visit my Instaram profile" target="_blank">
+aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-instagram"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/"
-              aria-label="Visit my LinkedIn profile" target="_blank">
+aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-linkedin"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.github.com/mathnauleau"
-              aria-label="Visit my Github profile" target="_blank">
+aria-label="Visit my Github profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday"
-              aria-label="Visit my Etsy profile" target="_blank">
+aria-label="Visit my Etsy profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-explicit-fill"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau"
-              aria-label="Visit my Dribbble profile" target="_blank">
+aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-dribbble"></i>
             </a>
           </li>

@@ -6,6 +6,15 @@ function updateContent(langData) {
     });
 }
 
+// Function to update the current flag based on language
+function updateCurrentFlag(lang) {
+    const currentFlag = document.getElementById('current-flag');
+    if (currentFlag) {
+        currentFlag.src = `assets/icon/${lang}.svg`;
+        currentFlag.alt = `${lang === 'en' ? 'english' : 'french'} flag`;
+    }
+}
+
 // Function to set the language preference
 function setLanguagePreference(lang) {
     localStorage.setItem('language', lang);
@@ -24,28 +33,13 @@ async function changeLanguage(lang) {
 
     const langData = await fetchLanguageData(lang);
     updateContent(langData);
-    // toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
+    updateCurrentFlag(lang);
 }
-
-// Function to toggle Arabic stylesheet based on language selection
-// function toggleArabicStylesheet(lang) {
-//     const head = document.querySelector('head');
-//     const link = document.querySelector('#styles-link');
-
-//     if (link) {
-//         head.removeChild(link); // Remove the old stylesheet link
-//     } else if (lang === 'ar') {
-//         const newLink = document.createElement('link');
-//         newLink.id = 'styles-link';
-//         newLink.rel = 'stylesheet';
-//         head.appendChild(newLink);
-//     }
-// }
 
 // Call updateContent() on page load
 window.addEventListener('DOMContentLoaded', async () => {
     const userPreferredLanguage = localStorage.getItem('language') || 'en';
     const langData = await fetchLanguageData(userPreferredLanguage);
     updateContent(langData);
-    toggleArabicStylesheet(userPreferredLanguage);
+    updateCurrentFlag(userPreferredLanguage);
 }); 
