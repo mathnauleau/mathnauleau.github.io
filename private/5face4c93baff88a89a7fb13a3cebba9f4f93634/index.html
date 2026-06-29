@@ -146,6 +146,38 @@
     </section>
     <!-- ======= END Portfolio Hero ======= -->
 
+    <!-- ======= START Portfolio Section Highlight ======= -->
+    <section class="portfolio-section-highlight container-fluid" style="height: fit-content">
+      <div class="col-9 container-xxl">
+        <h2>A word on Design Operations</h2>
+        <div class="row gx-5">
+          <div class="col-lg-4 col-md-0">
+            <div class="img-box rounded-4"></div>
+          </div>
+          <div class="col-lg-8 col-md-12">
+            <p>
+              DesignOps is the practice of creating the people, processes, tools, and standards that help design teams
+              work efficiently and consistently. Instead of focusing on designing individual features, DesignOps
+              focuses on improving how design happens across an organization.
+            </p>
+            <p>
+              It brings together elements such as design systems, workflows, documentation, governance, collaboration,
+              and quality assurance. By reducing repetitive work and creating shared ways of working, DesignOps
+              enables teams to deliver better experiences faster and at a higher level of quality.
+            </p>
+            <p style="margin-bottom: 0">
+              The goal of DesignOps is to help design scale with the business. As more teams contribute to a product,
+              DesignOps ensures they remain aligned, consistent, and user-focused—making it possible to deliver great
+              customer experiences while supporting broader business goals, such as faster delivery, higher customer
+              retention, and fewer customer support requests.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= END Portfolio Section Highlight ======= -->
+
+
     <!-- ======= Start Portfolio Content ======= -->
     <section class="portfolio-description container-xl col-lg-9">
 
@@ -161,7 +193,8 @@
           failed — and people remembered. Meanwhile, only ~30% of users relied on the app, and the company was
           pushing hard for that number to grow.
         </p>
-        <img loading="lazy" src="https://placehold.co/1200x300" alt="Overview of the fragmented ecosystem">
+        <img loading="lazy" src="../../assets/img/portfolio/designops/situation.png"
+          alt="Token-based architecture and multi-brand theming">
       </div>
 
       <!-- MY ROLE -->
@@ -175,12 +208,71 @@
           Figma closely with React and Compose, and driving adoption across teams. While staying hands-on, my goal
           was clear: enable teams to scale the system without depending on me to maintain it.
         </p>
-        <img loading="lazy" src="https://placehold.co/1200x300" alt="Multi-brand design system overview">
+        <img loading="lazy" src="../../assets/img/portfolio/designops/what-is-designops.png"
+          alt="Token-based architecture and multi-brand theming">
       </div>
 
-      <!-- 1. SCALABLE FOUNDATION -->
       <div class="sub-section">
-        <h2 data-i18n="designops_section_singletruth">① A Scalable, Machine-Readable Foundation</h2>
+        <h2>Symptoms & Frictions</h2>
+        <div class="row">
+          <div class="portfolio-info">
+            <div class="row">
+              <h4 class="col-4">#1 Designers with no time to think</h4>
+              <div class="col-8">
+                <p><strong>Designers created ideas in 1–2 days while developers waited.</strong> There was no time for
+                  research, problem framing, ideation, or prototyping. Once design was finished, it went straight to
+                  implementation without any design review. The bottleneck was real.</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <h4 class="col-4">#2 Designing straight into high-fidelity</h4>
+              <div class="col-8">
+                <p><strong>We believed speed meant skipping exploration.</strong> Designers jumped to high-fidelity
+                  mockups without evidence, without challenging assumptions. The designer role became a graphics
+                  operator, not a problem solver.</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <h4 class="col-4">#3 Little shared expertise or peer review</h4>
+              <div class="col-8">
+                <p><strong>Designers felt isolated in squads with no time for guilds or knowledge sharing.</strong> Peer
+                  review for consistency and standards was a luxury we couldn't afford.</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <h4 class="col-4">#4 No coordination across squads</h4>
+              <div class="col-8">
+                <p><strong>Without design velocity, time was allocated day-to-day.</strong> Designers couldn't say no to
+                  product managers. Squads competed rather than collaborated. PMs ring-fenced their designer.</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <h4 class="col-4">#5 Low-quality delivery</h4>
+              <div class="col-8">
+                <p><strong>Designers never reviewed code.</strong> When designs shipped, they rarely matched the
+                  original. We were trying to define the design system while building the app simultaneously—a critical
+                  mistake.</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <h4 class="col-4">#6 No trust in the design system</h4>
+              <div class="col-8">
+                <p><strong>In six months, we'd shipped two components.</strong> Many compromises, confusing setup, and
+                  designers weren't even happy with the results. This wasn't a system—it was a liability.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="sub-section">
+        <h2 data-i18n="designops_section_singletruth">01 — A design system the community would trust</h2>
         <p data-i18n="designops_section_singletruth_desc">
           The first step was radical simplification. I consolidated 10+ fragmented libraries into one unified,
           token-based foundation: semantic color, typography, spacing, and elevation tokens — structured to be
@@ -190,25 +282,29 @@
           Oxxio and Eneco — including light and dark mode — was handled entirely through token overrides, with
           zero component duplication. Design and engineering finally spoke the same language.
         </p>
-        <img loading="lazy" src="https://placehold.co/1200x300" alt="Token-based architecture and multi-brand theming">
+        <img loading="lazy" src="../../assets/img/portfolio/designops/bento-design-system.png"
+          alt="Token-based architecture and multi-brand theming">
       </div>
 
       <!-- 2. GOVERNANCE -->
       <div class="sub-section">
-        <h2 data-i18n="designops_section_ambiguity">② Removing Ambiguity</h2>
-        I introduced structured governance across three levels. A contribution model defined who could propose,
-        validate, and merge changes. A validation process introduced quality gates before components reached
-        production. And versioning rules gave engineers predictable, stable releases to build on.<br><br>
-        I also wrote clear guidelines for when to use Material Design vs custom vs native components, with
-        cross-platform documentation for React and Compose grounded in real use cases — not abstract rules.
-        Teams stopped debating and started shipping.
+        <h2 data-i18n="designops_section_ambiguity">02 — Removing Ambiguity</h2>
+        <p>
+          I introduced structured governance across three levels. A contribution model defined who could propose,
+          validate, and merge changes. A validation process introduced quality gates before components reached
+          production. And versioning rules gave engineers predictable, stable releases to build on.<br><br>
+          I also wrote clear guidelines for when to use Material Design vs custom vs native components, with
+          cross-platform documentation for React and Compose grounded in real use cases — not abstract rules.
+          Teams stopped debating and started shipping.
         </p>
-        <img loading="lazy" src="https://placehold.co/1200x300" alt="Governance model and decision frameworks">
+        <img loading="lazy" src="../../assets/img/portfolio/designops/bento-designops.png"
+          alt="Token-based architecture and multi-brand theming">
       </div>
 
       <!-- 3. AI-POWERED WORKFLOWS -->
       <div class="sub-section">
-        <h2 data-i18n="designops_section_ai">③ AI-Powered Design Workflows</h2>
+        <h2 data-i18n="designops_section_ai">03 — AI-Powered Design Workflows (Scalable, Machine-Readable Foundation)
+        </h2>
         <p data-i18n="designops_section_ai_desc">
           I didn't wait for AI to become standard practice — I piloted it while building the system. The goal
           was to make AI a genuine accelerator for the team, not a buzzword in a slide deck.<br><br>
@@ -220,11 +316,14 @@
           structure Figma files so they're consumable by AI tools and automated pipelines. These workflows are
           now part of how the team operates — and a foundation for scaling AI adoption further.
         </p>
+        <img loading="lazy" src="../../assets/img/portfolio/designops/automation.png"
+          alt="Token-based architecture and multi-brand theming">
+
       </div>
 
       <!-- 4. ADOPTION -->
       <div class="sub-section">
-        <h2 data-i18n="designops_section_adoption">④ Driving Adoption through DesignOps</h2>
+        <h2 data-i18n="designops_section_adoption">04 — Driving Adoption through DesignOps</h2>
         <p data-i18n="designops_section_adoption_desc">
           Building the system was the easy part. Getting 40 contributors across two brands to actually use it —
           that was the real challenge.<br><br>
@@ -242,9 +341,9 @@
 
       <!-- 5. QUALITY BAR -->
       <div class="sub-section">
-        <h2 data-i18n="designops_section_quality">⑤ Setting the Quality Bar</h2>
+        <h2 data-i18n="designops_section_quality">Setting the Quality Bar</h2>
         <p data-i18n="designops_section_quality_desc">
-          Trust isn't rebuilt through documentation — it's rebuilt through consistently excellent work. I
+          Trust isn't rebuilt through documentation, it's rebuilt through consistently excellent work. I
           designed key components myself to set a visible standard, and made deliberate, opinionated decisions
           on patterns that had been left ambiguous for too long.<br><br>
           I introduced design system quality gates: structured checkpoints before any component was considered
@@ -262,29 +361,27 @@
             <ul>
               <li data-i18n="designops_section_impact_1">Design system adoption steadily increased across ~40
                 contributors</li>
-              <li data-i18n="designops_section_impact_2">Figma-to-code pipeline aligned, reducing design–dev drift
-                significantly</li>
+              <li data-i18n="designops_section_impact_2">The Figma-to-code pipeline reduced design–dev drift
+                significantly.</li>
               <li data-i18n="designops_section_impact_3">AI workflows integrated into production, cutting
-                documentation
-                and review time</li>
+                documentation and review time, allowing us to focus on more valuable activities</li>
               <li data-i18n="designops_section_impact_4">Governance model reduced component duplication and
                 inconsistency across platforms</li>
             </ul>
           </div>
           <div class="col-lg-6 col-sm-12">
-            <h2 data-i18n="designops_section_learning">Challenges &amp; Learnings</h2>
+            <h2 data-i18n="designops_section_learning">Learnings</h2>
             <ul>
-              <li data-i18n="designops_section_learning_1">Initial developer resistance required sustained engagement
-                —
-                mandates don't build adoption, relationships do</li>
+              <li data-i18n="designops_section_learning_1">DesignOps is fundamentally about culture. Process shapes
+                mindset, mindset shapes output</li>
               <li data-i18n="designops_section_learning_2">Senior-level decisions were often political; framing the
                 system as a business asset, not a design tool, was key</li>
               <li data-i18n="designops_section_learning_3">Lack of metrics early on meant relying on qualitative
-                signals
-                — a lesson in instrumenting systems from day one</li>
-              <li data-i18n="designops_section_learning_4">A design system is not a UI library. It's a change
-                management
-                tool — and it only works if people believe in it</li>
+                signals, a lesson in instrumenting systems from day one</li>
+              <li data-i18n="designops_section_learning_4">Design system now defines the brief AI works with and
+                quality
+                of the output
+              </li>
             </ul>
           </div>
         </div>
@@ -294,12 +391,13 @@
       <div class="sub-section">
         <h2 data-i18n="designops_section_next">What's Next</h2>
         <p data-i18n="designops_section_next_desc">
-          The foundation is solid — but the work isn't done. The next phase is about scaling intelligence into
-          the system itself: introducing adoption and quality metrics so impact becomes measurable, strengthening
-          contribution workflows to reduce bottlenecks, and deepening AI integration to automate more of the
-          design-to-code pipeline.<br><br>
-          The vision is a design system that's not just used by teams — but actively consumed by AI agents,
-          development tools, and automated pipelines. A system that scales leverage, not headcount.
+          By the end of the year, the App will transitioned by 70% to Spark Design System, when the Web platfforms
+          will
+          be at 20%. Company-wide, contribution workflows and deepening AI integration will automate more of the
+          design-to-code pipeline. The vision is a design system that's not just used by teams, but actively consumed
+          by
+          AI agents, development
+          tools, and automated pipelines.
         </p>
       </div>
 
@@ -313,7 +411,8 @@
           <a href="../../whitelabel.html" class="portfolio-link">
             <div class="prev-next left">
               <div class="col-12">
-                <p class="direction"><i class="bi bi-arrow-left"></i><span data-i18n="nav.prev">Previous Project</span>
+                <p class="direction"><i class="bi bi-arrow-left"></i><span data-i18n="nav.prev">Previous
+                    Project</span>
                 </p>
                 <br>
                 <span class="title">White Label App</span>
