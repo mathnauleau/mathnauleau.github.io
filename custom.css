@@ -149,12 +149,11 @@ hr {
 .header-content {
   background-color: var(--color-neutral-50);
   padding: 8px 16px 8px 16px;
-  border-radius: var(--border-radius-large);
 }
 
 .header-scrolled .header-content {
-  background-color: rgba(240, 242, 245, 0.77);
   backdrop-filter: blur(10px);
+  border-bottom: 1px var(--color-neutral-300) solid;
 }
 
 .badge {
@@ -397,8 +396,8 @@ hr {
 # Layout
 --------------------------------------------------------------*/
 .header {
-  padding: 16px;
-  background: transparent;
+  padding: 16px 16px 0px 16px;
+  background: var(--color-background-light);
   border-bottom: none;
 }
 
@@ -409,8 +408,8 @@ hr {
 }
 
 .header.header-scrolled {
-  padding: 16px;
-  background: transparent;
+  padding: 16px 12px 0px 12px;
+  background: var(--color-neutral-50);
   box-shadow: none;
 }
 
