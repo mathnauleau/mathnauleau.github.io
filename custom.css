@@ -148,13 +148,12 @@ hr {
 /* Header content styles */
 .header-content {
   background-color: var(--color-neutral-50);
-  padding: 8px 16px 8px 32px;
-  border-radius: var(--border-radius-large);
+  padding: 8px 16px 8px 16px;
 }
 
 .header-scrolled .header-content {
-  background-color: rgba(240, 242, 245, 0.77);
-  backdrop-filter: blur(8px);
+  background-color: var(--color-neutral-50);
+  border-bottom: 1px var(--color-neutral-300) solid;
 }
 
 .badge {
@@ -366,8 +365,8 @@ hr {
 # Layout
 --------------------------------------------------------------*/
 .header {
-  padding: 16px;
-  background: transparent;
+  padding: 16px 16px 0px 16px;
+  background: var(--color-background-light);
   border-bottom: none;
 }
 
@@ -378,8 +377,8 @@ hr {
 }
 
 .header.header-scrolled {
-  padding: 16px;
-  background: transparent;
+  padding: 16px 12px 0px 12px;
+  background: var(--color-neutral-50);
   box-shadow: none;
 }
 
@@ -430,6 +429,15 @@ section {
   background: linear-gradient(45deg, #ccdff6 0%, #6b98ff 100%);
 }
 
+#project1 img {
+  transition-duration: 500ms;
+  transform: translateY(0px);
+}
+
+#project1:hover img {
+  transform: translateY(20px);
+}
+
 #project2 {
   background-image: url(assets/img/portfolio/portfolio-2.png);
   background-size: cover;
@@ -439,13 +447,12 @@ section {
   background-image: url(assets/img/portfolio/portfolio-2-dot.png);
   background-size: cover;
   transform: translateX(0px);
-  transition-duration: 400ms;
+  transition-duration: 500ms;
 }
 
 #project2:hover {
   background-image: url(assets/img/portfolio/portfolio-2-end.png);
   background-size: cover;
-  transition-duration: 400ms;
 }
 
 #project2:hover img {
@@ -500,7 +507,21 @@ section {
   -moz-animation: infinite;
 }
 
+#project9 {
+  background-image: url(assets/img/portfolio/portfolio-9-day.jpg);
+  background-size: cover;
+}
+
+#project9:hover {
+  background-image: url(assets/img/portfolio/portfolio-9-night.jpg);
+  -moz-animation: infinite;
+}
+
 #project13:hover img {
+  transform: rotate(45deg);
+}
+
+#project9:hover img {
   transform: rotate(45deg);
 }
 
