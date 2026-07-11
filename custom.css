@@ -147,7 +147,7 @@ hr {
 
 /* Header content styles */
 .header-content {
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-background-light);
   padding: 8px 16px 8px 16px;
 }
 
@@ -378,7 +378,7 @@ hr {
 
 .header.header-scrolled {
   padding: 16px 12px 0px 12px;
-  background: var(--color-neutral-50);
+  background: var(--color-background-light);
   box-shadow: none;
 }
 
@@ -805,6 +805,14 @@ section ul li {
   background-image: url(assets/img/portfolio/project1/what-is-design-system.png);
   background-size: contain;
   background-repeat: no-repeat;
+  padding: 0;
+}
+
+.img-box4 {
+  height: 100%;
+  /* background-color: var(--color-information); */
+  background-image: url(assets/img/ops-scope.png);
+  background-size: cover;
   padding: 0;
 }
 
