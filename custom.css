@@ -152,7 +152,7 @@ hr {
 }
 
 .header-scrolled .header-content {
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-neutral-0);
   border-bottom: 1px var(--color-neutral-300) solid;
 }
 
