@@ -147,7 +147,7 @@ hr {
 
 /* Header content styles */
 .header-content {
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-background-light);
   padding: 8px 16px 8px 16px;
 }
 
@@ -378,7 +378,7 @@ hr {
 
 .header.header-scrolled {
   padding: 16px 12px 0px 12px;
-  background: var(--color-neutral-50);
+  background: var(--color-background-light);
   box-shadow: none;
 }
 
