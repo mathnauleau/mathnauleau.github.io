@@ -213,7 +213,7 @@
           to fix it had failed, and people remembered. Meanwhile, only ~30% of users relied on the app, and the company
           was pushing hard for that number to grow.
         </p>
-        <img loading="lazy" src="../../assets/img/portfolio/designops/situation.png"
+        <img loading="lazy" src="../../assets/img/portfolio/designops/fragmented-ecosystem.png"
           alt="Token-based architecture and multi-brand theming">
       </div>
 
@@ -335,14 +335,27 @@
           alt="Token-based architecture and multi-brand theming">
       </div>
 
+      <div class="sub-section">
+        <h2 data-i18n="designops_section_singletruth">DesignOps Roadmap: from insights to action plan</h2>
+        <p data-i18n="designops_section_singletruth_desc">
+          In the first months, I ran a design survey to surface pain points and tooling frustrations, then followed up
+          with regular 1-1s with designers for more personal, ongoing feedback. I also talked with design leads and my
+          manager to understand strategic priorities and where DesignOps could have the most impact.<br><br>
+          I grouped these inputs into recurring themes: process, tooling, documentation, collaboration, and turned
+          them into clear initiatives, each tied to a specific goal and measurable metrics (when possible). This kept
+          the roadmap grounded in the team's real experience while staying aligned with leadership's expectations.
+        </p>
+        <img loading="lazy" src="../../assets/img/portfolio/designops/designops-roadmap.png" alt="DesignOps roadmap">
+        <img loading="lazy" src="../../assets/img/portfolio/designops/designops-roadmap2.png" alt="DesignOps roadmap">
+      </div>
 
       <header class="section-header">
         <h5>Strategy</h5>
-        <h2>Drive bold system changes, champion design practice, and unite designers.</h2>
+        <h1>Drive bold system changes, champion design practice, and unite designers.</h1>
       </header>
 
       <div class="sub-section">
-        <h2 data-i18n="designops_section_singletruth">01 — A design system the community would trust</h2>
+        <h2 data-i18n="designops_section_singletruth">01 — Removing Ambiguity</h2>
         <p data-i18n="designops_section_singletruth_desc">
           The first step was radical simplification. I consolidated 10+ fragmented libraries into one unified,
           token-based foundation: semantic color, typography, spacing, and elevation tokens, structured to be
@@ -351,14 +364,18 @@
           interoperable across React and Compose, and ready for AI-assisted workflows. Multi-brand theming for
           Oxxio and Eneco (including light and dark modes) was handled entirely through token overrides, with
           zero component duplication. Design and engineering finally spoke the same language.
+          <br><br>Component-wise, I stayed close to implementation: reviewing shipped components, flagging drift, and
+          using those moments to reinforce standards rather than issue mandates. Over time, using the system stopped
+          feeling like extra work... it became the default.
+          <br><br>Some of the design libraries and documentation created the first month:
         </p>
-        <img loading="lazy" src="../../assets/img/portfolio/designops/bento-design-system.png"
+        <img loading="lazy" src="../../assets/img/portfolio/designops/design-libraries.png"
           alt="Token-based architecture and multi-brand theming">
       </div>
 
       <!-- 2. GOVERNANCE -->
       <div class="sub-section">
-        <h2 data-i18n="designops_section_ambiguity">02 — Removing Ambiguity</h2>
+        <h2 data-i18n="designops_section_ambiguity">02 — A design system the community would trust</h2>
         <p>
           I introduced structured governance across three levels. A contribution model defined who could propose,
           validate, and merge changes. A validation process introduced quality gates before components reached
@@ -366,9 +383,58 @@
           I also wrote clear guidelines for when to use Material Design vs custom vs native components, with
           cross-platform documentation for React and Compose grounded in real use cases, not abstract rules.
           Teams stopped debating and started shipping.
+          <br><br>Key initiatives that shaped the design system's direction:
+        </p>
+        <img loading="lazy" src="../../assets/img/portfolio/designops/bento-design-system.png"
+          alt="Token-based architecture and multi-brand theming">
+      </div>
+
+      <!-- 4. ADOPTION -->
+      <div class="sub-section">
+        <h2 data-i18n="designops_section_adoption">03 — Drive adoption &amp; culture through DesignOps</h2>
+        <p data-i18n="designops_section_adoption_desc">
+          Building the system was the easy part. Getting 40 contributors across two brands to actually use it:
+          that was the real challenge.<br><br>
+          I treated adoption as a product problem. I made the system visible through monthly demos and internal
+          newsletters. I made it understandable by simplifying libraries and restructuring Figma files from
+          scratch. I introduced regular alignment rituals: cross-functional syncs, design reviews, and
+          retrospectives, to keep design and engineering moving together.<br><br>
+          I also stayed close to implementation: reviewing shipped components, flagging drift, and using those
+          moments to reinforce standards rather than issue mandates. Over time, using the system stopped feeling
+          like extra work... it became the default.
         </p>
         <img loading="lazy" src="../../assets/img/portfolio/designops/bento-designops.png"
           alt="Token-based architecture and multi-brand theming">
+      </div>
+
+      <!-- 5. QUALITY BAR -->
+      <div class="sub-section">
+        <h2 data-i18n="designops_section_quality">Setting the Quality Bar</h2>
+        <p data-i18n="designops_section_quality_desc">
+          Trust isn't rebuilt through documentation, it's rebuilt through consistently excellent work. I
+          designed key components myself to set a visible standard, and made deliberate, opinionated decisions
+          on patterns that had been left ambiguous for too long.<br><br>
+          I introduced design system quality gates: structured checkpoints before any component was considered
+          production-ready, covering accessibility, cross-platform consistency, token compliance, and engineering
+          alignment. Quality became a shared responsibility, not a solo audit at the end of the process.
+        </p>
+        <img loading="lazy" src="../../assets/img/portfolio/designops/governance.png"
+          alt="Token-based architecture and multi-brand theming">
+      </div>
+
+      <!-- 3. AI-POWERED WORKFLOWS -->
+      <div class="sub-section">
+        <h2 data-i18n="designops_section_quality">AI Workflows the team can use</h2>
+        <p data-i18n="designops_section_quality_desc">
+          The pace of design and development forced us to rethink documentation: manual, post-hoc spec sheets couldn't
+          keep up. Using two Claude Skills (documentation and design-system) connected to the Figma MCP, I built a
+          workflow where I still design components by hand, but the system automatically documents everything: states,
+          context, use cases, accessibility requirements, all populated directly into the Figma canvas. Every team
+          member can use this independently to document their own work. For me, it freed up time to focus on reviews and
+          the harder, more strategic components.
+        </p>
+        <img loading="lazy" src="../../assets/img/portfolio/designops/ai-workflow.png"
+          alt="AI-powered design workflows">
       </div>
 
       <!-- 3. AI-POWERED WORKFLOWS 
@@ -390,53 +456,6 @@
           alt="Token-based architecture and multi-brand theming">
 
       </div> -->
-
-      <!-- 4. ADOPTION -->
-      <div class="sub-section">
-        <h2 data-i18n="designops_section_adoption">03 — Driving Adoption through DesignOps</h2>
-        <p data-i18n="designops_section_adoption_desc">
-          Building the system was the easy part. Getting 40 contributors across two brands to actually use it:
-          that was the real challenge.<br><br>
-          I treated adoption as a product problem. I made the system visible through monthly demos and internal
-          newsletters. I made it understandable by simplifying libraries and restructuring Figma files from
-          scratch. I introduced regular alignment rituals: cross-functional syncs, design reviews, and
-          retrospectives, to keep design and engineering moving together.<br><br>
-          I also stayed close to implementation: reviewing shipped components, flagging drift, and using those
-          moments to reinforce standards rather than issue mandates. Over time, using the system stopped feeling
-          like extra work... it became the default.
-        </p>
-        <img loading="lazy" src="../../assets/img/portfolio/designops/designops-roadmap.png" alt="DesignOps roadmap">
-        <img loading="lazy" src="../../assets/img/portfolio/designops/designops-roadmap2.png" alt="DesignOps roadmap">
-      </div>
-
-      <!-- 5. QUALITY BAR -->
-      <div class="sub-section">
-        <h2 data-i18n="designops_section_quality">Setting the Quality Bar</h2>
-        <p data-i18n="designops_section_quality_desc">
-          Trust isn't rebuilt through documentation, it's rebuilt through consistently excellent work. I
-          designed key components myself to set a visible standard, and made deliberate, opinionated decisions
-          on patterns that had been left ambiguous for too long.<br><br>
-          I introduced design system quality gates: structured checkpoints before any component was considered
-          production-ready, covering accessibility, cross-platform consistency, token compliance, and engineering
-          alignment. Quality became a shared responsibility, not a solo audit at the end of the process.
-        </p>
-        <!-- <img loading="lazy" src="https://placehold.co/1200x300" alt="Component quality standards and gates"> -->
-      </div>
-
-      <!-- 5. QUALITY BAR -->
-      <div class="sub-section">
-        <h2 data-i18n="designops_section_quality">AI Workflows the team can use</h2>
-        <p data-i18n="designops_section_quality_desc">
-          The pace of design and development forced us to rethink documentation: manual, post-hoc spec sheets couldn't
-          keep up. Using two Claude Skills (documentation and design-system) connected to the Figma MCP, I built a
-          workflow where I still design components by hand, but the system automatically documents everything: states,
-          context, use cases, accessibility requirements, all populated directly into the Figma canvas. Every team
-          member can use this independently to document their own work. For me, it freed up time to focus on reviews and
-          the harder, more strategic components.
-        </p>
-        <img loading="lazy" src="../../assets/img/portfolio/designops/ai-workflow.png"
-          alt="AI-powered design workflows">
-      </div>
 
       <!-- IMPACT & LEARNINGS -->
       <div class="sub-section">
