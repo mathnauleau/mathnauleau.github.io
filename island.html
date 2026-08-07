@@ -92,6 +92,13 @@
   </header>
   <!-- End Header -->
 
+  <nav class="es" aria-label="Table of contents">
+    <a href="#overview" class="active"></a>
+    <a href="#gameplay"></a>
+    <a href="#teamwork"></a>
+    <a href="#end-game"></a>
+  </nav>
+
   <main>
     <!-- ======= START Portfolio Header ======= -->
     <section class="portfolio-header">
@@ -104,7 +111,7 @@
     <!-- ======= END Portfolio Header ======= -->
 
     <!-- ======= START Portfolio hero Section ======= -->
-    <section class="portfolio-description container-xl col-lg-9">
+    <section id="overview" class="portfolio-description container-xl col-lg-9 toc-section">
       <h1>Island Slide Puzzle</h1>
 
       <div class="row">
@@ -166,8 +173,8 @@
     <!-- ======= END Portfolio Header ======= -->
 
     <!-- ======= Start Portfolio Development Section ======= -->
-    <section class="portfolio-description container-xl col-lg-9">
-      <div class="sub-section">
+    <section class="portfolio-description container-xl col-lg-9 toc-section">
+      <div id="gameplay" class="sub-section toc-section">
         <h2 data-i18n="island.section_gameplay">Gameplay</h2>
         <p data-i18n="island.section_gameplay_desc">
           Inspired by a mix of minecraft blocks and the dutch islands, we gave
@@ -179,7 +186,7 @@
         <img loading="lazy" src="assets/img/portfolio/project5/view-01.png" alt="image puzzle">
       </div>
 
-      <div class="sub-section">
+      <div id="teamwork" class="sub-section toc-section">
         <h2 data-i18n="island.section_teamwork">Tech &amp; UX teamwork</h2>
         <p data-i18n="island.section_teamwork_desc">
           We challenged ourselves with visual effects and transitions (including a few RIVE animations) to improve the
@@ -206,7 +213,7 @@
         <img loading="lazy" src="assets/img/portfolio/project5/island-animation.gif" alt="animated puzzle">
       </div>
 
-      <div class="sub-section">
+      <div id="end-game" class="sub-section toc-section">
         <h2 data-i18n="island.section_end_game">End of the game</h2>
         <p data-i18n="island.section_end_game_desc">
           The full island is revealed once all the blocks are in the right
@@ -307,6 +314,52 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const links = Array.from(document.querySelectorAll(".es a"));
+      const sections = links
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      if (!sections.length) return;
+
+      const setActive = (id) => {
+        links.forEach((link) => {
+          const isActive = link.getAttribute("href") === `#${id}`;
+          link.classList.toggle("active", isActive);
+          link.setAttribute("aria-current", isActive ? "page" : "false");
+        });
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActive(entry.target.id);
+            }
+          });
+        },
+        {
+          rootMargin: "-30% 0px -50% 0px",
+          threshold: 0.1,
+        }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      window.addEventListener("load", () => {
+        const visibleSection = sections.find((section) => {
+          const rect = section.getBoundingClientRect();
+          return rect.top <= 140 && rect.bottom >= 140;
+        });
+
+        if (visibleSection) {
+          setActive(visibleSection.id);
+        }
+      });
+    });
+  </script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
