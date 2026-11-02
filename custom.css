@@ -748,7 +748,9 @@ section ul li {
 }
 
 .toolbox .info-box {
-  background-color: var(--color-neutral-100);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral-50);
 }
 
 .toolbox .info-box h3 {
@@ -760,6 +762,13 @@ section ul li {
 .toolbox .info-box p {
   font: var(--font-body-regular);
   color: var(--color-neutral-700);
+}
+
+.toolbox .info-box .toolbox-tools {
+  font: var(--font-caption);
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 8px;
 }
 
 .info-box h4 {
@@ -1446,4 +1455,78 @@ section ul li {
   max-width: 48px;
   min-height: 48px;
   min-width: 48px;
+}
+
+.career-path {
+  margin-top: var(--space-xxxlarge);
+}
+
+.timeline {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 var(--space-xlarge) var(--space-large);
+  border-left: 1px solid var(--color-neutral-200);
+}
+
+.timeline__item:last-child {
+  border-left-color: transparent;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 0.2rem;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-background-light);
+  border: 1px solid var(--color-neutral-400);
+}
+
+.timeline__item--current::before {
+  background: var(--color-interactive-active);
+  border-color: var(--color-interactive-active);
+}
+
+.timeline__date {
+  margin: 0 0 var(--space-xsmall);
+  font: var(--font-caption);
+  color: var(--color-neutral-600);
+}
+
+.timeline__role {
+  margin: 0;
+  font: var(--font-heading-3);
+  color: var(--color-brand-primary);
+}
+
+.timeline__company {
+  margin: 0 0 var(--space-xsmall);
+  font: var(--font-body-regular);
+  color: var(--color-neutral-600);
+}
+
+.timeline__projects {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: disc;
+  font: var(--font-body-regular);
+  color: var(--color-neutral-700);
+}
+
+.timeline__projects li {
+  list-style-image: none;
+  margin: 0 0 0.125rem;
+  padding: 0;
+}
+
+.timeline__projects li::marker {
+  color: var(--color-neutral-400);
 }
