@@ -301,5 +301,15 @@
     "notthebrief.p7": "La richesse de Blender est une force, pas un défaut. Pourtant, elle ne devrait pas freiner les nouveaux utilisateurs. En tant qu’utilisateur sporadique et intéressé par l’open source, j’ai exploré différentes pistes pour rendre l’outil plus accessible : simplifier l’organisation des panneaux, mettre en avant les actions essentielles et laisser davantage de place au modèle 3D. Le résultat recentre l’expérience sur l’essentiel et guide naturellement l’utilisateur.",
     "notthebrief.p8": "Le résultat guide l'utilisateur vers l’essentiel. Avant/après ci-dessous.",
     "notthebrief.p9": "Un site web qui génère une ville fictive à partir de votre historique de navigation ? Une extension de navigateur qui transforme les messages d’erreur en mini-quêtes illustrées ? Un lecteur musical collaboratif où chaque utilisateur peut modifier la bande-son en temps réel en ajoutant des règles étranges plutôt que des morceaux ? …",
+<<<<<<< Updated upstream
     "notthebrief.p10": "Je voulais une raison de prendre ma guitare chaque soir, sans avoir à décider quoi travailler. J’ai donc créé Ember : une courte session sur mon iPad, choisie pour moi. Accordage, accords, rythmique, un morceau, une fiche de théorie. L’application écoute via le micro, et chaque étape terminée ajoute une bûche au feu de camp. Un jour manqué et le feu faiblit jusqu’aux braises, mais ne s’éteint jamais. Cela m’a aussi donné une raison d’explorer la Web Audio API : détection de hauteur, reconnaissance d’accords et analyse du rythme, le tout directement dans le navigateur."
+=======
+    "notthebrief.commeat_aria": "Grille de recettes Commeat, défilement des recettes puis filtre sur les plats du soir",
+    "notthebrief.ipad1_aria": "Écran de liste du jour, les tâches se cochent une à une",
+    "notthebrief.ipad1_caption": "Liste du jour",
+    "notthebrief.ipad2_aria": "Graphique de pratique hebdomadaire avec des barres animées",
+    "notthebrief.ipad2_caption": "Graphique de la semaine",
+    "notthebrief.ipad3_aria": "Carrousel de cartes thématiques défilant latéralement",
+    "notthebrief.ipad3_caption": "Carrousel de thèmes"
+>>>>>>> Stashed changes
 }
