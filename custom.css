@@ -748,7 +748,9 @@ section ul li {
 }
 
 .toolbox .info-box {
-  background-color: var(--color-neutral-100);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral-50);
 }
 
 .toolbox .info-box h3 {
@@ -760,6 +762,13 @@ section ul li {
 .toolbox .info-box p {
   font: var(--font-body-regular);
   color: var(--color-neutral-700);
+}
+
+.toolbox .info-box .toolbox-tools {
+  font: var(--font-caption);
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 8px;
 }
 
 .info-box h4 {
