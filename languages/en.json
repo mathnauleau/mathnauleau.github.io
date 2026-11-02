@@ -300,5 +300,16 @@
     "notthebrief.p6": "Tools: React/TypeScript, Tailwind CSS, GitHub API, Claude Code",
     "notthebrief.p7": "Blender’s depth is a strength, not a flaw. But it shouldn’t discourage newcomers. As an occasional user and open-source enthusiast, I explored ways to make the tool more approachable: simplifying panels, highlighting essential actions, and giving more space to the 3D model. The result naturally guides users toward what matters most.",
     "notthebrief.p8": "The result strips away the noise and guides users toward what matters. See the before and after below.",
-    "notthebrief.p9": "A website that generates a fictional city based on your browser history? A browser extension that turns boring error messages into tiny illustrated quests? A collaborative music player where every listener can mutate the soundtrack in real time by adding strange rules instead of songs? ..."
+    "notthebrief.p9": "A website that generates a fictional city based on your browser history? A browser extension that turns boring error messages into tiny illustrated quests? A collaborative music player where every listener can mutate the soundtrack in real time by adding strange rules instead of songs? ...",
+<<<<<<< Updated upstream
+    "notthebrief.p10": "I wanted a reason to pick up the guitar every night, without having to decide what to practice. So I built Ember: one short session on my iPad, picked for me. Tune, chords, strumming, a song, a theory card. It listens through the mic, and every finished step adds a log to the campfire. Miss a day and the fire dims to embers, but never goes out. It also gave me a reason to dig into the Web Audio API: pitch detection, chord matching and strum timing, all running in the browser."
+=======
+    "notthebrief.commeat_aria": "Commeat recipe grid, scrolling through the recipes then filtering by dinner",
+    "notthebrief.ipad1_aria": "Daily checklist screen, items getting ticked off one by one",
+    "notthebrief.ipad1_caption": "Daily checklist",
+    "notthebrief.ipad2_aria": "Weekly practice chart with bars animating",
+    "notthebrief.ipad2_caption": "Weekly chart",
+    "notthebrief.ipad3_aria": "Carousel of topic cards sliding sideways",
+    "notthebrief.ipad3_caption": "Topic carousel"
+>>>>>>> Stashed changes
 }
