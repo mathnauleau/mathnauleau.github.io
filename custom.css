@@ -602,6 +602,7 @@ section {
 
 .portfolio-header img {
   width: 100%;
+  height: auto;
   border-radius: 16px;
   margin: 100px 0 0 0;
 }
