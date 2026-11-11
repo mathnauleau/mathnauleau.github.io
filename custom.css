@@ -42,7 +42,7 @@ hr {
 }
 
 .header .logo {
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 .header .logo span {
@@ -148,7 +148,7 @@ hr {
 /* Header content styles */
 .header-content {
   background-color: var(--color-background);
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px;
 }
 
 .header-scrolled .header-content {
@@ -365,7 +365,7 @@ hr {
 # Layout
 --------------------------------------------------------------*/
 .header {
-  padding: 16px 16px 0px 16px;
+  padding: 0 16px;
   background: var(--color-background);
   border-bottom: none;
 }
@@ -377,9 +377,16 @@ hr {
 }
 
 .header.header-scrolled {
-  padding: 16px 12px 0px 12px;
+  padding: 0 12px;
   background: var(--color-background);
   box-shadow: none;
+}
+
+/* Header nav links: compact vertical padding. :not(.overlay) keeps the open
+   mobile menu's links at full size (they share the .navbar a rule). */
+.navbar:not(.overlay) a {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .section-header h2,
