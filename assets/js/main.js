@@ -304,31 +304,6 @@
   });
 
   /**
-   * iPad mockups: play only while visible, poster only with reduced motion
-   */
-  const ipadVideos = select("video.ipad__screen", true);
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    ipadVideos.forEach((video) => {
-      video.removeAttribute("autoplay");
-      video.load(); // back to the poster, even if playback already started
-    });
-  } else {
-    const ipadObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.play().catch(() => {});
-          } else {
-            entry.target.pause();
-          }
-        });
-      },
-      { threshold: 0.25 }
-    );
-    ipadVideos.forEach((video) => ipadObserver.observe(video));
-  }
-
-  /**
    * Initiate Pure Counter
    */
   new PureCounter();

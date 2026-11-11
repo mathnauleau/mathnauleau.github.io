@@ -4,10 +4,6 @@ function updateContent(langData) {
         const key = element.getAttribute('data-i18n');
         element.textContent = langData[key];
     });
-    document.querySelectorAll('[data-i18n-aria-label]').forEach(element => {
-        const key = element.getAttribute('data-i18n-aria-label');
-        element.setAttribute('aria-label', langData[key]);
-    });
 }
 
 // Function to update the current flag based on language
