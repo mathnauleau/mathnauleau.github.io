@@ -607,35 +607,6 @@ section {
   margin: 100px 0 0 0;
 }
 
-/* WIP ribbon drawn in CSS over the hero image (desktop and mobile).
-   Remove with the .hero-wip wrapper in designsystem.html once the project is no longer WIP. */
-.hero-wip {
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  margin: 100px 0 0 0;
-}
-
-.hero-wip img {
-  display: block;
-  margin: 0;
-}
-
-.wip-ribbon {
-  position: absolute;
-  top: 18px;
-  left: -40px;
-  width: 150px;
-  padding: 6px 0;
-  transform: rotate(-45deg);
-  background-color: #f8c650;
-  color: #0c1527; /* fixed: stays dark on yellow in dark mode */
-  font: var(--font-label);
-  letter-spacing: 0.08em;
-  text-align: center;
-  pointer-events: none;
-}
-
 /*--------------------------------------------------------------
 # Portfolio hero
 --------------------------------------------------------------*/
