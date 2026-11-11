@@ -602,8 +602,45 @@ section {
 
 .portfolio-header img {
   width: 100%;
+  height: auto;
   border-radius: 16px;
   margin: 100px 0 0 0;
+}
+
+/* TODO placeholder: WIP ribbon drawn in CSS until the mobile hero image
+   (project-hero-wip-mobile.png) has its own. The desktop image already has it baked in,
+   so this only shows below 768px. Remove with the .hero-wip wrapper in designsystem.html. */
+.hero-wip {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 100px 0 0 0;
+}
+
+.hero-wip img {
+  display: block;
+  margin: 0;
+}
+
+.wip-ribbon {
+  position: absolute;
+  top: 18px;
+  left: -40px;
+  width: 150px;
+  padding: 6px 0;
+  transform: rotate(-45deg);
+  background-color: #f8c650; /* matches the ribbon baked into the desktop image */
+  color: #0c1527; /* fixed: stays dark on yellow in dark mode */
+  font: var(--font-label);
+  letter-spacing: 0.08em;
+  text-align: center;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .wip-ribbon {
+    display: none;
+  }
 }
 
 /*--------------------------------------------------------------
