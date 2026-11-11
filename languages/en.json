@@ -41,7 +41,7 @@
     "home.portfolio_island_description": "Design and development of an interactive 3D puzzle · 2022",
     "home.portfolio_sketching_description": "An ongoing archive of ideas in progress · iPad / 3D · 2020–2026",
     "home.portfolio_kumiko_description": "Exploring traditional joinery, piece by piece · 2022",
-    "about.introduction_title": "I'm Mathieu — Senior Product Designer living in Amsterdam since 2015",
+    "about.introduction_title": "I'm Mathieu, Senior Product Designer living in Amsterdam since 2015",
     "about.introduction_desc01": "I love solving puzzles at both product and system level, bringing clarity out of complexity through elegant, simple solutions that make sense to people. My process blends collaboration, strategy, and constant learning.",
     "about.introduction_desc02_a": "Right now, I am working at",
     "about.introduction_desc02_b": ", an international energy company present in 4 countries. My primary focus is on Eneco's design system, Spark.",
@@ -300,5 +300,6 @@
     "notthebrief.p6": "Tools: React/TypeScript, Tailwind CSS, GitHub API, Claude Code",
     "notthebrief.p7": "Blender’s depth is a strength, not a flaw. But it shouldn’t discourage newcomers. As an occasional user and open-source enthusiast, I explored ways to make the tool more approachable: simplifying panels, highlighting essential actions, and giving more space to the 3D model. The result naturally guides users toward what matters most.",
     "notthebrief.p8": "The result strips away the noise and guides users toward what matters. See the before and after below.",
-    "notthebrief.p9": "A website that generates a fictional city based on your browser history? A browser extension that turns boring error messages into tiny illustrated quests? A collaborative music player where every listener can mutate the soundtrack in real time by adding strange rules instead of songs? ..."
+    "notthebrief.p9": "A website that generates a fictional city based on your browser history? A browser extension that turns boring error messages into tiny illustrated quests? A collaborative music player where every listener can mutate the soundtrack in real time by adding strange rules instead of songs? ...",
+    "notthebrief.p10": "I wanted a reason to pick up the guitar every night, without having to decide what to practice. So I built Ember: one short session on my iPad, picked for me. Tune, chords, strumming, a song, a theory card. It listens through the mic, and every finished step adds a log to the campfire. Miss a day and the fire dims to embers, but never goes out. It also gave me a reason to dig into the Web Audio API: pitch detection, chord matching and strum timing, all running in the browser."
 }
