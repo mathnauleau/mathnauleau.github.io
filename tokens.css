@@ -94,9 +94,9 @@
   --color-text-inverted: #ffffff;
 
   /* Background Colors */
-  --color-background: var(--color-neutral-50);
+  --color-background: var(--color-neutral-0);
 
-  --color-background-secondary: var(----color-neutral-100);
+  --color-background-secondary: var(--color-neutral-100);
   --color-background-secondary-hover: var(--color-neutral-300);
 
   /* Border color */
@@ -134,7 +134,7 @@
 .dark {
   --color-neutral-0: #141e2e;
   --color-neutral-50: #141e2e;
-  ----color-neutral-100: #28384f;
+  --color-neutral-100: #28384f;
   --color-neutral-200: #3e4e65;
   --color-neutral-300: #55637a;
   --color-neutral-400: #6e7d96;
@@ -158,10 +158,10 @@
 
   --color-background: #141e2e;
 
-  --color-background-secondary: var(----color-neutral-100);
+  --color-background-secondary: var(--color-neutral-100);
   --color-background-secondary-hover: var(--color-neutral-300);
 
-  --color-border: var(----color-neutral-100);
+  --color-border: var(--color-neutral-100);
 
   --color-action-default: #0e3352;
   --color-action-active: #3f75ff;
