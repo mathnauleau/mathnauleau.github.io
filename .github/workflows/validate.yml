@@ -11,5 +11,29 @@ jobs:
       - name: Checkout the Repository
         uses: actions/checkout@v4
 
-      - name: Run JSON Lint
-        run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/json-lint/master/pipeline.sh)
+      - name: Validate JSON files
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('.')
+          errors = []
+
+          for path in sorted(root.rglob('*.json')):
+              if '.git' in path.parts or 'node_modules' in path.parts or '.venv' in path.parts:
+                  continue
+
+              try:
+                  json.loads(path.read_text(encoding='utf-8'))
+              except Exception as exc:
+                  errors.append(f"{path}: {exc}")
+
+          if errors:
+              for error in errors:
+                  print(error)
+              raise SystemExit(1)
+
+          print('All JSON files are valid.')
+          PY
