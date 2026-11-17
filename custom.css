@@ -473,8 +473,7 @@ section {
    the page can style and script its parts. Everything is scoped under .isl / isl-*.
    Motion is gated: SVG animations pause for prefers-reduced-motion, and the 8 block
    lifts only with a real pointer above 768px (the mobile rule below turns tile hover
-   off). Pointer-follow lives in assets/js/island.js. The gradient shows until the SVG
-   is parsed. */
+   off). The gradient shows until the SVG is parsed. */
 #project5 {
   background: linear-gradient(180deg, #7779f1 0%, #287cd1 100%);
 }
@@ -483,10 +482,6 @@ section {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.isl .px {
-  will-change: transform;
 }
 
 .isl .sun-halo {
