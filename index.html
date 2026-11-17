@@ -244,8 +244,86 @@
         <div class="col-lg-6 col-md-12 portfolio-item">
           <a href="notthebrief.html" class="portfolio-link" data-toggle="modal">
             <div id="project13" class="portfolio-wrap">
-              <img loading="lazy" src="assets/img/portfolio/portfolio-13-overlay.png" class="img-fluid"
-                alt="Vibe-coding projects cover">
+              <!-- Not the brief cover: inline SVG. Styles in custom.css -->
+<svg class="ntb" viewBox="0 0 800 500" fill="none" role="img" aria-label="Not the brief cover">
+<defs>
+<linearGradient id="ntb-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE4B2"/><stop offset="1" stop-color="#FFB18A"/></linearGradient>
+<linearGradient id="ntb-ring" x1="400" y1="145" x2="400" y2="355" gradientUnits="userSpaceOnUse"><stop stop-color="#3B29EB"/><stop offset="1" stop-color="#7879F1"/></linearGradient>
+<linearGradient id="ntb-arc" x1="622.575" y1="70" x2="622.575" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#3B29EB"/><stop offset="1" stop-color="#7879F1"/></linearGradient>
+<linearGradient id="ntb-peach" x1="161.054" y1="130" x2="161.054" y2="370" gradientUnits="userSpaceOnUse"><stop stop-color="#FFD8A9"/><stop offset="1" stop-color="#FFD1A3"/></linearGradient>
+<clipPath id="ntb-clip"><rect width="800" height="500"/></clipPath>
+<path id="ntb-lens" d="M167.033 130C178.171 130 185.248 142.149 180.71 152.321C167.398 182.159 160 215.212 160 250C160 284.788 167.398 317.841 180.71 347.679C185.248 357.851 178.171 370 167.033 370C161.542 370 156.495 366.905 154.216 361.909C138.667 327.813 130 289.915 130 250C130 210.085 138.667 172.187 154.216 138.091C156.495 133.095 161.542 130 167.033 130Z" fill-rule="evenodd" clip-rule="evenodd"/>
+<mask id="ntb-lens-mask" maskUnits="userSpaceOnUse" x="127" y="127" width="59" height="246" fill="black"><rect fill="white" x="127" y="127" width="59" height="246"/><use href="#ntb-lens"/></mask>
+</defs>
+<g clip-path="url(#ntb-clip)">
+<rect width="800" height="500" fill="url(#ntb-bg)"/>
+<rect x="111" y="160" width="30" height="30" fill="#10152E"/>
+<!-- Window frame -->
+<rect opacity="0.3" x="7" y="7" width="786" height="486" rx="83" stroke="#fff" stroke-width="126"/>
+<!-- Dial: the cog spins slowly and turns a notch when the dial is hovered -->
+<g class="dial">
+<circle cx="400" cy="250" r="105" stroke-width="8" stroke="url(#ntb-ring)" pointer-events="visible"/>
+<g class="dial-turn"><g class="dial-spin">
+<path d="M390.713 196.698C393.683 187.767 406.317 187.767 409.287 196.698L411.417 203.105C413.298 208.762 419.757 211.437 425.087 208.767L431.123 205.744C439.539 201.528 448.472 210.461 444.256 218.877L441.233 224.913C438.563 230.243 441.238 236.702 446.895 238.583L453.302 240.713C462.233 243.683 462.233 256.317 453.302 259.287L446.895 261.417C441.238 263.298 438.563 269.757 441.233 275.087L444.256 281.123C448.472 289.539 439.539 298.472 431.123 294.256L425.087 291.233C419.757 288.563 413.298 291.238 411.417 296.895L409.287 303.302C406.317 312.233 393.683 312.233 390.713 303.302L388.583 296.895C386.702 291.238 380.243 288.563 374.913 291.233L368.877 294.256C360.461 298.472 351.528 289.539 355.744 281.123L358.767 275.087C361.437 269.757 358.762 263.298 353.105 261.417L346.698 259.287C337.767 256.317 337.767 243.683 346.698 240.713L353.105 238.583C358.762 236.702 361.437 230.243 358.767 224.913L355.744 218.877C351.528 210.461 360.461 201.528 368.877 205.744L374.913 208.767C380.243 211.437 386.702 208.762 388.583 203.105L390.713 196.698Z" fill="#115F71"/>
+<path d="M385.02 194.805C389.811 180.398 410.19 180.398 414.981 194.805L417.111 201.212C417.838 203.401 420.337 204.435 422.4 203.402L428.437 200.379C442.011 193.58 456.421 207.989 449.621 221.563L446.598 227.601C445.565 229.663 446.6 232.162 448.788 232.89L455.196 235.02C469.602 239.81 469.602 260.19 455.196 264.98L448.788 267.11C446.6 267.838 445.565 270.337 446.598 272.399L449.621 278.437C456.421 292.011 442.011 306.42 428.437 299.621L422.4 296.598C420.337 295.565 417.838 296.599 417.111 298.788L414.981 305.195C410.19 319.602 389.811 319.602 385.02 305.195L382.89 298.788C382.162 296.599 379.663 295.565 377.601 296.598L371.564 299.621C357.989 306.42 343.58 292.011 350.379 278.437L353.403 272.399C354.436 270.337 353.401 267.838 351.212 267.11L344.805 264.98C330.398 260.19 330.398 239.81 344.805 235.02L351.212 232.89C353.401 232.162 354.436 229.663 353.403 227.601L350.379 221.563C343.58 207.989 357.989 193.58 371.564 200.379L377.601 203.402C379.663 204.435 382.162 203.401 382.89 201.212L385.02 194.805Z" stroke-width="8" stroke="#115F71"/>
+<circle cx="400" cy="300" r="7" fill="#FBD0AA"/>
+<circle cx="400" cy="200" r="7" fill="#FBD0AA"/>
+<circle cx="400" cy="167" r="7" fill="#115F71"/>
+<circle cx="400" cy="333" r="7" fill="#115F71"/>
+<circle cx="483" cy="250" r="6.5" stroke="#115F71"/>
+<circle cx="317" cy="250" r="6.5" stroke="#115F71"/>
+</g></g>
+</g>
+<rect x="70" y="220" width="60" height="60" fill="#ED9C3F"/>
+<!-- Window buttons -->
+<circle cx="115" cy="85" r="15" fill="#C4472C"/>
+<circle cx="175" cy="85" r="15" fill="#1D6771"/>
+<circle cx="145" cy="85" r="15" fill="#F7B848"/>
+<!-- Top-right pair: the orange dot orbits the teal one -->
+<circle cx="715" cy="85" r="15" fill="#1D6771"/>
+<circle class="orbit" cx="700" cy="100" r="15" fill="#ED9C3F" style="mix-blend-mode:multiply"/>
+<rect x="190" y="220" width="60" height="60" fill="#F7B848"/>
+<rect x="190" y="130" width="60" height="60" fill="#F7B848"/>
+<rect x="205" y="145" width="30" height="30" rx="9" fill="#FFD6A7"/>
+<rect x="111" y="250" width="79" height="78" fill="#FF6384"/>
+<rect x="190" y="280" width="30" height="30" fill="#C4472C"/>
+<g class="float" style="--s:0s"><rect x="84.4062" y="253.699" width="30" height="30" transform="rotate(28.6987 84.4062 253.699)" fill="#1D6771"/></g>
+<g class="float" style="--s:-1.5s"><rect x="298.105" y="329.301" width="30" height="30" transform="rotate(28.6987 298.105 329.301)" fill="#F7B848"/></g>
+<!-- Address bar: the dot next to it breathes like a loading state -->
+<rect x="293" y="87" width="214" height="26" rx="13" stroke-width="4" stroke="#fff"/>
+<rect class="load" opacity="0.3" x="515" y="85" width="30" height="30" rx="15" fill="#fff"/>
+<rect x="280" y="370" width="30" height="60" fill="#FF6384"/>
+<rect x="160" y="190" width="30" height="60" fill="#AE4698"/>
+<!-- Diamond: turns into a square when hovered -->
+<g class="gem"><rect x="700" y="220" width="42.4273" height="42.4273" transform="rotate(45 700 220)" fill="#7879F1"/></g>
+<rect x="670" y="310" width="60" height="90" fill="#C4472C"/>
+<rect x="250" y="190" width="30" height="120" fill="#FF6384"/>
+<path d="M250 370H280V400H250V430H220V400H190V370H220V340H250V370Z" fill="#73A2BC"/>
+<rect x="250" y="130" width="30" height="30" fill="#FF6384"/>
+<rect x="235" y="220" width="30" height="30" fill="#10152E"/>
+<path d="M78 78L92 92M92 78L78 92M152 78L138 92M108 85H122" stroke-width="3" stroke-linecap="round" stroke="#fff"/>
+<!-- Arcs -->
+<path d="M560.754 48C561.635 48 562.491 48.3002 563.174 48.8557C621.64 96.3432 659 168.809 659 250C659 331.191 621.64 403.657 563.174 451.144C562.491 451.7 561.635 452 560.754 452C557.023 452 555.397 447.159 558.29 444.804C614.861 398.782 651 328.611 651 250C651 171.389 614.861 101.218 558.29 55.1955C555.397 52.8413 557.023 48 560.754 48Z" fill="url(#ntb-arc)"/>
+<use href="#ntb-lens" fill="url(#ntb-peach)"/>
+<path d="M160 250C160 215.212 167.398 182.159 180.71 152.321C185.248 142.149 178.171 130 167.033 130C161.542 130 156.495 133.095 154.216 138.091C138.667 172.187 130 210.085 130 250C130 289.915 138.667 327.813 154.216 361.909C156.495 366.905 161.542 370 167.033 370C178.171 370 185.248 357.851 180.71 347.679C167.398 317.841 160 284.788 160 250Z" stroke-width="6" stroke="url(#ntb-peach)" mask="url(#ntb-lens-mask)"/>
+<!-- Octagon: the switch flips when the octagon is hovered -->
+<g class="oct">
+<path d="M604.853 190L640 225.147V274.853L604.853 310H555.147L520 274.853L520 225.147L555.147 190L604.853 190Z" fill="#AE4698"/>
+<rect x="520" y="225" width="120" height="50" fill="#FF6384"/>
+<rect x="555" y="190" width="50" height="120" fill="#FF6384" style="mix-blend-mode:screen"/>
+<g class="flip"><rect x="563.736" y="256.364" width="32" height="14" rx="7" transform="rotate(-45 563.736 256.364)" fill="#5A51EE"/></g>
+</g>
+<!-- Column: the orange ball breathes on top (scale only, so it keeps covering the column corners) -->
+<circle class="breathe" cx="700" cy="310" r="30" fill="#ED9C3F"/>
+<circle cx="700" cy="400" r="30" fill="#C4472C"/>
+<g class="float" style="--s:-3s"><rect x="238.406" y="89" width="30" height="30" transform="rotate(28.6987 238.406 89)" fill="#73A2BC"/></g>
+<!-- Cursor: the tip is at 0,0. assets/js/ntb-cursor.js moves it after the pointer -->
+<g class="ntb-cursor" transform="translate(485 335)" stroke-width="6" stroke-linejoin="round" pointer-events="none">
+<path d="M0 0L65 28L40 42Z" fill="#3B29EB" stroke="#3B29EB"/>
+<path d="M0 0L40 42L28 63Z" fill="#7879F1" stroke="#7879F1"/>
+</g>
+</g>
+</svg>
             </div>
           </a>
           <div class="portfolio-title">
@@ -716,6 +794,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/ntb-cursor.js"></script>
 </body>
 
 </html>

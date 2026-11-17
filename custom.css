@@ -632,14 +632,102 @@ section {
   }
 }
 
+/* Not the brief: the cover is an inline SVG (see #project13 in index.html), styled
+   under .ntb. Idle: the cog spins, the orange dot orbits, small squares float, the
+   ball and the address-bar dot breathe. Hover (on each shape, real pointer above
+   768px): the dial turns a notch, the octagon's switch flips, the diamond squares
+   up. Animations stop for prefers-reduced-motion. The gradient shows until the
+   SVG is parsed. */
 #project13 {
-  background-image: url(assets/img/portfolio/portfolio-13.png);
-  background-size: cover;
+  background: linear-gradient(32deg, #FFE4B2 0%, #FFB18A 100%);
 }
 
-#project13:hover {
-  background-image: url(assets/img/portfolio/portfolio-13-end.png);
-  -moz-animation: infinite;
+#project13 .ntb {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ntb .dial-spin,
+.ntb .dial-turn {
+  transform-box: view-box;
+  transform-origin: 400px 250px;
+}
+
+.ntb .dial-spin {
+  animation: ntb-spin 40s linear infinite;
+}
+
+.ntb .orbit {
+  transform-box: view-box;
+  transform-origin: 715px 85px;
+  animation: ntb-spin 12s linear infinite;
+}
+
+.ntb .float,
+.ntb .breathe,
+.ntb .flip,
+.ntb .gem {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.ntb .float {
+  animation: ntb-float 6s ease-in-out var(--s, 0s) infinite;
+}
+
+.ntb .breathe {
+  animation: ntb-breathe 4s ease-in-out infinite;
+}
+
+.ntb .load {
+  animation: ntb-load 2.4s ease-in-out infinite;
+}
+
+.ntb .dial-turn,
+.ntb .flip,
+.ntb .gem {
+  transition: transform 500ms cubic-bezier(0.2, 0.9, 0.3, 1.25);
+}
+
+@media (hover: hover) and (min-width: 769px) {
+  .ntb .dial:hover .dial-turn {
+    transform: rotate(90deg);
+  }
+
+  .ntb .oct:hover .flip {
+    transform: rotate(90deg);
+  }
+
+  .ntb .gem:hover {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes ntb-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ntb-float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-6px) rotate(10deg); }
+}
+
+@keyframes ntb-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes ntb-load {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ntb * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 #project9 {
@@ -650,10 +738,6 @@ section {
 #project9:hover {
   background-image: url(assets/img/portfolio/portfolio-9-night.jpg);
   -moz-animation: infinite;
-}
-
-#project13:hover img {
-  transform: rotate(45deg);
 }
 
 #project9:hover img {
