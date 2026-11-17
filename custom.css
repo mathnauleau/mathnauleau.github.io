@@ -469,18 +469,50 @@ section {
   background-size: cover;
 }
 
+/* Island Slide Puzzle: the scene and the 8 block are two animated SVGs stacked
+   with the same 636x397 viewBox. An <img> cannot react to hover inside its SVG,
+   so the block is its own layer: .island-hit is an invisible block-shaped zone,
+   and hovering it lifts the block 8px (8/397 of the tile). The site's mobile rule
+   (max-width: 768px) already switches off tile hover. Animations inside the SVGs
+   pause for prefers-reduced-motion. The gradient shows while they load. */
 #project5 {
-  background-image: url(assets/img/portfolio/portfolio-5.png);
-  background-size: cover;
+  background: linear-gradient(180deg, #7779f1 0%, #287cd1 100%);
 }
 
-#project5 img {
-  transition-duration: 800ms;
-  position: relative;
-}
-
+/* cancel the generic .portfolio-wrap:hover img shift */
 #project5:hover img {
-  transform: translate(-107px, -58px);
+  transform: none;
+}
+
+#project5 .island-hit,
+#project5 .island-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 636 / 397;
+}
+
+#project5 .island-hit {
+  clip-path: polygon(50.71% 68.39%, 66.82% 53.78%, 82.94% 68.39%, 82.94% 84.51%, 66.82% 99.12%, 50.71% 84.51%);
+}
+
+#project5 .island-block {
+  pointer-events: none;
+  transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25);
+}
+
+@media (hover: hover) {
+  #project5 .island-hit:hover + .island-block {
+    transform: translateY(-2.015%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project5 .island-block {
+    transition: none;
+  }
 }
 
 #project6 {
@@ -939,7 +971,7 @@ section ul li {
   padding-top: var(--space-xxlarge);
   padding-bottom: var(--space-xxlarge);
   overflow: visible;
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-accent-purple);
 }
 
 .portfolio-section-highlight h2 {
