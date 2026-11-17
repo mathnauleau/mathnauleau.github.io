@@ -1,0 +1,100 @@
+/* Island Slide Puzzle cover (inline <svg class="isl"> in #project5, index.html).
+   Every rule for the drawing sits in @scope (.isl), so it can't reach the rest of the
+   page. Keyframes are always page-wide, hence the isl- prefix; IDs inside the SVG use
+   the same prefix. Motion is gated: animations stop for prefers-reduced-motion, and
+   the 8 block lifts only with a real pointer above 768px. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project5 {
+  background: linear-gradient(180deg, #7779f1 0%, #287cd1 100%);
+}
+
+@scope (.isl) {
+  :scope {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .sun-halo {
+    animation: isl-halo 5s ease-in-out infinite;
+  }
+
+  .sun-halo2 {
+    animation: isl-halo 5s ease-in-out -1.6s infinite;
+  }
+
+  .beam {
+    animation: isl-sweep 8s ease-in-out infinite;
+  }
+
+  .lamp {
+    animation: isl-lamp 8s ease-in-out infinite;
+  }
+
+  .foam {
+    animation: isl-foam 5s ease-in-out infinite;
+  }
+
+  .glint {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+    animation: isl-glint var(--d, 4s) ease-in-out var(--s, 0s) infinite;
+  }
+
+  .tide {
+    animation: isl-tide 6s ease-in-out infinite;
+  }
+
+  .eight {
+    transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25);
+  }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .eight-wrap:hover .eight {
+      transform: translateY(-8px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .glint {
+      opacity: 0.35;
+    }
+  }
+}
+
+@keyframes isl-halo {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.24); opacity: 0.1; }
+}
+
+@keyframes isl-sweep {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(-1); }
+}
+
+@keyframes isl-lamp {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0.55; }
+}
+
+@keyframes isl-foam {
+  0%, 100% { opacity: 0.5; transform: translate(0, 0); }
+  50% { opacity: 1; transform: translate(var(--fx, 0px), 1.6px); }
+}
+
+@keyframes isl-glint {
+  0%, 100% { opacity: 0; transform: scaleX(0.3); }
+  50% { opacity: 0.55; transform: scaleX(1); }
+}
+
+@keyframes isl-tide {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.78; }
+}
