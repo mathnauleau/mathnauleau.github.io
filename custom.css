@@ -62,7 +62,7 @@ hr {
 .hero {
   width: 100%;
   height: 70vh;
-  margin-top: 56px;
+  margin-top: 0;
   background-size: cover;
   background-image: none;
   text-align: center;
@@ -611,7 +611,7 @@ section {
   width: 100%;
   height: auto;
   border-radius: 16px;
-  margin: 100px 0 0 0;
+  margin: 35px 0 0 0;
 }
 
 /*--------------------------------------------------------------
@@ -679,7 +679,7 @@ section ul li {
 }
 
 .about {
-  margin-top: 100px;
+  margin-top: 35px;
 }
 
 .about h2 {
