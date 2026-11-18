@@ -271,260 +271,411 @@
               <!-- Data tool cover: inline SVG. Styles in assets/css/covers/xl.css
                    An Excel sheet (v12_FINAL, #REF!) sweeps away column by column and
                    an abstract graph tool builds up in its place; switching range updates the charts. -->
-<svg class="xl" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
-<defs>
-<linearGradient id="xl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse"><stop stop-color="#1EC4B4"/><stop offset="1" stop-color="#B1D766"/></linearGradient>
-<linearGradient id="xl-area" x1="0" y1="280" x2="0" y2="470" gradientUnits="userSpaceOnUse"><stop stop-color="#21A366" stop-opacity=".28"/><stop offset="1" stop-color="#21A366" stop-opacity="0"/></linearGradient>
-<filter id="xl-shadow" x="-10%" y="-10%" width="120%" height="130%"><feGaussianBlur stdDeviation="14"/></filter>
-<clipPath id="xl-win"><rect x="70" y="70" width="660" height="480" rx="20"/></clipPath>
-</defs>
-<rect width="800" height="500" fill="url(#xl-bg)"/>
-<rect x="80" y="86" width="640" height="460" rx="20" fill="#0E3B25" opacity=".18" filter="url(#xl-shadow)"/>
-<g clip-path="url(#xl-win)">
-<rect x="70" y="70" width="660" height="480" fill="#EAF5EE"/>
-<circle cx="96" cy="90" r="4.5" fill="#BFD6C8"/><circle cx="112" cy="90" r="4.5" fill="#BFD6C8"/><circle cx="128" cy="90" r="4.5" fill="#BFD6C8"/>
-<text class="t-old" x="400" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#217346" fill-opacity=".75" opacity="0">data_v12_FINAL(3).xlsx</text>
-<rect class="t-new" x="365" y="87" width="70" height="6" rx="3" fill="#217346" fill-opacity=".45"/>
-<!-- The old way: a spreadsheet. Each column sweeps out in turn (--i) -->
-<g class="sheet">
-<g class="xc" style="--i:0" opacity="0">
-<rect x="96" y="108" width="608" height="24" rx="6" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<text x="106" y="124.5" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#217346">fx</text>
-<text x="128" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#5F7A6B">=VLOOKUP(B7;'Data (old)'!A:F;6;FALSE)</text>
-<text x="109" y="177" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">1</text>
-<text x="109" y="219" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">2</text>
-<text x="109" y="261" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">3</text>
-<text x="109" y="303" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">4</text>
-<text x="109" y="345" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">5</text>
-<text x="109" y="387" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">6</text>
-<text x="109" y="429" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">7</text>
-<text x="109" y="471" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">8</text>
-</g>
-<g class="xc" style="--i:0" opacity="0">
-<text x="157" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">A</text>
-<rect x="122" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="132" y="169" width="38" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="122" y="194" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="132" y="211" width="30" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="122" y="236" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="132" y="253" width="20" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="122" y="278" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="132" y="295" width="21" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="122" y="320" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="132" y="337" width="19" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="122" y="362" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="132" y="379" width="24" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="122" y="404" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="122" y="446" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="132" y="463" width="20" height="6" rx="3" fill="#BFD6C8"/>
-</g>
-<g class="xc" style="--i:1" opacity="0">
-<text x="229" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">B</text>
-<rect x="194" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="204" y="169" width="35" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="194" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="194" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="204" y="253" width="44" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="194" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="204" y="295" width="48" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="194" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="204" y="337" width="38" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="194" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="204" y="379" width="19" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="194" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="204" y="421" width="30" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="194" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-</g>
-<g class="xc" style="--i:2" opacity="0">
-<text x="301" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">C</text>
-<rect x="266" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="276" y="169" width="35" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="266" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="266" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="276" y="253" width="27" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="266" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="276" y="295" width="35" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="266" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="266" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="276" y="379" width="44" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="266" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="276" y="421" width="21" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="266" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="276" y="463" width="38" height="6" rx="3" fill="#BFD6C8"/>
-</g>
-<g class="xc" style="--i:3" opacity="0">
-<text x="373" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">D</text>
-<rect x="338" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="348" y="169" width="34" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="338" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="363" y="211" width="35" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="338" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="348" y="253" width="37" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="338" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="367" y="295" width="31" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="338" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="351" y="337" width="47" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="338" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="348" y="379" width="43" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="338" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="378" y="421" width="20" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="338" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="348" y="463" width="46" height="6" rx="3" fill="#BFD6C8"/>
-</g>
-<g class="xc" style="--i:4" opacity="0">
-<text x="445" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">E</text>
-<rect x="410" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="420" y="169" width="42" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="410" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="420" y="211" width="20" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="410" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="420" y="253" width="42" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="410" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="420" y="295" width="31" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="410" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="428" y="337" width="42" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="410" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="420" y="379" width="44" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="410" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="433" y="421" width="37" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="410" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="450" y="463" width="20" height="6" rx="3" fill="#BFD6C8"/>
-</g>
-<g class="xc" style="--i:5" opacity="0">
-<text x="517" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">F</text>
-<rect x="482" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="492" y="169" width="36" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="482" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="492" y="211" width="39" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="482" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="515" y="253" width="27" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="482" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="498" y="295" width="44" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="482" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="482" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="496" y="379" width="46" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="482" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="482" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="519" y="463" width="23" height="6" rx="3" fill="#BFD6C8"/>
-</g>
-<g class="xc" style="--i:6" opacity="0">
-<text x="589" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">G</text>
-<rect x="554" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="564" y="169" width="43" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="554" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="554" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="592" y="253" width="22" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="554" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="567" y="295" width="47" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="554" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="554" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="564" y="379" width="35" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="554" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="554" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="564" y="463" width="35" height="6" rx="3" fill="#BFD6C8"/>
-</g>
-<g class="xc" style="--i:7" opacity="0">
-<text x="661" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">H</text>
-<rect x="626" y="152" width="70" height="40" rx="2" fill="#217346"/>
-<rect x="636" y="169" width="41" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
-<rect x="626" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="647" y="211" width="39" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="626" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="636" y="253" width="22" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="626" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="626" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="668" y="337" width="18" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="626" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="636" y="379" width="26" height="6" rx="3" fill="#BFD6C8"/>
-<rect x="626" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="626" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="649" y="463" width="37" height="6" rx="3" fill="#BFD6C8"/>
-</g>
-<rect class="ants" x="338" y="236" width="70" height="166" rx="2" stroke="#21A366" stroke-width="2.5" stroke-dasharray="6 4" opacity="0"/>
-<g class="ref" opacity="0"><rect x="483" y="321" width="68" height="38" fill="#FDECEC"/>
-<text x="517" y="345" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700" fill="#D64545">#REF!</text></g>
-<g class="sel" opacity="0"><rect x="122" y="152" width="70" height="40" rx="2" stroke="#21A366" stroke-width="3"/>
-<rect x="188" y="188" width="8" height="8" rx="1.5" fill="#21A366" stroke="#fff" stroke-width="1.5"/></g>
-</g>
-<!-- The new tool, abstract: pieces pop in one after another (--d, fraction of the loop) -->
-<g class="app">
-<g class="pop" style="--d:0">
-<rect x="96" y="108" width="124" height="420" rx="14" fill="#fff" fill-opacity=".55" stroke="#C3DBCD" stroke-width="1.2"/>
-<circle cx="122" cy="134" r="10" fill="#21A366"/>
-<rect x="140" y="130" width="54" height="8" rx="4" fill="#0E3B25" fill-opacity=".75"/>
-<circle cx="123" cy="179" r="5" fill="#BFD6C8"/>
-<rect x="135" y="176" width="52" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
-<rect x="108" y="202" width="100" height="26" rx="13" fill="#E3F2E9"/>
-<circle cx="123" cy="215" r="5" fill="#21A366"/>
-<rect x="135" y="212" width="44" height="6" rx="3" fill="#217346" fill-opacity="0.75"/>
-<circle cx="123" cy="251" r="5" fill="#BFD6C8"/>
-<rect x="135" y="248" width="60" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
-<circle cx="123" cy="287" r="5" fill="#BFD6C8"/>
-<rect x="135" y="284" width="38" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
-<circle cx="123" cy="323" r="5" fill="#BFD6C8"/>
-<rect x="135" y="320" width="48" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
-</g>
-<g class="pop" style="--d:.02">
-<rect x="240" y="128" width="150" height="14" rx="7" fill="#0E3B25" fill-opacity=".85"/>
-<rect x="560" y="122" width="144" height="28" rx="14" fill="#D5E6DC"/>
-<rect class="seg-ind" x="562" y="124" width="44" height="24" rx="12" fill="#fff"/>
-<rect x="575" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6"/>
-<rect x="623" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6"/>
-<rect x="671" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6"/>
-</g>
-<g class="pop" style="--d:0.04">
-<rect x="240" y="162" width="150" height="62" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="254" y="176" width="56" height="6" rx="3" fill="#BFD6C8"/>
-<text x="254" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#0E3B25">238</text>
-<path d="M330 210L340 204L350 207L360 196L372 199L382 188" stroke="#21A366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<g class="pop" style="--d:0.055">
-<rect x="398" y="162" width="150" height="62" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="412" y="176" width="44" height="6" rx="3" fill="#BFD6C8"/>
-<text x="412" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#0E3B25">+31%</text>
-<path d="M488 208L498 210L508 200L518 203L530 193L540 190" stroke="#8669DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<g class="pop" style="--d:0.07">
-<rect x="556" y="162" width="148" height="62" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="570" y="176" width="62" height="6" rx="3" fill="#BFD6C8"/>
-<text x="570" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#0E3B25">72%</text>
-<circle cx="676" cy="193" r="16" stroke="#D5E6DC" stroke-width="6"/>
-<circle cx="676" cy="193" r="16" stroke="#21A366" stroke-width="6" stroke-linecap="round" pathLength="100" stroke-dasharray="72 100" transform="rotate(-90 676 193)"/>
-</g>
-<g class="pop" style="--d:.085">
-<rect x="240" y="238" width="296" height="260" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="256" y="254" width="84" height="8" rx="4" fill="#0E3B25" fill-opacity=".75"/>
-<circle cx="462" cy="258" r="4" fill="#21A366"/><rect x="470" y="255" width="18" height="6" rx="3" fill="#BFD6C8"/>
-<circle cx="498" cy="258" r="4" fill="#8669DB"/><rect x="506" y="255" width="18" height="6" rx="3" fill="#BFD6C8"/>
-<path d="M256 300H520M256 340H520M256 380H520M256 420H520" stroke="#E3F2E9" stroke-width="1.2" stroke-dasharray="4 4"/>
-<path d="M256 470H520" stroke="#C3DBCD" stroke-width="1.2"/>
-</g>
-<!-- Two takes of the data: set 1 draws in, set 2 replaces it when the range is switched -->
-<path class="area1" d="M256 430L300 400L344 410L388 360L432 370L476 320L520 300L520 470L256 470Z" fill="url(#xl-area)" opacity="0"/>
-<path class="ln1" pathLength="1" d="M256 452L300 442L344 424L388 428L432 398L476 392L520 364" stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
-<path class="ln1" pathLength="1" d="M256 430L300 400L344 410L388 360L432 370L476 320L520 300" stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0"/>
-<circle class="end1" cx="520" cy="300" r="6" fill="#fff" stroke="#21A366" stroke-width="3" opacity="0"/>
-<path class="area2" d="M256 420L300 372L344 386L388 334L432 344L476 302L520 286L520 470L256 470Z" fill="url(#xl-area)"/>
-<path class="ln2" pathLength="1" d="M256 456L300 432L344 442L388 404L432 412L476 374L520 352" stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path class="ln2" pathLength="1" d="M256 420L300 372L344 386L388 334L432 344L476 302L520 286" stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-<circle class="end2" cx="520" cy="286" r="6" fill="#fff" stroke="#21A366" stroke-width="3"/>
-<g class="pop" style="--d:.09">
-<rect x="548" y="238" width="156" height="260" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
-<rect x="562" y="254" width="70" height="8" rx="4" fill="#0E3B25" fill-opacity=".75"/>
-<path d="M562 466H690" stroke="#C3DBCD" stroke-width="1.2"/>
-</g>
-<!-- Bars: grow in (--d), then resize to --k when the range is switched; hover one to focus it -->
-<g class="bars">
-<g class="grow" style="--d:0.120"><rect class="rebar" style="--k:1.25" x="566" y="342" width="24" height="120" rx="7" fill="#21A366"/></g>
-<g class="grow" style="--d:0.135"><rect class="rebar" style="--k:0.6" x="598" y="302" width="24" height="160" rx="7" fill="#217346"/></g>
-<g class="grow" style="--d:0.150"><rect class="rebar" style="--k:2" x="630" y="390" width="24" height="72" rx="7" fill="#8669DB"/></g>
-<g class="grow" style="--d:0.165"><rect class="rebar" style="--k:0.8" x="662" y="322" width="24" height="140" rx="7" fill="#9AD7B5"/></g>
-</g>
-</g>
-</g>
-<circle class="ripple" cx="680" cy="136" r="16" stroke="#21A366" stroke-width="3" opacity="0"/>
-<g class="cur" opacity="0"><path d="M0 0V22L6 16.5L10 25L14 23L10.2 15H18Z" fill="#fff" stroke="#0E3B25" stroke-width="2" stroke-linejoin="round"/></g>
-</svg>
+              <svg class="xl" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
+                <defs>
+                  <linearGradient id="xl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#1EC4B4" />
+                    <stop offset="1" stop-color="#B1D766" />
+                  </linearGradient>
+                  <linearGradient id="xl-area" x1="0" y1="280" x2="0" y2="470" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#21A366" stop-opacity=".28" />
+                    <stop offset="1" stop-color="#21A366" stop-opacity="0" />
+                  </linearGradient>
+                  <filter id="xl-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                    <feGaussianBlur stdDeviation="14" />
+                  </filter>
+                  <clipPath id="xl-win">
+                    <rect x="70" y="70" width="660" height="480" rx="20" />
+                  </clipPath>
+                </defs>
+                <rect width="800" height="500" fill="url(#xl-bg)" />
+                <rect x="80" y="86" width="640" height="460" rx="20" fill="#0E3B25" opacity=".18"
+                  filter="url(#xl-shadow)" />
+                <g clip-path="url(#xl-win)">
+                  <rect x="70" y="70" width="660" height="480" fill="#EAF5EE" />
+                  <circle cx="96" cy="90" r="4.5" fill="#BFD6C8" />
+                  <circle cx="112" cy="90" r="4.5" fill="#BFD6C8" />
+                  <circle cx="128" cy="90" r="4.5" fill="#BFD6C8" />
+                  <text class="t-old" x="400" y="95" text-anchor="middle"
+                    font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#217346"
+                    fill-opacity=".75" opacity="0">data_v12_FINAL(3).xlsx</text>
+                  <rect class="t-new" x="365" y="87" width="70" height="6" rx="3" fill="#217346" fill-opacity=".45" />
+                  <!-- The old way: a spreadsheet. Each column sweeps out in turn (--i) -->
+                  <g class="sheet">
+                    <g class="xc" style="--i:0" opacity="0">
+                      <rect x="96" y="108" width="608" height="24" rx="6" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <text x="106" y="124.5" font-family="Georgia, serif" font-style="italic" font-size="13"
+                        fill="#217346">fx</text>
+                      <text x="128" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+                        font-size="11.5" fill="#5F7A6B">=VLOOKUP(B7;'Data (old)'!A:F;6;FALSE)</text>
+                      <text x="109" y="177" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">1</text>
+                      <text x="109" y="219" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">2</text>
+                      <text x="109" y="261" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">3</text>
+                      <text x="109" y="303" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">4</text>
+                      <text x="109" y="345" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">5</text>
+                      <text x="109" y="387" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">6</text>
+                      <text x="109" y="429" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">7</text>
+                      <text x="109" y="471" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">8</text>
+                    </g>
+                    <g class="xc" style="--i:0" opacity="0">
+                      <text x="157" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">A</text>
+                      <rect x="122" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="132" y="169" width="38" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="122" y="194" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="132" y="211" width="30" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="122" y="236" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="132" y="253" width="20" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="122" y="278" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="132" y="295" width="21" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="122" y="320" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="132" y="337" width="19" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="122" y="362" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="132" y="379" width="24" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="122" y="404" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="122" y="446" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="132" y="463" width="20" height="6" rx="3" fill="#BFD6C8" />
+                    </g>
+                    <g class="xc" style="--i:1" opacity="0">
+                      <text x="229" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">B</text>
+                      <rect x="194" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="204" y="169" width="35" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="194" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="194" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="204" y="253" width="44" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="194" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="204" y="295" width="48" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="194" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="204" y="337" width="38" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="194" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="204" y="379" width="19" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="194" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="204" y="421" width="30" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="194" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                    </g>
+                    <g class="xc" style="--i:2" opacity="0">
+                      <text x="301" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">C</text>
+                      <rect x="266" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="276" y="169" width="35" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="266" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="266" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="276" y="253" width="27" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="266" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="276" y="295" width="35" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="266" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="266" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="276" y="379" width="44" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="266" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="276" y="421" width="21" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="266" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="276" y="463" width="38" height="6" rx="3" fill="#BFD6C8" />
+                    </g>
+                    <g class="xc" style="--i:3" opacity="0">
+                      <text x="373" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">D</text>
+                      <rect x="338" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="348" y="169" width="34" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="338" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="363" y="211" width="35" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="338" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="348" y="253" width="37" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="338" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="367" y="295" width="31" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="338" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="351" y="337" width="47" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="338" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="348" y="379" width="43" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="338" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="378" y="421" width="20" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="338" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="348" y="463" width="46" height="6" rx="3" fill="#BFD6C8" />
+                    </g>
+                    <g class="xc" style="--i:4" opacity="0">
+                      <text x="445" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">E</text>
+                      <rect x="410" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="420" y="169" width="42" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="410" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="420" y="211" width="20" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="410" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="420" y="253" width="42" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="410" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="420" y="295" width="31" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="410" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="428" y="337" width="42" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="410" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="420" y="379" width="44" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="410" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="433" y="421" width="37" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="410" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="450" y="463" width="20" height="6" rx="3" fill="#BFD6C8" />
+                    </g>
+                    <g class="xc" style="--i:5" opacity="0">
+                      <text x="517" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">F</text>
+                      <rect x="482" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="492" y="169" width="36" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="482" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="492" y="211" width="39" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="482" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="515" y="253" width="27" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="482" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="498" y="295" width="44" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="482" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="482" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="496" y="379" width="46" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="482" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="482" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="519" y="463" width="23" height="6" rx="3" fill="#BFD6C8" />
+                    </g>
+                    <g class="xc" style="--i:6" opacity="0">
+                      <text x="589" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">G</text>
+                      <rect x="554" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="564" y="169" width="43" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="554" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="554" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="592" y="253" width="22" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="554" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="567" y="295" width="47" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="554" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="554" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="564" y="379" width="35" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="554" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="554" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="564" y="463" width="35" height="6" rx="3" fill="#BFD6C8" />
+                    </g>
+                    <g class="xc" style="--i:7" opacity="0">
+                      <text x="661" y="146" text-anchor="middle"
+                        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#7FA08D">H</text>
+                      <rect x="626" y="152" width="70" height="40" rx="2" fill="#217346" />
+                      <rect x="636" y="169" width="41" height="6" rx="3" fill="#fff" fill-opacity=".85" />
+                      <rect x="626" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="647" y="211" width="39" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="626" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="636" y="253" width="22" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="626" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="626" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="668" y="337" width="18" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="626" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="636" y="379" width="26" height="6" rx="3" fill="#BFD6C8" />
+                      <rect x="626" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="626" y="446" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="649" y="463" width="37" height="6" rx="3" fill="#BFD6C8" />
+                    </g>
+                    <rect class="ants" x="338" y="236" width="70" height="166" rx="2" stroke="#21A366"
+                      stroke-width="2.5" stroke-dasharray="6 4" opacity="0" />
+                    <g class="ref" opacity="0">
+                      <rect x="483" y="321" width="68" height="38" fill="#FDECEC" />
+                      <text x="517" y="345" text-anchor="middle"
+                        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13"
+                        font-weight="700" fill="#D64545">#REF!</text>
+                    </g>
+                    <g class="sel" opacity="0">
+                      <rect x="122" y="152" width="70" height="40" rx="2" stroke="#21A366" stroke-width="3" />
+                      <rect x="188" y="188" width="8" height="8" rx="1.5" fill="#21A366" stroke="#fff"
+                        stroke-width="1.5" />
+                    </g>
+                  </g>
+                  <!-- The new tool, abstract: pieces pop in one after another (--d, fraction of the loop) -->
+                  <g class="app">
+                    <g class="pop" style="--d:0">
+                      <rect x="96" y="108" width="124" height="420" rx="14" fill="#fff" fill-opacity=".55"
+                        stroke="#C3DBCD" stroke-width="1.2" />
+                      <circle cx="122" cy="134" r="10" fill="#21A366" />
+                      <rect x="140" y="130" width="54" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
+                      <circle cx="123" cy="179" r="5" fill="#BFD6C8" />
+                      <rect x="135" y="176" width="52" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                      <rect x="108" y="202" width="100" height="26" rx="13" fill="#E3F2E9" />
+                      <circle cx="123" cy="215" r="5" fill="#21A366" />
+                      <rect x="135" y="212" width="44" height="6" rx="3" fill="#217346" fill-opacity="0.75" />
+                      <circle cx="123" cy="251" r="5" fill="#BFD6C8" />
+                      <rect x="135" y="248" width="60" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                      <circle cx="123" cy="287" r="5" fill="#BFD6C8" />
+                      <rect x="135" y="284" width="38" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                      <circle cx="123" cy="323" r="5" fill="#BFD6C8" />
+                      <rect x="135" y="320" width="48" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                    </g>
+                    <g class="pop" style="--d:.02">
+                      <rect x="240" y="128" width="150" height="14" rx="7" fill="#0E3B25" fill-opacity=".85" />
+                      <rect x="560" y="122" width="144" height="28" rx="14" fill="#D5E6DC" />
+                      <rect class="seg-ind" x="562" y="124" width="44" height="24" rx="12" fill="#fff" />
+                      <rect x="575" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6" />
+                      <rect x="623" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6" />
+                      <rect x="671" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6" />
+                    </g>
+                    <g class="pop" style="--d:0.04">
+                      <rect x="240" y="162" width="150" height="62" rx="12" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="254" y="176" width="56" height="6" rx="3" fill="#BFD6C8" />
+                      <text x="254" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                        font-size="22" font-weight="700" fill="#0E3B25">238</text>
+                      <path d="M330 210L340 204L350 207L360 196L372 199L382 188" stroke="#21A366" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <g class="pop" style="--d:0.055">
+                      <rect x="398" y="162" width="150" height="62" rx="12" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="412" y="176" width="44" height="6" rx="3" fill="#BFD6C8" />
+                      <text x="412" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                        font-size="22" font-weight="700" fill="#0E3B25">+31%</text>
+                      <path d="M488 208L498 210L508 200L518 203L530 193L540 190" stroke="#8669DB" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <g class="pop" style="--d:0.07">
+                      <rect x="556" y="162" width="148" height="62" rx="12" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="570" y="176" width="62" height="6" rx="3" fill="#BFD6C8" />
+                      <text x="570" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                        font-size="22" font-weight="700" fill="#0E3B25">72%</text>
+                      <circle cx="676" cy="193" r="16" stroke="#D5E6DC" stroke-width="6" />
+                      <circle cx="676" cy="193" r="16" stroke="#21A366" stroke-width="6" stroke-linecap="round"
+                        pathLength="100" stroke-dasharray="72 100" transform="rotate(-90 676 193)" />
+                    </g>
+                    <g class="pop" style="--d:.085">
+                      <rect x="240" y="238" width="296" height="260" rx="12" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="256" y="254" width="84" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
+                      <circle cx="462" cy="258" r="4" fill="#21A366" />
+                      <rect x="470" y="255" width="18" height="6" rx="3" fill="#BFD6C8" />
+                      <circle cx="498" cy="258" r="4" fill="#8669DB" />
+                      <rect x="506" y="255" width="18" height="6" rx="3" fill="#BFD6C8" />
+                      <path d="M256 300H520M256 340H520M256 380H520M256 420H520" stroke="#E3F2E9" stroke-width="1.2"
+                        stroke-dasharray="4 4" />
+                      <path d="M256 470H520" stroke="#C3DBCD" stroke-width="1.2" />
+                    </g>
+                    <!-- Two takes of the data: set 1 draws in, set 2 replaces it when the range is switched -->
+                    <path class="area1" d="M256 430L300 400L344 410L388 360L432 370L476 320L520 300L520 470L256 470Z"
+                      fill="url(#xl-area)" opacity="0" />
+                    <path class="ln1" pathLength="1" d="M256 452L300 442L344 424L388 428L432 398L476 392L520 364"
+                      stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
+                    <path class="ln1" pathLength="1" d="M256 430L300 400L344 410L388 360L432 370L476 320L520 300"
+                      stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
+                    <circle class="end1" cx="520" cy="300" r="6" fill="#fff" stroke="#21A366" stroke-width="3"
+                      opacity="0" />
+                    <path class="area2" d="M256 420L300 372L344 386L388 334L432 344L476 302L520 286L520 470L256 470Z"
+                      fill="url(#xl-area)" />
+                    <path class="ln2" pathLength="1" d="M256 456L300 432L344 442L388 404L432 412L476 374L520 352"
+                      stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="ln2" pathLength="1" d="M256 420L300 372L344 386L388 334L432 344L476 302L520 286"
+                      stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle class="end2" cx="520" cy="286" r="6" fill="#fff" stroke="#21A366" stroke-width="3" />
+                    <g class="pop" style="--d:.09">
+                      <rect x="548" y="238" width="156" height="260" rx="12" fill="#fff" stroke="#C3DBCD"
+                        stroke-width="1.2" />
+                      <rect x="562" y="254" width="70" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
+                      <path d="M562 466H690" stroke="#C3DBCD" stroke-width="1.2" />
+                    </g>
+                    <!-- Bars: grow in (--d), then resize to --k when the range is switched; hover one to focus it -->
+                    <g class="bars">
+                      <g class="grow" style="--d:0.120">
+                        <rect class="rebar" style="--k:1.25" x="566" y="342" width="24" height="120" rx="7"
+                          fill="#21A366" />
+                      </g>
+                      <g class="grow" style="--d:0.135">
+                        <rect class="rebar" style="--k:0.6" x="598" y="302" width="24" height="160" rx="7"
+                          fill="#217346" />
+                      </g>
+                      <g class="grow" style="--d:0.150">
+                        <rect class="rebar" style="--k:2" x="630" y="390" width="24" height="72" rx="7"
+                          fill="#8669DB" />
+                      </g>
+                      <g class="grow" style="--d:0.165">
+                        <rect class="rebar" style="--k:0.8" x="662" y="322" width="24" height="140" rx="7"
+                          fill="#9AD7B5" />
+                      </g>
+                    </g>
+                  </g>
+                </g>
+                <circle class="ripple" cx="680" cy="136" r="16" stroke="#21A366" stroke-width="3" opacity="0" />
+                <g class="cur" opacity="0">
+                  <path d="M0 0V22L6 16.5L10 25L14 23L10.2 15H18Z" fill="#fff" stroke="#0E3B25" stroke-width="2"
+                    stroke-linejoin="round" />
+                </g>
+              </svg>
             </div>
           </a>
           <div class="portfolio-title">
@@ -688,7 +839,7 @@
       </div>
       </div> -->
 
-        <div class="col-lg-6 col-md-12 portfolio-item">
+        <div class="col-lg-6 col-md-12 portfolio-item portfolio-item--tall">
           <a href="https://commeat.netlify.app/" class="portfolio-link" target="_blank">
             <div id="project14" class="portfolio-wrap">
               <!-- Cookbook.md cover: inline SVG. Styles in assets/css/covers/cbk.css
@@ -755,41 +906,44 @@
                   <text x="74" y="286">6</text><text x="74" y="316">7</text><text x="74" y="346">8</text><text x="74"
                     y="376">9</text><text x="74" y="406">10</text>
                 </g>
+                <!-- Editor lines stay one per line: whitespace between <tspan>s renders as a space.
+                     textLength pins each line to 9.6 units per character so covers and caret match. -->
+                <!-- prettier-ignore -->
                 <g class="ed-text" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16"
                   fill="#F2E6D6">
-                  <text x="92" y="136">
+                  <text x="92" y="136" textLength="124.8">
                     <tspan fill="#F4B13B"># </tspan>
                     <tspan font-weight="700">Tarte Tatin</tspan>
                   </text>
-                  <text x="92" y="166">
+                  <text x="92" y="166" textLength="172.8">
                     <tspan fill="#F4B13B">&gt; </tspan>
                     <tspan fill-opacity=".6" font-style="italic">45 min · Dessert</tspan>
                   </text>
-                  <text x="92" y="226">
+                  <text x="92" y="226" textLength="134.4">
                     <tspan fill="#F4B13B">## </tspan>
                     <tspan font-weight="700">Ingredients</tspan>
                   </text>
-                  <text x="92" y="256">
+                  <text x="92" y="256" textLength="134.4">
                     <tspan fill="#F4B13B">- </tspan>
                     <tspan fill="#E0745E">[x]</tspan> 6 apples
                   </text>
-                  <text x="92" y="286">
+                  <text x="92" y="286" textLength="163.2">
                     <tspan fill="#F4B13B">- </tspan>
                     <tspan fill="#E0745E">[x]</tspan> 150 g sugar
                   </text>
-                  <text x="92" y="316">
+                  <text x="92" y="316" textLength="163.2">
                     <tspan fill="#F4B13B">- </tspan>
                     <tspan fill="#E0745E">[x]</tspan> 80 g butter
                   </text>
-                  <text x="92" y="346">
+                  <text x="92" y="346" textLength="182.4">
                     <tspan fill="#F4B13B">- </tspan>
                     <tspan fill="#E0745E">[ ]</tspan> 1 puff pastry
                   </text>
-                  <text class="tick" x="92" y="346">
+                  <text class="tick" x="92" y="346" textLength="38.4">
                     <tspan fill-opacity="0">- [</tspan>
                     <tspan fill="#E0745E" font-weight="700">x</tspan>
                   </text>
-                  <text x="92" y="406">
+                  <text x="92" y="406" textLength="230.4">
                     <tspan fill="#F4B13B">1. </tspan>Caramelise. <tspan fill="#F4B13B">**</tspan>
                     <tspan fill="#E0745E" font-weight="700">Flip.</tspan>
                     <tspan fill="#F4B13B">**</tspan>
@@ -942,15 +1096,15 @@
                   </g>
                 </g>
               </svg>
+              <div class="portfolio-title">
+                <h4>Cookbook.md</h4>
+                <p>Recipes as plain Markdown · Vibe-coding · 2026</p>
+              </div>
             </div>
           </a>
-          <div class="portfolio-title">
-            <h4>Cookbook.md</h4>
-            <p>Recipes as plain Markdown · Vibe-coding · 2026</p>
-          </div>
         </div>
 
-        <div class="col-lg-6 col-md-12 portfolio-item">
+        <div class="col-lg-6 col-md-12 portfolio-item portfolio-item--tall">
           <a href="island.html" class="portfolio-link">
             <div id="project5" class="portfolio-wrap">
               <!-- Island Slide Puzzle cover: inline SVG. Styles in assets/css/covers/isl.css -->
@@ -1350,12 +1504,12 @@
                   </g>
                 </g>
               </svg>
+              <div class="portfolio-title">
+                <h4>Island Slide Puzzle</h4>
+                <p data-i18n="home.portfolio_island_description">Game design · 2022</p>
+              </div>
             </div>
           </a>
-          <div class="portfolio-title">
-            <h4>Island Slide Puzzle</h4>
-            <p data-i18n="home.portfolio_island_description">Game design · 2022</p>
-          </div>
         </div>
 
         <div class="col-lg-6 col-md-12 portfolio-item">

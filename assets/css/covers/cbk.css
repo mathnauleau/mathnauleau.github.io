@@ -19,6 +19,20 @@
   background: linear-gradient(32deg, #F6ECDF 0%, #EBD9C2 100%);
 }
 
+/* As a tall tile: the space under the art continues the drawing's bottom edge
+   (the SVG's diagonal gradient runs from #F3E7D7 to #EBD9C2 along it). */
+.portfolio-item--tall #project14 {
+  background: linear-gradient(90deg, #F3E7D7 0%, #EBD9C2 100%);
+}
+
+.portfolio-item--tall #project14 .portfolio-title h4 {
+  color: #0F3D3A;
+}
+
+.portfolio-item--tall #project14 .portfolio-title p {
+  color: #5B6B68;
+}
+
 @scope (.cbk) {
   :scope {
     --cyc: 16s;

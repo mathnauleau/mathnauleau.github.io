@@ -9,6 +9,19 @@
   background: linear-gradient(180deg, #7779f1 0%, #287cd1 100%);
 }
 
+/* As a tall tile: the space under the art continues the bottom of the sky. */
+.portfolio-item--tall #project5 {
+  background: #287cd1;
+}
+
+.portfolio-item--tall #project5 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project5 .portfolio-title p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 @scope (.isl) {
   :scope {
     display: block;

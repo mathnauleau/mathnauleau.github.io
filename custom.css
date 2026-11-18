@@ -550,6 +550,38 @@ section {
   color: var(--color-text-secondary);
 }
 
+/* Tall tile (4:3): the cover keeps its own ratio at the top of the tile, and the
+   title is pinned to the bottom, inside the link, over the space left below the art
+   (it may overlap the art's empty bottom edge on narrower tiles). On phones the tile
+   drops the ratio and the title simply follows the art. The colour of the space and
+   of the text comes from each cover's stylesheet (assets/css/covers/). */
+.portfolio-item--tall .portfolio-wrap {
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-item--tall .portfolio-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 var(--space-32) var(--space-24);
+}
+
+.portfolio-item--tall .portfolio-title p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .portfolio-item--tall .portfolio-wrap {
+    aspect-ratio: auto;
+  }
+
+  .portfolio-item--tall .portfolio-title {
+    position: static;
+    padding: var(--space-16) var(--space-24) var(--space-24);
+  }
+}
+
 /*--------------------------------------------------------------
 # Portfolio hero
 --------------------------------------------------------------*/
