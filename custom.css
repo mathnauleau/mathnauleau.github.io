@@ -425,19 +425,6 @@ section {
 # Background project covers 
 --------------------------------------------------------------*/
 
-#project1 {
-  background: linear-gradient(45deg, #ccdff6 0%, #6b98ff 100%);
-}
-
-#project1 img {
-  transition-duration: 500ms;
-  transform: translateY(0px);
-}
-
-#project1:hover img {
-  transform: translateY(20px);
-}
-
 #project3 {
   background: linear-gradient(75deg, #ffc96f 0%, #f2a868 100%);
 }
@@ -445,6 +432,32 @@ section {
 #project4 {
   background-image: url(assets/img/portfolio/portfolio-4.png);
   background-size: cover;
+}
+
+/* Tall tile: the photo stays at the top at full width (in line with the overlay
+   <img>); a gradient layer fades its bottom edge into the blue below (the art ends
+   at 83.3% of the 4:3 tile). */
+.portfolio-item--tall #project4 {
+  background: linear-gradient(to bottom, rgba(60, 176, 238, 0) 62%, #3cb0ee 83.3%),
+    url(assets/img/portfolio/portfolio-4.png) top / 100% auto no-repeat,
+    #3cb0ee;
+}
+
+.portfolio-item--tall #project4 .portfolio-title h4,
+.portfolio-item--tall #project9 .portfolio-title h4,
+.portfolio-item--tall .craft .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project4 .portfolio-title p,
+.portfolio-item--tall #project9 .portfolio-title p,
+.portfolio-item--tall .craft .portfolio-title p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Digital Sketching: a dark wood tone under the photo */
+.portfolio-item--tall .craft {
+  background: #221d19;
 }
 
 #project6 {
@@ -463,6 +476,32 @@ section {
 #project9:hover {
   background-image: url(assets/img/portfolio/portfolio-9-night.jpg);
   -moz-animation: infinite;
+}
+
+/* Tall tile: day photo pinned to the top, fading into the carpet tone below. The
+   night photo sits on ::after (same layout) and fades in over 600ms on hover, since a
+   background-image swap can't be transitioned. The title (z-index 3) stays on top. */
+.portfolio-item--tall #project9 {
+  background: linear-gradient(to bottom, rgba(125, 115, 108, 0) 62%, #7d736c 83.3%),
+    url(assets/img/portfolio/portfolio-9-day.jpg) top / 100% auto no-repeat,
+    #7d736c;
+}
+
+.portfolio-item--tall #project9::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(111, 93, 79, 0) 62%, #6f5d4f 83.3%),
+    url(assets/img/portfolio/portfolio-9-night.jpg) top / 100% auto no-repeat,
+    #6f5d4f;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  pointer-events: none;
+}
+
+.portfolio-item--tall #project9:hover::after {
+  opacity: 1;
 }
 
 #project9:hover img {
@@ -529,12 +568,26 @@ section {
 }
 
 /* Tall tile (4:3): the cover keeps its own ratio at the top of the tile, and the
-   title is pinned to the bottom, inside the link, over the space left below the art
-   (it may overlap the art's empty bottom edge on narrower tiles). On phones the tile
-   drops the ratio and the title simply follows the art. The colour of the space and
-   of the text comes from each cover's stylesheet (assets/css/covers/). */
+   title is pinned to the bottom, inside the link, over the space left below the art.
+   The title is taller than that space, so the art's bottom edge fades out (a mask on
+   the SVG or <img>) into the tile's background, and the title always sits on calm
+   colour. Covers drawn as a CSS background image fade with a gradient layer instead
+   (see #project4 and #project9). On phones the tile drops the ratio and the title
+   simply follows the art. The colour of the space and of the text comes from each
+   cover's stylesheet (assets/css/covers/) or the rules below. */
 .portfolio-item--tall .portfolio-wrap {
   aspect-ratio: 4 / 3;
+}
+
+.portfolio-item--tall .portfolio-wrap > svg,
+.portfolio-item--tall .portfolio-wrap > img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+}
+
+.portfolio-item--tall .portfolio-title h4 {
+  line-height: 1.25;
+  margin-bottom: 0.15em;
 }
 
 .portfolio-item--tall .portfolio-title {
@@ -552,6 +605,12 @@ section {
 @media (max-width: 576px) {
   .portfolio-item--tall .portfolio-wrap {
     aspect-ratio: auto;
+  }
+
+  .portfolio-item--tall .portfolio-wrap > svg,
+  .portfolio-item--tall .portfolio-wrap > img {
+    -webkit-mask-image: none;
+    mask-image: none;
   }
 
   .portfolio-item--tall .portfolio-title {

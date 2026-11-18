@@ -17,6 +17,19 @@
   background: linear-gradient(32deg, #4EB490 0%, #184664 50%, #000032 100%);
 }
 
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project2 {
+  background: linear-gradient(90deg, #307677 0%, #184664 30.5%, #000032 100%);
+}
+
+.portfolio-item--tall #project2 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project2 .portfolio-title p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 @scope (.wl) {
   :scope {
     --cyc: 12s;
