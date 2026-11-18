@@ -438,28 +438,6 @@ section {
   transform: translateY(20px);
 }
 
-#project2 {
-  background-image: url(assets/img/portfolio/portfolio-2.png);
-  background-size: cover;
-}
-
-#project2 img {
-  background-image: url(assets/img/portfolio/portfolio-2-dot.png);
-  background-size: cover;
-  transform: translateX(0px);
-  transition-duration: 500ms;
-}
-
-#project2:hover {
-  background-image: url(assets/img/portfolio/portfolio-2-end.png);
-  background-size: cover;
-}
-
-#project2:hover img {
-  background-size: cover;
-  transform: translateX(400px);
-}
-
 #project3 {
   background: linear-gradient(75deg, #ffc96f 0%, #f2a868 100%);
 }
