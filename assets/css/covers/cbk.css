@@ -1,0 +1,211 @@
+/* Cookbook.md cover (inline <svg class="cbk"> in #project14, index.html).
+   Palette and type borrowed from Commeat (forest, gold, clay, sand; Newsreader).
+   Every rule for the drawing sits in @scope (.cbk); keyframes and SVG IDs use the
+   cbk- prefix because they are page-wide.
+
+   One 16s loop, every animation shares it (no delays), so all parts stay in sync:
+     4–56%   the Markdown types itself line by line (covers shrink, caret follows)
+     9–48%   the card renders as each line lands: title, meta, then one ingredient
+             bar per checked item while the pan fills (apples, caramel, butter, pastry)
+     46%     the last checkbox gets ticked
+     60–66%  "**Flip.**": the pan flips away and the tatin lands on a plate, steaming
+     88–97%  everything fades out and the empty pan fades back in for the next take
+   Without motion (prefers-reduced-motion, or no @scope support) the base styles
+   below show the finished state: full recipe, tatin on the plate. Hover the card
+   to lift it (real pointer above 768px). */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project14 {
+  background: linear-gradient(32deg, #F6ECDF 0%, #EBD9C2 100%);
+}
+
+@scope (.cbk) {
+  :scope {
+    --cyc: 16s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Base = finished state */
+  .cv { transform: scaleX(0); transform-box: fill-box; transform-origin: right; }
+  .sk { opacity: 0; }
+  .pan { transform: scaleX(0); }
+  .pan, .plate, .apples, .pastry {
+    transform-box: view-box;
+    transform-origin: 590px 184px;
+  }
+  .seg { transform-box: fill-box; transform-origin: left; }
+  .wisp { opacity: 0.5; }
+
+  /* Editor */
+  .ed-text, .card-text { animation: cbk-clear var(--cyc) linear infinite; }
+  .cv { animation: var(--cyc) steps(14, end) infinite; }
+  .cv1 { animation-name: cbk-l1; }
+  .cv2 { animation-name: cbk-l2; }
+  .cv3 { animation-name: cbk-l3; }
+  .cv4 { animation-name: cbk-l4; }
+  .cv5 { animation-name: cbk-l5; }
+  .cv6 { animation-name: cbk-l6; }
+  .cv7 { animation-name: cbk-l7; }
+  .cv8 { animation-name: cbk-l8; }
+  .caret { animation: cbk-caret var(--cyc) steps(14, end) infinite; }
+  .blink { animation: cbk-blink 1s step-end infinite; }
+  .tick { animation: cbk-tick var(--cyc) linear infinite; }
+  .go { transform-box: fill-box; transform-origin: center; animation: cbk-go 2s ease-in-out infinite; }
+
+  /* Card */
+  .sk1 { animation: cbk-sk1 var(--cyc) linear infinite; }
+  .sk2 { animation: cbk-sk2 var(--cyc) linear infinite; }
+  .ttl { animation: cbk-ttl var(--cyc) ease-out infinite; }
+  .meta { animation: cbk-meta var(--cyc) ease-out infinite; }
+  .lbl { animation: cbk-lbl var(--cyc) ease-out infinite; }
+  .seg { animation: var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1) infinite; }
+  .s1 { animation-name: cbk-s1; }
+  .s2 { animation-name: cbk-s2; }
+  .s3 { animation-name: cbk-s3; }
+  .s4 { animation-name: cbk-s4; }
+  .pan { animation: cbk-pan var(--cyc) ease-in-out infinite; }
+  .plate { animation: cbk-plate var(--cyc) ease-in-out infinite; }
+  .apples { animation: cbk-apples var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.3) infinite; }
+  .caramel { animation: cbk-caramel var(--cyc) ease-out infinite; }
+  .gloss { animation: cbk-gloss var(--cyc) ease-out infinite; }
+  .pastry { animation: cbk-pastry var(--cyc) cubic-bezier(0.3, 0.7, 0.4, 1.2) infinite; }
+  .steam { animation: cbk-steam var(--cyc) linear infinite; }
+  .wisp { animation: cbk-wisp 2.6s ease-out var(--s, 0s) infinite; }
+  .drift { transform-box: fill-box; transform-origin: center; animation: cbk-drift 9s ease-in-out var(--s, 0s) infinite; }
+
+  .card { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .card:hover { transform: translateY(-6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .caret { display: none; }
+  }
+}
+
+/* Whole-pane fade used to wipe the take: out at 88–91%, back at 95–97% */
+@keyframes cbk-clear {
+  0%, 88% { opacity: 1; }
+  91%, 95% { opacity: 0; }
+  97%, 100% { opacity: 1; }
+}
+
+/* One per line: type during its window, hold, re-cover while the pane is faded */
+@keyframes cbk-l1 { 0%, 4% { transform: scaleX(1); } 9%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l2 { 0%, 10% { transform: scaleX(1); } 15%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l3 { 0%, 17% { transform: scaleX(1); } 22%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l4 { 0%, 23% { transform: scaleX(1); } 27%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l5 { 0%, 28% { transform: scaleX(1); } 32%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l6 { 0%, 33% { transform: scaleX(1); } 37%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l7 { 0%, 38% { transform: scaleX(1); } 43%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l8 { 0%, 49% { transform: scaleX(1); } 56%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+
+/* The caret rides the end of each line (one char ≈ 9.6 units); jumps take 0.1% */
+@keyframes cbk-caret {
+  0%, 4% { transform: translate(0, 0); }
+  9%, 9.9% { transform: translate(124.8px, 0); }
+  10% { transform: translate(0, 30px); }
+  15%, 16.9% { transform: translate(172.8px, 30px); }
+  17% { transform: translate(0, 90px); }
+  22%, 22.9% { transform: translate(134.4px, 90px); }
+  23% { transform: translate(0, 120px); }
+  27%, 27.9% { transform: translate(134.4px, 120px); }
+  28% { transform: translate(0, 150px); }
+  32%, 32.9% { transform: translate(163.2px, 150px); }
+  33% { transform: translate(0, 180px); }
+  37%, 37.9% { transform: translate(163.2px, 180px); }
+  38% { transform: translate(0, 210px); }
+  43%, 48.9% { transform: translate(182.4px, 210px); }
+  49% { transform: translate(0, 270px); }
+  56%, 90% { transform: translate(230.4px, 270px); }
+  91%, 100% { transform: translate(0, 0); }
+}
+
+@keyframes cbk-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes cbk-tick {
+  0%, 46% { opacity: 0; }
+  47%, 91% { opacity: 1; }
+  93%, 100% { opacity: 0; }
+}
+
+@keyframes cbk-go {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* Card text */
+@keyframes cbk-sk1 { 0%, 9% { opacity: 1; } 11%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-sk2 { 0%, 15% { opacity: 1; } 17%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-ttl {
+  0%, 9% { opacity: 0; transform: translateY(6px); }
+  11%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes cbk-meta {
+  0%, 15% { opacity: 0; transform: translateY(5px); }
+  17%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(5px); }
+}
+@keyframes cbk-lbl { 0%, 22% { opacity: 0; } 24%, 91% { opacity: 1; } 93%, 100% { opacity: 0; } }
+@keyframes cbk-s1 { 0%, 27% { transform: scaleX(0); } 29%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
+@keyframes cbk-s2 { 0%, 32% { transform: scaleX(0); } 34%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
+@keyframes cbk-s3 { 0%, 37% { transform: scaleX(0); } 39%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
+@keyframes cbk-s4 { 0%, 46% { transform: scaleX(0); } 48%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
+
+/* The pan fills while it's on screen, then empties out of sight (63–90%) */
+@keyframes cbk-apples {
+  0%, 27% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+  29.5%, 75% { opacity: 1; transform: scale(1) rotate(0); }
+  76%, 100% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+}
+@keyframes cbk-caramel { 0%, 32% { opacity: 0; } 34.5%, 75% { opacity: 1; } 76%, 100% { opacity: 0; } }
+@keyframes cbk-gloss { 0%, 37% { opacity: 0; } 39%, 75% { opacity: 0.55; } 76%, 100% { opacity: 0; } }
+@keyframes cbk-pastry {
+  0%, 46% { opacity: 0; transform: scale(1.25); }
+  48.5%, 75% { opacity: 1; transform: scale(1); }
+  76%, 100% { opacity: 0; transform: scale(1.25); }
+}
+
+/* The flip: the pan squashes away, the plate grows in. The reset is a plain
+   crossfade (plate out at 88–91%, pan back in at 91–95%), no second flip. */
+@keyframes cbk-pan {
+  0%, 60% { transform: scaleX(1); opacity: 1; }
+  63% { transform: scaleX(0); opacity: 1; }
+  63.1%, 91% { transform: scaleX(0); opacity: 0; }
+  91.1% { transform: scaleX(1); opacity: 0; }
+  95%, 100% { transform: scaleX(1); opacity: 1; }
+}
+@keyframes cbk-plate {
+  0%, 63% { transform: scaleX(0) rotate(0); opacity: 1; }
+  66% { transform: scaleX(1.06) rotate(-4deg); opacity: 1; }
+  68%, 88% { transform: scaleX(1) rotate(0); opacity: 1; }
+  91% { transform: scaleX(1) rotate(0); opacity: 0; }
+  91.1%, 100% { transform: scaleX(0) rotate(0); opacity: 0; }
+}
+@keyframes cbk-steam { 0%, 66% { opacity: 0; } 70%, 86% { opacity: 1; } 88%, 100% { opacity: 0; } }
+@keyframes cbk-wisp {
+  0% { opacity: 0; transform: translateY(8px); }
+  35% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-16px); }
+}
+
+/* A lazy loop, like a leaf on a draught: up and across, sway back, settle.
+   --x / --y (1 or -1, set on each leaf) point the loop inward from its corner. */
+@keyframes cbk-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(calc(var(--x, 1) * 10px), calc(var(--y, 1) * -16px)) rotate(16deg); }
+  50% { transform: translate(calc(var(--x, 1) * 18px), calc(var(--y, 1) * -6px)) rotate(-6deg); }
+  75% { transform: translate(calc(var(--x, 1) * 6px), calc(var(--y, 1) * -22px)) rotate(12deg); }
+}

@@ -398,7 +398,7 @@ section {
 # Portfolio hero
 --------------------------------------------------------------*/
 .portfolio .portfolio-wrap {
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
   position: relative;
   overflow: hidden;
   background: none;
