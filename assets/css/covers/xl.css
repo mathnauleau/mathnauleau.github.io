@@ -5,7 +5,7 @@
              the selection hops cell to cell, a copy range marches, #REF! flashes
      28–34%  the sheet sweeps out column by column (--i)
      33–50%  the app pops in piece by piece (--d), lines draw, bars grow
-     55–62%  a cursor switches the range toggle; lines redraw, bars resize (--k)
+     50–88%  the finished dashboard holds
      88–96%  the app fades and the sheet comes back for the next take
    Every rule for the drawing sits in @scope (.xl); keyframes and SVG IDs use the xl-
    prefix because they are page-wide.
@@ -62,27 +62,11 @@
     transform-origin: bottom;
     animation: xl-grow var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.1) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
   }
-  .ln1, .ln2 { stroke-dasharray: 1; }
-  .ln1 { animation: xl-ln1 var(--cyc) ease-in-out infinite; }
-  .ln2 { animation: xl-ln2 var(--cyc) ease-in-out infinite; }
+  .ln1 {
+    stroke-dasharray: 1;
+    animation: xl-ln1 var(--cyc) ease-in-out infinite;
+  }
   .area1, .end1 { animation: xl-area1 var(--cyc) ease-out infinite; }
-  .area2, .end2 { animation: xl-area2 var(--cyc) ease-out infinite; }
-  .rebar {
-    transform-box: fill-box;
-    transform-origin: bottom;
-    transform: scaleY(var(--k));
-    animation: xl-rebar var(--cyc) cubic-bezier(0.3, 0.8, 0.3, 1.15) infinite;
-  }
-  .seg-ind {
-    transform: translateX(96px);
-    animation: xl-seg var(--cyc) cubic-bezier(0.3, 0.8, 0.3, 1.1) infinite;
-  }
-  .cur { animation: xl-cur var(--cyc) ease-in-out infinite; }
-  .ripple {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: xl-ripple var(--cyc) ease-out infinite;
-  }
 
   .grow { transition: opacity 200ms ease; }
 
@@ -145,38 +129,9 @@
   59%, 100% { transform: scaleY(0); }
 }
 
-/* The range switch at 61–62%: the toggle slides, set 1 gives way to set 2, bars resize.
-   Everything returns to its start while the app is hidden (after 91%). */
-@keyframes xl-cur {
-  0%, 54% { opacity: 0; transform: translate(700px, 480px); }
-  56% { opacity: 1; transform: translate(650px, 450px); }
-  60% { transform: translate(682px, 138px) scale(1); }
-  61% { transform: translate(682px, 138px) scale(0.82); }
-  62% { transform: translate(682px, 138px) scale(1); }
-  70%, 85% { opacity: 1; transform: translate(640px, 196px); }
-  87%, 100% { opacity: 0; transform: translate(640px, 196px); }
-}
-@keyframes xl-ripple {
-  0%, 60.8% { opacity: 0; transform: scale(0.3); }
-  61% { opacity: 0.9; transform: scale(0.3); }
-  65%, 100% { opacity: 0; transform: scale(1.5); }
-}
-@keyframes xl-seg {
-  0%, 61.5% { transform: translateX(0); }
-  63.5%, 100% { transform: translateX(96px); }
-}
+/* Lines draw in once and stay; they reset at the loop start while the app is hidden */
 @keyframes xl-ln1 {
-  0%, 40% { stroke-dashoffset: 1; opacity: 1; }
-  47%, 61.5% { stroke-dashoffset: 0; opacity: 1; }
-  63%, 100% { stroke-dashoffset: 0; opacity: 0; }
+  0%, 40% { stroke-dashoffset: 1; }
+  47%, 100% { stroke-dashoffset: 0; }
 }
-@keyframes xl-ln2 {
-  0%, 62% { stroke-dashoffset: 1; }
-  69%, 100% { stroke-dashoffset: 0; }
-}
-@keyframes xl-area1 { 0%, 45% { opacity: 0; } 49%, 61.5% { opacity: 1; } 63%, 100% { opacity: 0; } }
-@keyframes xl-area2 { 0%, 67% { opacity: 0; } 71%, 100% { opacity: 1; } }
-@keyframes xl-rebar {
-  0%, 62% { transform: scaleY(1); }
-  67%, 100% { transform: scaleY(var(--k)); }
-}
+@keyframes xl-area1 { 0%, 45% { opacity: 0; } 49%, 100% { opacity: 1; } }

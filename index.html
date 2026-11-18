@@ -352,13 +352,13 @@
                       stroke-width="16" stroke-linecap="round" stroke="url(#ops-blue)" />
                   </g>
                   <!-- Trains: short light dashes running along each line -->
-                  <path class="train" style="--d:9s;--s:-2s" pathLength="100"
+                  <path class="train" style="--d:27s;--s:-6s" pathLength="100"
                     d="M78 543V226C78 190.654 106.654 162 142 162H334C369.346 162 398 190.654 398 226V349C398 384.346 426.654 413 462 413H665"
                     stroke="#fff" stroke-width="6" stroke-linecap="round" />
-                  <path class="train" style="--d:8s;--s:-5s" pathLength="100"
+                  <path class="train" style="--d:24s;--s:-15s" pathLength="100"
                     d="M722 107L722 290C722 325.346 693.346 354 658 354L352 354C316.654 354 288 382.654 288 418L288 553"
                     stroke="#fff" stroke-width="6" stroke-linecap="round" />
-                  <path class="train" style="--d:10s;--s:-7s" pathLength="100"
+                  <path class="train" style="--d:30s;--s:-21s" pathLength="100"
                     d="M-25 374L146 374C181.346 374 210 345.346 210 310L210 142C210 106.654 238.654 78 274 78L461 78C496.346 78 525 106.654 525 142L525 177.64"
                     stroke="#fff" stroke-width="6" stroke-linecap="round" />
                   <!-- "ps" -->
@@ -509,7 +509,7 @@
             <div id="project15" class="portfolio-wrap">
               <!-- Data tool cover: inline SVG. Styles in assets/css/covers/xl.css
                    An Excel sheet (v12_FINAL, #REF!) sweeps away column by column and
-                   an abstract graph tool builds up in its place; switching range updates the charts. -->
+                   an abstract graph tool builds up in its place. -->
               <svg class="xl" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
                 <defs>
                   <linearGradient id="xl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
@@ -821,7 +821,7 @@
                     <g class="pop" style="--d:.02">
                       <rect x="240" y="128" width="150" height="14" rx="7" fill="#0E3B25" fill-opacity=".85" />
                       <rect x="560" y="122" width="144" height="28" rx="14" fill="#D5E6DC" />
-                      <rect class="seg-ind" x="562" y="124" width="44" height="24" rx="12" fill="#fff" />
+                      <rect x="562" y="124" width="44" height="24" rx="12" fill="#fff" />
                       <rect x="575" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6" />
                       <rect x="623" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6" />
                       <rect x="671" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6" />
@@ -866,53 +866,41 @@
                         stroke-dasharray="4 4" />
                       <path d="M256 470H520" stroke="#C3DBCD" stroke-width="1.2" />
                     </g>
-                    <!-- Two takes of the data: set 1 draws in, set 2 replaces it when the range is switched -->
+                    <!-- The data: both lines draw in once the card has appeared -->
                     <path class="area1" d="M256 430L300 400L344 410L388 360L432 370L476 320L520 300L520 470L256 470Z"
-                      fill="url(#xl-area)" opacity="0" />
-                    <path class="ln1" pathLength="1" d="M256 452L300 442L344 424L388 428L432 398L476 392L520 364"
-                      stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
-                    <path class="ln1" pathLength="1" d="M256 430L300 400L344 410L388 360L432 370L476 320L520 300"
-                      stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
-                    <circle class="end1" cx="520" cy="300" r="6" fill="#fff" stroke="#21A366" stroke-width="3"
-                      opacity="0" />
-                    <path class="area2" d="M256 420L300 372L344 386L388 334L432 344L476 302L520 286L520 470L256 470Z"
                       fill="url(#xl-area)" />
-                    <path class="ln2" pathLength="1" d="M256 456L300 432L344 442L388 404L432 412L476 374L520 352"
+                    <path class="ln1" pathLength="1" d="M256 452L300 442L344 424L388 428L432 398L476 392L520 364"
                       stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    <path class="ln2" pathLength="1" d="M256 420L300 372L344 386L388 334L432 344L476 302L520 286"
+                    <path class="ln1" pathLength="1" d="M256 430L300 400L344 410L388 360L432 370L476 320L520 300"
                       stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
-                    <circle class="end2" cx="520" cy="286" r="6" fill="#fff" stroke="#21A366" stroke-width="3" />
+                    <circle class="end1" cx="520" cy="300" r="6" fill="#fff" stroke="#21A366" stroke-width="3"
+                      />
                     <g class="pop" style="--d:.09">
                       <rect x="548" y="238" width="156" height="260" rx="12" fill="#fff" stroke="#C3DBCD"
                         stroke-width="1.2" />
                       <rect x="562" y="254" width="70" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
                       <path d="M562 466H690" stroke="#C3DBCD" stroke-width="1.2" />
                     </g>
-                    <!-- Bars: grow in (--d), then resize to --k when the range is switched; hover one to focus it -->
+                    <!-- Bars: grow in (--d); hover one to focus it -->
                     <g class="bars">
                       <g class="grow" style="--d:0.120">
-                        <rect class="rebar" style="--k:1.25" x="566" y="342" width="24" height="120" rx="7"
+                        <rect x="566" y="342" width="24" height="120" rx="7"
                           fill="#21A366" />
                       </g>
                       <g class="grow" style="--d:0.135">
-                        <rect class="rebar" style="--k:0.6" x="598" y="302" width="24" height="160" rx="7"
+                        <rect x="598" y="302" width="24" height="160" rx="7"
                           fill="#217346" />
                       </g>
                       <g class="grow" style="--d:0.150">
-                        <rect class="rebar" style="--k:2" x="630" y="390" width="24" height="72" rx="7"
+                        <rect x="630" y="390" width="24" height="72" rx="7"
                           fill="#8669DB" />
                       </g>
                       <g class="grow" style="--d:0.165">
-                        <rect class="rebar" style="--k:0.8" x="662" y="322" width="24" height="140" rx="7"
+                        <rect x="662" y="322" width="24" height="140" rx="7"
                           fill="#9AD7B5" />
                       </g>
                     </g>
                   </g>
-                </g>
-                <circle class="ripple" cx="680" cy="136" r="16" stroke="#21A366" stroke-width="3" opacity="0" />
-                <g class="cur" opacity="0">
-                  <path d="M0 0V22L6 16.5L10 25L14 23L10.2 15H18Z" fill="#fff" stroke="#0E3B25" stroke-width="2"
-                    stroke-linejoin="round" />
                 </g>
               </svg>
               <div class="portfolio-title">

@@ -34,7 +34,7 @@
     stroke-dasharray: 4 96;
     stroke-dashoffset: 100;
     opacity: 0.7;
-    animation: ops-train var(--d, 9s) linear var(--s, 0s) infinite;
+    animation: ops-train var(--d, 27s) linear var(--s, 0s) infinite;
   }
 
   .stop {
