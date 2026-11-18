@@ -25,6 +25,12 @@
   background: linear-gradient(90deg, #F3E7D7 0%, #EBD9C2 100%);
 }
 
+/* The art already ends on plain background, so it skips the shared bottom fade */
+.portfolio-item--tall #project14 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
 .portfolio-item--tall #project14 .portfolio-title h4 {
   color: #0F3D3A;
 }
