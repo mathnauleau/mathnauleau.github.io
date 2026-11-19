@@ -603,8 +603,35 @@ section {
 .portfolio-header img {
   width: 100%;
   height: auto;
-  border-radius: 16px;
+  border-radius: var(--border-radius-xlarge);
   margin: 100px 0 0 0;
+}
+
+/* Title above the hero image (island.html for now). The title takes over the
+   100px that clears the fixed header; the description below gets the section
+   gap the title used to provide. */
+.portfolio-header--title-first h1 {
+  font: var(--font-display-1);
+  color: var(--color-brand-primary);
+  text-transform: none;
+  text-align: center;
+  margin: calc(100px + var(--space-xlarge)) 0 var(--space-small);
+}
+
+/* Tagline under the title; it now carries the gap down to the image */
+.portfolio-header--title-first h3 {
+  font: var(--font-body-regular-large);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0 0 var(--space-section);
+}
+
+.portfolio-header--title-first img {
+  margin-top: 0;
+}
+
+.portfolio-header--title-first + .portfolio-description {
+  margin-top: var(--space-section);
 }
 
 /*--------------------------------------------------------------
