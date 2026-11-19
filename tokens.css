@@ -23,7 +23,7 @@
   --line-height-large: calc(var(--line-height-base-unit) * 1.5);
 
   /* Typography */
-  --font-display-1: 700 4.5em/1.2em var(--font-family-display); /* 56px Bricolage - hero headlines */
+  --font-display-1: 700 3.5em/1.2em var(--font-family-display); /* 72px Bricolage - hero headlines */
   --font-display-2: 700 2.5em/1.3em var(--font-family-display); /* 40px Bricolage - page titles */
   --font-heading-1: 700 2em/1.3em var(--font-family-display); /* 32px */
   --font-heading-2: 700 1.5em/1.5em var(--font-family-display); /* 24px */
@@ -129,6 +129,20 @@
   --transition-normal: 0.3s;
   --transition-slow: 0.4s;
   --transition-slower: 0.5s;
+}
+
+/* Display titles step down on smaller screens so long project titles don't
+   break into one or two words per line. */
+@media (max-width: 1012px) {
+  :root {
+    --font-display-1: 700 3.5em/1.2em var(--font-family-display); /* 56px */
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-display-1: 700 2.75em/1.2em var(--font-family-display); /* 44px, matches .hero h1 on mobile */
+  }
 }
 
 .dark {

@@ -607,15 +607,16 @@ section {
   margin: 100px 0 0 0;
 }
 
-/* Title above the hero image (island.html for now). The title takes over the
+/* Title above the hero image (all project pages). The title takes over the
    100px that clears the fixed header; the description below gets the section
-   gap the title used to provide. */
+   gap the title used to provide. The title + tagline block gets an extra 60px
+   of breathing room above and below. */
 .portfolio-header--title-first h1 {
   font: var(--font-display-1);
   color: var(--color-brand-primary);
   text-transform: none;
   text-align: center;
-  margin: calc(100px + var(--space-xlarge)) 0 var(--space-small);
+  margin: calc(100px + var(--space-xlarge) + var(--space-40) + 20px) 0 var(--space-small);
 }
 
 /* Tagline under the title; it now carries the gap down to the image */
@@ -623,7 +624,7 @@ section {
   font: var(--font-body-regular-large);
   color: var(--color-text-secondary);
   text-align: center;
-  margin: 0 0 var(--space-section);
+  margin: 0 0 calc(var(--space-section) + var(--space-40) + 20px);
 }
 
 .portfolio-header--title-first img {
