@@ -631,8 +631,9 @@ section {
   margin-top: 0;
 }
 
+/* Small gap: the facts right below read as the image's caption */
 .portfolio-header--title-first + .portfolio-description {
-  margin-top: var(--space-section);
+  margin-top: var(--space-large);
 }
 
 /*--------------------------------------------------------------
@@ -933,6 +934,67 @@ section ul li {
 
 .portfolio-info .row {
   margin: 8px 0;
+}
+
+/*--------------------------------------------------------------
+# Portfolio overview: the project facts as a caption line under the
+# hero image, then the intro as a lead paragraph
+--------------------------------------------------------------*/
+
+/* Facts in columns, label above value. As many columns as fit (min 160px),
+   so 4 sit on one line on desktop and they wrap to 2 per row on phones. */
+.portfolio-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-medium) var(--space-large);
+  margin-bottom: var(--space-xxlarge);
+}
+
+/* The fact holding a link (Result / Website) always comes last, so on
+   desktop it ends up in the rightmost column */
+.portfolio-fact:has(a) {
+  order: 1;
+}
+
+/* "Date:" / "Customer:" / "Used:" sit on their own line above the value.
+   The prefix is its own element so translations of the value still work. */
+.portfolio-fact__prefix {
+  display: block;
+  font: var(--font-caption);
+  color: var(--color-text-secondary);
+}
+
+.portfolio-fact__value,
+.portfolio-fact__value p {
+  display: inline;
+}
+
+.portfolio-fact__value p {
+  font: var(--font-body-regular);
+  margin: 0;
+  color: var(--color-brand-primary);
+}
+
+/* Two links in one fact (Island, White label): one per line */
+.portfolio-fact__value p + p {
+  display: block;
+}
+
+/* Lead paragraph: left-aligned, slightly larger, primary colour */
+.portfolio-intro {
+  max-width: 680px;
+}
+
+.portfolio-description .portfolio-intro h3 {
+  font: 300 1.75em/1.45em var(--font-family-body); /* 28px */
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .portfolio-description .portfolio-intro h3 {
+    font: var(--font-body-regular-large);
+  }
 }
 
 /*--------------------------------------------------------------

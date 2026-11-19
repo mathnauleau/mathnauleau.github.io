@@ -2,7 +2,10 @@
 function updateContent(langData) {
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n');
-        element.textContent = langData[key];
+        // Keep the HTML text when a key is missing instead of blanking it
+        if (langData[key] !== undefined) {
+            element.textContent = langData[key];
+        }
     });
 }
 
