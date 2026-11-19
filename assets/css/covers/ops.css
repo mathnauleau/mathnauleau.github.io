@@ -12,7 +12,7 @@
 
 /* As a tall tile: the space under the art continues the drawing's bottom edge */
 .portfolio-item--tall #project10 {
-  background: linear-gradient(90deg, #FF94A1 0%, #FF584E 100%);
+  background: linear-gradient(90deg, #E5566A 0%, #FF584E 100%);
 }
 
 .portfolio-item--tall #project10 .portfolio-title h4 {
@@ -20,7 +20,7 @@
 }
 
 .portfolio-item--tall #project10 .portfolio-title p {
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
 }
 
 @scope (.ops) {

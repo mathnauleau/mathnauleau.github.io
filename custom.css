@@ -42,7 +42,7 @@ hr {
 }
 
 .header .logo {
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 .header .logo span {
@@ -61,8 +61,8 @@ hr {
 
 .hero {
   width: 100%;
-  height: 70vh;
-  margin-top: 56px;
+  height: 60vh;
+  margin-top: 0;
   background-size: cover;
   background-image: none;
   text-align: center;
@@ -88,7 +88,7 @@ hr {
 }
 
 .img-fluid {
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 /*--------------------------------------------------------------
@@ -148,7 +148,7 @@ hr {
 /* Header content styles */
 .header-content {
   background-color: var(--color-background);
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px;
 }
 
 .header-scrolled .header-content {
@@ -365,7 +365,7 @@ hr {
 # Layout
 --------------------------------------------------------------*/
 .header {
-  padding: 16px 16px 0px 16px;
+  padding: 0 16px;
   background: var(--color-background);
   border-bottom: none;
 }
@@ -377,9 +377,16 @@ hr {
 }
 
 .header.header-scrolled {
-  padding: 16px 12px 0px 12px;
+  padding: 0 12px;
   background: var(--color-background);
   box-shadow: none;
+}
+
+/* Header nav links: compact vertical padding. :not(.overlay) keeps the open
+   mobile menu's links at full size (they share the .navbar a rule). */
+.navbar:not(.overlay) a {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .section-header h2,
@@ -413,7 +420,9 @@ section.portfolio {
 }
 
 .portfolio .portfolio-wrap {
-  transition: transform 400ms cubic-bezier(0.2, 0.8, 0.3, 1), box-shadow 400ms cubic-bezier(0.2, 0.8, 0.3, 1);
+  transition:
+    transform 400ms cubic-bezier(0.2, 0.8, 0.3, 1),
+    box-shadow 400ms cubic-bezier(0.2, 0.8, 0.3, 1);
 }
 
 @media (hover: hover) and (min-width: 769px) {
@@ -491,7 +500,8 @@ section.portfolio {
    night photo sits on ::after (same layout) and fades in over 600ms on hover, since a
    background-image swap can't be transitioned. The title (z-index 3) stays on top. */
 .portfolio-item--tall #project9 {
-  background: linear-gradient(to bottom, rgba(125, 115, 108, 0) 62%, #7d736c 83.3%),
+  background:
+    linear-gradient(to bottom, rgba(125, 115, 108, 0) 62%, #7d736c 83.3%),
     url(assets/img/portfolio/portfolio-9-day.jpg) top / 100% auto no-repeat,
     #7d736c;
 }
@@ -501,7 +511,8 @@ section.portfolio {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(to bottom, rgba(111, 93, 79, 0) 62%, #6f5d4f 83.3%),
+  background:
+    linear-gradient(to bottom, rgba(111, 93, 79, 0) 62%, #6f5d4f 83.3%),
     url(assets/img/portfolio/portfolio-9-night.jpg) top / 100% auto no-repeat,
     #6f5d4f;
   opacity: 0;
@@ -628,7 +639,7 @@ section.portfolio {
   width: 100%;
   height: auto;
   border-radius: 16px;
-  margin: 100px 0 0 0;
+  margin: 35px 0 0 0;
 }
 
 /*--------------------------------------------------------------
@@ -681,7 +692,7 @@ section ul li {
 }
 
 .about .content {
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
   background-color: transparent;
   padding: var(--space-small);
 }
@@ -696,7 +707,7 @@ section ul li {
 }
 
 .about {
-  margin-top: 100px;
+  margin-top: 35px;
 }
 
 .about h2 {
@@ -773,7 +784,7 @@ section ul li {
   overflow: hidden;
   padding: 28px;
   background-color: var(--color-background-secondary);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .toolbox .info-box {
@@ -905,7 +916,7 @@ section ul li {
 .right {
   text-align: left;
   color: var(--color-brand-primary);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 /*--------------------------------------------------------------
@@ -944,7 +955,7 @@ section ul li {
 
 .portfolio-description img {
   width: 100%;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .portfolio-description h1 {
@@ -1000,7 +1011,7 @@ section ul li {
   padding: 30px;
   background: linear-gradient(55deg, #f1f1f1 0%, #daecff 100%);
   height: auto;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 .collaboration h2 {
   font: var(--font-heading-1);
@@ -1251,7 +1262,7 @@ section ul li {
 .callout {
   padding: var(--space-medium);
   background-color: var(--color-nav-default);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .callout p {
@@ -1331,7 +1342,7 @@ section ul li {
   position: absolute;
   top: 15%;
   left: 0;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
   overflow: hidden;
 }
 
@@ -1378,7 +1389,7 @@ section ul li {
 .before-after-wrapper {
   position: relative;
   aspect-ratio: 1.6;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .before-after-wrapper::before {

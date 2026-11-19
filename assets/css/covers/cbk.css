@@ -5,13 +5,12 @@
 
    One 16s loop, every animation shares it (no delays), so all parts stay in sync:
      4–56%   the Markdown types itself line by line (covers shrink, caret follows)
-     9–48%   the card renders as each line lands: title, meta, then one ingredient
-             bar per checked item while the pan fills (apples, caramel, butter, pastry)
+     9–48%   the card renders as each line lands: title, meta, and the pan fills
+             (apples, caramel, butter, pastry)
      46%     the last checkbox gets ticked
-     60–66%  "**Flip.**": the pan flips away and the tatin lands on a plate, steaming
      88–97%  everything fades out and the empty pan fades back in for the next take
    Without motion (prefers-reduced-motion, or no @scope support) the base styles
-   below show the finished state: full recipe, tatin on the plate. Hover the card
+   below show the finished state: full recipe, pastry on the pan. Hover the card
    to lift it (real pointer above 768px). */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
@@ -50,13 +49,10 @@
   /* Base = finished state */
   .cv { transform: scaleX(0); transform-box: fill-box; transform-origin: right; }
   .sk { opacity: 0; }
-  .pan { transform: scaleX(0); }
-  .pan, .plate, .apples, .pastry {
+  .apples, .pastry {
     transform-box: view-box;
     transform-origin: 590px 184px;
   }
-  .seg { transform-box: fill-box; transform-origin: left; }
-  .wisp { opacity: 0.5; }
 
   /* Editor */
   .ed-text, .card-text { animation: cbk-clear var(--cyc) linear infinite; }
@@ -79,20 +75,11 @@
   .sk2 { animation: cbk-sk2 var(--cyc) linear infinite; }
   .ttl { animation: cbk-ttl var(--cyc) ease-out infinite; }
   .meta { animation: cbk-meta var(--cyc) ease-out infinite; }
-  .lbl { animation: cbk-lbl var(--cyc) ease-out infinite; }
-  .seg { animation: var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1) infinite; }
-  .s1 { animation-name: cbk-s1; }
-  .s2 { animation-name: cbk-s2; }
-  .s3 { animation-name: cbk-s3; }
-  .s4 { animation-name: cbk-s4; }
   .pan { animation: cbk-pan var(--cyc) ease-in-out infinite; }
-  .plate { animation: cbk-plate var(--cyc) ease-in-out infinite; }
   .apples { animation: cbk-apples var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.3) infinite; }
   .caramel { animation: cbk-caramel var(--cyc) ease-out infinite; }
   .gloss { animation: cbk-gloss var(--cyc) ease-out infinite; }
   .pastry { animation: cbk-pastry var(--cyc) cubic-bezier(0.3, 0.7, 0.4, 1.2) infinite; }
-  .steam { animation: cbk-steam var(--cyc) linear infinite; }
-  .wisp { animation: cbk-wisp 2.6s ease-out var(--s, 0s) infinite; }
   .drift { transform-box: fill-box; transform-origin: center; animation: cbk-drift 9s ease-in-out var(--s, 0s) infinite; }
 
   .card { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
@@ -178,47 +165,26 @@
   17%, 91% { opacity: 1; transform: translateY(0); }
   93%, 100% { opacity: 0; transform: translateY(5px); }
 }
-@keyframes cbk-lbl { 0%, 22% { opacity: 0; } 24%, 91% { opacity: 1; } 93%, 100% { opacity: 0; } }
-@keyframes cbk-s1 { 0%, 27% { transform: scaleX(0); } 29%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
-@keyframes cbk-s2 { 0%, 32% { transform: scaleX(0); } 34%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
-@keyframes cbk-s3 { 0%, 37% { transform: scaleX(0); } 39%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
-@keyframes cbk-s4 { 0%, 46% { transform: scaleX(0); } 48%, 91% { transform: scaleX(1); } 93%, 100% { transform: scaleX(0); } }
 
-/* The pan fills while it's on screen, then empties out of sight (63–90%) */
+/* The pan fills while it's on screen, then empties out of sight (91–92%) */
 @keyframes cbk-apples {
   0%, 27% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
-  29.5%, 75% { opacity: 1; transform: scale(1) rotate(0); }
-  76%, 100% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+  29.5%, 91% { opacity: 1; transform: scale(1) rotate(0); }
+  91.5%, 100% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
 }
-@keyframes cbk-caramel { 0%, 32% { opacity: 0; } 34.5%, 75% { opacity: 1; } 76%, 100% { opacity: 0; } }
-@keyframes cbk-gloss { 0%, 37% { opacity: 0; } 39%, 75% { opacity: 0.55; } 76%, 100% { opacity: 0; } }
+@keyframes cbk-caramel { 0%, 32% { opacity: 0; } 34.5%, 91% { opacity: 1; } 91.5%, 100% { opacity: 0; } }
+@keyframes cbk-gloss { 0%, 37% { opacity: 0; } 39%, 91% { opacity: 0.55; } 91.5%, 100% { opacity: 0; } }
 @keyframes cbk-pastry {
   0%, 46% { opacity: 0; transform: scale(1.25); }
-  48.5%, 75% { opacity: 1; transform: scale(1); }
-  76%, 100% { opacity: 0; transform: scale(1.25); }
+  48.5%, 91% { opacity: 1; transform: scale(1); }
+  91.5%, 100% { opacity: 0; transform: scale(1.25); }
 }
 
-/* The flip: the pan squashes away, the plate grows in. The reset is a plain
-   crossfade (plate out at 88–91%, pan back in at 91–95%), no second flip. */
+/* The pan fades with the pane (88–91%), resets while hidden, and fades back in empty */
 @keyframes cbk-pan {
-  0%, 60% { transform: scaleX(1); opacity: 1; }
-  63% { transform: scaleX(0); opacity: 1; }
-  63.1%, 91% { transform: scaleX(0); opacity: 0; }
-  91.1% { transform: scaleX(1); opacity: 0; }
-  95%, 100% { transform: scaleX(1); opacity: 1; }
-}
-@keyframes cbk-plate {
-  0%, 63% { transform: scaleX(0) rotate(0); opacity: 1; }
-  66% { transform: scaleX(1.06) rotate(-4deg); opacity: 1; }
-  68%, 88% { transform: scaleX(1) rotate(0); opacity: 1; }
-  91% { transform: scaleX(1) rotate(0); opacity: 0; }
-  91.1%, 100% { transform: scaleX(0) rotate(0); opacity: 0; }
-}
-@keyframes cbk-steam { 0%, 66% { opacity: 0; } 70%, 86% { opacity: 1; } 88%, 100% { opacity: 0; } }
-@keyframes cbk-wisp {
-  0% { opacity: 0; transform: translateY(8px); }
-  35% { opacity: 0.6; }
-  100% { opacity: 0; transform: translateY(-16px); }
+  0%, 88% { opacity: 1; }
+  91%, 92% { opacity: 0; }
+  95%, 100% { opacity: 1; }
 }
 
 /* A lazy loop, like a leaf on a draught: up and across, sway back, settle.
