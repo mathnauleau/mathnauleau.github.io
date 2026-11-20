@@ -64,14 +64,20 @@
               href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
               rel="noopener noreferrer" data-i18n="nav.resource">Resource</a>
           </li>
-          <!-- <li class="dropdown">
-            <span class="badge rounded-pill bg-primary">Beta</span>
-            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
+
+          <li class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+              <img id="current-flag" src="assets/icon/en.svg" alt="current language flag">
+            </button>
             <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
-              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+              <button type="button" onclick="changeLanguage('en')" aria-label="Switch language to english"><img
+                  src="assets/icon/en.svg" alt="english flag"></button>
+              <button type="button" onclick="changeLanguage('fr')" aria-label="Traduire en Français"><img
+                  src="assets/icon/fr.svg" alt="french flag"></button>
             </div>
-          </li> -->
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -104,13 +110,13 @@
           <div class="portfolio-fact">
             <span class="portfolio-fact__prefix" data-i18n="general.date">Date:</span>
             <div class="portfolio-fact__value">
-              <p>2022 - 2025</p>
+              <p data-i18n="system.info_date_range">July 2022 - Dec. 2025</p>
             </div>
           </div>
           <div class="portfolio-fact">
             <span class="portfolio-fact__prefix" data-i18n="general.customer">Customer:</span>
             <div class="portfolio-fact__value">
-              <p>Albert Heijn</p>
+              <p>Albert Heijn (B2C, B2B)</p>
             </div>
           </div>
           <div class="portfolio-fact">
@@ -120,9 +126,9 @@
             </div>
           </div>
           <div class="portfolio-fact">
-            <span class="portfolio-fact__prefix" data-i18n="general.skill_prefix">Skills:</span>
+            <span class="portfolio-fact__prefix" data-i18n="general.used">Used:</span>
             <div class="portfolio-fact__value">
-              <p data-i18n="system.info_tool_desc">System thinking, design tokens</p>
+              <p>Figma, Token Studio, Github</p>
             </div>
           </div>
         </div>
@@ -139,9 +145,6 @@
     <!-- ======= END Portfolio Header ======= -->
 
     <section class="portfolio-description container-xl col-lg-9">
-      <div class="sub-section">
-        <img src="assets/img/portfolio/project1/view-01.png" alt="illustration of the design system website">
-      </div>
 
       <div class="sub-section">
         <h2 data-i18n="system.section_key_results">Key results</h2>
@@ -188,14 +191,6 @@
 
     </section>
 
-    <section class="portfolio-description container-xl col-lg-8">
-      <header class="section-header">
-        <h5>Problem statement</h5>
-        <h2 data-i18n="system.section_problem_statement_desc">The current system is prone to inconsistency, inefficiency
-          &amp; low quality</h2>
-      </header>
-    </section>
-
     <!-- ======= START Portfolio Section Highlight ======= -->
     <section class="portfolio-section-highlight container-fluid col-12" style="height: fit-content">
       <div class="col-lg-9 container-fluid">
@@ -221,6 +216,14 @@
       </div>
     </section>
     <!-- ======= END Portfolio Section Highlight ======= -->
+
+    <section class="portfolio-description container-xl col-lg-8">
+      <header class="section-header">
+        <h5 data-i18n="general.problem_statement">Problem statement</h5>
+        <h2 data-i18n="system.section_problem_statement_desc">The current system is prone to inconsistency, inefficiency
+          &amp; low quality</h2>
+      </header>
+    </section>
 
     <section class="portfolio-description container-xl col-lg-9">
       <div class="sub-section">
@@ -448,15 +451,17 @@
       </div>
 
       <div class="sub-section">
-        <h2>System adoption</h2>
-        <p>
+        <h2 data-i18n="system.section_adoption">System adoption</h2>
+        <p data-i18n="system.section_adoption_desc">
           We began measuring the system halfway through its development. Initially, we relied on surveys and feedback
           from designers and developers, which wasn't sufficient to prove its value to management. As the system matured
           across teams, we introduced key metrics:
         </p>
         <ul>
-          <li>Time to market was tracked comparing legacy vs. new component implementation and maintenance.</li>
-          <li>Foundation and component usage, monitored through codebase scanning (Github action)</li>
+          <li data-i18n="system.section_adoption_metric01">Time to market was tracked comparing legacy vs. new component
+            implementation and maintenance.</li>
+          <li data-i18n="system.section_adoption_metric02">Foundation and component usage, monitored through codebase
+            scanning (Github action)</li>
         </ul>
         <img src="assets/img/portfolio/project1/adoption.png"
           alt="Adoption of the system by designers and developers" />
@@ -556,27 +561,32 @@
       <div class="footer-social">
         <ul>
           <li>
-            <a class="nav-link social-links" href="https://instagram.com/mathieunauleau" aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://instagram.com/mathieunauleau"
+              aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-instagram"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/"
+              aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-linkedin"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.github.com/mathnauleau" aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.github.com/mathnauleau"
+              aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" aria-label="Visit my Etsy shop" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" aria-label="Visit my Etsy shop"
+              target="_blank" rel="noopener noreferrer">
               <i class="bi bi-explicit-fill"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau"
+              aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-dribbble"></i>
             </a>
           </li>
@@ -590,7 +600,7 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <!-- <script src="js/localization.js"></script> -->
+  <script src="js/localization.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
