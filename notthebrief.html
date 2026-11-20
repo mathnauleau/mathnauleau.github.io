@@ -81,11 +81,13 @@
 
   <main>
     <!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
+    <section class="portfolio-header portfolio-header--title-first">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
+          <h1>Not the brief.</h1>
+          <h3 data-i18n="notthebrief.tagline">No client, no constraints, just ideas.</h3>
           <picture>
-            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project-notthebrief/project-hero.png" width="1920" height="500">
+            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project-notthebrief/project-hero.png" width="1920" height="800">
             <img src="assets/img/portfolio/project-notthebrief/project-hero-mobile.png" width="800" height="500"
               alt="Not the brief hero image">
           </picture>
@@ -96,56 +98,32 @@
 
     <!-- ======= START Portfolio hero Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
-      <h1>Not the brief.</h1>
-
-      <div class="row">
-        <div class="portfolio-info col-lg-4 col-sm-12">
-          <div class="row">
-            <div class="col-4">
-              <strong>Date</strong>
-            </div>
-            <div class="col-8">
-              <p>2026</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong>Hobby</strong>
-            </div>
-            <div class="col-8">
-              <p>Vibe-coding experiments</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong>Platform</strong>
-            </div>
-            <div class="col-8">
-              <p>
-                <a href="https://www.dailyui.co/" target="_blank" rel="noopener noreferrer">vercel.co</a>
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.tool">Softwares</strong>
-            </div>
-            <div class="col-8">
-              <p>Claude Code, VSCode</p>
-            </div>
-          </div>
+      <dl class="portfolio-facts">
+        <div class="portfolio-fact">
+          <dt>Date:</dt>
+          <dd>2026</dd>
         </div>
-
-        <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3 data-i18n="notthebrief.h3_1">
-            No client, no constraints, just ideas that won't stop spinning until you build them. From vague ideas to
-            vibe-coded prototypes, this is my 'What if' section turned into approximate code that actually work.
-            Exploring and learning altogether.
-          </h3>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.hobby_prefix">Hobby:</dt>
+          <dd data-i18n="notthebrief.info_hobby_desc">Vibe-coding experiments</dd>
         </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.platform_prefix">Platform:</dt>
+          <dd>
+            <a href="https://github.com/mathnauleau" target="_blank" rel="noopener noreferrer">github.com/mathnauleau</a>
+          </dd>
+        </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.used">Used:</dt>
+          <dd>Claude Code, VSCode</dd>
+        </div>
+      </dl>
+      <div class="portfolio-intro">
+        <h3 data-i18n="notthebrief.h3_1">
+          No client, no constraints, just ideas that won't stop spinning until you build them. From vague ideas to
+          vibe-coded prototypes, this is my 'What if' section turned into approximate code that actually work.
+          Exploring and learning altogether.
+        </h3>
       </div>
     </section>
     <!-- ======= END Portfolio Header ======= -->

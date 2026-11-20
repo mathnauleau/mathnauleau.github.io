@@ -81,11 +81,13 @@
 
   <main>
     <!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
+    <section class="portfolio-header portfolio-header--title-first">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
+          <h1 data-i18n="sketching.title_hero">Digital sketching</h1>
+          <h3 data-i18n="sketching.tagline">Watercolor, illustration and animation to tell stories.</h3>
           <picture>
-            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project7/project-hero.png" width="1920" height="500">
+            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project7/project-hero.png" width="1920" height="800">
             <img src="assets/img/portfolio/project7/project-hero-mobile.png" width="800" height="500"
               alt="Sketching hero image">
           </picture>
@@ -96,47 +98,32 @@
 
     <!-- ======= START Portfolio hero Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
-      <h1>Digital sketching</h1>
-
-      <div class="row">
-        <div class="portfolio-info col-lg-4 col-sm-12">
-          <div class="row">
-            <div class="col-4">
-              <strong>Date</strong>
-            </div>
-            <div class="col-8">
-              <p data-i18n="sketching.info_date_range">2019 till now</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong>Instagram</strong>
-            </div>
-            <div class="col-8">
-              <p>
-                <a href="https://www.instagram.com/sktchday/" target="_blank" rel="noopener noreferrer">@sktchday</a>
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.tool">Softwares</strong>
-            </div>
-            <div class="col-8">
-              <p>Affinity Designer, Procreate, After Effects, Blender 3D</p>
-            </div>
-          </div>
+      <dl class="portfolio-facts">
+        <div class="portfolio-fact">
+          <dt>Date:</dt>
+          <dd data-i18n="sketching.info_date_range">2019 - Now</dd>
         </div>
-
-        <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3 data-i18n="sketching.description_hero">
-            There are many ways to tell stories... <br>
-            From watercolor to illustration and animation, I'm experimenting
-            with different ways to visualize my thoughts.
-          </h3>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.hobby_prefix">Hobby:</dt>
+          <dd data-i18n="sketching.info_hobby_desc">Illustration &amp; animation</dd>
         </div>
+        <div class="portfolio-fact">
+          <dt>Instagram:</dt>
+          <dd>
+            <a href="https://www.instagram.com/sktchday/" target="_blank" rel="noopener noreferrer">@sktchday</a>
+          </dd>
+        </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.used">Used:</dt>
+          <dd>Affinity Designer, Procreate, After Effects, Blender 3D</dd>
+        </div>
+      </dl>
+      <div class="portfolio-intro">
+        <h3 data-i18n="sketching.description_hero">
+          There are many ways to tell stories... <br>
+          From watercolor to illustration and animation, I'm experimenting
+          with different ways to visualize my thoughts.
+        </h3>
       </div>
     </section>
     <!-- ======= END Portfolio Header ======= -->

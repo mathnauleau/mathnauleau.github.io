@@ -61,14 +61,20 @@
               href="https://mathieunauleau.notion.site/Resources-2c0cd84250f5483499d8045da024b8d3" target="_blank"
               rel="noopener noreferrer" data-i18n="nav.resource">Resource</a>
           </li>
-          <!-- <li class="dropdown">
-            <span class="badge rounded-pill bg-primary">Beta</span>
-            <button class="dropbtn"><img src="assets/icon/language.svg"></button>
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('en')">English</a></li>
+          <li class="lang-mobile"><a href="#" onclick="changeLanguage('fr')">Français</a></li>
+
+          <li class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+              <img id="current-flag" src="assets/icon/en.svg" alt="current language flag">
+            </button>
             <div class="dropdown-content">
-              <a href="#" onclick="changeLanguage('en')"><img src="assets/icon/en.svg"></a>
-              <a href="#" onclick="changeLanguage('fr')"><img src="assets/icon/fr.svg"></a>
+              <button type="button" onclick="changeLanguage('en')" aria-label="Switch language to english"><img
+                  src="assets/icon/en.svg" alt="english flag"></button>
+              <button type="button" onclick="changeLanguage('fr')" aria-label="Traduire en Français"><img
+                  src="assets/icon/fr.svg" alt="french flag"></button>
             </div>
-          </li> -->
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -78,12 +84,14 @@
 
   <main id="main">
     <!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
+    <section class="portfolio-header portfolio-header--title-first">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
+          <h1 data-i18n="system.title_hero">Pantry Design System</h1>
+          <h3 data-i18n="system.tagline">One design system to unite Ahold Delhaize's brands.</h3>
           <picture>
             <source media="(min-width: 768px)" srcset="assets/img/portfolio/project1/project-hero.png" width="1920"
-              height="500">
+              height="800">
             <img src="assets/img/portfolio/project1/project-hero-mobile.png" width="800" height="500"
               alt="Pantry DS documentation site: introduction page with side navigation and Get started cards for designers and developers">
           </picture>
@@ -94,63 +102,36 @@
 
     <!-- ======= START Portfolio hero Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
-      <h1>Pantry Design System</h1>
-
-      <div class="row">
-        <div class="portfolio-info col-lg-4 col-sm-12">
-          <div class="row">
-            <div class="col-4">
-              <strong>Date</strong>
-            </div>
-            <div class="col-8">
-              <p>2022 - 2025</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.company">Company</strong>
-            </div>
-            <div class="col-8">
-              <p>Albert Heijn</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.result">Result</strong>
-            </div>
-            <div class="col-8">
-              <p><a href="https://ah.nl" target="_blank" rel="noopener noreferrer">design.ah.nl</a></p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.skill">Skills</strong>
-            </div>
-            <div class="col-8">
-              <p data-i18n="system.info_tool_desc">System thinking, design tokens</p>
-            </div>
-          </div>
+      <dl class="portfolio-facts">
+        <div class="portfolio-fact">
+          <dt>Date:</dt>
+          <dd data-i18n="system.info_date_range">July 2022 - Dec. 2025</dd>
         </div>
-
-        <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3 data-i18n="system.description_hero">
-            Ahold Delhaize started its Design System with an ambitious goal:
-            unite existing initiatives to standardise its design and
-            development efforts to deliver a consistent and high-quality user
-            experiences across all touchpoints.
-          </h3>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.customer">Customer:</dt>
+          <dd>Albert Heijn (B2C, B2B)</dd>
         </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.result_prefix">Result:</dt>
+          <dd><a href="https://ah.nl" target="_blank" rel="noopener noreferrer">design.ah.nl</a></dd>
+        </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.used">Used:</dt>
+          <dd>Figma, Token Studio, Github</dd>
+        </div>
+      </dl>
+      <div class="portfolio-intro">
+        <h3 data-i18n="system.description_hero">
+          Ahold Delhaize started its Design System with an ambitious goal:
+          unite existing initiatives to standardise its design and
+          development efforts to deliver a consistent and high-quality user
+          experiences across all touchpoints.
+        </h3>
       </div>
     </section>
     <!-- ======= END Portfolio Header ======= -->
 
     <section class="portfolio-description container-xl col-lg-9">
-      <div class="sub-section">
-        <img src="assets/img/portfolio/project1/view-01.png" alt="illustration of the design system website">
-      </div>
 
       <div class="sub-section">
         <h2 data-i18n="system.section_key_results">Key results</h2>
@@ -197,14 +178,6 @@
 
     </section>
 
-    <section class="portfolio-description container-xl col-lg-8">
-      <header class="section-header">
-        <h5>Problem statement</h5>
-        <h2 data-i18n="system.section_problem_statement_desc">The current system is prone to inconsistency, inefficiency
-          &amp; low quality</h2>
-      </header>
-    </section>
-
     <!-- ======= START Portfolio Section Highlight ======= -->
     <section class="portfolio-section-highlight container-fluid col-12" style="height: fit-content">
       <div class="col-lg-9 container-fluid">
@@ -230,6 +203,14 @@
       </div>
     </section>
     <!-- ======= END Portfolio Section Highlight ======= -->
+
+    <section class="portfolio-description container-xl col-lg-8">
+      <header class="section-header">
+        <h5 data-i18n="general.problem_statement">Problem statement</h5>
+        <h2 data-i18n="system.section_problem_statement_desc">The current system is prone to inconsistency, inefficiency
+          &amp; low quality</h2>
+      </header>
+    </section>
 
     <section class="portfolio-description container-xl col-lg-9">
       <div class="sub-section">
@@ -457,15 +438,17 @@
       </div>
 
       <div class="sub-section">
-        <h2>System adoption</h2>
-        <p>
+        <h2 data-i18n="system.section_adoption">System adoption</h2>
+        <p data-i18n="system.section_adoption_desc">
           We began measuring the system halfway through its development. Initially, we relied on surveys and feedback
           from designers and developers, which wasn't sufficient to prove its value to management. As the system matured
           across teams, we introduced key metrics:
         </p>
         <ul>
-          <li>Time to market was tracked comparing legacy vs. new component implementation and maintenance.</li>
-          <li>Foundation and component usage, monitored through codebase scanning (Github action)</li>
+          <li data-i18n="system.section_adoption_metric01">Time to market was tracked comparing legacy vs. new component
+            implementation and maintenance.</li>
+          <li data-i18n="system.section_adoption_metric02">Foundation and component usage, monitored through codebase
+            scanning (Github action)</li>
         </ul>
         <img src="assets/img/portfolio/project1/adoption.png"
           alt="Adoption of the system by designers and developers" />
@@ -565,27 +548,32 @@
       <div class="footer-social">
         <ul>
           <li>
-            <a class="nav-link social-links" href="https://instagram.com/mathieunauleau" aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://instagram.com/mathieunauleau"
+              aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-instagram"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/"
+              aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-linkedin"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.github.com/mathnauleau" aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.github.com/mathnauleau"
+              aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" aria-label="Visit my Etsy shop" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" aria-label="Visit my Etsy shop"
+              target="_blank" rel="noopener noreferrer">
               <i class="bi bi-explicit-fill"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau"
+              aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-dribbble"></i>
             </a>
           </li>
@@ -599,7 +587,13 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <!-- <script src="js/localization.js"></script> -->
+  <script src="js/localization.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

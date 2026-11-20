@@ -81,11 +81,13 @@
 
   <main>
     <!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
+    <section class="portfolio-header portfolio-header--title-first">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
+          <h1 data-i18n="kumiko.title_hero">Handmade Kumiko Lamp</h1>
+          <h3 data-i18n="kumiko.tagline">Two months of woodworking, one Japanese-style lamp.</h3>
           <picture>
-            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project9/project-hero.png" width="1920" height="500">
+            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project9/project-hero.png" width="1920" height="800">
             <img src="assets/img/portfolio/project9/project-hero-mobile.png" width="800" height="500"
               alt="Handmade lamp hero image">
           </picture>
@@ -96,59 +98,34 @@
 
     <!-- ======= START Portfolio hero Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
-      <h1 data-i18n="kumiko.title_hero">Handmade Kumiko Lamp</h1>
-
-      <div class="row">
-        <div class="portfolio-info col-lg-4 col-sm-12">
-          <div class="row">
-            <!--  g-0  -->
-            <div class="col-4">
-              <strong>Date</strong>
-            </div>
-            <div class="col-8">
-              <p data-i18n="kumiko.info_date_range">Winter 2022</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.result">Result</strong>
-            </div>
-            <div class="col-8">
-              <p>
-                <a href="https://www.etsy.com/listing/4331805749/kumiko-wooden-nightstand-lamp" target="_blank"
-                  rel="noopener noreferrer"><i class="bi bi-browser-safari"></i> etsy.com</a>
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong>Technique</strong>
-            </div>
-            <div class="col-8">
-              <p>Fine woodworking</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.tool">Outils</strong>
-            </div>
-            <div class="col-8">
-              <p data-i18n="kumiko.info_tool_desc">Japanese saw, fine wood</p>
-            </div>
-          </div>
+      <dl class="portfolio-facts">
+        <div class="portfolio-fact">
+          <dt>Date:</dt>
+          <dd data-i18n="kumiko.info_date_range">Winter 2022</dd>
         </div>
-
-        <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3 data-i18n="kumiko.description_hero">
-            I found in the handmade wooden Japanese-style lamp a nice
-            challenge for myself. From imagining to finally finishing the
-            lamp, I've spent about 2 months dealing with small technical
-            challenges up to the result.
-          </h3>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.result_prefix">Result:</dt>
+          <dd>
+            <a href="https://www.etsy.com/listing/4331805749/kumiko-wooden-nightstand-lamp" target="_blank"
+              rel="noopener noreferrer"><i class="bi bi-browser-safari"></i> etsy.com</a>
+          </dd>
         </div>
+        <div class="portfolio-fact">
+          <dt>Technique:</dt>
+          <dd data-i18n="kumiko.info_technique_desc">Fine woodworking</dd>
+        </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.used">Used:</dt>
+          <dd data-i18n="kumiko.info_tool_desc">Japanese saw, fine wood</dd>
+        </div>
+      </dl>
+      <div class="portfolio-intro">
+        <h3 data-i18n="kumiko.description_hero">
+          I found in the handmade wooden Japanese-style lamp a nice
+          challenge for myself. From imagining to finally finishing the
+          lamp, I've spent about 2 months dealing with small technical
+          challenges up to the result.
+        </h3>
       </div>
     </section>
     <!-- ======= END Portfolio Header ======= -->

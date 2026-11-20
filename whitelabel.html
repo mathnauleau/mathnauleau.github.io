@@ -81,11 +81,14 @@
 
   <main>
     <!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
+    <section class="portfolio-header portfolio-header--title-first">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
+          <h1 data-i18n="label.title_hero">Building an eCommerce white label app.</h1>
+          <h3 data-i18n="label.tagline">One eCommerce app, shared by several Dutch brands.</h3>
           <picture>
-            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project2/project-hero.png" width="1920" height="500">
+            <source media="(min-width: 768px)" srcset="assets/img/portfolio/project2/project-hero.png" width="1920"
+              height="800">
             <img src="assets/img/portfolio/project2/project-hero-mobile.png" width="800" height="500"
               alt="White label app hero image">
           </picture>
@@ -96,67 +99,36 @@
 
     <!-- ======= START Portfolio hero Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
-      <h1 data-i18n="label.title_hero">
-        Building a white label app for a <br>
-        multinational retail company.
-      </h1>
-
-      <div class="row">
-        <div class="portfolio-info col-lg-4 col-sm-12">
-          <div class="row">
-            <div class="col-4">
-              <strong>Date</strong>
-            </div>
-            <div class="col-8">
-              <p data-i18n="label.info_date_range">July 2022 - Dec. 2023</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="label.info_brands">Brands</strong>
-            </div>
-            <div class="col-8">
-              <p>AH, Gall &amp; Gall, Etos</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.result">Result</strong>
-            </div>
-            <div class="col-8">
-              <p>
-                <a href="https://apps.apple.com/nl/app/etos/id1041923819" target="_blank" rel="noopener noreferrer"><i
-                    class="bi bi-apple"></i>
-                  Mijn Etos App</a>
-              </p>
-              <p>
-                <a href="https://apps.apple.com/us/app/gall-gall-jouw-slijterij/id1666566237" target="_blank"
-                  rel="noopener noreferrer"><i class="bi bi-apple"></i> Gall&amp;Gall App</a>
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.tool">Tools</strong>
-            </div>
-            <div class="col-8">
-              <p>Figma, Token Studio, Jira, Github</p>
-            </div>
-          </div>
+      <dl class="portfolio-facts">
+        <div class="portfolio-fact">
+          <dt>Date:</dt>
+          <dd data-i18n="label.info_date_range">July 2022 - Dec. 2023</dd>
         </div>
-
-        <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3 data-i18n="label.description_hero">
-            In 2022, the multinational retail company Ahold Delhaize increased
-            the collaboration between its dutch brands to take a leap in its
-            omnichannel strategy. By building a strong White Label eCom
-            platform, brands can reach more customers while reducing their
-            cost &AMP; development efforts.
-          </h3>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.customer">Customer:</dt>
+          <dd>Albert Heijn, Gall &amp; Gall, Etos</dd>
         </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.result_prefix">Result:</dt>
+          <dd>
+            <a href="https://apps.apple.com/nl/app/etos/id1041923819" target="_blank" rel="noopener noreferrer"><i
+                class="bi bi-apple"></i>
+              Mijn Etos App</a>
+          </dd>
+        </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.used">Used:</dt>
+          <dd>Figma, Token Studio, Jira, Github</dd>
+        </div>
+      </dl>
+      <div class="portfolio-intro">
+        <h3 data-i18n="label.description_hero">
+          In 2022, the multinational retail company Ahold Delhaize increased
+          the collaboration between its dutch brands to take a leap in its
+          omnichannel strategy. By building a strong White Label eCom
+          platform, brands can reach more customers while reducing their
+          cost &AMP; development efforts.
+        </h3>
       </div>
     </section>
     <!-- ======= END Portfolio Header ======= -->
@@ -194,7 +166,7 @@
           <div class="col-xl-3 col-md-6">
             <div class="info-box rounded-4">
               <strong>2📱</strong>
-              <h4 data-i18n="label.section_numbers_stat_title_2">succesfully launched</h4>
+              <h4 data-i18n="label.section_numbers_stat_title_2">successfully launched</h4>
               <p data-i18n="label.section_numbers_stat_desc_2">From intake to growth within 1 year.</p>
             </div>
           </div>
@@ -392,7 +364,7 @@
       <div class="sub-section">
         <div class="row gx-5">
           <div class="col-lg-6 col-sm-12">
-            <h2 data-i18n="label.section_impact">Impact</h2>
+            <h2>Impact</h2>
             <ul>
               <li data-i18n="label.section_impact_1">Built a white-label system from scratch</li>
               <li data-i18n="label.section_impact_2">Created 8 apps (2 platforms x 2 brands x 2 devices) in 8 months
@@ -466,27 +438,32 @@
       <div class="footer-social">
         <ul>
           <li>
-            <a class="nav-link social-links" href="https://instagram.com/mathieunauleau" aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://instagram.com/mathieunauleau"
+              aria-label="Visit my Instagram profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-instagram"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/" aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.linkedin.com/in/mathieunauleau/"
+              aria-label="Visit my LinkedIn profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-linkedin"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.github.com/mathnauleau" aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.github.com/mathnauleau"
+              aria-label="Visit my GitHub profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-github"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" aria-label="Visit my Etsy shop" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://www.etsy.com/shop/SKETCHday" aria-label="Visit my Etsy shop"
+              target="_blank" rel="noopener noreferrer">
               <i class="bi bi-explicit-fill"></i>
             </a>
           </li>
           <li>
-            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau" aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
+            <a class="nav-link social-links" href="https://dribbble.com/mathieunauleau"
+              aria-label="Visit my Dribbble profile" target="_blank" rel="noopener noreferrer">
               <i class="bi bi-dribbble"></i>
             </a>
           </li>

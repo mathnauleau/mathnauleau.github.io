@@ -81,9 +81,11 @@
 
   <main>
     <!-- ======= START Portfolio Header ======= -->
-    <section class="portfolio-header">
+    <section class="portfolio-header portfolio-header--title-first">
       <div class="container-fluid container-xl d-flex align-items-center">
         <div class="col-12">
+          <h1>Daily UI</h1>
+          <h3 data-i18n="dailyui.tagline">One UI challenge a day, in two to four hours.</h3>
           <img src="assets/img/portfolio/project8/project-hero.png" alt="Daily UI challenge hero image">
         </div>
       </div>
@@ -92,56 +94,32 @@
 
     <!-- ======= START Portfolio hero Section ======= -->
     <section class="portfolio-description container-xl col-lg-9">
-      <h1>Daily UI</h1>
-
-      <div class="row">
-        <div class="portfolio-info col-lg-4 col-sm-12">
-          <div class="row">
-            <div class="col-4">
-              <strong>Date</strong>
-            </div>
-            <div class="col-8">
-              <p>2020</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong>Hobby</strong>
-            </div>
-            <div class="col-8">
-              <p>Interface</p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong>Source</strong>
-            </div>
-            <div class="col-8">
-              <p>
-                <a href="https://www.dailyui.co/" target="_blank" rel="noopener noreferrer">dailyui.co</a>
-              </p>
-            </div>
-          </div>
-          <hr>
-          <div class="row">
-            <div class="col-4">
-              <strong data-i18n="general.tool">Softwares</strong>
-            </div>
-            <div class="col-8">
-              <p>Figma, RIVE</p>
-            </div>
-          </div>
+      <dl class="portfolio-facts">
+        <div class="portfolio-fact">
+          <dt>Date:</dt>
+          <dd>2020</dd>
         </div>
-
-        <div class="col-lg-8 col-sm-12 px-lg-5">
-          <h3 data-i18n="dailyui.description_hero">
-            Daily UI is a series of daily design challenge that aim to improve
-            our practice of UI design. I often completed these GUI in 2 to 4
-            hours each, and learned new tools and visual tricks.
-          </h3>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.hobby_prefix">Hobby:</dt>
+          <dd>Interface</dd>
         </div>
+        <div class="portfolio-fact">
+          <dt>Source:</dt>
+          <dd>
+            <a href="https://www.dailyui.co/" target="_blank" rel="noopener noreferrer">dailyui.co</a>
+          </dd>
+        </div>
+        <div class="portfolio-fact">
+          <dt data-i18n="general.used">Used:</dt>
+          <dd>Figma, RIVE</dd>
+        </div>
+      </dl>
+      <div class="portfolio-intro">
+        <h3 data-i18n="dailyui.description_hero">
+          Daily UI is a series of daily design challenge that aim to improve
+          our practice of UI design. I often completed these GUI in 2 to 4
+          hours each, and learned new tools and visual tricks.
+        </h3>
       </div>
     </section>
     <!-- ======= END Portfolio Header ======= -->
