@@ -947,7 +947,7 @@ section ul li {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   gap: var(--space-medium) var(--space-large);
-  margin-bottom: var(--space-xxlarge);
+  margin: 0 0 var(--space-xxlarge);
 }
 
 /* The fact holding a link (Result / Website) always comes last, so on
@@ -956,28 +956,18 @@ section ul li {
   order: 1;
 }
 
-/* "Date:" / "Customer:" / "Used:" sit on their own line above the value.
-   The prefix is its own element so translations of the value still work. */
-.portfolio-fact__prefix {
-  display: block;
+/* Each fact is a <dt> label ("Date:" / "Customer:" / "Used:") above one
+   or more <dd> values. A fact with two links (Island) gets two <dd>s,
+   one per line. Margins reset Bootstrap's default dt/dd spacing. */
+.portfolio-fact dt {
   font: var(--font-caption);
   color: var(--color-text-secondary);
 }
 
-.portfolio-fact__value,
-.portfolio-fact__value p {
-  display: inline;
-}
-
-.portfolio-fact__value p {
+.portfolio-fact dd {
   font: var(--font-body-regular);
   margin: 0;
   color: var(--color-brand-primary);
-}
-
-/* Two links in one fact (Island, White label): one per line */
-.portfolio-fact__value p + p {
-  display: block;
 }
 
 /* Lead paragraph: left-aligned, slightly larger, primary colour */
