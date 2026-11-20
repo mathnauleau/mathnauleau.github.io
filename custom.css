@@ -1535,3 +1535,25 @@ section ul li {
   min-height: 48px;
   min-width: 48px;
 }
+
+/* Fade-up entrance (replaces the AOS library) */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-up {
+  animation: fade-up 1s ease-in-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
+}
