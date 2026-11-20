@@ -134,6 +134,14 @@
   --transition-slower: 0.5s;
 }
 
+/* Display titles step down on phones so long project titles don't break
+   into one or two words per line. */
+@media (max-width: 768px) {
+  :root {
+    --font-display-1: 700 2.75em/1.2em var(--font-family-display); /* 44px, matches .hero h1 on mobile */
+  }
+}
+
 .dark {
   --color-neutral-0: #141e2e;
   --color-neutral-50: #141e2e;

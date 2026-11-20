@@ -638,8 +638,37 @@ section.portfolio {
 .portfolio-header img {
   width: 100%;
   height: auto;
-  border-radius: 16px;
-  margin: 35px 0 0 0;
+  border-radius: var(--border-radius-xlarge);
+  margin: 100px 0 0 0;
+}
+
+/* Title above the hero image (all project pages). The title takes over the
+   100px that clears the fixed header; the description below gets the section
+   gap the title used to provide. The title + tagline block gets an extra 60px
+   of breathing room above and below. */
+.portfolio-header--title-first h1 {
+  font: var(--font-display-1);
+  color: var(--color-brand-primary);
+  text-transform: none;
+  text-align: center;
+  margin: calc(100px + var(--space-xlarge) + var(--space-40) + 20px) 0 var(--space-small);
+}
+
+/* Tagline under the title; it now carries the gap down to the image */
+.portfolio-header--title-first h3 {
+  font: var(--font-body-regular-large);
+  color: var(--color-text-secondary);
+  text-align: center;
+  margin: 0 0 calc(var(--space-section) + var(--space-40) + 20px);
+}
+
+.portfolio-header--title-first img {
+  margin-top: 0;
+}
+
+/* Small gap: the facts right below read as the image's caption */
+.portfolio-header--title-first + .portfolio-description {
+  margin-top: var(--space-large);
 }
 
 /*--------------------------------------------------------------
@@ -940,6 +969,57 @@ section ul li {
 
 .portfolio-info .row {
   margin: 8px 0;
+}
+
+/*--------------------------------------------------------------
+# Portfolio overview: the project facts as a caption line under the
+# hero image, then the intro as a lead paragraph
+--------------------------------------------------------------*/
+
+/* Facts in columns, label above value. As many columns as fit (min 160px),
+   so 4 sit on one line on desktop and they wrap to 2 per row on phones. */
+.portfolio-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--space-medium) var(--space-large);
+  margin: 0 0 var(--space-xxlarge);
+}
+
+/* The fact holding a link (Result / Website) always comes last, so on
+   desktop it ends up in the rightmost column */
+.portfolio-fact:has(a) {
+  order: 1;
+}
+
+/* Each fact is a <dt> label ("Date:" / "Customer:" / "Used:") above one
+   or more <dd> values. A fact with two links (Island) gets two <dd>s,
+   one per line. Margins reset Bootstrap's default dt/dd spacing. */
+.portfolio-fact dt {
+  font: var(--font-caption);
+  color: var(--color-text-secondary);
+}
+
+.portfolio-fact dd {
+  font: var(--font-body-regular);
+  margin: 0;
+  color: var(--color-brand-primary);
+}
+
+/* Lead paragraph: left-aligned, slightly larger, primary colour */
+.portfolio-intro {
+  max-width: 680px;
+}
+
+.portfolio-description .portfolio-intro h3 {
+  font: 300 1.75em/1.45em var(--font-family-body); /* 28px */
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .portfolio-description .portfolio-intro h3 {
+    font: var(--font-body-regular-large);
+  }
 }
 
 /*--------------------------------------------------------------
