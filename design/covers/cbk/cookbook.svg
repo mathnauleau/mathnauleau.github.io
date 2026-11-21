@@ -1,0 +1,373 @@
+<!-- cookbook cover: drawn for the site, exported from index.html.
+     Open in a browser to see it animate; the styles below are assets/css/covers/cbk.css. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" class="cbk" viewBox="0 0 800 500" fill="none" role="img" aria-label="Cookbook.md">
+                <style>
+<![CDATA[
+/* Cookbook.md cover (inline <svg class="cbk"> in #project14, index.html).
+   Palette and type borrowed from Commeat (forest, gold, clay, sand; Newsreader).
+   Every rule for the drawing sits in @scope (.cbk); keyframes and SVG IDs use the
+   cbk- prefix because they are page-wide.
+
+   One 16s loop, every animation shares it (no delays), so all parts stay in sync:
+     4–56%   the Markdown types itself line by line (covers shrink, caret follows)
+     9–48%   the card renders as each line lands: title, meta, and the pan fills
+             (apples, caramel, butter, pastry)
+     46%     the last checkbox gets ticked
+     88–97%  everything fades out and the empty pan fades back in for the next take
+   Without motion (prefers-reduced-motion, or no @scope support) the base styles
+   below show the finished state: full recipe, pastry on the pan. Hover the card
+   to lift it (real pointer above 768px). */
+
+#project14 {
+  background: linear-gradient(32deg, #F6ECDF 0%, #EBD9C2 100%);
+}
+
+
+
+@scope (.cbk) {
+  :scope {
+    --cyc: 16s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Base = finished state */
+  .cv { transform: scaleX(0); transform-box: fill-box; transform-origin: right; }
+  .sk { opacity: 0; }
+  .apples, .pastry {
+    transform-box: view-box;
+    transform-origin: 590px 184px;
+  }
+
+  /* Editor */
+  .ed-text, .card-text { animation: cbk-clear var(--cyc) linear infinite; }
+  .cv { animation: var(--cyc) steps(14, end) infinite; }
+  .cv1 { animation-name: cbk-l1; }
+  .cv2 { animation-name: cbk-l2; }
+  .cv3 { animation-name: cbk-l3; }
+  .cv4 { animation-name: cbk-l4; }
+  .cv5 { animation-name: cbk-l5; }
+  .cv6 { animation-name: cbk-l6; }
+  .cv7 { animation-name: cbk-l7; }
+  .cv8 { animation-name: cbk-l8; }
+  .caret { animation: cbk-caret var(--cyc) steps(14, end) infinite; }
+  .blink { animation: cbk-blink 1s step-end infinite; }
+  .tick { animation: cbk-tick var(--cyc) linear infinite; }
+  .go { transform-box: fill-box; transform-origin: center; animation: cbk-go 2s ease-in-out infinite; }
+
+  /* Card */
+  .sk1 { animation: cbk-sk1 var(--cyc) linear infinite; }
+  .sk2 { animation: cbk-sk2 var(--cyc) linear infinite; }
+  .ttl { animation: cbk-ttl var(--cyc) ease-out infinite; }
+  .meta { animation: cbk-meta var(--cyc) ease-out infinite; }
+  .pan { animation: cbk-pan var(--cyc) ease-in-out infinite; }
+  .apples { animation: cbk-apples var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.3) infinite; }
+  .caramel { animation: cbk-caramel var(--cyc) ease-out infinite; }
+  .gloss { animation: cbk-gloss var(--cyc) ease-out infinite; }
+  .pastry { animation: cbk-pastry var(--cyc) cubic-bezier(0.3, 0.7, 0.4, 1.2) infinite; }
+  .drift { transform-box: fill-box; transform-origin: center; animation: cbk-drift 9s ease-in-out var(--s, 0s) infinite; }
+
+  .card { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .card:hover { transform: translateY(-6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .caret { display: none; }
+  }
+}
+
+/* Whole-pane fade used to wipe the take: out at 88–91%, back at 95–97% */
+@keyframes cbk-clear {
+  0%, 88% { opacity: 1; }
+  91%, 95% { opacity: 0; }
+  97%, 100% { opacity: 1; }
+}
+
+/* One per line: type during its window, hold, re-cover while the pane is faded */
+@keyframes cbk-l1 { 0%, 4% { transform: scaleX(1); } 9%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l2 { 0%, 10% { transform: scaleX(1); } 15%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l3 { 0%, 17% { transform: scaleX(1); } 22%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l4 { 0%, 23% { transform: scaleX(1); } 27%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l5 { 0%, 28% { transform: scaleX(1); } 32%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l6 { 0%, 33% { transform: scaleX(1); } 37%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l7 { 0%, 38% { transform: scaleX(1); } 43%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l8 { 0%, 49% { transform: scaleX(1); } 56%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+
+/* The caret rides the end of each line (one char ≈ 9.6 units); jumps take 0.1% */
+@keyframes cbk-caret {
+  0%, 4% { transform: translate(0, 0); }
+  9%, 9.9% { transform: translate(124.8px, 0); }
+  10% { transform: translate(0, 30px); }
+  15%, 16.9% { transform: translate(172.8px, 30px); }
+  17% { transform: translate(0, 90px); }
+  22%, 22.9% { transform: translate(134.4px, 90px); }
+  23% { transform: translate(0, 120px); }
+  27%, 27.9% { transform: translate(134.4px, 120px); }
+  28% { transform: translate(0, 150px); }
+  32%, 32.9% { transform: translate(163.2px, 150px); }
+  33% { transform: translate(0, 180px); }
+  37%, 37.9% { transform: translate(163.2px, 180px); }
+  38% { transform: translate(0, 210px); }
+  43%, 48.9% { transform: translate(182.4px, 210px); }
+  49% { transform: translate(0, 270px); }
+  56%, 90% { transform: translate(230.4px, 270px); }
+  91%, 100% { transform: translate(0, 0); }
+}
+
+@keyframes cbk-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes cbk-tick {
+  0%, 46% { opacity: 0; }
+  47%, 91% { opacity: 1; }
+  93%, 100% { opacity: 0; }
+}
+
+@keyframes cbk-go {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* Card text */
+@keyframes cbk-sk1 { 0%, 9% { opacity: 1; } 11%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-sk2 { 0%, 15% { opacity: 1; } 17%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-ttl {
+  0%, 9% { opacity: 0; transform: translateY(6px); }
+  11%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes cbk-meta {
+  0%, 15% { opacity: 0; transform: translateY(5px); }
+  17%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(5px); }
+}
+
+/* The pan fills while it's on screen, then empties out of sight (91–92%) */
+@keyframes cbk-apples {
+  0%, 27% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+  29.5%, 91% { opacity: 1; transform: scale(1) rotate(0); }
+  91.5%, 100% { opacity: 0; transform: scale(0.7) rotate(-20deg); }
+}
+@keyframes cbk-caramel { 0%, 32% { opacity: 0; } 34.5%, 91% { opacity: 1; } 91.5%, 100% { opacity: 0; } }
+@keyframes cbk-gloss { 0%, 37% { opacity: 0; } 39%, 91% { opacity: 0.55; } 91.5%, 100% { opacity: 0; } }
+@keyframes cbk-pastry {
+  0%, 46% { opacity: 0; transform: scale(1.25); }
+  48.5%, 91% { opacity: 1; transform: scale(1); }
+  91.5%, 100% { opacity: 0; transform: scale(1.25); }
+}
+
+/* The pan fades with the pane (88–91%), resets while hidden, and fades back in empty */
+@keyframes cbk-pan {
+  0%, 88% { opacity: 1; }
+  91%, 92% { opacity: 0; }
+  95%, 100% { opacity: 1; }
+}
+
+/* A lazy loop, like a leaf on a draught: up and across, sway back, settle.
+   --x / --y (1 or -1, set on each leaf) point the loop inward from its corner. */
+@keyframes cbk-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(calc(var(--x, 1) * 10px), calc(var(--y, 1) * -16px)) rotate(16deg); }
+  50% { transform: translate(calc(var(--x, 1) * 18px), calc(var(--y, 1) * -6px)) rotate(-6deg); }
+  75% { transform: translate(calc(var(--x, 1) * 6px), calc(var(--y, 1) * -22px)) rotate(12deg); }
+}
+]]>
+</style>
+<defs>
+                  <linearGradient id="cbk-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F6ECDF" />
+                    <stop offset="1" stop-color="#EBD9C2" />
+                  </linearGradient>
+                  <linearGradient id="cbk-img" x1="464" y1="84" x2="748" y2="284" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F8F1E7" />
+                    <stop offset="1" stop-color="#EEE0CC" />
+                  </linearGradient>
+                  <radialGradient id="cbk-caramel" cx="590" cy="184" r="66" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F7C25A" />
+                    <stop offset="1" stop-color="#D06A22" />
+                  </radialGradient>
+                  <linearGradient id="cbk-leaf" x1="0" y1="0" x2="1" y2="1">
+                    <stop stop-color="#F4B13B" />
+                    <stop offset="1" stop-color="#2E6B4F" />
+                  </linearGradient>
+                  <filter id="cbk-shadow" x="-20%" y="-20%" width="140%" height="150%">
+                    <feGaussianBlur stdDeviation="12" />
+                  </filter>
+                  <path id="cbk-leaf-shape" d="M0-16C11-11 13 5 0 16C-13 5-11-11 0-16Z" />
+                </defs>
+                <rect width="800" height="500" fill="url(#cbk-bg)" />
+                <!-- Drifting leaves, after the Commeat logo -->
+                <g class="drift" style="--s:0s">
+                  <use href="#cbk-leaf-shape" transform="translate(30 462) rotate(-35) scale(2.2)" fill="url(#cbk-leaf)"
+                    opacity=".55" />
+                </g>
+                <g class="drift" style="--s:-3s;--x:-1;--y:-1">
+                  <use href="#cbk-leaf-shape" transform="translate(774 36) rotate(140) scale(1.6)" fill="url(#cbk-leaf)"
+                    opacity=".45" />
+                </g>
+
+                <!-- Editor -->
+                <rect x="44" y="66" width="376" height="392" rx="22" fill="#0F3D3A" opacity=".22"
+                  filter="url(#cbk-shadow)" />
+                <rect x="40" y="52" width="380" height="396" rx="22" fill="#0F3D3A" />
+                <path d="M40 74C40 61.85 49.85 52 62 52H398C410.15 52 420 61.85 420 74V98H40Z" fill="#0B3331" />
+                <circle cx="66" cy="75" r="5.5" fill="#E0745E" />
+                <circle cx="84" cy="75" r="5.5" fill="#F4B13B" />
+                <circle cx="102" cy="75" r="5.5" fill="#F2E6D6" fill-opacity=".35" />
+                <text x="230" y="80" text-anchor="middle"
+                  font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#F2E6D6"
+                  fill-opacity=".55">cookbook.md</text>
+                <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#F2E6D6"
+                  fill-opacity=".25" text-anchor="end">
+                  <text x="74" y="136">1</text><text x="74" y="166">2</text><text x="74" y="196">3</text><text x="74"
+                    y="226">4</text><text x="74" y="256">5</text>
+                  <text x="74" y="286">6</text><text x="74" y="316">7</text><text x="74" y="346">8</text><text x="74"
+                    y="376">9</text><text x="74" y="406">10</text>
+                </g>
+                <!-- Editor lines stay one per line: whitespace between <tspan>s renders as a space.
+                     textLength pins each line to 9.6 units per character so covers and caret match. -->
+                <!-- prettier-ignore -->
+                <g class="ed-text" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16"
+                  fill="#F2E6D6">
+                  <text x="92" y="136" textLength="124.8">
+                    <tspan fill="#F4B13B"># </tspan>
+                    <tspan font-weight="700">Tarte Tatin</tspan>
+                  </text>
+                  <text x="92" y="166" textLength="172.8">
+                    <tspan fill="#F4B13B">&gt; </tspan>
+                    <tspan fill-opacity=".6" font-style="italic">45 min · Dessert</tspan>
+                  </text>
+                  <text x="92" y="226" textLength="134.4">
+                    <tspan fill="#F4B13B">## </tspan>
+                    <tspan font-weight="700">Ingredients</tspan>
+                  </text>
+                  <text x="92" y="256" textLength="134.4">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[x]</tspan> 6 apples
+                  </text>
+                  <text x="92" y="286" textLength="163.2">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[x]</tspan> 150 g sugar
+                  </text>
+                  <text x="92" y="316" textLength="163.2">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[x]</tspan> 80 g butter
+                  </text>
+                  <text x="92" y="346" textLength="182.4">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[ ]</tspan> 1 puff pastry
+                  </text>
+                  <text class="tick" x="92" y="346" textLength="38.4">
+                    <tspan fill-opacity="0">- [</tspan>
+                    <tspan fill="#E0745E" font-weight="700">x</tspan>
+                  </text>
+                  <text x="92" y="406" textLength="230.4">
+                    <tspan fill="#F4B13B">1. </tspan>Caramelise. <tspan fill="#F4B13B">**</tspan>
+                    <tspan fill="#E0745E" font-weight="700">Flip.</tspan>
+                    <tspan fill="#F4B13B">**</tspan>
+                  </text>
+                  <!-- Covers in the editor colour: each one shrinks to the right to "type" its line -->
+                  <g fill="#0F3D3A">
+                    <rect class="cv cv1" x="90" y="120" width="134" height="22" />
+                    <rect class="cv cv2" x="90" y="150" width="183" height="22" />
+                    <rect class="cv cv3" x="90" y="210" width="144" height="22" />
+                    <rect class="cv cv4" x="90" y="240" width="144" height="22" />
+                    <rect class="cv cv5" x="90" y="270" width="173" height="22" />
+                    <rect class="cv cv6" x="90" y="300" width="173" height="22" />
+                    <rect class="cv cv7" x="90" y="330" width="192" height="22" />
+                    <rect class="cv cv8" x="90" y="390" width="241" height="22" />
+                  </g>
+                  <g class="caret">
+                    <rect class="blink" x="92" y="122" width="2" height="18" fill="#F4B13B" />
+                  </g>
+                </g>
+
+                <!-- Render hint between the two panes -->
+                <g class="go">
+                  <path d="M432 243L439 250L432 257" stroke="#0F3D3A" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+
+                <!-- Recipe card (hover lifts it) -->
+                <g class="card">
+                  <rect x="456" y="86" width="300" height="350" rx="24" fill="#0F3D3A" opacity=".16"
+                    filter="url(#cbk-shadow)" />
+                  <rect x="452" y="72" width="308" height="356" rx="24" fill="#fff" />
+                  <rect x="464" y="84" width="284" height="200" rx="16" fill="url(#cbk-img)" />
+                  <!-- The dish is drawn around 590,184; this shift centres it on the card (x 606) -->
+                  <g transform="translate(16 0)">
+                    <ellipse cx="590" cy="262" rx="84" ry="12" fill="#0F3D3A" opacity=".08" />
+
+                    <!-- Pan, seen from above: fills up line by line -->
+                    <g class="pan">
+                      <circle cx="590" cy="184" r="80" fill="#0F3D3A" />
+                      <circle cx="590" cy="184" r="70" fill="#0A2C2A" />
+                      <circle cx="590" cy="184" r="75" stroke="#F2E6D6" stroke-opacity=".12" stroke-width="2" />
+                      <circle class="caramel" cx="590" cy="184" r="66" fill="url(#cbk-caramel)" />
+                      <g class="apples" fill="#F7E3AE" stroke="#DDA54C" stroke-width="2">
+                        <ellipse cx="590" cy="140" rx="21" ry="11" />
+                        <ellipse cx="590" cy="140" rx="21" ry="11" transform="rotate(45 590 184)" />
+                        <ellipse cx="590" cy="140" rx="21" ry="11" transform="rotate(90 590 184)" />
+                        <ellipse cx="590" cy="140" rx="21" ry="11" transform="rotate(135 590 184)" />
+                        <ellipse cx="590" cy="140" rx="21" ry="11" transform="rotate(180 590 184)" />
+                        <ellipse cx="590" cy="140" rx="21" ry="11" transform="rotate(225 590 184)" />
+                        <ellipse cx="590" cy="140" rx="21" ry="11" transform="rotate(270 590 184)" />
+                        <ellipse cx="590" cy="140" rx="21" ry="11" transform="rotate(315 590 184)" />
+                        <circle cx="590" cy="184" r="15" />
+                      </g>
+                      <g class="gloss" fill="#fff" opacity=".55">
+                        <ellipse cx="566" cy="152" rx="9" ry="3.5" transform="rotate(-35 566 152)" />
+                        <ellipse cx="620" cy="206" rx="6" ry="2.5" transform="rotate(-35 620 206)" />
+                        <circle cx="606" cy="148" r="2.5" />
+                        <circle cx="560" cy="210" r="2" />
+                        <circle cx="584" cy="178" r="2" />
+                      </g>
+                      <g class="pastry">
+                        <circle cx="590" cy="184" r="72" fill="#EFC173" stroke="#D49A45" stroke-width="5" />
+                        <circle cx="590" cy="184" r="62" stroke="#E2AC5C" stroke-width="2" stroke-dasharray="3 7" />
+                        <g fill="#C98A3A">
+                          <circle cx="640" cy="184" r="2" />
+                          <circle cx="633.3" cy="209" r="2" />
+                          <circle cx="615" cy="227.3" r="2" />
+                          <circle cx="590" cy="234" r="2" />
+                          <circle cx="565" cy="227.3" r="2" />
+                          <circle cx="546.7" cy="209" r="2" />
+                          <circle cx="540" cy="184" r="2" />
+                          <circle cx="546.7" cy="159" r="2" />
+                          <circle cx="565" cy="140.7" r="2" />
+                          <circle cx="590" cy="134" r="2" />
+                          <circle cx="615" cy="140.7" r="2" />
+                          <circle cx="633.3" cy="159" r="2" />
+                        </g>
+                        <path d="M590 174V160M590 194V208M580 184H566M600 184H614" stroke="#C98A3A" stroke-width="3"
+                          stroke-linecap="round" />
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- Card text: skeletons first, then the rendered recipe -->
+                  <rect class="sk sk1" x="476" y="304" width="176" height="20" rx="10" fill="#F2E9DC" />
+                  <rect class="sk sk2" x="476" y="338" width="118" height="12" rx="6" fill="#F2E9DC" />
+                  <g class="card-text">
+                    <text class="ttl" x="476" y="322" font-family="Newsreader, Georgia, 'Times New Roman', serif"
+                      font-size="27" font-weight="600" fill="#0F3D3A">Tarte Tatin</text>
+                    <g class="meta" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="14" fill="#5B6B68">
+                      <circle cx="482" cy="345" r="6" fill="none" stroke="#5B6B68" stroke-width="1.6" />
+                      <path d="M482 341.5V345L484.5 346.5" stroke="#5B6B68" stroke-width="1.6" stroke-linecap="round" />
+                      <text x="494" y="350">45min</text>
+                      <text x="544" y="350">Dessert</text>
+                    </g>
+                  </g>
+                </g>
+              </svg>

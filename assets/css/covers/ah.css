@@ -1,0 +1,59 @@
+/* AH Compact cover (inline <svg class="ah"> in #project4, index.html).
+   Original artwork: the iPhone 12 mini frame and the groceries illustration, placed as
+   in the original cover. Each grocery item (.bob) bounces gently on a 10.5s loop, out
+   of step with its neighbours (--b); hover an item to lift it (real pointer above
+   768px). Every rule sits in @scope (.ah); keyframes and SVG IDs use the ah- prefix.
+   Without motion the groceries rest in place. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project4 {
+  background: linear-gradient(32deg, #74D0F2 0%, #1185E5 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project4 {
+  background: linear-gradient(90deg, #74D0F2 0%, #2D9AE9 100%);
+}
+
+.portfolio-item--tall #project4 .portfolio-title h4 {
+  color: var(--color-brand-primary);
+}
+
+.portfolio-item--tall #project4 .portfolio-title p {
+  color: var(--color-brand-primary);
+}
+
+@scope (.ah) {
+  :scope {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .bob {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: ah-bounce 10.5s ease-in-out var(--b, 0s) infinite;
+    transition: translate 350ms cubic-bezier(0.2, 0.9, 0.3, 1.25);
+  }
+
+  /* hover uses `translate`, so it adds to the bounce's `transform` */
+  @media (hover: hover) and (min-width: 769px) {
+    .bob:hover { translate: 0 -10px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* A gentle hop: up, land with a tiny squash, settle, rest */
+@keyframes ah-bounce {
+  0%, 60%, 100% { transform: translateY(0) scale(1, 1); }
+  22% { transform: translateY(-7px) scale(0.99, 1.01); }
+  42% { transform: translateY(0) scale(1.015, 0.985); }
+  50% { transform: translateY(-1.5px) scale(1, 1); }
+}

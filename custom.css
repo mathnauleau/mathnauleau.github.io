@@ -42,7 +42,7 @@ hr {
 }
 
 .header .logo {
-  padding: 16px 0;
+  padding: 8px 0;
 }
 
 .header .logo span {
@@ -61,8 +61,8 @@ hr {
 
 .hero {
   width: 100%;
-  height: 70vh;
-  margin-top: 56px;
+  height: 60vh;
+  margin-top: 0;
   background-size: cover;
   background-image: none;
   text-align: center;
@@ -88,7 +88,7 @@ hr {
 }
 
 .img-fluid {
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 /*--------------------------------------------------------------
@@ -148,7 +148,7 @@ hr {
 /* Header content styles */
 .header-content {
   background-color: var(--color-background);
-  padding: 8px 16px 8px 16px;
+  padding: 8px 16px;
 }
 
 .header-scrolled .header-content {
@@ -365,7 +365,7 @@ hr {
 # Layout
 --------------------------------------------------------------*/
 .header {
-  padding: 16px 16px 0px 16px;
+  padding: 0 16px;
   background: var(--color-background);
   border-bottom: none;
 }
@@ -377,9 +377,16 @@ hr {
 }
 
 .header.header-scrolled {
-  padding: 16px 12px 0px 12px;
+  padding: 0 12px;
   background: var(--color-background);
   box-shadow: none;
+}
+
+/* Header nav links: compact vertical padding. :not(.overlay) keeps the open
+   mobile menu's links at full size (they share the .navbar a rule). */
+.navbar:not(.overlay) a {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .section-header h2,
@@ -398,10 +405,37 @@ section {
 # Portfolio hero
 --------------------------------------------------------------*/
 .portfolio .portfolio-wrap {
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
   position: relative;
   overflow: hidden;
   background: none;
+}
+
+/* Every cover lifts 8px with a soft shadow on hover (real pointer, wider screens).
+   The template hides overflow on every <section>; the two tile sections clip only
+   sideways, so a lifted tile and its shadow aren't cut at the section's top/bottom. */
+section.portfolio {
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+.portfolio .portfolio-wrap {
+  transition:
+    transform 400ms cubic-bezier(0.2, 0.8, 0.3, 1),
+    box-shadow 400ms cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+@media (hover: hover) and (min-width: 769px) {
+  .portfolio .portfolio-wrap:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 8px -3px rgba(12, 21, 39, 0.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio .portfolio-wrap {
+    transition: none;
+  }
 }
 
 .portfolio .portfolio-wrap::before {
@@ -425,62 +459,23 @@ section {
 # Background project covers 
 --------------------------------------------------------------*/
 
-#project1 {
-  background: linear-gradient(45deg, #ccdff6 0%, #6b98ff 100%);
-}
-
-#project1 img {
-  transition-duration: 500ms;
-  transform: translateY(0px);
-}
-
-#project1:hover img {
-  transform: translateY(20px);
-}
-
-#project2 {
-  background-image: url(assets/img/portfolio/portfolio-2.png);
-  background-size: cover;
-}
-
-#project2 img {
-  background-image: url(assets/img/portfolio/portfolio-2-dot.png);
-  background-size: cover;
-  transform: translateX(0px);
-  transition-duration: 500ms;
-}
-
-#project2:hover {
-  background-image: url(assets/img/portfolio/portfolio-2-end.png);
-  background-size: cover;
-}
-
-#project2:hover img {
-  background-size: cover;
-  transform: translateX(400px);
-}
-
 #project3 {
   background: linear-gradient(75deg, #ffc96f 0%, #f2a868 100%);
 }
 
-#project4 {
-  background-image: url(assets/img/portfolio/portfolio-4.png);
-  background-size: cover;
+.portfolio-item--tall #project9 .portfolio-title h4,
+.portfolio-item--tall .craft .portfolio-title h4 {
+  color: #fff;
 }
 
-#project5 {
-  background-image: url(assets/img/portfolio/portfolio-5.png);
-  background-size: cover;
+.portfolio-item--tall #project9 .portfolio-title p,
+.portfolio-item--tall .craft .portfolio-title p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
-#project5 img {
-  transition-duration: 800ms;
-  position: relative;
-}
-
-#project5:hover img {
-  transform: translate(-107px, -58px);
+/* Digital Sketching: a dark wood tone under the photo */
+.portfolio-item--tall .craft {
+  background: #221d19;
 }
 
 #project6 {
@@ -489,22 +484,6 @@ section {
 
 #project7 {
   background: linear-gradient(45deg, #f367a9 0%, #7b91ff 100%);
-}
-
-#project10 {
-  background-image: url(assets/img/portfolio/ops-bottom.png);
-  background-size: cover;
-  /* background: linear-gradient(45deg, #F591AC 0%, #F86E66 100%); */
-}
-
-#project13 {
-  background-image: url(assets/img/portfolio/portfolio-13.png);
-  background-size: cover;
-}
-
-#project13:hover {
-  background-image: url(assets/img/portfolio/portfolio-13-end.png);
-  -moz-animation: infinite;
 }
 
 #project9 {
@@ -517,8 +496,32 @@ section {
   -moz-animation: infinite;
 }
 
-#project13:hover img {
-  transform: rotate(45deg);
+/* Tall tile: day photo pinned to the top, fading into the carpet tone below. The
+   night photo sits on ::after (same layout) and fades in over 600ms on hover, since a
+   background-image swap can't be transitioned. The title (z-index 3) stays on top. */
+.portfolio-item--tall #project9 {
+  background:
+    linear-gradient(to bottom, rgba(125, 115, 108, 0) 62%, #7d736c 83.3%),
+    url(assets/img/portfolio/portfolio-9-day.jpg) top / 100% auto no-repeat,
+    #7d736c;
+}
+
+.portfolio-item--tall #project9::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to bottom, rgba(111, 93, 79, 0) 62%, #6f5d4f 83.3%),
+    url(assets/img/portfolio/portfolio-9-night.jpg) top / 100% auto no-repeat,
+    #6f5d4f;
+  opacity: 0;
+  transition: opacity 600ms ease;
+  pointer-events: none;
+}
+
+.portfolio-item--tall #project9:hover::after {
+  opacity: 1;
 }
 
 #project9:hover img {
@@ -527,26 +530,6 @@ section {
 
 .portfolio .portfolio-wrap:hover img {
   transform: translateY(20px);
-}
-
-#project4 img {
-  transition-duration: 400ms;
-  position: relative;
-  top: 30px;
-}
-
-#project4:hover img {
-  opacity: 1;
-  transform: translateY(-30px);
-}
-
-#project10 img {
-  transition-duration: 400ms;
-  transition-timing-function: ease-out;
-}
-
-#project10:hover img {
-  transform: translateX(38px);
 }
 
 .portfolio .craft:hover img {
@@ -591,6 +574,58 @@ section {
 
 .portfolio-title p {
   color: var(--color-text-secondary);
+}
+
+/* Tall tile (4:3): the cover keeps its own ratio at the top of the tile, and the
+   title is pinned to the bottom, inside the link, over the space left below the art.
+   The title is taller than that space, so the art's bottom edge fades out (a mask on
+   the SVG or <img>) into the tile's background, and the title always sits on calm
+   colour. A cover drawn as a CSS background image fades with a gradient layer instead
+   (see #project9). On phones the tile drops the ratio and the title
+   simply follows the art. The colour of the space and of the text comes from each
+   cover's stylesheet (assets/css/covers/) or the rules below. */
+.portfolio-item--tall .portfolio-wrap {
+  aspect-ratio: 4 / 3;
+}
+
+.portfolio-item--tall .portfolio-wrap > svg,
+.portfolio-item--tall .portfolio-wrap > img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 74%, transparent 100%);
+}
+
+.portfolio-item--tall .portfolio-title h4 {
+  line-height: 1.25;
+  margin-bottom: 0.15em;
+}
+
+.portfolio-item--tall .portfolio-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 var(--space-32) var(--space-24);
+}
+
+.portfolio-item--tall .portfolio-title p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .portfolio-item--tall .portfolio-wrap {
+    aspect-ratio: auto;
+  }
+
+  .portfolio-item--tall .portfolio-wrap > svg,
+  .portfolio-item--tall .portfolio-wrap > img {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .portfolio-item--tall .portfolio-title {
+    position: static;
+    padding: var(--space-16) var(--space-24) var(--space-24);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -686,7 +721,7 @@ section ul li {
 }
 
 .about .content {
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
   background-color: transparent;
   padding: var(--space-small);
 }
@@ -701,7 +736,7 @@ section ul li {
 }
 
 .about {
-  margin-top: 100px;
+  margin-top: 35px;
 }
 
 .about h2 {
@@ -778,7 +813,7 @@ section ul li {
   overflow: hidden;
   padding: 28px;
   background-color: var(--color-background-secondary);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .toolbox .info-box {
@@ -910,7 +945,7 @@ section ul li {
 .right {
   text-align: left;
   color: var(--color-brand-primary);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 /*--------------------------------------------------------------
@@ -1000,7 +1035,7 @@ section ul li {
 
 .portfolio-description img {
   width: 100%;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .portfolio-description h1 {
@@ -1019,7 +1054,7 @@ section ul li {
   padding-top: var(--space-xxlarge);
   padding-bottom: var(--space-xxlarge);
   overflow: visible;
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-accent-purple);
 }
 
 .portfolio-section-highlight h2 {
@@ -1056,7 +1091,7 @@ section ul li {
   padding: 30px;
   background: linear-gradient(55deg, #f1f1f1 0%, #daecff 100%);
   height: auto;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 .collaboration h2 {
   font: var(--font-heading-1);
@@ -1307,7 +1342,7 @@ section ul li {
 .callout {
   padding: var(--space-medium);
   background-color: var(--color-nav-default);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .callout p {
@@ -1387,7 +1422,7 @@ section ul li {
   position: absolute;
   top: 15%;
   left: 0;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
   overflow: hidden;
 }
 
@@ -1434,7 +1469,7 @@ section ul li {
 .before-after-wrapper {
   position: relative;
   aspect-ratio: 1.6;
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-xlarge);
 }
 
 .before-after-wrapper::before {
