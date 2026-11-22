@@ -19,7 +19,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 | Home energy app | `#project16` (link still `#`) | `.nrg` / `nrg-` | `nrg.css` | `nrg/home-energy.svg` (drawn for the site, from a PNG mock-up) |
 | AH Compact | `#project4` | `.ah` / `ah-` | `ah.css` | `ah/groceries.svg`, `ah/iphone-12-mini.svg` |
 | Not the brief | `#project13` (currently commented out) | `.ntb` / `ntb-` | `ntb.css` | — Built from `not the brief.svg`, not stored yet |
-| Cookbook.md | `#project14` | `.cbk` / `cbk-` | `cbk.css` | `cbk/cookbook.svg` (drawn for the site) |
+| Cookbook.md | `#project14` | `.cbk` / `cbk-` | `cbk.css` | `cbk/cookbook.svg` (drawn for the site; the card photo is `assets/img/portfolio/cookbook-tarte-tatin.jpg`, embedded in the export) |
 | Island Slide Puzzle | `#project5` | `.isl` / `isl-` | `isl.css` | `isl/island.svg` (site export, animated) |
 | Digital Sketching | `.portfolio-wrap.craft` | — | `custom.css` | — Photo (`assets/img/portfolio/portfolio-7.jpg`) |
 | Handmade wooden lamp | `#project9` | — | `custom.css` | — Photos (`portfolio-9-day.jpg`, `portfolio-9-night.jpg`) |
