@@ -1,0 +1,14 @@
+{
+  "name": "mathnauleau-portfolio",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "sync-tokens": "node sync-tokens.js",
+    "postinstall": "npm run sync-tokens"
+  },
+  "dependencies": {
+    "@mathieu.nauleau/tokens": "^0.1.0"
+  }
+}

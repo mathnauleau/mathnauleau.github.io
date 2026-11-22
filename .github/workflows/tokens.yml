@@ -1,0 +1,24 @@
+name: Tokens sync
+
+on: pull_request
+
+jobs:
+  check:
+    name: tokens.css matches package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install and sync tokens
+        run: npm ci
+
+      - name: Fail if tokens.css is out of sync
+        run: git diff --exit-code tokens.css
