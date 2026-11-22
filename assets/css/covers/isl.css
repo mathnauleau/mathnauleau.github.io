@@ -1,11 +1,14 @@
 /* Island Slide Puzzle cover (inline <svg class="isl"> in #project5, index.html).
-   Original artwork. Three behaviours:
+   Original artwork. Four behaviours:
      lighthouse  the two beams alternate as the light turns (6s); the lamp pulses
      sun         the halo ring glows slowly in and out (5s)
+     water       small waves drift and fade on the open water (7s, staggered by --w);
+                 the foam around the island blocks and the "8" block ripples: its wavy edge morphs
+                 through SMIL <animate> on `d` (6s), the straight edges stay put
      "8" block   on hover it slides toward the other blocks along the isometric grid
                  (real pointer above 768px)
    Every rule sits in @scope (.isl); keyframes and SVG IDs use the isl- prefix.
-   Animations stop for prefers-reduced-motion. */
+   CSS animations stop for prefers-reduced-motion (the subtle SMIL foam ripple keeps going). */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project5 {
@@ -49,11 +52,14 @@
     animation: isl-halo 5s ease-in-out infinite;
   }
 
+  /* Water: little waves drift sideways and fade in and out */
+  .wave { animation: isl-wave 7s ease-in-out var(--w, 0s) infinite; }
+
   /* The 8 block slides up-left along the grid, toward the other blocks */
   .eight { transition: transform 500ms cubic-bezier(0.2, 0.9, 0.3, 1.15); }
 
   @media (hover: hover) and (min-width: 769px) {
-    .eight-wrap:hover .eight { transform: translate(-17px, -10px); }
+    .eight-wrap:hover .eight { transform: translate(-51px, -30px); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -77,4 +83,10 @@
 @keyframes isl-halo {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.18); opacity: 0.35; }
+}
+
+@keyframes isl-wave {
+  0%, 100% { transform: translate(-6px, 3px); opacity: 0; }
+  30%, 70% { opacity: 1; }
+  50% { transform: translate(6px, -3px); }
 }

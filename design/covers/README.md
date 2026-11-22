@@ -20,7 +20,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 | AH Compact | `#project4` | `.ah` / `ah-` | `ah.css` | `ah/groceries.svg`, `ah/iphone-12-mini.svg` |
 | Not the brief | `#project13` (currently commented out) | `.ntb` / `ntb-` | `ntb.css` | — Built from `not the brief.svg`, not stored yet |
 | Cookbook.md | `#project14` | `.cbk` / `cbk-` | `cbk.css` | `cbk/cookbook.svg` (drawn for the site) |
-| Island Slide Puzzle | `#project5` | `.isl` / `isl-` | `isl.css` | `isl/island.svg` |
+| Island Slide Puzzle | `#project5` | `.isl` / `isl-` | `isl.css` | `isl/island.svg` (site export, animated) |
 | Digital Sketching | `.portfolio-wrap.craft` | — | `custom.css` | — Photo (`assets/img/portfolio/portfolio-7.jpg`) |
 | Handmade wooden lamp | `#project9` | — | `custom.css` | — Photos (`portfolio-9-day.jpg`, `portfolio-9-night.jpg`) |
 
@@ -31,10 +31,17 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
   cheese) is wrapped in its own `.bob` group for the bounce.
 - `ah/iphone-12-mini.svg` includes the outlined screen copy ("Daily groceries / Free
   delivery") and is placed at `translate(262.5 70)`.
-- `isl/island.svg` is used at its own 800×500 size. The animated parts: the two
-  lighthouse beams (`.beam-l`, `.beam-r`), the lamp (`.lamp`), the sun halo
-  (`.sun-halo`), and the "8" block (`.eight-wrap > .eight`).
-- The three files above are content-identical to the Figma exports; some gradient
+- `isl/island.svg` is no longer the raw Figma export: it is the cover as it is on the
+  site, exported from `index.html` with `isl.css` embedded, so it animates when opened in
+  a browser (hover the "8" block to slide it). Compared with the original artwork, the
+  "8" block sits fully on its front grid slot (`translate(64.6 37.7)` on `.eight-wrap`).
+  The animated parts: the two lighthouse beams (`.beam-l`, `.beam-r`), the lamp
+  (`.lamp`), the sun halo (`.sun-halo`), the "8" block (`.eight-wrap > .eight`), the
+  small water waves (`.wave`, added for the site) and the foam (`.foam`, also copied around the "8" block; its wavy edge
+  morphs with SMIL).
+  Re-export it after changing the cover. The Figma original is in git history
+  (commit 8727804).
+- The two `ah/` files are content-identical to the Figma exports; some gradient
   definitions were re-wrapped onto fewer lines. A fresh export can replace them.
 
 ## Covers drawn for the site
