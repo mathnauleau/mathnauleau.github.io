@@ -616,7 +616,8 @@ section {
   color: var(--color-brand-primary);
   text-transform: none;
   text-align: center;
-  margin: calc(100px + var(--space-xlarge) + var(--space-40) + 20px) 0 var(--space-small);
+  margin: calc(100px + var(--space-xlarge) + var(--space-40)) 0
+    var(--space-small);
 }
 
 /* Tagline under the title; it now carries the gap down to the image */
@@ -624,7 +625,7 @@ section {
   font: var(--font-body-regular-large);
   color: var(--color-text-secondary);
   text-align: center;
-  margin: 0 0 calc(var(--space-section) + var(--space-40) + 20px);
+  margin: 0 0 calc(var(--space-section) + var(--space-40));
 }
 
 .portfolio-header--title-first img {
