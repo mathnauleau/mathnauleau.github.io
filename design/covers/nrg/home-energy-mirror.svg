@@ -1,0 +1,467 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="nrg" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Home energy app">
+                <style><![CDATA[
+/* Home energy app cover (inline <svg class="nrg"> in #project16, index.html).
+   Two phones face each other; the right one is a flipped copy of the left (real markup:
+   animations do not run inside <use> clones), so its screen plays reversed, text included.
+   One 9s loop:
+     6–16%   the "Total vs Estimated" and "Best day" bubbles pop up, the bars grow
+     24–40%  the phones lean in until their top corners touch
+     40–54%  the heart double-beats, two rings ripple out, small hearts float up,
+             the house windows light up one after another
+     64–80%  the phones lean back; the windows go dark
+     88–94%  the bubbles fold away for the next take
+   Clouds drift and the coin spins all the time. Every rule sits in @scope (.nrg);
+   keyframes and SVG IDs use the nrg- prefix. Without motion the cover rests with both
+   bubbles shown and the phones apart. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project16 {
+  background: linear-gradient(32deg, #FDDB94 0%, #F7836C 45%, #C90029 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project16 {
+  background: linear-gradient(90deg, #FAA77C 0%, #E5384A 60%, #C90029 100%);
+}
+
+.portfolio-item--tall #project16 .portfolio-title h4,
+.portfolio-item--tall #project16 .portfolio-title p {
+  color: #fff;
+}
+
+@scope (.nrg) {
+  :scope {
+    --cyc: 9s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Phones: rotate around a point near the bottom of the phone, so the tops meet */
+  .lean {
+    transform-origin: 150px 560px;
+    animation: nrg-lean var(--cyc) ease-in-out infinite;
+  }
+
+  .beat { animation: nrg-beat var(--cyc) ease-in-out infinite; }
+
+  .ring {
+    opacity: 0;
+    animation: nrg-ring var(--cyc) ease-out infinite;
+  }
+  .ring--2 { animation-delay: 0.3s; }
+
+  .mini {
+    opacity: 0;
+    animation: nrg-mini var(--cyc) cubic-bezier(0.2, 0.7, 0.3, 1) var(--t, 0s) infinite;
+  }
+
+  .win { animation: nrg-win var(--cyc) ease-in-out calc(var(--d) * 0.18s) infinite; }
+
+  .pop {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: nrg-pop1 var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.2) infinite;
+  }
+  .pop--2 {
+    transform-origin: 0% 45%;
+    animation-name: nrg-pop2;
+  }
+
+  .bar {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: nrg-bar var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.2) calc(var(--d) * 0.12s) infinite;
+  }
+
+  .coin {
+    animation: nrg-coin 2.4s ease-in-out infinite;
+  }
+
+  .cloud { animation: nrg-drift 9s ease-in-out infinite alternate; }
+  .cloud--slow { animation-duration: 13s; animation-direction: alternate-reverse; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+    .ring, .mini { opacity: 0; }
+  }
+}
+
+/* Apart → lean in (a little bump on contact) → hold → apart */
+@keyframes nrg-lean {
+  0%, 24% { transform: rotate(1.5deg); }
+  40% { transform: rotate(5.15deg); }
+  43% { transform: rotate(4.6deg); }
+  47%, 64% { transform: rotate(5deg); }
+  80%, 100% { transform: rotate(1.5deg); }
+}
+
+/* Soft idle pulse, then a double beat on contact */
+@keyframes nrg-beat {
+  0%, 30%, 100% { transform: scale(1); }
+  15% { transform: scale(1.04); }
+  40% { transform: scale(1); }
+  43% { transform: scale(1.26); }
+  46% { transform: scale(0.94); }
+  49% { transform: scale(1.16); }
+  54% { transform: scale(1); }
+  80% { transform: scale(1.04); }
+}
+
+@keyframes nrg-ring {
+  0%, 41% { opacity: 0; transform: scale(0.9); }
+  43% { opacity: 0.8; transform: scale(1); }
+  62%, 100% { opacity: 0; transform: scale(2.6); }
+}
+
+@keyframes nrg-mini {
+  0%, 42% { opacity: 0; transform: translate(0, 0) rotate(0) scale(0.15); }
+  46% { opacity: 1; transform: translate(calc(var(--x) * 0.25), calc(var(--y) * 0.25)) rotate(0) scale(0.38); }
+  72%, 100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(0.42); }
+}
+
+@keyframes nrg-win {
+  0%, 42%, 84%, 100% { fill: #9AA0AB; }
+  46%, 76% { fill: #FFD45C; }
+}
+
+@keyframes nrg-pop1 {
+  0%, 6% { opacity: 0; transform: scale(0.2); }
+  10% { opacity: 1; transform: scale(1.06); }
+  12%, 88% { opacity: 1; transform: scale(1); }
+  92%, 100% { opacity: 0; transform: scale(0.2); }
+}
+
+@keyframes nrg-pop2 {
+  0%, 11% { opacity: 0; transform: scale(0.2); }
+  15% { opacity: 1; transform: scale(1.06); }
+  17%, 89% { opacity: 1; transform: scale(1); }
+  93%, 100% { opacity: 0; transform: scale(0.2); }
+}
+
+@keyframes nrg-bar {
+  0%, 8% { transform: scaleY(0); }
+  14%, 100% { transform: scaleY(1); }
+}
+
+/* A coin turning on its edge */
+@keyframes nrg-coin {
+  0%, 100% { transform: scaleX(1); }
+  50% { transform: scaleX(0.12); }
+}
+
+@keyframes nrg-drift {
+  from { transform: translateX(-10px); }
+  to { transform: translateX(10px); }
+}
+]]></style>
+                <defs>
+                  <linearGradient id="nrg-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FDDB94" />
+                    <stop offset="0.45" stop-color="#F7836C" />
+                    <stop offset="0.75" stop-color="#E5384A" />
+                    <stop offset="1" stop-color="#C90029" />
+                  </linearGradient>
+                  <radialGradient id="nrg-glow" cx="400" cy="90" r="220" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFE3D6" stop-opacity="0.55" />
+                    <stop offset="1" stop-color="#FFE3D6" stop-opacity="0" />
+                  </radialGradient>
+                  <linearGradient id="nrg-heart-fill" x1="0" y1="-36" x2="0" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FF6A63" />
+                    <stop offset="1" stop-color="#F23D45" />
+                  </linearGradient>
+                  <linearGradient id="nrg-ti" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#B9BBBF" />
+                    <stop offset="0.06" stop-color="#F4F4F2" />
+                    <stop offset="0.5" stop-color="#DCDDDF" />
+                    <stop offset="0.94" stop-color="#F7F7F5" />
+                    <stop offset="1" stop-color="#A7A9AD" />
+                  </linearGradient>
+                  <linearGradient id="nrg-screen" x1="0" y1="15" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#C6EFF3" />
+                    <stop offset="0.35" stop-color="#E4F5F2" />
+                    <stop offset="0.7" stop-color="#F8E8DF" />
+                    <stop offset="1" stop-color="#F6DDD2" />
+                  </linearGradient>
+                  <radialGradient id="nrg-coin" cx="0" cy="0" r="14" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FCEBB0" />
+                    <stop offset="1" stop-color="#E9C46A" />
+                  </radialGradient>
+                  <filter id="nrg-soft" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="9" />
+                  </filter>
+                  <clipPath id="nrg-screen-clip">
+                    <rect x="15" y="15" width="270" height="560" rx="42" />
+                  </clipPath>
+                </defs>
+
+                <rect width="800" height="500" fill="url(#nrg-bg)" />
+                <rect width="800" height="500" fill="url(#nrg-glow)" />
+
+                <!-- Left phone, drawn in its own 300×580 space, pivoting near its bottom (.lean) -->
+                <g transform="translate(54 104)">
+                  <g class="lean">
+                    <!-- Shadow -->
+                    <rect x="12" y="18" width="300" height="580" rx="58" fill="#7A1020" opacity="0.28" filter="url(#nrg-soft)" />
+                    <!-- Side buttons -->
+                    <rect x="-4" y="118" width="6" height="26" rx="3" fill="#B4B6BA" />
+                    <rect x="-4" y="168" width="6" height="48" rx="3" fill="#B4B6BA" />
+                    <rect x="-4" y="226" width="6" height="48" rx="3" fill="#B4B6BA" />
+                    <!-- Titanium frame, bezel, screen -->
+                    <rect width="300" height="590" rx="58" fill="url(#nrg-ti)" />
+                    <rect x="6" y="6" width="288" height="578" rx="52" fill="#0E0F12" />
+                    <rect x="15" y="15" width="270" height="560" rx="42" fill="url(#nrg-screen)" />
+
+                    <g clip-path="url(#nrg-screen-clip)">
+                      <!-- Clouds drift slowly -->
+                      <g class="cloud" fill="#FFFFFF" opacity="0.75">
+                        <ellipse cx="96" cy="222" rx="42" ry="13" />
+                        <ellipse cx="118" cy="212" rx="22" ry="14" />
+                        <ellipse cx="228" cy="206" rx="40" ry="12" />
+                        <ellipse cx="248" cy="197" rx="20" ry="12" />
+                      </g>
+                      <g class="cloud cloud--slow" fill="#FFFFFF" opacity="0.55">
+                        <ellipse cx="170" cy="246" rx="58" ry="11" />
+                        <ellipse cx="40" cy="262" rx="34" ry="9" />
+                      </g>
+
+                      <!-- Coin, spinning on its edge -->
+                      <g transform="translate(50 196)">
+                        <g class="coin">
+                          <circle r="14" fill="url(#nrg-coin)" />
+                          <circle r="9.5" stroke="#E2B24F" stroke-width="1.5" />
+                        </g>
+                      </g>
+
+                      <!-- Bush -->
+                      <path d="M15 392C18 362 44 346 66 354C78 336 108 340 112 366C124 368 130 382 126 396H15Z" fill="#1FA36A" />
+                      <path d="M40 396C46 378 62 372 76 378C84 368 100 372 102 388" stroke="#178856" stroke-width="2" stroke-linecap="round" />
+
+                      <!-- House: an isometric block behind (right) and a taller block in front -->
+                      <g class="house">
+                        <!-- Back block -->
+                        <path d="M146 326L188 304L230 326L188 348Z" fill="#E0393E" />
+                        <path d="M188 348L230 326V420L188 442Z" fill="#CDD0D6" />
+                        <path d="M146 326L188 348V442L146 420Z" fill="#F2F3F5" />
+                        <path d="M200 366L218 357V392L200 401Z" fill="#E0393E" />
+                        <!-- Front block -->
+                        <path d="M96 304L132 286L168 304L132 322Z" fill="#E94548" />
+                        <path d="M96 304L132 322V330L96 312Z" fill="#B8262C" />
+                        <path d="M132 322L168 304V312L132 330Z" fill="#C93035" />
+                        <path d="M132 330L168 312V420L132 438Z" fill="#D7DAE0" />
+                        <path d="M96 312L132 330V438L96 420Z" fill="#FFFFFF" />
+                        <!-- Chimney -->
+                        <path d="M126 292V276L134 272V288Z" fill="#B8262C" />
+                        <path d="M134 288V272L140 275V291Z" fill="#E0393E" />
+                        <path d="M126 276L132 273L140 275L134 272Z" fill="#F06A6C" />
+                        <!-- Windows light up in turn, staggered by their d variable -->
+                        <path class="win" style="--d:0" d="M104 330L124 340V362L104 352Z" fill="#9AA0AB" />
+                        <path class="win" style="--d:1" d="M104 372L124 382V404L104 394Z" fill="#9AA0AB" />
+                        <path class="win" style="--d:2" d="M140 340L160 330V352L140 362Z" fill="#9AA0AB" />
+                        <path class="win" style="--d:3" d="M154 348L170 356V376L154 368Z" fill="#9AA0AB" />
+                      </g>
+
+                      <!-- Bubble: Total vs Estimated -->
+                      <g class="pop pop--1">
+                        <path d="M88 156H188C196 156 202 162 202 170V238C202 246 196 252 188 252H142L132 264L122 252H88C80 252 74 246 74 238V170C74 162 80 156 88 156Z"
+                          fill="#FFFFFF" />
+                        <g transform="translate(86 192)">
+                          <rect class="bar" style="--d:0" x="0" y="8" width="5" height="12" rx="1" fill="#1F2430" />
+                          <rect class="bar" style="--d:1" x="7" y="2" width="5" height="18" rx="1" fill="#1F2430" />
+                          <rect class="bar" style="--d:2" x="14" y="-4" width="5" height="24" rx="1" fill="#1F2430" />
+                        </g>
+                        <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                          <text x="114" y="190" font-size="12.5">Total vs</text>
+                          <text x="114" y="207" font-size="12.5">Estimated</text>
+                          <text x="138" y="236" font-size="16" font-weight="700" text-anchor="middle">95%</text>
+                        </g>
+                      </g>
+
+                      <!-- Bubble: Best day this month -->
+                      <g class="pop pop--2">
+                        <path d="M196 322H264C272 322 278 328 278 336V388C278 396 272 402 264 402H196C188 402 182 396 182 388V366L172 358L182 352V336C182 328 188 322 196 322Z"
+                          fill="#FFFFFF" />
+                        <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                          <text x="194" y="344" font-size="12">Best day this</text>
+                          <text x="194" y="360" font-size="12">month</text>
+                          <text x="194" y="386" font-size="15" font-weight="700">15 Nov</text>
+                        </g>
+                      </g>
+
+                      <!-- Card peeking at the bottom -->
+                      <rect x="15" y="404" width="270" height="200" rx="26" fill="#FFFFFF" />
+                      <text x="36" y="438" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                        font-size="22" font-weight="800" fill="#1F2430">Your usage</text>
+
+                      <!-- Header -->
+                      <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                        <text x="44" y="52" font-size="15" font-weight="700">09:42</text>
+                        <text x="36" y="104" font-size="30" font-weight="800" letter-spacing="0.3">Annee</text>
+                        <text x="36" y="130" font-size="13.5">Cabbeweide 56, Westmaas</text>
+                      </g>
+                      <!-- Status icons -->
+                      <g fill="#1F2430">
+                        <rect x="198" y="47" width="3" height="5" rx="1" />
+                        <rect x="203" y="45" width="3" height="7" rx="1" />
+                        <rect x="208" y="43" width="3" height="9" rx="1" />
+                        <rect x="213" y="41" width="3" height="11" rx="1" />
+                        <text x="222" y="52" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                          font-size="12" font-weight="700">5G</text>
+                        <rect x="242" y="40" width="25" height="13" rx="4" />
+                        <rect x="268" y="44" width="2" height="5" rx="1" />
+                        <text x="254.5" y="50.5" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                          font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">81</text>
+                      </g>
+                    </g>
+
+                    <!-- Dynamic Island -->
+                    <rect x="106" y="30" width="88" height="28" rx="14" fill="#0E0F12" />
+                    <circle cx="178" cy="44" r="5" fill="#1B2030" />
+                    <circle cx="178" cy="44" r="2" fill="#34405E" />
+                  </g>
+                </g>
+
+                <!-- Right phone: the left one in a mirror -->
+                <g transform="matrix(-1 0 0 1 800 0)" aria-hidden="true">
+  <g transform="translate(54 104)">
+                    <g class="lean">
+                      <!-- Shadow -->
+                      <rect x="12" y="18" width="300" height="580" rx="58" fill="#7A1020" opacity="0.28" filter="url(#nrg-soft)" />
+                      <!-- Side buttons -->
+                      <rect x="-4" y="118" width="6" height="26" rx="3" fill="#B4B6BA" />
+                      <rect x="-4" y="168" width="6" height="48" rx="3" fill="#B4B6BA" />
+                      <rect x="-4" y="226" width="6" height="48" rx="3" fill="#B4B6BA" />
+                      <!-- Titanium frame, bezel, screen -->
+                      <rect width="300" height="590" rx="58" fill="url(#nrg-ti)" />
+                      <rect x="6" y="6" width="288" height="578" rx="52" fill="#0E0F12" />
+                      <rect x="15" y="15" width="270" height="560" rx="42" fill="url(#nrg-screen)" />
+
+                      <g clip-path="url(#nrg-screen-clip)">
+                        <!-- Clouds drift slowly -->
+                        <g class="cloud" fill="#FFFFFF" opacity="0.75">
+                          <ellipse cx="96" cy="222" rx="42" ry="13" />
+                          <ellipse cx="118" cy="212" rx="22" ry="14" />
+                          <ellipse cx="228" cy="206" rx="40" ry="12" />
+                          <ellipse cx="248" cy="197" rx="20" ry="12" />
+                        </g>
+                        <g class="cloud cloud--slow" fill="#FFFFFF" opacity="0.55">
+                          <ellipse cx="170" cy="246" rx="58" ry="11" />
+                          <ellipse cx="40" cy="262" rx="34" ry="9" />
+                        </g>
+
+                        <!-- Coin, spinning on its edge -->
+                        <g transform="translate(50 196)">
+                          <g class="coin">
+                            <circle r="14" fill="url(#nrg-coin)" />
+                            <circle r="9.5" stroke="#E2B24F" stroke-width="1.5" />
+                          </g>
+                        </g>
+
+                        <!-- Bush -->
+                        <path d="M15 392C18 362 44 346 66 354C78 336 108 340 112 366C124 368 130 382 126 396H15Z" fill="#1FA36A" />
+                        <path d="M40 396C46 378 62 372 76 378C84 368 100 372 102 388" stroke="#178856" stroke-width="2" stroke-linecap="round" />
+
+                        <!-- House: an isometric block behind (right) and a taller block in front -->
+                        <g class="house">
+                          <!-- Back block -->
+                          <path d="M146 326L188 304L230 326L188 348Z" fill="#E0393E" />
+                          <path d="M188 348L230 326V420L188 442Z" fill="#CDD0D6" />
+                          <path d="M146 326L188 348V442L146 420Z" fill="#F2F3F5" />
+                          <path d="M200 366L218 357V392L200 401Z" fill="#E0393E" />
+                          <!-- Front block -->
+                          <path d="M96 304L132 286L168 304L132 322Z" fill="#E94548" />
+                          <path d="M96 304L132 322V330L96 312Z" fill="#B8262C" />
+                          <path d="M132 322L168 304V312L132 330Z" fill="#C93035" />
+                          <path d="M132 330L168 312V420L132 438Z" fill="#D7DAE0" />
+                          <path d="M96 312L132 330V438L96 420Z" fill="#FFFFFF" />
+                          <!-- Chimney -->
+                          <path d="M126 292V276L134 272V288Z" fill="#B8262C" />
+                          <path d="M134 288V272L140 275V291Z" fill="#E0393E" />
+                          <path d="M126 276L132 273L140 275L134 272Z" fill="#F06A6C" />
+                          <!-- Windows light up in turn, staggered by their d variable -->
+                          <path class="win" style="--d:0" d="M104 330L124 340V362L104 352Z" fill="#9AA0AB" />
+                          <path class="win" style="--d:1" d="M104 372L124 382V404L104 394Z" fill="#9AA0AB" />
+                          <path class="win" style="--d:2" d="M140 340L160 330V352L140 362Z" fill="#9AA0AB" />
+                          <path class="win" style="--d:3" d="M154 348L170 356V376L154 368Z" fill="#9AA0AB" />
+                        </g>
+
+                        <!-- Bubble: Total vs Estimated -->
+                        <g class="pop pop--1">
+                          <path d="M88 156H188C196 156 202 162 202 170V238C202 246 196 252 188 252H142L132 264L122 252H88C80 252 74 246 74 238V170C74 162 80 156 88 156Z"
+                            fill="#FFFFFF" />
+                          <g transform="translate(86 192)">
+                            <rect class="bar" style="--d:0" x="0" y="8" width="5" height="12" rx="1" fill="#1F2430" />
+                            <rect class="bar" style="--d:1" x="7" y="2" width="5" height="18" rx="1" fill="#1F2430" />
+                            <rect class="bar" style="--d:2" x="14" y="-4" width="5" height="24" rx="1" fill="#1F2430" />
+                          </g>
+                          <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                            <text x="114" y="190" font-size="12.5">Total vs</text>
+                            <text x="114" y="207" font-size="12.5">Estimated</text>
+                            <text x="138" y="236" font-size="16" font-weight="700" text-anchor="middle">95%</text>
+                          </g>
+                        </g>
+
+                        <!-- Bubble: Best day this month -->
+                        <g class="pop pop--2">
+                          <path d="M196 322H264C272 322 278 328 278 336V388C278 396 272 402 264 402H196C188 402 182 396 182 388V366L172 358L182 352V336C182 328 188 322 196 322Z"
+                            fill="#FFFFFF" />
+                          <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                            <text x="194" y="344" font-size="12">Best day this</text>
+                            <text x="194" y="360" font-size="12">month</text>
+                            <text x="194" y="386" font-size="15" font-weight="700">15 Nov</text>
+                          </g>
+                        </g>
+
+                        <!-- Card peeking at the bottom -->
+                        <rect x="15" y="404" width="270" height="200" rx="26" fill="#FFFFFF" />
+                        <text x="36" y="438" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                          font-size="22" font-weight="800" fill="#1F2430">Your usage</text>
+
+                        <!-- Header -->
+                        <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                          <text x="44" y="52" font-size="15" font-weight="700">09:42</text>
+                          <text x="36" y="104" font-size="30" font-weight="800" letter-spacing="0.3">Annee</text>
+                          <text x="36" y="130" font-size="13.5">Cabbeweide 56, Westmaas</text>
+                        </g>
+                        <!-- Status icons -->
+                        <g fill="#1F2430">
+                          <rect x="198" y="47" width="3" height="5" rx="1" />
+                          <rect x="203" y="45" width="3" height="7" rx="1" />
+                          <rect x="208" y="43" width="3" height="9" rx="1" />
+                          <rect x="213" y="41" width="3" height="11" rx="1" />
+                          <text x="222" y="52" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                            font-size="12" font-weight="700">5G</text>
+                          <rect x="242" y="40" width="25" height="13" rx="4" />
+                          <rect x="268" y="44" width="2" height="5" rx="1" />
+                          <text x="254.5" y="50.5" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                            font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">81</text>
+                        </g>
+                      </g>
+
+                      <!-- Dynamic Island -->
+                      <rect x="106" y="30" width="88" height="28" rx="14" fill="#0E0F12" />
+                      <circle cx="178" cy="44" r="5" fill="#1B2030" />
+                      <circle cx="178" cy="44" r="2" fill="#34405E" />
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Heart: beats when the phones touch, sends rings and small hearts up -->
+                <g transform="translate(400 82)">
+                  <circle class="ring" r="34" stroke="#FFFFFF" stroke-width="3" />
+                  <circle class="ring ring--2" r="34" stroke="#FFFFFF" stroke-width="2" />
+                  <path class="mini" d="M0 30C-12 21-36 4-36-14C-36-28-26-36-15-36C-8-36-3-32 0-27C3-32 8-36 15-36C26-36 36-28 36-14C36 4 12 21 0 30Z" fill="#FFFFFF" style="--x:-70px;--y:-44px;--r:-18deg" />
+                  <path class="mini" d="M0 30C-12 21-36 4-36-14C-36-28-26-36-15-36C-8-36-3-32 0-27C3-32 8-36 15-36C26-36 36-28 36-14C36 4 12 21 0 30Z" fill="#FF5A5F" style="--x:62px;--y:-56px;--r:14deg;--t:0.12s" />
+                  <path class="mini" d="M0 30C-12 21-36 4-36-14C-36-28-26-36-15-36C-8-36-3-32 0-27C3-32 8-36 15-36C26-36 36-28 36-14C36 4 12 21 0 30Z" fill="#FFD1C7" style="--x:-26px;--y:-66px;--r:-6deg;--t:0.24s" />
+                  <path class="mini" d="M0 30C-12 21-36 4-36-14C-36-28-26-36-15-36C-8-36-3-32 0-27C3-32 8-36 15-36C26-36 36-28 36-14C36 4 12 21 0 30Z" fill="#FFFFFF" style="--x:104px;--y:-22px;--r:22deg;--t:0.36s" />
+                  <path class="mini" d="M0 30C-12 21-36 4-36-14C-36-28-26-36-15-36C-8-36-3-32 0-27C3-32 8-36 15-36C26-36 36-28 36-14C36 4 12 21 0 30Z" fill="#FF5A5F" style="--x:-112px;--y:-14px;--r:-24deg;--t:0.48s" />
+                  <path class="mini" d="M0 30C-12 21-36 4-36-14C-36-28-26-36-15-36C-8-36-3-32 0-27C3-32 8-36 15-36C26-36 36-28 36-14C36 4 12 21 0 30Z" fill="#FFD1C7" style="--x:24px;--y:-70px;--r:8deg;--t:0.6s" />
+                  <g class="beat">
+                    <path d="M0 30C-12 21-36 4-36-14C-36-28-26-36-15-36C-8-36-3-32 0-27C3-32 8-36 15-36C26-36 36-28 36-14C36 4 12 21 0 30Z" fill="url(#nrg-heart-fill)" />
+                    <path d="M-24-20C-24-26-19-29-14-29" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="4" stroke-linecap="round" />
+                  </g>
+                </g>
+              </svg>

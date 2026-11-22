@@ -45,6 +45,7 @@
   <link href="assets/css/covers/wl.css" rel="stylesheet">
   <link href="assets/css/covers/pds.css" rel="stylesheet">
   <link href="assets/css/covers/ah.css" rel="stylesheet">
+  <link href="assets/css/covers/nrg.css" rel="stylesheet">
 
   <!-- =======================================================
   * Hello, I'm currently using a template for my website. Here are some info:
@@ -1180,6 +1181,282 @@
               <div class="portfolio-title">
                 <h4>Data tool</h4>
                 <p>From Excel sheets to live graphs · Internal tool · 2026</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-lg-6 col-md-12 portfolio-item portfolio-item--tall">
+          <a href="#" class="portfolio-link">
+            <div id="project16" class="portfolio-wrap">
+              <!-- Home energy app cover: inline SVG. Styles in assets/css/covers/nrg.css
+                   One app in the middle: readings flow in from a smart meter, solar and a
+                   thermostat; insights go out to people. -->
+              <svg class="nrg" viewBox="0 0 800 500" fill="none" role="img" aria-label="Home energy app">
+                <defs>
+                  <linearGradient id="nrg-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FDDB94" />
+                    <stop offset="0.45" stop-color="#F7836C" />
+                    <stop offset="0.75" stop-color="#E5384A" />
+                    <stop offset="1" stop-color="#C90029" />
+                  </linearGradient>
+                  <radialGradient id="nrg-glow" cx="400" cy="260" r="300" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#FFE3D6" stop-opacity="0.5" />
+                    <stop offset="1" stop-color="#FFE3D6" stop-opacity="0" />
+                  </radialGradient>
+                  <linearGradient id="nrg-ti" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#B9BBBF" />
+                    <stop offset="0.06" stop-color="#F4F4F2" />
+                    <stop offset="0.5" stop-color="#DCDDDF" />
+                    <stop offset="0.94" stop-color="#F7F7F5" />
+                    <stop offset="1" stop-color="#A7A9AD" />
+                  </linearGradient>
+                  <linearGradient id="nrg-screen" x1="0" y1="15" x2="0" y2="560" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#C6EFF3" />
+                    <stop offset="0.35" stop-color="#E4F5F2" />
+                    <stop offset="0.7" stop-color="#F8E8DF" />
+                    <stop offset="1" stop-color="#F6DDD2" />
+                  </linearGradient>
+                  <filter id="nrg-soft" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="9" />
+                  </filter>
+                  <linearGradient id="nrg-area" x1="0" y1="240" x2="0" y2="340" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#E5384A" stop-opacity="0.28" />
+                    <stop offset="1" stop-color="#E5384A" stop-opacity="0" />
+                  </linearGradient>
+                  <clipPath id="nrg-screen-clip">
+                    <rect x="15" y="15" width="270" height="560" rx="42" />
+                  </clipPath>
+                  <!-- Flow paths, each drawn in its direction of travel -->
+                  <path id="nrg-l1" d="M112 140C190 140 214 186 250 196" />
+                  <path id="nrg-l2" d="M86 270C170 270 206 262 250 262" />
+                  <path id="nrg-l3" d="M122 400C204 400 214 340 250 330" />
+                  <path id="nrg-r1" d="M550 196C586 186 610 140 688 140" />
+                  <path id="nrg-r2" d="M550 262C596 262 630 270 714 270" />
+                  <path id="nrg-r3" d="M550 330C586 340 596 400 678 400" />
+                </defs>
+
+                <rect width="800" height="500" fill="url(#nrg-bg)" />
+                <rect width="800" height="500" fill="url(#nrg-glow)" />
+
+                <!-- Labels -->
+                <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#FFFFFF">
+                  <text x="62" y="76" fill="#7A2A1E" fill-opacity="0.75">DATA IN</text>
+                  <text x="738" y="76" text-anchor="end" fill-opacity="0.9">INSIGHTS OUT</text>
+                </g>
+
+                <!-- Tracks: dashes flow toward where things travel -->
+                <g class="flow" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round">
+                  <use href="#nrg-l1" /><use href="#nrg-l2" /><use href="#nrg-l3" />
+                  <use href="#nrg-r1" /><use href="#nrg-r2" /><use href="#nrg-r3" />
+                </g>
+
+                <!-- Packets (SMIL, so they follow the curves everywhere) -->
+                <g class="pk" opacity="0">
+                  <rect x="-35.0" y="-13" width="70" height="26" rx="13" fill="#FFFFFF" />
+                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#1F2430">2.4 kWh</text>
+                  <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-l1" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="0s" repeatCount="indefinite" />
+                </g>
+                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
+                  <animateMotion dur="6s" begin="3s" repeatCount="indefinite"><mpath href="#nrg-l1" /></animateMotion>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="3s" repeatCount="indefinite" />
+                </circle>
+                <g class="pk" opacity="0">
+                  <rect x="-38.0" y="-13" width="76" height="26" rx="13" fill="#FFFFFF" />
+                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#1F2430">+3.1 kWh</text>
+                  <animateMotion dur="6s" begin="1.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-l2" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="1.6s" repeatCount="indefinite" />
+                </g>
+                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
+                  <animateMotion dur="6s" begin="4.6s" repeatCount="indefinite"><mpath href="#nrg-l2" /></animateMotion>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="4.6s" repeatCount="indefinite" />
+                </circle>
+                <g class="pk" opacity="0">
+                  <rect x="-33.0" y="-13" width="66" height="26" rx="13" fill="#FFFFFF" />
+                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#1F2430">19.5 °C</text>
+                  <animateMotion dur="6s" begin="3.2s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-l3" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="3.2s" repeatCount="indefinite" />
+                </g>
+                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
+                  <animateMotion dur="6s" begin="0.2s" repeatCount="indefinite"><mpath href="#nrg-l3" /></animateMotion>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="0.2s" repeatCount="indefinite" />
+                </circle>
+                <g class="pk" opacity="0">
+                  <rect x="-55.0" y="-13" width="110" height="26" rx="13" fill="#1F2430" />
+                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">−12% this week</text>
+                  <animateMotion dur="6s" begin="0.8s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-r1" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="0.8s" repeatCount="indefinite" />
+                </g>
+                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
+                  <animateMotion dur="6s" begin="3.8s" repeatCount="indefinite"><mpath href="#nrg-r1" /></animateMotion>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="3.8s" repeatCount="indefinite" />
+                </circle>
+                <g class="pk" opacity="0">
+                  <rect x="-56" y="-13" width="112" height="26" rx="13" fill="#1F2430" />
+                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">95% of estimate</text>
+                  <animateMotion dur="6s" begin="2.2s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.4 0 0.6 1"><mpath href="#nrg-r2" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="2.2s" repeatCount="indefinite" />
+                </g>
+                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
+                  <animateMotion dur="6s" begin="5.2s" repeatCount="indefinite"><mpath href="#nrg-r2" /></animateMotion>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="5.2s" repeatCount="indefinite" />
+                </circle>
+                <g class="pk" opacity="0">
+                  <rect x="-68" y="-13" width="136" height="26" rx="13" fill="#1F2430" />
+                  <path d="M-50-8L-56 1H-52L-54 8L-48-1H-52Z" fill="#FFD45C" />
+                  <text x="6" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">Run dryer at 14:00</text>
+                  <animateMotion dur="6s" begin="4s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-r3" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="4s" repeatCount="indefinite" />
+                </g>
+                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
+                  <animateMotion dur="6s" begin="1s" repeatCount="indefinite"><mpath href="#nrg-r3" /></animateMotion>
+                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="1s" repeatCount="indefinite" />
+                </circle>
+
+                <!-- Arrival ripples at the phone's edges -->
+                <circle class="pk" cx="250" cy="196" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
+                  <animate attributeName="r" values="0;0;5;20" keyTimes="0;0.86;0.9;1" dur="6s" begin="0s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0;0;0.9;0" keyTimes="0;0.86;0.9;1" dur="6s" begin="0s" repeatCount="indefinite" />
+                </circle>
+                <circle class="pk" cx="250" cy="262" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
+                  <animate attributeName="r" values="0;0;5;20" keyTimes="0;0.86;0.9;1" dur="6s" begin="1.6s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0;0;0.9;0" keyTimes="0;0.86;0.9;1" dur="6s" begin="1.6s" repeatCount="indefinite" />
+                </circle>
+                <circle class="pk" cx="250" cy="330" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
+                  <animate attributeName="r" values="0;0;5;20" keyTimes="0;0.86;0.9;1" dur="6s" begin="3.2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0;0;0.9;0" keyTimes="0;0.86;0.9;1" dur="6s" begin="3.2s" repeatCount="indefinite" />
+                </circle>
+                <circle class="pk" cx="550" cy="262" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
+                  <animate attributeName="r" values="5;20;20" keyTimes="0;0.12;1" dur="6s" begin="2.2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.12;1" dur="6s" begin="2.2s" repeatCount="indefinite" />
+                </circle>
+                <circle class="pk" cx="550" cy="330" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
+                  <animate attributeName="r" values="5;20;20" keyTimes="0;0.12;1" dur="6s" begin="4s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.12;1" dur="6s" begin="4s" repeatCount="indefinite" />
+                </circle>
+
+                <!-- Sources: smart meter, solar, thermostat -->
+                <g class="src" style="--e:0s" transform="translate(86 140)">
+                  <circle r="26" fill="#FFFFFF" />
+                  <path d="M3-14L-8 3H0L-3 14L8-3H0Z" fill="#F5A623" />
+                </g>
+                <g class="src" style="--e:1.6s" transform="translate(60 270)">
+                  <circle r="26" fill="#FFFFFF" />
+                  <circle r="7" fill="#F5B83D" />
+                  <g stroke="#F5B83D" stroke-width="2.4" stroke-linecap="round">
+                    <path d="M0-12V-15M0 12V15M-12 0H-15M12 0H15M-8.5-8.5L-10.6-10.6M8.5 8.5L10.6 10.6M-8.5 8.5L-10.6 10.6M8.5-8.5L10.6-10.6" />
+                  </g>
+                </g>
+                <g class="src" style="--e:3.2s" transform="translate(96 400)">
+                  <circle r="26" fill="#FFFFFF" />
+                  <rect x="-4" y="-15" width="8" height="22" rx="4" stroke="#E5384A" stroke-width="2" />
+                  <circle cy="9" r="6.5" fill="#E5384A" />
+                  <rect x="-1.5" y="-6" width="3" height="14" rx="1.5" fill="#E5384A" />
+                </g>
+
+                <!-- People -->
+                <g transform="translate(714 140)"><circle r="26" fill="#FFFFFF" /><g><circle r="23" fill="#CDEFF2" /><circle cy="-6" r="8" fill="#1F2430" /><path d="M-15 18C-15 8-8 4 0 4C8 4 15 8 15 18Z" fill="#1F2430" /></g></g>
+                <g transform="translate(740 270)"><circle r="26" fill="#FFFFFF" /><g><circle r="23" fill="#FFE7A6" /><circle cy="-6" r="8" fill="#1F2430" /><path d="M-15 18C-15 8-8 4 0 4C8 4 15 8 15 18Z" fill="#1F2430" /></g></g>
+                <g transform="translate(704 400)"><circle r="26" fill="#FFFFFF" /><g><circle r="23" fill="#FFD3C4" /><circle cy="-6" r="8" fill="#1F2430" /><path d="M-15 18C-15 8-8 4 0 4C8 4 15 8 15 18Z" fill="#1F2430" /></g></g>
+
+                <!-- The app -->
+                <g class="phone" transform="translate(248.75 40) scale(1.0083)">
+                  <g>
+                    <!-- Shadow -->
+                    <rect x="12" y="18" width="300" height="580" rx="58" fill="#7A1020" opacity="0.28" filter="url(#nrg-soft)" />
+                    <!-- Side buttons -->
+                    <rect x="-4" y="118" width="6" height="26" rx="3" fill="#B4B6BA" />
+                    <rect x="-4" y="168" width="6" height="48" rx="3" fill="#B4B6BA" />
+                    <rect x="-4" y="226" width="6" height="48" rx="3" fill="#B4B6BA" />
+                    <!-- Titanium frame, bezel, screen -->
+                    <rect width="300" height="590" rx="58" fill="url(#nrg-ti)" />
+                    <rect x="6" y="6" width="288" height="578" rx="52" fill="#0E0F12" />
+                    <rect x="15" y="15" width="270" height="560" rx="42" fill="url(#nrg-screen)" />
+
+                    <g clip-path="url(#nrg-screen-clip)">
+                      <!-- Chart card: this week's usage against the estimate -->
+                      <rect x="26" y="150" width="248" height="226" rx="20" fill="#FFFFFF" />
+                      <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                        <text x="44" y="177" font-size="12.5" fill="#5B6170">Usage this week</text>
+                        <text x="44" y="205" font-size="24" font-weight="800">132 kWh</text>
+                        <rect x="152" y="187" width="50" height="22" rx="11" fill="#DDF3E7" />
+                        <text x="177" y="202" font-size="11.5" font-weight="700" fill="#178856" text-anchor="middle">−12%</text>
+                      </g>
+                      <g stroke="#1F2430" stroke-opacity="0.08" stroke-dasharray="3 4"><path d="M44 242H256" /><path d="M44 284H256" /><path d="M44 326H256" /></g>
+                      <path d="M44 340H256" stroke="#1F2430" stroke-opacity="0.15" />
+                      <!-- Estimate (dashed) and actual usage, which draws itself -->
+                      <path d="M44.0 249.0C49.9 250.2 67.6 256.0 79.3 256.0C91.1 256.0 102.9 249.0 114.7 249.0C126.4 249.0 138.2 254.8 150.0 256.0C161.8 257.2 173.6 254.8 185.3 256.0C197.1 257.2 208.9 263.0 220.7 263.0C232.4 263.0 250.1 257.2 256.0 256.0" stroke="#9AA0AB" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round" />
+                      <path class="area" d="M44.0 256.0C49.9 260.7 67.6 286.3 79.3 284.0C91.1 281.7 102.9 239.7 114.7 242.0C126.4 244.3 138.2 293.3 150.0 298.0C161.8 302.7 173.6 267.7 185.3 270.0C197.1 272.3 208.9 309.7 220.7 312.0C232.4 314.3 250.1 288.7 256.0 284.0L256 340H44Z" fill="url(#nrg-area)" />
+                      <path class="line" d="M44.0 256.0C49.9 260.7 67.6 286.3 79.3 284.0C91.1 281.7 102.9 239.7 114.7 242.0C126.4 244.3 138.2 293.3 150.0 298.0C161.8 302.7 173.6 267.7 185.3 270.0C197.1 272.3 208.9 309.7 220.7 312.0C232.4 314.3 250.1 288.7 256.0 284.0" pathLength="1" stroke="#E5384A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+                      <g transform="translate(256.0 284.0)">
+                        <circle class="halo" r="6" fill="#E5384A" />
+                        <circle class="dot" r="5.5" fill="#E5384A" stroke="#FFFFFF" stroke-width="2.5" />
+                      </g>
+                      <g class="tip">
+                        <rect x="190" y="222" width="76" height="34" rx="10" fill="#1F2430" />
+                        <path d="M246 255L251 261L256 255Z" fill="#1F2430" />
+                        <text x="200" y="236" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#FFFFFF" fill-opacity="0.7">Today</text>
+                        <text x="200" y="250" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">18.2 kWh</text>
+                      </g>
+                      <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#5B6170"><text x="44.0" y="360" text-anchor="middle">M</text><text x="79.3" y="360" text-anchor="middle">T</text><text x="114.7" y="360" text-anchor="middle">W</text><text x="150.0" y="360" text-anchor="middle">T</text><text x="185.3" y="360" text-anchor="middle">F</text><text x="220.7" y="360" text-anchor="middle">S</text><text x="256.0" y="360" text-anchor="middle">S</text></g>
+
+                      <!-- Stat tiles -->
+                      <rect x="26" y="388" width="120" height="82" rx="18" fill="#FFFFFF" />
+                      <rect x="154" y="388" width="120" height="82" rx="18" fill="#FFFFFF" />
+                      <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                        <text x="40" y="410" font-size="10.5" fill="#5B6170">Total vs estimated</text>
+                        <text x="40" y="436" font-size="20" font-weight="800">95%</text>
+                        <text x="168" y="410" font-size="10.5" fill="#5B6170">Best day</text>
+                        <text x="168" y="436" font-size="20" font-weight="800">15 Nov</text>
+                      </g>
+                      <rect x="40" y="448" width="92" height="6" rx="3" fill="#F1E3DE" />
+                      <rect class="prog" x="40" y="448" width="87.4" height="6" rx="3" fill="#E5384A" />
+                      <rect x="168" y="448" width="92" height="6" rx="3" fill="#DDF3E7" />
+                      <rect class="prog" x="168" y="448" width="60" height="6" rx="3" fill="#1FA36A" />
+
+                      <!-- Header -->
+                      <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" fill="#1F2430">
+                        <text x="44" y="52" font-size="15" font-weight="700">09:42</text>
+                        <text x="36" y="104" font-size="30" font-weight="800" letter-spacing="0.3">Oh, hello</text>
+                        <text x="36" y="130" font-size="13.5">Your insights at hand</text>
+                      </g>
+                      <!-- Status icons -->
+                      <g fill="#1F2430">
+                        <rect x="198" y="47" width="3" height="5" rx="1" />
+                        <rect x="203" y="45" width="3" height="7" rx="1" />
+                        <rect x="208" y="43" width="3" height="9" rx="1" />
+                        <rect x="213" y="41" width="3" height="11" rx="1" />
+                        <text x="222" y="52" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                          font-size="12" font-weight="700">5G</text>
+                        <rect x="242" y="40" width="25" height="13" rx="4" />
+                        <rect x="268" y="44" width="2" height="5" rx="1" />
+                        <text x="254.5" y="50.5" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                          font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">81</text>
+                      </g>
+                                          <!-- Notification: a new reading lands -->
+                      <g class="notif">
+                        <rect x="26" y="68" width="248" height="54" rx="16" fill="#FFFFFF" />
+                        <rect x="26" y="68" width="248" height="54" rx="16" stroke="#1F2430" stroke-opacity="0.08" />
+                        <circle cx="52" cy="95" r="14" fill="#1FA36A" />
+                        <path d="M54 85L45 97H52L50 105L59 93H52Z" fill="#FFFFFF" />
+                        <text x="74" y="91" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#1F2430">New reading</text>
+                        <text x="74" y="108" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#5B6170">2.4 kWh added just now</text>
+                      </g>
+                    </g>
+
+                    <!-- Dynamic Island -->
+                    <rect x="106" y="30" width="88" height="28" rx="14" fill="#0E0F12" />
+                    <circle cx="178" cy="44" r="5" fill="#1B2030" />
+                    <circle cx="178" cy="44" r="2" fill="#34405E" />
+                  </g>
+                </g>
+
+                <!-- Right phone: the left one in a mirror -->
+              </svg>
+              <div class="portfolio-title">
+                <h4>Home energy app</h4>
+                <p>Your home's energy, at a glance · Energy · 2026</p>
               </div>
             </div>
           </a>

@@ -16,6 +16,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 | DesignOps | `#project10` | `.ops` / `ops-` | `ops.css` | — Built from `project-hero-mobile.svg` (DesignOps), not stored yet |
 | Pantry Design System | `#project1` | `.pds` / `pds-` | `pds.css` | `pds/pantry.svg` (drawn for the site, from a screenshot) |
 | Data tool | `#project15` | `.xl` / `xl-` | `xl.css` | `xl/data-tool.svg` (drawn for the site, from an Excel-style reference) |
+| Home energy app | `#project16` (link still `#`) | `.nrg` / `nrg-` | `nrg.css` | `nrg/home-energy.svg` (drawn for the site, from a PNG mock-up); `nrg/home-energy-mirror.svg` is an earlier two-phone concept, not used |
 | AH Compact | `#project4` | `.ah` / `ah-` | `ah.css` | `ah/groceries.svg`, `ah/iphone-12-mini.svg` |
 | Not the brief | `#project13` (currently commented out) | `.ntb` / `ntb-` | `ntb.css` | — Built from `not the brief.svg`, not stored yet |
 | Cookbook.md | `#project14` | `.cbk` / `cbk-` | `cbk.css` | `cbk/cookbook.svg` (drawn for the site) |
@@ -38,7 +39,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 
 ## Covers drawn for the site
 
-`wl/`, `pds/`, `xl/` and `cbk/` hold covers that were drawn in code, so the version on
+`wl/`, `pds/`, `xl/`, `nrg/` and `cbk/` hold covers that were drawn in code, so the version on
 the site *is* the original. Each file is that inline SVG exported from `index.html` as a
 standalone SVG, with its cover's stylesheet embedded: open it in a browser and it
 animates as on the site. Edits should go to `index.html` and `assets/css/covers/`, then
