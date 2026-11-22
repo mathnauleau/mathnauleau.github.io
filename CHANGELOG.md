@@ -2,6 +2,14 @@
 
 A list of all major changes. To update for each release.
 
+## 22.11.2026 - Version 2.10
+
+### Added
+
+- Design tokens now come from the `@mathieu.nauleau/tokens` npm package, synced into `tokens.css` on `npm install` (or `npm run sync-tokens`)
+- New tokens: `--color-accent-purple` and `--border-radius-xxlarge`
+- CI check that fails a pull request if `tokens.css` is out of sync with the package
+
 ## 21.06.2026 - Version 2.09
 
 ### Added
