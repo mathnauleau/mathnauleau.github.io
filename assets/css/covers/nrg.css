@@ -1,13 +1,14 @@
 /* Home energy app cover (inline <svg class="nrg"> in #project16, index.html).
-   One app in the middle. On the left, readings flow in from a smart meter, solar panels
-   and a thermostat; on the right, insights go out to people ("−12% this week", "95% of estimate", a tip to
-   run the dryer in sunny hours). Each packet rides its curve with SMIL <animateMotion>
-   (6s, staggered); ripples mark where packets reach or leave the phone.
+   Calm by design. One app in the middle: on the left, readings come in from a smart
+   meter, solar panels and a thermostat; on the right, insights go out to people. The
+   endpoints are frosted circles with fixed labels; on each thin connection a single
+   soft point of light travels (SMIL <animateMotion>, 7s, evenly staggered).
    On the screen (12s loop, CSS): the week's usage line draws itself against the dashed
-   estimate; as the "New reading" notification drops (~36%), the line reaches today,
-   the dot pops with its tooltip and the stat bars fill; then it all resets.
+   estimate; as the "New reading" notification slides in (~36%), the line reaches today,
+   the dot and its tooltip appear and the stat bars fill; then it all resets.
    Every rule sits in @scope (.nrg); keyframes and SVG IDs use the nrg- prefix.
-   Without motion the packets and notification are hidden and the chart shows complete. */
+   Without motion the points of light and notification are hidden and the chart shows
+   complete. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project16 {
@@ -32,20 +33,7 @@
     height: auto;
   }
 
-  /* Dashes march along each track in its direction of travel */
-  .flow {
-    stroke-dasharray: 2 8;
-    animation: nrg-flow 1.8s linear infinite;
-  }
-
-  /* A source swells as it sends (in step with its packet, every 6s) */
-  .src > circle:first-child {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: nrg-emit 6s ease-out var(--e, 0s) infinite;
-  }
-
-  .notif { animation: nrg-notif var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.1) infinite; }
+  .notif { animation: nrg-notif var(--cyc) cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 
   /* Chart */
   .line {
@@ -57,11 +45,11 @@
     transform-box: fill-box;
     transform-origin: center;
   }
-  .dot { animation: nrg-dot var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.4) infinite; }
+  .dot { animation: nrg-dot var(--cyc) ease-out infinite; }
   .halo { animation: nrg-halo var(--cyc) ease-out infinite; }
   .tip {
     transform-origin: 80% 100%;
-    animation: nrg-tip var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.2) infinite;
+    animation: nrg-tip var(--cyc) cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
   .prog {
     transform-box: fill-box;
@@ -78,22 +66,11 @@
   }
 }
 
-@keyframes nrg-flow {
-  from { stroke-dashoffset: 10; }
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes nrg-emit {
-  0%, 30%, 100% { transform: scale(1); }
-  8% { transform: scale(1.1); }
-}
-
-/* Drops from the island, holds, slides back up */
+/* Slides down from the island, holds, slides back up */
 @keyframes nrg-notif {
-  0%, 30% { opacity: 0; transform: translateY(-70px); }
-  36% { opacity: 1; transform: translateY(3px); }
-  39%, 60% { opacity: 1; transform: translateY(0); }
-  66%, 100% { opacity: 0; transform: translateY(-70px); }
+  0%, 30% { opacity: 0; transform: translateY(-60px); }
+  37%, 60% { opacity: 1; transform: translateY(0); }
+  67%, 100% { opacity: 0; transform: translateY(-60px); }
 }
 
 /* Draws up to yesterday, waits, adds today with the reading, fades for the next take */
@@ -106,15 +83,14 @@
 }
 
 @keyframes nrg-area {
-  0%, 10% { opacity: 0; }
-  40%, 90% { opacity: 1; }
+  0%, 40% { opacity: 0; }
+  50%, 90% { opacity: 1; }
   97%, 100% { opacity: 0; }
 }
 
 @keyframes nrg-dot {
   0%, 40% { transform: scale(0); }
-  45% { transform: scale(1.2); }
-  48%, 90% { transform: scale(1); }
+  46%, 90% { transform: scale(1); }
   96%, 100% { transform: scale(0); }
 }
 
@@ -125,10 +101,9 @@
 }
 
 @keyframes nrg-tip {
-  0%, 44% { opacity: 0; transform: scale(0.4); }
-  49% { opacity: 1; transform: scale(1.05); }
-  52%, 86% { opacity: 1; transform: scale(1); }
-  92%, 100% { opacity: 0; transform: scale(0.4); }
+  0%, 44% { opacity: 0; transform: translateY(4px); }
+  50%, 86% { opacity: 1; transform: translateY(0); }
+  92%, 100% { opacity: 0; transform: translateY(4px); }
 }
 
 @keyframes nrg-prog {

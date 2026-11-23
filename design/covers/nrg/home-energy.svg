@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="nrg" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Home energy app">
                 <style><![CDATA[
 /* Home energy app cover (inline <svg class="nrg"> in #project16, index.html).
-   One app in the middle. On the left, readings flow in from a smart meter, solar panels
-   and a thermostat; on the right, insights go out to people ("−12% this week", "95% of estimate", a tip to
-   run the dryer in sunny hours). Each packet rides its curve with SMIL <animateMotion>
-   (6s, staggered); ripples mark where packets reach or leave the phone.
+   Calm by design. One app in the middle: on the left, readings come in from a smart
+   meter, solar panels and a thermostat; on the right, insights go out to people. The
+   endpoints are frosted circles with fixed labels; on each thin connection a single
+   soft point of light travels (SMIL <animateMotion>, 7s, evenly staggered).
    On the screen (12s loop, CSS): the week's usage line draws itself against the dashed
-   estimate; as the "New reading" notification drops (~36%), the line reaches today,
-   the dot pops with its tooltip and the stat bars fill; then it all resets.
+   estimate; as the "New reading" notification slides in (~36%), the line reaches today,
+   the dot and its tooltip appear and the stat bars fill; then it all resets.
    Every rule sits in @scope (.nrg); keyframes and SVG IDs use the nrg- prefix.
-   Without motion the packets and notification are hidden and the chart shows complete. */
+   Without motion the points of light and notification are hidden and the chart shows
+   complete. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project16 {
@@ -34,20 +35,7 @@
     height: auto;
   }
 
-  /* Dashes march along each track in its direction of travel */
-  .flow {
-    stroke-dasharray: 2 8;
-    animation: nrg-flow 1.8s linear infinite;
-  }
-
-  /* A source swells as it sends (in step with its packet, every 6s) */
-  .src > circle:first-child {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: nrg-emit 6s ease-out var(--e, 0s) infinite;
-  }
-
-  .notif { animation: nrg-notif var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.1) infinite; }
+  .notif { animation: nrg-notif var(--cyc) cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 
   /* Chart */
   .line {
@@ -59,11 +47,11 @@
     transform-box: fill-box;
     transform-origin: center;
   }
-  .dot { animation: nrg-dot var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.4) infinite; }
+  .dot { animation: nrg-dot var(--cyc) ease-out infinite; }
   .halo { animation: nrg-halo var(--cyc) ease-out infinite; }
   .tip {
     transform-origin: 80% 100%;
-    animation: nrg-tip var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.2) infinite;
+    animation: nrg-tip var(--cyc) cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
   .prog {
     transform-box: fill-box;
@@ -80,22 +68,11 @@
   }
 }
 
-@keyframes nrg-flow {
-  from { stroke-dashoffset: 10; }
-  to { stroke-dashoffset: 0; }
-}
-
-@keyframes nrg-emit {
-  0%, 30%, 100% { transform: scale(1); }
-  8% { transform: scale(1.1); }
-}
-
-/* Drops from the island, holds, slides back up */
+/* Slides down from the island, holds, slides back up */
 @keyframes nrg-notif {
-  0%, 30% { opacity: 0; transform: translateY(-70px); }
-  36% { opacity: 1; transform: translateY(3px); }
-  39%, 60% { opacity: 1; transform: translateY(0); }
-  66%, 100% { opacity: 0; transform: translateY(-70px); }
+  0%, 30% { opacity: 0; transform: translateY(-60px); }
+  37%, 60% { opacity: 1; transform: translateY(0); }
+  67%, 100% { opacity: 0; transform: translateY(-60px); }
 }
 
 /* Draws up to yesterday, waits, adds today with the reading, fades for the next take */
@@ -108,15 +85,14 @@
 }
 
 @keyframes nrg-area {
-  0%, 10% { opacity: 0; }
-  40%, 90% { opacity: 1; }
+  0%, 40% { opacity: 0; }
+  50%, 90% { opacity: 1; }
   97%, 100% { opacity: 0; }
 }
 
 @keyframes nrg-dot {
   0%, 40% { transform: scale(0); }
-  45% { transform: scale(1.2); }
-  48%, 90% { transform: scale(1); }
+  46%, 90% { transform: scale(1); }
   96%, 100% { transform: scale(0); }
 }
 
@@ -127,10 +103,9 @@
 }
 
 @keyframes nrg-tip {
-  0%, 44% { opacity: 0; transform: scale(0.4); }
-  49% { opacity: 1; transform: scale(1.05); }
-  52%, 86% { opacity: 1; transform: scale(1); }
-  92%, 100% { opacity: 0; transform: scale(0.4); }
+  0%, 44% { opacity: 0; transform: translateY(4px); }
+  50%, 86% { opacity: 1; transform: translateY(0); }
+  92%, 100% { opacity: 0; transform: translateY(4px); }
 }
 
 @keyframes nrg-prog {
@@ -173,144 +148,126 @@
                   <clipPath id="nrg-screen-clip">
                     <rect x="15" y="15" width="270" height="560" rx="42" />
                   </clipPath>
-                  <!-- Flow paths, each drawn in its direction of travel -->
-                  <path id="nrg-l1" d="M112 140C190 140 214 186 250 196" />
-                  <path id="nrg-l2" d="M86 270C170 270 206 262 250 262" />
-                  <path id="nrg-l3" d="M122 400C204 400 214 340 250 330" />
-                  <path id="nrg-r1" d="M550 196C586 186 610 140 688 140" />
-                  <path id="nrg-r2" d="M550 262C596 262 630 270 714 270" />
-                  <path id="nrg-r3" d="M550 330C586 340 596 400 678 400" />
+                  <!-- Connections, each drawn in its direction of travel -->
+                  <path id="nrg-l1" d="M118 140C190 140 214 186 250 196" />
+                  <path id="nrg-l2" d="M98 270C170 270 206 262 250 262" />
+                  <path id="nrg-l3" d="M118 400C200 400 214 340 250 330" />
+                  <path id="nrg-r1" d="M550 196C586 186 610 140 682 140" />
+                  <path id="nrg-r2" d="M550 262C596 262 650 270 702 270" />
+                  <path id="nrg-r3" d="M550 330C586 340 610 400 682 400" />
                 </defs>
 
                 <rect width="800" height="500" fill="url(#nrg-bg)" />
                 <rect width="800" height="500" fill="url(#nrg-glow)" />
 
                 <!-- Labels -->
-                <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="1.6" fill="#FFFFFF">
-                  <text x="62" y="76" fill="#7A2A1E" fill-opacity="0.75">DATA IN</text>
-                  <text x="738" y="76" text-anchor="end" fill-opacity="0.9">INSIGHTS OUT</text>
+                <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" letter-spacing="2" fill="#FFFFFF" fill-opacity="0.95">
+                  <text x="68" y="72">DATA IN</text>
+                  <text x="732" y="72" text-anchor="end">INSIGHTS OUT</text>
                 </g>
 
-                <!-- Tracks: dashes flow toward where things travel -->
-                <g class="flow" stroke="#FFFFFF" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round">
+                <!-- Connections: thin steady lines -->
+                <g stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round">
                   <use href="#nrg-l1" /><use href="#nrg-l2" /><use href="#nrg-l3" />
                   <use href="#nrg-r1" /><use href="#nrg-r2" /><use href="#nrg-r3" />
                 </g>
 
-                <!-- Packets (SMIL, so they follow the curves everywhere) -->
+                <!-- A soft point of light travels each connection (SMIL, 7s, evenly staggered) -->
                 <g class="pk" opacity="0">
-                  <rect x="-35.0" y="-13" width="70" height="26" rx="13" fill="#FFFFFF" />
-                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#1F2430">2.4 kWh</text>
-                  <animateMotion dur="6s" begin="0s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-l1" /></animateMotion>
-                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="0s" repeatCount="indefinite" />
+                  <circle r="9" fill="#FFFFFF" fill-opacity="0.22" />
+                  <circle r="3.5" fill="#FFFFFF" />
+                  <animateMotion dur="7s" begin="0s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.45 0 0.55 1"><mpath href="#nrg-l1" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" begin="0s" repeatCount="indefinite" />
                 </g>
-                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
-                  <animateMotion dur="6s" begin="3s" repeatCount="indefinite"><mpath href="#nrg-l1" /></animateMotion>
-                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="3s" repeatCount="indefinite" />
-                </circle>
                 <g class="pk" opacity="0">
-                  <rect x="-38.0" y="-13" width="76" height="26" rx="13" fill="#FFFFFF" />
-                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#1F2430">+3.1 kWh</text>
-                  <animateMotion dur="6s" begin="1.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-l2" /></animateMotion>
-                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="1.6s" repeatCount="indefinite" />
+                  <circle r="9" fill="#FFFFFF" fill-opacity="0.22" />
+                  <circle r="3.5" fill="#FFFFFF" />
+                  <animateMotion dur="7s" begin="1.17s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.45 0 0.55 1"><mpath href="#nrg-r1" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" begin="1.17s" repeatCount="indefinite" />
                 </g>
-                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
-                  <animateMotion dur="6s" begin="4.6s" repeatCount="indefinite"><mpath href="#nrg-l2" /></animateMotion>
-                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="4.6s" repeatCount="indefinite" />
-                </circle>
                 <g class="pk" opacity="0">
-                  <rect x="-33.0" y="-13" width="66" height="26" rx="13" fill="#FFFFFF" />
-                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#1F2430">19.5 °C</text>
-                  <animateMotion dur="6s" begin="3.2s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-l3" /></animateMotion>
-                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="3.2s" repeatCount="indefinite" />
+                  <circle r="9" fill="#FFFFFF" fill-opacity="0.22" />
+                  <circle r="3.5" fill="#FFFFFF" />
+                  <animateMotion dur="7s" begin="2.33s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.45 0 0.55 1"><mpath href="#nrg-l2" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" begin="2.33s" repeatCount="indefinite" />
                 </g>
-                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
-                  <animateMotion dur="6s" begin="0.2s" repeatCount="indefinite"><mpath href="#nrg-l3" /></animateMotion>
-                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="0.2s" repeatCount="indefinite" />
-                </circle>
                 <g class="pk" opacity="0">
-                  <rect x="-55.0" y="-13" width="110" height="26" rx="13" fill="#1F2430" />
-                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">−12% this week</text>
-                  <animateMotion dur="6s" begin="0.8s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-r1" /></animateMotion>
-                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="0.8s" repeatCount="indefinite" />
+                  <circle r="9" fill="#FFFFFF" fill-opacity="0.22" />
+                  <circle r="3.5" fill="#FFFFFF" />
+                  <animateMotion dur="7s" begin="3.5s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.45 0 0.55 1"><mpath href="#nrg-r2" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" begin="3.5s" repeatCount="indefinite" />
                 </g>
-                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
-                  <animateMotion dur="6s" begin="3.8s" repeatCount="indefinite"><mpath href="#nrg-r1" /></animateMotion>
-                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="3.8s" repeatCount="indefinite" />
-                </circle>
                 <g class="pk" opacity="0">
-                  <rect x="-56" y="-13" width="112" height="26" rx="13" fill="#1F2430" />
-                  <text x="0" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">95% of estimate</text>
-                  <animateMotion dur="6s" begin="2.2s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.4 0 0.6 1"><mpath href="#nrg-r2" /></animateMotion>
-                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="2.2s" repeatCount="indefinite" />
+                  <circle r="9" fill="#FFFFFF" fill-opacity="0.22" />
+                  <circle r="3.5" fill="#FFFFFF" />
+                  <animateMotion dur="7s" begin="4.67s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.45 0 0.55 1"><mpath href="#nrg-l3" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" begin="4.67s" repeatCount="indefinite" />
                 </g>
-                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
-                  <animateMotion dur="6s" begin="5.2s" repeatCount="indefinite"><mpath href="#nrg-r2" /></animateMotion>
-                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="5.2s" repeatCount="indefinite" />
-                </circle>
                 <g class="pk" opacity="0">
-                  <rect x="-68" y="-13" width="136" height="26" rx="13" fill="#1F2430" />
-                  <path d="M-50-8L-56 1H-52L-54 8L-48-1H-52Z" fill="#FFD45C" />
-                  <text x="6" y="4.5" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" fill="#FFFFFF">Run dryer at 14:00</text>
-                  <animateMotion dur="6s" begin="4s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="spline" keySplines="0.4 0 0.6 1"><mpath href="#nrg-r3" /></animateMotion>
-                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.82;1" dur="6s" begin="4s" repeatCount="indefinite" />
+                  <circle r="9" fill="#FFFFFF" fill-opacity="0.22" />
+                  <circle r="3.5" fill="#FFFFFF" />
+                  <animateMotion dur="7s" begin="5.83s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.45 0 0.55 1"><mpath href="#nrg-r3" /></animateMotion>
+                  <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" begin="5.83s" repeatCount="indefinite" />
                 </g>
-                <circle class="pk" r="4" fill="#FFFFFF" opacity="0">
-                  <animateMotion dur="6s" begin="1s" repeatCount="indefinite"><mpath href="#nrg-r3" /></animateMotion>
-                  <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.85;1" dur="6s" begin="1s" repeatCount="indefinite" />
-                </circle>
-
-                <!-- Arrival ripples at the phone's edges -->
-                <circle class="pk" cx="250" cy="196" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
-                  <animate attributeName="r" values="0;0;5;20" keyTimes="0;0.86;0.9;1" dur="6s" begin="0s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0;0;0.9;0" keyTimes="0;0.86;0.9;1" dur="6s" begin="0s" repeatCount="indefinite" />
-                </circle>
-                <circle class="pk" cx="250" cy="262" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
-                  <animate attributeName="r" values="0;0;5;20" keyTimes="0;0.86;0.9;1" dur="6s" begin="1.6s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0;0;0.9;0" keyTimes="0;0.86;0.9;1" dur="6s" begin="1.6s" repeatCount="indefinite" />
-                </circle>
-                <circle class="pk" cx="250" cy="330" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
-                  <animate attributeName="r" values="0;0;5;20" keyTimes="0;0.86;0.9;1" dur="6s" begin="3.2s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0;0;0.9;0" keyTimes="0;0.86;0.9;1" dur="6s" begin="3.2s" repeatCount="indefinite" />
-                </circle>
-                <circle class="pk" cx="550" cy="262" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
-                  <animate attributeName="r" values="5;20;20" keyTimes="0;0.12;1" dur="6s" begin="2.2s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.12;1" dur="6s" begin="2.2s" repeatCount="indefinite" />
-                </circle>
-                <circle class="pk" cx="550" cy="330" r="0" stroke="#FFFFFF" stroke-width="2" opacity="0">
-                  <animate attributeName="r" values="5;20;20" keyTimes="0;0.12;1" dur="6s" begin="4s" repeatCount="indefinite" />
-                  <animate attributeName="opacity" values="0.9;0;0" keyTimes="0;0.12;1" dur="6s" begin="4s" repeatCount="indefinite" />
-                </circle>
 
                 <!-- Sources: smart meter, solar, thermostat -->
-                <g class="src" style="--e:0s" transform="translate(86 140)">
-                  <circle r="26" fill="#FFFFFF" />
-                  <path d="M3-14L-8 3H0L-3 14L8-3H0Z" fill="#F5A623" />
-                </g>
-                <g class="src" style="--e:1.6s" transform="translate(60 270)">
-                  <circle r="26" fill="#FFFFFF" />
-                  <circle r="7" fill="#F5B83D" />
-                  <g stroke="#F5B83D" stroke-width="2.4" stroke-linecap="round">
-                    <path d="M0-12V-15M0 12V15M-12 0H-15M12 0H15M-8.5-8.5L-10.6-10.6M8.5 8.5L10.6 10.6M-8.5 8.5L-10.6 10.6M8.5-8.5L10.6-10.6" />
+                <g transform="translate(92 140)">
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2-10L-6 2H0L-2 10L6-2H0Z" /></g>
+                  <g transform="translate(0 44)">
+                    <rect x="-32.0" y="-11" width="64" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">2.4 kWh</text>
                   </g>
                 </g>
-                <g class="src" style="--e:3.2s" transform="translate(96 400)">
-                  <circle r="26" fill="#FFFFFF" />
-                  <rect x="-4" y="-15" width="8" height="22" rx="4" stroke="#E5384A" stroke-width="2" />
-                  <circle cy="9" r="6.5" fill="#E5384A" />
-                  <rect x="-1.5" y="-6" width="3" height="14" rx="1.5" fill="#E5384A" />
+                <g transform="translate(72 270)">
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle r="5" /><path d="M0-11V-9M0 9V11M-11 0H-9M9 0H11M-7.8-7.8L-6.4-6.4M6.4 6.4L7.8 7.8M-7.8 7.8L-6.4 6.4M6.4-6.4L7.8-7.8" /></g>
+                  <g transform="translate(0 44)">
+                    <rect x="-45.0" y="-11" width="90" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">3.1 kWh solar</text>
+                  </g>
+                </g>
+                <g transform="translate(92 400)">
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M-3 3V-9A3 3 0 0 1 3-9V3" /><circle cy="7" r="5" /><path d="M0-4V5" /></g>
+                  <g transform="translate(0 44)">
+                    <rect x="-30.0" y="-11" width="60" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">19.5 °C</text>
+                  </g>
                 </g>
 
-                <!-- People -->
-                <g transform="translate(714 140)"><circle r="26" fill="#FFFFFF" /><g><circle r="23" fill="#CDEFF2" /><circle cy="-6" r="8" fill="#1F2430" /><path d="M-15 18C-15 8-8 4 0 4C8 4 15 8 15 18Z" fill="#1F2430" /></g></g>
-                <g transform="translate(740 270)"><circle r="26" fill="#FFFFFF" /><g><circle r="23" fill="#FFE7A6" /><circle cy="-6" r="8" fill="#1F2430" /><path d="M-15 18C-15 8-8 4 0 4C8 4 15 8 15 18Z" fill="#1F2430" /></g></g>
-                <g transform="translate(704 400)"><circle r="26" fill="#FFFFFF" /><g><circle r="23" fill="#FFD3C4" /><circle cy="-6" r="8" fill="#1F2430" /><path d="M-15 18C-15 8-8 4 0 4C8 4 15 8 15 18Z" fill="#1F2430" /></g></g>
+                <!-- People, with the insight each one receives -->
+                <g transform="translate(708 140)">
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cy="-5" r="5" /><path d="M-9 11C-9 4-4 2 0 2C4 2 9 4 9 11" /></g>
+                  <g transform="translate(0 44)">
+                    <rect x="-50.0" y="-11" width="100" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">−12% this week</text>
+                  </g>
+                </g>
+                <g transform="translate(728 270)">
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cy="-5" r="5" /><path d="M-9 11C-9 4-4 2 0 2C4 2 9 4 9 11" /></g>
+                  <g transform="translate(0 44)">
+                    <rect x="-52.0" y="-11" width="104" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">95% of estimate</text>
+                  </g>
+                </g>
+                <g transform="translate(708 400)">
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cy="-5" r="5" /><path d="M-9 11C-9 4-4 2 0 2C4 2 9 4 9 11" /></g>
+                  <g transform="translate(0 44)">
+                    <rect x="-48.0" y="-11" width="96" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Dryer at 14:00</text>
+                  </g>
+                </g>
 
                 <!-- The app -->
                 <g class="phone" transform="translate(248.75 40) scale(1.0083)">
                   <g>
                     <!-- Shadow -->
-                    <rect x="12" y="18" width="300" height="580" rx="58" fill="#7A1020" opacity="0.28" filter="url(#nrg-soft)" />
+                    <rect x="12" y="18" width="300" height="580" rx="58" fill="#7A1020" opacity="0.28"
+                      filter="url(#nrg-soft)" />
                     <!-- Side buttons -->
                     <rect x="-4" y="118" width="6" height="26" rx="3" fill="#B4B6BA" />
                     <rect x="-4" y="168" width="6" height="48" rx="3" fill="#B4B6BA" />
@@ -327,14 +284,26 @@
                         <text x="44" y="177" font-size="12.5" fill="#5B6170">Usage this week</text>
                         <text x="44" y="205" font-size="24" font-weight="800">132 kWh</text>
                         <rect x="152" y="187" width="50" height="22" rx="11" fill="#DDF3E7" />
-                        <text x="177" y="202" font-size="11.5" font-weight="700" fill="#178856" text-anchor="middle">−12%</text>
+                        <text x="177" y="202" font-size="11.5" font-weight="700" fill="#178856"
+                          text-anchor="middle">−12%</text>
                       </g>
-                      <g stroke="#1F2430" stroke-opacity="0.08" stroke-dasharray="3 4"><path d="M44 242H256" /><path d="M44 284H256" /><path d="M44 326H256" /></g>
+                      <g stroke="#1F2430" stroke-opacity="0.08" stroke-dasharray="3 4">
+                        <path d="M44 242H256" />
+                        <path d="M44 284H256" />
+                        <path d="M44 326H256" />
+                      </g>
                       <path d="M44 340H256" stroke="#1F2430" stroke-opacity="0.15" />
                       <!-- Estimate (dashed) and actual usage, which draws itself -->
-                      <path d="M44.0 249.0C49.9 250.2 67.6 256.0 79.3 256.0C91.1 256.0 102.9 249.0 114.7 249.0C126.4 249.0 138.2 254.8 150.0 256.0C161.8 257.2 173.6 254.8 185.3 256.0C197.1 257.2 208.9 263.0 220.7 263.0C232.4 263.0 250.1 257.2 256.0 256.0" stroke="#9AA0AB" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round" />
-                      <path class="area" d="M44.0 256.0C49.9 260.7 67.6 286.3 79.3 284.0C91.1 281.7 102.9 239.7 114.7 242.0C126.4 244.3 138.2 293.3 150.0 298.0C161.8 302.7 173.6 267.7 185.3 270.0C197.1 272.3 208.9 309.7 220.7 312.0C232.4 314.3 250.1 288.7 256.0 284.0L256 340H44Z" fill="url(#nrg-area)" />
-                      <path class="line" d="M44.0 256.0C49.9 260.7 67.6 286.3 79.3 284.0C91.1 281.7 102.9 239.7 114.7 242.0C126.4 244.3 138.2 293.3 150.0 298.0C161.8 302.7 173.6 267.7 185.3 270.0C197.1 272.3 208.9 309.7 220.7 312.0C232.4 314.3 250.1 288.7 256.0 284.0" pathLength="1" stroke="#E5384A" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M44.0 249.0C49.9 250.2 67.6 256.0 79.3 256.0C91.1 256.0 102.9 249.0 114.7 249.0C126.4 249.0 138.2 254.8 150.0 256.0C161.8 257.2 173.6 254.8 185.3 256.0C197.1 257.2 208.9 263.0 220.7 263.0C232.4 263.0 250.1 257.2 256.0 256.0"
+                        stroke="#9AA0AB" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round" />
+                      <path class="area"
+                        d="M44.0 256.0C49.9 260.7 67.6 286.3 79.3 284.0C91.1 281.7 102.9 239.7 114.7 242.0C126.4 244.3 138.2 293.3 150.0 298.0C161.8 302.7 173.6 267.7 185.3 270.0C197.1 272.3 208.9 309.7 220.7 312.0C232.4 314.3 250.1 288.7 256.0 284.0L256 340H44Z"
+                        fill="url(#nrg-area)" />
+                      <path class="line"
+                        d="M44.0 256.0C49.9 260.7 67.6 286.3 79.3 284.0C91.1 281.7 102.9 239.7 114.7 242.0C126.4 244.3 138.2 293.3 150.0 298.0C161.8 302.7 173.6 267.7 185.3 270.0C197.1 272.3 208.9 309.7 220.7 312.0C232.4 314.3 250.1 288.7 256.0 284.0"
+                        pathLength="1" stroke="#E5384A" stroke-width="3.2" stroke-linecap="round"
+                        stroke-linejoin="round" />
                       <g transform="translate(256.0 284.0)">
                         <circle class="halo" r="6" fill="#E5384A" />
                         <circle class="dot" r="5.5" fill="#E5384A" stroke="#FFFFFF" stroke-width="2.5" />
@@ -342,10 +311,19 @@
                       <g class="tip">
                         <rect x="190" y="222" width="76" height="34" rx="10" fill="#1F2430" />
                         <path d="M246 255L251 261L256 255Z" fill="#1F2430" />
-                        <text x="200" y="236" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#FFFFFF" fill-opacity="0.7">Today</text>
-                        <text x="200" y="250" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#FFFFFF">18.2 kWh</text>
+                        <text x="200" y="236"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5"
+                          fill="#FFFFFF" fill-opacity="0.7">Today</text>
+                        <text x="200" y="250"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12"
+                          font-weight="700" fill="#FFFFFF">18.2 kWh</text>
                       </g>
-                      <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10.5" fill="#5B6170"><text x="44.0" y="360" text-anchor="middle">M</text><text x="79.3" y="360" text-anchor="middle">T</text><text x="114.7" y="360" text-anchor="middle">W</text><text x="150.0" y="360" text-anchor="middle">T</text><text x="185.3" y="360" text-anchor="middle">F</text><text x="220.7" y="360" text-anchor="middle">S</text><text x="256.0" y="360" text-anchor="middle">S</text></g>
+                      <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10.5"
+                        fill="#5B6170"><text x="44.0" y="360" text-anchor="middle">M</text><text x="79.3" y="360"
+                          text-anchor="middle">T</text><text x="114.7" y="360" text-anchor="middle">W</text><text
+                          x="150.0" y="360" text-anchor="middle">T</text><text x="185.3" y="360"
+                          text-anchor="middle">F</text><text x="220.7" y="360" text-anchor="middle">S</text><text
+                          x="256.0" y="360" text-anchor="middle">S</text></g>
 
                       <!-- Stat tiles -->
                       <rect x="26" y="388" width="120" height="82" rx="18" fill="#FFFFFF" />
@@ -373,21 +351,27 @@
                         <rect x="203" y="45" width="3" height="7" rx="1" />
                         <rect x="208" y="43" width="3" height="9" rx="1" />
                         <rect x="213" y="41" width="3" height="11" rx="1" />
-                        <text x="222" y="52" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                          font-size="12" font-weight="700">5G</text>
+                        <text x="222" y="52"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12"
+                          font-weight="700">5G</text>
                         <rect x="242" y="40" width="25" height="13" rx="4" />
                         <rect x="268" y="44" width="2" height="5" rx="1" />
-                        <text x="254.5" y="50.5" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                          font-size="9.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">81</text>
+                        <text x="254.5" y="50.5"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5"
+                          font-weight="700" fill="#FFFFFF" text-anchor="middle">81</text>
                       </g>
-                                          <!-- Notification: a new reading lands -->
+                      <!-- Notification: a new reading lands -->
                       <g class="notif">
                         <rect x="26" y="68" width="248" height="54" rx="16" fill="#FFFFFF" />
                         <rect x="26" y="68" width="248" height="54" rx="16" stroke="#1F2430" stroke-opacity="0.08" />
                         <circle cx="52" cy="95" r="14" fill="#1FA36A" />
                         <path d="M54 85L45 97H52L50 105L59 93H52Z" fill="#FFFFFF" />
-                        <text x="74" y="91" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#1F2430">New reading</text>
-                        <text x="74" y="108" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" fill="#5B6170">2.4 kWh added just now</text>
+                        <text x="74" y="91"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5"
+                          font-weight="700" fill="#1F2430">New reading</text>
+                        <text x="74" y="108"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5"
+                          fill="#5B6170">2.4 kWh added just now</text>
                       </g>
                     </g>
 
@@ -397,6 +381,4 @@
                     <circle cx="178" cy="44" r="2" fill="#34405E" />
                   </g>
                 </g>
-
-                <!-- Right phone: the left one in a mirror -->
               </svg>
