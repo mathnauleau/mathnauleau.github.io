@@ -17,7 +17,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 | Pantry Design System | `#project1` | `.pds` / `pds-` | `pds.css` | `pds/pantry.svg` (drawn for the site, from a screenshot) |
 | Data tool | `#project15` | `.xl` / `xl-` | `xl.css` | `xl/data-tool.svg` (drawn for the site, from an Excel-style reference) |
 | Home energy app | `#project16` (link still `#`) | `.nrg` / `nrg-` | `nrg.css` | `nrg/home-energy.svg` (drawn for the site, from a PNG mock-up) |
-| AH Compact | `#project4` | `.ah` / `ah-` | `ah.css` | `ah/groceries.svg`, `ah/iphone-12-mini.svg` |
+| AH Compact | `#project4` | `.ah` / `ah-` | `ah.css` | `ah/ah-compact.svg` (site export, animated); originals `ah/groceries.svg`, `ah/iphone-12-mini.svg` |
 | Not the brief | `#project13` (currently commented out) | `.ntb` / `ntb-` | `ntb.css` | — Built from `not the brief.svg`, not stored yet |
 | Cookbook.md | `#project14` | `.cbk` / `cbk-` | `cbk.css` | `cbk/cookbook.svg` (drawn for the site; the card photo is `assets/img/portfolio/cookbook-tarte-tatin.jpg`, embedded in the export) |
 | Island Slide Puzzle | `#project5` | `.isl` / `isl-` | `isl.css` | `isl/island.svg` (site export, animated) |
@@ -29,8 +29,12 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 - `ah/groceries.svg` is placed in the cover at `translate(144 297.5) scale(.963)`; each
   of its nine items (tray, milk, zucchini, carrot, juice, baguette, orange, tomato,
   cheese) is wrapped in its own `.bob` group for the bounce.
-- `ah/iphone-12-mini.svg` includes the outlined screen copy ("Daily groceries / Free
-  delivery") and is placed at `translate(262.5 70)`.
+- `ah/ah-compact.svg` is the cover as it is on the site, exported from `index.html` with
+  `ah.css` embedded; re-export it after changing the cover.
+- `ah/iphone-12-mini.svg` is no longer drawn as the phone: the cover now uses the
+  titanium phone from the Home energy app cover at exactly the same size and place
+  (`translate(248.75 40) scale(1.0083)`). Only its outlined screen copy ("Daily
+  groceries / Free delivery") is still used, on a blue screen.
 - `isl/island.svg` is no longer the raw Figma export: it is the cover as it is on the
   site, exported from `index.html` with `isl.css` embedded, so it animates when opened in
   a browser (hover the "8" block to slide it). Compared with the original artwork, the
