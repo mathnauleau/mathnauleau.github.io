@@ -5,9 +5,11 @@
    One 12s loop, shared by everything:
      0–28%   Hamburg Serial (#00ADE6)
      28–34%  knob slides; colour and typeface switch at its midpoint
-     34–61%  Ivar Display   (#FF7900)
-     67–94%  PROXIMA NOVA   (#7C5CFF)
+     34–61%  Ivar Display   (#F0508C, pink)
+     67–94%  PROXIMA NOVA   (#FF8A3D, orange)
      94–100% knob sweeps back to the start
+   Buttons (.btn filled, .btn-o outlined) change corner radius with the brand at the
+   same moment: 8, pill, 2.
    The screens float on their own slower loop (--s staggers them); hover one to lift it
    (real pointer above 768px). Every rule sits in @scope (.wl); keyframes and SVG IDs
    use the wl- prefix. Without motion the cover shows the first brand, as drawn. */
@@ -44,6 +46,9 @@
   .b1 { animation: wl-b1 var(--cyc) ease-in-out infinite; }
   .b2 { animation: wl-b2 var(--cyc) ease-in-out infinite; }
   .b3 { animation: wl-b3 var(--cyc) ease-in-out infinite; }
+  /* Buttons: colour and corner radius together */
+  .acc.btn { animation: wl-acc var(--cyc) ease-in-out infinite, wl-rx var(--cyc) ease-in-out infinite; }
+  .acc-s.btn-o { animation: wl-acc-s var(--cyc) ease-in-out infinite, wl-rx-o var(--cyc) ease-in-out infinite; }
   .knob { animation: wl-knob var(--cyc) cubic-bezier(0.5, 0, 0.3, 1) infinite; }
 
   .ph { animation: wl-float 7s ease-in-out var(--s, 0s) infinite; }
@@ -65,21 +70,36 @@
    so the muddy in-between of an RGB blend never shows */
 @keyframes wl-acc {
   0%, 30.5% { fill: #00ADE6; }
-  31.5%, 63.5% { fill: #FF7900; }
-  64.5%, 96.5% { fill: #7C5CFF; }
+  31.5%, 63.5% { fill: #F0508C; }
+  64.5%, 96.5% { fill: #FF8A3D; }
   97.5%, 100% { fill: #00ADE6; }
 }
 @keyframes wl-acc-s {
   0%, 30.5% { stroke: #00ADE6; }
-  31.5%, 63.5% { stroke: #FF7900; }
-  64.5%, 96.5% { stroke: #7C5CFF; }
+  31.5%, 63.5% { stroke: #F0508C; }
+  64.5%, 96.5% { stroke: #FF8A3D; }
   97.5%, 100% { stroke: #00ADE6; }
 }
 @keyframes wl-acc-d {
   0%, 30.5% { fill: #0184AF; }
-  31.5%, 63.5% { fill: #D16403; }
-  64.5%, 96.5% { fill: #5A3FD6; }
+  31.5%, 63.5% { fill: #C42F6A; }
+  64.5%, 96.5% { fill: #D9661A; }
   97.5%, 100% { fill: #0184AF; }
+}
+
+/* Button corners: 8 (Hamburg Serial), pill (Ivar Display), 2 (Proxima Nova).
+   The outlined buttons sit 1 unit inside their stroke, so their radius is 1 less. */
+@keyframes wl-rx {
+  0%, 30.5% { rx: 8px; }
+  31.5%, 63.5% { rx: 20px; }
+  64.5%, 96.5% { rx: 2px; }
+  97.5%, 100% { rx: 8px; }
+}
+@keyframes wl-rx-o {
+  0%, 30.5% { rx: 7px; }
+  31.5%, 63.5% { rx: 19px; }
+  64.5%, 96.5% { rx: 1px; }
+  97.5%, 100% { rx: 7px; }
 }
 
 /* Typeface swaps cross over at the same moment */

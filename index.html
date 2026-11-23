@@ -1238,8 +1238,8 @@
                   </linearGradient>
                   <linearGradient id="wl-track" x1="70" y1="0" x2="731" y2="0" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#00ADE6" />
-                    <stop offset=".5" stop-color="#FF7900" />
-                    <stop offset="1" stop-color="#7C5CFF" />
+                    <stop offset=".5" stop-color="#F0508C" />
+                    <stop offset="1" stop-color="#FF8A3D" />
                   </linearGradient>
                   <clipPath id="wl-win">
                     <rect x="68" y="20" width="664" height="379" rx="16" />
@@ -1323,14 +1323,14 @@
                     </g>
                   </g>
 
-                  <!-- B: buttons -->
+                  <!-- B: buttons. Corner radius follows the brand (.btn / .btn-o): 8, pill, 2 -->
                   <g class="ph" style="--s:-3s">
                     <g class="lift">
                       <g transform="matrix(0.989651 -0.143493 0 1 156 200.7)">
                         <rect width="186" height="354" rx="11.3" fill="url(#wl-back)" />
                         <g transform="translate(7 5)">
                           <rect width="186" height="354" rx="11.3" fill="url(#wl-face)" />
-                          <rect class="acc" x="16" y="26" width="112" height="40" rx="20" fill="#00ADE6" />
+                          <rect class="acc btn" x="16" y="26" width="112" height="40" rx="8" fill="#00ADE6" />
                           <g class="b1">
                             <path d="M33 46H43M38 41V51" stroke="#fff" stroke-width="2.4" stroke-linecap="round" />
                           </g>
@@ -1342,7 +1342,7 @@
                               stroke-linecap="square" />
                           </g>
                           <rect x="52" y="43" width="56" height="6" rx="3" fill="#fff" />
-                          <rect class="acc-s" x="17" y="83" width="110" height="38" rx="19" fill="#fff" stroke="#00ADE6"
+                          <rect class="acc-s btn-o" x="17" y="83" width="110" height="38" rx="7" fill="#fff" stroke="#00ADE6"
                             stroke-width="2" />
                           <g class="b1">
                             <path class="acc-s" d="M33 102H43M38 97V107" stroke="#00ADE6" stroke-width="2.4"
@@ -1357,7 +1357,7 @@
                               stroke-linecap="square" />
                           </g>
                           <rect class="acc" x="52" y="99" width="56" height="6" rx="3" fill="#00ADE6" />
-                          <circle class="acc" cx="36" cy="160" r="20" fill="#00ADE6" />
+                          <rect class="acc btn" x="16" y="140" width="40" height="40" rx="8" fill="#00ADE6" />
                           <g class="b1">
                             <path d="M29 160H43M36 153V167" stroke="#fff" stroke-width="2" stroke-linecap="round" />
                           </g>
@@ -1368,7 +1368,7 @@
                             <path d="M30.5 160H41.5M36 154.5V165.5" stroke="#fff" stroke-width="3.2"
                               stroke-linecap="square" />
                           </g>
-                          <circle class="acc-s" cx="88" cy="160" r="19" fill="#fff" stroke="#00ADE6" stroke-width="2" />
+                          <rect class="acc-s btn-o" x="69" y="141" width="38" height="38" rx="7" fill="#fff" stroke="#00ADE6" stroke-width="2" />
                           <g class="b1">
                             <path class="acc-s" d="M81 160H95M88 153V167" stroke="#00ADE6" stroke-width="2"
                               stroke-linecap="round" />
@@ -1474,37 +1474,53 @@
                     </g>
                   </g>
 
-                  <!-- E: spec card with redlines -->
+                  <!-- E: product card; product, name and type follow the brand (.b1/.b2/.b3) -->
                   <g class="ph" style="--s:-4s">
                     <g class="lift">
                       <g transform="matrix(0.989651 -0.143493 0 1 541 293.7)">
                         <rect width="186" height="354" rx="11.3" fill="url(#wl-back)" />
                         <g transform="translate(7 5)">
                           <rect width="186" height="365" rx="11.3" fill="url(#wl-face)" />
-                          <rect x="21" y="17" width="122" height="67" fill="#fff" stroke="#9747FF" stroke-width=".6" />
-                          <rect x="26" y="22" width="37" height="57" fill="#F4F4F5" />
-                          <rect x="26" y="32" width="37" height="37" fill="#E2E1E4" />
-                          <rect x="68" y="24" width="56" height="5" rx="2.5" fill="#26313A" />
-                          <rect x="68" y="33" width="42" height="5" rx="2.5" fill="#26313A" />
-                          <rect x="68" y="44" width="30" height="4" rx="2" fill="#878691" />
-                          <rect class="acc" x="68" y="68" width="20" height="7" rx="1" fill="#00ADE6" />
-                          <rect x="91" y="68" width="30" height="7" rx="1" fill="#747387" />
-                          <g stroke="#9747FF" stroke-width=".8" stroke-linecap="round">
-                            <path d="M66 6V16M66 6H143M143 6V16" />
-                            <path d="M152 17V84M148 17H156M148 84H156" />
-                            <path d="M21 92H143M21 89V95M143 89V95" />
-                            <path d="M66 22V40" />
+                          <rect x="12" y="12" width="162" height="82" rx="10" fill="#fff" />
+                          <rect class="acc" x="20" y="20" width="66" height="66" rx="8" fill="#00ADE6" fill-opacity=".16" />
+                          <!-- Blue: bananas -->
+                          <g class="b1">
+                            <path d="M34 36C36 60 54 74 76 66C74 63 72 62 69 62C54 64 44 54 41 36C39 34 36 34 34 36Z" fill="#FFD43B" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                            <path d="M38 34C40 52 52 62 68 58C67 55 65 54 62 55C50 56 44 48 44 34C42 32 40 32 38 34Z" fill="#FFE066" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                            <path d="M37 35L39 28L43 29L42 34" fill="#7A5A1E" />
+                            <text x="94" y="36" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#10151C">Bananas</text>
+                            <text x="94" y="50" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#747387">Per kilo</text>
+                            <text x="94" y="80" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#10151C">€1.99</text>
                           </g>
-                          <g fill="#9747FF">
-                            <rect x="96" y="1" width="18" height="3" rx="1.5" />
-                            <rect x="157" y="46" width="14" height="3" rx="1.5" />
-                            <rect x="72" y="97" width="22" height="3" rx="1.5" />
+                          <!-- Pink: a pot of vitamins -->
+                          <g class="b2" opacity="0">
+                            <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A" />
+                            <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1" stroke-width="1.2" />
+                            <rect x="38" y="48" width="30" height="18" fill="#F0508C" />
+                            <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                            <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE" transform="rotate(-25 75.5 68.5)" />
+                            <text x="94" y="36" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="12" font-weight="600" fill="#10151C">Vitamin C</text>
+                            <text x="94" y="50" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="9.5" fill="#747387">60 tablets</text>
+                            <text x="94" y="80" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="13" font-weight="600" fill="#10151C">€8.49</text>
                           </g>
+                          <!-- Orange: a bottle of beer -->
+                          <g class="b3" opacity="0">
+                            <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A" />
+                            <path d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z" fill="#7A3E12" />
+                            <rect x="45" y="54" width="16" height="16" fill="#FFE3C7" />
+                            <rect x="45" y="58" width="16" height="4" fill="#FF8A3D" />
+                            <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5" stroke-linecap="round" />
+                            <text x="94" y="36" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">LAGER</text>
+                            <text x="94" y="50" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="9.5" letter-spacing="1" fill="#747387">33 CL · 5%</text>
+                            <text x="94" y="80" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="800" fill="#10151C">€2.29</text>
+                          </g>
+                          <!-- Add button: brand colour and corner radius -->
+                          <rect class="acc btn" x="144" y="64" width="22" height="22" rx="8" fill="#00ADE6" />
+                          <path d="M155 70V80M150 75H160" stroke="#fff" stroke-width="2" stroke-linecap="round" />
                         </g>
                       </g>
                     </g>
                   </g>
-
                 </g>
 
                 <!-- Theme slider: the knob picks the brand -->
