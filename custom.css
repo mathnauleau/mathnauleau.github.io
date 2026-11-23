@@ -1570,3 +1570,13 @@ section ul li {
   min-height: 48px;
   min-width: 48px;
 }
+
+/* Lock after a project title: the project page is password protected.
+   Takes the title's colour and size. */
+.portfolio-title .lock-icon {
+  display: inline-block;
+  width: 0.72em;
+  height: 0.72em;
+  margin-left: 0.3em;
+  vertical-align: -0.02em;
+}
