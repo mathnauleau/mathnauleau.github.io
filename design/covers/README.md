@@ -26,7 +26,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 
 ## Notes per original
 
-- `ah/groceries.svg` is placed in the cover at `translate(144 297.5) scale(.963)`; each
+- `ah/groceries.svg` is placed in the cover at `translate(144 273.5) scale(.963)` (24 units higher than in the original cover); each
   of its nine items (tray, milk, zucchini, carrot, juice, baguette, orange, tomato,
   cheese) is wrapped in its own `.bob` group for the bounce.
 - `ah/ah-compact.svg` is the cover as it is on the site, exported from `index.html` with
