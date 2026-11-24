@@ -598,7 +598,7 @@
                   <rect x="-4" y="168" width="6" height="48" rx="3" fill="#CFD1D3" />
                   <rect x="-4" y="226" width="6" height="48" rx="3" fill="#CFD1D3" />
                   <rect width="300" height="590" rx="58" fill="#E9E9EA" />
-                  <rect x="6" y="6" width="288" height="578" rx="52" fill="#FFFFFF" />
+                  <rect x="6" y="6" width="288" height="578" rx="52" fill="#2B2E35" />
                   <rect x="15" y="15" width="270" height="560" rx="42" fill="#F7F9FB" />
                   <g clip-path="url(#ah-screen-clip)">
       <!-- Section title -->
