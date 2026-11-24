@@ -1,5 +1,8 @@
 # Project cover originals
 
+The rules every cover follows (canvas, safe zone, style, motion tokens, hover,
+performance) are in [SPEC.md](SPEC.md).
+
 Source artwork for the animated project covers on the home page, kept as exported so
 changes can be requested against a known file. The covers on the site are inline SVGs
 in `index.html`; their animation styles live in `assets/css/covers/`.
@@ -33,7 +36,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
   `ah.css` embedded; re-export it after changing the cover.
 - `ah/iphone-12-mini.svg` is no longer drawn as the phone: the cover now uses the
   titanium phone from the Home energy app cover at exactly the same size and place
-  (`translate(248.75 40) scale(1.0083)`). Only its outlined screen copy ("Daily
+  (`translate(250 40)`, scale 1, plain `#E9E9EA` frame). Only its outlined screen copy ("Daily
   groceries / Free delivery") is still used, on a blue screen.
 - `isl/island.svg` is no longer the raw Figma export: it is the cover as it is on the
   site, exported from `index.html` with `isl.css` embedded, so it animates when opened in

@@ -8,7 +8,7 @@
      "8" block   on hover it slides toward the other blocks along the isometric grid
                  (real pointer above 768px)
    Every rule sits in @scope (.isl); keyframes and SVG IDs use the isl- prefix.
-   CSS animations stop for prefers-reduced-motion (the subtle SMIL foam ripple keeps going). */
+   Animations stop for prefers-reduced-motion (the SMIL foam is paused by js/covers.js). */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project5 {

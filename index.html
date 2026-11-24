@@ -37,6 +37,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="custom.css" rel="stylesheet">
   <link href="tokens.css" rel="stylesheet">
+  <link href="assets/css/covers/base.css" rel="stylesheet">
   <link href="assets/css/covers/isl.css" rel="stylesheet">
   <link href="assets/css/covers/ops.css" rel="stylesheet">
   <link href="assets/css/covers/ntb.css" rel="stylesheet">
@@ -905,13 +906,6 @@
                     <stop stop-color="#FFE3D6" stop-opacity="0.5" />
                     <stop offset="1" stop-color="#FFE3D6" stop-opacity="0" />
                   </radialGradient>
-                  <linearGradient id="nrg-ti" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#D2D4D6" />
-                    <stop offset="0.06" stop-color="#F8F8F7" />
-                    <stop offset="0.5" stop-color="#E9E9EA" />
-                    <stop offset="0.94" stop-color="#FAFAF9" />
-                    <stop offset="1" stop-color="#C7C8CA" />
-                  </linearGradient>
                   <linearGradient id="nrg-screen" x1="0" y1="15" x2="0" y2="560" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#C6EFF3" />
                     <stop offset="0.35" stop-color="#E4F5F2" />
@@ -1112,14 +1106,14 @@
                 </g>
 
                 <!-- The app -->
-                <g class="phone" transform="translate(248.75 40) scale(1.0083)">
+                <g class="phone" transform="translate(250 40)">
                   <g>
                     <!-- Side buttons -->
                     <rect x="-4" y="118" width="6" height="26" rx="3" fill="#CFD1D3" />
                     <rect x="-4" y="168" width="6" height="48" rx="3" fill="#CFD1D3" />
                     <rect x="-4" y="226" width="6" height="48" rx="3" fill="#CFD1D3" />
                     <!-- Titanium frame, bezel, screen -->
-                    <rect width="300" height="590" rx="58" fill="url(#nrg-ti)" />
+                    <rect width="300" height="590" rx="58" fill="#E9E9EA" />
                     <rect x="6" y="6" width="288" height="578" rx="52" fill="#0E0F12" />
                     <rect x="15" y="15" width="270" height="560" rx="42" fill="url(#nrg-screen)" />
 
@@ -1580,13 +1574,6 @@
                    and the original groceries artwork; each item bounces gently. -->
               <svg class="ah" viewBox="0 0 800 500" fill="none" role="img" aria-label="AH Compact">
                 <defs>
-                  <linearGradient id="ah-ti" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#D2D4D6" />
-                    <stop offset="0.06" stop-color="#F8F8F7" />
-                    <stop offset="0.5" stop-color="#E9E9EA" />
-                    <stop offset="0.94" stop-color="#FAFAF9" />
-                    <stop offset="1" stop-color="#C7C8CA" />
-                  </linearGradient>
                   <linearGradient id="ah-screen" x1="0" y1="15" x2="0" y2="575" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#2AA6F0" />
                     <stop offset="1" stop-color="#1180E0" />
@@ -1975,12 +1962,12 @@
                 <!-- Phone: the same titanium phone as the Home energy app cover, same size and
                      place; the screen copy is the original artwork, centred as before -->
                 <g transform="translate(262.5 70)">
-                  <!-- Same placement and size as the energy phone: translate(248.75 40) scale(1.0083) -->
-                  <g transform="translate(-13.75 -30) scale(1.0083)">
+                  <!-- Same placement and size as the energy phone: translate(250 40), scale 1 -->
+                  <g transform="translate(-12.5 -30)">
                     <rect x="-4" y="118" width="6" height="26" rx="3" fill="#CFD1D3" />
                     <rect x="-4" y="168" width="6" height="48" rx="3" fill="#CFD1D3" />
                     <rect x="-4" y="226" width="6" height="48" rx="3" fill="#CFD1D3" />
-                    <rect width="300" height="590" rx="58" fill="url(#ah-ti)" />
+                    <rect width="300" height="590" rx="58" fill="#E9E9EA" />
                     <rect x="6" y="6" width="288" height="578" rx="52" fill="#0E0F12" />
                     <rect x="15" y="15" width="270" height="560" rx="42" fill="url(#ah-screen)" />
                     <!-- Dynamic Island -->
@@ -3774,6 +3761,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="js/covers.js"></script>
   <script src="assets/js/ntb-cursor.js"></script>
 </body>
 
