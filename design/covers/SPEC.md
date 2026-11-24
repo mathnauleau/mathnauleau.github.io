@@ -9,10 +9,11 @@ Values marked `--cover-…` live in `assets/css/covers/base.css`.
 - Inline `<svg viewBox="0 0 800 500">` inside `.portfolio-wrap`, with `role="img"` and an
   `aria-label` naming the project.
 - One prefix per cover (`.xl`, `xl-…` IDs, `xl.css`); every rule inside `@scope (.<prefix>)`.
-- **Safe zone.** On the tall tiles the title and its gradient cover the bottom of the
-  drawing. Keep everything that carries meaning **above y = 380**, and **40 units** in from
-  the left and right edges. Below 380 is for background, the bottom of a device, or
-  texture only.
+- **Safe zone.** On the tall tiles (4:3) the drawing fades out from **y = 370** (a mask from
+  74% to 100% of its height) and the title starts at y ≈ 424–497 depending on the width
+  (measured at 1024–1600px). Keep everything that carries meaning **above y = 370**, and
+  **40 units** in from the left and right edges. Below 370 is for background, the bottom
+  of a device, or secondary detail that may fade.
 
 ## 2. Composition and style
 
@@ -24,7 +25,7 @@ Values marked `--cover-…` live in `assets/css/covers/base.css`.
 - Never mix rendering styles inside one cover (for example a realistic device with flat
   illustrations, or a photo inside flat UI).
 - **Device frames** are shared, never redrawn:
-  - **Window:** 660 × 400 at (70, 70), radius 20, title bar with three dots (Data tool,
+  - **Window:** 660 × 400 at (70, 55), radius 20, title bar with three dots (Data tool,
     Pantry).
   - **Phone:** 300 × 590 at `translate(250 40) scale(1.0)`, frame in one plain colour
     `#E9E9EA`, buttons `#CFD1D3`, no status bar (Home energy app, AH Compact).
@@ -35,7 +36,7 @@ Values marked `--cover-…` live in `assets/css/covers/base.css`.
 - One background hue per tile: a gradient at 32° on the tile, and continuing the drawing's
   bottom edge under the title on tall tiles.
 - **Neighbouring tiles never share a hue family.** Current hues: DesignOps coral, Data tool
-  green, Pantry blue-violet, Home energy coral-red, White label navy-teal, AH blue.
+  green, Pantry blue-violet, Home energy gold-to-purple, White label navy-teal, AH blue.
 - Title and description on the tile are white, and must reach 4.5:1 against the bottom of
   the drawing.
 
@@ -59,6 +60,9 @@ Values marked `--cover-…` live in `assets/css/covers/base.css`.
 - A cover has **one story loop** (12s) **or** only ambient motion, plus ambient life if
   needed. All parts of a story share the one loop (no separate timers drifting apart).
 - Ambient motion stays at or under 8 units and is out of step between elements.
+- **Travel along a path** (a light running along a line, a dot along a connection) is
+  not limited to 8 units; its loop is a whole multiple of `--cover-ambient`, with starts
+  spaced evenly (DesignOps: 4 × 7s, starts 7s apart; Home energy app: 7s).
 - No springy overshoot except the single `--cover-ease-pop`.
 - **Reduced motion:** every CSS animation stops (`animation: none`), and the cover shows its
   **finished state** (the end of the story), never a blank or half-drawn one. SMIL
@@ -70,8 +74,8 @@ Values marked `--cover-…` live in `assets/css/covers/base.css`.
 - Real pointer and wide screen only: `@media (hover: hover) and (min-width: 769px)`.
 - The **hero element lifts** by `--cover-hover-lift` (6px) over `--cover-hover-duration`
   (300ms) with `--cover-ease`. Nothing else moves.
-- Exception, allowed once: a hover that explains the product (Island: the block slides
-  toward the gap).
+- Exception: a hover that explains the product, using the same duration and easing
+  (Island: the block slides toward the gap; DesignOps: the "O" toggle switches on).
 
 ## 7. Performance
 
@@ -93,11 +97,11 @@ Each cover has a standalone copy in `design/covers/<prefix>/` with its styleshee
 
 | Cover | Loop | Easing | Hover | Safe zone | Style | Text ≥ 14 | Notes |
 |---|---|---|---|---|---|---|---|
-| DesignOps | ❌ 27s / 4.8s | ✅ | ❌ none | ✅ | ✅ | ✅ | Wordmark repeats the tile title |
-| Data tool | ⚠️ 14s | ❌ overshoot | ❌ dims bars | ❌ rows under title | ✅ | ⚠️ | Window has a drop shadow |
-| Pantry | ❌ 3–8s, separate timers | ❌ overshoot | ⚠️ lifts 5px | ❌ cards under title | ✅ | ❌ nav text | Window has a drop shadow |
-| Home energy app | ✅ 12s (+ 7s ambient) | ✅ | ❌ none | ❌ stat tiles under title | ✅ | ❌ 11-unit labels | Hue too close to DesignOps |
+| DesignOps | ✅ ambient + travel (4 × 7s) | ✅ | ✅ toggle (exception) | ✅ | ✅ | ✅ | Wordmark repeats the tile title |
+| Data tool | ✅ 12s | ✅ one pop | ✅ window lifts 6px | ✅ | ✅ | ⚠️ | |
+| Pantry | ✅ 7s ambient, staggered | ✅ | ✅ cards lift 6px | ✅ (card labels start to fade) | ✅ | ❌ nav text | Caret blinks at 1s (UI convention) |
+| Home energy app | ✅ 12s (+ 7s travel) | ✅ | ❌ none | ⚠️ bottom labels and stat tiles fade | ✅ | ❌ 11-unit labels | |
 | White label | ✅ 12s (+ 7s ambient) | ⚠️ knob and lift overshoot | ⚠️ lifts 12px, every screen | ✅ | ✅ | ⚠️ | |
-| AH Compact | ❌ 10.5s per item | ✅ | ⚠️ lifts 10px, every item | ❌ groceries under title | ❌ realistic phone + illustration | ✅ | Screen shows marketing copy, not UI; 128 KB |
-| Cookbook.md | ❌ 16s | ⚠️ card lift overshoot | ✅ lifts 6px | ✅ | ❌ photo in flat UI | ✅ | Photo is third-party |
+| AH Compact | ✅ 12s story + 7s ambient | ✅ one pop | ✅ groceries lift 6px | ✅ | ⚠️ flat UI phone with illustrated groceries in front | ✅ | Product cards to follow a reference layout |
+| Cookbook.md | ❌ 16s | ⚠️ card lift overshoot | ✅ lifts 6px | ✅ | ✅ flat tart | ✅ | |
 | Island | ✅ ambient only | ✅ | ✅ exception | ✅ | ✅ | — | 88 KB; foam is SMIL (paused by covers.js under reduced motion) |

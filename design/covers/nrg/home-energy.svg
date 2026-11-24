@@ -14,12 +14,12 @@
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project16 {
-  background: linear-gradient(32deg, #FDDB94 0%, #F7836C 45%, #C90029 100%);
+  background: linear-gradient(32deg, #FDDB94 0%, #F7836C 40%, #D2468C 72%, #7044D4 100%);
 }
 
 /* As a tall tile: the space under the art continues the drawing's bottom edge */
 .portfolio-item--tall #project16 {
-  background: linear-gradient(90deg, #FAA77C 0%, #E5384A 60%, #C90029 100%);
+  background: linear-gradient(90deg, #F9A07D 0%, #D2468C 60%, #7044D4 100%);
 }
 
 .portfolio-item--tall #project16 .portfolio-title h4,
@@ -117,9 +117,9 @@
                 <defs>
                   <linearGradient id="nrg-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#FDDB94" />
-                    <stop offset="0.45" stop-color="#F7836C" />
-                    <stop offset="0.75" stop-color="#E5384A" />
-                    <stop offset="1" stop-color="#C90029" />
+                    <stop offset="0.4" stop-color="#F7836C" />
+                    <stop offset="0.72" stop-color="#D2468C" />
+                    <stop offset="1" stop-color="#7044D4" />
                   </linearGradient>
                   <radialGradient id="nrg-glow" cx="400" cy="260" r="300" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#FFE3D6" stop-opacity="0.5" />
@@ -333,7 +333,7 @@
                     <rect x="-4" y="226" width="6" height="48" rx="3" fill="#CFD1D3" />
                     <!-- Titanium frame, bezel, screen -->
                     <rect width="300" height="590" rx="58" fill="#E9E9EA" />
-                    <rect x="6" y="6" width="288" height="578" rx="52" fill="#0E0F12" />
+                    <rect x="6" y="6" width="288" height="578" rx="52" fill="#FFFFFF" />
                     <rect x="15" y="15" width="270" height="560" rx="42" fill="url(#nrg-screen)" />
 
                     <g clip-path="url(#nrg-screen-clip)">

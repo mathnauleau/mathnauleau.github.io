@@ -6,12 +6,12 @@
    One 16s loop, every animation shares it (no delays), so all parts stay in sync:
      4–56%   the Markdown types itself line by line (covers shrink, caret follows)
      9–48%   the card renders as each line lands: title, meta, and the tarte tatin
-             photo (20% with the title, full once "Dessert" is typed at 15–17%)
+             dish, a flat illustration (20% with the title, full once "Dessert" is typed at 15–17%)
      46%     the last checkbox gets ticked
-     88–97%  everything fades out; the photo stays hidden (its placeholder shows)
+     88–97%  everything fades out; the dish stays hidden (its placeholder shows)
              until the next take
    Without motion (prefers-reduced-motion, or no @scope support) the base styles
-   below show the finished state: full recipe, photo shown. Hover the card
+   below show the finished state: full recipe, dish shown. Hover the card
    to lift it (real pointer above 768px). */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
@@ -72,10 +72,10 @@
   .sk2 { animation: cbk-sk2 var(--cyc) linear infinite; }
   .ttl { animation: cbk-ttl var(--cyc) ease-out infinite; }
   .meta { animation: cbk-meta var(--cyc) ease-out infinite; }
-  .photo {
+  .dish {
     transform-box: fill-box;
     transform-origin: center;
-    animation: cbk-photo var(--cyc) ease-out infinite;
+    animation: cbk-dish var(--cyc) ease-out infinite;
   }
   .drift { transform-box: fill-box; transform-origin: center; animation: cbk-drift 9s ease-in-out var(--s, 0s) infinite; }
 
@@ -163,10 +163,10 @@
   93%, 100% { opacity: 0; transform: translateY(5px); }
 }
 
-/* The photo fades in to 20% with the title (9–11%), then to full when "Dessert" is
+/* The dish fades in to 20% with the title (9–11%), then to full when "Dessert" is
    typed (end of line 2, 15–17%); it fades with the pane (88–91%) and stays hidden
    until the next take */
-@keyframes cbk-photo {
+@keyframes cbk-dish {
   0%, 9% { opacity: 0; transform: scale(1.06); }
   11%, 15% { opacity: 0.2; transform: scale(1.04); }
   17%, 88% { opacity: 1; transform: scale(1); }

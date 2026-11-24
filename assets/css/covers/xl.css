@@ -1,5 +1,5 @@
 /* Data tool cover (inline <svg class="xl"> in #project15, index.html).
-   The story of the project in one 14s loop: the old Excel workflow sweeps away and
+   The story of the project in one story loop (--cover-story, 12s): the old Excel workflow sweeps away and
    an abstract graph tool builds up in its place.
      0–27%   the sheet: data_v12_FINAL(3).xlsx, a VLOOKUP in the formula bar,
              the selection hops cell to cell, a copy range marches, #REF! flashes
@@ -12,7 +12,9 @@
    Without motion (prefers-reduced-motion, or no @scope support) the cover shows the
    finished app: everything that should start hidden carries opacity="0" in the SVG
    itself, so the fallback never shows the sheet and the app on top of each other.
-   Hover a bar to focus it (real pointer above 768px). */
+   Hover the window to lift it (real pointer above 768px). Timing and easing come
+   from assets/css/covers/base.css (design/covers/SPEC.md); the panels' pop is the
+   cover's one --cover-ease-pop. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project15 {
@@ -34,7 +36,7 @@
 
 @scope (.xl) {
   :scope {
-    --cyc: 14s;
+    --cyc: var(--cover-story);
     display: block;
     width: 100%;
     height: auto;
@@ -44,7 +46,7 @@
   .xc {
     transform-box: fill-box;
     transform-origin: center;
-    animation: xl-sheet var(--cyc) ease-in-out calc(var(--cyc) * (0.28 + var(--i) * 0.008)) infinite backwards;
+    animation: xl-sheet var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.28 + var(--i) * 0.008)) infinite backwards;
   }
   .sel { animation: xl-sel var(--cyc) step-end infinite; }
   .ants { animation: xl-ants var(--cyc) linear infinite, xl-march 0.6s linear infinite; }
@@ -55,24 +57,24 @@
   /* App: the group frames the visible window, each piece enters --d after 33% */
   .app { animation: xl-app var(--cyc) linear infinite; }
   .pop {
-    animation: xl-pop var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.15) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+    animation: xl-pop var(--cyc) var(--cover-ease-pop) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
   }
   .grow {
     transform-box: fill-box;
     transform-origin: bottom;
-    animation: xl-grow var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.1) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+    animation: xl-grow var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
   }
   .ln1 {
     stroke-dasharray: 1;
-    animation: xl-ln1 var(--cyc) ease-in-out infinite;
+    animation: xl-ln1 var(--cyc) var(--cover-ease) infinite;
   }
-  .area1, .end1 { animation: xl-area1 var(--cyc) ease-out infinite; }
+  .area1, .end1 { animation: xl-area1 var(--cyc) var(--cover-ease) infinite; }
 
-  .grow { transition: opacity 200ms ease; }
+  /* Hover: the window (the hero) lifts */
+  .win { transition: translate var(--cover-hover-duration) var(--cover-ease); }
 
   @media (hover: hover) and (min-width: 769px) {
-    .bars:hover .grow { opacity: 0.4; }
-    .bars .grow:hover { opacity: 1; }
+    .win:hover { translate: 0 var(--cover-hover-lift); }
   }
 
   @media (prefers-reduced-motion: reduce) {

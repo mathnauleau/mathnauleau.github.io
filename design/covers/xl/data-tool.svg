@@ -1,10 +1,39 @@
 <!-- data-tool cover: drawn for the site, exported from index.html.
      Open in a browser to see it animate; the styles below are assets/css/covers/xl.css. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" class="xl" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
-                <style>
-<![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" class="xl" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
+                <style><![CDATA[
+/* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
+   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
+   Load this file before the cover stylesheets. */
+
+:root {
+  /* Loops */
+  --cover-story: 12s;      /* a cover that tells its project's story, in beats of ~3s */
+  --cover-ambient: 7s;     /* background life: floats, drifts, glows */
+
+  /* Easing */
+  --cover-ease: cubic-bezier(0.4, 0, 0.2, 1);       /* default for everything */
+  --cover-ease-pop: cubic-bezier(0.3, 0.8, 0.3, 1.1); /* at most one small "pop" per cover */
+
+  /* Hover: the hero element lifts */
+  --cover-hover-lift: -6px;
+  --cover-hover-duration: 300ms;
+
+  /* Ambient movement stays small */
+  --cover-ambient-amplitude: 8px;
+}
+
+/* Off screen (or tab hidden), js/covers.js adds .is-paused to the cover's <svg>: every
+   CSS animation inside it freezes where it is and resumes from there. SMIL animations
+   are paused by the script itself (svg.pauseAnimations()). */
+.portfolio-wrap > svg.is-paused,
+.portfolio-wrap > svg.is-paused * {
+  animation-play-state: paused !important;
+}
+
 /* Data tool cover (inline <svg class="xl"> in #project15, index.html).
-   The story of the project in one 14s loop: the old Excel workflow sweeps away and
+   The story of the project in one story loop (--cover-story, 12s): the old Excel workflow sweeps away and
    an abstract graph tool builds up in its place.
      0–27%   the sheet: data_v12_FINAL(3).xlsx, a VLOOKUP in the formula bar,
              the selection hops cell to cell, a copy range marches, #REF! flashes
@@ -17,16 +46,31 @@
    Without motion (prefers-reduced-motion, or no @scope support) the cover shows the
    finished app: everything that should start hidden carries opacity="0" in the SVG
    itself, so the fallback never shows the sheet and the app on top of each other.
-   Hover a bar to focus it (real pointer above 768px). */
+   Hover the window to lift it (real pointer above 768px). Timing and easing come
+   from assets/css/covers/base.css (design/covers/SPEC.md); the panels' pop is the
+   cover's one --cover-ease-pop. */
 
+/* The tile behind the SVG: shows until the SVG is parsed. */
 #project15 {
   background: linear-gradient(32deg, #1EC4B4 0%, #B1D766 100%);
 }
 
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project15 {
+  background: linear-gradient(90deg, #1F9E80 0%, #6E9A2E 100%);
+}
+
+.portfolio-item--tall #project15 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project15 .portfolio-title p {
+  color: #fff;
+}
 
 @scope (.xl) {
   :scope {
-    --cyc: 14s;
+    --cyc: var(--cover-story);
     display: block;
     width: 100%;
     height: auto;
@@ -36,7 +80,7 @@
   .xc {
     transform-box: fill-box;
     transform-origin: center;
-    animation: xl-sheet var(--cyc) ease-in-out calc(var(--cyc) * (0.28 + var(--i) * 0.008)) infinite backwards;
+    animation: xl-sheet var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.28 + var(--i) * 0.008)) infinite backwards;
   }
   .sel { animation: xl-sel var(--cyc) step-end infinite; }
   .ants { animation: xl-ants var(--cyc) linear infinite, xl-march 0.6s linear infinite; }
@@ -47,24 +91,24 @@
   /* App: the group frames the visible window, each piece enters --d after 33% */
   .app { animation: xl-app var(--cyc) linear infinite; }
   .pop {
-    animation: xl-pop var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.15) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+    animation: xl-pop var(--cyc) var(--cover-ease-pop) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
   }
   .grow {
     transform-box: fill-box;
     transform-origin: bottom;
-    animation: xl-grow var(--cyc) cubic-bezier(0.2, 0.9, 0.3, 1.1) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+    animation: xl-grow var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
   }
   .ln1 {
     stroke-dasharray: 1;
-    animation: xl-ln1 var(--cyc) ease-in-out infinite;
+    animation: xl-ln1 var(--cyc) var(--cover-ease) infinite;
   }
-  .area1, .end1 { animation: xl-area1 var(--cyc) ease-out infinite; }
+  .area1, .end1 { animation: xl-area1 var(--cyc) var(--cover-ease) infinite; }
 
-  .grow { transition: opacity 200ms ease; }
+  /* Hover: the window (the hero) lifts */
+  .win { transition: translate var(--cover-hover-duration) var(--cover-ease); }
 
   @media (hover: hover) and (min-width: 769px) {
-    .bars:hover .grow { opacity: 0.4; }
-    .bars .grow:hover { opacity: 1; }
+    .win:hover { translate: 0 var(--cover-hover-lift); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -127,9 +171,8 @@
   47%, 100% { stroke-dashoffset: 0; }
 }
 @keyframes xl-area1 { 0%, 45% { opacity: 0; } 49%, 100% { opacity: 1; } }
-]]>
-</style>
-<defs>
+]]></style>
+                <defs>
                   <linearGradient id="xl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#1EC4B4" />
                     <stop offset="1" stop-color="#B1D766" />
@@ -138,17 +181,12 @@
                     <stop stop-color="#21A366" stop-opacity=".28" />
                     <stop offset="1" stop-color="#21A366" stop-opacity="0" />
                   </linearGradient>
-                  <filter id="xl-shadow" x="-10%" y="-10%" width="120%" height="130%">
-                    <feGaussianBlur stdDeviation="14" />
-                  </filter>
                   <clipPath id="xl-win">
                     <rect x="70" y="70" width="660" height="401" rx="20" />
                   </clipPath>
                 </defs>
                 <rect width="800" height="500" fill="url(#xl-bg)" />
-                <rect x="80" y="86" width="640" height="381" rx="20" fill="#0E3B25" opacity=".18"
-                  filter="url(#xl-shadow)" />
-                <g clip-path="url(#xl-win)">
+                <g class="win" clip-path="url(#xl-win)" transform="translate(0 -15)">
                   <rect x="70" y="70" width="660" height="401" fill="#EAF5EE" />
                   <circle cx="96" cy="90" r="4.5" fill="#BFD6C8" />
                   <circle cx="112" cy="90" r="4.5" fill="#BFD6C8" />
@@ -157,7 +195,7 @@
                     font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#217346"
                     fill-opacity=".75" opacity="0">data_v12_FINAL(3).xlsx</text>
                   <rect class="t-new" x="365" y="87" width="70" height="6" rx="3" fill="#217346" fill-opacity=".45" />
-                  <!-- The old way: a spreadsheet. Each column sweeps out in turn (–i) -->
+                  <!-- The old way: a spreadsheet. Each column sweeps out in turn (its i offset) -->
                   <g class="sheet">
                     <g class="xc" style="--i:0" opacity="0">
                       <rect x="96" y="108" width="608" height="24" rx="6" fill="#fff" stroke="#C3DBCD"
@@ -394,7 +432,7 @@
                         stroke-width="1.5" />
                     </g>
                   </g>
-                  <!-- The new tool, abstract: pieces pop in one after another (–d, fraction of the loop) -->
+                  <!-- The new tool, abstract: pieces pop in one after another (d: fraction of the loop) -->
                   <g class="app">
                     <g class="pop" style="--d:0">
                       <rect x="96" y="108" width="124" height="338" rx="14" fill="#fff" fill-opacity=".55"
@@ -457,17 +495,20 @@
                       <rect x="470" y="255" width="18" height="6" rx="3" fill="#BFD6C8" />
                       <circle cx="498" cy="258" r="4" fill="#8669DB" />
                       <rect x="506" y="255" width="18" height="6" rx="3" fill="#BFD6C8" />
-                      <path d="M256 292.2H520M256 321.8H520M256 351.4H520M256 381H520" stroke="#E3F2E9" stroke-width="1.2"
-                        stroke-dasharray="4 4" />
+                      <path d="M256 292.2H520M256 321.8H520M256 351.4H520M256 381H520" stroke="#E3F2E9"
+                        stroke-width="1.2" stroke-dasharray="4 4" />
                       <path d="M256 418H520" stroke="#C3DBCD" stroke-width="1.2" />
                     </g>
                     <!-- The data: both lines draw in once the card has appeared -->
-                    <path class="area1" d="M256 388.4L300 366.2L344 373.6L388 336.6L432 344L476 307L520 292.2L520 418L256 418Z"
+                    <path class="area1"
+                      d="M256 388.4L300 366.2L344 373.6L388 336.6L432 344L476 307L520 292.2L520 418L256 418Z"
                       fill="url(#xl-area)" />
-                    <path class="ln1" pathLength="1" d="M256 404.7L300 397.3L344 384L388 386.9L432 364.7L476 360.3L520 339.6"
-                      stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                    <path class="ln1" pathLength="1" d="M256 388.4L300 366.2L344 373.6L388 336.6L432 344L476 307L520 292.2"
-                      stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="ln1" pathLength="1"
+                      d="M256 404.7L300 397.3L344 384L388 386.9L432 364.7L476 360.3L520 339.6" stroke="#8669DB"
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    <path class="ln1" pathLength="1"
+                      d="M256 388.4L300 366.2L344 373.6L388 336.6L432 344L476 307L520 292.2" stroke="#21A366"
+                      stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
                     <circle class="end1" cx="520" cy="292.2" r="6" fill="#fff" stroke="#21A366" stroke-width="3" />
                     <g class="pop" style="--d:.09">
                       <rect x="548" y="238" width="156" height="208" rx="12" fill="#fff" stroke="#C3DBCD"
@@ -475,7 +516,7 @@
                       <rect x="562" y="254" width="70" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
                       <path d="M562 414H690" stroke="#C3DBCD" stroke-width="1.2" />
                     </g>
-                    <!-- Bars: grow in (–d); hover one to focus it -->
+                    <!-- Bars: grow in, one after another (d is a fraction of the loop) -->
                     <g class="bars">
                       <g class="grow" style="--d:0.120">
                         <rect x="566" y="322.9" width="24" height="88.2" rx="7" fill="#21A366" />

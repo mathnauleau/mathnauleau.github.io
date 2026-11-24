@@ -1,23 +1,68 @@
 <!-- pantry cover: drawn for the site, exported from index.html.
      Open in a browser to see it animate; the styles below are assets/css/covers/pds.css. -->
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" class="pds" viewBox="0 0 800 500" fill="none" role="img" aria-label="Pantry Design System">
-                <style>
-<![CDATA[
+<svg xmlns="http://www.w3.org/2000/svg" class="pds" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Pantry Design System">
+                <style><![CDATA[
+/* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
+   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
+   Load this file before the cover stylesheets. */
+
+:root {
+  /* Loops */
+  --cover-story: 12s;      /* a cover that tells its project's story, in beats of ~3s */
+  --cover-ambient: 7s;     /* background life: floats, drifts, glows */
+
+  /* Easing */
+  --cover-ease: cubic-bezier(0.4, 0, 0.2, 1);       /* default for everything */
+  --cover-ease-pop: cubic-bezier(0.3, 0.8, 0.3, 1.1); /* at most one small "pop" per cover */
+
+  /* Hover: the hero element lifts */
+  --cover-hover-lift: -6px;
+  --cover-hover-duration: 300ms;
+
+  /* Ambient movement stays small */
+  --cover-ambient-amplitude: 8px;
+}
+
+/* Off screen (or tab hidden), js/covers.js adds .is-paused to the cover's <svg>: every
+   CSS animation inside it freezes where it is and resumes from there. SMIL animations
+   are paused by the script itself (svg.pauseAnimations()). */
+.portfolio-wrap > svg.is-paused,
+.portfolio-wrap > svg.is-paused * {
+  animation-play-state: paused !important;
+}
+
 /* Pantry Design System cover (inline <svg class="pds"> in #project1, index.html).
-   The docs page of the system, where each foundation acts out its own name:
-     Colors      the brick cycles through four palettes (8s)
-     Typography  the A/B faces swap between a sans and a serif (6s)
-     Sizing      the small brick grows and shrinks next to the big one (5s)
-     Spacing     the top plate lifts off and a purple spacing marker appears (4s)
+   The docs page of the system, where each foundation acts out its own name, each on the
+   ambient loop (--cover-ambient) and started a quarter loop after the previous one:
+     Colors      the brick cycles through four palettes
+     Typography  the A/B faces swap between a sans and a serif
+     Sizing      the small brick grows and shrinks next to the big one
+     Spacing     the top plate lifts off and a purple spacing marker appears
    The top nav stays on Introduction (static); the developers card has a blinking
-   caret, the designers card a pulsing selection. Hover a foundation card to lift it (real pointer above 768px).
+   caret (1s, a UI convention) and the designers card a pulsing selection. Hover a
+   foundation card to lift it (real pointer above 768px). Timing and easing come from
+   assets/css/covers/base.css (design/covers/SPEC.md).
    Every rule sits in @scope (.pds); keyframes and SVG IDs use the pds- prefix.
    Without motion the cover shows the page as drawn. */
 
+/* The tile behind the SVG: shows until the SVG is parsed. */
 #project1 {
   background: linear-gradient(32deg, #8C8CFF 0%, #2E8FDB 70%, #1789C4 100%);
 }
 
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project1 {
+  background: linear-gradient(90deg, #668DF1 0%, #2E8FDB 58%, #1789C4 100%);
+}
+
+.portfolio-item--tall #project1 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project1 .portfolio-title p {
+  color: rgba(255, 255, 255, 0.85);
+}
 
 @scope (.pds) {
   :scope {
@@ -28,26 +73,26 @@
 
   /* Get started minis */
   .caret { animation: pds-blink 1s step-end infinite; }
-  .sel { animation: pds-sel 3s ease-in-out infinite; }
+  .sel { animation: pds-sel var(--cover-ambient) var(--cover-ease) infinite; }
 
   /* Foundations */
-  .c-top { animation: pds-c-top 8s ease-in-out infinite; }
-  .c-left { animation: pds-c-left 8s ease-in-out infinite; }
-  .c-right { animation: pds-c-right 8s ease-in-out infinite; }
-  .ty-a { animation: pds-ty-a 6s ease-in-out infinite; }
-  .ty-b { animation: pds-ty-b 6s ease-in-out infinite; }
+  .c-top { animation: pds-c-top var(--cover-ambient) var(--cover-ease) infinite; }
+  .c-left { animation: pds-c-left var(--cover-ambient) var(--cover-ease) infinite; }
+  .c-right { animation: pds-c-right var(--cover-ambient) var(--cover-ease) infinite; }
+  .ty-a { animation: pds-ty-a var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.25) infinite; }
+  .ty-b { animation: pds-ty-b var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.25) infinite; }
   .grow {
     transform-box: fill-box;
     transform-origin: 50% 100%;
-    animation: pds-grow 5s cubic-bezier(0.3, 0.8, 0.3, 1.2) infinite;
+    animation: pds-grow var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.5) infinite;
   }
-  .lift { animation: pds-lift 4s cubic-bezier(0.3, 0.8, 0.3, 1.1) infinite; }
-  .gap { animation: pds-gap 4s ease-in-out infinite; }
+  .lift { animation: pds-lift var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.75) infinite; }
+  .gap { animation: pds-gap var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.75) infinite; }
 
-  .fcard { transition: transform 400ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
+  .fcard { transition: transform var(--cover-hover-duration) var(--cover-ease); }
 
   @media (hover: hover) and (min-width: 769px) {
-    .fcard:hover { transform: translateY(-5px); }
+    .fcard:hover { transform: translateY(var(--cover-hover-lift)); }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -83,29 +128,23 @@
 
 @keyframes pds-lift {
   0%, 20% { transform: translateY(0); }
-  40%, 70% { transform: translateY(-12px); }
+  40%, 70% { transform: translateY(-8px); }
   90%, 100% { transform: translateY(0); }
 }
 @keyframes pds-gap { 0%, 30% { opacity: 0; } 42%, 68% { opacity: 1; } 80%, 100% { opacity: 0; } }
-]]>
-</style>
-<defs>
+]]></style>
+                <defs>
                   <linearGradient id="pds-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#8C8CFF" />
                     <stop offset=".7" stop-color="#2E8FDB" />
                     <stop offset="1" stop-color="#1789C4" />
                   </linearGradient>
-                  <filter id="pds-shadow" x="-10%" y="-10%" width="120%" height="130%">
-                    <feGaussianBlur stdDeviation="14" />
-                  </filter>
                   <clipPath id="pds-win">
                     <rect x="70" y="70" width="660" height="401" rx="20" />
                   </clipPath>
                 </defs>
                 <rect width="800" height="500" fill="url(#pds-bg)" />
-                <rect x="80" y="86" width="640" height="381" rx="20" fill="#0B1F4D" opacity=".2"
-                  filter="url(#pds-shadow)" />
-                <g clip-path="url(#pds-win)">
+                <g clip-path="url(#pds-win)" transform="translate(0 -15)">
                   <rect x="70" y="70" width="660" height="401" fill="#EDF3FC" />
                   <circle cx="96" cy="90" r="4.5" fill="#C3D3EA" />
                   <circle cx="112" cy="90" r="4.5" fill="#C3D3EA" />
@@ -231,107 +270,111 @@
                     <rect class="caret" x="598" y="206" width="1.2" height="5" fill="#111" />
                   </g>
                   <g transform="translate(0 -8)">
-                  <text x="240" y="330" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="14" font-weight="700" fill="#111">Foundations</text>
-                  <!-- Foundation cards: each brick acts out its foundation; hover lifts the card -->
-                  <g class="fcard">
-                    <rect x="240" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
-                      stroke-width="1.2" />
-                    <path d="M240.6 354A11.4 11.4 0 0 1 252 342.6H336A11.4 11.4 0 0 1 347.4 354V428H240.6Z"
-                      fill="#DCE7F8" />
-                    <text x="252" y="445" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                      font-size="11" fill="#111">Colors</text>
-                    <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
-                      <path class="c-left" d="M270.6 366.0L294.0 379.5L294.0 405.5L270.6 392.0Z" fill="#4C77F2" />
-                      <path class="c-right" d="M294.0 379.5L317.4 366.0L317.4 392.0L294.0 405.5Z" fill="#3A63E2" />
-                      <path class="c-top" d="M294.0 352.5L317.4 366.0L294.0 379.5L270.6 366.0Z" fill="#7A9DFF" />
-                      <path class="c-top"
-                        d="M284.3 366.0V360.6A9.7 5.6 0 0 1 303.7 360.6V366.0A9.7 5.6 0 0 1 284.3 366.0Z"
-                        fill="#7A9DFF" />
-                      <ellipse class="c-top" cx="294.0" cy="360.6" rx="9.7" ry="5.6" fill="#7A9DFF" />
-                    </g>
-                  </g>
-                  <g class="fcard">
-                    <rect x="358" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
-                      stroke-width="1.2" />
-                    <path d="M358.6 354A11.4 11.4 0 0 1 370 342.6H454A11.4 11.4 0 0 1 465.4 354V428H358.6Z"
-                      fill="#DCE7F8" />
-                    <text x="370" y="445" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                      font-size="11" fill="#111">Typography</text>
-                    <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
-                      <path d="M388.6 366.0L412.0 379.5L412.0 405.5L388.6 392.0Z" fill="#fff" />
-                      <path d="M412.0 379.5L435.4 366.0L435.4 392.0L412.0 405.5Z" fill="#fff" />
-                      <path d="M412.0 352.5L435.4 366.0L412.0 379.5L388.6 366.0Z" fill="#fff" />
-                      <g class="ty-a" stroke="none"><text transform="matrix(0.866 0.5 0 1 400.3 385.8)" y="6.8"
-                          text-anchor="middle"
-                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18.7"
-                          font-weight="700" fill="#111">A</text><text transform="matrix(0.866 -0.5 0 1 423.7 385.8)"
-                          y="6.8" text-anchor="middle"
-                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18.7"
-                          font-weight="700" fill="#111">B</text></g>
-                      <g class="ty-b" stroke="none" opacity="0"><text transform="matrix(0.866 0.5 0 1 400.3 385.8)"
-                          y="6.8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18.7"
-                          font-weight="400" font-style="italic" fill="#111">A</text><text
-                          transform="matrix(0.866 -0.5 0 1 423.7 385.8)" y="6.8" text-anchor="middle"
-                          font-family="Georgia, 'Times New Roman', serif" font-size="18.7" font-weight="400"
-                          font-style="italic" fill="#111">B</text></g>
-                      <path d="M402.3 366.0V360.6A9.7 5.6 0 0 1 421.7 360.6V366.0A9.7 5.6 0 0 1 402.3 366.0Z"
-                        fill="#fff" />
-                      <ellipse cx="412.0" cy="360.6" rx="9.7" ry="5.6" fill="#fff" />
-                    </g>
-                  </g>
-                  <g class="fcard">
-                    <rect x="476" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
-                      stroke-width="1.2" />
-                    <path d="M476.6 354A11.4 11.4 0 0 1 488 342.6H572A11.4 11.4 0 0 1 583.4 354V428H476.6Z"
-                      fill="#DCE7F8" />
-                    <text x="488" y="445" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                      font-size="11" fill="#111">Sizing</text>
-                    <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
-                      <path d="M522.1 362.0L542.0 373.5L542.0 395.5L522.1 384.0Z" fill="#fff" />
-                      <path d="M542.0 373.5L561.9 362.0L561.9 384.0L542.0 395.5Z" fill="#fff" />
-                      <path d="M542.0 350.5L561.9 362.0L542.0 373.5L522.1 362.0Z" fill="#fff" />
-                      <path d="M533.7 362.0V357.4A8.3 4.8 0 0 1 550.3 357.4V362.0A8.3 4.8 0 0 1 533.7 362.0Z"
-                        fill="#fff" />
-                      <ellipse cx="542.0" cy="357.4" rx="8.3" ry="4.8" fill="#fff" />
-                    </g>
-                    <g class="grow">
-                      <g stroke="#111" stroke-width="1.6" stroke-linejoin="round">
-                        <path d="M497.9 390.0L510.0 397.0L510.0 410.0L497.9 403.0Z" fill="#fff" />
-                        <path d="M510.0 397.0L522.1 390.0L522.1 403.0L510.0 410.0Z" fill="#fff" />
-                        <path d="M510.0 383.0L522.1 390.0L510.0 397.0L497.9 390.0Z" fill="#fff" />
-                        <path d="M505.0 390.0V387.2A5.0 2.9 0 0 1 515.0 387.2V390.0A5.0 2.9 0 0 1 505.0 390.0Z"
-                          fill="#fff" />
-                        <ellipse cx="510.0" cy="387.2" rx="5.0" ry="2.9" fill="#fff" />
-                      </g>
-                    </g>
-                  </g>
-                  <g class="fcard">
-                    <rect x="594" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
-                      stroke-width="1.2" />
-                    <path d="M594.6 354A11.4 11.4 0 0 1 606 342.6H690A11.4 11.4 0 0 1 701.4 354V428H594.6Z"
-                      fill="#DCE7F8" />
-                    <text x="606" y="445" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                      font-size="11" fill="#111">Spacing</text>
-                    <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
-                      <path d="M625.5 398.0L648.0 411.0L648.0 420.0L625.5 407.0Z" fill="#fff" />
-                      <path d="M648.0 411.0L670.5 398.0L670.5 407.0L648.0 420.0Z" fill="#fff" />
-                      <path d="M648.0 385.0L670.5 398.0L648.0 411.0L625.5 398.0Z" fill="#fff" />
-                    </g>
-                    <g class="lift">
+                    <text x="240" y="330" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="14" font-weight="700" fill="#111">Foundations</text>
+                    <!-- Foundation cards: each brick acts out its foundation; hover lifts the card -->
+                    <g class="fcard">
+                      <rect x="240" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
+                        stroke-width="1.2" />
+                      <path d="M240.6 354A11.4 11.4 0 0 1 252 342.6H336A11.4 11.4 0 0 1 347.4 354V428H240.6Z"
+                        fill="#DCE7F8" />
+                      <text x="252" y="445"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#111">Colors</text>
                       <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
-                        <path d="M625.5 389.0L648.0 402.0L648.0 411.0L625.5 398.0Z" fill="#fff" />
-                        <path d="M648.0 402.0L670.5 389.0L670.5 398.0L648.0 411.0Z" fill="#fff" />
-                        <path d="M648.0 376.0L670.5 389.0L648.0 402.0L625.5 389.0Z" fill="#fff" />
-                        <path d="M638.6 389.0V383.8A9.4 5.4 0 0 1 657.4 383.8V389.0A9.4 5.4 0 0 1 638.6 389.0Z"
-                          fill="#fff" />
-                        <ellipse cx="648.0" cy="383.8" rx="9.4" ry="5.4" fill="#fff" />
+                        <path class="c-left" d="M270.6 366.0L294.0 379.5L294.0 405.5L270.6 392.0Z" fill="#4C77F2" />
+                        <path class="c-right" d="M294.0 379.5L317.4 366.0L317.4 392.0L294.0 405.5Z" fill="#3A63E2" />
+                        <path class="c-top" d="M294.0 352.5L317.4 366.0L294.0 379.5L270.6 366.0Z" fill="#7A9DFF" />
+                        <path class="c-top"
+                          d="M284.3 366.0V360.6A9.7 5.6 0 0 1 303.7 360.6V366.0A9.7 5.6 0 0 1 284.3 366.0Z"
+                          fill="#7A9DFF" />
+                        <ellipse class="c-top" cx="294.0" cy="360.6" rx="9.7" ry="5.6" fill="#7A9DFF" />
                       </g>
                     </g>
-                    <g class="gap" stroke="#9747FF" stroke-width="1.2" stroke-linecap="round" opacity="0">
-                      <path d="M677 386V397M674 386H680M674 397H680" />
+                    <g class="fcard">
+                      <rect x="358" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
+                        stroke-width="1.2" />
+                      <path d="M358.6 354A11.4 11.4 0 0 1 370 342.6H454A11.4 11.4 0 0 1 465.4 354V428H358.6Z"
+                        fill="#DCE7F8" />
+                      <text x="370" y="445"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#111">Typography</text>
+                      <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
+                        <path d="M388.6 366.0L412.0 379.5L412.0 405.5L388.6 392.0Z" fill="#fff" />
+                        <path d="M412.0 379.5L435.4 366.0L435.4 392.0L412.0 405.5Z" fill="#fff" />
+                        <path d="M412.0 352.5L435.4 366.0L412.0 379.5L388.6 366.0Z" fill="#fff" />
+                        <g class="ty-a" stroke="none"><text transform="matrix(0.866 0.5 0 1 400.3 385.8)" y="6.8"
+                            text-anchor="middle"
+                            font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                            font-size="18.7" font-weight="700" fill="#111">A</text><text
+                            transform="matrix(0.866 -0.5 0 1 423.7 385.8)" y="6.8" text-anchor="middle"
+                            font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                            font-size="18.7" font-weight="700" fill="#111">B</text></g>
+                        <g class="ty-b" stroke="none" opacity="0"><text transform="matrix(0.866 0.5 0 1 400.3 385.8)"
+                            y="6.8" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+                            font-size="18.7" font-weight="400" font-style="italic" fill="#111">A</text><text
+                            transform="matrix(0.866 -0.5 0 1 423.7 385.8)" y="6.8" text-anchor="middle"
+                            font-family="Georgia, 'Times New Roman', serif" font-size="18.7" font-weight="400"
+                            font-style="italic" fill="#111">B</text></g>
+                        <path d="M402.3 366.0V360.6A9.7 5.6 0 0 1 421.7 360.6V366.0A9.7 5.6 0 0 1 402.3 366.0Z"
+                          fill="#fff" />
+                        <ellipse cx="412.0" cy="360.6" rx="9.7" ry="5.6" fill="#fff" />
+                      </g>
+                    </g>
+                    <g class="fcard">
+                      <rect x="476" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
+                        stroke-width="1.2" />
+                      <path d="M476.6 354A11.4 11.4 0 0 1 488 342.6H572A11.4 11.4 0 0 1 583.4 354V428H476.6Z"
+                        fill="#DCE7F8" />
+                      <text x="488" y="445"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#111">Sizing</text>
+                      <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
+                        <path d="M522.1 362.0L542.0 373.5L542.0 395.5L522.1 384.0Z" fill="#fff" />
+                        <path d="M542.0 373.5L561.9 362.0L561.9 384.0L542.0 395.5Z" fill="#fff" />
+                        <path d="M542.0 350.5L561.9 362.0L542.0 373.5L522.1 362.0Z" fill="#fff" />
+                        <path d="M533.7 362.0V357.4A8.3 4.8 0 0 1 550.3 357.4V362.0A8.3 4.8 0 0 1 533.7 362.0Z"
+                          fill="#fff" />
+                        <ellipse cx="542.0" cy="357.4" rx="8.3" ry="4.8" fill="#fff" />
+                      </g>
+                      <g class="grow">
+                        <g stroke="#111" stroke-width="1.6" stroke-linejoin="round">
+                          <path d="M497.9 390.0L510.0 397.0L510.0 410.0L497.9 403.0Z" fill="#fff" />
+                          <path d="M510.0 397.0L522.1 390.0L522.1 403.0L510.0 410.0Z" fill="#fff" />
+                          <path d="M510.0 383.0L522.1 390.0L510.0 397.0L497.9 390.0Z" fill="#fff" />
+                          <path d="M505.0 390.0V387.2A5.0 2.9 0 0 1 515.0 387.2V390.0A5.0 2.9 0 0 1 505.0 390.0Z"
+                            fill="#fff" />
+                          <ellipse cx="510.0" cy="387.2" rx="5.0" ry="2.9" fill="#fff" />
+                        </g>
+                      </g>
+                    </g>
+                    <g class="fcard">
+                      <rect x="594" y="342" width="108" height="112" rx="12" fill="#fff" stroke="#C9D8EE"
+                        stroke-width="1.2" />
+                      <path d="M594.6 354A11.4 11.4 0 0 1 606 342.6H690A11.4 11.4 0 0 1 701.4 354V428H594.6Z"
+                        fill="#DCE7F8" />
+                      <text x="606" y="445"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#111">Spacing</text>
+                      <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
+                        <path d="M625.5 398.0L648.0 411.0L648.0 420.0L625.5 407.0Z" fill="#fff" />
+                        <path d="M648.0 411.0L670.5 398.0L670.5 407.0L648.0 420.0Z" fill="#fff" />
+                        <path d="M648.0 385.0L670.5 398.0L648.0 411.0L625.5 398.0Z" fill="#fff" />
+                      </g>
+                      <g class="lift">
+                        <g stroke="#111" stroke-width="1.8" stroke-linejoin="round">
+                          <path d="M625.5 389.0L648.0 402.0L648.0 411.0L625.5 398.0Z" fill="#fff" />
+                          <path d="M648.0 402.0L670.5 389.0L670.5 398.0L648.0 411.0Z" fill="#fff" />
+                          <path d="M648.0 376.0L670.5 389.0L648.0 402.0L625.5 389.0Z" fill="#fff" />
+                          <path d="M638.6 389.0V383.8A9.4 5.4 0 0 1 657.4 383.8V389.0A9.4 5.4 0 0 1 638.6 389.0Z"
+                            fill="#fff" />
+                          <ellipse cx="648.0" cy="383.8" rx="9.4" ry="5.4" fill="#fff" />
+                        </g>
+                      </g>
+                      <g class="gap" stroke="#9747FF" stroke-width="1.2" stroke-linecap="round" opacity="0">
+                        <path d="M677 386V397M674 386H680M674 397H680" />
+                      </g>
                     </g>
                   </g>
-                </g>
                 </g>
               </svg>

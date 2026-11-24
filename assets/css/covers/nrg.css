@@ -12,12 +12,12 @@
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project16 {
-  background: linear-gradient(32deg, #FDDB94 0%, #F7836C 45%, #C90029 100%);
+  background: linear-gradient(32deg, #FDDB94 0%, #F7836C 40%, #D2468C 72%, #7044D4 100%);
 }
 
 /* As a tall tile: the space under the art continues the drawing's bottom edge */
 .portfolio-item--tall #project16 {
-  background: linear-gradient(90deg, #FAA77C 0%, #E5384A 60%, #C90029 100%);
+  background: linear-gradient(90deg, #F9A07D 0%, #D2468C 60%, #7044D4 100%);
 }
 
 .portfolio-item--tall #project16 .portfolio-title h4,
