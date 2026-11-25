@@ -7,7 +7,7 @@
     ================================================================= */
   /* Fonts family*/
   --font-family-body: "Inter", sans-serif;
-  --font-family-display: "Bricolage Grotesque", sans-serif;
+  --font-family-display: "Funnel Display", sans-serif;
   /* Font sizes - 4x4 grid */
   --font-size-12: calc(var(--base-unit) * 3);
   --font-size-16: calc(var(--base-unit) * 4);
@@ -23,8 +23,8 @@
   --line-height-large: calc(var(--line-height-base-unit) * 1.5);
 
   /* Typography */
-  --font-display-1: 700 3.5em/1.2em var(--font-family-display); /* 56px Bricolage - hero headlines */
-  --font-display-2: 700 2.5em/1.3em var(--font-family-display); /* 40px Bricolage - page titles */
+  --font-display-1: 700 3.5em/1.2em var(--font-family-display); /* 56px Funnel Display - hero headlines */
+  --font-display-2: 700 2.5em/1.3em var(--font-family-display); /* 40px Funnel Display - page titles */
   --font-heading-1: 700 2em/1.3em var(--font-family-display); /* 32px */
   --font-heading-2: 700 1.5em/1.5em var(--font-family-display); /* 24px */
   --font-heading-3: 700 1.25em/1.5em var(--font-family-display); /* 20px - section headings */
