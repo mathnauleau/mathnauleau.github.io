@@ -1,14 +1,10 @@
 /* Home energy app cover (inline <svg class="nrg"> in #project16, index.html).
-   Calm by design. One app in the middle: on the left, readings come in from a smart
-   meter, solar panels and a thermostat; on the right, insights go out to people. The
-   endpoints are frosted circles with fixed labels; on each thin connection a single
-   soft point of light travels (SMIL <animateMotion>, 7s, evenly staggered).
+   Calm by design: the app alone in the middle of its gradient.
    On the screen (12s loop, CSS): the week's usage line draws itself against the dashed
    estimate; as the "New reading" notification slides in (~36%), the line reaches today,
    the dot and its tooltip appear and the stat bars fill; then it all resets.
    Every rule sits in @scope (.nrg); keyframes and SVG IDs use the nrg- prefix.
-   Without motion the points of light and notification are hidden and the chart shows
-   complete. */
+   Without motion the notification is hidden and the chart shows complete. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project16 {
@@ -62,7 +58,7 @@
       animation: none !important;
       transition: none !important;
     }
-    .pk, .notif, .halo { display: none; }
+    .notif, .halo { display: none; }
   }
 }
 

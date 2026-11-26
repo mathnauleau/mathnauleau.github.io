@@ -1,0 +1,98 @@
+/* TEST: quieter, pastel cover backgrounds and brand-primary tile text.
+   Everything for the test lives in this file, loaded after the cover stylesheets.
+   To revert, remove its <link> in index.html (and this file). */
+
+/* Each cover's background gradient (first, middle, last stop), same hue, pastel */
+#ops-bg stop:first-child { stop-color: #FFE4EC; }
+#ops-bg stop:not(:first-child):not(:last-child) { stop-color: #FFDCDC; }
+#ops-bg stop:last-child { stop-color: #FFD6CF; }
+
+#xl-bg stop:first-child { stop-color: #D4F2EC; }
+#xl-bg stop:not(:first-child):not(:last-child) { stop-color: #DDF2E2; }
+#xl-bg stop:last-child { stop-color: #E9F3D4; }
+
+#pds-bg stop:first-child { stop-color: #E2E2FF; }
+#pds-bg stop:not(:first-child):not(:last-child) { stop-color: #D6E6F8; }
+#pds-bg stop:last-child { stop-color: #D2E8F3; }
+
+#nrg-bg stop:nth-child(1) { stop-color: #FFF2D9; }
+#nrg-bg stop:nth-child(2) { stop-color: #FDE0D7; }
+#nrg-bg stop:nth-child(3) { stop-color: #F6D8E8; }
+#nrg-bg stop:nth-child(4) { stop-color: #E4DAF7; }
+
+#wl-bg stop:first-child { stop-color: #D8F0E6; }
+#wl-bg stop:not(:first-child):not(:last-child) { stop-color: #D6E3EE; }
+#wl-bg stop:last-child { stop-color: #D9DAF0; }
+
+#ah-bg stop:first-child { stop-color: #E0F4FB; }
+#ah-bg stop:not(:first-child):not(:last-child) { stop-color: #D8EBFA; }
+#ah-bg stop:last-child { stop-color: #D2E6F9; }
+
+#cbk-bg stop:first-child { stop-color: #FAF3EA; }
+#cbk-bg stop:not(:first-child):not(:last-child) { stop-color: #F6EDE1; }
+#cbk-bg stop:last-child { stop-color: #F2E7D9; }
+
+#isl-paint0_linear stop:first-child { stop-color: #E6E6FD; }
+#isl-paint0_linear stop:last-child { stop-color: #D6E7F8; }
+
+/* The tiles behind and under the drawings follow */
+#project10, .portfolio-item--tall #project10 { background: linear-gradient(32deg, #FFE4EC 0%, #FFD6CF 100%) !important; }
+#project15, .portfolio-item--tall #project15 { background: linear-gradient(32deg, #D4F2EC 0%, #E9F3D4 100%) !important; }
+#project1, .portfolio-item--tall #project1 { background: linear-gradient(32deg, #E2E2FF 0%, #D2E8F3 100%) !important; }
+#project16, .portfolio-item--tall #project16 { background: linear-gradient(90deg, #FDE0D7 0%, #F6D8E8 60%, #E4DAF7 100%) !important; }
+#project2, .portfolio-item--tall #project2 { background: linear-gradient(90deg, #D8F0E6 0%, #D6E3EE 40%, #D9DAF0 100%) !important; }
+#project4, .portfolio-item--tall #project4 { background: linear-gradient(90deg, #E0F4FB 0%, #D2E6F9 100%) !important; }
+#project14, .portfolio-item--tall #project14 { background: linear-gradient(32deg, #FAF3EA 0%, #F2E7D9 100%) !important; }
+#project5, .portfolio-item--tall #project5 { background: #D6E7F8 !important; }
+
+/* All tile titles and descriptions */
+.portfolio .portfolio-title h4,
+.portfolio .portfolio-title p {
+  color: var(--color-brand-primary) !important;
+}
+
+/* White details drawn on the background, which disappear on pastel: brand primary.
+   Translucent "glass" fills (fill-opacity set) stay white; their outline, icon and
+   label switch. Anything inside the phones and screens is left alone. */
+
+/* Home energy app: headings, connections, nodes, labels, points of light */
+.nrg > g:not(.phone)[fill="#FFFFFF"],
+.nrg > g:not(.phone) [fill="#FFFFFF"]:not([fill-opacity]) {
+  fill: var(--color-brand-primary);
+}
+.nrg > g:not(.phone)[stroke="#FFFFFF"],
+.nrg > g:not(.phone) [stroke="#FFFFFF"] {
+  stroke: var(--color-brand-primary);
+}
+
+/* AH Compact: the cycle line, its nodes and labels, the point of light */
+.ah > g[stroke="#FFFFFF"],
+.ah [stroke="#FFFFFF"] {
+  stroke: var(--color-brand-primary);
+}
+.ah [fill="#FFFFFF"]:not([fill-opacity]) {
+  fill: var(--color-brand-primary);
+}
+
+/* DesignOps: the wordmark stays white; the patch that hides the dot of the "i" takes
+   the new background colour */
+.ops rect[fill="#FF8992"] {
+  fill: #FFDDDE;
+}
+
+/* White label: the slider's ring stays white, but stronger so it shows on pastel */
+.wl > rect[stroke="#fff"] {
+  stroke-opacity: 0.8;
+}
+
+/* White label: the faint background panels */
+.wl > g[fill="#fff"][opacity] {
+  fill: var(--color-brand-primary);
+  opacity: 0.06;
+}
+
+/* DesignOps: the metro lines, stations and toggle in pastel */
+.ops path[stroke="#F6A623"], .ops .stop[stroke="#F6A623"] { stroke: #F8C98A; }
+.ops path[stroke="#8CC63F"], .ops .stop[stroke="#8CC63F"] { stroke: #BFE09A; }
+.ops path[stroke="#A345D8"], .ops .stop[stroke="#A345D8"] { stroke: #CDA6EC; }
+.ops .toggle rect { fill: #F2939D; }
