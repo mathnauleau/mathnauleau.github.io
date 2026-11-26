@@ -10,8 +10,8 @@
    a single soft point of light going round (Order → Delivered over the top, back along
    the bottom), SMIL, 7s per half, as on the energy cover.
    The phone is the shared frame (design/covers/SPEC.md); six of the original grocery
-   illustrations sit in front, framing the phone's edges, and bounce gently on the
-   ambient loop, out of step (--b). Hover a grocery item to lift it (real pointer above
+   illustrations sit in front, framing the phone's edges; they stay still. Hover a
+   grocery item to lift it (real pointer above
    768px). Every rule sits in @scope (.ah); keyframes and SVG IDs use the ah- prefix.
    Without motion the cover shows the finished order and hides the points of light. */
 
@@ -70,15 +70,13 @@
   }
 
 
-  /* Groceries: a gentle hop on the ambient loop, out of step (--b) */
+  /* Groceries: still; they only move on hover */
   .bob {
     transform-box: fill-box;
     transform-origin: 50% 100%;
-    animation: ah-bounce var(--cover-ambient) var(--cover-ease) var(--b, 0s) infinite;
     transition: translate var(--cover-hover-duration) var(--cover-ease);
   }
 
-  /* hover uses `translate`, so it adds to the bounce's `transform` */
   @media (hover: hover) and (min-width: 769px) {
     .bob:hover { translate: 0 var(--cover-hover-lift); }
   }
@@ -126,9 +124,3 @@
 }
 
 
-/* A gentle hop: up, settle, rest */
-@keyframes ah-bounce {
-  0%, 60%, 100% { transform: translateY(0); }
-  25% { transform: translateY(-6px); }
-  45% { transform: translateY(0); }
-}

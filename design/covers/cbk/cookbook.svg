@@ -1,8 +1,8 @@
-<!-- cookbook cover: drawn for the site, exported from index.html.
-     Open in a browser to see it animate; the styles below are assets/css/covers/base.css
-     and assets/css/covers/cbk.css. -->
+<!-- Cookbook.md cover, exported from index.html by design/covers/export.py.
+     Open it in a browser to see it animate; the styles are assets/css/covers/base.css
+     and assets/css/covers/cbk.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="cbk" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Cookbook.md">
-                <style><![CDATA[
+  <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
    The values below are the motion tokens from design/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
@@ -335,44 +335,44 @@
                   <!-- The dish: a flat tarte tatin that appears as the title and "Dessert" land;
                        the gradient rect above is its placeholder -->
                   <g class="dish">
-                      <ellipse cx="606" cy="266" rx="86" ry="9" fill="#0F3D3A" opacity=".08" />
-                      <circle cx="606" cy="184" r="86" fill="#FFFDF8" stroke="#E8DCC8" stroke-width="2" />
-                      <circle cx="606" cy="184" r="77" fill="#F4EBDD" />
-                      <!-- Pastry rim and caramel -->
-                      <circle cx="606" cy="184" r="72" fill="#D99A45" stroke="#B9732B" stroke-width="2.5" />
-                      <circle cx="606" cy="184" r="64" fill="#A9561B" />
-                      <!-- Apple quarters, pointing in with a slight swirl -->
-                      <g fill="#EDB24E" stroke="#A9561B" stroke-width="1.5">
-                        <ellipse cx="650.0" cy="184.0" rx="22" ry="10" transform="rotate(25.0 650.0 184.0)" />
-                        <ellipse cx="644.1" cy="206.0" rx="22" ry="10" transform="rotate(55.0 644.1 206.0)" />
-                        <ellipse cx="628.0" cy="222.1" rx="22" ry="10" transform="rotate(85.0 628.0 222.1)" />
-                        <ellipse cx="606.0" cy="228.0" rx="22" ry="10" transform="rotate(115.0 606.0 228.0)" />
-                        <ellipse cx="584.0" cy="222.1" rx="22" ry="10" transform="rotate(145.0 584.0 222.1)" />
-                        <ellipse cx="567.9" cy="206.0" rx="22" ry="10" transform="rotate(175.0 567.9 206.0)" />
-                        <ellipse cx="562.0" cy="184.0" rx="22" ry="10" transform="rotate(205.0 562.0 184.0)" />
-                        <ellipse cx="567.9" cy="162.0" rx="22" ry="10" transform="rotate(235.0 567.9 162.0)" />
-                        <ellipse cx="584.0" cy="145.9" rx="22" ry="10" transform="rotate(265.0 584.0 145.9)" />
-                        <ellipse cx="606.0" cy="140.0" rx="22" ry="10" transform="rotate(295.0 606.0 140.0)" />
-                        <ellipse cx="628.0" cy="145.9" rx="22" ry="10" transform="rotate(325.0 628.0 145.9)" />
-                        <ellipse cx="644.1" cy="162.0" rx="22" ry="10" transform="rotate(355.0 644.1 162.0)" />
-                      </g>
-                      <g fill="#F2C062" stroke="#A9561B" stroke-width="1.5">
-                        <ellipse cx="625.3" cy="189.2" rx="13" ry="7" transform="rotate(40.0 625.3 189.2)" />
-                        <ellipse cx="614.0" cy="202.3" rx="13" ry="7" transform="rotate(91.4 614.0 202.3)" />
-                        <ellipse cx="596.7" cy="201.7" rx="13" ry="7" transform="rotate(142.9 596.7 201.7)" />
-                        <ellipse cx="586.3" cy="187.7" rx="13" ry="7" transform="rotate(194.3 586.3 187.7)" />
-                        <ellipse cx="590.8" cy="171.0" rx="13" ry="7" transform="rotate(245.7 590.8 171.0)" />
-                        <ellipse cx="606.7" cy="164.0" rx="13" ry="7" transform="rotate(297.1 606.7 164.0)" />
-                        <ellipse cx="622.1" cy="172.1" rx="13" ry="7" transform="rotate(348.6 622.1 172.1)" />
-                      </g>
-                      <circle cx="606" cy="184" r="7" fill="#F2C062" stroke="#A9561B" stroke-width="1.5" />
-                      <!-- Shine -->
-                      <g fill="#fff" opacity=".5">
-                        <ellipse cx="576" cy="148" rx="10" ry="3.5" transform="rotate(-35 576 148)" />
-                        <ellipse cx="638" cy="212" rx="7" ry="2.5" transform="rotate(-35 638 212)" />
-                        <circle cx="620" cy="142" r="2.5" />
-                        <circle cx="566" cy="202" r="2" />
-                      </g>
+                    <ellipse cx="606" cy="266" rx="86" ry="9" fill="#0F3D3A" opacity=".08" />
+                    <circle cx="606" cy="184" r="86" fill="#FFFDF8" stroke="#E8DCC8" stroke-width="2" />
+                    <circle cx="606" cy="184" r="77" fill="#F4EBDD" />
+                    <!-- Pastry rim and caramel -->
+                    <circle cx="606" cy="184" r="72" fill="#D99A45" stroke="#B9732B" stroke-width="2.5" />
+                    <circle cx="606" cy="184" r="64" fill="#A9561B" />
+                    <!-- Apple quarters, pointing in with a slight swirl -->
+                    <g fill="#EDB24E" stroke="#A9561B" stroke-width="1.5">
+                      <ellipse cx="650.0" cy="184.0" rx="22" ry="10" transform="rotate(25.0 650.0 184.0)" />
+                      <ellipse cx="644.1" cy="206.0" rx="22" ry="10" transform="rotate(55.0 644.1 206.0)" />
+                      <ellipse cx="628.0" cy="222.1" rx="22" ry="10" transform="rotate(85.0 628.0 222.1)" />
+                      <ellipse cx="606.0" cy="228.0" rx="22" ry="10" transform="rotate(115.0 606.0 228.0)" />
+                      <ellipse cx="584.0" cy="222.1" rx="22" ry="10" transform="rotate(145.0 584.0 222.1)" />
+                      <ellipse cx="567.9" cy="206.0" rx="22" ry="10" transform="rotate(175.0 567.9 206.0)" />
+                      <ellipse cx="562.0" cy="184.0" rx="22" ry="10" transform="rotate(205.0 562.0 184.0)" />
+                      <ellipse cx="567.9" cy="162.0" rx="22" ry="10" transform="rotate(235.0 567.9 162.0)" />
+                      <ellipse cx="584.0" cy="145.9" rx="22" ry="10" transform="rotate(265.0 584.0 145.9)" />
+                      <ellipse cx="606.0" cy="140.0" rx="22" ry="10" transform="rotate(295.0 606.0 140.0)" />
+                      <ellipse cx="628.0" cy="145.9" rx="22" ry="10" transform="rotate(325.0 628.0 145.9)" />
+                      <ellipse cx="644.1" cy="162.0" rx="22" ry="10" transform="rotate(355.0 644.1 162.0)" />
+                    </g>
+                    <g fill="#F2C062" stroke="#A9561B" stroke-width="1.5">
+                      <ellipse cx="625.3" cy="189.2" rx="13" ry="7" transform="rotate(40.0 625.3 189.2)" />
+                      <ellipse cx="614.0" cy="202.3" rx="13" ry="7" transform="rotate(91.4 614.0 202.3)" />
+                      <ellipse cx="596.7" cy="201.7" rx="13" ry="7" transform="rotate(142.9 596.7 201.7)" />
+                      <ellipse cx="586.3" cy="187.7" rx="13" ry="7" transform="rotate(194.3 586.3 187.7)" />
+                      <ellipse cx="590.8" cy="171.0" rx="13" ry="7" transform="rotate(245.7 590.8 171.0)" />
+                      <ellipse cx="606.7" cy="164.0" rx="13" ry="7" transform="rotate(297.1 606.7 164.0)" />
+                      <ellipse cx="622.1" cy="172.1" rx="13" ry="7" transform="rotate(348.6 622.1 172.1)" />
+                    </g>
+                    <circle cx="606" cy="184" r="7" fill="#F2C062" stroke="#A9561B" stroke-width="1.5" />
+                    <!-- Shine -->
+                    <g fill="#fff" opacity=".5">
+                      <ellipse cx="576" cy="148" rx="10" ry="3.5" transform="rotate(-35 576 148)" />
+                      <ellipse cx="638" cy="212" rx="7" ry="2.5" transform="rotate(-35 638 212)" />
+                      <circle cx="620" cy="142" r="2.5" />
+                      <circle cx="566" cy="202" r="2" />
+                    </g>
                   </g>
 
                   <!-- Card text: skeletons first, then the rendered recipe -->

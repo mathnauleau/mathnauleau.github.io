@@ -254,7 +254,7 @@
                     <rect x="70" y="70" width="660" height="401" rx="20" />
                   </clipPath>
                 </defs>
-                <rect width="800" height="500" fill="url(#xl-bg)" />
+                <rect class="bg" width="800" height="500" fill="url(#xl-bg)" />
                 <g class="win" clip-path="url(#xl-win)" transform="translate(0 -15)">
                   <rect x="70" y="70" width="660" height="401" fill="#EAF5EE" />
                   <circle cx="96" cy="90" r="4.5" fill="#BFD6C8" />
@@ -503,22 +503,24 @@
                   </g>
                   <!-- The new tool, abstract: pieces pop in one after another (d: fraction of the loop) -->
                   <g class="app">
+                    <!-- Sidebar: no panel, flush left, a divider on its right -->
                     <g class="pop" style="--d:0">
-                      <rect x="96" y="108" width="124" height="338" rx="14" fill="#fff" fill-opacity=".55"
-                        stroke="#C3DBCD" stroke-width="1.2" />
-                      <circle cx="122" cy="134" r="10" fill="#21A366" />
-                      <rect x="140" y="130" width="54" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
-                      <circle cx="123" cy="179" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="176" width="52" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
-                      <rect x="108" y="202" width="100" height="26" rx="13" fill="#E3F2E9" />
-                      <circle cx="123" cy="215" r="5" fill="#21A366" />
-                      <rect x="135" y="212" width="44" height="6" rx="3" fill="#217346" fill-opacity="0.75" />
-                      <circle cx="123" cy="251" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="248" width="60" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
-                      <circle cx="123" cy="287" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="284" width="38" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
-                      <circle cx="123" cy="323" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="320" width="48" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                      <path d="M218 100V471" stroke="#C3DBCD" stroke-width="1.2" />
+                      <g transform="translate(-12 0)">
+                        <circle cx="122" cy="134" r="10" fill="#21A366" />
+                        <rect x="140" y="130" width="54" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
+                        <circle cx="123" cy="179" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="176" width="52" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                        <rect x="108" y="202" width="100" height="26" rx="13" fill="#E3F2E9" />
+                        <circle cx="123" cy="215" r="5" fill="#21A366" />
+                        <rect x="135" y="212" width="44" height="6" rx="3" fill="#217346" fill-opacity="0.75" />
+                        <circle cx="123" cy="251" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="248" width="60" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                        <circle cx="123" cy="287" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="284" width="38" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                        <circle cx="123" cy="323" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="320" width="48" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                      </g>
                     </g>
                     <g class="pop" style="--d:.02">
                       <rect x="240" y="128" width="150" height="14" rx="7" fill="#0E3B25" fill-opacity=".85" />
@@ -610,7 +612,7 @@
                     <path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" stroke="currentColor" stroke-width="2.2"
                       stroke-linecap="round" />
                   </svg><span class="visually-hidden"> (password protected)</span></h4>
-                <p>Rebuilding a workflow around rules and control · Internal tool · 2026</p>
+                <p data-i18n="home.portfolio_datatool_description">A workflow rebuilt on rules · Internal · 2025</p>
               </div>
             </div>
           </a>
@@ -632,55 +634,57 @@
                     <rect x="70" y="70" width="660" height="401" rx="20" />
                   </clipPath>
                 </defs>
-                <rect width="800" height="500" fill="url(#pds-bg)" />
+                <rect class="bg" width="800" height="500" fill="url(#pds-bg)" />
                 <g clip-path="url(#pds-win)" transform="translate(0 -15)">
                   <rect x="70" y="70" width="660" height="401" fill="#EDF3FC" />
                   <circle cx="96" cy="90" r="4.5" fill="#C3D3EA" />
                   <circle cx="112" cy="90" r="4.5" fill="#C3D3EA" />
                   <circle cx="128" cy="90" r="4.5" fill="#C3D3EA" />
                   <rect x="365" y="87" width="70" height="6" rx="3" fill="#5B7FE8" fill-opacity=".4" />
-                  <rect x="96" y="108" width="124" height="338" rx="14" fill="#fff" fill-opacity=".55" stroke="#C3D3EA"
-                    stroke-width="1.2" />
-                  <rect x="108.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="128.0"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">P</text>
-                  <rect x="119.5" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="128.0"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">A</text>
-                  <rect x="131.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="128.0"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">N</text>
-                  <rect x="108.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="139.5"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">T</text>
-                  <rect x="119.5" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="139.5"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">R</text>
-                  <rect x="131.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="139.5"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">Y</text>
-                  <text x="147" y="136" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="12.5" font-weight="700" fill="#111">Pantry DS</text>
-                  <text x="108" y="172" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="11" font-weight="600" fill="#111">Get started</text>
-                  <path d="M176 166H183L179.5 170Z" fill="#111" />
-                  <rect x="108" y="184.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="201.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="219.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <text x="108" y="252" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="11" font-weight="600" fill="#111">Foundations</text>
-                  <path d="M179 246H186L182.5 250Z" fill="#111" />
-                  <rect x="108" y="264.0" width="32" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="281.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="299.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <text x="108" y="332" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="11" font-weight="600" fill="#111">Components</text>
-                  <path d="M183 326H190L186.5 330Z" fill="#111" />
-                  <rect x="108" y="344.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="361.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="379.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="396.5" width="58" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="414.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
+                  <!-- Sidebar: no panel, flush left, a divider on its right -->
+                  <path d="M218 100V471" stroke="#C3D3EA" stroke-width="1.2" />
+                  <g transform="translate(-12 0)">
+                    <rect x="108.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="128.0"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">P</text>
+                    <rect x="119.5" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="128.0"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">A</text>
+                    <rect x="131.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="128.0"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">N</text>
+                    <rect x="108.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="139.5"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">T</text>
+                    <rect x="119.5" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="139.5"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">R</text>
+                    <rect x="131.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="139.5"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">Y</text>
+                    <text x="147" y="136" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="12.5" font-weight="700" fill="#111">Pantry DS</text>
+                    <text x="108" y="172" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="11" font-weight="600" fill="#111">Get started</text>
+                    <path d="M176 166H183L179.5 170Z" fill="#111" />
+                    <rect x="108" y="184.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="201.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="219.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <text x="108" y="252" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="11" font-weight="600" fill="#111">Foundations</text>
+                    <path d="M179 246H186L182.5 250Z" fill="#111" />
+                    <rect x="108" y="264.0" width="32" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="281.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="299.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <text x="108" y="332" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="11" font-weight="600" fill="#111">Components</text>
+                    <path d="M183 326H190L186.5 330Z" fill="#111" />
+                    <rect x="108" y="344.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="361.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="379.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="396.5" width="58" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="414.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
+                  </g>
                   <!-- Top nav: Introduction is the active page -->
                   <text class="nav n0" x="240" y="134" textLength="61"
                     font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10.5"
@@ -1203,7 +1207,7 @@
                     <path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5" stroke="currentColor" stroke-width="2.2"
                       stroke-linecap="round" />
                   </svg><span class="visually-hidden"> (password protected)</span></h4>
-                <p>Your home's energy, at a glance · Energy · 2026</p>
+                <p data-i18n="home.portfolio_energy_description">Your home's energy, at a glance · Energy · 2026</p>
               </div>
             </div>
           </a>
@@ -1385,54 +1389,228 @@
                     <g class="lift">
                       <g transform="matrix(0.989651 -0.143493 0 1 261 107.9)">
                         <rect width="264" height="571" rx="11.3" fill="url(#wl-back)" />
-                        <path class="acc-d" d="M0 54L7 60.2V116.3L0 110Z" fill="#0184AF" />
+                        <path class="acc-d"
+                          d="M0 97.8V11.3A11.3 11.3 0 0 1 11.3 0H252.7A11.3 11.3 0 0 1 264 11.3V20H7V104Z"
+                          fill="#0184AF" />
                         <g transform="translate(7 4)">
                           <rect width="264" height="571" rx="11.3" fill="url(#wl-face)" />
-                          <circle cx="236" cy="33" r="11" fill="#E6EAEF" />
-                          <rect class="acc" y="56" width="264" height="58" fill="#00ADE6" />
+                          <!-- Banner: brand colour, back button, category title and product (per brand) -->
+                          <path class="acc" d="M0 11.3A11.3 11.3 0 0 1 11.3 0H252.7A11.3 11.3 0 0 1 264 11.3V100H0Z"
+                            fill="#00ADE6" />
+                          <path d="M140 0H252.7A11.3 11.3 0 0 1 264 11.3V100H110Z" fill="#fff" opacity=".12" />
+                          <circle cx="30" cy="30" r="14" fill="#fff" />
+                          <path d="M35 30H25M29 25L24 30L29 35" stroke="#10151C" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none" />
+                          <!-- Filter chips -->
+                          <rect class="chip" x="14" y="112" width="102" height="26" rx="7" fill="#fff"
+                            stroke="#D5DAE0" />
+                          <text x="24" y="129" font-family="Inter, system-ui, sans-serif" font-size="10"
+                            fill="#10151C">Recommended</text>
+                          <path d="M101 122L104 119L107 122M101 128L104 131L107 128" stroke="#10151C" stroke-width="1.3"
+                            stroke-linecap="round" fill="none" />
+                          <rect class="chip" x="124" y="112" width="56" height="26" rx="7" fill="#fff"
+                            stroke="#D5DAE0" />
+                          <text x="134" y="129" font-family="Inter, system-ui, sans-serif" font-size="10"
+                            fill="#10151C">Type</text>
+                          <path d="M164 123L167 126L170 123" stroke="#10151C" stroke-width="1.3" stroke-linecap="round"
+                            fill="none" />
+                          <rect class="chip" x="188" y="112" width="62" height="26" rx="7" fill="#fff"
+                            stroke="#D5DAE0" />
+                          <text x="200" y="129" font-family="Inter, system-ui, sans-serif" font-size="10"
+                            fill="#10151C">Price</text>
                           <g class="b1">
-                            <text x="18" y="42"
+                            <!-- Banner title and product -->
+                            <text x="16" y="84"
                               font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                              font-size="22" font-weight="800" letter-spacing="-0.3" fill="#10151C">Hamburg
-                              Serial</text>
-                            <text x="18" y="93"
+                              font-size="26" font-weight="800" fill="#fff">Fruits</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <path d="M34 36C36 60 54 74 76 66C74 63 72 62 69 62C54 64 44 54 41 36C39 34 36 34 34 36Z"
+                                fill="#FFD43B" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M38 34C40 52 52 62 68 58C67 55 65 54 62 55C50 56 44 48 44 34C42 32 40 32 38 34Z"
+                                fill="#FFE066" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M37 35L39 28L43 29L42 34" fill="#7A5A1E" />
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <path d="M34 36C36 60 54 74 76 66C74 63 72 62 69 62C54 64 44 54 41 36C39 34 36 34 34 36Z"
+                                fill="#FFD43B" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M38 34C40 52 52 62 68 58C67 55 65 54 62 55C50 56 44 48 44 34C42 32 40 32 38 34Z"
+                                fill="#FFE066" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M37 35L39 28L43 29L42 34" fill="#7A5A1E" />
+                            </g>
+                            <text x="86" y="163"
                               font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                              font-size="21" font-weight="700" fill="#fff">My list</text>
+                              font-size="12" font-weight="800" fill="#10151C">Bananas</text>
+                            <text x="86" y="176"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="9" fill="#747387">Ecuador | per kilo</text>
+                            <rect class="acc" x="86" y="181" width="55" height="14" fill="#00ADE6" />
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">ORGANIC</text>
+                            <rect x="144" y="181" width="32" height="14" fill="#23313F" />
+                            <text x="149" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="20" font-weight="800" fill="#00ADE6">1.<tspan font-size="11" dy="-8">99</tspan>
+                            </text>
+                            <text x="138" y="217"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="11" fill="#747387">2.49</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1" />
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" />
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(0 80)">
+                              <circle cx="45" cy="182" r="15" fill="#E5484D" />
+                              <path d="M45 167V161" stroke="#5B3A1E" stroke-width="2" stroke-linecap="round" />
+                              <path d="M46 164C49 159 55 160 56 162C52 165 49 165 46 164Z" fill="#3FA56B" />
+                              <ellipse cx="39" cy="177" rx="4" ry="2.5" fill="#fff" opacity=".45" />
+                            </g>
+                            <text x="86" y="243"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="12" font-weight="800" fill="#10151C">Apples Elstar</text>
+                            <text x="86" y="256"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="9" fill="#747387">Netherlands | 1 kg</text>
+                            <rect class="acc" x="86" y="261" width="48" height="14" fill="#00ADE6" />
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">SEASON</text>
+                            <text x="86" y="297"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="20" font-weight="800" fill="#10151C">2.<tspan font-size="11" dy="-8">79</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" />
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 223H250" stroke="#E6EAEF" />
                           </g>
                           <g class="b2" opacity="0">
-                            <text x="18" y="42" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
-                              font-size="24" font-weight="600" fill="#10151C">Ivar Display</text>
-                            <text x="18" y="93" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
-                              font-size="21" fill="#fff">My list</text>
+                            <!-- Banner title and product -->
+                            <text x="16" y="84" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="26" font-weight="600" fill="#fff">Vitamins</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A" />
+                              <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1"
+                                stroke-width="1.2" />
+                              <rect x="38" y="48" width="30" height="18" fill="#F0508C" />
+                              <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                              <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE"
+                                transform="rotate(-25 75.5 68.5)" />
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A" />
+                              <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1"
+                                stroke-width="1.2" />
+                              <rect x="38" y="48" width="30" height="18" fill="#F0508C" />
+                              <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                              <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE"
+                                transform="rotate(-25 75.5 68.5)" />
+                            </g>
+                            <text x="86" y="163" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="12" font-weight="600" fill="#10151C">Vitamin C</text>
+                            <text x="86" y="176" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="9" fill="#747387">60 tablets | 500 mg</text>
+                            <rect class="acc" x="86" y="181" width="48" height="14" fill="#00ADE6" />
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">HEALTH</text>
+                            <rect x="137" y="181" width="32" height="14" fill="#23313F" />
+                            <text x="142" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217"
+                              font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="20"
+                              font-weight="600" fill="#00ADE6">8.<tspan font-size="11" dy="-8">49</tspan></text>
+                            <text x="138" y="217" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="11" fill="#747387">9.99</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1" />
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" />
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(0 80)">
+                              <rect x="30" y="170" width="14" height="28" rx="7" fill="#F0508C"
+                                transform="rotate(-25 37 184)" />
+                              <rect x="44" y="168" width="14" height="28" rx="7" fill="#F7B5CE"
+                                transform="rotate(20 51 182)" />
+                            </g>
+                            <text x="86" y="243" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="12" font-weight="600" fill="#10151C">Vitamin D3</text>
+                            <text x="86" y="256" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="9" fill="#747387">90 capsules</text>
+                            <rect class="acc" x="86" y="261" width="48" height="14" fill="#00ADE6" />
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">HEALTH</text>
+                            <text x="86" y="297" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="20" font-weight="600" fill="#10151C">6.<tspan font-size="11" dy="-8">99</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" />
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 223H250" stroke="#E6EAEF" />
                           </g>
                           <g class="b3" opacity="0">
-                            <text x="18" y="41" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
-                              font-size="19" font-weight="800" letter-spacing="2" fill="#10151C">PROXIMA NOVA</text>
-                            <text x="18" y="92" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
-                              font-size="18" font-weight="700" letter-spacing="2" fill="#fff">MY LIST</text>
-                          </g>
-                          <g>
-                            <rect class="acc" x="16" y="128" width="40" height="40" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <circle class="acc" cx="36" cy="148" r="8" fill="#00ADE6" />
-                            <rect x="66" y="137" width="112" height="8" rx="4" fill="#1B2533" fill-opacity=".8" />
-                            <rect x="66" y="153" width="70" height="6" rx="3" fill="#B9C1CC" />
-                            <rect class="acc" x="200" y="138" width="46" height="20" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <rect class="acc" x="16" y="180" width="40" height="40" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <circle class="acc" cx="36" cy="200" r="8" fill="#00ADE6" />
-                            <rect x="66" y="189" width="92" height="8" rx="4" fill="#1B2533" fill-opacity=".8" />
-                            <rect x="66" y="205" width="84" height="6" rx="3" fill="#B9C1CC" />
-                            <rect class="acc" x="200" y="190" width="46" height="20" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <rect class="acc" x="16" y="232" width="40" height="40" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <circle class="acc" cx="36" cy="252" r="8" fill="#00ADE6" />
-                            <rect x="66" y="241" width="104" height="8" rx="4" fill="#1B2533" fill-opacity=".8" />
-                            <rect x="66" y="257" width="58" height="6" rx="3" fill="#B9C1CC" />
-                            <rect class="acc" x="200" y="242" width="46" height="20" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
+                            <!-- Banner title and product -->
+                            <text x="16" y="84" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="26" font-weight="800" letter-spacing="2" fill="#fff">BEERS</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A" />
+                              <path
+                                d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z"
+                                fill="#7A3E12" />
+                              <rect x="45" y="54" width="16" height="16" fill="#FFE3C7" />
+                              <rect x="45" y="58" width="16" height="4" fill="#FF8A3D" />
+                              <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A" />
+                              <path
+                                d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z"
+                                fill="#7A3E12" />
+                              <rect x="45" y="54" width="16" height="16" fill="#FFE3C7" />
+                              <rect x="45" y="58" width="16" height="4" fill="#FF8A3D" />
+                              <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            </g>
+                            <text x="86" y="163" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">LAGER</text>
+                            <text x="86" y="176" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="9" fill="#747387">33 CL | 5%</text>
+                            <rect class="acc" x="86" y="181" width="42" height="14" fill="#00ADE6" />
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">CRAFT</text>
+                            <rect x="131" y="181" width="32" height="14" fill="#23313F" />
+                            <text x="136" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217"
+                              font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="20"
+                              font-weight="800" fill="#00ADE6">2.<tspan font-size="11" dy="-8">29</tspan></text>
+                            <text x="138" y="217" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="11" fill="#747387">2.79</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1" />
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" />
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(0 80)">
+                              <rect x="35" y="164" width="20" height="36" rx="4" fill="#FF8A3D" />
+                              <rect x="35" y="174" width="20" height="14" fill="#7A3E12" />
+                              <rect x="37" y="162" width="16" height="3" rx="1.5" fill="#B9C1CC" />
+                            </g>
+                            <text x="86" y="243" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">IPA</text>
+                            <text x="86" y="256" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="9" fill="#747387">33 CL | 6.5%</text>
+                            <rect class="acc" x="86" y="261" width="42" height="14" fill="#00ADE6" />
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">CRAFT</text>
+                            <text x="86" y="297" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="20" font-weight="800" fill="#10151C">2.<tspan font-size="11" dy="-8">89</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" />
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 223H250" stroke="#E6EAEF" />
                           </g>
                         </g>
                       </g>
@@ -1538,19 +1716,18 @@
                 </g>
 
                 <!-- Theme slider: the knob picks the brand -->
-                <rect x="70" y="429" width="661" height="22" rx="11" fill="url(#wl-track)" />
-                <rect x="65.5" y="424.5" width="670" height="31" rx="15.5" stroke="#fff" stroke-opacity=".2"
-                  stroke-width="9" />
+                <rect x="70" y="431.2" width="661" height="17.6" rx="8.8" fill="url(#wl-track)" />
+                <rect x="66.4" y="427.6" width="668.2" height="24.8" rx="12.4" stroke="#fff" stroke-opacity=".2"
+                  stroke-width="7.2" />
                 <g class="knob">
-                  <circle cx="180" cy="440" r="17" fill="#000032" opacity=".18" />
-                  <circle cx="180" cy="440" r="15" fill="#fff" />
-                  <circle class="acc" cx="180" cy="440" r="6" fill="#00ADE6" />
+                  <circle cx="180" cy="440" r="13.6" fill="#000032" opacity=".18" />
+                  <circle cx="180" cy="440" r="12" fill="#fff" />
+                  <circle class="acc" cx="180" cy="440" r="4.8" fill="#00ADE6" />
                 </g>
               </svg>
               <div class="portfolio-title">
                 <h4>White label eCommerce App</h4>
-                <p data-i18n="home.portfolio_white_label_description">The invisible foundation of multi-brand apps ·
-                  eCommerce · 2024</p>
+                <p data-i18n="home.portfolio_white_label_description">One base for multi-brand apps · eCommerce · 2024</p>
               </div>
             </div>
           </a>
@@ -1950,7 +2127,8 @@
                   <!-- The cycle, a rounded square: Order (left) over the top to Delivered (right),
                        then back along the bottom. Each half is drawn in its direction of travel and stops at the nodes' edges -->
                   <path id="ah-out" d="M72 246V200A40 40 0 0 1 112 160H688A40 40 0 0 1 728 200V246" />
-                  <path id="ah-loop" d="M72 246V200A40 40 0 0 1 112 160H688A40 40 0 0 1 728 200V246V325V340A40 40 0 0 1 688 380H112A40 40 0 0 1 72 340V325V246" />
+                  <path id="ah-loop"
+                    d="M72 246V200A40 40 0 0 1 112 160H688A40 40 0 0 1 728 200V246V325V340A40 40 0 0 1 688 380H112A40 40 0 0 1 72 340V325V246" />
                   <path id="ah-back" d="M728 325V340A40 40 0 0 1 688 380H112A40 40 0 0 1 72 340V325" />
                 </defs>
                 <rect width="800" height="500" fill="url(#ah-bg)" />
@@ -1958,33 +2136,50 @@
                      Same language as the Home energy app cover: thin line, frosted nodes, a soft
                      single point of light going round (SMIL, 7s per half) -->
                 <g stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="1.5" stroke-linecap="round" fill="none">
-                  <use href="#ah-out" /><use href="#ah-back" />
+                  <use href="#ah-out" />
+                  <use href="#ah-back" />
                 </g>
                 <g class="pk" opacity="0">
                   <circle r="9" fill="#FFFFFF" fill-opacity="0.22" />
                   <circle r="3.5" fill="#FFFFFF" />
                   <!-- One trip out over the top (7s), one back along the bottom (7s); it skips
                        across each node while invisible -->
-                  <animateMotion dur="14s" repeatCount="indefinite" calcMode="spline"
-                    keyPoints="0;0.4715;0.5184;0.9531" keyTimes="0;0.5;0.5;1"
-                    keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1"><mpath href="#ah-loop" /></animateMotion>
+                  <animateMotion dur="14s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0.4715;0.5184;0.9531"
+                    keyTimes="0;0.5;0.5;1" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1">
+                    <mpath href="#ah-loop" />
+                  </animateMotion>
                   <animate attributeName="opacity" values="0;1;1;0;0;1;1;0"
                     keyTimes="0;0.075;0.425;0.5;0.5;0.575;0.925;1" dur="14s" repeatCount="indefinite" />
                 </g>
                 <g transform="translate(72 270)">
-                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
-                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-10 -3H10L7 9H-7Z" /><path d="M-5 -3L-2 -10M5 -3L2 -10" /></g>
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75"
+                    stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <path d="M-10 -3H10L7 9H-7Z" />
+                    <path d="M-5 -3L-2 -10M5 -3L2 -10" />
+                  </g>
                   <g transform="translate(0 44)">
-                    <rect x="-28.0" y="-11" width="56" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
-                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Order</text>
+                    <rect x="-28.0" y="-11" width="56" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2"
+                      stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle"
+                      font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                      font-weight="600" fill="#FFFFFF">Order</text>
                   </g>
                 </g>
                 <g transform="translate(728 270)">
-                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
-                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M-10 -1L0 -9L10 -1" /><path d="M-7 -3V9H7V-3" /><path d="M-2 9V4H2V9" /></g>
+                  <circle r="24" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75"
+                    stroke-width="1.2" />
+                  <g stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                    <path d="M-10 -1L0 -9L10 -1" />
+                    <path d="M-7 -3V9H7V-3" />
+                    <path d="M-2 9V4H2V9" />
+                  </g>
                   <g transform="translate(0 44)">
-                    <rect x="-38.0" y="-11" width="76" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2" stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
-                    <text y="4" text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Delivered</text>
+                    <rect x="-38.0" y="-11" width="76" height="22" rx="11" fill="#FFFFFF" fill-opacity="0.2"
+                      stroke="#FFFFFF" stroke-opacity="0.75" stroke-width="1.2" />
+                    <text y="4" text-anchor="middle"
+                      font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                      font-weight="600" fill="#FFFFFF">Delivered</text>
                   </g>
                 </g>
                 <!-- Phone: shared frame, 300 x 590 at (250, 40), plain frame, no status bar.
@@ -1997,107 +2192,199 @@
                   <rect x="6" y="6" width="288" height="578" rx="52" fill="#2B2E35" />
                   <rect x="15" y="15" width="270" height="560" rx="42" fill="#F7F9FB" />
                   <g clip-path="url(#ah-screen-clip)">
-      <!-- Section title -->
-      <text x="27" y="96" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#23395D">Previously ordered</text>
-      <!-- Free delivery: progress towards 2 items -->
-      <rect x="27" y="114" width="246" height="40" rx="10" fill="#fff" stroke="#E6EBF0" />
-      <g transform="translate(46 130)">
-        <path d="M-10 -5H3V5H-10Z M3 -2H8L11 1V5H3Z" fill="#3FA2E3" />
-        <circle cx="-6" cy="7" r="2.5" fill="#1F2A37" /><circle cx="7" cy="7" r="2.5" fill="#1F2A37" />
-      </g>
-      <text class="todo" x="64" y="134" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="600" fill="#23395D">Free delivery from 2 items</text>
-      <text class="done" x="64" y="134" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5" font-weight="700" fill="#178856">Free delivery unlocked</text>
-      <g class="todo"><g class="badge">
-        <rect x="235" y="124" width="30" height="16" rx="8" fill="#EEF3F8" />
-        <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="700" fill="#23395D" text-anchor="middle">
-          <text class="c0" x="250" y="135.5">0/2</text><text class="c1" x="250" y="135.5">1/2</text><text class="c2" x="250" y="135.5">2/2</text>
-        </g>
-      </g></g>
-      <g class="ok"><circle cx="250" cy="132" r="8" fill="#1FA36A" /><path d="M246 132L249 135L254.5 129" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" /></g>
-      <rect x="64" y="142" width="160" height="4" rx="2" fill="#E3EDF7" />
-      <rect class="bar" x="64" y="142" width="160" height="4" rx="2" fill="#1FA36A" />
-      <text x="150" y="176" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#9AA6B4" text-anchor="middle">13 products</text>
-      <!-- Results: the first two get added -->
-      <path d="M15 188H285" stroke="#E6EBF0" />
-      <!-- Milk -->
-      <g>
-        <rect x="15" y="188" width="270" height="94" fill="#fff" />
-        <path d="M15 282H285" stroke="#E6EBF0" />
-        <g transform="translate(66 230) scale(1.105)"><rect x="-6" y="-31" width="12" height="6" rx="2" fill="#fff" stroke="#C8D6E5" stroke-width="1" />
-        <path d="M-15 -20L-10 -26H10L15 -20V29H-15Z" fill="#3A8FE0" />
-        <path d="M-10 -26H10L15 -20H-15Z" fill="#2F7FD0" />
-        <path d="M-12 -12C-8 -15 -4 -15 0 -12" stroke="#fff" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".7" />
-        <circle cx="0" cy="-4" r="4.5" fill="none" stroke="#fff" stroke-width="1.4" />
-        <text x="0" y="13" font-family="Georgia, serif" font-size="5.5" font-style="italic" fill="#fff" text-anchor="middle">Fresh</text>
-        <text x="0" y="22" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="800" fill="#fff" text-anchor="middle">Milk</text></g>
-        <g><rect x="30" y="268" width="8" height="7" fill="#1E8F4E" /><rect x="38" y="268" width="8" height="7" fill="#7BC043" /><rect x="46" y="268" width="8" height="7" fill="#F5C518" /><rect x="54" y="268" width="8" height="7" fill="#F08C2E" /><rect x="62" y="268" width="8" height="7" fill="#E5484D" /></g>
-        <text x="118" y="214" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#23395D"><tspan x="118" dy="0">Milk</tspan></text>
-        <text x="273" y="213" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#9AA6B4" text-anchor="end">1 L</text>
-        <text x="118" y="262" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="700" fill="#1F2A37">1.<tspan font-size="13" dy="-11">19</tspan></text>
-        <circle cx="259" cy="254" r="13" fill="#3FA2E3" />
-        <path d="M259 248V260M253 254H265" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
-        <!-- Quantity stepper: an outlined − and the quantity appear next to the + -->
-        <g class="added" style="--t:2.6s">
-          <circle cx="203" cy="254" r="12.5" fill="#fff" stroke="#3FA2E3" stroke-width="1.5" />
-          <path d="M197.5 254H208.5" stroke="#3FA2E3" stroke-width="2.2" stroke-linecap="round" />
-          <text x="231" y="259" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#1F2A37" text-anchor="middle">1</text>
-        </g>
-      </g>
-      <!-- Cherry tomatoes -->
-      <g>
-        <rect x="15" y="282" width="270" height="94" fill="#fff" />
-        <path d="M15 376H285" stroke="#E6EBF0" />
-        <g transform="translate(66 324) scale(1.105)"><rect x="-25" y="-25" width="50" height="52" rx="7" fill="#F2F6FA" stroke="#C8D6E5" stroke-width="1.2" />
-        <path d="M-20 -20C-10 -10 -12 6 -4 24M6 -22C2 -6 12 6 10 24" stroke="#3F8C3A" stroke-width="1.4" stroke-linecap="round" fill="none" />
-        <circle cx="-15" cy="-14" r="5.2" fill="#E5302F" /><circle cx="-16.6" cy="-15.8" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="-4" cy="-16" r="5.2" fill="#E5302F" /><circle cx="-5.6" cy="-17.8" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="7" cy="-15" r="5.2" fill="#E5302F" /><circle cx="5.4" cy="-16.8" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="16" cy="-9" r="4.8" fill="#E5302F" /><circle cx="14.4" cy="-10.8" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="-17" cy="-2" r="5.2" fill="#E5302F" /><circle cx="-18.6" cy="-3.8" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="-6" cy="-4" r="5.2" fill="#E5302F" /><circle cx="-7.6" cy="-5.8" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="5" cy="-3" r="5.2" fill="#E5302F" /><circle cx="3.4" cy="-4.8" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="16" cy="3" r="4.8" fill="#E5302F" /><circle cx="14.4" cy="1.2" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="-14" cy="10" r="5.2" fill="#E5302F" /><circle cx="-15.6" cy="8.2" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="-3" cy="9" r="5.2" fill="#E5302F" /><circle cx="-4.6" cy="7.2" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="8" cy="11" r="5.2" fill="#E5302F" /><circle cx="6.4" cy="9.2" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="17" cy="15" r="4.6" fill="#E5302F" /><circle cx="15.4" cy="13.2" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="-8" cy="19" r="4.8" fill="#E5302F" /><circle cx="-9.6" cy="17.2" r="1.3" fill="#fff" opacity=".55" />
-        <circle cx="3" cy="20" r="4.8" fill="#E5302F" /><circle cx="1.4" cy="18.2" r="1.3" fill="#fff" opacity=".55" />
-        <rect x="-15" y="-8" width="30" height="20" rx="4" fill="#fff" opacity=".94" />
-        <text font-family="Georgia, serif" font-size="7.5" font-style="italic" font-weight="700" fill="#C4232A" text-anchor="middle"><tspan x="0" y="0">Sweet</tspan><tspan x="0" y="9">cherry</tspan></text>
-        <circle cx="16" cy="-17" r="6.5" fill="#F5C518" />
-        <rect x="-25" y="-25" width="50" height="52" rx="7" fill="#fff" opacity=".12" /></g>
-        <g><rect x="30" y="362" width="8" height="7" fill="#1E8F4E" /><rect x="38" y="362" width="8" height="7" fill="#7BC043" /><rect x="46" y="362" width="8" height="7" fill="#F5C518" /><rect x="54" y="362" width="8" height="7" fill="#F08C2E" /><rect x="62" y="362" width="8" height="7" fill="#E5484D" /></g>
-        <text x="118" y="308" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#23395D"><tspan x="118" dy="0">Cherry</tspan><tspan x="118" dy="17">tomatoes</tspan></text>
-        <text x="273" y="307" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#9AA6B4" text-anchor="end">per 250 g</text>
-        <text x="118" y="356" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="700" fill="#1F2A37">1.<tspan font-size="13" dy="-11">60</tspan></text>
-        <circle cx="259" cy="348" r="13" fill="#3FA2E3" />
-        <path d="M259 342V354M253 348H265" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
-        <!-- Quantity stepper: an outlined − and the quantity appear next to the + -->
-        <g class="added" style="--t:4.75s">
-          <circle cx="203" cy="348" r="12.5" fill="#fff" stroke="#3FA2E3" stroke-width="1.5" />
-          <path d="M197.5 348H208.5" stroke="#3FA2E3" stroke-width="2.2" stroke-linecap="round" />
-          <text x="231" y="353" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700" fill="#1F2A37" text-anchor="middle">1</text>
-        </g>
-      </g>
-      <!-- Elstar tray -->
-      <g>
-        <rect x="15" y="376" width="270" height="94" fill="#fff" />
-        <path d="M15 470H285" stroke="#E6EBF0" />
-        <g transform="translate(66 418) scale(1.105)"><circle cx="0" cy="-2" r="17" fill="#E5484D" />
-        <path d="M0 -17V-23" stroke="#5B3A1E" stroke-width="2.2" stroke-linecap="round" />
-        <ellipse cx="-7" cy="-8" rx="4" ry="2.5" fill="#fff" opacity=".4" />
-        <path d="M-30 4H30L26 24H-26Z" fill="#C69A6D" />
-        <rect x="-10" y="8" width="20" height="12" rx="2" fill="#fff" />
-        <rect x="-6" y="11" width="12" height="2.5" rx="1.25" fill="#23395D" />
-        <rect x="-6" y="15.5" width="12" height="2.5" rx="1.25" fill="#F08C2E" /></g>
-        <g><rect x="30" y="456" width="8" height="7" fill="#1E8F4E" /><rect x="38" y="456" width="8" height="7" fill="#7BC043" /><rect x="46" y="456" width="8" height="7" fill="#F5C518" /><rect x="54" y="456" width="8" height="7" fill="#F08C2E" /><rect x="62" y="456" width="8" height="7" fill="#E5484D" /></g>
-        <text x="118" y="402" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#23395D"><tspan x="118" dy="0">Elstar tray</tspan></text>
-        <text x="273" y="401" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#9AA6B4" text-anchor="end">4 pieces</text>
-        <text x="118" y="450" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="700" fill="#1F2A37">2.<tspan font-size="13" dy="-11">19</tspan></text>
-        <circle cx="259" cy="442" r="13" fill="#3FA2E3" />
-        <path d="M259 436V448M253 442H265" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
-      </g>
+                    <!-- Section title -->
+                    <text x="27" y="96" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="20" font-weight="700" fill="#23395D">Previously ordered</text>
+                    <!-- Free delivery: progress towards 2 items -->
+                    <rect x="27" y="114" width="246" height="40" rx="10" fill="#fff" stroke="#E6EBF0" />
+                    <g transform="translate(46 130)">
+                      <path d="M-10 -5H3V5H-10Z M3 -2H8L11 1V5H3Z" fill="#3FA2E3" />
+                      <circle cx="-6" cy="7" r="2.5" fill="#1F2A37" />
+                      <circle cx="7" cy="7" r="2.5" fill="#1F2A37" />
+                    </g>
+                    <text class="todo" x="64" y="134"
+                      font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5"
+                      font-weight="600" fill="#23395D">Free delivery from 2 items</text>
+                    <text class="done" x="64" y="134"
+                      font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12.5"
+                      font-weight="700" fill="#178856">Free delivery unlocked</text>
+                    <g class="todo">
+                      <g class="badge">
+                        <rect x="235" y="124" width="30" height="16" rx="8" fill="#EEF3F8" />
+                        <g font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                          font-size="10.5" font-weight="700" fill="#23395D" text-anchor="middle">
+                          <text class="c0" x="250" y="135.5">0/2</text><text class="c1" x="250"
+                            y="135.5">1/2</text><text class="c2" x="250" y="135.5">2/2</text>
+                        </g>
+                      </g>
+                    </g>
+                    <g class="ok">
+                      <circle cx="250" cy="132" r="8" fill="#1FA36A" />
+                      <path d="M246 132L249 135L254.5 129" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" fill="none" />
+                    </g>
+                    <rect x="64" y="142" width="160" height="4" rx="2" fill="#E3EDF7" />
+                    <rect class="bar" x="64" y="142" width="160" height="4" rx="2" fill="#1FA36A" />
+                    <text x="150" y="176" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="12" fill="#9AA6B4" text-anchor="middle">13 products</text>
+                    <!-- Results: the first two get added -->
+                    <path d="M15 188H285" stroke="#E6EBF0" />
+                    <!-- Milk -->
+                    <g>
+                      <rect x="15" y="188" width="270" height="94" fill="#fff" />
+                      <path d="M15 282H285" stroke="#E6EBF0" />
+                      <g transform="translate(66 230) scale(1.105)">
+                        <rect x="-6" y="-31" width="12" height="6" rx="2" fill="#fff" stroke="#C8D6E5"
+                          stroke-width="1" />
+                        <path d="M-15 -20L-10 -26H10L15 -20V29H-15Z" fill="#3A8FE0" />
+                        <path d="M-10 -26H10L15 -20H-15Z" fill="#2F7FD0" />
+                        <path d="M-12 -12C-8 -15 -4 -15 0 -12" stroke="#fff" stroke-width="1.2" stroke-linecap="round"
+                          fill="none" opacity=".7" />
+                        <circle cx="0" cy="-4" r="4.5" fill="none" stroke="#fff" stroke-width="1.4" />
+                        <text x="0" y="13" font-family="Georgia, serif" font-size="5.5" font-style="italic" fill="#fff"
+                          text-anchor="middle">Fresh</text>
+                        <text x="0" y="22" font-family="Inter, system-ui, sans-serif" font-size="9" font-weight="800"
+                          fill="#fff" text-anchor="middle">Milk</text>
+                      </g>
+                      <g>
+                        <rect x="30" y="268" width="8" height="7" fill="#1E8F4E" />
+                        <rect x="38" y="268" width="8" height="7" fill="#7BC043" />
+                        <rect x="46" y="268" width="8" height="7" fill="#F5C518" />
+                        <rect x="54" y="268" width="8" height="7" fill="#F08C2E" />
+                        <rect x="62" y="268" width="8" height="7" fill="#E5484D" />
+                      </g>
+                      <text x="118" y="214"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14"
+                        fill="#23395D">
+                        <tspan x="118" dy="0">Milk</tspan>
+                      </text>
+                      <text x="273" y="213"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#9AA6B4" text-anchor="end">1 L</text>
+                      <text x="118" y="262"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26"
+                        font-weight="700" fill="#1F2A37">1.<tspan font-size="13" dy="-11">19</tspan></text>
+                      <circle cx="259" cy="254" r="13" fill="#3FA2E3" />
+                      <path d="M259 248V260M253 254H265" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                      <!-- Quantity stepper: an outlined − and the quantity appear next to the + -->
+                      <g class="added" style="--t:2.6s">
+                        <circle cx="203" cy="254" r="12.5" fill="#fff" stroke="#3FA2E3" stroke-width="1.5" />
+                        <path d="M197.5 254H208.5" stroke="#3FA2E3" stroke-width="2.2" stroke-linecap="round" />
+                        <text x="231" y="259"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15"
+                          font-weight="700" fill="#1F2A37" text-anchor="middle">1</text>
+                      </g>
+                    </g>
+                    <!-- Cherry tomatoes -->
+                    <g>
+                      <rect x="15" y="282" width="270" height="94" fill="#fff" />
+                      <path d="M15 376H285" stroke="#E6EBF0" />
+                      <g transform="translate(66 324) scale(1.105)">
+                        <rect x="-25" y="-25" width="50" height="52" rx="7" fill="#F2F6FA" stroke="#C8D6E5"
+                          stroke-width="1.2" />
+                        <path d="M-20 -20C-10 -10 -12 6 -4 24M6 -22C2 -6 12 6 10 24" stroke="#3F8C3A" stroke-width="1.4"
+                          stroke-linecap="round" fill="none" />
+                        <circle cx="-15" cy="-14" r="5.2" fill="#E5302F" />
+                        <circle cx="-16.6" cy="-15.8" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="-4" cy="-16" r="5.2" fill="#E5302F" />
+                        <circle cx="-5.6" cy="-17.8" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="7" cy="-15" r="5.2" fill="#E5302F" />
+                        <circle cx="5.4" cy="-16.8" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="16" cy="-9" r="4.8" fill="#E5302F" />
+                        <circle cx="14.4" cy="-10.8" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="-17" cy="-2" r="5.2" fill="#E5302F" />
+                        <circle cx="-18.6" cy="-3.8" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="-6" cy="-4" r="5.2" fill="#E5302F" />
+                        <circle cx="-7.6" cy="-5.8" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="5" cy="-3" r="5.2" fill="#E5302F" />
+                        <circle cx="3.4" cy="-4.8" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="16" cy="3" r="4.8" fill="#E5302F" />
+                        <circle cx="14.4" cy="1.2" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="-14" cy="10" r="5.2" fill="#E5302F" />
+                        <circle cx="-15.6" cy="8.2" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="-3" cy="9" r="5.2" fill="#E5302F" />
+                        <circle cx="-4.6" cy="7.2" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="8" cy="11" r="5.2" fill="#E5302F" />
+                        <circle cx="6.4" cy="9.2" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="17" cy="15" r="4.6" fill="#E5302F" />
+                        <circle cx="15.4" cy="13.2" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="-8" cy="19" r="4.8" fill="#E5302F" />
+                        <circle cx="-9.6" cy="17.2" r="1.3" fill="#fff" opacity=".55" />
+                        <circle cx="3" cy="20" r="4.8" fill="#E5302F" />
+                        <circle cx="1.4" cy="18.2" r="1.3" fill="#fff" opacity=".55" />
+                        <rect x="-15" y="-8" width="30" height="20" rx="4" fill="#fff" opacity=".94" />
+                        <text font-family="Georgia, serif" font-size="7.5" font-style="italic" font-weight="700"
+                          fill="#C4232A" text-anchor="middle">
+                          <tspan x="0" y="0">Sweet</tspan>
+                          <tspan x="0" y="9">cherry</tspan>
+                        </text>
+                        <circle cx="16" cy="-17" r="6.5" fill="#F5C518" />
+                        <rect x="-25" y="-25" width="50" height="52" rx="7" fill="#fff" opacity=".12" />
+                      </g>
+                      <g>
+                        <rect x="30" y="362" width="8" height="7" fill="#1E8F4E" />
+                        <rect x="38" y="362" width="8" height="7" fill="#7BC043" />
+                        <rect x="46" y="362" width="8" height="7" fill="#F5C518" />
+                        <rect x="54" y="362" width="8" height="7" fill="#F08C2E" />
+                        <rect x="62" y="362" width="8" height="7" fill="#E5484D" />
+                      </g>
+                      <text x="118" y="308"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14"
+                        fill="#23395D">
+                        <tspan x="118" dy="0">Cherry</tspan>
+                        <tspan x="118" dy="17">tomatoes</tspan>
+                      </text>
+                      <text x="273" y="307"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#9AA6B4" text-anchor="end">per 250 g</text>
+                      <text x="118" y="356"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26"
+                        font-weight="700" fill="#1F2A37">1.<tspan font-size="13" dy="-11">60</tspan></text>
+                      <circle cx="259" cy="348" r="13" fill="#3FA2E3" />
+                      <path d="M259 342V354M253 348H265" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                      <!-- Quantity stepper: an outlined − and the quantity appear next to the + -->
+                      <g class="added" style="--t:4.75s">
+                        <circle cx="203" cy="348" r="12.5" fill="#fff" stroke="#3FA2E3" stroke-width="1.5" />
+                        <path d="M197.5 348H208.5" stroke="#3FA2E3" stroke-width="2.2" stroke-linecap="round" />
+                        <text x="231" y="353"
+                          font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="15"
+                          font-weight="700" fill="#1F2A37" text-anchor="middle">1</text>
+                      </g>
+                    </g>
+                    <!-- Elstar tray -->
+                    <g>
+                      <rect x="15" y="376" width="270" height="94" fill="#fff" />
+                      <path d="M15 470H285" stroke="#E6EBF0" />
+                      <g transform="translate(66 418) scale(1.105)">
+                        <circle cx="0" cy="-2" r="17" fill="#E5484D" />
+                        <path d="M0 -17V-23" stroke="#5B3A1E" stroke-width="2.2" stroke-linecap="round" />
+                        <ellipse cx="-7" cy="-8" rx="4" ry="2.5" fill="#fff" opacity=".4" />
+                        <path d="M-30 4H30L26 24H-26Z" fill="#C69A6D" />
+                        <rect x="-10" y="8" width="20" height="12" rx="2" fill="#fff" />
+                        <rect x="-6" y="11" width="12" height="2.5" rx="1.25" fill="#23395D" />
+                        <rect x="-6" y="15.5" width="12" height="2.5" rx="1.25" fill="#F08C2E" />
+                      </g>
+                      <g>
+                        <rect x="30" y="456" width="8" height="7" fill="#1E8F4E" />
+                        <rect x="38" y="456" width="8" height="7" fill="#7BC043" />
+                        <rect x="46" y="456" width="8" height="7" fill="#F5C518" />
+                        <rect x="54" y="456" width="8" height="7" fill="#F08C2E" />
+                        <rect x="62" y="456" width="8" height="7" fill="#E5484D" />
+                      </g>
+                      <text x="118" y="402"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="14"
+                        fill="#23395D">
+                        <tspan x="118" dy="0">Elstar tray</tspan>
+                      </text>
+                      <text x="273" y="401"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11"
+                        fill="#9AA6B4" text-anchor="end">4 pieces</text>
+                      <text x="118" y="450"
+                        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26"
+                        font-weight="700" fill="#1F2A37">2.<tspan font-size="13" dy="-11">19</tspan></text>
+                      <circle cx="259" cy="442" r="13" fill="#3FA2E3" />
+                      <path d="M259 436V448M253 442H265" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                    </g>
                   </g>
                   <rect x="106" y="30" width="88" height="28" rx="14" fill="#0E0F12" />
                   <circle cx="178" cy="44" r="5" fill="#1B2030" />
@@ -2105,161 +2392,173 @@
                 </g>
                 <!-- A few of the original groceries in front (each its own .bob) -->
                 <g transform="translate(144 273.5) scale(.963)">
-                  <g transform="translate(-40 8)"><g class="bob" data-item="carrot" style="--b:-6.4s">
-                    <path
-                      d="M10.8959 78.5218C17.0642 74.0782 27.2562 76.0719 31.718 84.1414C36.482 95.2163 41.2515 106.287 46.0244 117.358C44.3599 112.504 42.6987 107.648 41.0319 102.794C39.3834 95.8398 44.1836 89.3671 50.0299 88.6903C50.2869 88.6594 50.5531 88.6351 50.8137 88.6282C56.5109 88.4759 62.2112 93.7118 62.0335 100.657C60.7298 114.242 59.4299 127.82 58.1337 141.411C60.1593 142.905 62.1844 144.4 64.2101 145.894C64.1769 145.89 64.133 145.872 64.0919 145.87C62.0059 145.431 59.9198 144.993 57.8341 144.554C57.658 146.402 57.4815 148.25 57.3055 150.098C57.2945 150.132 57.302 150.181 57.2909 150.216C56.5796 148.141 55.8675 146.067 55.1564 143.992C41.9976 141.226 28.8436 138.466 15.6841 135.708C9.02948 133.818 5.74172 126.792 7.59156 121.37C7.67601 121.118 7.77767 120.872 7.88057 120.634C10.2732 115.227 17.8528 112.551 23.9735 116.2C29.7509 120.466 35.53 124.733 41.3097 128.999C30.817 119.468 20.3248 109.942 9.82555 100.409C3.63238 93.9414 4.52215 83.9738 10.0942 79.1537C10.346 78.9349 10.6306 78.7215 10.8959 78.5218Z"
-                      fill="url(#ah-paint25_linear)" />
-                    <path
-                      d="M90.9605 140.234C91.5227 141.358 92.0881 142.504 92.6415 143.641C93.1705 144.686 93.6787 145.734 94.2076 146.779C98.6521 155.775 103.095 164.76 107.547 173.734C108.057 174.792 108.587 175.848 109.094 176.885C113.538 185.881 117.99 194.855 122.433 203.84C122.962 204.885 123.473 205.954 123.992 207.001C128.436 215.997 132.888 224.97 137.331 233.956C137.841 235.014 138.358 236.05 138.878 237.107C141.827 243.082 144.786 249.055 147.735 255.029C148.293 256.123 148.307 257.257 147.97 258.306C147.634 259.356 146.945 260.31 146.075 261.048C145.68 261.299 145.27 261.521 144.849 261.67C143.163 262.32 141.246 262.219 139.866 260.858C135.075 256.247 130.274 251.637 125.463 247.029C124.62 246.213 123.791 245.415 122.928 244.602C115.722 237.662 108.498 230.735 101.272 223.798C100.429 222.981 99.5863 222.165 98.7348 221.36C91.5295 214.42 84.3051 207.493 77.0791 200.556C76.2498 199.759 75.4071 198.942 74.5643 198.126C67.3399 191.199 60.1258 184.271 52.8879 177.325C52.0452 176.508 51.2159 175.711 50.3732 174.894C49.4606 174.035 48.5433 173.145 47.6394 172.274C40.8356 165.751 38.0258 155.975 40.5835 146.899C41.9472 142.052 44.25 137.613 47.4098 133.946C48.0638 133.178 48.7742 132.432 49.522 131.724C49.5514 131.709 49.5673 131.674 49.5951 131.649C49.9257 131.322 50.3444 130.951 50.8592 130.586C51.2127 130.341 51.5448 130.163 51.8578 129.998C52.2677 129.777 52.6863 129.543 53.1097 129.34C58.0435 126.847 63.6631 125.736 69.4248 125.974C78.612 126.368 86.8419 131.921 90.9605 140.234Z"
-                      fill="url(#ah-paint26_linear)" />
-                  </g></g>
-                  <g transform="translate(-22 24)"><g class="bob" data-item="juice" style="--b:-8.6s">
-                    <use href="#ah-stroke0" fill="url(#ah-paint28_linear)" />
-                    <use href="#ah-stroke0" fill="#F8BE1D" style="mix-blend-mode:hard-light" />
-                    <path
-                      d="M174.357 199.715L167.172 201.53L129.802 71.4171L130.886 71.1411C140.114 68.8076 149.784 74.5371 152.478 83.9305L181.856 186.217C183.575 192.186 180.213 198.228 174.357 199.715Z"
-                      fill="url(#ah-paint29_linear)" fill-opacity="0.3" />
-                    <path d="M88.0656 57.4235L90.0762 65.0122L130.896 54.158L128.886 46.5693L88.0656 57.4235Z"
-                      fill="#ACCAF7" />
-                    <path
-                      d="M132.432 46.3105L84.6182 58.6248L81.4913 47.5459C80.7622 44.9782 82.1845 42.3659 84.6769 41.7297L123.49 31.7384C125.967 31.0966 128.576 32.6641 129.3 35.2478L132.432 46.3105Z"
-                      fill="#6E9E23" />
-                    <path d="M84.3099 42.4278L88.6689 57.8345L92.5705 56.8498L88.2114 41.4431L84.3099 42.4278Z"
-                      fill="#35742F" />
-                    <path d="M91.4651 40.4415L95.8242 55.8481L99.7257 54.8635L95.3667 39.4568L91.4651 40.4415Z"
-                      fill="#35742F" />
-                    <path d="M98.6302 38.4395L102.989 53.8462L106.891 52.8615L102.532 37.4548L98.6302 38.4395Z"
-                      fill="#35742F" />
-                    <path d="M105.777 36.4453L110.136 51.8521L114.037 50.8674L109.678 35.4607L105.777 36.4453Z"
-                      fill="#35742F" />
-                    <path d="M112.922 34.4536L117.281 49.8604L121.183 48.8757L116.824 33.469L112.922 34.4536Z"
-                      fill="#35742F" />
-                    <path d="M120.079 32.4214L124.438 47.8281L128.34 46.8435L123.981 31.4367L120.079 32.4214Z"
-                      fill="#35742F" />
-                  </g></g>
-                  <g transform="translate(-22 20)"><g class="bob" data-item="baguette" style="--b:-3s">
-                    <path
-                      d="M460.344 192.393C367.906 324.554 338.192 343.975 325.818 343.048C324.091 342.922 322.425 342.358 320.976 341.408C312.316 335.837 311.456 313.248 323.524 289.033C324.161 287.962 324.809 286.895 325.448 285.812C329.375 279.311 333.342 272.775 337.351 266.205C343.369 256.368 349.505 246.448 355.76 236.447C359.844 229.926 363.969 223.388 368.136 216.833C374.368 206.988 380.72 197.095 387.192 187.154C391.097 181.141 395.039 175.11 399.019 169.061C401.393 165.46 403.77 161.863 406.151 158.272C409.721 152.884 409.985 151.892 416.175 141.919C419.471 136.629 423.462 130.358 427.946 123.471C433.907 114.32 440.768 104.113 447.94 93.8158C453.582 85.7987 459.462 77.7402 465.371 70.1083C468.965 65.4904 472.541 61.0221 476.088 56.8283C481.531 50.5332 487.938 45.1415 495.068 40.8539C500.116 37.8044 512.993 30.3025 521.497 31.5965C522.54 31.7402 523.552 32.052 524.495 32.52C547.97 44.6107 486.978 154.322 460.344 192.393Z"
-                      fill="url(#ah-paint30_linear)" />
-                    <path
-                      d="M460.347 192.396C367.909 324.558 338.195 343.978 325.821 343.051C350.947 316.688 372.484 291.449 390.783 268.235C405.656 249.38 415.871 234.8 436.343 205.675C436.343 205.675 463.843 166.593 501.929 100.727C508.834 89.2012 514.057 76.7464 517.439 63.7415C520.121 53.2332 521.515 42.4375 521.59 31.5928C522.643 31.6875 523.665 32.0021 524.589 32.5162C547.973 44.6141 486.981 154.326 460.347 192.396Z"
-                      fill="#E8AD60" />
-                    <path
-                      d="M512.845 58.2627C504.844 69.9046 494.047 79.3467 481.446 85.7203C471.048 90.9255 459.598 93.6803 447.973 93.7739C453.615 85.7568 459.495 77.6983 465.404 70.0664C473.379 65.7047 481.92 62.4707 490.783 60.457C498.023 58.8449 505.43 58.1082 512.845 58.2627V58.2627Z"
-                      fill="url(#ah-paint31_linear)" />
-                    <path
-                      d="M489.225 104.963C481.009 116.423 470.257 125.828 457.809 132.442C445.01 139.184 430.668 142.447 416.216 141.906C419.513 136.616 423.504 130.344 427.988 123.458C439.955 115.658 453.252 110.128 467.217 107.142C474.456 105.644 481.833 104.914 489.225 104.963Z"
-                      fill="url(#ah-paint32_linear)" />
-                    <path
-                      d="M465.361 149.315C457.034 160.67 446.313 170.053 433.958 176.797C419.661 184.521 403.497 188.105 387.281 187.149C391.186 181.136 395.129 175.105 399.109 169.056C412.707 160.613 427.711 154.685 443.405 151.556C450.641 150.148 457.99 149.398 465.361 149.315V149.315Z"
-                      fill="url(#ah-paint33_linear)" />
-                    <path
-                      d="M436.648 197.024C428.167 208.233 417.484 217.587 405.256 224.509C390.167 232.939 373.057 237.066 355.79 236.44C359.874 229.919 363.999 223.381 368.166 216.826C382.527 208.34 398.241 202.394 414.618 199.25C421.888 197.91 429.256 197.165 436.648 197.024Z"
-                      fill="url(#ah-paint34_linear)" />
-                    <path
-                      d="M504.95 89.0293C506.143 87.2138 505.714 84.8229 503.991 83.6893C502.268 82.5556 499.905 83.1084 498.711 84.924C497.518 86.7396 497.947 89.1304 499.67 90.2641C501.393 91.3977 503.757 90.8449 504.95 89.0293Z"
-                      fill="url(#ah-paint35_linear)" />
-                    <path
-                      d="M492.939 95.2476C493.841 93.8758 493.554 92.0938 492.298 91.2672C491.042 90.4407 489.293 90.8827 488.391 92.2545C487.49 93.6262 487.777 95.4083 489.033 96.2348C490.289 97.0614 492.038 96.6194 492.939 95.2476Z"
-                      fill="url(#ah-paint36_linear)" />
-                    <path
-                      d="M442.637 190.629C443.831 188.813 443.401 186.422 441.679 185.289C439.956 184.155 437.592 184.708 436.399 186.524C435.206 188.339 435.635 190.73 437.358 191.864C439.08 192.997 441.444 192.445 442.637 190.629Z"
-                      fill="url(#ah-paint37_linear)" />
-                    <path
-                      d="M465.927 139.731C466.828 138.36 466.541 136.578 465.285 135.751C464.029 134.925 462.28 135.367 461.378 136.738C460.477 138.11 460.764 139.892 462.02 140.719C463.276 141.545 465.025 141.103 465.927 139.731Z"
-                      fill="url(#ah-paint38_linear)" />
-                    <path
-                      d="M453.24 183.833C454.107 182.513 453.834 180.801 452.63 180.008C451.426 179.216 449.747 179.644 448.879 180.964C448.012 182.284 448.285 183.996 449.489 184.788C450.693 185.581 452.372 185.153 453.24 183.833Z"
-                      fill="url(#ah-paint39_linear)" />
-                    <path
-                      d="M424.115 150.656C425.017 149.284 424.729 147.502 423.473 146.675C422.218 145.849 420.469 146.291 419.567 147.663C418.665 149.034 418.953 150.817 420.209 151.643C421.465 152.47 423.214 152.028 424.115 150.656Z"
-                      fill="url(#ah-paint40_linear)" />
-                  </g></g>
-                  <g transform="translate(58 6)"><g class="bob" data-item="cheese" style="--b:-9.8s">
-                    <path
-                      d="M525.929 199.352C526.761 198.969 527.593 198.586 528.425 198.203C518.346 184.445 509.157 173.34 501.726 164.859C489.994 151.468 483.771 145.907 475.237 142.62C468.665 140.087 463.245 139.89 460.231 139.801C455.828 139.683 443.206 139.522 430.323 149.013C429.319 149.752 428.352 150.527 427.43 151.307C418.155 159.231 413.375 172.87 414.599 187.01C414.696 188.164 414.821 189.348 414.966 190.545C415.964 198.878 417.762 205.83 419.468 211.073C431.868 218.075 444.268 225.076 456.665 232.069C479.75 221.171 502.839 210.262 525.929 199.352Z"
-                      fill="url(#ah-paint45_linear)" />
-                    <path
-                      d="M525.907 199.368C519.376 191.154 509.407 178.957 496.682 164.726C489.319 156.49 485.581 152.361 483.112 150.576C461.618 135.06 423.388 151.169 421.145 171.506C419.697 184.587 433.028 199.569 447.361 215.672C452.884 221.878 457.883 226.545 461.541 229.722C482.994 219.605 504.455 209.485 525.907 199.368Z"
-                      fill="#FFE78D" />
-                    <path
-                      d="M447.454 153.9C445.736 155.933 445.248 158.551 444.576 162.227C441.828 177.168 448.12 194.128 456.232 202.855C475.166 223.237 512.255 207.65 513.737 193.013C515.657 174.051 459.533 139.639 447.454 153.9Z"
-                      fill="#FFEFB0" />
-                    <path opacity="0.74"
-                      d="M460.207 167.488C460.939 166.994 461.759 166.675 462.656 166.635C467.057 166.422 469.937 172.978 469.063 175.347C468.706 176.322 467.578 176.922 466.146 177.184C465.533 176.922 464.93 176.637 464.345 176.325C461.528 174.232 459.193 170.886 460.207 167.488Z"
-                      fill="#F7AA63" />
-                    <path opacity="0.74"
-                      d="M460.151 167.566C459.128 170.966 461.463 174.312 464.296 176.4C464.891 176.717 465.491 176.994 466.097 177.258C462.81 177.857 457.921 176.647 457.156 174.032C456.625 172.211 457.919 169.072 460.151 167.566Z"
-                      fill="#EC9854" />
-                    <path opacity="0.74"
-                      d="M477.002 180.125C476.952 178.92 474.181 176.987 471.915 178.308C470.234 179.291 469.242 181.846 469.798 182.778C470.768 184.403 477.07 181.969 477.002 180.125Z"
-                      fill="#F7AA63" />
-                    <path opacity="0.74"
-                      d="M439.263 171.722C439.801 170.476 437.258 166.058 435.132 166.724C434.053 167.062 433.125 168.697 433.393 169.914C433.897 172.222 438.68 173.052 439.263 171.722Z"
-                      fill="#F7AA63" />
-                    <path opacity="0.74"
-                      d="M477.964 155.697C478.506 154.202 477.099 150.86 475.1 150.803C473.064 150.738 471.752 154.101 472.36 155.628C473.116 157.528 477.275 157.597 477.964 155.697Z"
-                      fill="#F7AA63" />
-                  </g></g>
+                  <g transform="translate(-40 8)">
+                    <g class="bob" data-item="carrot" style="--b:-6.4s">
+                      <path
+                        d="M10.8959 78.5218C17.0642 74.0782 27.2562 76.0719 31.718 84.1414C36.482 95.2163 41.2515 106.287 46.0244 117.358C44.3599 112.504 42.6987 107.648 41.0319 102.794C39.3834 95.8398 44.1836 89.3671 50.0299 88.6903C50.2869 88.6594 50.5531 88.6351 50.8137 88.6282C56.5109 88.4759 62.2112 93.7118 62.0335 100.657C60.7298 114.242 59.4299 127.82 58.1337 141.411C60.1593 142.905 62.1844 144.4 64.2101 145.894C64.1769 145.89 64.133 145.872 64.0919 145.87C62.0059 145.431 59.9198 144.993 57.8341 144.554C57.658 146.402 57.4815 148.25 57.3055 150.098C57.2945 150.132 57.302 150.181 57.2909 150.216C56.5796 148.141 55.8675 146.067 55.1564 143.992C41.9976 141.226 28.8436 138.466 15.6841 135.708C9.02948 133.818 5.74172 126.792 7.59156 121.37C7.67601 121.118 7.77767 120.872 7.88057 120.634C10.2732 115.227 17.8528 112.551 23.9735 116.2C29.7509 120.466 35.53 124.733 41.3097 128.999C30.817 119.468 20.3248 109.942 9.82555 100.409C3.63238 93.9414 4.52215 83.9738 10.0942 79.1537C10.346 78.9349 10.6306 78.7215 10.8959 78.5218Z"
+                        fill="url(#ah-paint25_linear)" />
+                      <path
+                        d="M90.9605 140.234C91.5227 141.358 92.0881 142.504 92.6415 143.641C93.1705 144.686 93.6787 145.734 94.2076 146.779C98.6521 155.775 103.095 164.76 107.547 173.734C108.057 174.792 108.587 175.848 109.094 176.885C113.538 185.881 117.99 194.855 122.433 203.84C122.962 204.885 123.473 205.954 123.992 207.001C128.436 215.997 132.888 224.97 137.331 233.956C137.841 235.014 138.358 236.05 138.878 237.107C141.827 243.082 144.786 249.055 147.735 255.029C148.293 256.123 148.307 257.257 147.97 258.306C147.634 259.356 146.945 260.31 146.075 261.048C145.68 261.299 145.27 261.521 144.849 261.67C143.163 262.32 141.246 262.219 139.866 260.858C135.075 256.247 130.274 251.637 125.463 247.029C124.62 246.213 123.791 245.415 122.928 244.602C115.722 237.662 108.498 230.735 101.272 223.798C100.429 222.981 99.5863 222.165 98.7348 221.36C91.5295 214.42 84.3051 207.493 77.0791 200.556C76.2498 199.759 75.4071 198.942 74.5643 198.126C67.3399 191.199 60.1258 184.271 52.8879 177.325C52.0452 176.508 51.2159 175.711 50.3732 174.894C49.4606 174.035 48.5433 173.145 47.6394 172.274C40.8356 165.751 38.0258 155.975 40.5835 146.899C41.9472 142.052 44.25 137.613 47.4098 133.946C48.0638 133.178 48.7742 132.432 49.522 131.724C49.5514 131.709 49.5673 131.674 49.5951 131.649C49.9257 131.322 50.3444 130.951 50.8592 130.586C51.2127 130.341 51.5448 130.163 51.8578 129.998C52.2677 129.777 52.6863 129.543 53.1097 129.34C58.0435 126.847 63.6631 125.736 69.4248 125.974C78.612 126.368 86.8419 131.921 90.9605 140.234Z"
+                        fill="url(#ah-paint26_linear)" />
+                    </g>
+                  </g>
+                  <g transform="translate(-22 24)">
+                    <g class="bob" data-item="juice" style="--b:-8.6s">
+                      <use href="#ah-stroke0" fill="url(#ah-paint28_linear)" />
+                      <use href="#ah-stroke0" fill="#F8BE1D" style="mix-blend-mode:hard-light" />
+                      <path
+                        d="M174.357 199.715L167.172 201.53L129.802 71.4171L130.886 71.1411C140.114 68.8076 149.784 74.5371 152.478 83.9305L181.856 186.217C183.575 192.186 180.213 198.228 174.357 199.715Z"
+                        fill="url(#ah-paint29_linear)" fill-opacity="0.3" />
+                      <path d="M88.0656 57.4235L90.0762 65.0122L130.896 54.158L128.886 46.5693L88.0656 57.4235Z"
+                        fill="#ACCAF7" />
+                      <path
+                        d="M132.432 46.3105L84.6182 58.6248L81.4913 47.5459C80.7622 44.9782 82.1845 42.3659 84.6769 41.7297L123.49 31.7384C125.967 31.0966 128.576 32.6641 129.3 35.2478L132.432 46.3105Z"
+                        fill="#6E9E23" />
+                      <path d="M84.3099 42.4278L88.6689 57.8345L92.5705 56.8498L88.2114 41.4431L84.3099 42.4278Z"
+                        fill="#35742F" />
+                      <path d="M91.4651 40.4415L95.8242 55.8481L99.7257 54.8635L95.3667 39.4568L91.4651 40.4415Z"
+                        fill="#35742F" />
+                      <path d="M98.6302 38.4395L102.989 53.8462L106.891 52.8615L102.532 37.4548L98.6302 38.4395Z"
+                        fill="#35742F" />
+                      <path d="M105.777 36.4453L110.136 51.8521L114.037 50.8674L109.678 35.4607L105.777 36.4453Z"
+                        fill="#35742F" />
+                      <path d="M112.922 34.4536L117.281 49.8604L121.183 48.8757L116.824 33.469L112.922 34.4536Z"
+                        fill="#35742F" />
+                      <path d="M120.079 32.4214L124.438 47.8281L128.34 46.8435L123.981 31.4367L120.079 32.4214Z"
+                        fill="#35742F" />
+                    </g>
+                  </g>
+                  <g transform="translate(-22 20)">
+                    <g class="bob" data-item="baguette" style="--b:-3s">
+                      <path
+                        d="M460.344 192.393C367.906 324.554 338.192 343.975 325.818 343.048C324.091 342.922 322.425 342.358 320.976 341.408C312.316 335.837 311.456 313.248 323.524 289.033C324.161 287.962 324.809 286.895 325.448 285.812C329.375 279.311 333.342 272.775 337.351 266.205C343.369 256.368 349.505 246.448 355.76 236.447C359.844 229.926 363.969 223.388 368.136 216.833C374.368 206.988 380.72 197.095 387.192 187.154C391.097 181.141 395.039 175.11 399.019 169.061C401.393 165.46 403.77 161.863 406.151 158.272C409.721 152.884 409.985 151.892 416.175 141.919C419.471 136.629 423.462 130.358 427.946 123.471C433.907 114.32 440.768 104.113 447.94 93.8158C453.582 85.7987 459.462 77.7402 465.371 70.1083C468.965 65.4904 472.541 61.0221 476.088 56.8283C481.531 50.5332 487.938 45.1415 495.068 40.8539C500.116 37.8044 512.993 30.3025 521.497 31.5965C522.54 31.7402 523.552 32.052 524.495 32.52C547.97 44.6107 486.978 154.322 460.344 192.393Z"
+                        fill="url(#ah-paint30_linear)" />
+                      <path
+                        d="M460.347 192.396C367.909 324.558 338.195 343.978 325.821 343.051C350.947 316.688 372.484 291.449 390.783 268.235C405.656 249.38 415.871 234.8 436.343 205.675C436.343 205.675 463.843 166.593 501.929 100.727C508.834 89.2012 514.057 76.7464 517.439 63.7415C520.121 53.2332 521.515 42.4375 521.59 31.5928C522.643 31.6875 523.665 32.0021 524.589 32.5162C547.973 44.6141 486.981 154.326 460.347 192.396Z"
+                        fill="#E8AD60" />
+                      <path
+                        d="M512.845 58.2627C504.844 69.9046 494.047 79.3467 481.446 85.7203C471.048 90.9255 459.598 93.6803 447.973 93.7739C453.615 85.7568 459.495 77.6983 465.404 70.0664C473.379 65.7047 481.92 62.4707 490.783 60.457C498.023 58.8449 505.43 58.1082 512.845 58.2627V58.2627Z"
+                        fill="url(#ah-paint31_linear)" />
+                      <path
+                        d="M489.225 104.963C481.009 116.423 470.257 125.828 457.809 132.442C445.01 139.184 430.668 142.447 416.216 141.906C419.513 136.616 423.504 130.344 427.988 123.458C439.955 115.658 453.252 110.128 467.217 107.142C474.456 105.644 481.833 104.914 489.225 104.963Z"
+                        fill="url(#ah-paint32_linear)" />
+                      <path
+                        d="M465.361 149.315C457.034 160.67 446.313 170.053 433.958 176.797C419.661 184.521 403.497 188.105 387.281 187.149C391.186 181.136 395.129 175.105 399.109 169.056C412.707 160.613 427.711 154.685 443.405 151.556C450.641 150.148 457.99 149.398 465.361 149.315V149.315Z"
+                        fill="url(#ah-paint33_linear)" />
+                      <path
+                        d="M436.648 197.024C428.167 208.233 417.484 217.587 405.256 224.509C390.167 232.939 373.057 237.066 355.79 236.44C359.874 229.919 363.999 223.381 368.166 216.826C382.527 208.34 398.241 202.394 414.618 199.25C421.888 197.91 429.256 197.165 436.648 197.024Z"
+                        fill="url(#ah-paint34_linear)" />
+                      <path
+                        d="M504.95 89.0293C506.143 87.2138 505.714 84.8229 503.991 83.6893C502.268 82.5556 499.905 83.1084 498.711 84.924C497.518 86.7396 497.947 89.1304 499.67 90.2641C501.393 91.3977 503.757 90.8449 504.95 89.0293Z"
+                        fill="url(#ah-paint35_linear)" />
+                      <path
+                        d="M492.939 95.2476C493.841 93.8758 493.554 92.0938 492.298 91.2672C491.042 90.4407 489.293 90.8827 488.391 92.2545C487.49 93.6262 487.777 95.4083 489.033 96.2348C490.289 97.0614 492.038 96.6194 492.939 95.2476Z"
+                        fill="url(#ah-paint36_linear)" />
+                      <path
+                        d="M442.637 190.629C443.831 188.813 443.401 186.422 441.679 185.289C439.956 184.155 437.592 184.708 436.399 186.524C435.206 188.339 435.635 190.73 437.358 191.864C439.08 192.997 441.444 192.445 442.637 190.629Z"
+                        fill="url(#ah-paint37_linear)" />
+                      <path
+                        d="M465.927 139.731C466.828 138.36 466.541 136.578 465.285 135.751C464.029 134.925 462.28 135.367 461.378 136.738C460.477 138.11 460.764 139.892 462.02 140.719C463.276 141.545 465.025 141.103 465.927 139.731Z"
+                        fill="url(#ah-paint38_linear)" />
+                      <path
+                        d="M453.24 183.833C454.107 182.513 453.834 180.801 452.63 180.008C451.426 179.216 449.747 179.644 448.879 180.964C448.012 182.284 448.285 183.996 449.489 184.788C450.693 185.581 452.372 185.153 453.24 183.833Z"
+                        fill="url(#ah-paint39_linear)" />
+                      <path
+                        d="M424.115 150.656C425.017 149.284 424.729 147.502 423.473 146.675C422.218 145.849 420.469 146.291 419.567 147.663C418.665 149.034 418.953 150.817 420.209 151.643C421.465 152.47 423.214 152.028 424.115 150.656Z"
+                        fill="url(#ah-paint40_linear)" />
+                    </g>
+                  </g>
+                  <g transform="translate(58 6)">
+                    <g class="bob" data-item="cheese" style="--b:-9.8s">
+                      <path
+                        d="M525.929 199.352C526.761 198.969 527.593 198.586 528.425 198.203C518.346 184.445 509.157 173.34 501.726 164.859C489.994 151.468 483.771 145.907 475.237 142.62C468.665 140.087 463.245 139.89 460.231 139.801C455.828 139.683 443.206 139.522 430.323 149.013C429.319 149.752 428.352 150.527 427.43 151.307C418.155 159.231 413.375 172.87 414.599 187.01C414.696 188.164 414.821 189.348 414.966 190.545C415.964 198.878 417.762 205.83 419.468 211.073C431.868 218.075 444.268 225.076 456.665 232.069C479.75 221.171 502.839 210.262 525.929 199.352Z"
+                        fill="url(#ah-paint45_linear)" />
+                      <path
+                        d="M525.907 199.368C519.376 191.154 509.407 178.957 496.682 164.726C489.319 156.49 485.581 152.361 483.112 150.576C461.618 135.06 423.388 151.169 421.145 171.506C419.697 184.587 433.028 199.569 447.361 215.672C452.884 221.878 457.883 226.545 461.541 229.722C482.994 219.605 504.455 209.485 525.907 199.368Z"
+                        fill="#FFE78D" />
+                      <path
+                        d="M447.454 153.9C445.736 155.933 445.248 158.551 444.576 162.227C441.828 177.168 448.12 194.128 456.232 202.855C475.166 223.237 512.255 207.65 513.737 193.013C515.657 174.051 459.533 139.639 447.454 153.9Z"
+                        fill="#FFEFB0" />
+                      <path opacity="0.74"
+                        d="M460.207 167.488C460.939 166.994 461.759 166.675 462.656 166.635C467.057 166.422 469.937 172.978 469.063 175.347C468.706 176.322 467.578 176.922 466.146 177.184C465.533 176.922 464.93 176.637 464.345 176.325C461.528 174.232 459.193 170.886 460.207 167.488Z"
+                        fill="#F7AA63" />
+                      <path opacity="0.74"
+                        d="M460.151 167.566C459.128 170.966 461.463 174.312 464.296 176.4C464.891 176.717 465.491 176.994 466.097 177.258C462.81 177.857 457.921 176.647 457.156 174.032C456.625 172.211 457.919 169.072 460.151 167.566Z"
+                        fill="#EC9854" />
+                      <path opacity="0.74"
+                        d="M477.002 180.125C476.952 178.92 474.181 176.987 471.915 178.308C470.234 179.291 469.242 181.846 469.798 182.778C470.768 184.403 477.07 181.969 477.002 180.125Z"
+                        fill="#F7AA63" />
+                      <path opacity="0.74"
+                        d="M439.263 171.722C439.801 170.476 437.258 166.058 435.132 166.724C434.053 167.062 433.125 168.697 433.393 169.914C433.897 172.222 438.68 173.052 439.263 171.722Z"
+                        fill="#F7AA63" />
+                      <path opacity="0.74"
+                        d="M477.964 155.697C478.506 154.202 477.099 150.86 475.1 150.803C473.064 150.738 471.752 154.101 472.36 155.628C473.116 157.528 477.275 157.597 477.964 155.697Z"
+                        fill="#F7AA63" />
+                    </g>
+                  </g>
                   <!-- Over the phone's bottom edges -->
-                  <g transform="translate(-172 74)"><g class="bob" data-item="zucchini" style="--b:-1.9s">
-                    <path
-                      d="M298.833 56.1806C295.038 55.0268 290.841 53.1689 286.48 50.5245C286.594 46.8752 287.411 42.9654 289.923 39.7505C291.721 37.4461 293.252 36.9566 295.382 34.5609C297.365 32.3346 299.315 29.1136 300.388 24.3037C301.77 24.0557 303.922 23.8351 306.456 24.231C302.842 34.519 302.087 45.6777 298.833 56.1806Z"
-                      fill="#6E9E23" />
-                    <path
-                      d="M306.682 24.4134C307.025 24.4685 307.367 24.5236 307.728 24.6058C310.833 25.2867 313.054 26.6456 314.318 27.5849C313.191 32.8931 313.613 36.7614 314.202 39.3054C315.037 42.9023 316.395 44.8221 316.152 48.6679C316.009 50.9734 315.257 53.7962 314.073 55.2947C311.842 58.1206 306.192 58.5384 299.047 56.3627C302.3 45.871 303.054 34.7118 306.682 24.4134Z"
-                      fill="#8DC63F" />
-                    <path
-                      d="M304.823 44.0785C309.449 45.548 314.041 47.0724 316.368 51.4685C317.756 54.0833 317.803 56.6391 317.801 57.762C317.64 125.451 279.852 175.923 279.852 175.923C263.904 197.219 243.349 224.67 220.328 221.893C219.42 221.783 202.498 219.469 195.25 205.356C189.725 194.611 192.953 183.102 193.727 180.292C195.785 172.943 200.51 166.784 210.379 154.81C214.584 149.714 217.949 145.957 221.051 142.749C225.873 137.752 227.844 136.331 231.374 132.769C237.758 126.333 241.673 120.623 245.08 115.652C256.292 99.2699 266.429 77.0863 271.594 65.7202C271.594 65.7202 281.099 45.0896 291.228 42.4814C291.524 42.4082 291.792 42.3548 291.999 42.3156C296.643 41.5176 301.841 43.1395 304.823 44.0785Z"
-                      fill="#235B1D" />
-                    <path
-                      d="M294.034 42.1362C288.431 47.6478 283.461 53.8762 279.153 60.5968C277.015 63.9658 275.061 67.4848 273.285 71.0567C271.496 74.6385 269.917 78.2903 268.367 81.9106C266.829 85.5327 265.31 89.1098 263.731 92.629C262.141 96.1464 260.461 99.577 258.682 102.968C255.095 109.72 251.046 116.241 246.585 122.443C244.375 125.559 242.033 128.558 239.568 131.464C238.386 132.961 237.114 134.372 235.84 135.795C234.598 137.234 233.264 138.599 231.951 139.979C226.684 145.508 220.95 150.565 215.109 155.833C212.212 158.465 209.274 161.199 206.586 164.299C203.935 167.392 201.405 170.855 199.911 174.821C199.236 176.823 198.619 178.833 198.391 180.894C197.992 182.927 197.987 184.988 198.108 186.996C198.371 191.029 199.425 194.9 201.049 198.404C200.205 194.603 199.842 190.735 200.178 186.956C200.397 185.074 200.615 183.205 201.224 181.434C201.665 179.624 202.447 177.942 203.243 176.31C204.903 173.057 207.354 170.293 210.061 167.739C212.771 165.173 215.749 162.808 218.804 160.406C224.903 155.661 231.128 150.672 236.853 145.071C242.576 139.483 247.888 133.37 252.572 126.842C257.237 120.287 261.401 113.387 264.945 106.157C268.488 98.928 271.292 91.3746 273.814 83.9567C276.371 76.5442 278.875 69.2921 282.318 62.36C285.616 55.3923 289.683 48.7053 294.034 42.1362Z"
-                      fill="url(#ah-paint22_linear)" />
-                    <path
-                      d="M302.501 43.6997C298.743 50.5163 295.274 57.4877 291.789 64.4808C288.523 71.5573 285.395 78.7162 282.664 86.0717C281.295 89.7427 280.021 93.4653 278.796 97.1114C277.558 100.767 276.312 104.266 274.821 107.7C271.783 114.548 268.237 121.23 264.186 127.59C256.096 140.312 246.427 152.237 235.679 162.796C232.902 165.433 230.021 168.259 227.458 171.268C224.87 174.285 222.446 177.437 220.253 180.735C215.909 187.361 212.489 194.581 210.376 202.084C214.019 195.189 218.184 188.714 223.144 182.971C228.019 177.105 233.525 172.1 239.466 167.285C251.479 157.05 261.875 145.049 270.42 131.617C271.503 129.948 272.5 128.229 273.489 126.497C274.507 124.793 275.443 123.028 276.347 121.246C277.291 119.495 278.131 117.678 278.948 115.858C279.797 114.055 280.604 112.221 281.325 110.349C282.789 106.609 284.017 102.747 285.05 98.9972C286.119 95.2417 287.107 91.5454 288.197 87.8656C290.367 80.5042 292.688 73.1432 295.158 65.806C297.682 58.4897 300.24 51.1789 302.501 43.6997Z"
-                      fill="url(#ah-paint23_linear)" />
-                    <path
-                      d="M310.016 46.2993C309.059 54.6666 307.794 62.9238 305.888 71.0298C304.141 79.1615 301.462 86.9382 298.48 94.7025C295.486 102.477 292.181 110.08 288.829 117.821C285.495 125.529 282.253 133.239 278.635 140.635C275.082 148.055 270.849 155.087 266.519 162.273C262.214 169.378 257.743 176.3 252.574 182.603C251.306 184.195 249.947 185.7 248.596 187.23C247.186 188.69 245.805 190.191 244.317 191.567C242.876 193.01 241.321 194.303 239.78 195.646C238.177 196.883 236.616 198.21 234.917 199.323C228.298 204.103 220.928 207.847 213.153 210.705C221.314 209.488 229.315 206.605 236.783 202.516C237.727 202.017 238.644 201.477 239.544 200.899C240.444 200.321 241.363 199.77 242.254 199.178C243.998 197.94 245.772 196.731 247.435 195.359C250.816 192.698 253.973 189.722 256.906 186.554C262.824 180.251 267.811 173.195 272.457 166.085C274.761 162.502 276.984 158.979 279.195 155.261C281.368 151.561 283.419 147.757 285.303 143.902C289.053 136.165 292.237 128.313 295.336 120.483C298.428 112.689 301.486 104.696 304.003 96.5796C305.259 92.503 306.437 88.4018 307.351 84.2099C308.285 80.0333 308.997 75.785 309.492 71.574C310.414 63.1408 310.713 54.6555 310.016 46.2993Z"
-                      fill="url(#ah-paint24_linear)" />
-                    <path
-                      d="M222.944 193.269C221.762 191.949 222.98 188.905 225.666 186.468C228.352 184.032 231.488 183.126 232.67 184.446C233.853 185.765 232.634 188.81 229.948 191.246C227.262 193.682 224.127 194.588 222.944 193.269Z"
-                      fill="#699623" />
-                    <path
-                      d="M207.857 187.654C206.779 186.969 207.045 184.625 208.453 182.418C209.86 180.21 211.876 178.976 212.955 179.661C214.034 180.346 213.767 182.691 212.359 184.898C210.952 187.105 208.936 188.339 207.857 187.654Z"
-                      fill="#699623" />
-                    <path
-                      d="M298.239 76.7188C297.017 76.349 296.665 74.0242 297.453 71.5263C298.241 69.0284 299.871 67.3033 301.094 67.6731C302.316 68.043 302.668 70.3677 301.879 72.8656C301.091 75.3635 299.461 77.0886 298.239 76.7188Z"
-                      fill="#699623" />
-                    <path
-                      d="M301.313 125.406C300.091 125.036 299.739 122.711 300.527 120.213C301.316 117.715 302.945 115.99 304.168 116.36C305.39 116.73 305.742 119.055 304.954 121.553C304.165 124.05 302.535 125.776 301.313 125.406Z"
-                      fill="#699623" />
-                    <path
-                      d="M257.398 129.548C256.262 128.964 256.321 126.607 257.53 124.284C258.739 121.961 260.64 120.552 261.777 121.136C262.913 121.72 262.854 124.077 261.645 126.4C260.436 128.722 258.534 130.132 257.398 129.548Z"
-                      fill="#699623" />
-                  </g></g>
-                  <g transform="translate(50 40)"><g class="bob" data-item="tomato" style="--b:-5.3s">
-                    <path
-                      d="M404.935 136.912C408.368 135.435 412.413 133.982 417.034 132.835C424.982 130.861 432.061 130.424 437.587 130.53C435.647 132.563 431.543 136.298 425.17 138.248C415.47 141.214 407.286 137.953 404.935 136.912Z"
-                      fill="#027F56" />
-                    <path
-                      d="M401.994 136.311C401.924 132.553 401.571 128.251 400.724 123.547C399.243 115.451 396.727 108.785 394.363 103.774C393.317 106.386 391.612 111.693 392.47 118.323C393.763 128.428 400.089 134.597 401.994 136.311Z"
-                      fill="#027F56" />
-                    <path
-                      d="M402.571 136.866C400.996 134.124 398.985 131.087 396.433 127.967C392.048 122.589 387.474 118.701 383.676 115.971C383.97 118.334 384.863 122.944 388.203 127.494C393.282 134.42 400.466 136.37 402.571 136.866Z"
-                      fill="#006265" />
-                    <path
-                      d="M403.829 136.417C406.969 136.736 410.555 137.327 414.423 138.379C421.102 140.187 426.511 142.775 430.544 145.127C428.286 145.836 423.724 146.9 418.233 145.718C409.861 143.922 405.134 138.154 403.829 136.417Z"
-                      fill="#006265" />
-                    <path
-                      d="M403.853 138.97C404.982 136.429 406.287 133.77 407.781 131.017C411.437 124.292 415.365 118.69 419.021 114.163C418.68 113.572 418.057 112.639 416.999 111.859C415.964 111.079 414.941 110.759 414.295 110.618C411.908 114.116 409.356 118.229 406.887 122.956C404.559 127.4 402.725 131.584 401.255 135.342C402.113 136.548 402.983 137.765 403.853 138.97Z"
-                      fill="#006265" />
-                    <path
-                      d="M385.099 210.107C406.697 210.107 424.206 192.507 424.206 170.798C424.206 149.088 406.697 131.489 385.099 131.489C363.5 131.489 345.991 149.088 345.991 170.798C345.991 192.507 363.5 210.107 385.099 210.107Z"
-                      fill="url(#ah-paint44_radial)" />
-                    <path
-                      d="M375.456 150.563C377.801 149.925 379.183 147.496 378.542 145.139C377.901 142.781 375.479 141.387 373.134 142.025C370.788 142.663 369.406 145.091 370.048 147.449C370.689 149.806 373.11 151.201 375.456 150.563Z"
-                      fill="#FFD466" fill-opacity="0.2" />
-                  </g></g>
+                  <g transform="translate(-172 74)">
+                    <g class="bob" data-item="zucchini" style="--b:-1.9s">
+                      <path
+                        d="M298.833 56.1806C295.038 55.0268 290.841 53.1689 286.48 50.5245C286.594 46.8752 287.411 42.9654 289.923 39.7505C291.721 37.4461 293.252 36.9566 295.382 34.5609C297.365 32.3346 299.315 29.1136 300.388 24.3037C301.77 24.0557 303.922 23.8351 306.456 24.231C302.842 34.519 302.087 45.6777 298.833 56.1806Z"
+                        fill="#6E9E23" />
+                      <path
+                        d="M306.682 24.4134C307.025 24.4685 307.367 24.5236 307.728 24.6058C310.833 25.2867 313.054 26.6456 314.318 27.5849C313.191 32.8931 313.613 36.7614 314.202 39.3054C315.037 42.9023 316.395 44.8221 316.152 48.6679C316.009 50.9734 315.257 53.7962 314.073 55.2947C311.842 58.1206 306.192 58.5384 299.047 56.3627C302.3 45.871 303.054 34.7118 306.682 24.4134Z"
+                        fill="#8DC63F" />
+                      <path
+                        d="M304.823 44.0785C309.449 45.548 314.041 47.0724 316.368 51.4685C317.756 54.0833 317.803 56.6391 317.801 57.762C317.64 125.451 279.852 175.923 279.852 175.923C263.904 197.219 243.349 224.67 220.328 221.893C219.42 221.783 202.498 219.469 195.25 205.356C189.725 194.611 192.953 183.102 193.727 180.292C195.785 172.943 200.51 166.784 210.379 154.81C214.584 149.714 217.949 145.957 221.051 142.749C225.873 137.752 227.844 136.331 231.374 132.769C237.758 126.333 241.673 120.623 245.08 115.652C256.292 99.2699 266.429 77.0863 271.594 65.7202C271.594 65.7202 281.099 45.0896 291.228 42.4814C291.524 42.4082 291.792 42.3548 291.999 42.3156C296.643 41.5176 301.841 43.1395 304.823 44.0785Z"
+                        fill="#235B1D" />
+                      <path
+                        d="M294.034 42.1362C288.431 47.6478 283.461 53.8762 279.153 60.5968C277.015 63.9658 275.061 67.4848 273.285 71.0567C271.496 74.6385 269.917 78.2903 268.367 81.9106C266.829 85.5327 265.31 89.1098 263.731 92.629C262.141 96.1464 260.461 99.577 258.682 102.968C255.095 109.72 251.046 116.241 246.585 122.443C244.375 125.559 242.033 128.558 239.568 131.464C238.386 132.961 237.114 134.372 235.84 135.795C234.598 137.234 233.264 138.599 231.951 139.979C226.684 145.508 220.95 150.565 215.109 155.833C212.212 158.465 209.274 161.199 206.586 164.299C203.935 167.392 201.405 170.855 199.911 174.821C199.236 176.823 198.619 178.833 198.391 180.894C197.992 182.927 197.987 184.988 198.108 186.996C198.371 191.029 199.425 194.9 201.049 198.404C200.205 194.603 199.842 190.735 200.178 186.956C200.397 185.074 200.615 183.205 201.224 181.434C201.665 179.624 202.447 177.942 203.243 176.31C204.903 173.057 207.354 170.293 210.061 167.739C212.771 165.173 215.749 162.808 218.804 160.406C224.903 155.661 231.128 150.672 236.853 145.071C242.576 139.483 247.888 133.37 252.572 126.842C257.237 120.287 261.401 113.387 264.945 106.157C268.488 98.928 271.292 91.3746 273.814 83.9567C276.371 76.5442 278.875 69.2921 282.318 62.36C285.616 55.3923 289.683 48.7053 294.034 42.1362Z"
+                        fill="url(#ah-paint22_linear)" />
+                      <path
+                        d="M302.501 43.6997C298.743 50.5163 295.274 57.4877 291.789 64.4808C288.523 71.5573 285.395 78.7162 282.664 86.0717C281.295 89.7427 280.021 93.4653 278.796 97.1114C277.558 100.767 276.312 104.266 274.821 107.7C271.783 114.548 268.237 121.23 264.186 127.59C256.096 140.312 246.427 152.237 235.679 162.796C232.902 165.433 230.021 168.259 227.458 171.268C224.87 174.285 222.446 177.437 220.253 180.735C215.909 187.361 212.489 194.581 210.376 202.084C214.019 195.189 218.184 188.714 223.144 182.971C228.019 177.105 233.525 172.1 239.466 167.285C251.479 157.05 261.875 145.049 270.42 131.617C271.503 129.948 272.5 128.229 273.489 126.497C274.507 124.793 275.443 123.028 276.347 121.246C277.291 119.495 278.131 117.678 278.948 115.858C279.797 114.055 280.604 112.221 281.325 110.349C282.789 106.609 284.017 102.747 285.05 98.9972C286.119 95.2417 287.107 91.5454 288.197 87.8656C290.367 80.5042 292.688 73.1432 295.158 65.806C297.682 58.4897 300.24 51.1789 302.501 43.6997Z"
+                        fill="url(#ah-paint23_linear)" />
+                      <path
+                        d="M310.016 46.2993C309.059 54.6666 307.794 62.9238 305.888 71.0298C304.141 79.1615 301.462 86.9382 298.48 94.7025C295.486 102.477 292.181 110.08 288.829 117.821C285.495 125.529 282.253 133.239 278.635 140.635C275.082 148.055 270.849 155.087 266.519 162.273C262.214 169.378 257.743 176.3 252.574 182.603C251.306 184.195 249.947 185.7 248.596 187.23C247.186 188.69 245.805 190.191 244.317 191.567C242.876 193.01 241.321 194.303 239.78 195.646C238.177 196.883 236.616 198.21 234.917 199.323C228.298 204.103 220.928 207.847 213.153 210.705C221.314 209.488 229.315 206.605 236.783 202.516C237.727 202.017 238.644 201.477 239.544 200.899C240.444 200.321 241.363 199.77 242.254 199.178C243.998 197.94 245.772 196.731 247.435 195.359C250.816 192.698 253.973 189.722 256.906 186.554C262.824 180.251 267.811 173.195 272.457 166.085C274.761 162.502 276.984 158.979 279.195 155.261C281.368 151.561 283.419 147.757 285.303 143.902C289.053 136.165 292.237 128.313 295.336 120.483C298.428 112.689 301.486 104.696 304.003 96.5796C305.259 92.503 306.437 88.4018 307.351 84.2099C308.285 80.0333 308.997 75.785 309.492 71.574C310.414 63.1408 310.713 54.6555 310.016 46.2993Z"
+                        fill="url(#ah-paint24_linear)" />
+                      <path
+                        d="M222.944 193.269C221.762 191.949 222.98 188.905 225.666 186.468C228.352 184.032 231.488 183.126 232.67 184.446C233.853 185.765 232.634 188.81 229.948 191.246C227.262 193.682 224.127 194.588 222.944 193.269Z"
+                        fill="#699623" />
+                      <path
+                        d="M207.857 187.654C206.779 186.969 207.045 184.625 208.453 182.418C209.86 180.21 211.876 178.976 212.955 179.661C214.034 180.346 213.767 182.691 212.359 184.898C210.952 187.105 208.936 188.339 207.857 187.654Z"
+                        fill="#699623" />
+                      <path
+                        d="M298.239 76.7188C297.017 76.349 296.665 74.0242 297.453 71.5263C298.241 69.0284 299.871 67.3033 301.094 67.6731C302.316 68.043 302.668 70.3677 301.879 72.8656C301.091 75.3635 299.461 77.0886 298.239 76.7188Z"
+                        fill="#699623" />
+                      <path
+                        d="M301.313 125.406C300.091 125.036 299.739 122.711 300.527 120.213C301.316 117.715 302.945 115.99 304.168 116.36C305.39 116.73 305.742 119.055 304.954 121.553C304.165 124.05 302.535 125.776 301.313 125.406Z"
+                        fill="#699623" />
+                      <path
+                        d="M257.398 129.548C256.262 128.964 256.321 126.607 257.53 124.284C258.739 121.961 260.64 120.552 261.777 121.136C262.913 121.72 262.854 124.077 261.645 126.4C260.436 128.722 258.534 130.132 257.398 129.548Z"
+                        fill="#699623" />
+                    </g>
+                  </g>
+                  <g transform="translate(50 40)">
+                    <g class="bob" data-item="tomato" style="--b:-5.3s">
+                      <path
+                        d="M404.935 136.912C408.368 135.435 412.413 133.982 417.034 132.835C424.982 130.861 432.061 130.424 437.587 130.53C435.647 132.563 431.543 136.298 425.17 138.248C415.47 141.214 407.286 137.953 404.935 136.912Z"
+                        fill="#027F56" />
+                      <path
+                        d="M401.994 136.311C401.924 132.553 401.571 128.251 400.724 123.547C399.243 115.451 396.727 108.785 394.363 103.774C393.317 106.386 391.612 111.693 392.47 118.323C393.763 128.428 400.089 134.597 401.994 136.311Z"
+                        fill="#027F56" />
+                      <path
+                        d="M402.571 136.866C400.996 134.124 398.985 131.087 396.433 127.967C392.048 122.589 387.474 118.701 383.676 115.971C383.97 118.334 384.863 122.944 388.203 127.494C393.282 134.42 400.466 136.37 402.571 136.866Z"
+                        fill="#006265" />
+                      <path
+                        d="M403.829 136.417C406.969 136.736 410.555 137.327 414.423 138.379C421.102 140.187 426.511 142.775 430.544 145.127C428.286 145.836 423.724 146.9 418.233 145.718C409.861 143.922 405.134 138.154 403.829 136.417Z"
+                        fill="#006265" />
+                      <path
+                        d="M403.853 138.97C404.982 136.429 406.287 133.77 407.781 131.017C411.437 124.292 415.365 118.69 419.021 114.163C418.68 113.572 418.057 112.639 416.999 111.859C415.964 111.079 414.941 110.759 414.295 110.618C411.908 114.116 409.356 118.229 406.887 122.956C404.559 127.4 402.725 131.584 401.255 135.342C402.113 136.548 402.983 137.765 403.853 138.97Z"
+                        fill="#006265" />
+                      <path
+                        d="M385.099 210.107C406.697 210.107 424.206 192.507 424.206 170.798C424.206 149.088 406.697 131.489 385.099 131.489C363.5 131.489 345.991 149.088 345.991 170.798C345.991 192.507 363.5 210.107 385.099 210.107Z"
+                        fill="url(#ah-paint44_radial)" />
+                      <path
+                        d="M375.456 150.563C377.801 149.925 379.183 147.496 378.542 145.139C377.901 142.781 375.479 141.387 373.134 142.025C370.788 142.663 369.406 145.091 370.048 147.449C370.689 149.806 373.11 151.201 375.456 150.563Z"
+                        fill="#FFD466" fill-opacity="0.2" />
+                    </g>
+                  </g>
                 </g>
               </svg>
               <div class="portfolio-title">
@@ -2408,7 +2707,7 @@
       </a>
       <div class="portfolio-title">
         <h4>Not the brief.</h4>
-        <p>Projects nobody asked for, built anyway · Vibe-coding · 2026</p>
+        <p data-i18n="home.portfolio_notthebrief_description">Projects nobody asked for, built anyway · Vibe-coding · 2026</p>
       </div>
       </div> -->
 
@@ -2537,44 +2836,44 @@
                   <!-- The dish: a flat tarte tatin that appears as the title and "Dessert" land;
                        the gradient rect above is its placeholder -->
                   <g class="dish">
-                      <ellipse cx="606" cy="266" rx="86" ry="9" fill="#0F3D3A" opacity=".08" />
-                      <circle cx="606" cy="184" r="86" fill="#FFFDF8" stroke="#E8DCC8" stroke-width="2" />
-                      <circle cx="606" cy="184" r="77" fill="#F4EBDD" />
-                      <!-- Pastry rim and caramel -->
-                      <circle cx="606" cy="184" r="72" fill="#D99A45" stroke="#B9732B" stroke-width="2.5" />
-                      <circle cx="606" cy="184" r="64" fill="#A9561B" />
-                      <!-- Apple quarters, pointing in with a slight swirl -->
-                      <g fill="#EDB24E" stroke="#A9561B" stroke-width="1.5">
-                        <ellipse cx="650.0" cy="184.0" rx="22" ry="10" transform="rotate(25.0 650.0 184.0)" />
-                        <ellipse cx="644.1" cy="206.0" rx="22" ry="10" transform="rotate(55.0 644.1 206.0)" />
-                        <ellipse cx="628.0" cy="222.1" rx="22" ry="10" transform="rotate(85.0 628.0 222.1)" />
-                        <ellipse cx="606.0" cy="228.0" rx="22" ry="10" transform="rotate(115.0 606.0 228.0)" />
-                        <ellipse cx="584.0" cy="222.1" rx="22" ry="10" transform="rotate(145.0 584.0 222.1)" />
-                        <ellipse cx="567.9" cy="206.0" rx="22" ry="10" transform="rotate(175.0 567.9 206.0)" />
-                        <ellipse cx="562.0" cy="184.0" rx="22" ry="10" transform="rotate(205.0 562.0 184.0)" />
-                        <ellipse cx="567.9" cy="162.0" rx="22" ry="10" transform="rotate(235.0 567.9 162.0)" />
-                        <ellipse cx="584.0" cy="145.9" rx="22" ry="10" transform="rotate(265.0 584.0 145.9)" />
-                        <ellipse cx="606.0" cy="140.0" rx="22" ry="10" transform="rotate(295.0 606.0 140.0)" />
-                        <ellipse cx="628.0" cy="145.9" rx="22" ry="10" transform="rotate(325.0 628.0 145.9)" />
-                        <ellipse cx="644.1" cy="162.0" rx="22" ry="10" transform="rotate(355.0 644.1 162.0)" />
-                      </g>
-                      <g fill="#F2C062" stroke="#A9561B" stroke-width="1.5">
-                        <ellipse cx="625.3" cy="189.2" rx="13" ry="7" transform="rotate(40.0 625.3 189.2)" />
-                        <ellipse cx="614.0" cy="202.3" rx="13" ry="7" transform="rotate(91.4 614.0 202.3)" />
-                        <ellipse cx="596.7" cy="201.7" rx="13" ry="7" transform="rotate(142.9 596.7 201.7)" />
-                        <ellipse cx="586.3" cy="187.7" rx="13" ry="7" transform="rotate(194.3 586.3 187.7)" />
-                        <ellipse cx="590.8" cy="171.0" rx="13" ry="7" transform="rotate(245.7 590.8 171.0)" />
-                        <ellipse cx="606.7" cy="164.0" rx="13" ry="7" transform="rotate(297.1 606.7 164.0)" />
-                        <ellipse cx="622.1" cy="172.1" rx="13" ry="7" transform="rotate(348.6 622.1 172.1)" />
-                      </g>
-                      <circle cx="606" cy="184" r="7" fill="#F2C062" stroke="#A9561B" stroke-width="1.5" />
-                      <!-- Shine -->
-                      <g fill="#fff" opacity=".5">
-                        <ellipse cx="576" cy="148" rx="10" ry="3.5" transform="rotate(-35 576 148)" />
-                        <ellipse cx="638" cy="212" rx="7" ry="2.5" transform="rotate(-35 638 212)" />
-                        <circle cx="620" cy="142" r="2.5" />
-                        <circle cx="566" cy="202" r="2" />
-                      </g>
+                    <ellipse cx="606" cy="266" rx="86" ry="9" fill="#0F3D3A" opacity=".08" />
+                    <circle cx="606" cy="184" r="86" fill="#FFFDF8" stroke="#E8DCC8" stroke-width="2" />
+                    <circle cx="606" cy="184" r="77" fill="#F4EBDD" />
+                    <!-- Pastry rim and caramel -->
+                    <circle cx="606" cy="184" r="72" fill="#D99A45" stroke="#B9732B" stroke-width="2.5" />
+                    <circle cx="606" cy="184" r="64" fill="#A9561B" />
+                    <!-- Apple quarters, pointing in with a slight swirl -->
+                    <g fill="#EDB24E" stroke="#A9561B" stroke-width="1.5">
+                      <ellipse cx="650.0" cy="184.0" rx="22" ry="10" transform="rotate(25.0 650.0 184.0)" />
+                      <ellipse cx="644.1" cy="206.0" rx="22" ry="10" transform="rotate(55.0 644.1 206.0)" />
+                      <ellipse cx="628.0" cy="222.1" rx="22" ry="10" transform="rotate(85.0 628.0 222.1)" />
+                      <ellipse cx="606.0" cy="228.0" rx="22" ry="10" transform="rotate(115.0 606.0 228.0)" />
+                      <ellipse cx="584.0" cy="222.1" rx="22" ry="10" transform="rotate(145.0 584.0 222.1)" />
+                      <ellipse cx="567.9" cy="206.0" rx="22" ry="10" transform="rotate(175.0 567.9 206.0)" />
+                      <ellipse cx="562.0" cy="184.0" rx="22" ry="10" transform="rotate(205.0 562.0 184.0)" />
+                      <ellipse cx="567.9" cy="162.0" rx="22" ry="10" transform="rotate(235.0 567.9 162.0)" />
+                      <ellipse cx="584.0" cy="145.9" rx="22" ry="10" transform="rotate(265.0 584.0 145.9)" />
+                      <ellipse cx="606.0" cy="140.0" rx="22" ry="10" transform="rotate(295.0 606.0 140.0)" />
+                      <ellipse cx="628.0" cy="145.9" rx="22" ry="10" transform="rotate(325.0 628.0 145.9)" />
+                      <ellipse cx="644.1" cy="162.0" rx="22" ry="10" transform="rotate(355.0 644.1 162.0)" />
+                    </g>
+                    <g fill="#F2C062" stroke="#A9561B" stroke-width="1.5">
+                      <ellipse cx="625.3" cy="189.2" rx="13" ry="7" transform="rotate(40.0 625.3 189.2)" />
+                      <ellipse cx="614.0" cy="202.3" rx="13" ry="7" transform="rotate(91.4 614.0 202.3)" />
+                      <ellipse cx="596.7" cy="201.7" rx="13" ry="7" transform="rotate(142.9 596.7 201.7)" />
+                      <ellipse cx="586.3" cy="187.7" rx="13" ry="7" transform="rotate(194.3 586.3 187.7)" />
+                      <ellipse cx="590.8" cy="171.0" rx="13" ry="7" transform="rotate(245.7 590.8 171.0)" />
+                      <ellipse cx="606.7" cy="164.0" rx="13" ry="7" transform="rotate(297.1 606.7 164.0)" />
+                      <ellipse cx="622.1" cy="172.1" rx="13" ry="7" transform="rotate(348.6 622.1 172.1)" />
+                    </g>
+                    <circle cx="606" cy="184" r="7" fill="#F2C062" stroke="#A9561B" stroke-width="1.5" />
+                    <!-- Shine -->
+                    <g fill="#fff" opacity=".5">
+                      <ellipse cx="576" cy="148" rx="10" ry="3.5" transform="rotate(-35 576 148)" />
+                      <ellipse cx="638" cy="212" rx="7" ry="2.5" transform="rotate(-35 638 212)" />
+                      <circle cx="620" cy="142" r="2.5" />
+                      <circle cx="566" cy="202" r="2" />
+                    </g>
                   </g>
 
                   <!-- Card text: skeletons first, then the rendered recipe -->
@@ -2595,7 +2894,7 @@
               </svg>
               <div class="portfolio-title">
                 <h4>Cookbook.md</h4>
-                <p>Recipes as plain Markdown · Vibe-coding · 2026</p>
+                <p data-i18n="home.portfolio_cookbook_description">Recipes as plain Markdown · Vibe-coding · 2026</p>
               </div>
             </div>
           </a>
@@ -3401,7 +3700,7 @@
               </svg>
               <div class="portfolio-title">
                 <h4>Island Slide Puzzle</h4>
-                <p data-i18n="home.portfolio_island_description">Game design · 2022</p>
+                <p data-i18n="home.portfolio_island_description">An interactive 3D puzzle · Game design · 2022</p>
               </div>
             </div>
           </a>

@@ -1,7 +1,38 @@
-<!-- white-label cover: drawn for the site, exported from index.html.
-     Open in a browser to see it animate; the styles below are assets/css/covers/wl.css. -->
+<!-- White label eCommerce App cover, exported from index.html by design/covers/export.py.
+     Open it in a browser to see it animate; the styles are assets/css/covers/base.css
+     and assets/css/covers/wl.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="wl" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="White label eCommerce App">
-                <style><![CDATA[
+  <style><![CDATA[
+/* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
+   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
+   Load this file before the cover stylesheets. */
+
+:root {
+  /* Loops */
+  --cover-story: 12s;      /* a cover that tells its project's story, in beats of ~3s */
+  --cover-ambient: 7s;     /* background life: floats, drifts, glows */
+
+  /* Easing */
+  --cover-ease: cubic-bezier(0.4, 0, 0.2, 1);       /* default for everything */
+  --cover-ease-pop: cubic-bezier(0.3, 0.8, 0.3, 1.1); /* at most one small "pop" per cover */
+
+  /* Hover: the hero element lifts */
+  --cover-hover-lift: -6px;
+  --cover-hover-duration: 300ms;
+
+  /* Ambient movement stays small */
+  --cover-ambient-amplitude: 8px;
+}
+
+/* Off screen (or tab hidden), js/covers.js adds .is-paused to the cover's <svg>: every
+   CSS animation inside it freezes where it is and resumes from there. SMIL animations
+   are paused by the script itself (svg.pauseAnimations()). */
+.portfolio-wrap > svg.is-paused,
+.portfolio-wrap > svg.is-paused * {
+  animation-play-state: paused !important;
+}
+
 /* White label eCommerce App cover (inline <svg class="wl"> in #project2, index.html).
    One app, many brands: the theme slider's knob moves between three brand themes
    and the whole UI re-skins with it, colour (.acc fill, .acc-s stroke, .acc-d darker
@@ -14,8 +45,7 @@
      94–100% knob sweeps back to the start
    Buttons (.btn filled, .btn-o outlined) change corner radius with the brand at the
    same moment: 8, pill, 2.
-   The screens float on their own slower loop (--s staggers them); hover one to lift it
-   (real pointer above 768px). Every rule sits in @scope (.wl); keyframes and SVG IDs
+   The screens stay still; hover one to lift it (real pointer above 768px). Every rule sits in @scope (.wl); keyframes and SVG IDs
    use the wl- prefix. Without motion the cover shows the first brand, as drawn. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
@@ -53,9 +83,10 @@
   /* Buttons: colour and corner radius together */
   .acc.btn { animation: wl-acc var(--cyc) ease-in-out infinite, wl-rx var(--cyc) ease-in-out infinite; }
   .acc-s.btn-o { animation: wl-acc-s var(--cyc) ease-in-out infinite, wl-rx-o var(--cyc) ease-in-out infinite; }
+  /* Filter chips on the middle card follow the brand corners too */
+  .chip { animation: wl-rx-o var(--cyc) ease-in-out infinite; }
   .knob { animation: wl-knob var(--cyc) cubic-bezier(0.5, 0, 0.3, 1) infinite; }
 
-  .ph { animation: wl-float 7s ease-in-out var(--s, 0s) infinite; }
   .lift { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
 
   @media (hover: hover) and (min-width: 769px) {
@@ -118,10 +149,6 @@
   100% { transform: translateX(0); }
 }
 
-@keyframes wl-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
 ]]></style>
                 <defs>
                   <linearGradient id="wl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
@@ -243,8 +270,8 @@
                               stroke-linecap="square" />
                           </g>
                           <rect x="52" y="43" width="56" height="6" rx="3" fill="#fff" />
-                          <rect class="acc-s btn-o" x="17" y="83" width="110" height="38" rx="7" fill="#fff" stroke="#00ADE6"
-                            stroke-width="2" />
+                          <rect class="acc-s btn-o" x="17" y="83" width="110" height="38" rx="7" fill="#fff"
+                            stroke="#00ADE6" stroke-width="2" />
                           <g class="b1">
                             <path class="acc-s" d="M33 102H43M38 97V107" stroke="#00ADE6" stroke-width="2.4"
                               stroke-linecap="round" />
@@ -269,7 +296,8 @@
                             <path d="M30.5 160H41.5M36 154.5V165.5" stroke="#fff" stroke-width="3.2"
                               stroke-linecap="square" />
                           </g>
-                          <rect class="acc-s btn-o" x="69" y="141" width="38" height="38" rx="7" fill="#fff" stroke="#00ADE6" stroke-width="2" />
+                          <rect class="acc-s btn-o" x="69" y="141" width="38" height="38" rx="7" fill="#fff"
+                            stroke="#00ADE6" stroke-width="2" />
                           <g class="b1">
                             <path class="acc-s" d="M81 160H95M88 153V167" stroke="#00ADE6" stroke-width="2"
                               stroke-linecap="round" />
@@ -292,54 +320,228 @@
                     <g class="lift">
                       <g transform="matrix(0.989651 -0.143493 0 1 261 107.9)">
                         <rect width="264" height="571" rx="11.3" fill="url(#wl-back)" />
-                        <path class="acc-d" d="M0 54L7 60.2V116.3L0 110Z" fill="#0184AF" />
+                        <path class="acc-d"
+                          d="M0 97.8V11.3A11.3 11.3 0 0 1 11.3 0H252.7A11.3 11.3 0 0 1 264 11.3V20H7V104Z"
+                          fill="#0184AF" />
                         <g transform="translate(7 4)">
                           <rect width="264" height="571" rx="11.3" fill="url(#wl-face)" />
-                          <circle cx="236" cy="33" r="11" fill="#E6EAEF" />
-                          <rect class="acc" y="56" width="264" height="58" fill="#00ADE6" />
+                          <!-- Banner: brand colour, back button, category title and product (per brand) -->
+                          <path class="acc" d="M0 11.3A11.3 11.3 0 0 1 11.3 0H252.7A11.3 11.3 0 0 1 264 11.3V100H0Z"
+                            fill="#00ADE6" />
+                          <path d="M140 0H252.7A11.3 11.3 0 0 1 264 11.3V100H110Z" fill="#fff" opacity=".12" />
+                          <circle cx="30" cy="30" r="14" fill="#fff" />
+                          <path d="M35 30H25M29 25L24 30L29 35" stroke="#10151C" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none" />
+                          <!-- Filter chips -->
+                          <rect class="chip" x="14" y="112" width="102" height="26" rx="7" fill="#fff"
+                            stroke="#D5DAE0" />
+                          <text x="24" y="129" font-family="Inter, system-ui, sans-serif" font-size="10"
+                            fill="#10151C">Recommended</text>
+                          <path d="M101 122L104 119L107 122M101 128L104 131L107 128" stroke="#10151C" stroke-width="1.3"
+                            stroke-linecap="round" fill="none" />
+                          <rect class="chip" x="124" y="112" width="56" height="26" rx="7" fill="#fff"
+                            stroke="#D5DAE0" />
+                          <text x="134" y="129" font-family="Inter, system-ui, sans-serif" font-size="10"
+                            fill="#10151C">Type</text>
+                          <path d="M164 123L167 126L170 123" stroke="#10151C" stroke-width="1.3" stroke-linecap="round"
+                            fill="none" />
+                          <rect class="chip" x="188" y="112" width="62" height="26" rx="7" fill="#fff"
+                            stroke="#D5DAE0" />
+                          <text x="200" y="129" font-family="Inter, system-ui, sans-serif" font-size="10"
+                            fill="#10151C">Price</text>
                           <g class="b1">
-                            <text x="18" y="42"
+                            <!-- Banner title and product -->
+                            <text x="16" y="84"
                               font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                              font-size="22" font-weight="800" letter-spacing="-0.3" fill="#10151C">Hamburg
-                              Serial</text>
-                            <text x="18" y="93"
+                              font-size="26" font-weight="800" fill="#fff">Fruits</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <path d="M34 36C36 60 54 74 76 66C74 63 72 62 69 62C54 64 44 54 41 36C39 34 36 34 34 36Z"
+                                fill="#FFD43B" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M38 34C40 52 52 62 68 58C67 55 65 54 62 55C50 56 44 48 44 34C42 32 40 32 38 34Z"
+                                fill="#FFE066" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M37 35L39 28L43 29L42 34" fill="#7A5A1E" />
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <path d="M34 36C36 60 54 74 76 66C74 63 72 62 69 62C54 64 44 54 41 36C39 34 36 34 34 36Z"
+                                fill="#FFD43B" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M38 34C40 52 52 62 68 58C67 55 65 54 62 55C50 56 44 48 44 34C42 32 40 32 38 34Z"
+                                fill="#FFE066" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                              <path d="M37 35L39 28L43 29L42 34" fill="#7A5A1E" />
+                            </g>
+                            <text x="86" y="163"
                               font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                              font-size="21" font-weight="700" fill="#fff">My list</text>
+                              font-size="12" font-weight="800" fill="#10151C">Bananas</text>
+                            <text x="86" y="176"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="9" fill="#747387">Ecuador | per kilo</text>
+                            <rect class="acc" x="86" y="181" width="55" height="14" fill="#00ADE6" />
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">ORGANIC</text>
+                            <rect x="144" y="181" width="32" height="14" fill="#23313F" />
+                            <text x="149" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="20" font-weight="800" fill="#00ADE6">1.<tspan font-size="11" dy="-8">99</tspan>
+                            </text>
+                            <text x="138" y="217"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="11" fill="#747387">2.49</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1" />
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" />
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(0 80)">
+                              <circle cx="45" cy="182" r="15" fill="#E5484D" />
+                              <path d="M45 167V161" stroke="#5B3A1E" stroke-width="2" stroke-linecap="round" />
+                              <path d="M46 164C49 159 55 160 56 162C52 165 49 165 46 164Z" fill="#3FA56B" />
+                              <ellipse cx="39" cy="177" rx="4" ry="2.5" fill="#fff" opacity=".45" />
+                            </g>
+                            <text x="86" y="243"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="12" font-weight="800" fill="#10151C">Apples Elstar</text>
+                            <text x="86" y="256"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="9" fill="#747387">Netherlands | 1 kg</text>
+                            <rect class="acc" x="86" y="261" width="48" height="14" fill="#00ADE6" />
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">SEASON</text>
+                            <text x="86" y="297"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="20" font-weight="800" fill="#10151C">2.<tspan font-size="11" dy="-8">79</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" />
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 223H250" stroke="#E6EAEF" />
                           </g>
                           <g class="b2" opacity="0">
-                            <text x="18" y="42" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
-                              font-size="24" font-weight="600" fill="#10151C">Ivar Display</text>
-                            <text x="18" y="93" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
-                              font-size="21" fill="#fff">My list</text>
+                            <!-- Banner title and product -->
+                            <text x="16" y="84" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="26" font-weight="600" fill="#fff">Vitamins</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A" />
+                              <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1"
+                                stroke-width="1.2" />
+                              <rect x="38" y="48" width="30" height="18" fill="#F0508C" />
+                              <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                              <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE"
+                                transform="rotate(-25 75.5 68.5)" />
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A" />
+                              <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1"
+                                stroke-width="1.2" />
+                              <rect x="38" y="48" width="30" height="18" fill="#F0508C" />
+                              <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
+                              <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE"
+                                transform="rotate(-25 75.5 68.5)" />
+                            </g>
+                            <text x="86" y="163" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="12" font-weight="600" fill="#10151C">Vitamin C</text>
+                            <text x="86" y="176" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="9" fill="#747387">60 tablets | 500 mg</text>
+                            <rect class="acc" x="86" y="181" width="48" height="14" fill="#00ADE6" />
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">HEALTH</text>
+                            <rect x="137" y="181" width="32" height="14" fill="#23313F" />
+                            <text x="142" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217"
+                              font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="20"
+                              font-weight="600" fill="#00ADE6">8.<tspan font-size="11" dy="-8">49</tspan></text>
+                            <text x="138" y="217" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="11" fill="#747387">9.99</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1" />
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" />
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(0 80)">
+                              <rect x="30" y="170" width="14" height="28" rx="7" fill="#F0508C"
+                                transform="rotate(-25 37 184)" />
+                              <rect x="44" y="168" width="14" height="28" rx="7" fill="#F7B5CE"
+                                transform="rotate(20 51 182)" />
+                            </g>
+                            <text x="86" y="243" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="12" font-weight="600" fill="#10151C">Vitamin D3</text>
+                            <text x="86" y="256" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="9" fill="#747387">90 capsules</text>
+                            <rect class="acc" x="86" y="261" width="48" height="14" fill="#00ADE6" />
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">HEALTH</text>
+                            <text x="86" y="297" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="20" font-weight="600" fill="#10151C">6.<tspan font-size="11" dy="-8">99</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" />
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 223H250" stroke="#E6EAEF" />
                           </g>
                           <g class="b3" opacity="0">
-                            <text x="18" y="41" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
-                              font-size="19" font-weight="800" letter-spacing="2" fill="#10151C">PROXIMA NOVA</text>
-                            <text x="18" y="92" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
-                              font-size="18" font-weight="700" letter-spacing="2" fill="#fff">MY LIST</text>
-                          </g>
-                          <g>
-                            <rect class="acc" x="16" y="128" width="40" height="40" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <circle class="acc" cx="36" cy="148" r="8" fill="#00ADE6" />
-                            <rect x="66" y="137" width="112" height="8" rx="4" fill="#1B2533" fill-opacity=".8" />
-                            <rect x="66" y="153" width="70" height="6" rx="3" fill="#B9C1CC" />
-                            <rect class="acc" x="200" y="138" width="46" height="20" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <rect class="acc" x="16" y="180" width="40" height="40" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <circle class="acc" cx="36" cy="200" r="8" fill="#00ADE6" />
-                            <rect x="66" y="189" width="92" height="8" rx="4" fill="#1B2533" fill-opacity=".8" />
-                            <rect x="66" y="205" width="84" height="6" rx="3" fill="#B9C1CC" />
-                            <rect class="acc" x="200" y="190" width="46" height="20" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <rect class="acc" x="16" y="232" width="40" height="40" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
-                            <circle class="acc" cx="36" cy="252" r="8" fill="#00ADE6" />
-                            <rect x="66" y="241" width="104" height="8" rx="4" fill="#1B2533" fill-opacity=".8" />
-                            <rect x="66" y="257" width="58" height="6" rx="3" fill="#B9C1CC" />
-                            <rect class="acc" x="200" y="242" width="46" height="20" rx="10" fill="#00ADE6"
-                              fill-opacity=".16" />
+                            <!-- Banner title and product -->
+                            <text x="16" y="84" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="26" font-weight="800" letter-spacing="2" fill="#fff">BEERS</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A" />
+                              <path
+                                d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z"
+                                fill="#7A3E12" />
+                              <rect x="45" y="54" width="16" height="16" fill="#FFE3C7" />
+                              <rect x="45" y="58" width="16" height="4" fill="#FF8A3D" />
+                              <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A" />
+                              <path
+                                d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z"
+                                fill="#7A3E12" />
+                              <rect x="45" y="54" width="16" height="16" fill="#FFE3C7" />
+                              <rect x="45" y="58" width="16" height="4" fill="#FF8A3D" />
+                              <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            </g>
+                            <text x="86" y="163" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">LAGER</text>
+                            <text x="86" y="176" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="9" fill="#747387">33 CL | 5%</text>
+                            <rect class="acc" x="86" y="181" width="42" height="14" fill="#00ADE6" />
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">CRAFT</text>
+                            <rect x="131" y="181" width="32" height="14" fill="#23313F" />
+                            <text x="136" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217"
+                              font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="20"
+                              font-weight="800" fill="#00ADE6">2.<tspan font-size="11" dy="-8">29</tspan></text>
+                            <text x="138" y="217" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="11" fill="#747387">2.79</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1" />
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" />
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5" />
+                            <g transform="translate(0 80)">
+                              <rect x="35" y="164" width="20" height="36" rx="4" fill="#FF8A3D" />
+                              <rect x="35" y="174" width="20" height="14" fill="#7A3E12" />
+                              <rect x="37" y="162" width="16" height="3" rx="1.5" fill="#B9C1CC" />
+                            </g>
+                            <text x="86" y="243" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">IPA</text>
+                            <text x="86" y="256" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="9" fill="#747387">33 CL | 6.5%</text>
+                            <rect class="acc" x="86" y="261" width="42" height="14" fill="#00ADE6" />
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5"
+                              font-weight="700" fill="#fff" letter-spacing=".4">CRAFT</text>
+                            <text x="86" y="297" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="20" font-weight="800" fill="#10151C">2.<tspan font-size="11" dy="-8">89</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" />
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            <path d="M14 223H250" stroke="#E6EAEF" />
                           </g>
                         </g>
                       </g>
@@ -383,37 +585,57 @@
                         <g transform="translate(7 5)">
                           <rect width="186" height="365" rx="11.3" fill="url(#wl-face)" />
                           <rect x="12" y="12" width="162" height="82" rx="10" fill="#fff" />
-                          <rect class="acc" x="20" y="20" width="66" height="66" rx="8" fill="#00ADE6" fill-opacity=".16" />
+                          <rect class="acc" x="20" y="20" width="66" height="66" rx="8" fill="#00ADE6"
+                            fill-opacity=".16" />
                           <!-- Blue: bananas -->
                           <g class="b1">
-                            <path d="M34 36C36 60 54 74 76 66C74 63 72 62 69 62C54 64 44 54 41 36C39 34 36 34 34 36Z" fill="#FFD43B" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
-                            <path d="M38 34C40 52 52 62 68 58C67 55 65 54 62 55C50 56 44 48 44 34C42 32 40 32 38 34Z" fill="#FFE066" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                            <path d="M34 36C36 60 54 74 76 66C74 63 72 62 69 62C54 64 44 54 41 36C39 34 36 34 34 36Z"
+                              fill="#FFD43B" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
+                            <path d="M38 34C40 52 52 62 68 58C67 55 65 54 62 55C50 56 44 48 44 34C42 32 40 32 38 34Z"
+                              fill="#FFE066" stroke="#E0A800" stroke-width="1.2" stroke-linejoin="round" />
                             <path d="M37 35L39 28L43 29L42 34" fill="#7A5A1E" />
-                            <text x="94" y="36" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#10151C">Bananas</text>
-                            <text x="94" y="50" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#747387">Per kilo</text>
-                            <text x="94" y="80" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#10151C">€1.99</text>
+                            <text x="94" y="36"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="12" font-weight="800" fill="#10151C">Bananas</text>
+                            <text x="94" y="50"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="9.5" fill="#747387">Per kilo</text>
+                            <text x="94" y="80"
+                              font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                              font-size="13" font-weight="800" fill="#10151C">€1.99</text>
                           </g>
                           <!-- Pink: a pot of vitamins -->
                           <g class="b2" opacity="0">
                             <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A" />
-                            <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1" stroke-width="1.2" />
+                            <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1"
+                              stroke-width="1.2" />
                             <rect x="38" y="48" width="30" height="18" fill="#F0508C" />
                             <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round" />
-                            <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE" transform="rotate(-25 75.5 68.5)" />
-                            <text x="94" y="36" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="12" font-weight="600" fill="#10151C">Vitamin C</text>
-                            <text x="94" y="50" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="9.5" fill="#747387">60 tablets</text>
-                            <text x="94" y="80" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="13" font-weight="600" fill="#10151C">€8.49</text>
+                            <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE"
+                              transform="rotate(-25 75.5 68.5)" />
+                            <text x="94" y="36" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="12" font-weight="600" fill="#10151C">Vitamin C</text>
+                            <text x="94" y="50" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="9.5" fill="#747387">60 tablets</text>
+                            <text x="94" y="80" font-family="'Ivar Display', Georgia, 'Times New Roman', serif"
+                              font-size="13" font-weight="600" fill="#10151C">€8.49</text>
                           </g>
                           <!-- Orange: a bottle of beer -->
                           <g class="b3" opacity="0">
                             <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A" />
-                            <path d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z" fill="#7A3E12" />
+                            <path
+                              d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z"
+                              fill="#7A3E12" />
                             <rect x="45" y="54" width="16" height="16" fill="#FFE3C7" />
                             <rect x="45" y="58" width="16" height="4" fill="#FF8A3D" />
-                            <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5" stroke-linecap="round" />
-                            <text x="94" y="36" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">LAGER</text>
-                            <text x="94" y="50" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="9.5" letter-spacing="1" fill="#747387">33 CL · 5%</text>
-                            <text x="94" y="80" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="800" fill="#10151C">€2.29</text>
+                            <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"
+                              stroke-linecap="round" />
+                            <text x="94" y="36" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">LAGER</text>
+                            <text x="94" y="50" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="9.5" letter-spacing="1" fill="#747387">33 CL · 5%</text>
+                            <text x="94" y="80" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif"
+                              font-size="13" font-weight="800" fill="#10151C">€2.29</text>
                           </g>
                           <!-- Add button: brand colour and corner radius -->
                           <rect class="acc btn" x="144" y="64" width="22" height="22" rx="8" fill="#00ADE6" />
@@ -425,12 +647,12 @@
                 </g>
 
                 <!-- Theme slider: the knob picks the brand -->
-                <rect x="70" y="429" width="661" height="22" rx="11" fill="url(#wl-track)" />
-                <rect x="65.5" y="424.5" width="670" height="31" rx="15.5" stroke="#fff" stroke-opacity=".2"
-                  stroke-width="9" />
+                <rect x="70" y="431.2" width="661" height="17.6" rx="8.8" fill="url(#wl-track)" />
+                <rect x="66.4" y="427.6" width="668.2" height="24.8" rx="12.4" stroke="#fff" stroke-opacity=".2"
+                  stroke-width="7.2" />
                 <g class="knob">
-                  <circle cx="180" cy="440" r="17" fill="#000032" opacity=".18" />
-                  <circle cx="180" cy="440" r="15" fill="#fff" />
-                  <circle class="acc" cx="180" cy="440" r="6" fill="#00ADE6" />
+                  <circle cx="180" cy="440" r="13.6" fill="#000032" opacity=".18" />
+                  <circle cx="180" cy="440" r="12" fill="#fff" />
+                  <circle class="acc" cx="180" cy="440" r="4.8" fill="#00ADE6" />
                 </g>
               </svg>

@@ -1,7 +1,8 @@
-<!-- pantry cover: drawn for the site, exported from index.html.
-     Open in a browser to see it animate; the styles below are assets/css/covers/pds.css. -->
+<!-- Pantry Design System cover, exported from index.html by design/covers/export.py.
+     Open it in a browser to see it animate; the styles are assets/css/covers/base.css
+     and assets/css/covers/pds.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="pds" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Pantry Design System">
-                <style><![CDATA[
+  <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
    The values below are the motion tokens from design/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
@@ -52,8 +53,20 @@
 }
 
 /* As a tall tile: the space under the art continues the drawing's bottom edge */
+/* No fade at the bottom of the drawing: the window stays crisp to its edge. The
+   drawing's own background is hidden so the tile's gradient runs behind the whole tile
+   without a seam. */
+.portfolio-item--tall #project1 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project1 > svg > .bg {
+  display: none;
+}
+
 .portfolio-item--tall #project1 {
-  background: linear-gradient(90deg, #668DF1 0%, #2E8FDB 58%, #1789C4 100%);
+  background: linear-gradient(32deg, #8C8CFF 0%, #2E8FDB 70%, #1789C4 100%);
 }
 
 .portfolio-item--tall #project1 .portfolio-title h4 {
@@ -143,55 +156,57 @@
                     <rect x="70" y="70" width="660" height="401" rx="20" />
                   </clipPath>
                 </defs>
-                <rect width="800" height="500" fill="url(#pds-bg)" />
+                <rect class="bg" width="800" height="500" fill="url(#pds-bg)" />
                 <g clip-path="url(#pds-win)" transform="translate(0 -15)">
                   <rect x="70" y="70" width="660" height="401" fill="#EDF3FC" />
                   <circle cx="96" cy="90" r="4.5" fill="#C3D3EA" />
                   <circle cx="112" cy="90" r="4.5" fill="#C3D3EA" />
                   <circle cx="128" cy="90" r="4.5" fill="#C3D3EA" />
                   <rect x="365" y="87" width="70" height="6" rx="3" fill="#5B7FE8" fill-opacity=".4" />
-                  <rect x="96" y="108" width="124" height="338" rx="14" fill="#fff" fill-opacity=".55" stroke="#C3D3EA"
-                    stroke-width="1.2" />
-                  <rect x="108.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="128.0"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">P</text>
-                  <rect x="119.5" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="128.0"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">A</text>
-                  <rect x="131.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="128.0"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">N</text>
-                  <rect x="108.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="139.5"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">T</text>
-                  <rect x="119.5" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="139.5"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">R</text>
-                  <rect x="131.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="139.5"
-                    text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="7.5" font-weight="700" fill="#fff">Y</text>
-                  <text x="147" y="136" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="12.5" font-weight="700" fill="#111">Pantry DS</text>
-                  <text x="108" y="172" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="11" font-weight="600" fill="#111">Get started</text>
-                  <path d="M176 166H183L179.5 170Z" fill="#111" />
-                  <rect x="108" y="184.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="201.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="219.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <text x="108" y="252" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="11" font-weight="600" fill="#111">Foundations</text>
-                  <path d="M179 246H186L182.5 250Z" fill="#111" />
-                  <rect x="108" y="264.0" width="32" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="281.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="299.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <text x="108" y="332" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-                    font-size="11" font-weight="600" fill="#111">Components</text>
-                  <path d="M183 326H190L186.5 330Z" fill="#111" />
-                  <rect x="108" y="344.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="361.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="379.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="396.5" width="58" height="9.5" rx="4.75" fill="#5B7FE8" />
-                  <rect x="108" y="414.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
+                  <!-- Sidebar: no panel, flush left, a divider on its right -->
+                  <path d="M218 100V471" stroke="#C3D3EA" stroke-width="1.2" />
+                  <g transform="translate(-12 0)">
+                    <rect x="108.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="128.0"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">P</text>
+                    <rect x="119.5" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="128.0"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">A</text>
+                    <rect x="131.0" y="120.0" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="128.0"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">N</text>
+                    <rect x="108.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="113.25" y="139.5"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">T</text>
+                    <rect x="119.5" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="124.75" y="139.5"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">R</text>
+                    <rect x="131.0" y="131.5" width="10.5" height="10.5" fill="#111" /><text x="136.25" y="139.5"
+                      text-anchor="middle" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="7.5" font-weight="700" fill="#fff">Y</text>
+                    <text x="147" y="136" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="12.5" font-weight="700" fill="#111">Pantry DS</text>
+                    <text x="108" y="172" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="11" font-weight="600" fill="#111">Get started</text>
+                    <path d="M176 166H183L179.5 170Z" fill="#111" />
+                    <rect x="108" y="184.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="201.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="219.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <text x="108" y="252" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="11" font-weight="600" fill="#111">Foundations</text>
+                    <path d="M179 246H186L182.5 250Z" fill="#111" />
+                    <rect x="108" y="264.0" width="32" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="281.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="299.0" width="56" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <text x="108" y="332" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="11" font-weight="600" fill="#111">Components</text>
+                    <path d="M183 326H190L186.5 330Z" fill="#111" />
+                    <rect x="108" y="344.0" width="48" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="361.5" width="62" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="379.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="396.5" width="58" height="9.5" rx="4.75" fill="#5B7FE8" />
+                    <rect x="108" y="414.0" width="66" height="9.5" rx="4.75" fill="#5B7FE8" />
+                  </g>
                   <!-- Top nav: Introduction is the active page -->
                   <text class="nav n0" x="240" y="134" textLength="61"
                     font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="10.5"

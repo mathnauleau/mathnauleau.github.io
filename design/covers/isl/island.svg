@@ -1,16 +1,49 @@
+<!-- Island Slide Puzzle cover, exported from index.html by design/covers/export.py.
+     Open it in a browser to see it animate; the styles are assets/css/covers/base.css
+     and assets/css/covers/isl.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="isl" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Island Slide Puzzle">
-                <style><![CDATA[
+  <style><![CDATA[
+/* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
+   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
+   Load this file before the cover stylesheets. */
+
+:root {
+  /* Loops */
+  --cover-story: 12s;      /* a cover that tells its project's story, in beats of ~3s */
+  --cover-ambient: 7s;     /* background life: floats, drifts, glows */
+
+  /* Easing */
+  --cover-ease: cubic-bezier(0.4, 0, 0.2, 1);       /* default for everything */
+  --cover-ease-pop: cubic-bezier(0.3, 0.8, 0.3, 1.1); /* at most one small "pop" per cover */
+
+  /* Hover: the hero element lifts */
+  --cover-hover-lift: -6px;
+  --cover-hover-duration: 300ms;
+
+  /* Ambient movement stays small */
+  --cover-ambient-amplitude: 8px;
+}
+
+/* Off screen (or tab hidden), js/covers.js adds .is-paused to the cover's <svg>: every
+   CSS animation inside it freezes where it is and resumes from there. SMIL animations
+   are paused by the script itself (svg.pauseAnimations()). */
+.portfolio-wrap > svg.is-paused,
+.portfolio-wrap > svg.is-paused * {
+  animation-play-state: paused !important;
+}
+
 /* Island Slide Puzzle cover (inline <svg class="isl"> in #project5, index.html).
    Original artwork. Four behaviours:
      lighthouse  the two beams alternate as the light turns (6s); the lamp pulses
      sun         the halo ring glows slowly in and out (5s)
      water       small waves drift and fade on the open water (7s, staggered by --w);
-                 the foam around the two island blocks ripples: its wavy edge morphs
+                 the foam around the island blocks and the "8" block ripples: its wavy edge morphs
                  through SMIL <animate> on `d` (6s), the straight edges stay put
      "8" block   on hover it slides toward the other blocks along the isometric grid
                  (real pointer above 768px)
    Every rule sits in @scope (.isl); keyframes and SVG IDs use the isl- prefix.
-   CSS animations stop for prefers-reduced-motion (the subtle SMIL foam ripple keeps going). */
+   Animations stop for prefers-reduced-motion (the SMIL foam is paused by js/covers.js). */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project5 {
@@ -126,12 +159,18 @@
                       fill="#1889C2" />
                   </g>
                   <!-- Small waves drift on the open water -->
-                  <path class="wave" style="--w:0s" d="M50 330q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" />
-                  <path class="wave" style="--w:1.4s" d="M138 446q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" />
-                  <path class="wave" style="--w:2.8s" d="M306 470q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" />
-                  <path class="wave" style="--w:0.7s" d="M348 384q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" />
-                  <path class="wave" style="--w:2.1s" d="M700 436q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" />
-                  <path class="wave" style="--w:3.5s" d="M730 352q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45" stroke-width="2" stroke-linecap="round" />
+                  <path class="wave" style="--w:0s" d="M50 330q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45"
+                    stroke-width="2" stroke-linecap="round" />
+                  <path class="wave" style="--w:1.4s" d="M138 446q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45"
+                    stroke-width="2" stroke-linecap="round" />
+                  <path class="wave" style="--w:2.8s" d="M306 470q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45"
+                    stroke-width="2" stroke-linecap="round" />
+                  <path class="wave" style="--w:0.7s" d="M348 384q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45"
+                    stroke-width="2" stroke-linecap="round" />
+                  <path class="wave" style="--w:2.1s" d="M700 436q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45"
+                    stroke-width="2" stroke-linecap="round" />
+                  <path class="wave" style="--w:3.5s" d="M730 352q6 -4 12 0t12 0" stroke="#FFFFFF" stroke-opacity="0.45"
+                    stroke-width="2" stroke-linecap="round" />
                   <path d="M530.021 194.893L530.021 143.04L400.404 143.04L400.404 268.51L530.021 194.893Z"
                     fill="#EDD2A7" />
                   <path d="M270.787 194.893L270.787 143.04L400.405 143.04L400.404 268.51L270.787 194.893Z"

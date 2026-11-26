@@ -15,10 +15,10 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 
 | Cover | Tile in `index.html` | SVG class / ID prefix | Styles | Original in this folder |
 |---|---|---|---|---|
-| White label eCommerce App | `#project2` | `.wl` / `wl-` | `wl.css` | `wl/white-label.svg` (drawn for the site, from a reference export) |
-| DesignOps | `#project10` | `.ops` / `ops-` | `ops.css` | — Built from `project-hero-mobile.svg` (DesignOps), not stored yet |
+| White label eCommerce App | `#project2` | `.wl` / `wl-` | `wl.css` | `wl/white-label.svg` (drawn for the site, from a reference export); stills `white-label-1-blue.svg`, `-2-pink.svg`, `-3-orange.svg` |
+| DesignOps | `#project10` | `.ops` / `ops-` | `ops.css` | `ops/designops.svg` (site export, animated) |
 | Pantry Design System | `#project1` | `.pds` / `pds-` | `pds.css` | `pds/pantry.svg` (drawn for the site, from a screenshot) |
-| Data tool | `#project15` | `.xl` / `xl-` | `xl.css` | `xl/data-tool.svg` (drawn for the site, from an Excel-style reference) |
+| Data tool | `#project15` | `.xl` / `xl-` | `xl.css` | `xl/data-tool.svg` (drawn for the site, from an Excel-style reference); stills `data-tool-1-spreadsheet.svg`, `data-tool-2-dashboard.svg` |
 | Home energy app | `#project16` (link still `#`) | `.nrg` / `nrg-` | `nrg.css` | `nrg/home-energy.svg` (drawn for the site, from a PNG mock-up) |
 | AH Compact | `#project4` | `.ah` / `ah-` | `ah.css` | `ah/ah-compact.svg` (site export, animated); originals `ah/groceries.svg`, `ah/iphone-12-mini.svg` |
 | Not the brief | `#project13` (currently commented out) | `.ntb` / `ntb-` | `ntb.css` | — Built from `not the brief.svg`, not stored yet |
@@ -58,6 +58,24 @@ animates as on the site. Edits should go to `index.html` and `assets/css/covers/
 be re-exported here. Note that design tools such as Figma ignore the embedded CSS, so on
 import some parts show in their pre-animation state (for example the Cookbook editor's
 cover boxes and the Data tool's hidden spreadsheet layers).
+
+## Exporting
+
+All exports come from `index.html` through one script:
+
+```
+python3 design/covers/export.py            # animated exports, one per cover
+python3 design/covers/export.py --stills   # also the stills (needs Google Chrome)
+```
+
+- **Animated** (`<folder>/<name>.svg`): the cover's inline SVG with `base.css` and its own
+  stylesheet embedded; open it in a browser to see it animate.
+- **Stills** (`<name>-1-….svg`, `<name>-2-….svg`, …): for covers whose story has distinct
+  stages (Data tool: spreadsheet, dashboard; White label: one per brand). Headless
+  Chrome freezes the animation at a moment of the loop and writes the values inline, so
+  each file shows one stage. Moments are set in `STILLS` at the top of the script.
+
+Re-run the script after any change to a cover.
 
 ## Adding an original
 

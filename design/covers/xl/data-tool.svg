@@ -1,7 +1,8 @@
-<!-- data-tool cover: drawn for the site, exported from index.html.
-     Open in a browser to see it animate; the styles below are assets/css/covers/xl.css. -->
+<!-- Data tool cover, exported from index.html by design/covers/export.py.
+     Open it in a browser to see it animate; the styles are assets/css/covers/base.css
+     and assets/css/covers/xl.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="xl" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
-                <style><![CDATA[
+  <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
    The values below are the motion tokens from design/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
@@ -56,8 +57,20 @@
 }
 
 /* As a tall tile: the space under the art continues the drawing's bottom edge */
+/* No fade at the bottom of the drawing: the window stays crisp to its edge. The
+   drawing's own background is hidden so the tile's gradient runs behind the whole tile
+   without a seam. */
+.portfolio-item--tall #project15 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project15 > svg > .bg {
+  display: none;
+}
+
 .portfolio-item--tall #project15 {
-  background: linear-gradient(90deg, #1F9E80 0%, #6E9A2E 100%);
+  background: linear-gradient(32deg, #1EC4B4 0%, #B1D766 100%);
 }
 
 .portfolio-item--tall #project15 .portfolio-title h4 {
@@ -185,7 +198,7 @@
                     <rect x="70" y="70" width="660" height="401" rx="20" />
                   </clipPath>
                 </defs>
-                <rect width="800" height="500" fill="url(#xl-bg)" />
+                <rect class="bg" width="800" height="500" fill="url(#xl-bg)" />
                 <g class="win" clip-path="url(#xl-win)" transform="translate(0 -15)">
                   <rect x="70" y="70" width="660" height="401" fill="#EAF5EE" />
                   <circle cx="96" cy="90" r="4.5" fill="#BFD6C8" />
@@ -434,22 +447,24 @@
                   </g>
                   <!-- The new tool, abstract: pieces pop in one after another (d: fraction of the loop) -->
                   <g class="app">
+                    <!-- Sidebar: no panel, flush left, a divider on its right -->
                     <g class="pop" style="--d:0">
-                      <rect x="96" y="108" width="124" height="338" rx="14" fill="#fff" fill-opacity=".55"
-                        stroke="#C3DBCD" stroke-width="1.2" />
-                      <circle cx="122" cy="134" r="10" fill="#21A366" />
-                      <rect x="140" y="130" width="54" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
-                      <circle cx="123" cy="179" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="176" width="52" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
-                      <rect x="108" y="202" width="100" height="26" rx="13" fill="#E3F2E9" />
-                      <circle cx="123" cy="215" r="5" fill="#21A366" />
-                      <rect x="135" y="212" width="44" height="6" rx="3" fill="#217346" fill-opacity="0.75" />
-                      <circle cx="123" cy="251" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="248" width="60" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
-                      <circle cx="123" cy="287" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="284" width="38" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
-                      <circle cx="123" cy="323" r="5" fill="#BFD6C8" />
-                      <rect x="135" y="320" width="48" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                      <path d="M218 100V471" stroke="#C3DBCD" stroke-width="1.2" />
+                      <g transform="translate(-12 0)">
+                        <circle cx="122" cy="134" r="10" fill="#21A366" />
+                        <rect x="140" y="130" width="54" height="8" rx="4" fill="#0E3B25" fill-opacity=".75" />
+                        <circle cx="123" cy="179" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="176" width="52" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                        <rect x="108" y="202" width="100" height="26" rx="13" fill="#E3F2E9" />
+                        <circle cx="123" cy="215" r="5" fill="#21A366" />
+                        <rect x="135" y="212" width="44" height="6" rx="3" fill="#217346" fill-opacity="0.75" />
+                        <circle cx="123" cy="251" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="248" width="60" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                        <circle cx="123" cy="287" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="284" width="38" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                        <circle cx="123" cy="323" r="5" fill="#BFD6C8" />
+                        <rect x="135" y="320" width="48" height="6" rx="3" fill="#BFD6C8" fill-opacity="1" />
+                      </g>
                     </g>
                     <g class="pop" style="--d:.02">
                       <rect x="240" y="128" width="150" height="14" rx="7" fill="#0E3B25" fill-opacity=".85" />

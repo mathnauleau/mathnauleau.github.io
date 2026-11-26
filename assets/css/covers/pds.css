@@ -18,8 +18,20 @@
 }
 
 /* As a tall tile: the space under the art continues the drawing's bottom edge */
+/* No fade at the bottom of the drawing: the window stays crisp to its edge. The
+   drawing's own background is hidden so the tile's gradient runs behind the whole tile
+   without a seam. */
+.portfolio-item--tall #project1 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project1 > svg > .bg {
+  display: none;
+}
+
 .portfolio-item--tall #project1 {
-  background: linear-gradient(90deg, #668DF1 0%, #2E8FDB 58%, #1789C4 100%);
+  background: linear-gradient(32deg, #8C8CFF 0%, #2E8FDB 70%, #1789C4 100%);
 }
 
 .portfolio-item--tall #project1 .portfolio-title h4 {
