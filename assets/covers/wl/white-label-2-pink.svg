@@ -1,0 +1,594 @@
+<!-- White label eCommerce App cover, still: brand 2: Ivar Display, pink (t = 5.5s of the loop).
+     Exported from index.html by assets/covers/export.py (stills option). -->
+<svg xmlns="http://www.w3.org/2000/svg" class="wl" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="White label eCommerce App">
+  <style><![CDATA[
+/* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
+   stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
+   Load this file before the cover stylesheets. */
+
+:root {
+  /* Loops */
+  --cover-story: 12s;      /* a cover that tells its project's story, in beats of ~3s */
+  --cover-ambient: 7s;     /* background life: floats, drifts, glows */
+
+  /* Easing */
+  --cover-ease: cubic-bezier(0.4, 0, 0.2, 1);       /* default for everything */
+  --cover-ease-pop: cubic-bezier(0.3, 0.8, 0.3, 1.1); /* at most one small "pop" per cover */
+
+  /* Hover: the hero element lifts */
+  --cover-hover-lift: -6px;
+  --cover-hover-duration: 300ms;
+
+  /* Ambient movement stays small */
+  --cover-ambient-amplitude: 8px;
+}
+
+/* Off screen (or tab hidden), js/covers.js adds .is-paused to the cover's <svg>: every
+   CSS animation inside it freezes where it is and resumes from there. SMIL animations
+   are paused by the script itself (svg.pauseAnimations()). */
+.portfolio-wrap > svg.is-paused,
+.portfolio-wrap > svg.is-paused * {
+  animation-play-state: paused !important;
+}
+
+/* White label eCommerce App cover (inline <svg class="wl"> in #project2, index.html).
+   One app, many brands: the theme slider's knob moves between three brand themes
+   and the whole UI re-skins with it, colour (.acc fill, .acc-s stroke, .acc-d darker
+   fill) and typeface (the wordmark and title groups .b1/.b2/.b3).
+   One 12s loop, shared by everything:
+     0–28%   Hamburg Serial (#00ADE6)
+     28–34%  knob slides; colour and typeface switch at its midpoint
+     34–61%  Ivar Display   (#F0508C, pink)
+     67–94%  PROXIMA NOVA   (#FF8A3D, orange)
+     94–100% knob sweeps back to the start
+   Buttons (.btn filled, .btn-o outlined) change corner radius with the brand at the
+   same moment: 8, pill, 2.
+   The screens stay still; hover one to lift it (real pointer above 768px). Every rule sits in @scope (.wl); keyframes and SVG IDs
+   use the wl- prefix. Without motion the cover shows the first brand, as drawn. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project2 {
+  background: linear-gradient(32deg, #4EB490 0%, #184664 50%, #000032 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project2 {
+  background: linear-gradient(90deg, #307677 0%, #184664 30.5%, #000032 100%);
+}
+
+.portfolio-item--tall #project2 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project2 .portfolio-title p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@scope (.wl) {
+  :scope {
+    --cyc: 12s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .acc { animation: wl-acc var(--cyc) ease-in-out infinite; }
+  .acc-s { animation: wl-acc-s var(--cyc) ease-in-out infinite; }
+  .acc-d { animation: wl-acc-d var(--cyc) ease-in-out infinite; }
+  .b1 { animation: wl-b1 var(--cyc) ease-in-out infinite; }
+  .b2 { animation: wl-b2 var(--cyc) ease-in-out infinite; }
+  .b3 { animation: wl-b3 var(--cyc) ease-in-out infinite; }
+  /* Buttons: colour and corner radius together */
+  .acc.btn { animation: wl-acc var(--cyc) ease-in-out infinite, wl-rx var(--cyc) ease-in-out infinite; }
+  .acc-s.btn-o { animation: wl-acc-s var(--cyc) ease-in-out infinite, wl-rx-o var(--cyc) ease-in-out infinite; }
+  /* Filter chips on the middle card follow the brand corners too */
+  .chip { animation: wl-rx-o var(--cyc) ease-in-out infinite; }
+  .knob { animation: wl-knob var(--cyc) cubic-bezier(0.5, 0, 0.3, 1) infinite; }
+
+  .lift { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .lift:hover { transform: translateY(-12px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* Colours switch fast (1%) at the middle of each knob move, together with the typeface,
+   so the muddy in-between of an RGB blend never shows */
+@keyframes wl-acc {
+  0%, 30.5% { fill: #00ADE6; }
+  31.5%, 63.5% { fill: #F0508C; }
+  64.5%, 96.5% { fill: #FF8A3D; }
+  97.5%, 100% { fill: #00ADE6; }
+}
+@keyframes wl-acc-s {
+  0%, 30.5% { stroke: #00ADE6; }
+  31.5%, 63.5% { stroke: #F0508C; }
+  64.5%, 96.5% { stroke: #FF8A3D; }
+  97.5%, 100% { stroke: #00ADE6; }
+}
+@keyframes wl-acc-d {
+  0%, 30.5% { fill: #0184AF; }
+  31.5%, 63.5% { fill: #C42F6A; }
+  64.5%, 96.5% { fill: #D9661A; }
+  97.5%, 100% { fill: #0184AF; }
+}
+
+/* Button corners: 8 (Hamburg Serial), pill (Ivar Display), 2 (Proxima Nova).
+   The outlined buttons sit 1 unit inside their stroke, so their radius is 1 less. */
+@keyframes wl-rx {
+  0%, 30.5% { rx: 8px; }
+  31.5%, 63.5% { rx: 20px; }
+  64.5%, 96.5% { rx: 2px; }
+  97.5%, 100% { rx: 8px; }
+}
+@keyframes wl-rx-o {
+  0%, 30.5% { rx: 7px; }
+  31.5%, 63.5% { rx: 19px; }
+  64.5%, 96.5% { rx: 1px; }
+  97.5%, 100% { rx: 7px; }
+}
+
+/* Typeface swaps cross over at the same moment */
+@keyframes wl-b1 { 0%, 30% { opacity: 1; } 32%, 96% { opacity: 0; } 98%, 100% { opacity: 1; } }
+@keyframes wl-b2 { 0%, 30% { opacity: 0; } 32%, 63% { opacity: 1; } 65%, 100% { opacity: 0; } }
+@keyframes wl-b3 { 0%, 63% { opacity: 0; } 65%, 96% { opacity: 1; } 98%, 100% { opacity: 0; } }
+
+@keyframes wl-knob {
+  0%, 28% { transform: translateX(0); }
+  34%, 61% { transform: translateX(220px); }
+  67%, 94% { transform: translateX(440px); }
+  100% { transform: translateX(0); }
+}
+
+
+/* Still: animations off, values frozen inline */
+* { animation: none !important; transition: none !important; }
+]]></style>
+                <defs>
+                  <linearGradient id="wl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#4EB490"/>
+                    <stop offset=".5" stop-color="#184664"/>
+                    <stop offset="1" stop-color="#000032"/>
+                  </linearGradient>
+                  <linearGradient id="wl-face" x1="0" y1="0" x2="0" y2="1">
+                    <stop stop-color="#fff"/>
+                    <stop offset="1" stop-color="#E2E3E6"/>
+                  </linearGradient>
+                  <linearGradient id="wl-back" x1="0" y1="0" x2="1" y2="1">
+                    <stop stop-color="#F2F2F7"/>
+                    <stop offset="1" stop-color="#B9BAC0"/>
+                  </linearGradient>
+                  <linearGradient id="wl-track" x1="70" y1="0" x2="731" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00ADE6"/>
+                    <stop offset=".5" stop-color="#F0508C"/>
+                    <stop offset="1" stop-color="#FF8A3D"/>
+                  </linearGradient>
+                  <clipPath id="wl-win">
+                    <rect x="68" y="20" width="664" height="379" rx="16"/>
+                  </clipPath>
+                </defs>
+                <rect width="800" height="500" fill="url(#wl-bg)"/>
+                <g fill="#fff" opacity=".1">
+                  <rect width="177.84" height="104.79" rx="9" transform="matrix(0.989651 -0.143493 0 1 72 91.9)"/>
+                  <rect width="188.13" height="82.21" rx="9" transform="matrix(0.989651 -0.143493 0 1 544 98)"/>
+                  <rect width="141.65" height="69.13" rx="9" transform="matrix(0.989651 -0.143493 0 1 590 196.3)"/>
+                  <rect width="65.68" height="62.59" rx="9" transform="matrix(0.989651 -0.143493 0 1 72 221.1)"/>
+                </g>
+
+                <!-- Screens. Each: .ph floats, .lift rises on hover, the inner group carries the skew.
+     Brand colour lives on .acc (fill), .acc-s (stroke) and .acc-d (darker fill). -->
+                <g clip-path="url(#wl-win)">
+
+                  <!-- A: icon grid -->
+                  <g class="ph" style="--s:-1s">
+                    <g class="lift">
+                      <g transform="matrix(0.989651 -0.143493 0 1 68 305.7)">
+                        <rect width="186" height="354" rx="11.3" fill="url(#wl-back)"/>
+                        <g transform="translate(7 5)">
+                          <rect width="186" height="357" rx="11.3" fill="url(#wl-face)"/>
+                          <!-- Icon set per theme, swapped with the wordmark (.b1/.b2/.b3) -->
+                          <g class="b1" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <g fill="#fff">
+                              <rect x="10" y="13" width="30" height="30" rx="7"/>
+                              <rect x="47" y="13" width="30" height="30" rx="7"/>
+                              <rect x="10" y="50" width="30" height="30" rx="7"/>
+                              <rect x="47" y="50" width="30" height="30" rx="7"/>
+                            </g>
+                            <g stroke="#10151C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <circle cx="25" cy="24" r="4"/>
+                              <path d="M18 36C18 32 32 32 32 36"/>
+                              <path d="M55 30L62 24L69 30V36H55Z"/>
+                              <path d="M25 72L19 66C17 63 19 59 22 59C24 59 25 61 25 61C25 61 26 59 28 59C31 59 33 63 31 66Z"/>
+                              <circle cx="61" cy="64" r="5"/>
+                              <path d="M65 68L69 72"/>
+                            </g>
+                          </g>
+                          <g class="b2" opacity="0" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <g fill="#fff">
+                              <rect x="10" y="13" width="30" height="30" rx="15"/>
+                              <rect x="47" y="13" width="30" height="30" rx="15"/>
+                              <rect x="10" y="50" width="30" height="30" rx="15"/>
+                              <rect x="47" y="50" width="30" height="30" rx="15"/>
+                            </g>
+                            <g stroke="#10151C" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                              <circle cx="25" cy="23.5" r="3.5"/>
+                              <path d="M18.5 35.5C19 31.5 31 31.5 31.5 35.5"/>
+                              <path d="M55 30L62 24L69 30V36H55ZM60.5 36V32.5H63.5V36"/>
+                              <path d="M25 72L19 66C17 63 19 59 22 59C24 59 25 61 25 61C25 61 26 59 28 59C31 59 33 63 31 66Z"/>
+                              <circle cx="61" cy="64" r="5.5"/>
+                              <path d="M65 68L69.5 72.5"/>
+                            </g>
+                          </g>
+                          <g class="b3" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <g fill="#fff">
+                              <rect x="10" y="13" width="30" height="30" rx="2.5"/>
+                              <rect x="47" y="13" width="30" height="30" rx="2.5"/>
+                              <rect x="10" y="50" width="30" height="30" rx="2.5"/>
+                              <rect x="47" y="50" width="30" height="30" rx="2.5"/>
+                            </g>
+                            <g fill="#10151C">
+                              <circle cx="25" cy="23.5" r="4.5"/>
+                              <path d="M17.5 37C17.5 31 32.5 31 32.5 37Z"/>
+                              <path d="M54 30.5L62 23.5L70 30.5V37H54Z"/>
+                              <path d="M25 72L19 66C17 63 19 59 22 59C24 59 25 61 25 61C25 61 26 59 28 59C31 59 33 63 31 66Z"/>
+                            </g>
+                            <g stroke="#10151C" stroke-width="3" stroke-linecap="square">
+                              <circle cx="61" cy="64" r="4.5"/>
+                              <path d="M65.5 68.5L68.5 71.5"/>
+                            </g>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- B: buttons. Corner radius follows the brand (.btn / .btn-o): 8, pill, 2 -->
+                  <g class="ph" style="--s:-3s">
+                    <g class="lift">
+                      <g transform="matrix(0.989651 -0.143493 0 1 156 200.7)">
+                        <rect width="186" height="354" rx="11.3" fill="url(#wl-back)"/>
+                        <g transform="translate(7 5)">
+                          <rect width="186" height="354" rx="11.3" fill="url(#wl-face)"/>
+                          <rect class="acc btn" x="16" y="26" width="112" height="40" rx="8" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 20px;"/>
+                          <g class="b1" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path d="M33 46H43M38 41V51" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+                          </g>
+                          <g class="b2" opacity="0" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path d="M33 46H43M38 41V51" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+                          </g>
+                          <g class="b3" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path d="M34.5 46H41.5M38 42.5V49.5" stroke="#fff" stroke-width="3.2" stroke-linecap="square"/>
+                          </g>
+                          <rect x="52" y="43" width="56" height="6" rx="3" fill="#fff"/>
+                          <rect class="acc-s btn-o" x="17" y="83" width="110" height="38" rx="7" fill="#fff" stroke="#00ADE6" stroke-width="2" style="opacity: 1; transform: none; translate: none; fill: rgb(255, 255, 255); stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 19px;"/>
+                          <g class="b1" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path class="acc-s" d="M33 102H43M38 97V107" stroke="#00ADE6" stroke-width="2.4" stroke-linecap="round" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                          </g>
+                          <g class="b2" opacity="0" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path class="acc-s" d="M33 102H43M38 97V107" stroke="#00ADE6" stroke-width="1.3" stroke-linecap="round" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                          </g>
+                          <g class="b3" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path class="acc-s" d="M34.5 102H41.5M38 98.5V105.5" stroke="#00ADE6" stroke-width="3.2" stroke-linecap="square" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                          </g>
+                          <rect class="acc" x="52" y="99" width="56" height="6" rx="3" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 3px;"/>
+                          <rect class="acc btn" x="16" y="140" width="40" height="40" rx="8" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 20px;"/>
+                          <g class="b1" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path d="M29 160H43M36 153V167" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                          </g>
+                          <g class="b2" opacity="0" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path d="M29 160H43M36 153V167" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+                          </g>
+                          <g class="b3" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path d="M30.5 160H41.5M36 154.5V165.5" stroke="#fff" stroke-width="3.2" stroke-linecap="square"/>
+                          </g>
+                          <rect class="acc-s btn-o" x="69" y="141" width="38" height="38" rx="7" fill="#fff" stroke="#00ADE6" stroke-width="2" style="opacity: 1; transform: none; translate: none; fill: rgb(255, 255, 255); stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 19px;"/>
+                          <g class="b1" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path class="acc-s" d="M81 160H95M88 153V167" stroke="#00ADE6" stroke-width="2" stroke-linecap="round" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                          </g>
+                          <g class="b2" opacity="0" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path class="acc-s" d="M81 160H95M88 153V167" stroke="#00ADE6" stroke-width="1.3" stroke-linecap="round" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                          </g>
+                          <g class="b3" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <path class="acc-s" d="M82.5 160H93.5M88 154.5V165.5" stroke="#00ADE6" stroke-width="3.2" stroke-linecap="square" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(240, 80, 140); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- C: the main screen. Wordmark and title switch typeface with the brand -->
+                  <g class="ph" style="--s:0s">
+                    <g class="lift">
+                      <g transform="matrix(0.989651 -0.143493 0 1 261 107.9)">
+                        <rect width="264" height="571" rx="11.3" fill="url(#wl-back)"/>
+                        <path class="acc-d" d="M0 97.8V11.3A11.3 11.3 0 0 1 11.3 0H252.7A11.3 11.3 0 0 1 264 11.3V20H7V104Z" fill="#0184AF" style="opacity: 1; transform: none; translate: none; fill: rgb(196, 47, 106); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                        <g transform="translate(7 4)">
+                          <rect width="264" height="571" rx="11.3" fill="url(#wl-face)"/>
+                          <!-- Banner: brand colour, back button, category title and product (per brand) -->
+                          <path class="acc" d="M0 11.3A11.3 11.3 0 0 1 11.3 0H252.7A11.3 11.3 0 0 1 264 11.3V100H0Z" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                          <path d="M140 0H252.7A11.3 11.3 0 0 1 264 11.3V100H110Z" fill="#fff" opacity=".12"/>
+                          <circle cx="30" cy="30" r="14" fill="#fff"/>
+                          <path d="M35 30H25M29 25L24 30L29 35" stroke="#10151C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                          <!-- Filter chips -->
+                          <rect class="chip" x="14" y="112" width="102" height="26" rx="7" fill="#fff" stroke="#D5DAE0" style="opacity: 1; transform: none; translate: none; fill: rgb(255, 255, 255); stroke: rgb(213, 218, 224); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 19px;"/>
+                          <text x="24" y="129" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#10151C">Recommended</text>
+                          <path d="M101 122L104 119L107 122M101 128L104 131L107 128" stroke="#10151C" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                          <rect class="chip" x="124" y="112" width="56" height="26" rx="7" fill="#fff" stroke="#D5DAE0" style="opacity: 1; transform: none; translate: none; fill: rgb(255, 255, 255); stroke: rgb(213, 218, 224); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 19px;"/>
+                          <text x="134" y="129" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#10151C">Type</text>
+                          <path d="M164 123L167 126L170 123" stroke="#10151C" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                          <rect class="chip" x="188" y="112" width="62" height="26" rx="7" fill="#fff" stroke="#D5DAE0" style="opacity: 1; transform: none; translate: none; fill: rgb(255, 255, 255); stroke: rgb(213, 218, 224); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 19px;"/>
+                          <text x="200" y="129" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#10151C">Price</text>
+                          <g class="b1" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <!-- Banner title and product -->
+                            <text x="16" y="84" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="26" font-weight="800" fill="#fff">Fruits</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <!-- Banana bunch (from the Figma edit): three fruits, back to front, each with its outline, shine and tip -->
+                              <path fill="#E8B524" d="M29.77 27.23C36.75 43.52 51.92 52.47 72.86 47.82C74.02 50.14 74.62 49.34 72.3 50.50C46.56 67.3 25.29 49.3 26.45 29.76L29.77 27.23Z"/>
+                              <path fill="#C99400" d="M29.77 27.23L30.3 27.00C30.23 26.84 30.09 26.72 29.92 26.67C29.74 26.63 29.56 26.66 29.42 26.77L29.77 27.23ZM72.86 47.82L73.38 47.56C73.26 47.32 72.99 47.19 72.73 47.25L72.86 47.82ZM72.3 50.50L72.04 49.98C72.02 49.99 72 50 71.98 50.02L72.3 50.50ZM26.45 29.76L26.1 29.29C25.97 29.39 25.88 29.55 25.87 29.72L26.45 29.76ZM29.77 27.23L29.23 27.46C32.77 35.71 38.4 42.13 45.82 45.89C53.24 49.66 62.41 50.73 72.98 48.38L72.86 47.82L72.73 47.25C62.37 49.55 53.49 48.48 46.34 44.86C39.2 41.23 33.75 35.04 30.3 27.00L29.77 27.23ZM72.86 47.82L72.34 48.08C72.64 48.69 72.92 49.1 73.11 49.38C73.21 49.53 73.26 49.61 73.3 49.68C73.35 49.75 73.31 49.71 73.3 49.61C73.3 49.45 73.39 49.34 73.42 49.32C73.42 49.31 73.4 49.34 73.27 49.40C73.15 49.46 73.01 49.52 72.79 49.62C72.59 49.72 72.33 49.84 72.04 49.98L72.3 50.50L72.56 51.02C72.84 50.88 73.08 50.77 73.28 50.68C73.48 50.59 73.65 50.51 73.79 50.44C73.91 50.38 74.07 50.3 74.19 50.19C74.33 50.07 74.47 49.86 74.47 49.58C74.46 49.36 74.36 49.18 74.3 49.09C74.24 48.98 74.15 48.85 74.07 48.73C73.89 48.47 73.65 48.1 73.38 47.56L72.86 47.82ZM72.3 50.50L71.98 50.02C59.26 58.32 47.75 57.97 39.58 53.25C31.38 48.52 26.47 39.34 27.03 29.79L26.45 29.76L25.87 29.72C25.28 39.71 30.42 49.3 39 54.26C47.6 59.23 59.59 59.49 72.62 50.99L72.3 50.50ZM26.45 29.76L26.81 30.22L30.12 27.70L29.77 27.23L29.42 26.77L26.1 29.29L26.45 29.76Z"/>
+                              <path opacity="0.85" fill="#FFF3B5" fill-opacity="0.5" d="M33.75 35.45C33.49 35.05 33 34.95 32.65 35.22C32.3 35.49 32.24 36.04 32.5 36.44L33.13 35.94L33.75 35.45ZM58.3 51.59C58.73 51.62 59.09 51.25 59.09 50.77C59.1 50.28 58.75 49.87 58.32 49.84L58.31 50.71L58.3 51.59ZM33.13 35.94L32.5 36.44C39.98 47.83 50.33 51.01 58.3 51.59L58.31 50.71L58.32 49.84C50.62 49.28 40.83 46.23 33.75 35.45L33.13 35.94Z"/>
+                              <path fill="#5B4316" d="M72.39 50.80C73.42 50.8 74.25 49.97 74.25 48.94C74.25 47.92 73.42 47.08 72.39 47.08C71.36 47.08 70.53 47.92 70.53 48.94C70.53 49.97 71.36 50.81 72.39 50.80Z"/>
+                              <path fill="#F6C834" d="M27.62 26.38C31.11 47.31 46.8 61.31 70.06 60.15C71.22 62.48 72.39 62.31 70.06 63.47C38.16 75.51 20.82 52.53 24.13 28.70L27.62 26.38Z"/>
+                              <path fill="#C99400" d="M27.62 26.38L28.19 26.28C28.16 26.09 28.03 25.92 27.85 25.84C27.67 25.77 27.46 25.78 27.29 25.89L27.62 26.38ZM70.06 60.15L70.58 59.89C70.48 59.68 70.26 59.56 70.03 59.57L70.06 60.15ZM70.06 63.47L70.26 64.02C70.28 64.01 70.3 64 70.32 63.99L70.06 63.47ZM24.13 28.70L23.81 28.22C23.67 28.31 23.57 28.46 23.55 28.62L24.13 28.70ZM27.62 26.38L27.04 26.47C28.81 37.06 33.67 45.93 41.06 52.00C48.45 58.07 58.33 61.32 70.09 60.73L70.06 60.15L70.03 59.57C58.53 60.15 48.94 56.97 41.79 51.10C34.65 45.23 29.91 36.63 28.19 26.28L27.62 26.38ZM70.06 60.15L69.54 60.41C69.85 61.03 70.16 61.48 70.4 61.83C70.53 62 70.62 62.13 70.7 62.24C70.78 62.36 70.81 62.42 70.82 62.45C70.83 62.47 70.81 62.43 70.83 62.37C70.84 62.31 70.86 62.31 70.81 62.36C70.68 62.48 70.39 62.66 69.8 62.95L70.06 63.47L70.32 63.99C70.89 63.71 71.33 63.47 71.6 63.22C71.74 63.08 71.88 62.91 71.95 62.68C72.01 62.45 71.98 62.23 71.91 62.05C71.85 61.88 71.75 61.73 71.66 61.59C71.57 61.46 71.46 61.3 71.35 61.15C71.12 60.83 70.85 60.43 70.58 59.89L70.06 60.15ZM70.06 63.47L69.85 62.93C54.06 68.89 42 66.15 34.28 59.11C26.54 52.04 23.07 40.55 24.7 28.78L24.13 28.70L23.55 28.62C21.87 40.69 25.42 52.59 33.5 59.97C41.6 67.36 54.16 70.1 70.26 64.02L70.06 63.47ZM24.13 28.70L24.45 29.19L27.94 26.86L27.62 26.38L27.29 25.89L23.81 28.22L24.13 28.70Z"/>
+                              <path opacity="0.7" fill="#FFF3B5" d="M29.74 37.06C29.56 36.43 28.93 36.06 28.33 36.23C27.73 36.41 27.39 37.07 27.56 37.71L28.65 37.39L29.74 37.06ZM53.58 61.76C54.19 61.91 54.8 61.51 54.93 60.87C55.07 60.22 54.69 59.58 54.08 59.43L53.83 60.59L53.58 61.76ZM28.65 37.39L27.56 37.71C29.2 43.67 33.16 49.04 37.92 53.22C42.69 57.39 48.37 60.46 53.58 61.76L53.83 60.59L54.08 59.43C49.24 58.23 43.88 55.35 39.35 51.38C34.82 47.41 31.21 42.42 29.74 37.06L28.65 37.39Z"/>
+                              <path fill="#5B4316" d="M70.06 63.71C71.09 63.71 71.93 62.88 71.93 61.85C71.93 60.82 71.09 59.99 70.06 59.99C69.04 59.99 68.2 60.82 68.2 61.85C68.2 62.87 69.04 63.71 70.06 63.71Z"/>
+                              <path fill="#FFD94A" d="M26.41 27.76C25.25 52.18 37.8 72.15 62.22 75.64C63.39 77.97 63.43 78.8 61.11 78.80C26.41 82.68 14.79 55.65 23.61 28.57L26.41 27.76Z"/>
+                              <path fill="#C99400" d="M26.41 27.76L26.99 27.78C27 27.6 26.92 27.42 26.77 27.30C26.62 27.18 26.43 27.15 26.25 27.20L26.41 27.76ZM62.22 75.64L62.74 75.38C62.66 75.21 62.5 75.09 62.31 75.06L62.22 75.64ZM61.11 78.80L61.11 78.22C61.08 78.22 61.06 78.22 61.04 78.23L61.11 78.80ZM23.61 28.57L23.45 28.01C23.27 28.06 23.12 28.2 23.06 28.39L23.61 28.57ZM26.41 27.76L25.83 27.73C25.24 40.04 28.11 51.28 34.25 59.89C40.39 68.5 49.78 74.45 62.14 76.22L62.22 75.64L62.31 75.06C50.25 73.34 41.15 67.56 35.2 59.21C29.24 50.86 26.41 39.89 26.99 27.78L26.41 27.76ZM62.22 75.64L61.7 75.90C61.99 76.48 62.2 76.93 62.31 77.29C62.44 77.67 62.43 77.86 62.41 77.94C62.4 77.97 62.39 78.03 62.22 78.09C62.02 78.17 61.67 78.22 61.11 78.22L61.11 78.80L61.11 79.38C61.71 79.38 62.22 79.33 62.63 79.18C63.06 79.02 63.41 78.72 63.54 78.24C63.65 77.83 63.56 77.37 63.42 76.94C63.28 76.49 63.04 75.97 62.74 75.38L62.22 75.64ZM61.11 78.80L61.04 78.23C43.86 80.15 32.53 74.41 26.53 64.98C20.51 55.51 19.79 42.18 24.17 28.75L23.61 28.57L23.06 28.39C18.62 42.04 19.29 55.76 25.55 65.61C31.83 75.49 43.65 81.34 61.17 79.38L61.11 78.80ZM23.61 28.57L23.78 29.12L26.57 28.32L26.41 27.76L26.25 27.20L23.45 28.01L23.61 28.57Z"/>
+                              <path opacity="0.85" fill="#FFF3B5" d="M26.45 40.90C26.4 40.26 25.84 39.78 25.2 39.83C24.56 39.88 24.08 40.44 24.13 41.08L25.29 40.99L26.45 40.90ZM46.91 74.46C47.49 74.73 48.18 74.47 48.45 73.88C48.71 73.3 48.46 72.61 47.87 72.34L47.39 73.40L46.91 74.46ZM25.29 40.99L24.13 41.08C25.27 55.98 34.34 68.71 46.91 74.46L47.39 73.40L47.87 72.34C36.09 66.95 27.53 54.97 26.45 40.90L25.29 40.99Z"/>
+                              <path fill="#5B4316" d="M61.96 79.29C63.06 79.29 63.94 78.4 63.94 77.31C63.94 76.22 63.06 75.33 61.96 75.33C60.87 75.33 59.99 76.22 59.99 77.31C59.99 78.4 60.87 79.29 61.96 79.29Z"/>
+                              <path fill="#9A7A35" d="M23.05 29.04L21.94 20.02L30.89 19.09L30.33 27.87L23.05 29.04Z"/>
+                              <path fill="#6B4F1E" d="M22.49 17.33L21.94 20.02L30.89 19.09L29.77 16.71L22.49 17.33Z"/>
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5"/>
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <g transform="translate(18.85 12.25) scale(0.82)">
+                                <!-- Banana bunch (from the Figma edit): three fruits, back to front, each with its outline, shine and tip -->
+                                <path fill="#E8B524" d="M29.77 27.23C36.75 43.52 51.92 52.47 72.86 47.82C74.02 50.14 74.62 49.34 72.3 50.50C46.56 67.3 25.29 49.3 26.45 29.76L29.77 27.23Z"/>
+                                <path fill="#C99400" d="M29.77 27.23L30.3 27.00C30.23 26.84 30.09 26.72 29.92 26.67C29.74 26.63 29.56 26.66 29.42 26.77L29.77 27.23ZM72.86 47.82L73.38 47.56C73.26 47.32 72.99 47.19 72.73 47.25L72.86 47.82ZM72.3 50.50L72.04 49.98C72.02 49.99 72 50 71.98 50.02L72.3 50.50ZM26.45 29.76L26.1 29.29C25.97 29.39 25.88 29.55 25.87 29.72L26.45 29.76ZM29.77 27.23L29.23 27.46C32.77 35.71 38.4 42.13 45.82 45.89C53.24 49.66 62.41 50.73 72.98 48.38L72.86 47.82L72.73 47.25C62.37 49.55 53.49 48.48 46.34 44.86C39.2 41.23 33.75 35.04 30.3 27.00L29.77 27.23ZM72.86 47.82L72.34 48.08C72.64 48.69 72.92 49.1 73.11 49.38C73.21 49.53 73.26 49.61 73.3 49.68C73.35 49.75 73.31 49.71 73.3 49.61C73.3 49.45 73.39 49.34 73.42 49.32C73.42 49.31 73.4 49.34 73.27 49.40C73.15 49.46 73.01 49.52 72.79 49.62C72.59 49.72 72.33 49.84 72.04 49.98L72.3 50.50L72.56 51.02C72.84 50.88 73.08 50.77 73.28 50.68C73.48 50.59 73.65 50.51 73.79 50.44C73.91 50.38 74.07 50.3 74.19 50.19C74.33 50.07 74.47 49.86 74.47 49.58C74.46 49.36 74.36 49.18 74.3 49.09C74.24 48.98 74.15 48.85 74.07 48.73C73.89 48.47 73.65 48.1 73.38 47.56L72.86 47.82ZM72.3 50.50L71.98 50.02C59.26 58.32 47.75 57.97 39.58 53.25C31.38 48.52 26.47 39.34 27.03 29.79L26.45 29.76L25.87 29.72C25.28 39.71 30.42 49.3 39 54.26C47.6 59.23 59.59 59.49 72.62 50.99L72.3 50.50ZM26.45 29.76L26.81 30.22L30.12 27.70L29.77 27.23L29.42 26.77L26.1 29.29L26.45 29.76Z"/>
+                                <path opacity="0.85" fill="#FFF3B5" fill-opacity="0.5" d="M33.75 35.45C33.49 35.05 33 34.95 32.65 35.22C32.3 35.49 32.24 36.04 32.5 36.44L33.13 35.94L33.75 35.45ZM58.3 51.59C58.73 51.62 59.09 51.25 59.09 50.77C59.1 50.28 58.75 49.87 58.32 49.84L58.31 50.71L58.3 51.59ZM33.13 35.94L32.5 36.44C39.98 47.83 50.33 51.01 58.3 51.59L58.31 50.71L58.32 49.84C50.62 49.28 40.83 46.23 33.75 35.45L33.13 35.94Z"/>
+                                <path fill="#5B4316" d="M72.39 50.80C73.42 50.8 74.25 49.97 74.25 48.94C74.25 47.92 73.42 47.08 72.39 47.08C71.36 47.08 70.53 47.92 70.53 48.94C70.53 49.97 71.36 50.81 72.39 50.80Z"/>
+                                <path fill="#F6C834" d="M27.62 26.38C31.11 47.31 46.8 61.31 70.06 60.15C71.22 62.48 72.39 62.31 70.06 63.47C38.16 75.51 20.82 52.53 24.13 28.70L27.62 26.38Z"/>
+                                <path fill="#C99400" d="M27.62 26.38L28.19 26.28C28.16 26.09 28.03 25.92 27.85 25.84C27.67 25.77 27.46 25.78 27.29 25.89L27.62 26.38ZM70.06 60.15L70.58 59.89C70.48 59.68 70.26 59.56 70.03 59.57L70.06 60.15ZM70.06 63.47L70.26 64.02C70.28 64.01 70.3 64 70.32 63.99L70.06 63.47ZM24.13 28.70L23.81 28.22C23.67 28.31 23.57 28.46 23.55 28.62L24.13 28.70ZM27.62 26.38L27.04 26.47C28.81 37.06 33.67 45.93 41.06 52.00C48.45 58.07 58.33 61.32 70.09 60.73L70.06 60.15L70.03 59.57C58.53 60.15 48.94 56.97 41.79 51.10C34.65 45.23 29.91 36.63 28.19 26.28L27.62 26.38ZM70.06 60.15L69.54 60.41C69.85 61.03 70.16 61.48 70.4 61.83C70.53 62 70.62 62.13 70.7 62.24C70.78 62.36 70.81 62.42 70.82 62.45C70.83 62.47 70.81 62.43 70.83 62.37C70.84 62.31 70.86 62.31 70.81 62.36C70.68 62.48 70.39 62.66 69.8 62.95L70.06 63.47L70.32 63.99C70.89 63.71 71.33 63.47 71.6 63.22C71.74 63.08 71.88 62.91 71.95 62.68C72.01 62.45 71.98 62.23 71.91 62.05C71.85 61.88 71.75 61.73 71.66 61.59C71.57 61.46 71.46 61.3 71.35 61.15C71.12 60.83 70.85 60.43 70.58 59.89L70.06 60.15ZM70.06 63.47L69.85 62.93C54.06 68.89 42 66.15 34.28 59.11C26.54 52.04 23.07 40.55 24.7 28.78L24.13 28.70L23.55 28.62C21.87 40.69 25.42 52.59 33.5 59.97C41.6 67.36 54.16 70.1 70.26 64.02L70.06 63.47ZM24.13 28.70L24.45 29.19L27.94 26.86L27.62 26.38L27.29 25.89L23.81 28.22L24.13 28.70Z"/>
+                                <path opacity="0.7" fill="#FFF3B5" d="M29.74 37.06C29.56 36.43 28.93 36.06 28.33 36.23C27.73 36.41 27.39 37.07 27.56 37.71L28.65 37.39L29.74 37.06ZM53.58 61.76C54.19 61.91 54.8 61.51 54.93 60.87C55.07 60.22 54.69 59.58 54.08 59.43L53.83 60.59L53.58 61.76ZM28.65 37.39L27.56 37.71C29.2 43.67 33.16 49.04 37.92 53.22C42.69 57.39 48.37 60.46 53.58 61.76L53.83 60.59L54.08 59.43C49.24 58.23 43.88 55.35 39.35 51.38C34.82 47.41 31.21 42.42 29.74 37.06L28.65 37.39Z"/>
+                                <path fill="#5B4316" d="M70.06 63.71C71.09 63.71 71.93 62.88 71.93 61.85C71.93 60.82 71.09 59.99 70.06 59.99C69.04 59.99 68.2 60.82 68.2 61.85C68.2 62.87 69.04 63.71 70.06 63.71Z"/>
+                                <path fill="#FFD94A" d="M26.41 27.76C25.25 52.18 37.8 72.15 62.22 75.64C63.39 77.97 63.43 78.8 61.11 78.80C26.41 82.68 14.79 55.65 23.61 28.57L26.41 27.76Z"/>
+                                <path fill="#C99400" d="M26.41 27.76L26.99 27.78C27 27.6 26.92 27.42 26.77 27.30C26.62 27.18 26.43 27.15 26.25 27.20L26.41 27.76ZM62.22 75.64L62.74 75.38C62.66 75.21 62.5 75.09 62.31 75.06L62.22 75.64ZM61.11 78.80L61.11 78.22C61.08 78.22 61.06 78.22 61.04 78.23L61.11 78.80ZM23.61 28.57L23.45 28.01C23.27 28.06 23.12 28.2 23.06 28.39L23.61 28.57ZM26.41 27.76L25.83 27.73C25.24 40.04 28.11 51.28 34.25 59.89C40.39 68.5 49.78 74.45 62.14 76.22L62.22 75.64L62.31 75.06C50.25 73.34 41.15 67.56 35.2 59.21C29.24 50.86 26.41 39.89 26.99 27.78L26.41 27.76ZM62.22 75.64L61.7 75.90C61.99 76.48 62.2 76.93 62.31 77.29C62.44 77.67 62.43 77.86 62.41 77.94C62.4 77.97 62.39 78.03 62.22 78.09C62.02 78.17 61.67 78.22 61.11 78.22L61.11 78.80L61.11 79.38C61.71 79.38 62.22 79.33 62.63 79.18C63.06 79.02 63.41 78.72 63.54 78.24C63.65 77.83 63.56 77.37 63.42 76.94C63.28 76.49 63.04 75.97 62.74 75.38L62.22 75.64ZM61.11 78.80L61.04 78.23C43.86 80.15 32.53 74.41 26.53 64.98C20.51 55.51 19.79 42.18 24.17 28.75L23.61 28.57L23.06 28.39C18.62 42.04 19.29 55.76 25.55 65.61C31.83 75.49 43.65 81.34 61.17 79.38L61.11 78.80ZM23.61 28.57L23.78 29.12L26.57 28.32L26.41 27.76L26.25 27.20L23.45 28.01L23.61 28.57Z"/>
+                                <path opacity="0.85" fill="#FFF3B5" d="M26.45 40.90C26.4 40.26 25.84 39.78 25.2 39.83C24.56 39.88 24.08 40.44 24.13 41.08L25.29 40.99L26.45 40.90ZM46.91 74.46C47.49 74.73 48.18 74.47 48.45 73.88C48.71 73.3 48.46 72.61 47.87 72.34L47.39 73.40L46.91 74.46ZM25.29 40.99L24.13 41.08C25.27 55.98 34.34 68.71 46.91 74.46L47.39 73.40L47.87 72.34C36.09 66.95 27.53 54.97 26.45 40.90L25.29 40.99Z"/>
+                                <path fill="#5B4316" d="M61.96 79.29C63.06 79.29 63.94 78.4 63.94 77.31C63.94 76.22 63.06 75.33 61.96 75.33C60.87 75.33 59.99 76.22 59.99 77.31C59.99 78.4 60.87 79.29 61.96 79.29Z"/>
+                                <path fill="#9A7A35" d="M23.05 29.04L21.94 20.02L30.89 19.09L30.33 27.87L23.05 29.04Z"/>
+                                <path fill="#6B4F1E" d="M22.49 17.33L21.94 20.02L30.89 19.09L29.77 16.71L22.49 17.33Z"/>
+                              </g>
+                            </g>
+                            <text x="86" y="163" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#10151C">Bananas</text>
+                            <text x="86" y="176" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#747387">Ecuador | per kilo</text>
+                            <rect class="acc" x="86" y="181" width="55" height="14" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">ORGANIC</text>
+                            <rect x="144" y="181" width="32" height="14" fill="#23313F"/>
+                            <text x="149" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">1.<tspan font-size="11" dy="-8">99</tspan>
+                            </text>
+                            <text x="138" y="217" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#747387">2.49</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1"/>
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5"/>
+                            <g transform="translate(0 80)">
+                              <circle cx="45" cy="182" r="15" fill="#E5484D"/>
+                              <path d="M45 167V161" stroke="#5B3A1E" stroke-width="2" stroke-linecap="round"/>
+                              <path d="M46 164C49 159 55 160 56 162C52 165 49 165 46 164Z" fill="#3FA56B"/>
+                              <ellipse cx="39" cy="177" rx="4" ry="2.5" fill="#fff" opacity=".45"/>
+                            </g>
+                            <text x="86" y="243" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#10151C">Apples Elstar</text>
+                            <text x="86" y="256" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#747387">Netherlands | 1 kg</text>
+                            <rect class="acc" x="86" y="261" width="48" height="14" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">SEASON</text>
+                            <text x="86" y="297" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#10151C">2.<tspan font-size="11" dy="-8">79</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M14 223H250" stroke="#E6EAEF"/>
+                          </g>
+                          <g class="b2" opacity="0" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <!-- Banner title and product -->
+                            <text x="16" y="84" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="26" font-weight="600" fill="#fff">Vitamins</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A"/>
+                              <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1" stroke-width="1.2"/>
+                              <rect x="38" y="48" width="30" height="18" fill="#F0508C"/>
+                              <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                              <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE" transform="rotate(-25 75.5 68.5)"/>
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5"/>
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A"/>
+                              <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1" stroke-width="1.2"/>
+                              <rect x="38" y="48" width="30" height="18" fill="#F0508C"/>
+                              <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                              <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE" transform="rotate(-25 75.5 68.5)"/>
+                            </g>
+                            <text x="86" y="163" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="12" font-weight="600" fill="#10151C">Vitamin C</text>
+                            <text x="86" y="176" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="9" fill="#747387">60 tablets | 500 mg</text>
+                            <rect class="acc" x="86" y="181" width="48" height="14" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">HEALTH</text>
+                            <rect x="137" y="181" width="32" height="14" fill="#23313F"/>
+                            <text x="142" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="20" font-weight="600" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">8.<tspan font-size="11" dy="-8">49</tspan></text>
+                            <text x="138" y="217" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="11" fill="#747387">9.99</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1"/>
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5"/>
+                            <g transform="translate(0 80)">
+                              <rect x="30" y="170" width="14" height="28" rx="7" fill="#F0508C" transform="rotate(-25 37 184)"/>
+                              <rect x="44" y="168" width="14" height="28" rx="7" fill="#F7B5CE" transform="rotate(20 51 182)"/>
+                            </g>
+                            <text x="86" y="243" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="12" font-weight="600" fill="#10151C">Vitamin D3</text>
+                            <text x="86" y="256" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="9" fill="#747387">90 capsules</text>
+                            <rect class="acc" x="86" y="261" width="48" height="14" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">HEALTH</text>
+                            <text x="86" y="297" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="20" font-weight="600" fill="#10151C">6.<tspan font-size="11" dy="-8">99</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M14 223H250" stroke="#E6EAEF"/>
+                          </g>
+                          <g class="b3" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <!-- Banner title and product -->
+                            <text x="16" y="84" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="800" letter-spacing="2" fill="#fff">BEERS</text>
+                            <g transform="translate(158.3 2.3) scale(1.05)">
+                              <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A"/>
+                              <path d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z" fill="#7A3E12"/>
+                              <rect x="45" y="54" width="16" height="16" fill="#FFE3C7"/>
+                              <rect x="45" y="58" width="16" height="4" fill="#FF8A3D"/>
+                              <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5" stroke-linecap="round"/>
+                            </g>
+                            <!-- Product rows -->
+                            <rect x="14" y="151" width="62" height="62" rx="6" fill="#F2F3F5"/>
+                            <g transform="translate(6.8 143.8) scale(0.72)">
+                              <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A"/>
+                              <path d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z" fill="#7A3E12"/>
+                              <rect x="45" y="54" width="16" height="16" fill="#FFE3C7"/>
+                              <rect x="45" y="58" width="16" height="4" fill="#FF8A3D"/>
+                              <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5" stroke-linecap="round"/>
+                            </g>
+                            <text x="86" y="163" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">LAGER</text>
+                            <text x="86" y="176" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="9" fill="#747387">33 CL | 5%</text>
+                            <rect class="acc" x="86" y="181" width="42" height="14" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <text x="91" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">CRAFT</text>
+                            <rect x="131" y="181" width="32" height="14" fill="#23313F"/>
+                            <text x="136" y="191.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">NEW</text>
+                            <text class="acc" x="86" y="217" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="800" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">2.<tspan font-size="11" dy="-8">29</tspan></text>
+                            <text x="138" y="217" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="11" fill="#747387">2.79</text>
+                            <path d="M138 213H162" stroke="#747387" stroke-width="1"/>
+                            <circle class="acc" cx="242" cy="209" r="11" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <path d="M242 204V214M237 209H247" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            <rect x="14" y="231" width="62" height="62" rx="6" fill="#F2F3F5"/>
+                            <g transform="translate(0 80)">
+                              <rect x="35" y="164" width="20" height="36" rx="4" fill="#FF8A3D"/>
+                              <rect x="35" y="174" width="20" height="14" fill="#7A3E12"/>
+                              <rect x="37" y="162" width="16" height="3" rx="1.5" fill="#B9C1CC"/>
+                            </g>
+                            <text x="86" y="243" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">IPA</text>
+                            <text x="86" y="256" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="9" fill="#747387">33 CL | 6.5%</text>
+                            <rect class="acc" x="86" y="261" width="42" height="14" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <text x="91" y="271.5" font-family="Inter, system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#fff" letter-spacing=".4">CRAFT</text>
+                            <text x="86" y="297" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="20" font-weight="800" fill="#10151C">2.<tspan font-size="11" dy="-8">89</tspan>
+                            </text>
+                            <circle class="acc" cx="242" cy="289" r="11" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                            <path d="M242 284V294M237 289H247" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M14 223H250" stroke="#E6EAEF"/>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- D: colour tokens -->
+                  <g class="ph" style="--s:-2s">
+                    <g class="lift">
+                      <g transform="matrix(0.989651 -0.143493 0 1 459 242.7)">
+                        <rect width="186" height="354" rx="11.3" fill="url(#wl-back)"/>
+                        <g transform="translate(7 5)">
+                          <rect width="186" height="365" rx="11.3" fill="url(#wl-face)"/>
+                          <rect class="acc" x="12" y="16" width="26" height="26" rx="6.4" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 6.4px;"/>
+                          <rect class="acc-d" x="12" y="52" width="26" height="26" rx="6.4" fill="#0184AF" style="opacity: 1; transform: none; translate: none; fill: rgb(196, 47, 106); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 6.4px;"/>
+                          <rect class="acc" x="12" y="88" width="26" height="26" rx="6.4" fill="#00ADE6" fill-opacity=".45" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 0.45; stroke-dashoffset: 0px; rx: 6.4px;"/>
+                          <rect x="12" y="124" width="26" height="26" rx="6.4" fill="#26313A"/>
+                          <g fill="#1B2533" fill-opacity=".75">
+                            <rect x="48" y="22" width="78" height="6" rx="3"/>
+                            <rect x="48" y="58" width="92" height="6" rx="3"/>
+                            <rect x="48" y="94" width="70" height="6" rx="3"/>
+                            <rect x="48" y="130" width="84" height="6" rx="3"/>
+                          </g>
+                          <g fill="#B9C1CC">
+                            <rect x="48" y="32" width="44" height="5" rx="2.5"/>
+                            <rect x="48" y="68" width="44" height="5" rx="2.5"/>
+                            <rect x="48" y="104" width="44" height="5" rx="2.5"/>
+                            <rect x="48" y="140" width="44" height="5" rx="2.5"/>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- E: product card; product, name and type follow the brand (.b1/.b2/.b3) -->
+                  <g class="ph" style="--s:-4s">
+                    <g class="lift">
+                      <g transform="matrix(0.989651 -0.143493 0 1 541 293.7)">
+                        <rect width="186" height="354" rx="11.3" fill="url(#wl-back)"/>
+                        <g transform="translate(7 5)">
+                          <rect width="186" height="365" rx="11.3" fill="url(#wl-face)"/>
+                          <rect x="12" y="12" width="162" height="82" rx="10" fill="#fff"/>
+                          <rect class="acc" x="20" y="20" width="66" height="66" rx="8" fill="#00ADE6" fill-opacity=".16" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 0.16; stroke-dashoffset: 0px; rx: 8px;"/>
+                          <!-- Blue: bananas -->
+                          <g class="b1" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <g transform="translate(18.85 12.25) scale(0.82)">
+                              <!-- Banana bunch (from the Figma edit): three fruits, back to front, each with its outline, shine and tip -->
+                              <path fill="#E8B524" d="M29.77 27.23C36.75 43.52 51.92 52.47 72.86 47.82C74.02 50.14 74.62 49.34 72.3 50.50C46.56 67.3 25.29 49.3 26.45 29.76L29.77 27.23Z"/>
+                              <path fill="#C99400" d="M29.77 27.23L30.3 27.00C30.23 26.84 30.09 26.72 29.92 26.67C29.74 26.63 29.56 26.66 29.42 26.77L29.77 27.23ZM72.86 47.82L73.38 47.56C73.26 47.32 72.99 47.19 72.73 47.25L72.86 47.82ZM72.3 50.50L72.04 49.98C72.02 49.99 72 50 71.98 50.02L72.3 50.50ZM26.45 29.76L26.1 29.29C25.97 29.39 25.88 29.55 25.87 29.72L26.45 29.76ZM29.77 27.23L29.23 27.46C32.77 35.71 38.4 42.13 45.82 45.89C53.24 49.66 62.41 50.73 72.98 48.38L72.86 47.82L72.73 47.25C62.37 49.55 53.49 48.48 46.34 44.86C39.2 41.23 33.75 35.04 30.3 27.00L29.77 27.23ZM72.86 47.82L72.34 48.08C72.64 48.69 72.92 49.1 73.11 49.38C73.21 49.53 73.26 49.61 73.3 49.68C73.35 49.75 73.31 49.71 73.3 49.61C73.3 49.45 73.39 49.34 73.42 49.32C73.42 49.31 73.4 49.34 73.27 49.40C73.15 49.46 73.01 49.52 72.79 49.62C72.59 49.72 72.33 49.84 72.04 49.98L72.3 50.50L72.56 51.02C72.84 50.88 73.08 50.77 73.28 50.68C73.48 50.59 73.65 50.51 73.79 50.44C73.91 50.38 74.07 50.3 74.19 50.19C74.33 50.07 74.47 49.86 74.47 49.58C74.46 49.36 74.36 49.18 74.3 49.09C74.24 48.98 74.15 48.85 74.07 48.73C73.89 48.47 73.65 48.1 73.38 47.56L72.86 47.82ZM72.3 50.50L71.98 50.02C59.26 58.32 47.75 57.97 39.58 53.25C31.38 48.52 26.47 39.34 27.03 29.79L26.45 29.76L25.87 29.72C25.28 39.71 30.42 49.3 39 54.26C47.6 59.23 59.59 59.49 72.62 50.99L72.3 50.50ZM26.45 29.76L26.81 30.22L30.12 27.70L29.77 27.23L29.42 26.77L26.1 29.29L26.45 29.76Z"/>
+                              <path opacity="0.85" fill="#FFF3B5" fill-opacity="0.5" d="M33.75 35.45C33.49 35.05 33 34.95 32.65 35.22C32.3 35.49 32.24 36.04 32.5 36.44L33.13 35.94L33.75 35.45ZM58.3 51.59C58.73 51.62 59.09 51.25 59.09 50.77C59.1 50.28 58.75 49.87 58.32 49.84L58.31 50.71L58.3 51.59ZM33.13 35.94L32.5 36.44C39.98 47.83 50.33 51.01 58.3 51.59L58.31 50.71L58.32 49.84C50.62 49.28 40.83 46.23 33.75 35.45L33.13 35.94Z"/>
+                              <path fill="#5B4316" d="M72.39 50.80C73.42 50.8 74.25 49.97 74.25 48.94C74.25 47.92 73.42 47.08 72.39 47.08C71.36 47.08 70.53 47.92 70.53 48.94C70.53 49.97 71.36 50.81 72.39 50.80Z"/>
+                              <path fill="#F6C834" d="M27.62 26.38C31.11 47.31 46.8 61.31 70.06 60.15C71.22 62.48 72.39 62.31 70.06 63.47C38.16 75.51 20.82 52.53 24.13 28.70L27.62 26.38Z"/>
+                              <path fill="#C99400" d="M27.62 26.38L28.19 26.28C28.16 26.09 28.03 25.92 27.85 25.84C27.67 25.77 27.46 25.78 27.29 25.89L27.62 26.38ZM70.06 60.15L70.58 59.89C70.48 59.68 70.26 59.56 70.03 59.57L70.06 60.15ZM70.06 63.47L70.26 64.02C70.28 64.01 70.3 64 70.32 63.99L70.06 63.47ZM24.13 28.70L23.81 28.22C23.67 28.31 23.57 28.46 23.55 28.62L24.13 28.70ZM27.62 26.38L27.04 26.47C28.81 37.06 33.67 45.93 41.06 52.00C48.45 58.07 58.33 61.32 70.09 60.73L70.06 60.15L70.03 59.57C58.53 60.15 48.94 56.97 41.79 51.10C34.65 45.23 29.91 36.63 28.19 26.28L27.62 26.38ZM70.06 60.15L69.54 60.41C69.85 61.03 70.16 61.48 70.4 61.83C70.53 62 70.62 62.13 70.7 62.24C70.78 62.36 70.81 62.42 70.82 62.45C70.83 62.47 70.81 62.43 70.83 62.37C70.84 62.31 70.86 62.31 70.81 62.36C70.68 62.48 70.39 62.66 69.8 62.95L70.06 63.47L70.32 63.99C70.89 63.71 71.33 63.47 71.6 63.22C71.74 63.08 71.88 62.91 71.95 62.68C72.01 62.45 71.98 62.23 71.91 62.05C71.85 61.88 71.75 61.73 71.66 61.59C71.57 61.46 71.46 61.3 71.35 61.15C71.12 60.83 70.85 60.43 70.58 59.89L70.06 60.15ZM70.06 63.47L69.85 62.93C54.06 68.89 42 66.15 34.28 59.11C26.54 52.04 23.07 40.55 24.7 28.78L24.13 28.70L23.55 28.62C21.87 40.69 25.42 52.59 33.5 59.97C41.6 67.36 54.16 70.1 70.26 64.02L70.06 63.47ZM24.13 28.70L24.45 29.19L27.94 26.86L27.62 26.38L27.29 25.89L23.81 28.22L24.13 28.70Z"/>
+                              <path opacity="0.7" fill="#FFF3B5" d="M29.74 37.06C29.56 36.43 28.93 36.06 28.33 36.23C27.73 36.41 27.39 37.07 27.56 37.71L28.65 37.39L29.74 37.06ZM53.58 61.76C54.19 61.91 54.8 61.51 54.93 60.87C55.07 60.22 54.69 59.58 54.08 59.43L53.83 60.59L53.58 61.76ZM28.65 37.39L27.56 37.71C29.2 43.67 33.16 49.04 37.92 53.22C42.69 57.39 48.37 60.46 53.58 61.76L53.83 60.59L54.08 59.43C49.24 58.23 43.88 55.35 39.35 51.38C34.82 47.41 31.21 42.42 29.74 37.06L28.65 37.39Z"/>
+                              <path fill="#5B4316" d="M70.06 63.71C71.09 63.71 71.93 62.88 71.93 61.85C71.93 60.82 71.09 59.99 70.06 59.99C69.04 59.99 68.2 60.82 68.2 61.85C68.2 62.87 69.04 63.71 70.06 63.71Z"/>
+                              <path fill="#FFD94A" d="M26.41 27.76C25.25 52.18 37.8 72.15 62.22 75.64C63.39 77.97 63.43 78.8 61.11 78.80C26.41 82.68 14.79 55.65 23.61 28.57L26.41 27.76Z"/>
+                              <path fill="#C99400" d="M26.41 27.76L26.99 27.78C27 27.6 26.92 27.42 26.77 27.30C26.62 27.18 26.43 27.15 26.25 27.20L26.41 27.76ZM62.22 75.64L62.74 75.38C62.66 75.21 62.5 75.09 62.31 75.06L62.22 75.64ZM61.11 78.80L61.11 78.22C61.08 78.22 61.06 78.22 61.04 78.23L61.11 78.80ZM23.61 28.57L23.45 28.01C23.27 28.06 23.12 28.2 23.06 28.39L23.61 28.57ZM26.41 27.76L25.83 27.73C25.24 40.04 28.11 51.28 34.25 59.89C40.39 68.5 49.78 74.45 62.14 76.22L62.22 75.64L62.31 75.06C50.25 73.34 41.15 67.56 35.2 59.21C29.24 50.86 26.41 39.89 26.99 27.78L26.41 27.76ZM62.22 75.64L61.7 75.90C61.99 76.48 62.2 76.93 62.31 77.29C62.44 77.67 62.43 77.86 62.41 77.94C62.4 77.97 62.39 78.03 62.22 78.09C62.02 78.17 61.67 78.22 61.11 78.22L61.11 78.80L61.11 79.38C61.71 79.38 62.22 79.33 62.63 79.18C63.06 79.02 63.41 78.72 63.54 78.24C63.65 77.83 63.56 77.37 63.42 76.94C63.28 76.49 63.04 75.97 62.74 75.38L62.22 75.64ZM61.11 78.80L61.04 78.23C43.86 80.15 32.53 74.41 26.53 64.98C20.51 55.51 19.79 42.18 24.17 28.75L23.61 28.57L23.06 28.39C18.62 42.04 19.29 55.76 25.55 65.61C31.83 75.49 43.65 81.34 61.17 79.38L61.11 78.80ZM23.61 28.57L23.78 29.12L26.57 28.32L26.41 27.76L26.25 27.20L23.45 28.01L23.61 28.57Z"/>
+                              <path opacity="0.85" fill="#FFF3B5" d="M26.45 40.90C26.4 40.26 25.84 39.78 25.2 39.83C24.56 39.88 24.08 40.44 24.13 41.08L25.29 40.99L26.45 40.90ZM46.91 74.46C47.49 74.73 48.18 74.47 48.45 73.88C48.71 73.3 48.46 72.61 47.87 72.34L47.39 73.40L46.91 74.46ZM25.29 40.99L24.13 41.08C25.27 55.98 34.34 68.71 46.91 74.46L47.39 73.40L47.87 72.34C36.09 66.95 27.53 54.97 26.45 40.90L25.29 40.99Z"/>
+                              <path fill="#5B4316" d="M61.96 79.29C63.06 79.29 63.94 78.4 63.94 77.31C63.94 76.22 63.06 75.33 61.96 75.33C60.87 75.33 59.99 76.22 59.99 77.31C59.99 78.4 60.87 79.29 61.96 79.29Z"/>
+                              <path fill="#9A7A35" d="M23.05 29.04L21.94 20.02L30.89 19.09L30.33 27.87L23.05 29.04Z"/>
+                              <path fill="#6B4F1E" d="M22.49 17.33L21.94 20.02L30.89 19.09L29.77 16.71L22.49 17.33Z"/>
+                            </g>
+                            <text x="94" y="36" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#10151C">Bananas</text>
+                            <text x="94" y="50" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" fill="#747387">Per kilo</text>
+                            <text x="94" y="80" font-family="'Hamburg Serial', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="800" fill="#10151C">€1.99</text>
+                          </g>
+                          <!-- Pink: a pot of vitamins -->
+                          <g class="b2" opacity="0" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <rect x="40" y="31" width="26" height="9" rx="2.5" fill="#C42F6A"/>
+                            <rect x="38" y="39" width="30" height="38" rx="6" fill="#fff" stroke="#E7A9C1" stroke-width="1.2"/>
+                            <rect x="38" y="48" width="30" height="18" fill="#F0508C"/>
+                            <path d="M53 52V62M48 57H58" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                            <rect x="70" y="66" width="11" height="5" rx="2.5" fill="#F7B5CE" transform="rotate(-25 75.5 68.5)"/>
+                            <text x="94" y="36" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="12" font-weight="600" fill="#10151C">Vitamin C</text>
+                            <text x="94" y="50" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="9.5" fill="#747387">60 tablets</text>
+                            <text x="94" y="80" font-family="'Ivar Display', Georgia, 'Times New Roman', serif" font-size="13" font-weight="600" fill="#10151C">€8.49</text>
+                          </g>
+                          <!-- Orange: a bottle of beer -->
+                          <g class="b3" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                            <rect x="49" y="24" width="8" height="4" rx="1" fill="#D9661A"/>
+                            <path d="M49.5 28H56.5V38C56.5 41 61 43 61 48V78C61 80 59.5 81 58 81H48C46.5 81 45 80 45 78V48C45 43 49.5 41 49.5 38Z" fill="#7A3E12"/>
+                            <rect x="45" y="54" width="16" height="16" fill="#FFE3C7"/>
+                            <rect x="45" y="58" width="16" height="4" fill="#FF8A3D"/>
+                            <path d="M48.5 46V74" stroke="#fff" stroke-opacity=".25" stroke-width="1.5" stroke-linecap="round"/>
+                            <text x="94" y="36" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1" fill="#10151C">LAGER</text>
+                            <text x="94" y="50" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="9.5" letter-spacing="1" fill="#747387">33 CL · 5%</text>
+                            <text x="94" y="80" font-family="'Proxima Nova', 'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="800" fill="#10151C">€2.29</text>
+                          </g>
+                          <!-- Add button: brand colour and corner radius -->
+                          <rect class="acc btn" x="144" y="64" width="22" height="22" rx="8" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: 20px;"/>
+                          <path d="M155 70V80M150 75H160" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+                        </g>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+
+                <!-- Theme slider: the knob picks the brand -->
+                <rect x="70" y="431.2" width="661" height="17.6" rx="8.8" fill="url(#wl-track)"/>
+                <rect x="66.4" y="427.6" width="668.2" height="24.8" rx="12.4" stroke="#fff" stroke-opacity=".2" stroke-width="7.2"/>
+                <g class="knob" style="opacity: 1; transform: matrix(1, 0, 0, 1, 220, 0); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                  <circle cx="180" cy="440" r="13.6" fill="#000032" opacity=".18"/>
+                  <circle cx="180" cy="440" r="12" fill="#fff"/>
+                  <circle class="acc" cx="180" cy="440" r="4.8" fill="#00ADE6" style="opacity: 1; transform: none; translate: none; fill: rgb(240, 80, 140); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                </g>
+              </svg>

@@ -1,0 +1,393 @@
+<!-- Cookbook.md cover, exported from index.html by assets/covers/export.py.
+     Open it in a browser to see it animate; the styles are assets/css/covers/base.css
+     and assets/css/covers/cbk.css. Edit the page, then re-run the script. -->
+<svg xmlns="http://www.w3.org/2000/svg" class="cbk" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Cookbook.md">
+  <style><![CDATA[
+/* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
+   stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
+   Load this file before the cover stylesheets. */
+
+:root {
+  /* Loops */
+  --cover-story: 12s;      /* a cover that tells its project's story, in beats of ~3s */
+  --cover-ambient: 7s;     /* background life: floats, drifts, glows */
+
+  /* Easing */
+  --cover-ease: cubic-bezier(0.4, 0, 0.2, 1);       /* default for everything */
+  --cover-ease-pop: cubic-bezier(0.3, 0.8, 0.3, 1.1); /* at most one small "pop" per cover */
+
+  /* Hover: the hero element lifts */
+  --cover-hover-lift: -6px;
+  --cover-hover-duration: 300ms;
+
+  /* Ambient movement stays small */
+  --cover-ambient-amplitude: 8px;
+}
+
+/* Off screen (or tab hidden), js/covers.js adds .is-paused to the cover's <svg>: every
+   CSS animation inside it freezes where it is and resumes from there. SMIL animations
+   are paused by the script itself (svg.pauseAnimations()). */
+.portfolio-wrap > svg.is-paused,
+.portfolio-wrap > svg.is-paused * {
+  animation-play-state: paused !important;
+}
+
+/* Cookbook.md cover (inline <svg class="cbk"> in #project14, index.html).
+   Palette and type borrowed from Commeat (forest, gold, clay, sand; Newsreader).
+   Every rule for the drawing sits in @scope (.cbk); keyframes and SVG IDs use the
+   cbk- prefix because they are page-wide.
+
+   One 16s loop, every animation shares it (no delays), so all parts stay in sync:
+     4–56%   the Markdown types itself line by line (covers shrink, caret follows)
+     9–48%   the card renders as each line lands: title, meta, and the tarte tatin
+             dish, a flat illustration (20% with the title, full once "Dessert" is typed at 15–17%)
+     46%     the last checkbox gets ticked
+     88–97%  everything fades out; the dish stays hidden (its placeholder shows)
+             until the next take
+   Without motion (prefers-reduced-motion, or no @scope support) the base styles
+   below show the finished state: full recipe, dish shown. Hover the card
+   to lift it (real pointer above 768px). */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project14 {
+  background: linear-gradient(32deg, #F6ECDF 0%, #EBD9C2 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge
+   (the SVG's diagonal gradient runs from #F3E7D7 to #EBD9C2 along it). */
+.portfolio-item--tall #project14 {
+  background: linear-gradient(90deg, #F3E7D7 0%, #EBD9C2 100%);
+}
+
+/* The art already ends on plain background, so it skips the shared bottom fade */
+.portfolio-item--tall #project14 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project14 .portfolio-title h4 {
+  color: #0F3D3A;
+}
+
+.portfolio-item--tall #project14 .portfolio-title p {
+  color: #5B6B68;
+}
+
+@scope (.cbk) {
+  :scope {
+    --cyc: 16s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Base = finished state */
+  .cv { transform: scaleX(0); transform-box: fill-box; transform-origin: right; }
+  .sk { opacity: 0; }
+
+  /* Editor */
+  .ed-text, .card-text { animation: cbk-clear var(--cyc) linear infinite; }
+  .cv { animation: var(--cyc) steps(14, end) infinite; }
+  .cv1 { animation-name: cbk-l1; }
+  .cv2 { animation-name: cbk-l2; }
+  .cv3 { animation-name: cbk-l3; }
+  .cv4 { animation-name: cbk-l4; }
+  .cv5 { animation-name: cbk-l5; }
+  .cv6 { animation-name: cbk-l6; }
+  .cv7 { animation-name: cbk-l7; }
+  .cv8 { animation-name: cbk-l8; }
+  .caret { animation: cbk-caret var(--cyc) steps(14, end) infinite; }
+  .blink { animation: cbk-blink 1s step-end infinite; }
+  .tick { animation: cbk-tick var(--cyc) linear infinite; }
+  .go { transform-box: fill-box; transform-origin: center; animation: cbk-go 2s ease-in-out infinite; }
+
+  /* Card */
+  .sk1 { animation: cbk-sk1 var(--cyc) linear infinite; }
+  .sk2 { animation: cbk-sk2 var(--cyc) linear infinite; }
+  .ttl { animation: cbk-ttl var(--cyc) ease-out infinite; }
+  .meta { animation: cbk-meta var(--cyc) ease-out infinite; }
+  .dish {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cbk-dish var(--cyc) ease-out infinite;
+  }
+  .drift { transform-box: fill-box; transform-origin: center; animation: cbk-drift 9s ease-in-out var(--s, 0s) infinite; }
+
+  .card { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .card:hover { transform: translateY(-6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .caret { display: none; }
+  }
+}
+
+/* Whole-pane fade used to wipe the take: out at 88–91%, back at 95–97% */
+@keyframes cbk-clear {
+  0%, 88% { opacity: 1; }
+  91%, 95% { opacity: 0; }
+  97%, 100% { opacity: 1; }
+}
+
+/* One per line: type during its window, hold, re-cover while the pane is faded */
+@keyframes cbk-l1 { 0%, 4% { transform: scaleX(1); } 9%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l2 { 0%, 10% { transform: scaleX(1); } 15%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l3 { 0%, 17% { transform: scaleX(1); } 22%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l4 { 0%, 23% { transform: scaleX(1); } 27%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l5 { 0%, 28% { transform: scaleX(1); } 32%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l6 { 0%, 33% { transform: scaleX(1); } 37%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l7 { 0%, 38% { transform: scaleX(1); } 43%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l8 { 0%, 49% { transform: scaleX(1); } 56%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+
+/* The caret rides the end of each line (one char ≈ 9.6 units); jumps take 0.1% */
+@keyframes cbk-caret {
+  0%, 4% { transform: translate(0, 0); }
+  9%, 9.9% { transform: translate(124.8px, 0); }
+  10% { transform: translate(0, 30px); }
+  15%, 16.9% { transform: translate(172.8px, 30px); }
+  17% { transform: translate(0, 90px); }
+  22%, 22.9% { transform: translate(134.4px, 90px); }
+  23% { transform: translate(0, 120px); }
+  27%, 27.9% { transform: translate(134.4px, 120px); }
+  28% { transform: translate(0, 150px); }
+  32%, 32.9% { transform: translate(163.2px, 150px); }
+  33% { transform: translate(0, 180px); }
+  37%, 37.9% { transform: translate(163.2px, 180px); }
+  38% { transform: translate(0, 210px); }
+  43%, 48.9% { transform: translate(182.4px, 210px); }
+  49% { transform: translate(0, 270px); }
+  56%, 90% { transform: translate(259.2px, 270px); }
+  91%, 100% { transform: translate(0, 0); }
+}
+
+@keyframes cbk-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes cbk-tick {
+  0%, 46% { opacity: 0; }
+  47%, 91% { opacity: 1; }
+  93%, 100% { opacity: 0; }
+}
+
+@keyframes cbk-go {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* Card text */
+@keyframes cbk-sk1 { 0%, 9% { opacity: 1; } 11%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-sk2 { 0%, 15% { opacity: 1; } 17%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-ttl {
+  0%, 9% { opacity: 0; transform: translateY(6px); }
+  11%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes cbk-meta {
+  0%, 15% { opacity: 0; transform: translateY(5px); }
+  17%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(5px); }
+}
+
+/* The dish fades in to 20% with the title (9–11%), then to full when "Dessert" is
+   typed (end of line 2, 15–17%); it fades with the pane (88–91%) and stays hidden
+   until the next take */
+@keyframes cbk-dish {
+  0%, 9% { opacity: 0; transform: scale(1.06); }
+  11%, 15% { opacity: 0.2; transform: scale(1.04); }
+  17%, 88% { opacity: 1; transform: scale(1); }
+  91%, 100% { opacity: 0; transform: scale(1.06); }
+}
+
+/* A lazy loop, like a leaf on a draught: up and across, sway back, settle.
+   --x / --y (1 or -1, set on each leaf) point the loop inward from its corner. */
+@keyframes cbk-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(calc(var(--x, 1) * 10px), calc(var(--y, 1) * -16px)) rotate(16deg); }
+  50% { transform: translate(calc(var(--x, 1) * 18px), calc(var(--y, 1) * -6px)) rotate(-6deg); }
+  75% { transform: translate(calc(var(--x, 1) * 6px), calc(var(--y, 1) * -22px)) rotate(12deg); }
+}
+]]></style>
+                <defs>
+                  <linearGradient id="cbk-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F6ECDF" />
+                    <stop offset="1" stop-color="#EBD9C2" />
+                  </linearGradient>
+                  <linearGradient id="cbk-img" x1="464" y1="84" x2="748" y2="284" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#F8F1E7" />
+                    <stop offset="1" stop-color="#EEE0CC" />
+                  </linearGradient>
+                  <linearGradient id="cbk-leaf" x1="0" y1="0" x2="1" y2="1">
+                    <stop stop-color="#F4B13B" />
+                    <stop offset="1" stop-color="#2E6B4F" />
+                  </linearGradient>
+                  <filter id="cbk-shadow" x="-20%" y="-20%" width="140%" height="150%">
+                    <feGaussianBlur stdDeviation="12" />
+                  </filter>
+                  <path id="cbk-leaf-shape" d="M0-16C11-11 13 5 0 16C-13 5-11-11 0-16Z" />
+                </defs>
+                <rect width="800" height="500" fill="url(#cbk-bg)" />
+                <!-- Drifting leaves, after the Commeat logo -->
+                <g class="drift" style="--s:0s">
+                  <use href="#cbk-leaf-shape" transform="translate(30 462) rotate(-35) scale(2.2)" fill="url(#cbk-leaf)"
+                    opacity=".55" />
+                </g>
+                <g class="drift" style="--s:-3s;--x:-1;--y:-1">
+                  <use href="#cbk-leaf-shape" transform="translate(774 36) rotate(140) scale(1.6)" fill="url(#cbk-leaf)"
+                    opacity=".45" />
+                </g>
+
+                <!-- Editor -->
+                <rect x="44" y="66" width="376" height="392" rx="22" fill="#0F3D3A" opacity=".22"
+                  filter="url(#cbk-shadow)" />
+                <rect x="40" y="52" width="380" height="396" rx="22" fill="#0F3D3A" />
+                <path d="M40 74C40 61.85 49.85 52 62 52H398C410.15 52 420 61.85 420 74V98H40Z" fill="#0B3331" />
+                <circle cx="66" cy="75" r="5.5" fill="#E0745E" />
+                <circle cx="84" cy="75" r="5.5" fill="#F4B13B" />
+                <circle cx="102" cy="75" r="5.5" fill="#F2E6D6" fill-opacity=".35" />
+                <text x="230" y="80" text-anchor="middle"
+                  font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#F2E6D6"
+                  fill-opacity=".55">tarte-tatin.md</text>
+                <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#F2E6D6"
+                  fill-opacity=".25" text-anchor="end">
+                  <text x="74" y="136">1</text><text x="74" y="166">2</text><text x="74" y="196">3</text><text x="74"
+                    y="226">4</text><text x="74" y="256">5</text>
+                  <text x="74" y="286">6</text><text x="74" y="316">7</text><text x="74" y="346">8</text><text x="74"
+                    y="376">9</text><text x="74" y="406">10</text>
+                </g>
+                <!-- Editor lines stay one per line: whitespace between <tspan>s renders as a space.
+                     textLength pins each line to 9.6 units per character so covers and caret match. -->
+                <!-- prettier-ignore -->
+                <g class="ed-text" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16"
+                  fill="#F2E6D6">
+                  <text x="92" y="136" textLength="124.8">
+                    <tspan fill="#F4B13B"># </tspan>
+                    <tspan font-weight="700">Tarte Tatin</tspan>
+                  </text>
+                  <text x="92" y="166" textLength="172.8">
+                    <tspan fill="#F4B13B">&gt; </tspan>
+                    <tspan fill-opacity=".6" font-style="italic">45 min · Dessert</tspan>
+                  </text>
+                  <text x="92" y="226" textLength="134.4">
+                    <tspan fill="#F4B13B">## </tspan>
+                    <tspan font-weight="700">Ingredients</tspan>
+                  </text>
+                  <text x="92" y="256" textLength="134.4">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[x]</tspan> 6 apples
+                  </text>
+                  <text x="92" y="286" textLength="163.2">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[x]</tspan> 150 g sugar
+                  </text>
+                  <text x="92" y="316" textLength="163.2">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[x]</tspan> 80 g butter
+                  </text>
+                  <text x="92" y="346" textLength="182.4">
+                    <tspan fill="#F4B13B">- </tspan>
+                    <tspan fill="#E0745E">[ ]</tspan> 1 puff pastry
+                  </text>
+                  <text class="tick" x="92" y="346" textLength="38.4">
+                    <tspan fill-opacity="0">- [</tspan>
+                    <tspan fill="#E0745E" font-weight="700">x</tspan>
+                  </text>
+                  <text x="92" y="406" textLength="259.2">
+                    <tspan fill="#F4B13B">1. </tspan>Cut apples into quarters
+                  </text>
+                  <!-- Covers in the editor colour: each one shrinks to the right to "type" its line -->
+                  <g fill="#0F3D3A">
+                    <rect class="cv cv1" x="90" y="120" width="134" height="22" />
+                    <rect class="cv cv2" x="90" y="150" width="183" height="22" />
+                    <rect class="cv cv3" x="90" y="210" width="144" height="22" />
+                    <rect class="cv cv4" x="90" y="240" width="144" height="22" />
+                    <rect class="cv cv5" x="90" y="270" width="173" height="22" />
+                    <rect class="cv cv6" x="90" y="300" width="173" height="22" />
+                    <rect class="cv cv7" x="90" y="330" width="192" height="22" />
+                    <rect class="cv cv8" x="90" y="390" width="270" height="22" />
+                  </g>
+                  <g class="caret">
+                    <rect class="blink" x="92" y="122" width="2" height="18" fill="#F4B13B" />
+                  </g>
+                </g>
+
+                <!-- Render hint between the two panes -->
+                <g class="go">
+                  <path d="M432 243L439 250L432 257" stroke="#0F3D3A" stroke-width="3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+
+                <!-- Recipe card (hover lifts it) -->
+                <g class="card">
+                  <rect x="456" y="86" width="300" height="350" rx="24" fill="#0F3D3A" opacity=".16"
+                    filter="url(#cbk-shadow)" />
+                  <rect x="452" y="72" width="308" height="356" rx="24" fill="#fff" />
+                  <rect x="464" y="84" width="284" height="200" rx="16" fill="url(#cbk-img)" />
+                  <!-- The dish: a flat tarte tatin that appears as the title and "Dessert" land;
+                       the gradient rect above is its placeholder -->
+                  <g class="dish">
+                    <ellipse cx="606" cy="266" rx="86" ry="9" fill="#0F3D3A" opacity=".08" />
+                    <circle cx="606" cy="184" r="86" fill="#FFFDF8" stroke="#E8DCC8" stroke-width="2" />
+                    <circle cx="606" cy="184" r="77" fill="#F4EBDD" />
+                    <!-- Pastry rim and caramel -->
+                    <circle cx="606" cy="184" r="72" fill="#D99A45" stroke="#B9732B" stroke-width="2.5" />
+                    <circle cx="606" cy="184" r="64" fill="#A9561B" />
+                    <!-- Apple quarters, pointing in with a slight swirl -->
+                    <g fill="#EDB24E" stroke="#A9561B" stroke-width="1.5">
+                      <ellipse cx="650.0" cy="184.0" rx="22" ry="10" transform="rotate(25.0 650.0 184.0)" />
+                      <ellipse cx="644.1" cy="206.0" rx="22" ry="10" transform="rotate(55.0 644.1 206.0)" />
+                      <ellipse cx="628.0" cy="222.1" rx="22" ry="10" transform="rotate(85.0 628.0 222.1)" />
+                      <ellipse cx="606.0" cy="228.0" rx="22" ry="10" transform="rotate(115.0 606.0 228.0)" />
+                      <ellipse cx="584.0" cy="222.1" rx="22" ry="10" transform="rotate(145.0 584.0 222.1)" />
+                      <ellipse cx="567.9" cy="206.0" rx="22" ry="10" transform="rotate(175.0 567.9 206.0)" />
+                      <ellipse cx="562.0" cy="184.0" rx="22" ry="10" transform="rotate(205.0 562.0 184.0)" />
+                      <ellipse cx="567.9" cy="162.0" rx="22" ry="10" transform="rotate(235.0 567.9 162.0)" />
+                      <ellipse cx="584.0" cy="145.9" rx="22" ry="10" transform="rotate(265.0 584.0 145.9)" />
+                      <ellipse cx="606.0" cy="140.0" rx="22" ry="10" transform="rotate(295.0 606.0 140.0)" />
+                      <ellipse cx="628.0" cy="145.9" rx="22" ry="10" transform="rotate(325.0 628.0 145.9)" />
+                      <ellipse cx="644.1" cy="162.0" rx="22" ry="10" transform="rotate(355.0 644.1 162.0)" />
+                    </g>
+                    <g fill="#F2C062" stroke="#A9561B" stroke-width="1.5">
+                      <ellipse cx="625.3" cy="189.2" rx="13" ry="7" transform="rotate(40.0 625.3 189.2)" />
+                      <ellipse cx="614.0" cy="202.3" rx="13" ry="7" transform="rotate(91.4 614.0 202.3)" />
+                      <ellipse cx="596.7" cy="201.7" rx="13" ry="7" transform="rotate(142.9 596.7 201.7)" />
+                      <ellipse cx="586.3" cy="187.7" rx="13" ry="7" transform="rotate(194.3 586.3 187.7)" />
+                      <ellipse cx="590.8" cy="171.0" rx="13" ry="7" transform="rotate(245.7 590.8 171.0)" />
+                      <ellipse cx="606.7" cy="164.0" rx="13" ry="7" transform="rotate(297.1 606.7 164.0)" />
+                      <ellipse cx="622.1" cy="172.1" rx="13" ry="7" transform="rotate(348.6 622.1 172.1)" />
+                    </g>
+                    <circle cx="606" cy="184" r="7" fill="#F2C062" stroke="#A9561B" stroke-width="1.5" />
+                    <!-- Shine -->
+                    <g fill="#fff" opacity=".5">
+                      <ellipse cx="576" cy="148" rx="10" ry="3.5" transform="rotate(-35 576 148)" />
+                      <ellipse cx="638" cy="212" rx="7" ry="2.5" transform="rotate(-35 638 212)" />
+                      <circle cx="620" cy="142" r="2.5" />
+                      <circle cx="566" cy="202" r="2" />
+                    </g>
+                  </g>
+
+                  <!-- Card text: skeletons first, then the rendered recipe -->
+                  <rect class="sk sk1" x="476" y="304" width="176" height="20" rx="10" fill="#F2E9DC" />
+                  <rect class="sk sk2" x="476" y="338" width="118" height="12" rx="6" fill="#F2E9DC" />
+                  <g class="card-text">
+                    <text class="ttl" x="476" y="322" font-family="Newsreader, Georgia, 'Times New Roman', serif"
+                      font-size="27" font-weight="600" fill="#0F3D3A">Tarte Tatin</text>
+                    <g class="meta" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                      font-size="14" fill="#5B6B68">
+                      <circle cx="482" cy="345" r="6" fill="none" stroke="#5B6B68" stroke-width="1.6" />
+                      <path d="M482 341.5V345L484.5 346.5" stroke="#5B6B68" stroke-width="1.6" stroke-linecap="round" />
+                      <text x="494" y="350">45min</text>
+                      <text x="544" y="350">Dessert</text>
+                    </g>
+                  </g>
+                </g>
+              </svg>

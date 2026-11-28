@@ -1,0 +1,116 @@
+/* White label eCommerce App cover (inline <svg class="wl"> in #project2, index.html).
+   One app, many brands: the theme slider's knob moves between three brand themes
+   and the whole UI re-skins with it, colour (.acc fill, .acc-s stroke, .acc-d darker
+   fill) and typeface (the wordmark and title groups .b1/.b2/.b3).
+   One 12s loop, shared by everything:
+     0–28%   Hamburg Serial (#00ADE6)
+     28–34%  knob slides; colour and typeface switch at its midpoint
+     34–61%  Ivar Display   (#F0508C, pink)
+     67–94%  PROXIMA NOVA   (#FF8A3D, orange)
+     94–100% knob sweeps back to the start
+   Buttons (.btn filled, .btn-o outlined) change corner radius with the brand at the
+   same moment: 8, pill, 2.
+   The screens stay still; hover one to lift it (real pointer above 768px). Every rule sits in @scope (.wl); keyframes and SVG IDs
+   use the wl- prefix. Without motion the cover shows the first brand, as drawn. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project2 {
+  background: linear-gradient(32deg, #4EB490 0%, #184664 50%, #000032 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project2 {
+  background: linear-gradient(90deg, #307677 0%, #184664 30.5%, #000032 100%);
+}
+
+.portfolio-item--tall #project2 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project2 .portfolio-title p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@scope (.wl) {
+  :scope {
+    --cyc: 12s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .acc { animation: wl-acc var(--cyc) ease-in-out infinite; }
+  .acc-s { animation: wl-acc-s var(--cyc) ease-in-out infinite; }
+  .acc-d { animation: wl-acc-d var(--cyc) ease-in-out infinite; }
+  .b1 { animation: wl-b1 var(--cyc) ease-in-out infinite; }
+  .b2 { animation: wl-b2 var(--cyc) ease-in-out infinite; }
+  .b3 { animation: wl-b3 var(--cyc) ease-in-out infinite; }
+  /* Buttons: colour and corner radius together */
+  .acc.btn { animation: wl-acc var(--cyc) ease-in-out infinite, wl-rx var(--cyc) ease-in-out infinite; }
+  .acc-s.btn-o { animation: wl-acc-s var(--cyc) ease-in-out infinite, wl-rx-o var(--cyc) ease-in-out infinite; }
+  /* Filter chips on the middle card follow the brand corners too */
+  .chip { animation: wl-rx-o var(--cyc) ease-in-out infinite; }
+  .knob { animation: wl-knob var(--cyc) cubic-bezier(0.5, 0, 0.3, 1) infinite; }
+
+  .lift { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .lift:hover { transform: translateY(-12px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* Colours switch fast (1%) at the middle of each knob move, together with the typeface,
+   so the muddy in-between of an RGB blend never shows */
+@keyframes wl-acc {
+  0%, 30.5% { fill: #00ADE6; }
+  31.5%, 63.5% { fill: #F0508C; }
+  64.5%, 96.5% { fill: #FF8A3D; }
+  97.5%, 100% { fill: #00ADE6; }
+}
+@keyframes wl-acc-s {
+  0%, 30.5% { stroke: #00ADE6; }
+  31.5%, 63.5% { stroke: #F0508C; }
+  64.5%, 96.5% { stroke: #FF8A3D; }
+  97.5%, 100% { stroke: #00ADE6; }
+}
+@keyframes wl-acc-d {
+  0%, 30.5% { fill: #0184AF; }
+  31.5%, 63.5% { fill: #C42F6A; }
+  64.5%, 96.5% { fill: #D9661A; }
+  97.5%, 100% { fill: #0184AF; }
+}
+
+/* Button corners: 8 (Hamburg Serial), pill (Ivar Display), 2 (Proxima Nova).
+   The outlined buttons sit 1 unit inside their stroke, so their radius is 1 less. */
+@keyframes wl-rx {
+  0%, 30.5% { rx: 8px; }
+  31.5%, 63.5% { rx: 20px; }
+  64.5%, 96.5% { rx: 2px; }
+  97.5%, 100% { rx: 8px; }
+}
+@keyframes wl-rx-o {
+  0%, 30.5% { rx: 7px; }
+  31.5%, 63.5% { rx: 19px; }
+  64.5%, 96.5% { rx: 1px; }
+  97.5%, 100% { rx: 7px; }
+}
+
+/* Typeface swaps cross over at the same moment */
+@keyframes wl-b1 { 0%, 30% { opacity: 1; } 32%, 96% { opacity: 0; } 98%, 100% { opacity: 1; } }
+@keyframes wl-b2 { 0%, 30% { opacity: 0; } 32%, 63% { opacity: 1; } 65%, 100% { opacity: 0; } }
+@keyframes wl-b3 { 0%, 63% { opacity: 0; } 65%, 96% { opacity: 1; } 98%, 100% { opacity: 0; } }
+
+@keyframes wl-knob {
+  0%, 28% { transform: translateX(0); }
+  34%, 61% { transform: translateX(220px); }
+  67%, 94% { transform: translateX(440px); }
+  100% { transform: translateX(0); }
+}
+

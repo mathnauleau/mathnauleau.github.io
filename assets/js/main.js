@@ -61,19 +61,11 @@
   onscroll(document, navbarlinksActive);
 
   /**
-   * Scrolls to an element with header offset
+   * Smooth-scrolls to an element (the header scrolls with the page, so no offset)
    */
   const scrollto = (el) => {
-    let header = select("#header");
-    let offset = header.offsetHeight;
-
-    if (!header.classList.contains("header-scrolled")) {
-      offset -= 10;
-    }
-
-    let elementPos = select(el).offsetTop;
     window.scrollTo({
-      top: elementPos - offset,
+      top: select(el).offsetTop,
       behavior: "smooth",
     });
   };

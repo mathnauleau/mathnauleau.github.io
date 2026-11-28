@@ -1,0 +1,145 @@
+/* Data tool cover (inline <svg class="xl"> in #project15, index.html).
+   The story of the project in one story loop (--cover-story, 12s): the old Excel workflow sweeps away and
+   an abstract graph tool builds up in its place.
+     0–27%   the sheet: data_v12_FINAL(3).xlsx, a VLOOKUP in the formula bar,
+             the selection hops cell to cell, a copy range marches, #REF! flashes
+     28–34%  the sheet sweeps out column by column (--i)
+     33–50%  the app pops in piece by piece (--d), lines draw, bars grow
+     50–88%  the finished dashboard holds
+     88–96%  the app fades and the sheet comes back for the next take
+   Every rule for the drawing sits in @scope (.xl); keyframes and SVG IDs use the xl-
+   prefix because they are page-wide.
+   Without motion (prefers-reduced-motion, or no @scope support) the cover shows the
+   finished app: everything that should start hidden carries opacity="0" in the SVG
+   itself, so the fallback never shows the sheet and the app on top of each other.
+   No hover effect. Timing and easing come
+   from assets/css/covers/base.css (assets/covers/SPEC.md); the panels' pop is the
+   cover's one --cover-ease-pop. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project15 {
+  background: linear-gradient(32deg, #1EC4B4 0%, #B1D766 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+/* No fade at the bottom of the drawing: the window stays crisp to its edge. The
+   drawing's own background is hidden so the tile's gradient runs behind the whole tile
+   without a seam. */
+.portfolio-item--tall #project15 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project15 > svg > .bg {
+  display: none;
+}
+
+.portfolio-item--tall #project15 {
+  background: linear-gradient(32deg, #1EC4B4 0%, #B1D766 100%);
+}
+
+.portfolio-item--tall #project15 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project15 .portfolio-title p {
+  color: #fff;
+}
+
+@scope (.xl) {
+  :scope {
+    --cyc: var(--cover-story);
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Sheet: each column leaves 0.8% after the previous one */
+  .xc {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: xl-sheet var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.28 + var(--i) * 0.008)) infinite backwards;
+  }
+  .sel { animation: xl-sel var(--cyc) step-end infinite; }
+  .ants { animation: xl-ants var(--cyc) linear infinite, xl-march 0.6s linear infinite; }
+  .ref { animation: xl-ref var(--cyc) linear infinite; }
+  .t-old { animation: xl-told var(--cyc) linear infinite; }
+  .t-new { animation: xl-tnew var(--cyc) linear infinite; }
+
+  /* App: the group frames the visible window, each piece enters --d after 33% */
+  .app { animation: xl-app var(--cyc) linear infinite; }
+  .pop {
+    animation: xl-pop var(--cyc) var(--cover-ease-pop) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+  }
+  .grow {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: xl-grow var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+  }
+  .ln1 {
+    stroke-dasharray: 1;
+    animation: xl-ln1 var(--cyc) var(--cover-ease) infinite;
+  }
+  .area1, .end1 { animation: xl-area1 var(--cyc) var(--cover-ease) infinite; }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* Relative to each column's own start (28% + 0.8% per column) */
+@keyframes xl-sheet {
+  0% { opacity: 1; transform: none; }
+  4%, 62% { opacity: 0; transform: translateY(-8px) scale(0.96); }
+  67%, 100% { opacity: 1; transform: none; }
+}
+
+/* Selection hops A1-relative: C4, E2, F5 (lands on the #REF!), B7 */
+@keyframes xl-sel {
+  0% { opacity: 1; transform: translate(144px, 126px); }
+  7% { opacity: 1; transform: translate(288px, 42px); }
+  13% { opacity: 1; transform: translate(360px, 168px); }
+  20% { opacity: 1; transform: translate(72px, 252px); }
+  27%, 94% { opacity: 0; transform: translate(72px, 252px); }
+  95%, 100% { opacity: 1; transform: translate(144px, 126px); }
+}
+
+@keyframes xl-ants { 0%, 3% { opacity: 0; } 4%, 26% { opacity: 1; } 28%, 100% { opacity: 0; } }
+@keyframes xl-march { to { stroke-dashoffset: -10; } }
+
+@keyframes xl-ref {
+  0%, 13.5% { opacity: 0; transform: none; }
+  14% { opacity: 1; transform: translateX(-3px); }
+  14.5% { transform: translateX(3px); }
+  15% { transform: translateX(-2px); }
+  15.5%, 25% { opacity: 1; transform: none; }
+  26%, 100% { opacity: 0; transform: none; }
+}
+
+@keyframes xl-told { 0%, 31% { opacity: 1; } 33%, 93% { opacity: 0; } 96%, 100% { opacity: 1; } }
+@keyframes xl-tnew { 0%, 32% { opacity: 0; } 34%, 88% { opacity: 1; } 90%, 100% { opacity: 0; } }
+
+@keyframes xl-app { 0%, 31% { opacity: 0; } 33%, 88% { opacity: 1; } 91%, 100% { opacity: 0; } }
+
+/* Relative to each piece's own start; hidden again well after the app has faded */
+@keyframes xl-pop {
+  0% { opacity: 0; transform: translateY(10px); }
+  3%, 58% { opacity: 1; transform: none; }
+  59%, 100% { opacity: 0; transform: translateY(10px); }
+}
+@keyframes xl-grow {
+  0% { transform: scaleY(0); }
+  5%, 58% { transform: scaleY(1); }
+  59%, 100% { transform: scaleY(0); }
+}
+
+/* Lines draw in once and stay; they reset at the loop start while the app is hidden */
+@keyframes xl-ln1 {
+  0%, 40% { stroke-dashoffset: 1; }
+  47%, 100% { stroke-dashoffset: 0; }
+}
+@keyframes xl-area1 { 0%, 45% { opacity: 0; } 49%, 100% { opacity: 1; } }

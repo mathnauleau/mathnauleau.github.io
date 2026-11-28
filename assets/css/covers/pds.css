@@ -1,0 +1,107 @@
+/* Pantry Design System cover (inline <svg class="pds"> in #project1, index.html).
+   The docs page of the system, where each foundation acts out its own name, each on the
+   ambient loop (--cover-ambient) and started a quarter loop after the previous one:
+     Colors      the brick cycles through four palettes
+     Typography  the A/B faces swap between a sans and a serif
+     Sizing      the small brick grows and shrinks next to the big one
+     Spacing     the top plate lifts off and a purple spacing marker appears
+   The top nav stays on Introduction (static); the developers card has a blinking
+   caret (1s, a UI convention) and the designers card a pulsing selection. No hover
+   effect. Timing and easing come from
+   assets/css/covers/base.css (assets/covers/SPEC.md).
+   Every rule sits in @scope (.pds); keyframes and SVG IDs use the pds- prefix.
+   Without motion the cover shows the page as drawn. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project1 {
+  background: linear-gradient(32deg, #8C8CFF 0%, #2E8FDB 70%, #1789C4 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+/* No fade at the bottom of the drawing: the window stays crisp to its edge. The
+   drawing's own background is hidden so the tile's gradient runs behind the whole tile
+   without a seam. */
+.portfolio-item--tall #project1 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project1 > svg > .bg {
+  display: none;
+}
+
+.portfolio-item--tall #project1 {
+  background: linear-gradient(32deg, #8C8CFF 0%, #2E8FDB 70%, #1789C4 100%);
+}
+
+.portfolio-item--tall #project1 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project1 .portfolio-title p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@scope (.pds) {
+  :scope {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Get started minis */
+  .caret { animation: pds-blink 1s step-end infinite; }
+  .sel { animation: pds-sel var(--cover-ambient) var(--cover-ease) infinite; }
+
+  /* Foundations */
+  .c-top { animation: pds-c-top var(--cover-ambient) var(--cover-ease) infinite; }
+  .c-left { animation: pds-c-left var(--cover-ambient) var(--cover-ease) infinite; }
+  .c-right { animation: pds-c-right var(--cover-ambient) var(--cover-ease) infinite; }
+  .ty-a { animation: pds-ty-a var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.25) infinite; }
+  .ty-b { animation: pds-ty-b var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.25) infinite; }
+  .grow {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation: pds-grow var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.5) infinite;
+  }
+  .lift { animation: pds-lift var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.75) infinite; }
+  .gap { animation: pds-gap var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.75) infinite; }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@keyframes pds-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes pds-sel { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: 0.35; } }
+
+/* Colors: blue, orange, green, purple (top / left / right shades) */
+@keyframes pds-c-top {
+  0%, 20% { fill: #7A9DFF; } 25%, 45% { fill: #FFB15C; } 50%, 70% { fill: #6FD39A; } 75%, 95% { fill: #B59BFF; } 100% { fill: #7A9DFF; }
+}
+@keyframes pds-c-left {
+  0%, 20% { fill: #4C77F2; } 25%, 45% { fill: #F28A2E; } 50%, 70% { fill: #36B26E; } 75%, 95% { fill: #8E6CF5; } 100% { fill: #4C77F2; }
+}
+@keyframes pds-c-right {
+  0%, 20% { fill: #3A63E2; } 25%, 45% { fill: #E07418; } 50%, 70% { fill: #23985A; } 75%, 95% { fill: #7652E6; } 100% { fill: #3A63E2; }
+}
+
+@keyframes pds-ty-a { 0%, 40% { opacity: 1; } 50%, 90% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes pds-ty-b { 0%, 40% { opacity: 0; } 50%, 90% { opacity: 1; } 100% { opacity: 0; } }
+
+@keyframes pds-grow {
+  0%, 25% { transform: scale(1); }
+  45%, 70% { transform: scale(1.45); }
+  90%, 100% { transform: scale(1); }
+}
+
+@keyframes pds-lift {
+  0%, 20% { transform: translateY(0); }
+  40%, 70% { transform: translateY(-8px); }
+  90%, 100% { transform: translateY(0); }
+}
+@keyframes pds-gap { 0%, 30% { opacity: 0; } 42%, 68% { opacity: 1; } 80%, 100% { opacity: 0; } }

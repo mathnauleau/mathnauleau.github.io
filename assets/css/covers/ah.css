@@ -1,0 +1,125 @@
+/* AH Compact cover (inline <svg class="ah"> in #project4, index.html).
+   "Daily groceries, free delivery" as a cycle, timed like the Home energy app cover.
+   On the phone, one story loop (--cover-story, 12s), in the style of the app's search
+   results list:
+     0–45%   milk then cherry tomatoes are added: an outlined − and the quantity
+             appear next to the + (a stepper: − 1 +); the count goes 0/2 → 1/2 → 2/2 and the
+             free-delivery bar fills until "Free delivery unlocked"
+     45–92%  the order holds; then it resets
+   Behind the phone, the cycle: a rounded square with an Order and a Delivered node and
+   a single soft point of light going round (Order → Delivered over the top, back along
+   the bottom), SMIL along the line itself, 7s per half (port-figma.py builds it).
+   Artwork: assets/covers/ah/ah-compact-figma.svg (Figma), with the story's classes added.
+   The phone is the shared frame (assets/covers/SPEC.md); six of the original grocery
+   illustrations sit in front, framing the phone's edges; they stay still. Hover a
+   grocery item to lift it (real pointer above
+   768px). Every rule sits in @scope (.ah); keyframes and SVG IDs use the ah- prefix.
+   Without motion the cover shows the finished order and hides the points of light. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project4 {
+  background: linear-gradient(32deg, #74D0F2 0%, #1185E5 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project4 {
+  background: linear-gradient(90deg, #74D0F2 0%, #2D9AE9 100%);
+}
+
+.portfolio-item--tall #project4 .portfolio-title h4,
+.portfolio-item--tall #project4 .portfolio-title p {
+  color: #fff;
+}
+
+@scope (.ah) {
+  :scope {
+    --cyc: var(--cover-story);
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Phone: on a tap of the +, an outlined − and the quantity slide in next to it,
+     making a stepper (--t: tap time) */
+  .added {
+    opacity: 0;
+    animation: ah-added var(--cyc) var(--cover-ease) var(--t) infinite;
+  }
+
+  /* Basket count 0 → 1 → 2, with a small pop on each change */
+  .c0 { animation: ah-c0 var(--cyc) steps(1, end) infinite; }
+  .c1 { opacity: 0; animation: ah-c1 var(--cyc) steps(1, end) infinite; }
+  .c2 { opacity: 0; animation: ah-c2 var(--cyc) steps(1, end) infinite; }
+  .badge {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ah-badge var(--cyc) var(--cover-ease-pop) infinite;
+  }
+
+  /* Free-delivery progress */
+  .bar {
+    transform-box: fill-box;
+    transform-origin: left;
+    animation: ah-bar var(--cyc) var(--cover-ease) infinite;
+  }
+  .todo { animation: ah-todo var(--cyc) var(--cover-ease) infinite; }
+  .done { opacity: 0; animation: ah-done var(--cyc) var(--cover-ease) infinite; }
+  .ok {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ah-ok var(--cyc) var(--cover-ease) infinite;
+  }
+
+
+  /* Groceries: still; they only move on hover */
+  .bob {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    transition: translate var(--cover-hover-duration) var(--cover-ease);
+  }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .bob:hover { translate: 0 var(--cover-hover-lift); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+    /* The finished order */
+    .c0, .c1, .todo, .pk, .dot { opacity: 0; }
+    .pk, .dot { display: none; }
+    .c2, .done, .added { opacity: 1; }
+    .bar, .ok, .added { transform: none; }
+  }
+}
+
+/* Relative to each tap (--t) */
+@keyframes ah-added {
+  0%, 1% { opacity: 0; transform: translateX(12px); }
+  4%, 70% { opacity: 1; transform: translateX(0); }
+  76%, 100% { opacity: 0; transform: translateX(12px); }
+}
+
+@keyframes ah-c0 { 0%, 22% { opacity: 1; } 22.01%, 92% { opacity: 0; } 92.01%, 100% { opacity: 1; } }
+@keyframes ah-c1 { 0%, 22% { opacity: 0; } 22.01%, 40% { opacity: 1; } 40.01%, 100% { opacity: 0; } }
+@keyframes ah-c2 { 0%, 40% { opacity: 0; } 40.01%, 92% { opacity: 1; } 92.01%, 100% { opacity: 0; } }
+@keyframes ah-badge {
+  0%, 21%, 25%, 39%, 43%, 100% { transform: scale(1); }
+  23%, 41% { transform: scale(1.25); }
+}
+
+@keyframes ah-bar {
+  0%, 21% { transform: scaleX(0.25); }
+  25%, 39% { transform: scaleX(0.62); }
+  44%, 90% { transform: scaleX(1); }
+  96%, 100% { transform: scaleX(0.25); }
+}
+@keyframes ah-todo { 0%, 43% { opacity: 1; } 46%, 90% { opacity: 0; } 95%, 100% { opacity: 1; } }
+@keyframes ah-done { 0%, 44% { opacity: 0; } 48%, 90% { opacity: 1; } 95%, 100% { opacity: 0; } }
+@keyframes ah-ok {
+  0%, 44% { transform: scale(0); }
+  50%, 90% { transform: scale(1); }
+  95%, 100% { transform: scale(0); }
+}

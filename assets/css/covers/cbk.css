@@ -1,0 +1,183 @@
+/* Cookbook.md cover (inline <svg class="cbk"> in #project14, index.html).
+   Palette and type borrowed from Commeat (forest, gold, clay, sand; Newsreader).
+   Every rule for the drawing sits in @scope (.cbk); keyframes and SVG IDs use the
+   cbk- prefix because they are page-wide.
+
+   One 16s loop, every animation shares it (no delays), so all parts stay in sync:
+     4–56%   the Markdown types itself line by line (covers shrink, caret follows)
+     9–48%   the card renders as each line lands: title, meta, and the tarte tatin
+             dish, a flat illustration (20% with the title, full once "Dessert" is typed at 15–17%)
+     46%     the last checkbox gets ticked
+     88–97%  everything fades out; the dish stays hidden (its placeholder shows)
+             until the next take
+   Without motion (prefers-reduced-motion, or no @scope support) the base styles
+   below show the finished state: full recipe, dish shown. Hover the card
+   to lift it (real pointer above 768px). */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project14 {
+  background: linear-gradient(32deg, #F6ECDF 0%, #EBD9C2 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge
+   (the SVG's diagonal gradient runs from #F3E7D7 to #EBD9C2 along it). */
+.portfolio-item--tall #project14 {
+  background: linear-gradient(90deg, #F3E7D7 0%, #EBD9C2 100%);
+}
+
+/* The art already ends on plain background, so it skips the shared bottom fade */
+.portfolio-item--tall #project14 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project14 .portfolio-title h4 {
+  color: #0F3D3A;
+}
+
+.portfolio-item--tall #project14 .portfolio-title p {
+  color: #5B6B68;
+}
+
+@scope (.cbk) {
+  :scope {
+    --cyc: 16s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Base = finished state */
+  .cv { transform: scaleX(0); transform-box: fill-box; transform-origin: right; }
+  .sk { opacity: 0; }
+
+  /* Editor */
+  .ed-text, .card-text { animation: cbk-clear var(--cyc) linear infinite; }
+  .cv { animation: var(--cyc) steps(14, end) infinite; }
+  .cv1 { animation-name: cbk-l1; }
+  .cv2 { animation-name: cbk-l2; }
+  .cv3 { animation-name: cbk-l3; }
+  .cv4 { animation-name: cbk-l4; }
+  .cv5 { animation-name: cbk-l5; }
+  .cv6 { animation-name: cbk-l6; }
+  .cv7 { animation-name: cbk-l7; }
+  .cv8 { animation-name: cbk-l8; }
+  .caret { animation: cbk-caret var(--cyc) steps(14, end) infinite; }
+  .blink { animation: cbk-blink 1s step-end infinite; }
+  .tick { animation: cbk-tick var(--cyc) linear infinite; }
+  .go { transform-box: fill-box; transform-origin: center; animation: cbk-go 2s ease-in-out infinite; }
+
+  /* Card */
+  .sk1 { animation: cbk-sk1 var(--cyc) linear infinite; }
+  .sk2 { animation: cbk-sk2 var(--cyc) linear infinite; }
+  .ttl { animation: cbk-ttl var(--cyc) ease-out infinite; }
+  .meta { animation: cbk-meta var(--cyc) ease-out infinite; }
+  .dish {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: cbk-dish var(--cyc) ease-out infinite;
+  }
+  .drift { transform-box: fill-box; transform-origin: center; animation: cbk-drift 9s ease-in-out var(--s, 0s) infinite; }
+
+  .card { transition: transform 450ms cubic-bezier(0.2, 0.9, 0.3, 1.25); }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .card:hover { transform: translateY(-6px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .caret { display: none; }
+  }
+}
+
+/* Whole-pane fade used to wipe the take: out at 88–91%, back at 95–97% */
+@keyframes cbk-clear {
+  0%, 88% { opacity: 1; }
+  91%, 95% { opacity: 0; }
+  97%, 100% { opacity: 1; }
+}
+
+/* One per line: type during its window, hold, re-cover while the pane is faded */
+@keyframes cbk-l1 { 0%, 4% { transform: scaleX(1); } 9%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l2 { 0%, 10% { transform: scaleX(1); } 15%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l3 { 0%, 17% { transform: scaleX(1); } 22%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l4 { 0%, 23% { transform: scaleX(1); } 27%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l5 { 0%, 28% { transform: scaleX(1); } 32%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l6 { 0%, 33% { transform: scaleX(1); } 37%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l7 { 0%, 38% { transform: scaleX(1); } 43%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+@keyframes cbk-l8 { 0%, 49% { transform: scaleX(1); } 56%, 91% { transform: scaleX(0); } 93%, 100% { transform: scaleX(1); } }
+
+/* The caret rides the end of each line (one char ≈ 9.6 units); jumps take 0.1% */
+@keyframes cbk-caret {
+  0%, 4% { transform: translate(0, 0); }
+  9%, 9.9% { transform: translate(124.8px, 0); }
+  10% { transform: translate(0, 30px); }
+  15%, 16.9% { transform: translate(172.8px, 30px); }
+  17% { transform: translate(0, 90px); }
+  22%, 22.9% { transform: translate(134.4px, 90px); }
+  23% { transform: translate(0, 120px); }
+  27%, 27.9% { transform: translate(134.4px, 120px); }
+  28% { transform: translate(0, 150px); }
+  32%, 32.9% { transform: translate(163.2px, 150px); }
+  33% { transform: translate(0, 180px); }
+  37%, 37.9% { transform: translate(163.2px, 180px); }
+  38% { transform: translate(0, 210px); }
+  43%, 48.9% { transform: translate(182.4px, 210px); }
+  49% { transform: translate(0, 270px); }
+  56%, 90% { transform: translate(259.2px, 270px); }
+  91%, 100% { transform: translate(0, 0); }
+}
+
+@keyframes cbk-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes cbk-tick {
+  0%, 46% { opacity: 0; }
+  47%, 91% { opacity: 1; }
+  93%, 100% { opacity: 0; }
+}
+
+@keyframes cbk-go {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+/* Card text */
+@keyframes cbk-sk1 { 0%, 9% { opacity: 1; } 11%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-sk2 { 0%, 15% { opacity: 1; } 17%, 90% { opacity: 0; } 94%, 100% { opacity: 1; } }
+@keyframes cbk-ttl {
+  0%, 9% { opacity: 0; transform: translateY(6px); }
+  11%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(6px); }
+}
+@keyframes cbk-meta {
+  0%, 15% { opacity: 0; transform: translateY(5px); }
+  17%, 91% { opacity: 1; transform: translateY(0); }
+  93%, 100% { opacity: 0; transform: translateY(5px); }
+}
+
+/* The dish fades in to 20% with the title (9–11%), then to full when "Dessert" is
+   typed (end of line 2, 15–17%); it fades with the pane (88–91%) and stays hidden
+   until the next take */
+@keyframes cbk-dish {
+  0%, 9% { opacity: 0; transform: scale(1.06); }
+  11%, 15% { opacity: 0.2; transform: scale(1.04); }
+  17%, 88% { opacity: 1; transform: scale(1); }
+  91%, 100% { opacity: 0; transform: scale(1.06); }
+}
+
+/* A lazy loop, like a leaf on a draught: up and across, sway back, settle.
+   --x / --y (1 or -1, set on each leaf) point the loop inward from its corner. */
+@keyframes cbk-drift {
+  0%, 100% { transform: translate(0, 0) rotate(0); }
+  25% { transform: translate(calc(var(--x, 1) * 10px), calc(var(--y, 1) * -16px)) rotate(16deg); }
+  50% { transform: translate(calc(var(--x, 1) * 18px), calc(var(--y, 1) * -6px)) rotate(-6deg); }
+  75% { transform: translate(calc(var(--x, 1) * 6px), calc(var(--y, 1) * -22px)) rotate(12deg); }
+}

@@ -88,6 +88,8 @@
   --color-brand-accent: #3f75ff;
   --color-brand-accent-dark: #2753c1;
 
+  --color-accent-purple: #b5b7ff;
+
   /* Text Colors */
   --color-text-primary: #0c1527;
   --color-text-secondary: #3e4e65;
@@ -120,6 +122,7 @@
   --border-radius-medium: calc(var(--base-unit) * 2);
   --border-radius-large: calc(var(--base-unit) * 4);
   --border-radius-xlarge: calc(var(--base-unit) * 6);
+  --border-radius-xxlarge: calc(var(--base-unit) * 8);
   --border-radius-circle: 9999px;
 
   /* Transition

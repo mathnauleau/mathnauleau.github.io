@@ -1,0 +1,440 @@
+<!-- Data tool cover, still: the new tool (t = 8s of the loop).
+     Exported from index.html by assets/covers/export.py (stills option). -->
+<svg xmlns="http://www.w3.org/2000/svg" class="xl" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
+  <style><![CDATA[
+/* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
+   stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
+   Load this file before the cover stylesheets. */
+
+:root {
+  /* Loops */
+  --cover-story: 12s;      /* a cover that tells its project's story, in beats of ~3s */
+  --cover-ambient: 7s;     /* background life: floats, drifts, glows */
+
+  /* Easing */
+  --cover-ease: cubic-bezier(0.4, 0, 0.2, 1);       /* default for everything */
+  --cover-ease-pop: cubic-bezier(0.3, 0.8, 0.3, 1.1); /* at most one small "pop" per cover */
+
+  /* Hover: the hero element lifts */
+  --cover-hover-lift: -6px;
+  --cover-hover-duration: 300ms;
+
+  /* Ambient movement stays small */
+  --cover-ambient-amplitude: 8px;
+}
+
+/* Off screen (or tab hidden), js/covers.js adds .is-paused to the cover's <svg>: every
+   CSS animation inside it freezes where it is and resumes from there. SMIL animations
+   are paused by the script itself (svg.pauseAnimations()). */
+.portfolio-wrap > svg.is-paused,
+.portfolio-wrap > svg.is-paused * {
+  animation-play-state: paused !important;
+}
+
+/* Data tool cover (inline <svg class="xl"> in #project15, index.html).
+   The story of the project in one story loop (--cover-story, 12s): the old Excel workflow sweeps away and
+   an abstract graph tool builds up in its place.
+     0–27%   the sheet: data_v12_FINAL(3).xlsx, a VLOOKUP in the formula bar,
+             the selection hops cell to cell, a copy range marches, #REF! flashes
+     28–34%  the sheet sweeps out column by column (--i)
+     33–50%  the app pops in piece by piece (--d), lines draw, bars grow
+     50–88%  the finished dashboard holds
+     88–96%  the app fades and the sheet comes back for the next take
+   Every rule for the drawing sits in @scope (.xl); keyframes and SVG IDs use the xl-
+   prefix because they are page-wide.
+   Without motion (prefers-reduced-motion, or no @scope support) the cover shows the
+   finished app: everything that should start hidden carries opacity="0" in the SVG
+   itself, so the fallback never shows the sheet and the app on top of each other.
+   No hover effect. Timing and easing come
+   from assets/css/covers/base.css (assets/covers/SPEC.md); the panels' pop is the
+   cover's one --cover-ease-pop. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project15 {
+  background: linear-gradient(32deg, #1EC4B4 0%, #B1D766 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+/* No fade at the bottom of the drawing: the window stays crisp to its edge. The
+   drawing's own background is hidden so the tile's gradient runs behind the whole tile
+   without a seam. */
+.portfolio-item--tall #project15 > svg {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.portfolio-item--tall #project15 > svg > .bg {
+  display: none;
+}
+
+.portfolio-item--tall #project15 {
+  background: linear-gradient(32deg, #1EC4B4 0%, #B1D766 100%);
+}
+
+.portfolio-item--tall #project15 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project15 .portfolio-title p {
+  color: #fff;
+}
+
+@scope (.xl) {
+  :scope {
+    --cyc: var(--cover-story);
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Sheet: each column leaves 0.8% after the previous one */
+  .xc {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: xl-sheet var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.28 + var(--i) * 0.008)) infinite backwards;
+  }
+  .sel { animation: xl-sel var(--cyc) step-end infinite; }
+  .ants { animation: xl-ants var(--cyc) linear infinite, xl-march 0.6s linear infinite; }
+  .ref { animation: xl-ref var(--cyc) linear infinite; }
+  .t-old { animation: xl-told var(--cyc) linear infinite; }
+  .t-new { animation: xl-tnew var(--cyc) linear infinite; }
+
+  /* App: the group frames the visible window, each piece enters --d after 33% */
+  .app { animation: xl-app var(--cyc) linear infinite; }
+  .pop {
+    animation: xl-pop var(--cyc) var(--cover-ease-pop) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+  }
+  .grow {
+    transform-box: fill-box;
+    transform-origin: bottom;
+    animation: xl-grow var(--cyc) var(--cover-ease) calc(var(--cyc) * (0.33 + var(--d))) infinite backwards;
+  }
+  .ln1 {
+    stroke-dasharray: 1;
+    animation: xl-ln1 var(--cyc) var(--cover-ease) infinite;
+  }
+  .area1, .end1 { animation: xl-area1 var(--cyc) var(--cover-ease) infinite; }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+/* Relative to each column's own start (28% + 0.8% per column) */
+@keyframes xl-sheet {
+  0% { opacity: 1; transform: none; }
+  4%, 62% { opacity: 0; transform: translateY(-8px) scale(0.96); }
+  67%, 100% { opacity: 1; transform: none; }
+}
+
+/* Selection hops A1-relative: C4, E2, F5 (lands on the #REF!), B7 */
+@keyframes xl-sel {
+  0% { opacity: 1; transform: translate(144px, 126px); }
+  7% { opacity: 1; transform: translate(288px, 42px); }
+  13% { opacity: 1; transform: translate(360px, 168px); }
+  20% { opacity: 1; transform: translate(72px, 252px); }
+  27%, 94% { opacity: 0; transform: translate(72px, 252px); }
+  95%, 100% { opacity: 1; transform: translate(144px, 126px); }
+}
+
+@keyframes xl-ants { 0%, 3% { opacity: 0; } 4%, 26% { opacity: 1; } 28%, 100% { opacity: 0; } }
+@keyframes xl-march { to { stroke-dashoffset: -10; } }
+
+@keyframes xl-ref {
+  0%, 13.5% { opacity: 0; transform: none; }
+  14% { opacity: 1; transform: translateX(-3px); }
+  14.5% { transform: translateX(3px); }
+  15% { transform: translateX(-2px); }
+  15.5%, 25% { opacity: 1; transform: none; }
+  26%, 100% { opacity: 0; transform: none; }
+}
+
+@keyframes xl-told { 0%, 31% { opacity: 1; } 33%, 93% { opacity: 0; } 96%, 100% { opacity: 1; } }
+@keyframes xl-tnew { 0%, 32% { opacity: 0; } 34%, 88% { opacity: 1; } 90%, 100% { opacity: 0; } }
+
+@keyframes xl-app { 0%, 31% { opacity: 0; } 33%, 88% { opacity: 1; } 91%, 100% { opacity: 0; } }
+
+/* Relative to each piece's own start; hidden again well after the app has faded */
+@keyframes xl-pop {
+  0% { opacity: 0; transform: translateY(10px); }
+  3%, 58% { opacity: 1; transform: none; }
+  59%, 100% { opacity: 0; transform: translateY(10px); }
+}
+@keyframes xl-grow {
+  0% { transform: scaleY(0); }
+  5%, 58% { transform: scaleY(1); }
+  59%, 100% { transform: scaleY(0); }
+}
+
+/* Lines draw in once and stay; they reset at the loop start while the app is hidden */
+@keyframes xl-ln1 {
+  0%, 40% { stroke-dashoffset: 1; }
+  47%, 100% { stroke-dashoffset: 0; }
+}
+@keyframes xl-area1 { 0%, 45% { opacity: 0; } 49%, 100% { opacity: 1; } }
+
+/* Still: animations off, values frozen inline */
+* { animation: none !important; transition: none !important; }
+]]></style>
+                <defs>
+                  <linearGradient id="xl-bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#1EC4B4"/>
+                    <stop offset="1" stop-color="#B1D766"/>
+                  </linearGradient>
+                  <linearGradient id="xl-area" x1="0" y1="277.4" x2="0" y2="418" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#21A366" stop-opacity=".28"/>
+                    <stop offset="1" stop-color="#21A366" stop-opacity="0"/>
+                  </linearGradient>
+                  <clipPath id="xl-win">
+                    <rect x="70" y="70" width="660" height="401" rx="20"/>
+                  </clipPath>
+                </defs>
+                <rect class="bg" width="800" height="500" fill="url(#xl-bg)"/>
+                <g class="win" clip-path="url(#xl-win)" transform="translate(0 -15)">
+                  <rect x="70" y="70" width="660" height="401" fill="#EAF5EE"/>
+                  <circle cx="96" cy="90" r="4.5" fill="#BFD6C8"/>
+                  <circle cx="112" cy="90" r="4.5" fill="#BFD6C8"/>
+                  <circle cx="128" cy="90" r="4.5" fill="#BFD6C8"/>
+                  <text class="t-old" x="400" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#217346" fill-opacity=".75" opacity="0" style="opacity: 0; transform: none; translate: none; fill: rgb(33, 115, 70); stroke: none; stroke-opacity: 1; fill-opacity: 0.75; stroke-dashoffset: 0px; rx: auto;">data_v12_FINAL(3).xlsx</text>
+                  <rect class="t-new" x="365" y="87" width="70" height="6" rx="3" fill="#217346" fill-opacity=".45" style="opacity: 1; transform: none; translate: none; fill: rgb(33, 115, 70); stroke: none; stroke-opacity: 1; fill-opacity: 0.45; stroke-dashoffset: 0px; rx: 3px;"/>
+                  <!-- The old way: a spreadsheet. Each column sweeps out in turn (its i offset) -->
+                  <g class="sheet">
+                    <g class="xc" style="--i: 0; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <rect x="96" y="108" width="608" height="24" rx="6" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <text x="106" y="124.5" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#217346">fx</text>
+                      <text x="128" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#5F7A6B">=VLOOKUP(B7;'Data (old)'!A:F;6;FALSE)</text>
+                      <text x="109" y="177" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">1</text>
+                      <text x="109" y="219" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">2</text>
+                      <text x="109" y="261" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">3</text>
+                      <text x="109" y="303" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">4</text>
+                      <text x="109" y="345" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">5</text>
+                      <text x="109" y="387" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">6</text>
+                      <text x="109" y="429" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">7</text>
+                      <text x="109" y="471" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">8</text>
+                    </g>
+                    <g class="xc" style="--i: 0; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="157" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">A</text>
+                      <rect x="122" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="132" y="169" width="38" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="122" y="194" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="132" y="211" width="30" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="122" y="236" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="132" y="253" width="20" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="122" y="278" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="132" y="295" width="21" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="122" y="320" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="132" y="337" width="19" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="122" y="362" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="132" y="379" width="24" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="122" y="404" width="70" height="40" rx="2" fill="#D5E6DC" stroke="#C3DBCD" stroke-width="1.2"/>
+                    </g>
+                    <g class="xc" style="--i: 1; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="229" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">B</text>
+                      <rect x="194" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="204" y="169" width="35" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="194" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="194" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="204" y="253" width="44" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="194" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="204" y="295" width="48" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="194" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="204" y="337" width="38" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="194" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="204" y="379" width="19" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="194" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="204" y="421" width="30" height="6" rx="3" fill="#BFD6C8"/>
+                    </g>
+                    <g class="xc" style="--i: 2; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="301" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">C</text>
+                      <rect x="266" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="276" y="169" width="35" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="266" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="266" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="276" y="253" width="27" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="266" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="276" y="295" width="35" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="266" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="266" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="276" y="379" width="44" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="266" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="276" y="421" width="21" height="6" rx="3" fill="#BFD6C8"/>
+                    </g>
+                    <g class="xc" style="--i: 3; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="373" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">D</text>
+                      <rect x="338" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="348" y="169" width="34" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="338" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="363" y="211" width="35" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="338" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="348" y="253" width="37" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="338" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="367" y="295" width="31" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="338" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="351" y="337" width="47" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="338" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="348" y="379" width="43" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="338" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="378" y="421" width="20" height="6" rx="3" fill="#BFD6C8"/>
+                    </g>
+                    <g class="xc" style="--i: 4; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="445" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">E</text>
+                      <rect x="410" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="420" y="169" width="42" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="410" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="420" y="211" width="20" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="410" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="420" y="253" width="42" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="410" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="420" y="295" width="31" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="410" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="428" y="337" width="42" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="410" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="420" y="379" width="44" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="410" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="433" y="421" width="37" height="6" rx="3" fill="#BFD6C8"/>
+                    </g>
+                    <g class="xc" style="--i: 5; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="517" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">F</text>
+                      <rect x="482" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="492" y="169" width="36" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="482" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="492" y="211" width="39" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="482" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="515" y="253" width="27" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="482" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="498" y="295" width="44" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="482" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="482" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="496" y="379" width="46" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="482" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                    </g>
+                    <g class="xc" style="--i: 6; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="589" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">G</text>
+                      <rect x="554" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="564" y="169" width="43" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="554" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="554" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="592" y="253" width="22" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="554" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="567" y="295" width="47" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="554" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="554" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="564" y="379" width="35" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="554" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                    </g>
+                    <g class="xc" style="--i: 7; opacity: 0; transform: matrix(0.96, 0, 0, 0.96, 0, -8); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;" opacity="0">
+                      <text x="661" y="146" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#7FA08D">H</text>
+                      <rect x="626" y="152" width="70" height="40" rx="2" fill="#217346"/>
+                      <rect x="636" y="169" width="41" height="6" rx="3" fill="#fff" fill-opacity=".85"/>
+                      <rect x="626" y="194" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="647" y="211" width="39" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="626" y="236" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="636" y="253" width="22" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="626" y="278" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="626" y="320" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="668" y="337" width="18" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="626" y="362" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="636" y="379" width="26" height="6" rx="3" fill="#BFD6C8"/>
+                      <rect x="626" y="404" width="70" height="40" rx="2" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                    </g>
+                    <rect class="ants" x="338" y="236" width="70" height="166" rx="2" stroke="#21A366" stroke-width="2.5" stroke-dasharray="6 4" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: rgb(33, 163, 102); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: -3.33333px; rx: 2px;"/>
+                    <g class="ref" opacity="0" style="opacity: 0; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="483" y="321" width="68" height="38" fill="#FDECEC"/>
+                      <text x="517" y="345" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" font-weight="700" fill="#D64545">#REF!</text>
+                    </g>
+                    <g class="sel" opacity="0" style="opacity: 0; transform: matrix(1, 0, 0, 1, 72, 252); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="122" y="152" width="70" height="40" rx="2" stroke="#21A366" stroke-width="3"/>
+                      <rect x="188" y="188" width="8" height="8" rx="1.5" fill="#21A366" stroke="#fff" stroke-width="1.5"/>
+                    </g>
+                  </g>
+                  <!-- The new tool, abstract: pieces pop in one after another (d: fraction of the loop) -->
+                  <g class="app" style="opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                    <!-- Sidebar: no panel, flush left, a divider on its right -->
+                    <g class="pop" style="--d: 0; opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <path d="M218 100V471" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <g transform="translate(-12 0)">
+                        <circle cx="122" cy="134" r="10" fill="#21A366"/>
+                        <rect x="140" y="130" width="54" height="8" rx="4" fill="#0E3B25" fill-opacity=".75"/>
+                        <circle cx="123" cy="179" r="5" fill="#BFD6C8"/>
+                        <rect x="135" y="176" width="52" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
+                        <rect x="108" y="202" width="100" height="26" rx="13" fill="#E3F2E9"/>
+                        <circle cx="123" cy="215" r="5" fill="#21A366"/>
+                        <rect x="135" y="212" width="44" height="6" rx="3" fill="#217346" fill-opacity="0.75"/>
+                        <circle cx="123" cy="251" r="5" fill="#BFD6C8"/>
+                        <rect x="135" y="248" width="60" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
+                        <circle cx="123" cy="287" r="5" fill="#BFD6C8"/>
+                        <rect x="135" y="284" width="38" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
+                        <circle cx="123" cy="323" r="5" fill="#BFD6C8"/>
+                        <rect x="135" y="320" width="48" height="6" rx="3" fill="#BFD6C8" fill-opacity="1"/>
+                      </g>
+                    </g>
+                    <g class="pop" style="--d: .02; opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="240" y="128" width="150" height="14" rx="7" fill="#0E3B25" fill-opacity=".85"/>
+                      <rect x="560" y="122" width="144" height="28" rx="14" fill="#D5E6DC"/>
+                      <rect x="562" y="124" width="44" height="24" rx="12" fill="#fff"/>
+                      <rect x="575" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6"/>
+                      <rect x="623" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6"/>
+                      <rect x="671" y="133.5" width="18" height="5" rx="2.5" fill="#217346" fill-opacity=".6"/>
+                    </g>
+                    <g class="pop" style="--d: 0.04; opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="240" y="162" width="150" height="62" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="254" y="176" width="56" height="6" rx="3" fill="#BFD6C8"/>
+                      <text x="254" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#0E3B25">238</text>
+                      <path d="M330 210L340 204L350 207L360 196L372 199L382 188" stroke="#21A366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <g class="pop" style="--d: 0.055; opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="398" y="162" width="150" height="62" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="412" y="176" width="44" height="6" rx="3" fill="#BFD6C8"/>
+                      <text x="412" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#0E3B25">+31%</text>
+                      <path d="M488 208L498 210L508 200L518 203L530 193L540 190" stroke="#8669DB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <g class="pop" style="--d: 0.07; opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="556" y="162" width="148" height="62" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="570" y="176" width="62" height="6" rx="3" fill="#BFD6C8"/>
+                      <text x="570" y="211" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="700" fill="#0E3B25">72%</text>
+                      <circle cx="676" cy="193" r="16" stroke="#D5E6DC" stroke-width="6"/>
+                      <circle cx="676" cy="193" r="16" stroke="#21A366" stroke-width="6" stroke-linecap="round" pathLength="100" stroke-dasharray="72 100" transform="rotate(-90 676 193)"/>
+                    </g>
+                    <g class="pop" style="--d: .085; opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="240" y="238" width="296" height="208" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="256" y="254" width="84" height="8" rx="4" fill="#0E3B25" fill-opacity=".75"/>
+                      <circle cx="462" cy="258" r="4" fill="#21A366"/>
+                      <rect x="470" y="255" width="18" height="6" rx="3" fill="#BFD6C8"/>
+                      <circle cx="498" cy="258" r="4" fill="#8669DB"/>
+                      <rect x="506" y="255" width="18" height="6" rx="3" fill="#BFD6C8"/>
+                      <path d="M256 292.2H520M256 321.8H520M256 351.4H520M256 381H520" stroke="#E3F2E9" stroke-width="1.2" stroke-dasharray="4 4"/>
+                      <path d="M256 418H520" stroke="#C3DBCD" stroke-width="1.2"/>
+                    </g>
+                    <!-- The data: both lines draw in once the card has appeared -->
+                    <path class="area1" d="M256 388.4L300 366.2L344 373.6L388 336.6L432 344L476 307L520 292.2L520 418L256 418Z" fill="url(#xl-area)" style="opacity: 1; transform: none; translate: none; fill: url(&quot;#xl-area&quot;); stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                    <path class="ln1" pathLength="1" d="M256 404.7L300 397.3L344 384L388 386.9L432 364.7L476 360.3L520 339.6" stroke="#8669DB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(134, 105, 219); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                    <path class="ln1" pathLength="1" d="M256 388.4L300 366.2L344 373.6L388 336.6L432 344L476 307L520 292.2" stroke="#21A366" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 1; transform: none; translate: none; fill: none; stroke: rgb(33, 163, 102); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                    <circle class="end1" cx="520" cy="292.2" r="6" fill="#fff" stroke="#21A366" stroke-width="3" style="opacity: 1; transform: none; translate: none; fill: rgb(255, 255, 255); stroke: rgb(33, 163, 102); stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;"/>
+                    <g class="pop" style="--d: .09; opacity: 1; transform: none; translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                      <rect x="548" y="238" width="156" height="208" rx="12" fill="#fff" stroke="#C3DBCD" stroke-width="1.2"/>
+                      <rect x="562" y="254" width="70" height="8" rx="4" fill="#0E3B25" fill-opacity=".75"/>
+                      <path d="M562 414H690" stroke="#C3DBCD" stroke-width="1.2"/>
+                    </g>
+                    <!-- Bars: grow in, one after another (d is a fraction of the loop) -->
+                    <g class="bars">
+                      <g class="grow" style="--d: 0.120; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                        <rect x="566" y="322.9" width="24" height="88.2" rx="7" fill="#21A366"/>
+                      </g>
+                      <g class="grow" style="--d: 0.135; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                        <rect x="598" y="293.5" width="24" height="117.6" rx="7" fill="#217346"/>
+                      </g>
+                      <g class="grow" style="--d: 0.150; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                        <rect x="630" y="358.2" width="24" height="52.9" rx="7" fill="#8669DB"/>
+                      </g>
+                      <g class="grow" style="--d: 0.165; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0); translate: none; fill: none; stroke: none; stroke-opacity: 1; fill-opacity: 1; stroke-dashoffset: 0px; rx: auto;">
+                        <rect x="662" y="308.2" width="24" height="102.9" rx="7" fill="#9AD7B5"/>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>

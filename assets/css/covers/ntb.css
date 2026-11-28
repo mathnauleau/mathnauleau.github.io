@@ -1,0 +1,103 @@
+/* Not the brief cover (inline <svg class="ntb"> in #project13, index.html).
+   Every rule for the drawing sits in @scope (.ntb), so it can't reach the rest of the
+   page. Keyframes are always page-wide, hence the ntb- prefix; IDs inside the SVG use
+   the same prefix. Idle: the cog spins, the orange dot orbits, small squares float,
+   the ball and the address-bar dot breathe. Hover (on each shape, real pointer above
+   768px): the dial turns a notch, the octagon's switch flips, the diamond squares up.
+   The cursor follows the pointer via assets/js/ntb-cursor.js. Animations stop for
+   prefers-reduced-motion. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project13 {
+  background: linear-gradient(32deg, #FFE4B2 0%, #FFB18A 100%);
+}
+
+@scope (.ntb) {
+  :scope {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .dial-spin,
+  .dial-turn {
+    transform-box: view-box;
+    transform-origin: 400px 250px;
+  }
+
+  .dial-spin {
+    animation: ntb-spin 40s linear infinite;
+  }
+
+  .orbit {
+    transform-box: view-box;
+    transform-origin: 715px 85px;
+    animation: ntb-spin 12s linear infinite;
+  }
+
+  .float,
+  .breathe,
+  .flip,
+  .gem {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .float {
+    animation: ntb-float 6s ease-in-out var(--s, 0s) infinite;
+  }
+
+  .breathe {
+    animation: ntb-breathe 4s ease-in-out infinite;
+  }
+
+  .load {
+    animation: ntb-load 2.4s ease-in-out infinite;
+  }
+
+  .dial-turn,
+  .flip,
+  .gem {
+    transition: transform 500ms cubic-bezier(0.2, 0.9, 0.3, 1.25);
+  }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .dial:hover .dial-turn {
+      transform: rotate(90deg);
+    }
+
+    .oct:hover .flip {
+      transform: rotate(90deg);
+    }
+
+    .gem:hover {
+      transform: rotate(45deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
+
+@keyframes ntb-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ntb-float {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-6px) rotate(10deg); }
+}
+
+@keyframes ntb-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes ntb-load {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}

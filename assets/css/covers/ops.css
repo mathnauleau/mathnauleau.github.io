@@ -1,0 +1,78 @@
+/* DesignOps cover (inline <svg class="ops"> in #project10, index.html).
+   Every rule for the drawing sits in @scope (.ops), so it can't reach the rest of the
+   page. Keyframes are always page-wide, hence the ops- prefix; IDs inside the SVG use
+   the same prefix. Light dashes run along the lines (each line takes 4 × the ambient
+   loop, starts spaced 7s apart) and the stations pulse in a wave (ambient loop); the
+   toggle knob switches on when the pill itself is hovered, with a real pointer above
+   768px. Timing and easing come from assets/css/covers/base.css (assets/covers/SPEC.md).
+   Animations stop for prefers-reduced-motion. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project10 {
+  background: linear-gradient(32deg, #FFABC1 0%, #FF584E 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project10 {
+  background: linear-gradient(90deg, #E5566A 0%, #FF584E 100%);
+}
+
+.portfolio-item--tall #project10 .portfolio-title h4 {
+  color: #fff;
+}
+
+.portfolio-item--tall #project10 .portfolio-title p {
+  color: #fff;
+}
+
+@scope (.ops) {
+  :scope {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .train {
+    stroke-dasharray: 4 96;
+    stroke-dashoffset: 100;
+    opacity: 0.7;
+    animation: ops-train calc(var(--cover-ambient) * 4) linear var(--s, 0s) infinite;
+  }
+
+  .stop {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: ops-stop var(--cover-ambient) var(--cover-ease) var(--s, 0s) infinite;
+  }
+
+  .knob {
+    transform: translateX(-48px);
+    transition: transform var(--cover-hover-duration) var(--cover-ease);
+  }
+
+  @media (hover: hover) and (min-width: 769px) {
+    .toggle:hover .knob {
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    .train {
+      display: none;
+    }
+  }
+}
+
+@keyframes ops-train {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes ops-stop {
+  0%, 70%, 100% { transform: scale(1); }
+  80% { transform: scale(1.25); }
+}

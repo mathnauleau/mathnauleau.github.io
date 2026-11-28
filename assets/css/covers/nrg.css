@@ -1,0 +1,130 @@
+/* Home energy app cover (inline <svg class="nrg"> in #project16, index.html).
+   Calm by design. Artwork from Figma (assets/covers/nrg/home-energy-figma.svg, put on
+   the page by assets/covers/nrg/port-figma.py): the app in the middle; behind it, a
+   landscape in white lines (gas pipeline, the grid and wind turbines on the left, a
+   house with solar panels and an EV on the right), supply coming in over the top and
+   solar redelivery going back along the bottom. The turbine blades turn (SMIL rotate);
+   one soft point of light delivers energy along the top line (grid to house, 7s), then
+   brings it back along the bottom line (house to grid, 7s).
+   The money insights sit in frosted pills in the top corners.
+   On the screen (12s loop, CSS): the week's usage line draws itself against the dashed
+   estimate; as the "New reading" notification slides in (~36%), the line reaches today,
+   the dot and its tooltip appear and the stat bars fill; then it all resets.
+   Every rule sits in @scope (.nrg); keyframes and SVG IDs use the nrg- prefix.
+   Without motion the point of light and notification are hidden and the chart shows
+   complete. */
+
+/* The tile behind the SVG: shows until the SVG is parsed. */
+#project16 {
+  background: linear-gradient(32deg, #FFA28C 0%, #E2679E 55%, #9D62DB 100%);
+}
+
+/* As a tall tile: the space under the art continues the drawing's bottom edge */
+.portfolio-item--tall #project16 {
+  background: linear-gradient(90deg, #F48E93 0%, #DA6AA4 55%, #A864D6 100%);
+}
+
+.portfolio-item--tall #project16 .portfolio-title h4,
+.portfolio-item--tall #project16 .portfolio-title p {
+  color: #fff;
+}
+
+@scope (.nrg) {
+  :scope {
+    --cyc: 12s;
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .rays { animation: nrg-rays var(--cover-ambient) var(--cover-ease) infinite; }
+
+  .notif { animation: nrg-notif var(--cyc) cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+  /* Chart */
+  .line {
+    stroke-dasharray: 1 1;
+    animation: nrg-line var(--cyc) ease-in-out infinite;
+  }
+  .area { animation: nrg-area var(--cyc) ease-in-out infinite; }
+  .dot, .tip, .halo {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .dot { animation: nrg-dot var(--cyc) ease-out infinite; }
+  .halo { animation: nrg-halo var(--cyc) ease-out infinite; }
+  .tip {
+    transform-origin: 80% 100%;
+    animation: nrg-tip var(--cyc) cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+  .prog {
+    transform-box: fill-box;
+    transform-origin: left;
+    animation: nrg-prog var(--cyc) cubic-bezier(0.3, 0.8, 0.3, 1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+    .pk, .notif, .halo { display: none; }
+  }
+}
+
+/* Slides down from the island, holds, slides back up */
+@keyframes nrg-notif {
+  0%, 30% { opacity: 0; transform: translateY(-60px); }
+  37%, 60% { opacity: 1; transform: translateY(0); }
+  67%, 100% { opacity: 0; transform: translateY(-60px); }
+}
+
+/* Draws up to yesterday, waits, adds today with the reading, fades for the next take */
+@keyframes nrg-line {
+  0% { stroke-dashoffset: 1; opacity: 1; }
+  26%, 34% { stroke-dashoffset: 0.17; }
+  42%, 90% { stroke-dashoffset: 0; opacity: 1; }
+  97% { stroke-dashoffset: 0; opacity: 0; }
+  100% { stroke-dashoffset: 1; opacity: 0; }
+}
+
+@keyframes nrg-area {
+  0%, 40% { opacity: 0; }
+  50%, 90% { opacity: 1; }
+  97%, 100% { opacity: 0; }
+}
+
+@keyframes nrg-dot {
+  0%, 40% { transform: scale(0); }
+  46%, 90% { transform: scale(1); }
+  96%, 100% { transform: scale(0); }
+}
+
+@keyframes nrg-halo {
+  0%, 44% { opacity: 0; transform: scale(1); }
+  46% { opacity: 0.5; transform: scale(1); }
+  64%, 100% { opacity: 0; transform: scale(3.4); }
+}
+
+@keyframes nrg-tip {
+  0%, 44% { opacity: 0; transform: translateY(4px); }
+  50%, 86% { opacity: 1; transform: translateY(0); }
+  92%, 100% { opacity: 0; transform: translateY(4px); }
+}
+
+@keyframes nrg-prog {
+  0%, 38% { transform: scaleX(0.15); }
+  54%, 92% { transform: scaleX(1); }
+  100% { transform: scaleX(0.15); }
+}
+
+/* The sun's rays glow softly */
+@keyframes nrg-rays {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* Turbine blades turn slowly */
+@keyframes nrg-spin {
+  to { transform: rotate(360deg); }
+}
