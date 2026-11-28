@@ -69,6 +69,12 @@ def standalone(prefix, svg, css, note):
 def write(path, text):
     full = os.path.join(OUT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
+    # A file this script didn't write (for example a Figma export saved over an export)
+    # is kept as <name>.edited.svg instead of being lost.
+    if os.path.exists(full) and 'design/covers/export.py' not in open(full).read(600):
+        keep = full[:-4] + '.edited.svg'
+        os.replace(full, keep)
+        print('kept your edited file as', keep)
     open(full, 'w').write(text)
     return full
 

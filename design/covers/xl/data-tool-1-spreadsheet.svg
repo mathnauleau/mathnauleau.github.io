@@ -46,7 +46,7 @@
    Without motion (prefers-reduced-motion, or no @scope support) the cover shows the
    finished app: everything that should start hidden carries opacity="0" in the SVG
    itself, so the fallback never shows the sheet and the app on top of each other.
-   Hover the window to lift it (real pointer above 768px). Timing and easing come
+   No hover effect. Timing and easing come
    from assets/css/covers/base.css (design/covers/SPEC.md); the panels' pop is the
    cover's one --cover-ease-pop. */
 
@@ -116,12 +116,6 @@
   }
   .area1, .end1 { animation: xl-area1 var(--cyc) var(--cover-ease) infinite; }
 
-  /* Hover: the window (the hero) lifts */
-  .win { transition: translate var(--cover-hover-duration) var(--cover-ease); }
-
-  @media (hover: hover) and (min-width: 769px) {
-    .win:hover { translate: 0 var(--cover-hover-lift); }
-  }
 
   @media (prefers-reduced-motion: reduce) {
     * {

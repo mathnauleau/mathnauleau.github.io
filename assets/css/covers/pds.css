@@ -6,8 +6,8 @@
      Sizing      the small brick grows and shrinks next to the big one
      Spacing     the top plate lifts off and a purple spacing marker appears
    The top nav stays on Introduction (static); the developers card has a blinking
-   caret (1s, a UI convention) and the designers card a pulsing selection. Hover a
-   foundation card to lift it (real pointer above 768px). Timing and easing come from
+   caret (1s, a UI convention) and the designers card a pulsing selection. No hover
+   effect. Timing and easing come from
    assets/css/covers/base.css (design/covers/SPEC.md).
    Every rule sits in @scope (.pds); keyframes and SVG IDs use the pds- prefix.
    Without motion the cover shows the page as drawn. */
@@ -67,11 +67,6 @@
   .lift { animation: pds-lift var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.75) infinite; }
   .gap { animation: pds-gap var(--cover-ambient) var(--cover-ease) calc(var(--cover-ambient) * -0.75) infinite; }
 
-  .fcard { transition: transform var(--cover-hover-duration) var(--cover-ease); }
-
-  @media (hover: hover) and (min-width: 769px) {
-    .fcard:hover { transform: translateY(var(--cover-hover-lift)); }
-  }
 
   @media (prefers-reduced-motion: reduce) {
     * {

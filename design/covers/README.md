@@ -19,7 +19,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 | DesignOps | `#project10` | `.ops` / `ops-` | `ops.css` | `ops/designops.svg` (site export, animated) |
 | Pantry Design System | `#project1` | `.pds` / `pds-` | `pds.css` | `pds/pantry.svg` (drawn for the site, from a screenshot) |
 | Data tool | `#project15` | `.xl` / `xl-` | `xl.css` | `xl/data-tool.svg` (drawn for the site, from an Excel-style reference); stills `data-tool-1-spreadsheet.svg`, `data-tool-2-dashboard.svg` |
-| Home energy app | `#project16` (link still `#`) | `.nrg` / `nrg-` | `nrg.css` | `nrg/home-energy.svg` (drawn for the site, from a PNG mock-up) |
+| Home energy app | `#project16` | `.nrg` / `nrg-` | `nrg.css` | `nrg/home-energy.svg` (site export, animated); source `nrg/home-energy-figma.svg` (Figma) |
 | AH Compact | `#project4` | `.ah` / `ah-` | `ah.css` | `ah/ah-compact.svg` (site export, animated); originals `ah/groceries.svg`, `ah/iphone-12-mini.svg` |
 | Not the brief | `#project13` (currently commented out) | `.ntb` / `ntb-` | `ntb.css` | — Built from `not the brief.svg`, not stored yet |
 | Cookbook.md | `#project14` | `.cbk` / `cbk-` | `cbk.css` | `cbk/cookbook.svg` (drawn for the site, including the flat tarte tatin) |
@@ -29,13 +29,18 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
 
 ## Notes per original
 
-- `ah/ah-compact.svg` is the cover as it is on the site, exported from `index.html` with
-  `base.css` and `ah.css` embedded; re-export it after changing the cover. The phone
-  screen (shopping UI, free-delivery story) and the order/delivery cycle are drawn for
-  the site, after the app's search results list. Six items from `ah/groceries.svg`
-  (carrot, juice, baguette, cheese, and the zucchini and tomato over the phone's bottom
-  corners) sit in front, each moved toward the sides; `ah/iphone-12-mini.svg` is no
-  longer used.
+- `ah/ah-compact-figma.svg` is the source artwork, exported from Figma (its only motion
+  is the point of light). The site uses it as is, with IDs and keyframes prefixed `ah-`
+  and the story's classes added on wrapper groups (`.added` steppers, `.todo`/`.done`
+  messages, `.c0`–`.c2` count, `.badge`, `.ok`, `.bar`, `.dot`, `.bob` groceries); the
+  story itself is in `ah.css`. `ah/ah-compact.svg` is the animated export from
+  `index.html`. To update the artwork, export from Figma to `ah-compact-figma.svg` and
+  re-apply the classes.
+- `nrg/home-energy-figma.svg` is the source artwork, exported from Figma. Put it on the
+  page with `python3 design/covers/nrg/port-figma.py [export.svg]`: it prefixes IDs
+  `nrg-`, restores the phone's story classes, runs the point of light along the
+  redelivery line, turns the turbine blades and rebuilds the pill text (Figma outlines
+  it without the gap before the amount). Then run `export.py`.
 - `isl/island.svg` is no longer the raw Figma export: it is the cover as it is on the
   site, exported from `index.html` with `isl.css` embedded, so it animates when opened in
   a browser (hover the "8" block to slide it). Compared with the original artwork, the

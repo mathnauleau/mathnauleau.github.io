@@ -1,23 +1,26 @@
 /* Home energy app cover (inline <svg class="nrg"> in #project16, index.html).
-   Calm by design. One app in the middle: on the left, readings come in from a smart
-   meter, solar panels and a thermostat; on the right, insights go out to people. The
-   endpoints are frosted circles with fixed labels; on each thin connection a single
-   soft point of light travels (SMIL <animateMotion>, 7s, evenly staggered).
+   Calm by design. Artwork from Figma (design/covers/nrg/home-energy-figma.svg, put on
+   the page by design/covers/nrg/port-figma.py): the app in the middle; behind it, a
+   landscape in white lines (gas pipeline, the grid and wind turbines on the left, a
+   house with solar panels and an EV on the right), supply coming in over the top and
+   solar redelivery going back along the bottom. The turbine blades turn (SMIL rotate);
+   one soft point of light runs along the redelivery line, house to grid (SMIL, 7s).
+   The money insights sit in frosted pills in the top corners.
    On the screen (12s loop, CSS): the week's usage line draws itself against the dashed
    estimate; as the "New reading" notification slides in (~36%), the line reaches today,
    the dot and its tooltip appear and the stat bars fill; then it all resets.
    Every rule sits in @scope (.nrg); keyframes and SVG IDs use the nrg- prefix.
-   Without motion the points of light and notification are hidden and the chart shows
+   Without motion the point of light and notification are hidden and the chart shows
    complete. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
 #project16 {
-  background: linear-gradient(32deg, #FDDB94 0%, #F7836C 40%, #D2468C 72%, #7044D4 100%);
+  background: linear-gradient(32deg, #FFA28C 0%, #E2679E 55%, #9D62DB 100%);
 }
 
 /* As a tall tile: the space under the art continues the drawing's bottom edge */
 .portfolio-item--tall #project16 {
-  background: linear-gradient(90deg, #F9A07D 0%, #D2468C 60%, #7044D4 100%);
+  background: linear-gradient(90deg, #F48E93 0%, #DA6AA4 55%, #A864D6 100%);
 }
 
 .portfolio-item--tall #project16 .portfolio-title h4,
@@ -32,6 +35,8 @@
     width: 100%;
     height: auto;
   }
+
+  .rays { animation: nrg-rays var(--cover-ambient) var(--cover-ease) infinite; }
 
   .notif { animation: nrg-notif var(--cyc) cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 
@@ -110,4 +115,15 @@
   0%, 38% { transform: scaleX(0.15); }
   54%, 92% { transform: scaleX(1); }
   100% { transform: scaleX(0.15); }
+}
+
+/* The sun's rays glow softly */
+@keyframes nrg-rays {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* Turbine blades turn slowly */
+@keyframes nrg-spin {
+  to { transform: rotate(360deg); }
 }

@@ -8,7 +8,8 @@
      45–92%  the order holds; then it resets
    Behind the phone, the cycle: a rounded square with an Order and a Delivered node and
    a single soft point of light going round (Order → Delivered over the top, back along
-   the bottom), SMIL, 7s per half, as on the energy cover.
+   the bottom), 14s, CSS keyframes from the Figma export.
+   Artwork: design/covers/ah/ah-compact-figma.svg (Figma), with the story's classes added.
    The phone is the shared frame (design/covers/SPEC.md); six of the original grocery
    illustrations sit in front, framing the phone's edges; they stay still. Hover a
    grocery item to lift it (real pointer above
@@ -87,8 +88,8 @@
       transition: none !important;
     }
     /* The finished order */
-    .c0, .c1, .todo, .pk { opacity: 0; }
-    .pk { display: none; }
+    .c0, .c1, .todo, .pk, .dot { opacity: 0; }
+    .pk, .dot { display: none; }
     .c2, .done, .added { opacity: 1; }
     .bar, .ok, .added { transform: none; }
   }
@@ -123,4 +124,95 @@
   95%, 100% { transform: scale(0); }
 }
 
-
+/* --- Figma point of light (written by port-figma.py) --- */
+@scope (.ah) {
+.dot {
+  transform-origin: 0 0;
+  animation:
+    ah-kf_Frame_2_transform_0 14s linear infinite,
+    ah-kf_Frame_2_opacity_0 14s linear infinite;
+}
+}
+@keyframes ah-kf_Frame_2_transform_0 {
+  0% {
+    transform: translateX(-9px) translateY(-9px) translateX(72px) translateY(246px);
+  }
+  2.73% {
+    transform: translateX(-9px) translateY(-9px) translateX(72px) translateY(200px);
+  }
+  4.6% {
+    transform: translateX(-9px) translateY(-9px) translateX(83.716px) translateY(171.716px);
+  }
+  6.47% {
+    transform: translateX(-9px) translateY(-9px) translateX(112px) translateY(160px);
+  }
+  40.68% {
+    transform: translateX(-9px) translateY(-9px) translateX(688px) translateY(160px);
+  }
+  42.55% {
+    transform: translateX(-9px) translateY(-9px) translateX(716.284px) translateY(171.716px);
+  }
+  44.42% {
+    transform: translateX(-9px) translateY(-9px) translateX(728px) translateY(200px);
+  }
+  47.15% {
+    transform: translateX(-9px) translateY(-9px) translateX(728px) translateY(246px);
+  }
+  51.84% {
+    transform: translateX(-9px) translateY(-9px) translateX(728px) translateY(325px);
+  }
+  52.73% {
+    transform: translateX(-9px) translateY(-9px) translateX(728px) translateY(340px);
+  }
+  54.6% {
+    transform: translateX(-9px) translateY(-9px) translateX(716.284px) translateY(368.284px);
+  }
+  56.47% {
+    transform: translateX(-9px) translateY(-9px) translateX(688px) translateY(380px);
+  }
+  90.68% {
+    transform: translateX(-9px) translateY(-9px) translateX(112px) translateY(380px);
+  }
+  92.55% {
+    transform: translateX(-9px) translateY(-9px) translateX(83.716px) translateY(368.284px);
+  }
+  94.42% {
+    transform: translateX(-9px) translateY(-9px) translateX(72px) translateY(340px);
+  }
+  95.31% {
+    transform: translateX(-9px) translateY(-9px) translateX(72px) translateY(325px);
+  }
+  100% {
+    transform: translateX(-9px) translateY(-9px) translateX(72px) translateY(246px);
+  }
+}
+@keyframes ah-kf_Frame_2_opacity_0 {
+  0% {
+    animation-timing-function: linear;
+    opacity: 0;
+  }
+  7.5% {
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  42.5% {
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  50% {
+    animation-timing-function: linear;
+    opacity: 0;
+  }
+  57.5% {
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  92.5% {
+    animation-timing-function: linear;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* --- end Figma point of light --- */

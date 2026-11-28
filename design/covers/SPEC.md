@@ -27,8 +27,9 @@ Values marked `--cover-…` live in `assets/css/covers/base.css`.
 - **Device frames** are shared, never redrawn:
   - **Window:** 660 × 400 at (70, 55), radius 20, title bar with three dots (Data tool,
     Pantry).
-  - **Phone:** 300 × 590 at `translate(250 40) scale(1.0)`, frame in one plain colour
-    `#E9E9EA`, bezel `#2B2E35`, buttons `#CFD1D3`, no status bar (Home energy app, AH Compact).
+  - **Phone:** 300 × 590 at `translate(248 40)`; frame and side buttons white at 40%,
+    bezel `#2B2E35` (288 × 578, radius 52, inset 6), screen 276 wide, radius 48, inset 12;
+    island 88 × 28 at (106, 30); no status bar (Home energy app, AH Compact).
   - **No drop shadows** on device frames: they sit flat on the background.
 
 ## 3. Colour

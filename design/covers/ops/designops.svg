@@ -1,7 +1,7 @@
 <!-- DesignOps cover, exported from index.html by design/covers/export.py.
      Open it in a browser to see it animate; the styles are assets/css/covers/base.css
      and assets/css/covers/ops.css. Edit the page, then re-run the script. -->
-<svg xmlns="http://www.w3.org/2000/svg" class="ops" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="DesignOps">
+<svg xmlns="http://www.w3.org/2000/svg" class="ops" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Fixing design in squads">
   <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
    The values below are the motion tokens from design/covers/SPEC.md; each cover's own
