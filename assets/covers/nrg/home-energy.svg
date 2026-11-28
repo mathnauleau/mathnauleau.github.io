@@ -1,10 +1,10 @@
-<!-- Home energy app cover, exported from index.html by design/covers/export.py.
+<!-- Home energy app cover, exported from index.html by assets/covers/export.py.
      Open it in a browser to see it animate; the styles are assets/css/covers/base.css
      and assets/css/covers/nrg.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="nrg" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Home energy app">
   <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
-   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
    Load this file before the cover stylesheets. */
 
@@ -34,12 +34,13 @@
 }
 
 /* Home energy app cover (inline <svg class="nrg"> in #project16, index.html).
-   Calm by design. Artwork from Figma (design/covers/nrg/home-energy-figma.svg, put on
-   the page by design/covers/nrg/port-figma.py): the app in the middle; behind it, a
+   Calm by design. Artwork from Figma (assets/covers/nrg/home-energy-figma.svg, put on
+   the page by assets/covers/nrg/port-figma.py): the app in the middle; behind it, a
    landscape in white lines (gas pipeline, the grid and wind turbines on the left, a
    house with solar panels and an EV on the right), supply coming in over the top and
    solar redelivery going back along the bottom. The turbine blades turn (SMIL rotate);
-   one soft point of light runs along the redelivery line, house to grid (SMIL, 7s).
+   one soft point of light delivers energy along the top line (grid to house, 7s), then
+   brings it back along the bottom line (house to grid, 7s).
    The money insights sit in frosted pills in the top corners.
    On the screen (12s loop, CSS): the week's usage line draws itself against the dashed
    estimate; as the "New reading" notification slides in (~36%), the line reaches today,

@@ -4,7 +4,7 @@
    the same prefix. Light dashes run along the lines (each line takes 4 × the ambient
    loop, starts spaced 7s apart) and the stations pulse in a wave (ambient loop); the
    toggle knob switches on when the pill itself is hovered, with a real pointer above
-   768px. Timing and easing come from assets/css/covers/base.css (design/covers/SPEC.md).
+   768px. Timing and easing come from assets/css/covers/base.css (assets/covers/SPEC.md).
    Animations stop for prefers-reduced-motion. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */

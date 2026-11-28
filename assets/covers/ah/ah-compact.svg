@@ -1,10 +1,10 @@
-<!-- AH Compact cover, exported from index.html by design/covers/export.py.
+<!-- AH Compact cover, exported from index.html by assets/covers/export.py.
      Open it in a browser to see it animate; the styles are assets/css/covers/base.css
      and assets/css/covers/ah.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="ah" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="AH Compact">
   <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
-   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
    Load this file before the cover stylesheets. */
 
@@ -44,8 +44,8 @@
    Behind the phone, the cycle: a rounded square with an Order and a Delivered node and
    a single soft point of light going round (Order → Delivered over the top, back along
    the bottom), SMIL along the line itself, 7s per half (port-figma.py builds it).
-   Artwork: design/covers/ah/ah-compact-figma.svg (Figma), with the story's classes added.
-   The phone is the shared frame (design/covers/SPEC.md); six of the original grocery
+   Artwork: assets/covers/ah/ah-compact-figma.svg (Figma), with the story's classes added.
+   The phone is the shared frame (assets/covers/SPEC.md); six of the original grocery
    illustrations sit in front, framing the phone's edges; they stay still. Hover a
    grocery item to lift it (real pointer above
    768px). Every rule sits in @scope (.ah); keyframes and SVG IDs use the ah- prefix.

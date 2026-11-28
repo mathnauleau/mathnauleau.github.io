@@ -9,8 +9,8 @@
    Behind the phone, the cycle: a rounded square with an Order and a Delivered node and
    a single soft point of light going round (Order → Delivered over the top, back along
    the bottom), SMIL along the line itself, 7s per half (port-figma.py builds it).
-   Artwork: design/covers/ah/ah-compact-figma.svg (Figma), with the story's classes added.
-   The phone is the shared frame (design/covers/SPEC.md); six of the original grocery
+   Artwork: assets/covers/ah/ah-compact-figma.svg (Figma), with the story's classes added.
+   The phone is the shared frame (assets/covers/SPEC.md); six of the original grocery
    illustrations sit in front, framing the phone's edges; they stay still. Hover a
    grocery item to lift it (real pointer above
    768px). Every rule sits in @scope (.ah); keyframes and SVG IDs use the ah- prefix.

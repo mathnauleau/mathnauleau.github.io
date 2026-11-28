@@ -8,7 +8,7 @@
    The top nav stays on Introduction (static); the developers card has a blinking
    caret (1s, a UI convention) and the designers card a pulsing selection. No hover
    effect. Timing and easing come from
-   assets/css/covers/base.css (design/covers/SPEC.md).
+   assets/css/covers/base.css (assets/covers/SPEC.md).
    Every rule sits in @scope (.pds); keyframes and SVG IDs use the pds- prefix.
    Without motion the cover shows the page as drawn. */
 

@@ -1,9 +1,9 @@
 <!-- Data tool cover, still: the old Excel workflow (t = 1.5s of the loop).
-     Exported from index.html by design/covers/export.py (stills option). -->
+     Exported from index.html by assets/covers/export.py (stills option). -->
 <svg xmlns="http://www.w3.org/2000/svg" class="xl" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Data tool">
   <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
-   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
    Load this file before the cover stylesheets. */
 
@@ -47,7 +47,7 @@
    finished app: everything that should start hidden carries opacity="0" in the SVG
    itself, so the fallback never shows the sheet and the app on top of each other.
    No hover effect. Timing and easing come
-   from assets/css/covers/base.css (design/covers/SPEC.md); the panels' pop is the
+   from assets/css/covers/base.css (assets/covers/SPEC.md); the panels' pop is the
    cover's one --cover-ease-pop. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */

@@ -37,7 +37,7 @@ Note: GitHub Pages publishes this folder too (it's reachable by URL, not linked)
   `index.html`. To update the artwork, export from Figma to `ah-compact-figma.svg` and
   re-apply the classes.
 - `nrg/home-energy-figma.svg` is the source artwork, exported from Figma. Put it on the
-  page with `python3 design/covers/nrg/port-figma.py [export.svg]`: it prefixes IDs
+  page with `python3 assets/covers/nrg/port-figma.py [export.svg]`: it prefixes IDs
   `nrg-`, restores the phone's story classes, runs the point of light along the
   redelivery line, turns the turbine blades and rebuilds the pill text (Figma outlines
   it without the gap before the amount). Then run `export.py`.
@@ -69,8 +69,8 @@ cover boxes and the Data tool's hidden spreadsheet layers).
 All exports come from `index.html` through one script:
 
 ```
-python3 design/covers/export.py            # animated exports, one per cover
-python3 design/covers/export.py --stills   # also the stills (needs Google Chrome)
+python3 assets/covers/export.py            # animated exports, one per cover
+python3 assets/covers/export.py --stills   # also the stills (needs Google Chrome)
 ```
 
 - **Animated** (`<folder>/<name>.svg`): the cover's inline SVG with `base.css` and its own

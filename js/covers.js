@@ -4,7 +4,7 @@
      where they stopped when it scrolls back in.
    - With prefers-reduced-motion, SMIL stays paused everywhere (CSS animations are
      already switched off by each cover's own reduced-motion rule).
-   See design/covers/SPEC.md. */
+   See assets/covers/SPEC.md. */
 (function () {
   var covers = Array.prototype.slice.call(document.querySelectorAll('.portfolio-wrap > svg'));
   if (!covers.length) return;

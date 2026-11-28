@@ -1,10 +1,10 @@
-<!-- Pantry Design System cover, exported from index.html by design/covers/export.py.
+<!-- Pantry Design System cover, exported from index.html by assets/covers/export.py.
      Open it in a browser to see it animate; the styles are assets/css/covers/base.css
      and assets/css/covers/pds.css. Edit the page, then re-run the script. -->
 <svg xmlns="http://www.w3.org/2000/svg" class="pds" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Pantry Design System">
   <style><![CDATA[
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
-   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
    Load this file before the cover stylesheets. */
 
@@ -43,7 +43,7 @@
    The top nav stays on Introduction (static); the developers card has a blinking
    caret (1s, a UI convention) and the designers card a pulsing selection. No hover
    effect. Timing and easing come from
-   assets/css/covers/base.css (design/covers/SPEC.md).
+   assets/css/covers/base.css (assets/covers/SPEC.md).
    Every rule sits in @scope (.pds); keyframes and SVG IDs use the pds- prefix.
    Without motion the cover shows the page as drawn. */
 

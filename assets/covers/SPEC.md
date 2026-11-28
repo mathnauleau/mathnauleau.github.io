@@ -89,7 +89,7 @@ Values marked `--cover-…` live in `assets/css/covers/base.css`.
 
 ## 8. Export
 
-Each cover has a standalone copy in `design/covers/<prefix>/` with its stylesheet embedded
+Each cover has a standalone copy in `assets/covers/<prefix>/` with its stylesheet embedded
 (see the README). Re-export after every change.
 
 ## Where the covers stand today

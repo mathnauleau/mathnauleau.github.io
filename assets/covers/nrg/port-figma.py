@@ -1,8 +1,8 @@
 """Put the Figma export of the Home energy app cover on the site, with its animations.
 
-    python3 design/covers/nrg/port-figma.py [path/to/export.svg]
+    python3 assets/covers/nrg/port-figma.py [path/to/export.svg]
 
-Default input: design/covers/nrg/home-energy-figma.svg (another path is copied there
+Default input: assets/covers/nrg/home-energy-figma.svg (another path is copied there
 first). Then:
   - IDs and url(#…) references are prefixed nrg- (no clashes on the page); Figma's
     own <style> (keyframes for the dot, drawn on an older line) is dropped;
@@ -14,7 +14,7 @@ first). Then:
   - the pill labels, outlined by Figma without the gap before the amount, become live
     text again (label, gap, bold amount), with pills sized to fit;
   - the cover replaces <svg class="nrg"> in index.html (CRLF kept).
-Afterwards run design/covers/export.py. If Figma renames a layer, update the IDs below.
+Afterwards run assets/covers/export.py. If Figma renames a layer, update the IDs below.
 """
 import os
 import re
@@ -22,7 +22,7 @@ import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-SRC = os.path.join(ROOT, 'design/covers/nrg/home-energy-figma.svg')
+SRC = os.path.join(ROOT, 'assets/covers/nrg/home-energy-figma.svg')
 PAGE = os.path.join(ROOT, 'index.html')
 F = "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
 

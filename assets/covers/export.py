@@ -1,7 +1,7 @@
-"""Export the home-page covers from index.html into design/covers/.
+"""Export the home-page covers from index.html into assets/covers/.
 
-    python3 design/covers/export.py            animated exports only
-    python3 design/covers/export.py --stills   also the stills (needs Google Chrome)
+    python3 assets/covers/export.py            animated exports only
+    python3 assets/covers/export.py --stills   also the stills (needs Google Chrome)
 
 Animated: each inline <svg class="<prefix>"> with assets/css/covers/base.css and its own
 stylesheet embedded, so it animates when opened in a browser.
@@ -18,7 +18,7 @@ import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-OUT = os.path.join(ROOT, 'design', 'covers')
+OUT = os.path.join(ROOT, 'assets', 'covers')
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 # prefix -> (folder/file, title)
@@ -71,7 +71,8 @@ def write(path, text):
     os.makedirs(os.path.dirname(full), exist_ok=True)
     # A file this script didn't write (for example a Figma export saved over an export)
     # is kept as <name>.edited.svg instead of being lost.
-    if os.path.exists(full) and 'design/covers/export.py' not in open(full).read(600):
+    head = open(full).read(600) if os.path.exists(full) else ''
+    if head and 'covers/export.py' not in head:
         keep = full[:-4] + '.edited.svg'
         os.replace(full, keep)
         print('kept your edited file as', keep)
@@ -80,7 +81,7 @@ def write(path, text):
 
 
 for prefix, (path, title) in COVERS.items():
-    note = (f'{title} cover, exported from index.html by design/covers/export.py.\n'
+    note = (f'{title} cover, exported from index.html by assets/covers/export.py.\n'
             f'     Open it in a browser to see it animate; the styles are assets/css/covers/base.css\n'
             f'     and assets/css/covers/{prefix}.css. Edit the page, then re-run the script.')
     print('animated', write(path, standalone(prefix, svg_of(prefix), css_of(prefix), note)))
@@ -124,6 +125,6 @@ for prefix, stills in STILLS.items():
         frozen = re.sub(r'^<svg xmlns="http://www.w3.org/2000/svg" ', '<svg ', frozen)
         still_css = css + '\n/* Still: animations off, values frozen inline */\n* { animation: none !important; transition: none !important; }\n'
         note = (f'{title} cover, still: {label} (t = {t / 1000:g}s of the loop).\n'
-                f'     Exported from index.html by design/covers/export.py (stills option).')
+                f'     Exported from index.html by assets/covers/export.py (stills option).')
         out = os.path.join(folder, name.replace('.svg', f'-{suffix}.svg'))
         print('still   ', write(out, standalone(prefix, frozen, still_css, note)))

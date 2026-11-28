@@ -1,5 +1,5 @@
 /* Shared rules for the animated project covers (inline <svg> in .portfolio-wrap).
-   The values below are the motion tokens from design/covers/SPEC.md; each cover's own
+   The values below are the motion tokens from assets/covers/SPEC.md; each cover's own
    stylesheet (assets/css/covers/<prefix>.css) should use them instead of its own numbers.
    Load this file before the cover stylesheets. */
 

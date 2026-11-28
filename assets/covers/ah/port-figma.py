@@ -1,8 +1,8 @@
 """Put the Figma export of the AH Compact cover on the site, with the story's classes.
 
-    python3 design/covers/ah/port-figma.py [path/to/export.svg]
+    python3 assets/covers/ah/port-figma.py [path/to/export.svg]
 
-Default input: design/covers/ah/ah-compact-figma.svg. The export is copied there first
+Default input: assets/covers/ah/ah-compact-figma.svg. The export is copied there first
 when another path is given. Then:
   - every ID, url(#…) reference and keyframe is prefixed ah- (no clashes on the page);
   - the story's classes are added, on wrapper groups so CSS transforms don't replace
@@ -11,7 +11,7 @@ when another path is given. Then:
   - the point of light follows the cycle line itself (SMIL, 7s per half); Figma's own
     dot keyframes are dropped (they trail older versions of the line);
   - the cover replaces <svg class="ah"> in index.html (CRLF kept).
-Afterwards run design/covers/export.py to refresh the exports.
+Afterwards run assets/covers/export.py to refresh the exports.
 If Figma renames a layer, update the IDs below.
 """
 import os
@@ -20,7 +20,7 @@ import shutil
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-SRC = os.path.join(ROOT, 'design/covers/ah/ah-compact-figma.svg')
+SRC = os.path.join(ROOT, 'assets/covers/ah/ah-compact-figma.svg')
 CSS = os.path.join(ROOT, 'assets/css/covers/ah.css')
 PAGE = os.path.join(ROOT, 'index.html')
 

@@ -13,7 +13,7 @@
    finished app: everything that should start hidden carries opacity="0" in the SVG
    itself, so the fallback never shows the sheet and the app on top of each other.
    No hover effect. Timing and easing come
-   from assets/css/covers/base.css (design/covers/SPEC.md); the panels' pop is the
+   from assets/css/covers/base.css (assets/covers/SPEC.md); the panels' pop is the
    cover's one --cover-ease-pop. */
 
 /* The tile behind the SVG: shows until the SVG is parsed. */
