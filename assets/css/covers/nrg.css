@@ -4,7 +4,8 @@
    landscape in white lines (gas pipeline, the grid and wind turbines on the left, a
    house with solar panels and an EV on the right), supply coming in over the top and
    solar redelivery going back along the bottom. The turbine blades turn (SMIL rotate);
-   one soft point of light runs along the redelivery line, house to grid (SMIL, 7s).
+   one soft point of light delivers energy along the top line (grid to house, 7s), then
+   brings it back along the bottom line (house to grid, 7s).
    The money insights sit in frosted pills in the top corners.
    On the screen (12s loop, CSS): the week's usage line draws itself against the dashed
    estimate; as the "New reading" notification slides in (~36%), the line reaches today,

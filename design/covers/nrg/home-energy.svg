@@ -169,10 +169,10 @@
                 <path id="nrg-Vector_2" d="M800 0H0V500H800V0Z" fill="url(#nrg-paint1_radial_14_553)"/>
                 <path id="nrg-Vector_3" transform="translate(72 176)" d="M0 167.5V20C0 6.66667 7.686 0 23.058 0H632.942C648.314 0 656 6.66667 656 20V86" stroke="white" stroke-opacity="0.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path id="nrg-Vector_4" transform="translate(72 378)" d="M656 10V38C656 48.6667 649.851 54 637.554 54H18.4464C6.1488 54 0 48.6667 0 38V0" stroke="white" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <g class="pk" transform="translate(72 378)" opacity="0"><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" repeatCount="indefinite" /><g id="nrg-Frame" transform="translate(-9 -9)">
+                <g class="pk" opacity="0"><animate attributeName="opacity" values="0;1;1;0;0;1;1;0" keyTimes="0;0.075;0.425;0.5;0.5;0.575;0.925;1" dur="14s" repeatCount="indefinite" /><g id="nrg-Frame" transform="translate(-9 -9)">
                 <path id="nrg-Vector_5" d="M9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18Z" fill="white" fill-opacity="0.22"/>
                 <path id="nrg-Vector_6" transform="translate(5.5 5.5)" d="M3.5 7C5.433 7 7 5.433 7 3.5C7 1.567 5.433 0 3.5 0C1.567 0 0 1.567 0 3.5C0 5.433 1.567 7 3.5 7Z" fill="white"/>
-                <animateMotion dur="7s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.45 0 0.55 1" path="M656 10V38C656 48.6667 649.851 54 637.554 54H18.4464C6.1488 54 0 48.6667 0 38V0" /></g></g>
+                <animateMotion dur="14s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0.5075;0.5790;1" keyTimes="0;0.5;0.5;1" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" path="M72 343.5L72 196C72 182.667 79.686 176 95.058 176L704.942 176C720.314 176 728 182.667 728 196L728 262L728 388L728 416C728 426.667 721.851 432 709.554 432L90.4464 432C78.1488 432 72 426.667 72 416L72 378" /></g></g>
                 <g id="nrg-Frame_2" transform="translate(72 65)">
                 <rect id="nrg-Vector_7" width="158" height="28" rx="14" fill="white" fill-opacity="0.2" stroke="white" stroke-opacity="0.75" stroke-width="1.2"/>
                 <g id="nrg-Frame_3" transform="translate(12 7)">

@@ -8,7 +8,8 @@ first). Then:
     own <style> (keyframes for the dot, drawn on an older line) is dropped;
   - the phone's story gets its classes back (notification, usage line and area,
     today's dot and halo, tooltip, stat bars); the motion is in nrg.css;
-  - the point of light follows the redelivery line (SMIL, 7s, house to grid);
+  - one point of light runs along the supply line (grid to house, over the top) and
+    then the redelivery line (house back to the grid, along the bottom), 7s each;
   - the wind turbines' blades turn around their hubs (SMIL rotate);
   - the pill labels, outlined by Figma without the gap before the amount, become live
     text again (label, gap, bold amount), with pills sized to fit;
@@ -25,6 +26,7 @@ SRC = os.path.join(ROOT, 'design/covers/nrg/home-energy-figma.svg')
 PAGE = os.path.join(ROOT, 'index.html')
 F = "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
 
+SUPPLY = 'Vector_3'              # the line from the grid over the top into the house
 REDELIVERY = 'Vector_4'          # the line from the house back to the grid
 DOT = 'Frame'                    # the point of light
 TURBINES = [  # (blade IDs, hub x, hub y in the turbine group's own space, seconds per turn)
@@ -85,19 +87,61 @@ body = re.sub(rf'(<path\b)([^>]*\bid="nrg-{LINE}")', r'\1 class="line" pathLengt
 for eid, cls in WRAP:
     wrap(eid, f'<g class="{cls}">')
 
-# Point of light along the redelivery line
-st, en = find(REDELIVERY)
-line = body[st:en]
-d = re.search(r'\bd="([^"]+)"', line).group(1)
-tx, ty = re.search(r'translate\(([-\d.]+) ([-\d.]+)\)', line).groups()
+# Point of light: along the supply line (grid to house, over the top), then the
+# redelivery line (house back to the grid, along the bottom); 7s each, one dot.
+def absolute(d, ox, oy):
+    """Absolute M/L/H/V/C path offset by (ox, oy) -> (path, length, end point)."""
+    toks = re.findall(r'[A-Za-z]|-?\d*\.?\d+(?:e-?\d+)?', d)
+    out, i, cmd, x, y, length = [], 0, None, 0.0, 0.0, 0.0
+    while i < len(toks):
+        if re.match(r'[A-Za-z]', toks[i]):
+            cmd = toks[i]; i += 1
+        if cmd in 'Zz':
+            continue
+        n = {'M': 2, 'L': 2, 'H': 1, 'V': 1, 'C': 6}[cmd]
+        v = [float(q) for q in toks[i:i + n]]; i += n
+        if cmd == 'M':
+            x, y = v; out.append(f'M{x + ox:g} {y + oy:g}'); cmd = 'L'; continue
+        if cmd in 'LHV':
+            nx, ny = (v[0], v[1]) if cmd == 'L' else ((v[0], y) if cmd == 'H' else (x, v[0]))
+            length += ((nx - x) ** 2 + (ny - y) ** 2) ** 0.5
+            x, y = nx, ny; out.append(f'L{x + ox:g} {y + oy:g}')
+        else:
+            pts = [(x, y), (v[0], v[1]), (v[2], v[3]), (v[4], v[5])]
+            prev = pts[0]
+            for k in range(1, 41):
+                s = k / 40
+                w = ((1 - s) ** 3, 3 * (1 - s) ** 2 * s, 3 * (1 - s) * s * s, s ** 3)
+                q = [sum(c * p_[j] for c, p_ in zip(w, pts)) for j in (0, 1)]
+                length += ((q[0] - prev[0]) ** 2 + (q[1] - prev[1]) ** 2) ** 0.5; prev = q
+            x, y = v[4], v[5]
+            out.append('C' + ' '.join(f'{a + (ox if k % 2 == 0 else oy):g}' for k, a in enumerate(v)))
+    return ''.join(out), length, (x + ox, y + oy)
+
+
+def line_of(eid):
+    st, en = find(eid)
+    tag = body[st:en]
+    m = re.search(r'translate\(([-\d.]+) ([-\d.]+)\)', tag)
+    ox, oy = (float(m.group(1)), float(m.group(2))) if m else (0.0, 0.0)
+    return absolute(re.search(r'\bd="([^"]+)"', tag).group(1), ox, oy)
+
+
+(top, l1, end1), (bottom, l2, _) = line_of(SUPPLY), line_of(REDELIVERY)
+sx, sy = (float(v) for v in re.match(r'M([-\d.]+) ([-\d.]+)', bottom).groups())
+gap = ((sx - end1[0]) ** 2 + (sy - end1[1]) ** 2) ** 0.5
+total = l1 + gap + l2
+k1, k2 = l1 / total, (l1 + gap) / total
 st, en = find(DOT)
 dot = body[st:en]
 dot = re.sub(r'\s*opacity="0"', '', dot, count=1)
 dot = dot[:dot.rindex('</g>')] + (
-    f'<animateMotion dur="7s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" '
-    f'keySplines="0.45 0 0.55 1" path="{d}" /></g>')
-body = body[:st] + (f'<g class="pk" transform="translate({tx} {ty})" opacity="0">'
-                    f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.15;0.85;1" dur="7s" repeatCount="indefinite" />'
+    f'<animateMotion dur="14s" repeatCount="indefinite" calcMode="spline" '
+    f'keyPoints="0;{k1:.4f};{k2:.4f};1" keyTimes="0;0.5;0.5;1" '
+    f'keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" path="{top}L{bottom[1:]}" /></g>')
+body = body[:st] + ('<g class="pk" opacity="0">'
+                    '<animate attributeName="opacity" values="0;1;1;0;0;1;1;0" '
+                    'keyTimes="0;0.075;0.425;0.5;0.5;0.575;0.925;1" dur="14s" repeatCount="indefinite" />'
                     + dot + '</g>') + body[en:]
 
 # Turning blades

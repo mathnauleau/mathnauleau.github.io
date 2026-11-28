@@ -8,7 +8,8 @@ when another path is given. Then:
   - the story's classes are added, on wrapper groups so CSS transforms don't replace
     Figma's own positioning (see STORY below; the motion itself is in ah.css);
   - every direct child group of the groceries frame becomes a .bob (lifts on hover);
-  - Figma's point-of-light keyframes are written into ah.css (between the markers);
+  - the point of light follows the cycle line itself (SMIL, 7s per half); Figma's own
+    dot keyframes are dropped (they trail older versions of the line);
   - the cover replaces <svg class="ah"> in index.html (CRLF kept).
 Afterwards run design/covers/export.py to refresh the exports.
 If Figma renames a layer, update the IDs below.
@@ -38,6 +39,7 @@ WRAP = [  # (Figma ID, wrapper class, extra attributes), inner first
     ('Frame_15', 'added', ' style="--t:4.75s"'),
 ]
 GROCERIES = 'Frame_19'
+DOT_ID = 'Frame_2'
 MARK_A = '/* --- Figma point of light (written by port-figma.py) --- */'
 MARK_B = '/* --- end Figma point of light --- */'
 
@@ -98,6 +100,70 @@ for a, b in reversed(kids):
     grp = grp[:a] + '<g class="bob">' + grp[a:b] + '</g>' + grp[b:]
 body = body[:st] + grp + body[en:]
 
+# The point of light follows the cycle line itself (Figma's own dot keyframes trail an
+# older version of the line): out over the top, back along the bottom, 7s each half.
+CYCLE_FRAME, CYCLE_TOP, CYCLE_BOTTOM = 'Frame', 'Vector_2', 'Vector_3'
+
+
+def offset_of(eid):
+    st, en = span(eid)
+    m = re.search(r'translate\(([-\d.]+) ([-\d.]+)\)', body[st:body.index('>', st)])
+    return (float(m.group(1)), float(m.group(2))) if m else (0.0, 0.0)
+
+
+def absolute(d, ox, oy):
+    """Absolute M/L/H/V/C path, offset by (ox, oy); returns (path, length)."""
+    toks = re.findall(r'[A-Za-z]|-?\d*\.?\d+(?:e-?\d+)?', d)
+    out, i, cmd, x, y, length = [], 0, None, 0.0, 0.0, 0.0
+    while i < len(toks):
+        if re.match(r'[A-Za-z]', toks[i]):
+            cmd = toks[i]; i += 1
+        if cmd in 'Zz':
+            continue
+        n = {'M': 2, 'L': 2, 'H': 1, 'V': 1, 'C': 6}[cmd]
+        v = [float(t) for t in toks[i:i + n]]; i += n
+        if cmd == 'M':
+            x, y = v; out.append(f'M{x + ox:g} {y + oy:g}'); cmd = 'L'; continue
+        if cmd in 'LHV':
+            nx, ny = (v[0], v[1]) if cmd == 'L' else ((v[0], y) if cmd == 'H' else (x, v[0]))
+            length += ((nx - x) ** 2 + (ny - y) ** 2) ** 0.5
+            x, y = nx, ny; out.append(f'L{x + ox:g} {y + oy:g}')
+        else:
+            pts = [(x, y), (v[0], v[1]), (v[2], v[3]), (v[4], v[5])]
+            prev = pts[0]
+            for k in range(1, 41):
+                s = k / 40
+                q = [sum(c * p_[j] for c, p_ in zip(((1 - s) ** 3, 3 * (1 - s) ** 2 * s, 3 * (1 - s) * s * s, s ** 3), pts)) for j in (0, 1)]
+                length += ((q[0] - prev[0]) ** 2 + (q[1] - prev[1]) ** 2) ** 0.5; prev = q
+            x, y = v[4], v[5]
+            out.append('C' + ' '.join(f'{a + (ox if k % 2 == 0 else oy):g}' for k, a in enumerate(v)))
+    return ''.join(out), length, (x + ox, y + oy)
+
+
+fx, fy = offset_of(CYCLE_FRAME)
+paths = []
+for eid in (CYCLE_TOP, CYCLE_BOTTOM):
+    st, en = span(eid)
+    tag = body[st:en]
+    ox, oy = (re.search(r'translate\(([-\d.]+) ([-\d.]+)\)', tag) or [None]) and offset_of(eid)
+    d = re.search(r'\bd="([^"]+)"', tag).group(1)
+    paths.append(absolute(d, fx + ox, fy + oy))
+(top, l1, end1), (bottom, l2, _) = paths
+start2 = re.match(r'M([-\d.]+) ([-\d.]+)', bottom).groups()
+gap = ((float(start2[0]) - end1[0]) ** 2 + (float(start2[1]) - end1[1]) ** 2) ** 0.5
+loop = top + 'L' + bottom[1:]
+total = l1 + gap + l2
+k1, k2 = l1 / total, (l1 + gap) / total
+st, en = span(DOT_ID)
+dot = body[st:en]
+dot = dot[:dot.rindex('</g>')] + (
+    f'<animateMotion dur="14s" repeatCount="indefinite" calcMode="spline" '
+    f'keyPoints="0;{k1:.4f};{k2:.4f};1" keyTimes="0;0.5;0.5;1" '
+    f'keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1" path="{loop}" />'
+    f'<animate attributeName="opacity" values="0;1;1;0;0;1;1;0" '
+    f'keyTimes="0;0.075;0.425;0.5;0.5;0.575;0.925;1" dur="14s" repeatCount="indefinite" /></g>')
+body = body[:st] + dot + body[en:]
+
 svg = '<svg class="ah" viewBox="0 0 800 500" fill="none" role="img" aria-label="AH Compact">' + body.rstrip() + '\n</svg>'
 svg = '\n'.join(('                ' + l) if l.strip() else l for l in svg.split('\n')).lstrip()
 page = open(PAGE, newline='').read().replace('\r\n', '\n')
@@ -105,12 +171,7 @@ page, n = re.subn(r'<svg class="ah".*?</svg>', lambda m: svg, page, count=1, fla
 assert n == 1
 open(PAGE, 'w', newline='').write(page.replace('\n', '\r\n'))
 
-style = style.replace('kf_', 'ah-kf_').replace('#Frame_2', '.dot').strip()
 css = open(CSS).read()
-css = re.sub(r'\n*  /\* The point of light going round the cycle.*?\n  \}\n', '\n', css, flags=re.S)
-css = re.sub(r'\n*/\* Point of light: Order → over the top.*', '\n', css, flags=re.S)
-css = re.sub(re.escape(MARK_A) + r'.*?' + re.escape(MARK_B) + r'\n?', '', css, flags=re.S).rstrip() + '\n'
-css += f'\n{MARK_A}\n@scope (.ah) {{\n' + re.search(r'\.dot \{.*?\n\}', style, re.S).group(0) + '\n}\n'
-css += style[:style.index('.dot {')].strip() + f'\n{MARK_B}\n'
+css = re.sub(r'\n*' + re.escape(MARK_A) + r'.*?' + re.escape(MARK_B) + r'\n?', '\n', css, flags=re.S).rstrip() + '\n'
 open(CSS, 'w').write(css)
 print(f'ok: {len(kids)} grocery items, {len(svg) // 1024} KB inline')
